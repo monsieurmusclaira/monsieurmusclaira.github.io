@@ -83,11 +83,11 @@ svg > rect {
 	}
 
 		.contact img {
-			margin-left: 15px;
-			margin-right: 15px;
+			margin-left: 0.5vw;
+			margin-right: 0.5vw;
 			color: white;
       width: 2vw;
-      max-width: 60px;
+      max-width: 30px;
 		}
 
 	.info a {
