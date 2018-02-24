@@ -1,0 +1,107 @@
+@font-face {
+  font-family: "Futura Bk BT","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/biko-black.woff");
+}
+body {
+  background: black;
+  margin: 2rem;
+}
+
+header {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  max-width: 1200px;
+}
+
+header video {
+  width: 100%;
+}
+
+svg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  filter: invert();
+}
+
+svg text {
+  font-family: "Futura Bk BT","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 700;
+  text-transform: lowercase;
+  font-size: 48px;
+  left: 100px;
+}
+
+svg rect {
+  fill: white;
+}
+
+svg > rect {
+  -webkit-mask: url(#mask);
+  mask: url(#mask);
+}
+
+.info{
+	margin: 0 auto;
+    width: auto;
+    padding: 10px;
+	margin-top:1vw;
+	text-align: center;
+	font-family: "Futura Bk BT","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+	.info h1 {
+		font-size: calc(16px + 3vw);
+		font-weight: normal;
+		color: #93A4BE;
+		margin-bottom: 0.5vw;
+    font-size
+	}
+
+	.info h2 {
+		font-size: calc(10px + 1vw);
+		font-weight: normal;
+		color: white;
+		margin-bottom: 4vw;
+	}
+
+	.info h3 {
+		font-size: calc(8px + 1vw);
+		font-weight: normal;
+		color: #bbb;
+		margin-bottom: 2vw;
+	}
+
+	.contact {
+
+		margin: auto;
+		width: 400px;
+		margin-top: 20px;
+	}
+
+		.contact img {
+			margin-left: 15px;
+			margin-right: 15px;
+			color: white;
+      width: 2vw;
+      max-width: 60px;
+		}
+
+	.info a {
+		color: #ccc;
+		text-decoration:none;
+		margin: 0;
+		  -o-transition:color .2s ease-out, background 1s ease-in;
+	  -ms-transition:color .2s ease-out, background 1s ease-in;
+	  -moz-transition:color .2s ease-out, background 1s ease-in;
+	  -webkit-transition:color .2s ease-out, background 1s ease-in;
+	  /* ...and now override with proper CSS property */
+	  transition:color .2s ease-out, background 1s ease-in;
+	 }
+
+		 .info a:hover {
+			color: #fff;
+		 }
