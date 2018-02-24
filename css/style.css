@@ -1,53 +1,22 @@
-@supports (-ms-ime-align: auto) {
-	/* Microsoft EdgeV13&14 CSS styles go here */
-	html {
-		background-color: white;
-		padding: 0;
-		margin: 0;
-		width: 100%;
-		padding: 0;
-	}
-	body {
-		background-color: white;
-		margin: 0;
-		padding-bottom: 600px;
-		overflow: hidden;
-	}
-}
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-	/* IE10 & IE11 CSS styles go here */
-	html {
-		background-color: white;
-		padding: 0;
-		margin: 0;
-		width: 100%;
-		padding: 0;
-	}
-	body {
-		background-color: white;
-		margin: 0;
-		padding-bottom: 600px;
-		overflow: hidden;
-	}
-}
 html {
 	background-color: black;
 }
 header {
 	width: 100%;
-	margin: 0 auto;
-	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
 	max-width: 1200px;
 	animation-fill-mode: forwards;
-	-webkit-animation: fadein 4s;
+	-webkit-animation: fadein 5s;
 	/* Safari, Chrome and Opera > 12.1 */
-	-moz-animation: fadein 4s;
+	-moz-animation: fadein 5s;
 	/* Firefox < 16 */
-	-ms-animation: fadein 4s;
+	-ms-animation: fadein 5s;
 	/* Internet Explorer */
-	-o-animation: fadein 4s;
+	-o-animation: fadein 5s;
 	/* Opera < 12.1 */
-	animation: fadein 4s;
+	animation: fadein 5s;
 }
 @keyframes fadein {
 	from {
@@ -99,40 +68,19 @@ header {
 }
 header video {
 	width: 100%;
+	height: 100%;
+	max-width: 1200;
 }
 .video-overlay {
 	position: absolute;
 	width: 100%;
-	height: 100%;
+	height: 50%;
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23000000' fill-opacity='0.38' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
-}
-svg {
-	width: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	filter: invert();
-}
-svg text {
-	font-family: "Futura Bk BT", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	font-weight: 700;
-	text-transform: lowercase;
-	font-size: 48px;
-	left: 100px;
-}
-svg rect {
-	fill: white;
-}
-svg>rect {
-	-webkit-mask: url(#mask);
-	mask: url(#mask);
 }
 .info {
 	margin: 0 auto;
-	width: auto;
-	padding: 10px;
 	margin-top: 1vw;
+	width: auto;
 	text-align: center;
 	overflow: hidden;
 	white-space: nowrap;
@@ -199,8 +147,9 @@ svg>rect {
 		opacity: 1;
 	}
 }
+
 h1 {
-	font-size: calc(16px + 3vw);
+	font-size: calc(16px + 2.5vw);
 	font-weight: normal;
 	color: #93A4BE;
 	margin-bottom: 0.5vw;
@@ -209,30 +158,17 @@ h2 {
 	font-size: calc(10px + 1vw);
 	font-weight: normal;
 	color: white;
-	margin-bottom: 4vw;
-}
-h3 {
-	font-size: calc(8px + 1vw);
-	font-weight: normal;
-	color: #bbb;
-	margin-bottom: 1vw;
+	margin-bottom: 30px;
 }
 .contact {
-	margin: auto;
-	width: 400px;
-	margin-top: 20px;
-}
-.contact img {
-	margin-left: 0.5vw;
-	margin-right: 0.5vw;
-	color: white;
-	width: 2vw;
-	max-width: 30px;
+	margin: 0 auto;
+	width: 500px;
 }
 .info a {
 	color: #ccc;
 	text-decoration: none;
-	margin: 0;
+	margin-left: 5px;
+	margin-right: 5px;
 	-o-transition: color .2s ease-out, background 1s ease-in;
 	-ms-transition: color .2s ease-out, background 1s ease-in;
 	-moz-transition: color .2s ease-out, background 1s ease-in;
@@ -307,4 +243,26 @@ h3 {
 	animation-fill-mode: forwards;
 	-webkit-animation-direction: normal, alternate;
 	animation-direction: normal, alternate;
+}
+
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.info svg {
+	 fill: #ccc;
+	 width: 24px;
+	 height: 24px;
+
 }
