@@ -84,6 +84,7 @@ header video {
 .info {
 	margin: 0 auto;
 	margin-top: 1vw;
+	margin-bottom: 30px;
 	width: 100%;
 	max-width: 800px;
 	text-align: center;
