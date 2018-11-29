@@ -469,7 +469,7 @@ opacity: 1;
 /* End of video css */
 /* End of S1 css */
 #leshomardsimmortels {
-	background-image: url("../img/leshomards.jpg") no-repeat center center fixed; 
+	background-image: url("../img/leshomards.jpg"); 
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
