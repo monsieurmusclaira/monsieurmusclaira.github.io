@@ -3,7 +3,6 @@ html,
 body {
 	font-size: 14px !important;
 	background-color: black;
-	width: 100vw;
 	}
 body {
 	margin: 0;
@@ -450,10 +449,7 @@ opacity: 1;
 /* End of S1 css */
 #leshomardsimmortels {
 	background-image: url("../img/leshomards.jpg"); 
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+
 	}
 #springtide {
 	background-image: url("../img/SpringtideOutlook.jpg") 50% 0 no-repeat fixed;
