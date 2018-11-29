@@ -1,7 +1,4 @@
-html {
-	height: 100vh; /* set viewport constraint */
-	min-height: 100% !important;  /* enforce height */
-}
+
 html,
 body {
 	font-size: 14px !important;
@@ -9,10 +6,7 @@ body {
 	}
 body {
 	margin: 0;
-	height:100%;
-	overflow: scroll;
-	background-size: cover;
-	-webkit-background-size: cover; /* safari may need this */
+
 }
 
 ::-webkit-scrollbar { 
