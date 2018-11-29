@@ -368,7 +368,6 @@ h6 {
 /* End of button css */
 /* Start of Header Parallax Element Style*/
 .paral {
-	width: 100%;
 	min-height: 100%;
 	background-attachment: fixed;
 	background-size: cover;
@@ -469,14 +468,11 @@ opacity: 1;
 /* End of video css */
 /* End of S1 css */
 #leshomardsimmortels {
-	background-image: url("../img/leshomards.jpg"); 
+	background-image: url("../img/leshomards.jpg") ; 
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
 	background-size: cover;
-	-o-background-size: cover;
 	}
 #springtide {
 	background-image: url("../img/SpringtideOutlook.jpg") 50% 0 no-repeat fixed;
@@ -492,10 +488,7 @@ opacity: 1;
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
 	background-size: cover;
-	-o-background-size: cover;
 }
 /* End of section css */
 
