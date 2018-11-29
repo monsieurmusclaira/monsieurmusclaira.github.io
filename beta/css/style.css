@@ -1,13 +1,12 @@
 html {
 	height: 100vh; /* set viewport constraint */
-	min-height: 100%; /* enforce height */
+	min-height: 100% !important;  /* enforce height */
 }
 html,
 body {
 	font-size: 14px !important;
 	background-color: black;
-	
-}
+	}
 body {
 	margin: 0;
 	height:100%;
@@ -469,12 +468,13 @@ opacity: 1;
 /* End of S1 css */
 #leshomardsimmortels {
 	background-image: url("../img/leshomards.jpg"); 
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
 	background-size: cover;
-	height: 100%;
-	overflow: hidden;
 	}
 #springtide {
-	background-image: url("../img/SpringtideOutlook.jpg");
+	background-image: url("../img/SpringtideOutlook.jpg") 50% 0 no-repeat fixed;
 	height: 100vh;
 	width: 100%;
 }
@@ -484,9 +484,10 @@ opacity: 1;
 }
 #labellerosine {
 	background-image: url("../img/labellerosine_2.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
 	background-size: cover;
-	height: 100%;
-	overflow: hidden;
 }
 /* End of section css */
 
