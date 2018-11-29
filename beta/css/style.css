@@ -13,7 +13,7 @@ body {
 	height:100%;
 	overflow: scroll;
 	background-size: cover;
-
+	-webkit-background-size: cover; /* safari may need this */
 }
 body:after{
 	content:"";
