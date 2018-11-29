@@ -1,10 +1,19 @@
+html {
+	height: 100vh; /* set viewport constraint */
+	min-height: 100%; /* enforce height */
+}
 html,
 body {
 	font-size: 14px !important;
 	background-color: black;
+	
 }
 body {
-margin: 0;
+	margin: 0;
+	height:100%;
+	overflow: scroll;
+	background-size: cover;
+	-webkit-background-size: cover; /* safari may need this */
 }
 ::-webkit-scrollbar { 
     display: none; 
@@ -102,66 +111,66 @@ h6 {
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
  
 .fade-in {
- opacity:0;  /* make things invisible upon start */
- -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
- -moz-animation:fadeIn ease-in 1;
- animation:fadeIn ease-in 1;
- 
- -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
- -moz-animation-fill-mode:forwards;
- animation-fill-mode:forwards;
- 
- -webkit-animation-duration:1s;
- -moz-animation-duration:1s;
- animation-duration:1s;
+	opacity:0;  /* make things invisible upon start */
+	-webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+	-moz-animation:fadeIn ease-in 1;
+	animation:fadeIn ease-in 1;
+	
+	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+	
+	-webkit-animation-duration:1s;
+	-moz-animation-duration:1s;
+	animation-duration:1s;
 }
 
 .fade-in.one {
--webkit-animation-delay: 0.7s;
--moz-animation-delay: 0.7s;
-animation-delay: 0.7s;
+	-webkit-animation-delay: 0.7s;
+	-moz-animation-delay: 0.7s;
+	animation-delay: 0.7s;
 }
  
 .fade-in.two {
--webkit-animation-delay: 1.2s;
--moz-animation-delay:1.2s;
-animation-delay: 1.2s;
+	-webkit-animation-delay: 1.2s;
+	-moz-animation-delay:1.2s;
+	animation-delay: 1.2s;
 }
  
 .fade-in.three {
--webkit-animation-delay: 1.4s;
--moz-animation-delay: 1.4s;
-animation-delay: 1.4s;
+	-webkit-animation-delay: 1.4s;
+	-moz-animation-delay: 1.4s;
+	animation-delay: 1.4s;
 }
 
 .fade-in.four {
--webkit-animation-delay: 2s;
--moz-animation-delay: 2s;
-animation-delay: 2s;
+	-webkit-animation-delay: 2s;
+	-moz-animation-delay: 2s;
+	animation-delay: 2s;
 }
 	
 .fade-in.five {
--webkit-animation-delay: 2.5s;
--moz-animation-delay:2.5s;
-animation-delay: 2.5s;
+	-webkit-animation-delay: 2.5s;
+	-moz-animation-delay:2.5s;
+	animation-delay: 2.5s;
 }
 	
 .fade-in.six{
--webkit-animation-delay: 3s;
--moz-animation-delay: 3s;
-animation-delay: 3s;
+	-webkit-animation-delay: 3s;
+	-moz-animation-delay: 3s;
+	animation-delay: 3s;
 }
 
 .fade-in.seven{
--webkit-animation-delay: 3.5s;
--moz-animation-delay: 3.5s;
-animation-delay: 3.5s;
+	-webkit-animation-delay: 3.5s;
+	-moz-animation-delay: 3.5s;
+	animation-delay: 3.5s;
 }
 
 .fade-in.eight{
--webkit-animation-delay: 4s;
--moz-animation-delay: 4s;
-animation-delay: 4s;
+	-webkit-animation-delay: 4s;
+	-moz-animation-delay: 4s;
+	animation-delay: 4s;
 }
 
 @keyframes fadein {
@@ -199,64 +208,64 @@ animation-delay: 4s;
 @keyframes fadeInLaurel { from { opacity:0; } to { opacity:0.6; } }
 
 .laurel {
--webkit-animation:fadeInLaurel ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
--moz-animation:fadeInLaurel ease-in 1;
-animation:fadeInLaurel ease-in 1;
+	-webkit-animation:fadeInLaurel ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+	-moz-animation:fadeInLaurel ease-in 1;
+	animation:fadeInLaurel ease-in 1;
 
--webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
--moz-animation-fill-mode:forwards;
-animation-fill-mode:forwards;
+	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
 
--webkit-animation-duration:1s;
--moz-animation-duration:1s;
-animation-duration:1s;
+	-webkit-animation-duration:1s;
+	-moz-animation-duration:1s;
+	animation-duration:1s;
 }
 .laurel.one {
--webkit-animation-delay: 0.7s;
--moz-animation-delay: 0.7s;
-animation-delay: 0.7s;
+	-webkit-animation-delay: 0.7s;
+	-moz-animation-delay: 0.7s;
+	animation-delay: 0.7s;
 }
 	
 .laurel.two {
--webkit-animation-delay: 1.2s;
--moz-animation-delay:1.2s;
-animation-delay: 1.2s;
+	-webkit-animation-delay: 1.2s;
+	-moz-animation-delay:1.2s;
+	animation-delay: 1.2s;
 }
 	
 .laurel.three {
--webkit-animation-delay: 1.4s;
--moz-animation-delay: 1.4s;
-animation-delay: 1.4s;
+	-webkit-animation-delay: 1.4s;
+	-moz-animation-delay: 1.4s;
+	animation-delay: 1.4s;
 }
 
 .laurel.four {
--webkit-animation-delay: 2s;
--moz-animation-delay: 2s;
-animation-delay: 2s;
+	-webkit-animation-delay: 2s;
+	-moz-animation-delay: 2s;
+	animation-delay: 2s;
 }
 	
 .laurel.five {
--webkit-animation-delay: 2.5s;
--moz-animation-delay:2.5s;
-animation-delay: 2.5s;
+	-webkit-animation-delay: 2.5s;
+	-moz-animation-delay:2.5s;
+	animation-delay: 2.5s;
 }
 	
 .laurel.six{
--webkit-animation-delay: 3s;
--moz-animation-delay: 3s;
-animation-delay: 3s;
+	-webkit-animation-delay: 3s;
+	-moz-animation-delay: 3s;
+	animation-delay: 3s;
 }
 
 .laurel.seven{
--webkit-animation-delay: 3.5s;
--moz-animation-delay: 3.5s;
-animation-delay: 3.5s;
+	-webkit-animation-delay: 3.5s;
+	-moz-animation-delay: 3.5s;
+	animation-delay: 3.5s;
 }
 
 .laurel.eight{
--webkit-animation-delay: 4s;
--moz-animation-delay: 4s;
-animation-delay: 4s;
+	-webkit-animation-delay: 4s;
+	-moz-animation-delay: 4s;
+	animation-delay: 4s;
 }
 
 /* End of fade css*/
@@ -345,13 +354,13 @@ animation-delay: 4s;
 /* End of button css */
 /* Start of Header Parallax Element Style*/
 .paral {
-	min-height: 300px;
+	min-height: 100%;
 	background-attachment: fixed;
 	background-size: cover;
 	background-position: 50% 50%;
 	}
 .section {
-	min-height: 300px;
+	min-height: 100%;
 	position: relative;
 }
 
@@ -445,12 +454,15 @@ opacity: 1;
 /* End of video css */
 /* End of S1 css */
 #leshomardsimmortels {
-	background-image: url("../img/leshomards.jpg");
-	height: 100vh;
-}
+	background-image: url("../img/leshomards.jpg"); 
+	background-size: cover;
+	height: 100%;
+	overflow: hidden;
+	}
 #springtide {
 	background-image: url("../img/SpringtideOutlook.jpg");
 	height: 100vh;
+	width: 100%;
 }
 #anna {
 	background-image: url("../img/anna.jpg");
@@ -458,7 +470,9 @@ opacity: 1;
 }
 #labellerosine {
 	background-image: url("../img/labellerosine_2.jpg");
-	height: 100vh;
+	background-size: cover;
+	height: 100%;
+	overflow: hidden;
 }
 /* End of section css */
 
