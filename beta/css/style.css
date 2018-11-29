@@ -468,11 +468,7 @@ opacity: 1;
 /* End of video css */
 /* End of S1 css */
 #leshomardsimmortels {
-	background-image: url("../img/leshomards.jpg") ; 
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+	background-image: url("../img/leshomards.jpg"); 
 	}
 #springtide {
 	background-image: url("../img/SpringtideOutlook.jpg") 50% 0 no-repeat fixed;
@@ -485,10 +481,6 @@ opacity: 1;
 }
 #labellerosine {
 	background-image: url("../img/labellerosine_2.jpg");
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
 }
 /* End of section css */
 
