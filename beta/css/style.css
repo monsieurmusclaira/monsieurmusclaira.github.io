@@ -510,18 +510,22 @@ color: #FCCB44;
 .container section:nth-child(4) .bg-image {
 	background-color: purple;
 }
-.container section:nth-child(5) .bg-image:after {
+.container section:nth-child(5) .bg-image {
   background-image: url(https://images.unsplash.com/photo-1460804198264-011ca89eaa43?iq=100&fm=jpg&w=1000);
 }
 .container section:nth-child(6) .bg-image {
   background-image: url(https://images.unsplash.com/photo-1463123081488-789f998ac9c4?iq=100&fm=jpg&w=1000);
 }
 .container section .bg-image {
-  background-attachment: fixed;
-  background-size: cover;
+	content:"";
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
   background-position: center;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: absolute;
   z-index: 500;
   opacity: 1;
