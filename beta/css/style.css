@@ -501,19 +501,8 @@ color: #FCCB44;
 .container section:nth-child(1) .bg-image {
 	background-color: black;
 }
-.container section:nth-child(2) .bg-image:after {
-	content:"";
-	position:fixed; /* stretch a fixed position to the whole screen */
-	top:0;
-	height:100vh; /* fix for mobile browser address bar appearing disappearing */
-	left:0;
-	right:0;
-	z-index: 500; /* needed to keep in the background */
+.container section:nth-child(2) .bg-image {
 	background-image: url("../img/leshomards.jpg");
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
 }
 .container section:nth-child(3) .bg-image {
 	background-image: url("../img/labellerosine_2.jpg");
@@ -538,6 +527,19 @@ color: #FCCB44;
   opacity: 1;
 }
 
+.container section .bg-image:after {
+	content:"";
+	position:fixed; /* stretch a fixed position to the whole screen */
+	top:0;
+	height:100vh; /* fix for mobile browser address bar appearing disappearing */
+	left:0;
+	right:0;
+	z-index:-1; /* needed to keep in the background */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
 .s1 {
 	display: flex;
 	flex-direction: column;
