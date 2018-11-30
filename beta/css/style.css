@@ -510,7 +510,7 @@ color: #FCCB44;
 .container section:nth-child(4) .bg-image {
 	background-color: purple;
 }
-.container section:nth-child(5) .bg-image {
+.container section:nth-child(5) .bg-image:after {
   background-image: url(https://images.unsplash.com/photo-1460804198264-011ca89eaa43?iq=100&fm=jpg&w=1000);
 }
 .container section:nth-child(6) .bg-image {
