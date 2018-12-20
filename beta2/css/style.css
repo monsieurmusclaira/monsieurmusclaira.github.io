@@ -388,6 +388,14 @@ body.modal-open .section {
 	-ms-filter: blur(6px);
 	filter: blur(6px);	
 }
+body.modal-open .float-info {
+	-webkit-filter: blur(6px);
+	-moz-filter: blur(6px);
+	-o-filter: blur(6px);
+	-ms-filter: blur(6px);
+	filter: blur(6px);	
+}
+
 .modal-title {
 	color: #FCCB44;
 	line-height: 1em;
