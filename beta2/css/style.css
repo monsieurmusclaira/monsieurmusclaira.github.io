@@ -381,14 +381,7 @@ h6 {
 }
 /* End of movieinfo css */
 /* Start of modal css */
-body.modal-open .supreme-container {
-	-webkit-filter: blur(6px);
-	-moz-filter: blur(6px);
-	-o-filter: blur(6px);
-	-ms-filter: blur(6px);
-	filter: blur(6px);	
-}
-body.example-gallery-open #leshomardsimmortelsModal {
+body.modal-open .section {
 	-webkit-filter: blur(6px);
 	-moz-filter: blur(6px);
 	-o-filter: blur(6px);
@@ -658,10 +651,12 @@ color: #FCCB44;
 	}
 	#section2{
 		background-image: url(../img/leshomards.jpg);
+		background-position: 35% center;
 		padding: 6% 0 0 0;
 	}
 	#section3{
 		background-image: url(../img/labellerosine.jpg);
+		background-position: 35% center;
 		padding: 6% 0 0 0;
 	}
 	#section3 h1{
