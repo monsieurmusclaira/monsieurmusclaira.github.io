@@ -245,26 +245,26 @@
 						<!-- End of image gallery header -->
 						<!-- Start of image gallery -->
 						<div class="row justify-content-between m-0 px-2 px-md-0">
-							<a href="img/SpringtidePhone1.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400" class="col-6 col-md-12 m-0 p-1">
+							<a href="img/SpringtidePhone1.jpg" class="col-6 col-md-12 m-0 p-1 " data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400">
 								<img src="img/SpringtidePhone1.jpg" class="img-fluid m-0 p-0"  alt="Springtide">
 							</a>
-							<a href="img/SpringtideLake.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400" class="col-6 col-md-12 m-0 p-1">
+							<a href="img/SpringtideLake.jpg" class="col-6 col-md-12 m-0 p-1 d-none d-lg-block" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400">
 								<img src="img/SpringtideLake.jpg" class="img-fluid m-0 p-0" alt="Springtide">
 							</a>
 						</div>
 						<div class="row justify-content-center m-0 px-2 px-md-0">
-							<a href="img/SpringtidePhone1.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400" class="col-6 col-md-12 m-0 p-1">
+							<a href="img/SpringtidePhone1.jpg" class="col-6 col-md-12 m-0 p-1 d-none d-lg-block" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400">
 								<img src="img/SpringtidePhone1.jpg" class="img-fluid m-0 p-0" alt="Springtide">
 							</a>
-							<a href="img/SpringtideLake.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400" class="col-6 col-md-12 m-0 p-1">
+							<a href="img/SpringtideLake.jpg" class="col-6 col-md-12 m-0 p-1 d-none d-lg-block" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400">
 								<img src="img/SpringtideLake.jpg" class="img-fluid m-0 p-0" alt="Springtide">
 							</a>
 						</div>
 						<div class="row justify-content-center m-0 px-2 px-md-0">
-							<a href="img/SpringtidePhone1.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400" class="col-6 col-md-12 m-0 p-1">
+							<a href="img/SpringtidePhone1.jpg" class="col-6 col-md-12 m-0 p-1 d-none d-lg-block" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400">
 									<img src="img/SpringtidePhone1.jpg" class="img-fluid m-0 p-0" alt="Springtide">
 							</a>
-							<a href="img/SpringtideLake.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400" class="col-6 col-md-12 m-0 p-1">
+							<a href="img/SpringtideLake.jpg" class="col-6 col-md-12 m-0 p-1 d-none d-lg-block" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400">
 									<img src="img/SpringtideLake.jpg" class="img-fluid m-0 p-0" alt="Springtide">
 							</a>
 						</div>
@@ -468,20 +468,11 @@
 	</script>
 	<script type="text/javascript">
 		var deleteLog = false;
-
 		$(document).ready(function() {
 			$('#pagepiling').pagepiling({
-				direction: 'vertical',
 				scrollingSpeed: 700,
 				verticalCentered: true,
-				menu: '#menu',
-				anchors: ['page1', 'page2', 'page3'],
-				navigation: {
-					'textColor': '#f2f2f2',
-					'bulletsColor': '#ccc',
-					'position': 'right',
-					'tooltips': ['Showreel', 'Les Homards Immortels', 'La Belle Rosine']
-				}
+				navigation: false
 			});
 		});
 	</script>
