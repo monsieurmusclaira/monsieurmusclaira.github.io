@@ -498,11 +498,22 @@ color: #FCCB44;
   overflow: hidden;
   background-color: #000;
 }
+
+.bg-image {
+	background: no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.5; }
+}
 .container section:nth-child(1) .bg-image {
 	background-color: black;
 }
 .container section:nth-child(2) .bg-image {
-	background-image: url("../img/leshomards.jpg");
+	background-image: url(../img/leshomards.jpg) no-repeat center center;
+	background-size: cover; }
 }
 .container section:nth-child(3) .bg-image {
 	background-image: url("../img/labellerosine_2.jpg");
