@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Victor Maes</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Heebo:100,300,400|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.pagepiling.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script>
+	<script src="js/jquery.pagepiling.js"></script>
+	<script src="js/jquery-sectionsnap.js" type="text/javascript"></script>
+	<script src="js/blurscroll.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		var deleteLog = false;
+
+		$(document).ready(function() {
+	    	$('#pagepiling').pagepiling({
+	    		menu: '#menu',
+	    		anchors: ['page1', 'page2', 'page3'],
+	    		navigation: {
+		            'textColor': '#f2f2f2',
+		            'bulletsColor': '#ccc',
+		            'position': 'right',
+		            'tooltips': ['Showreel', 'Les Homards Immortels', 'La Belle Rosine']
+		        }
+			});
+	    });
+    </script>
+</head>
+<body>
+	<!-- Start of sections wrapper supreme container -->
+	<div id="pagepiling">
+		<!-- Start of Section 1 -->
+		<div class="section" id="section1">
+			<a class="link1" href="https://vimeo.com/256040751" target="_blank">
+				<video autoplay loop muted playsinline preload="auto" class="w-100 h-100 embed-responsive embed-responsive-16by9" poster="video/seethrough.gif">
+					<!-- MP4 for Safari, IE9, iPhone, iPad, Android, and Windows Phone 7 -->
+					<source type="video/mp4" src="video/seethrough.mp4" />
+					<!-- WebM/VP8 for Firefox4, Opera, and Chrome -->
+					<source type="video/webm" src="video/seethrough.webm" />
+						<!-- M4V for Apple -->
+					<source type="video/mp4" src="video/seethrough.m4v" />
+					<!-- Gif as backup -->
+					<img src="video/seethrough.gif" alt="gif heading">
+					<!-- Image as a last resort -->
+					<img src="img/leshomards.jpg" width="320" height="240" title="No video playback capabilities" />
+					Your browser does not support the video
+				</video>
+			</a>
+			<span id="scroll-btn">
+				<a href="#leshomardsimmortels"><span></span></a>
+			</span>
+		</div>
+		<!-- End of Section 1 -->
+		<!-- Start of Section 2 - Les Homards Immortels -->
+		<div class="section" id="section2">
+			<div class="movieinfo text-left">
+				<h2 class="mx-2 px-0">
+					Les Homards Immortels
+				</h2>
+				<h4 class="mx-2 px-0">
+					by Kate Voet
+				</h4>
+				<button type="button" class="btn-clear mx-2 text-left my-0 p-0" data-toggle="modal" data-target="#leshomardsimmortelsModal">
+					learn more
+				</button>
+			</div>
+		</div>
+		<!-- End of Section 2 - Les Homards Immortels -->
+		<!-- Start of Section 3 - La belle Rosine -->
+		<div class="section" id="section3">
+			<div class="movieinfo text-left">
+				<h2 class="mx-2 px-0">
+					La Belle Rosine
+				</h2>
+				<h4 class="mx-2 px-0">
+					by Gaetan Verdikt
+				</h4>
+				<button type="button" class="btn-clear mx-2 text-left my-0 p-0" data-toggle="modal" data-target="#labellerosineModal">
+					learn more
+				</button>
+			</div>
+		</div>
+		<!-- End of Section 3 - La belle Rosine -->
+		<!-- Contact Me -->
+		<div class="float-info container-fluid float-right">
+			<!-- Contact Button -->
+			<div class="float-info fade-in six btn-contact fixed-top text-right p-2 m-4 z-index-1">
+				<p class="p-0 m-0">victor maes<br/>cinematographer</p>
+				<button type="button" class="p-0 m-0 btn-clear" data-toggle="modal" data-target="#contactModal">
+					contact me
+				</button>
+			</div>
+			<!-- End of Contact Button -->
+		</div>
+		<!-- End of Contact Me -->
+	</div>
+	<!-- End of  movie list - supreme-container  -->
+	<!-- Start of modals -->
+	<!-- Start of Contact Modal -->
+	<div class="modal fade mt-5 pt-5 " id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModal" aria-hidden="true">
+		<div class="modal-dialog modal mt-5 pt-5 mx-auto" role="document">
+			<div class="modal-content border-0">
+				<div class="border-0 text-center">
+					<h2 class="modal-title">Get in touch!</h2>					
+				</div>
+				<div class="modal-body">
+					<div class="row mb-2">
+						<div class="function col-12 text-center">
+							email
+						</div>
+						<div class="names col-12 text-center">
+							hello@victormaes.com
+						</div>
+					</div>
+					<div class="row">
+						<div class="function col-12 text-center">
+							telephone
+						</div>
+						<div class="names col-12 text-center">
+							+32 471 27 99 33
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer border-0">
+					<button type="button" class="btn btn-clear" data-dismiss="modal" aria-label="Close">
+						close
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Contact Modal -->
+	<!-- Start of Les Homards Immortels Modal -->
+	<div id="leshomardsimmortelsModal" class="modal fade mx-auto container-fluid w-100" tabindex="-1" role="dialog" aria-labelledby="leshomardsimmortelsModal" aria-hidden="true">
+		<div class="modal-dialog modal-lg p-0 m-0 mx-auto" role="document">
+			<div class="modal-content container-fluid border-0 m-0 p-0">
+				<div class="row justify-content-end text-right m-0 p-0">
+					<div class="col-12 text-right fade-in eight summary col-lg-4 mt-3 mb-5 p-0">
+						<button type="button" class="btn btn-clear" data-dismiss="modal" aria-label="Close">
+							close
+						</button>
+					</div>
+				</div>
+				<!-- Start of movie header -->
+				<div class="row modal-header fade-in text-center text-lg-left justify-content-end border-0 mx-0 p-0 mt-5 mb-2 p-0">
+					<div class="col-12 col-lg-6 m-0 p-0">
+						<h1 class="modal-title m-0 p-0 display-4">Les Homards Immortels</h1>
+					</div>
+				</div>
+				<!-- End of movie header -->
+				<!-- Start of movie summary -->
+				<div class="row justify-content-center justify-content-md-end  text-center text-md-left fade-in m-0 p-0 ">
+					<div class="summary col-12 col-lg-6 mx-0 mt-0 mb-3 p-0">
+						<p class="font-weight-light mx-5 mx-sm-0 p-0">
+							Over the course of a lengthy night, Alba and Max meet after a brief and crude separation, rediscovering each other while uncovering their motivations and desires against the backdrop of an anonymous, foreign city. They find themselves balancing on the thin line between solitude and establishing a connection.
+						</p>
+					</div>
+				</div>
+				<!-- End of movie summary -->
+				<!-- Start of movie credits -->
+				<div class="row justify-content-end fade-in one mx-0 mb-5 p-0">		
+					<!-- Start of large movie credits -->				
+					<div class="credits col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 p-0 font-weight-light">
+						<div class="row">
+							<div class="function col-6  text-right text-nowrap">
+								director
+							</div>
+							<div class="names col-6 text-left  text-nowrap">
+								kate voet
+							</div>
+							<div class="function col-6  text-right text-nowrap">
+								writer
+							</div>
+							<div class="names col-6 text-left text-nowrap">
+								kate voet
+							</div>
+						</div>
+						<div class="row">
+							<div class="function col-6 text-right text-nowrap">
+								producer
+							</div>
+							<div class="names col-6 text-left text-nowrap">
+								kate voet
+							</div>
+							<div class="function col-6 text-right text-nowrap">
+								cinematographer
+							</div>
+							<div class="names col-6 text-left text-nowrap">
+								victor maes
+							</div>
+						</div>
+						<div class="row">
+							<div class="function col-6 text-right text-nowrap">
+								editor
+							</div>
+							<div class="names col-6 text-left text-nowrap">
+								jerome bartholomeus
+							</div>
+							<div class="function col-6 text-right text-nowrap">
+								sound design
+							</div>
+							<div class="names col-6 text-left text-nowrap">
+								senjan jansen
+							</div>
+						</div>
+						<div class="row">
+							<div class="function col-6 text-right text-nowrap">
+								gaffer
+							</div>
+							<div class="names col-6 text-left text-nowrap">
+								timo vergauwen
+							</div>
+							<div class="function col-6 text-right text-nowrap">
+								assistant camera
+							</div>
+							<div class="names col-6 text-left text-nowrap">
+								jan-willem rouwhorst
+							</div>
+						</div>	
+					</div>
+					<!-- End of large movie credits -->
+				</div>
+				<!-- End of movie credits -->
+				<!-- Start of gallery -->
+				<div class="row justify-content-between fade-in  p-0">
+					<!-- Start of festivals container -->
+					<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 pr-lg-5 mb-sm-5 mb-md-5">
+						<!-- Start of festival header -->
+						<div class="row fade-in four mt-1 mt-md-0 mb-md-3 mb-lg-0 mb-xl-2">
+							<h3 class="col text-center">
+								Festivals
+							</h3>
+						</div>
+						<!-- End of festival header -->
+						<!-- Start of festival gallery -->
+						<div class="row fade-in align-top justify-content-center mb-md-1">
+							<img src="img/laurel.png" class="img-fluid five align-self-start col-6 laurel" alt="laurel">
+							<img src="img/laurel.png" class="img-fluid six align-self-start col-6 laurel" alt="laurel">
+							<img src="img/laurel.png" class="img-fluid seven align-self-start col-6 laurel" alt="laurel">
+							<img src="img/laurel.png" class="img-fluid eight align-self-start col-6 laurel" alt="laurel">
+						</div>
+						<!-- End of festival gallery -->
+					</div>
+					<!-- End of festivals container -->
+					<!-- Start of image gallery container -->
+					<div class="fade-in three col-12 col-lg-6 gallery mx-auto m-0 p-0">
+						<!-- Start of image gallery header -->
+						<div class="row mt-1 mt-md-0 mb-md-3 mb-lg-0 mb-xl-2">
+							<h3 class="col text-center">
+								Stills
+							</h3>
+						</div>
+						<!-- End of image gallery header -->
+						<!-- Start of image gallery -->
+						<div class="row justify-content-between m-0 px-2 px-md-0">
+							<a href="img/SpringtidePhone1.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400" class="col-6 col-md-12 m-0 p-1">
+								<img src="img/SpringtidePhone1.jpg" class="img-fluid m-0 p-0"  alt="Springtide">
+							</a>
+							<a href="img/SpringtideLake.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400" class="col-6 col-md-12 m-0 p-1">
+								<img src="img/SpringtideLake.jpg" class="img-fluid m-0 p-0" alt="Springtide">
+							</a>
+						</div>
+						<div class="row justify-content-center m-0 px-2 px-md-0">
+							<a href="img/SpringtidePhone1.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400" class="col-6 col-md-12 m-0 p-1">
+								<img src="img/SpringtidePhone1.jpg" class="img-fluid m-0 p-0" alt="Springtide">
+							</a>
+							<a href="img/SpringtideLake.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400" class="col-6 col-md-12 m-0 p-1">
+								<img src="img/SpringtideLake.jpg" class="img-fluid m-0 p-0" alt="Springtide">
+							</a>
+						</div>
+						<div class="row justify-content-center m-0 px-2 px-md-0">
+							<a href="img/SpringtidePhone1.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400" class="col-6 col-md-12 m-0 p-1">
+									<img src="img/SpringtidePhone1.jpg" class="img-fluid m-0 p-0" alt="Springtide">
+							</a>
+							<a href="img/SpringtideLake.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400" class="col-6 col-md-12 m-0 p-1">
+									<img src="img/SpringtideLake.jpg" class="img-fluid m-0 p-0" alt="Springtide">
+							</a>
+						</div>
+						<!-- End of image gallery -->
+					</div>
+					<!-- End of image gallery container -->
+				</div>
+				<!-- End of movie gallery -->
+				<div class="row justify-content-end text-right mt-1 mx-0 p-0">
+					<div class="col-12 text-right fade-in one summary col-lg-4 mx-0 mt-3 mt-md-2 mb-4 mb-md-2 p-0">
+						<button type="button" class="btn btn-clear" data-dismiss="modal" aria-label="Close">
+							close
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Les Homards Immortels Wrapper -->
+	<!-- Start of La Belle Rosine Modal -->
+	<div id="labellerosineModal" class="modal fade mx-auto container-fluid w-100" tabindex="-1" role="dialog" aria-labelledby="labellerosineModal" aria-hidden="true">
+		<div class="modal-dialog modal-lg p-0 m-0 mx-auto" role="document">
+			<div class="modal-content container-fluid border-0 m-0 p-0">
+				<div class="row justify-content-end text-right m-0 p-0">
+					<div class="col-12 text-right fade-in eight summary col-lg-4 mt-3 mb-5 p-0">
+						<button type="button" class="btn btn-clear" data-dismiss="modal" aria-label="Close">
+							close
+						</button>
+					</div>
+				</div>
+				<!-- Start of movie header -->
+				<div class="row modal-header fade-in text-center text-lg-left justify-content-end border-0 mx-0 p-0 mt-5 mb-2 p-0">
+					<div class="col-12 col-lg-6 m-0 p-0">
+						<h1 class="modal-title m-0 p-0 display-4">La Belle Rosine</h1>
+					</div>
+				</div>
+				<!-- End of movie header -->
+				<!-- Start of movie summary -->
+				<div class="row justify-content-center justify-content-md-end  text-center text-md-left fade-in m-0 p-0 ">
+					<div class="summary col-12 col-lg-6 mx-0 mt-0 mb-3 p-0">
+						<p class="font-weight-light mx-5 mx-sm-0 p-0">
+							Over the course of a lengthy night, Alba and Max meet after a brief and crude separation, rediscovering each other while uncovering their motivations and desires against the backdrop of an anonymous, foreign city. They find themselves balancing on the thin line between solitude and establishing a connection.
+						</p>
+					</div>
+				</div>
+				<!-- End of movie summary -->
+				<!-- Start of movie credits -->
+				<div class="row justify-content-end fade-in one mx-0 mb-5 p-0">		
+					<!-- Start of large movie credits -->				
+					<div class="credits col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 p-0 font-weight-light">
+						<div class="row">
+							<div class="function col-6  text-right text-nowrap">
+								director
+							</div>
+							<div class="names col-6 text-left  text-nowrap">
+								kate voet
+							</div>
+							<div class="function col-6  text-right text-nowrap">
+								writer
+							</div>
+							<div class="names col-6 text-left text-nowrap">
+								kate voet
+							</div>
+						</div>
+						<div class="row">
+							<div class="function col-6 text-right text-nowrap">
+								producer
+							</div>
+							<div class="names col-6 text-left text-nowrap">
+								kate voet
+							</div>
+							<div class="function col-6 text-right text-nowrap">
+								cinematographer
+							</div>
+							<div class="names col-6 text-left text-nowrap">
+								victor maes
+							</div>
+						</div>
+						<div class="row">
+							<div class="function col-6 text-right text-nowrap">
+								editor
+							</div>
+							<div class="names col-6 text-left text-nowrap">
+								jerome bartholomeus
+							</div>
+							<div class="function col-6 text-right text-nowrap">
+								sound design
+							</div>
+							<div class="names col-6 text-left text-nowrap">
+								senjan jansen
+							</div>
+						</div>
+						<div class="row">
+							<div class="function col-6 text-right text-nowrap">
+								gaffer
+							</div>
+							<div class="names col-6 text-left text-nowrap">
+								timo vergauwen
+							</div>
+							<div class="function col-6 text-right text-nowrap">
+								assistant camera
+							</div>
+							<div class="names col-6 text-left text-nowrap">
+								jan-willem rouwhorst
+							</div>
+						</div>	
+					</div>
+					<!-- End of large movie credits -->
+				</div>
+				<!-- End of movie credits -->
+				<!-- Start of gallery -->
+				<div class="row justify-content-between fade-in  p-0">
+					<!-- Start of festivals container -->
+					<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 pr-lg-5 mb-sm-5 mb-md-5">
+						<!-- Start of festival header -->
+						<div class="row fade-in four mt-1 mt-md-0 mb-md-3 mb-lg-0 mb-xl-2">
+							<h3 class="col text-center">
+								Festivals
+							</h3>
+						</div>
+						<!-- End of festival header -->
+						<!-- Start of festival gallery -->
+						<div class="row fade-in align-top justify-content-center mb-md-1">
+							<img src="img/laurel.png" class="img-fluid five align-self-start col-6 laurel" alt="laurel">
+							<img src="img/laurel.png" class="img-fluid six align-self-start col-6 laurel" alt="laurel">
+							<img src="img/laurel.png" class="img-fluid seven align-self-start col-6 laurel" alt="laurel">
+							<img src="img/laurel.png" class="img-fluid eight align-self-start col-6 laurel" alt="laurel">
+						</div>
+						<!-- End of festival gallery -->
+					</div>
+					<!-- End of festivals container -->
+					<!-- Start of image gallery container -->
+					<div class="fade-in three col-12 col-lg-6 gallery mx-auto m-0 p-0">
+						<!-- Start of image gallery header -->
+						<div class="row mt-1 mt-md-0 mb-md-3 mb-lg-0 mb-xl-2">
+							<h3 class="col text-center">
+								Stills
+							</h3>
+						</div>
+						<!-- End of image gallery header -->
+						<!-- Start of image gallery -->
+						<div class="row justify-content-between m-0 px-2 px-md-0">
+							<a href="img/labellerosine.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400" class="col-6 col-md-12 m-0 p-1">
+								<img src="img/labellerosine.jpg" class="img-fluid m-0 p-0"  alt="Springtide">
+							</a>
+							<a href="img/labellerosine_2.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400" class="col-6 col-md-12 m-0 p-1">
+								<img src="img/labellerosine_2.jpg" class="img-fluid m-0 p-0" alt="Springtide">
+							</a>
+						</div>
+						<div class="row justify-content-center m-0 px-2 px-md-0">
+							<a href="img/labellerosine.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400" class="col-6 col-md-12 m-0 p-1">
+								<img src="img/labellerosine.jpg" class="img-fluid m-0 p-0" alt="Springtide">
+							</a>
+							<a href="img/labellerosine_2.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400" class="col-6 col-md-12 m-0 p-1">
+								<img src="img/labellerosine_2.jpg" class="img-fluid m-0 p-0" alt="Springtide">
+							</a>
+						</div>
+						<div class="row justify-content-center m-0 px-2 px-md-0">
+							<a href="img/labellerosine.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400" class="col-6 col-md-12 m-0 p-1">
+									<img src="img/labellerosine.jpg" class="img-fluid m-0 p-0" alt="Springtide">
+							</a>
+							<a href="img/labellerosine_2.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400" class="col-6 col-md-12 m-0 p-1">
+									<img src="img/labellerosine_2.jpg" class="img-fluid m-0 p-0" alt="Springtide">
+							</a>
+						</div>
+						<!-- End of image gallery -->
+					</div>
+					<!-- End of image gallery container -->
+				</div>
+				<!-- End of movie gallery -->
+				<div class="row justify-content-end text-right mt-1 mx-0 p-0">
+					<div class="col-12 text-right fade-in one summary col-lg-4 mx-0 mt-3 mt-md-2 mb-4 mb-md-2 p-0">
+						<button type="button" class="btn btn-clear" data-dismiss="modal" aria-label="Close">
+							close
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Les Homards Immortels Wrapper -->	
+	<!-- End of Modals -->
+	<!-- End of section wrapper supreme container -->
+	<!-- Start of scripts -->
+	<script>
+		$(document).ready(function() {
+			$(".section").css("min-height", $(window).height() + "px");
+			$(".sections-wrapper").sectionsnap({
+				delay : 50
+				, selector : '.section'
+				, reference : 1
+				, animationTime : 300
+			});
+		});
+	</script>
+	<script>
+		$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+								event.preventDefault();
+								$(this).ekkoLightbox();
+						});
+	</script>
+	<!-- End of scripts -->
+</body>
+</html>
