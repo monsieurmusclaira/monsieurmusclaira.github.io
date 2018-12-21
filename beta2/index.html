@@ -5,18 +5,16 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Heebo:100,300,400|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/jquery.pagepiling.css" />
+	<link rel="stylesheet" type="text/css" href="css/swipebox.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script>
 	<script src="js/jquery.pagepiling.js"></script>
-	<script src="js/jquery-sectionsnap.js" type="text/javascript"></script>
-	<script src="js/blurscroll.js" type="text/javascript"></script>
+	<script src="js/jquery.swipebox.js"></script>
 </head>
 <body>
 	<!-- Start of sections wrapper supreme container -->
@@ -136,7 +134,7 @@
 				<!-- Start of movie header -->
 				<div class="row modal-header fade-in text-center text-lg-left justify-content-end border-0 mx-0 p-0 mt-5 mb-2 p-0">
 					<div class="col-12 col-lg-6 m-0 p-0">
-						<h1 class="modal-title m-0 p-0 display-4">Les Homards Immortels</h1>
+						<h1 class="modal-title m-0 p-0 display-3">Les Homards Immortels</h1>
 					</div>
 				</div>
 				<!-- End of movie header -->
@@ -150,15 +148,17 @@
 				</div>
 				<!-- End of movie summary -->
 				<!-- Start of movie credits -->
-				<div class="row justify-content-end fade-in one mx-0 mb-5 p-0">		
+				<div class="row justify-content-end fade-in one mx-0 mb-4 p-0">		
 					<!-- Start of large movie credits -->				
 					<div class="credits col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 p-0 font-weight-light">
 						<div class="row">
 							<div class="function col-6  text-right text-nowrap">
 								director
 							</div>
-							<div class="names col-6 text-left  text-nowrap">
-								kate voet
+							<div class="names col-6 text-left text-nowrap">
+								<a href="https://www.imdb.com/name/nm3623048/">
+									kate voet
+								</a>	
 							</div>
 							<div class="function col-6  text-right text-nowrap">
 								writer
@@ -225,11 +225,11 @@
 						</div>
 						<!-- End of festival header -->
 						<!-- Start of festival gallery -->
-						<div class="row fade-in align-top justify-content-center mb-md-1">
-							<img src="img/laurel.png" class="img-fluid five align-self-start col-6 laurel" alt="laurel">
-							<img src="img/laurel.png" class="img-fluid six align-self-start col-6 laurel" alt="laurel">
-							<img src="img/laurel.png" class="img-fluid seven align-self-start col-6 laurel" alt="laurel">
-							<img src="img/laurel.png" class="img-fluid eight align-self-start col-6 laurel" alt="laurel">
+						<div class="row fade-in align-top justify-content-center m-0 p-0 mb-md-1">
+							<img src="img/laurel.png" class="img-fluid five align-self-start col-6 laurel " alt="laurel">
+							<img src="img/laurel.png" class="img-fluid six align-self-start col-6 laurel " alt="laurel">
+							<img src="img/laurel.png" class="img-fluid seven align-self-start col-6 laurel " alt="laurel">
+							<img src="img/laurel.png" class="img-fluid eight align-self-start col-6 laurel " alt="laurel">
 						</div>
 						<!-- End of festival gallery -->
 					</div>
@@ -245,36 +245,36 @@
 						<!-- End of image gallery header -->
 						<!-- Start of image gallery -->
 						<div class="row justify-content-between m-0 px-2 px-md-0">
-							<a href="img/SpringtidePhone1.jpg" class="col-12 col-xl-6 m-0 p-1 " data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400">
-								<img src="img/SpringtidePhone1.jpg" class="img-fluid m-0 p-0"  alt="Springtide">
-							</a>
-							<a href="img/SpringtideLake.jpg" class="col-12 col-xl-6 m-0 p-1 d-none d-xl-block" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400">
-								<img src="img/SpringtideLake.jpg" class="img-fluid m-0 p-0" alt="Springtide">
-							</a>
+							<div class="col m-0 p-0">
+								<a href="http://swipebox.csag.co/images/image-1.jpg" class="swipebox col-6 col-md-12 m-0 p-1 " title="Fog">
+									<img src="http://swipebox.csag.co/images/image-1.jpg" alt="image" class="img-fluid w-100 m-0 p-0">
+								</a>
+							</div>
+							<div class="col m-0 p-0">
+								<a href="http://swipebox.csag.co/images/image-2.jpg" class="swipebox col-6 col-md-12 m-0 p-1 " title="City">
+									<img src="http://swipebox.csag.co/images/image-2.jpg" alt="image" class="img-fluid w-100 m-0 p-0">
+								</a>
+							</div>
 						</div>
-						<div class="row justify-content-center m-0 px-2 px-md-0">
-							<a href="img/SpringtidePhone1.jpg" class="col-12  col-xl-6 m-0 p-1 d-none d-xl-block" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400">
-								<img src="img/SpringtidePhone1.jpg" class="img-fluid m-0 p-0" alt="Springtide">
-							</a>
-							<a href="img/SpringtideLake.jpg" class="col-12  col-xl-6 m-0 p-1 d-none d-xl-block" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400">
-								<img src="img/SpringtideLake.jpg" class="img-fluid m-0 p-0" alt="Springtide">
-							</a>
-						</div>
-						<div class="row justify-content-center m-0 px-2 px-md-0">
-							<a href="img/SpringtidePhone1.jpg" class="col-12  col-xl-6 m-0 p-1 d-none d-xl-block" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400">
-									<img src="img/SpringtidePhone1.jpg" class="img-fluid m-0 p-0" alt="Springtide">
-							</a>
-							<a href="img/SpringtideLake.jpg" class="col-12 col-xl-6 m-0 p-1 d-none d-xl-block" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400">
-									<img src="img/SpringtideLake.jpg" class="img-fluid m-0 p-0" alt="Springtide">
-							</a>
+						<div class="row justify-content-between m-0 px-2 px-md-0">
+							<div class="col m-0 p-0">
+								<a href="http://swipebox.csag.co/images/image-3.jpg" class="swipebox col-6 col-md-12 m-0 p-1" title="Street">
+									<img src="http://swipebox.csag.co/images/image-3.jpg" alt="image" class="img-fluid w-100 m-0 p-0">
+								</a>
+							</div>
+							<div class="col m-0 p-0">
+								<a href="http://swipebox.csag.co/images/image-4.jpg" class="swipebox col-6 col-md-12 m-0 p-1" title="Mustache Guy">
+									<img src="http://swipebox.csag.co/images/image-4.jpg" alt="image" class="img-fluid w-100 m-0 p-0">
+								</a>
+							</div>
 						</div>
 						<!-- End of image gallery -->
 					</div>
 					<!-- End of image gallery container -->
 				</div>
 				<!-- End of movie gallery -->
-				<div class="row justify-content-end text-right mt-1 mx-0 p-0">
-					<div class="col-12 text-right fade-in one summary col-lg-4 mx-0 mt-3 mt-md-2 mb-4 mb-md-2 p-0">
+				<div class="row justify-content-end text-right m-0 p-0 py-md-3 d-lg-none">
+					<div class="col m-0 p-0 text-right fade-in one summary">
 						<button type="button" class="btn btn-clear" data-dismiss="modal" aria-label="Close">
 							close
 						</button>
@@ -320,7 +320,9 @@
 								director
 							</div>
 							<div class="names col-6 text-left  text-nowrap">
-								kate voet
+								<a href="https://www.imdb.com/name/nm3623048/">
+									kate voet
+								</a>								
 							</div>
 							<div class="function col-6  text-right text-nowrap">
 								writer
@@ -397,7 +399,7 @@
 					</div>
 					<!-- End of festivals container -->
 					<!-- Start of image gallery container -->
-					<div class="fade-in three col-12 col-lg-6 gallery mx-auto m-0 p-0">
+					<div class="fade-in three col-12 col-lg-6 gallery mx-5 p-0">
 						<!-- Start of image gallery header -->
 						<div class="row mt-1 mt-md-0 mb-md-3 mb-lg-0 mb-xl-2">
 							<h3 class="col text-center">
@@ -407,8 +409,8 @@
 						<!-- End of image gallery header -->
 						<!-- Start of image gallery -->
 						<div class="row justify-content-between m-0 px-2 px-md-0">
-							<a href="img/labellerosine.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400" class="col-6 col-md-12 m-0 p-1">
-								<img src="img/labellerosine.jpg" class="img-fluid m-0 p-0"  alt="Springtide">
+							<a href="img/labellerosine.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400" class="col-6 col-md-12 m-0 p-1 ">
+								<img src="img/labellerosine.jpg" class="img-fluid w-100 m-0 p-0"  alt="Springtide">
 							</a>
 							<a href="img/labellerosine_2.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="1400" class="col-6 col-md-12 m-0 p-1">
 								<img src="img/labellerosine_2.jpg" class="img-fluid m-0 p-0" alt="Springtide">
@@ -449,23 +451,6 @@
 	<!-- End of Modals -->
 	<!-- End of section wrapper supreme container -->
 	<!-- Start of scripts -->
-	<script>
-		$(document).ready(function() {
-			$(".section").css("min-height", $(window).height() + "px");
-			$(".sections-wrapper").sectionsnap({
-				delay : 50
-				, selector : '.section'
-				, reference : 1
-				, animationTime : 300
-			});
-		});
-	</script>
-	<script>
-		$(document).on('click', '[data-toggle="lightbox"]', function(event) {
-								event.preventDefault();
-								$(this).ekkoLightbox();
-						});
-	</script>
 	<script type="text/javascript">
 		var deleteLog = false;
 		$(document).ready(function() {
@@ -476,6 +461,13 @@
 			});
 		});
 	</script>
+	<script type="text/javascript">
+		;( function( $ ) {
+		
+			$( '.swipebox' ).swipebox();
+		
+		} )( jQuery );
+		</script>
 	<!-- End of scripts -->
 </body>
 </html>
