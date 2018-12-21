@@ -395,7 +395,6 @@ body.modal-open .float-info {
 	-ms-filter: blur(6px);
 	filter: blur(6px);	
 }
-
 .modal-title {
 	color: #FCCB44;
 	line-height: 1em;
@@ -461,7 +460,7 @@ color: #FCCB44;
 /* End of modal css */
 /* Start of laurel css */
 .laurel {
-	width:5vw;
+	width: 5vw;
 	max-width: 200px;
 	opacity:0;  /* make things invisible upon start */
 
