@@ -322,7 +322,7 @@ h6 {
 /* Start of Button css */
 .btn-clear {
 	background-color: rgba(0, 0, 0, 0);
-	color: #FCCB44;
+	color: #FCCB44; 
 	font-variant: small-caps;
 	box-shadow: 0;
 	border: 0;
@@ -336,14 +336,19 @@ h6 {
 	border: 0;
 	padding: 0;
 }
-.btn-clear:active {
-	background-color: rgba(0, 0, 0, 0);
-	font-variant: small-caps;
-	border: 0;
-	box-shadow: 0;
-	border: 0;
-	padding: 0;
+.btn:active,.btn:focus {
+	outline: none !important;
+	box-shadow: none;
 }
+.btn-close {
+	font-size: 1.8em;
+	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+	font-weight: 300;
+}
+.btn:focus,.btn:active {
+	outline: none !important;
+	box-shadow: none;
+ }
 /* End of button css */
 /* Start of Header Parallax Element Style*/
 
@@ -377,7 +382,7 @@ h6 {
 }
 .movieinfo button {
 	font-family: 'Heebo', Helvetica, Arial, sans-serif;
-	font-weight: 500;
+	font-weight: 500 ; 
 }
 /* End of movieinfo css */
 /* Start of modal css */
