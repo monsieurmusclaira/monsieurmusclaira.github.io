@@ -196,9 +196,9 @@ h6 {
 }​
 
 /* Start of laurel fade css*/
-@-webkit-keyframes fadeInLaurel { from { opacity:0; } to { opacity:0.6; } }
-@-moz-keyframes fadeInLaurel { from { opacity:0; } to { opacity:0.6; } }
-@keyframes fadeInLaurel { from { opacity:0; } to { opacity:0.6; } }
+@-webkit-keyframes fadeInLaurel { from { opacity:0; } to { opacity:0.8; } }
+@-moz-keyframes fadeInLaurel { from { opacity:0; } to { opacity:0.8; } }
+@keyframes fadeInLaurel { from { opacity:0; } to { opacity:0.8; } }
 
 .laurel {
 	-webkit-animation:fadeInLaurel ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
@@ -289,8 +289,8 @@ h6 {
   transition-property: transform;
 }
 .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
-  -webkit-transform: scale(1.05);
-  transform: scale(1.05);
+  -webkit-transform: scale(1.02);
+  transform: scale(1.02);
 }
 
 /* Shrink */
@@ -408,16 +408,6 @@ body.modal-open .float-info {
 	font-weight: 100;
 }
 
-.btn-invis {
-	height: 7em;
-	width: 52vw;
-	background-color: rgba(0, 0, 0, 0);
-}
-
-.modal {
-	
-}
-
 .modal-content {
 	margin-right: 20px;
 	padding-right: 20px;
@@ -495,78 +485,6 @@ color: #FCCB44;
   position: relative;
 }
 
-
-
-#sction1 {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	height: 100%;
-	width: 100%;
-	max-width: 70%;
-	justify-content: center;
-	text-align: left;
-	z-index: 1000;
-	color: #e67e22;
-	margin: 0 auto;
-	font-size: 26px;
-	position: relative;
-	padding-bottom: 5em;
-  }
-
-  #section1 video {
-	margin-bottom: 10em;
-	max-width: 1800px;
-	width: 100%;
-	-webkit-transition: opacity 0.5s ease-in-out;
-	-moz-transition: opacity 0.5s ease-in-out;
-	-ms-transition: opacity 0.5s ease-in-out;
-	-o-transition: opacity 0.5s ease-in-out;
-	transition: opacity 0.5s ease-in-out;
-	opacity: 1;	
-	display: block;
-	margin: auto;
-	z-index: 1000;
-  }
-
-  #section1 a:after {
-	content: '';
-	position: absolute;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23000000' fill-opacity='0.38' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
-	border-radius: 5px;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 1030;
-	-webkit-transition: background-colory 0.5s ease-in-out;
-	-moz-transition: background-color 0.5s ease-in-out;
-	-ms-transition: background-color 0.5s ease-in-out;
-	-o-transition: background-color 0.5s ease-in-out;
-	transition: background-color 0.5s ease-in-out;
-} 
-
-#section1 a:hover:after {
-	content: '';
-	position: absolute;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23000000' fill-opacity='0.38' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
-	border-radius: 5px;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 1030;
-	-webkit-transition: background-colory 0.5s ease-in-out;
-	-moz-transition: background-color 0.5s ease-in-out;
-	-ms-transition: background-color 0.5s ease-in-out;
-	-o-transition: background-color 0.5s ease-in-out;
-	transition: background-color 0.5s ease-in-out;
-	background-color: rgba(0, 0, 0, 0.2)
-}
-#scroll-btn {
-	;
-}
-
 #scroll-btn a {
 	padding-top: 10em;
   }
@@ -584,7 +502,7 @@ color: #FCCB44;
 	animation: scroll-btn 1.5s infinite;
 	box-sizing: border-box;
   }
-  @-webkit-keyframes sscroll-btn {
+  @-webkit-keyframes scroll-btn {
 	0% {
 	  -webkit-transform: rotate(-45deg) translate(0, 0);
 	  opacity: 0;
@@ -627,21 +545,6 @@ color: #FCCB44;
   position: relative;
   padding-bottom: 3em;
 }
-.container section .stuff h2 {
-  margin: 0px;
-}
-.container section .stuff:before, .container section .stuff:after {
-  width: 100%;
-  height: 1px;
-  display: block;
-  background-color: #d35400;
-  content: "";
-  margin: 30px 0;
-}
-
-
-
-
 
 	/* Centered texts in each section
 	* --------------------------------------- */
@@ -672,40 +575,4 @@ color: #FCCB44;
 		background-image: url(../img/labellerosine.jpg);
 		background-position: 35% center;
 		padding: 6% 0 0 0;
-	}
-	#section3 h1{
-		color: #000;
-	}
-
-
-
-	#section1 h1{
-		position: absolute;
-		left: 0;
-		right: 0;
-		margin: 0 auto;
-		top: 30px;
-		color: #fff;
-	}
-
-	#section2 .intro{
-		position: absolute;
-		left: 0;
-		right: 0;
-		margin: 0 auto;
-		top: 30px;
-	}
-	#section2 h1,
-	#section2 p{
-		text-shadow: 1px 5px 20px #000;
-	}
-
-	#section3 h1,
-	#section3 p{
-		text-shadow: 1px 5px 20px #000;
-		color: #fff;
-	}
-
-	#infoMenu li a{
-			color: #fff;
-	}
+	}	
