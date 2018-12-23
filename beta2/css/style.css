@@ -357,7 +357,7 @@ h6 {
 
 /* Start of video css */
 .video-container {
-
+	max-width: 1400px;
 } 
 
 
