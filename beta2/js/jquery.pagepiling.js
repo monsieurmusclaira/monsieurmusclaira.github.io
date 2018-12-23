@@ -43,7 +43,7 @@
             },
             normalScrollElements: null,
             normalScrollElementTouchThreshold: 5,
-            touchSensitivity: 5,
+            touchSensitivity: 50,
             keyboardScrolling: true,
             sectionSelector: '.section',
             animateAnchor: false,
