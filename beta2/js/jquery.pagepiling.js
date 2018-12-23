@@ -851,6 +851,85 @@
             }
         }
 
+
+        /**
+        * Creates a vertical navigation bar.
+        */
+        function addVerticalNavigation(){
+            $('body').append('<div id="pp-nav"><ul></ul></div>');
+            var nav = $('#pp-nav');
+
+            nav.css('color', options.navigation.textColor);
+
+            nav.addClass(options.navigation.position);
+
+            for(var cont = 0; cont < $('.pp-section').length; cont++){
+                var link = '';
+                if(options.anchors.length){
+                    link = options.anchors[cont];
+                }
+                if(options.navigation.tooltips !== 'undefined'){
+                    var tooltip = options.navigation.tooltips[cont];
+                    if(typeof tooltip === 'undefined'){
+                        tooltip = '';
+                    }
+                }
+
+                nav.find('ul').append('<li data-tooltip="' + tooltip + '"><a href="#' + link + '"><span></span></a></li>');
+            }
+
+            nav.find('span').css('border-color', options.navigation.bulletsColor);
+        }
+
+        /**
+        * Scrolls to the section when clicking the navigation bullet
+        */
+        $(document).on('click touchstart', '#pp-nav a', function(e){
+            e.preventDefault();
+            var index = $(this).parent().index();
+
+            scrollPage($('.pp-section').eq(index));
+        });
+
+        /**
+        * Navigation tooltips
+        */
+        $(document).on({
+            mouseenter: function(){
+                var tooltip = $(this).data('tooltip');
+                $('<div class="pp-tooltip ' + options.navigation.position +'">' + tooltip + '</div>').hide().appendTo($(this)).fadeIn(200);
+            },
+            mouseleave: function(){
+                $(this).find('.pp-tooltip').fadeOut(200, function() {
+                    $(this).remove();
+                });
+            }
+        }, '#pp-nav li');
+
+         /**
+         * Activating the website navigation dots according to the given slide name.
+         */
+        function activateNavDots(name, sectionIndex){
+            if(options.navigation){
+                $('#pp-nav').find('.active').removeClass('active');
+                if(name){
+                    $('#pp-nav').find('a[href="#' + name + '"]').addClass('active');
+                }else{
+                    $('#pp-nav').find('li').eq(sectionIndex).find('a').addClass('active');
+                }
+            }
+        }
+
+        /**
+         * Activating the website main menu elements according to the given slide name.
+         */
+        function activateMenuElement(name){
+            if(options.menu){
+                $(options.menu).find('.active').removeClass('active');
+                $(options.menu).find('[data-menuanchor="'+name+'"]').addClass('active');
+            }
+        }
+
         /**
         * Checks for translate3d support
         * @return boolean
