@@ -367,9 +367,6 @@ h6 {
 
 
 /* Start of movieinfo css */
-.movieinfo {
-
-}
 .movieinfo h2 {
 	font-family: 'Heebo', Helvetica, Arial, sans-serif;
 	font-weight: 100;
@@ -439,12 +436,16 @@ body.modal-open .float-info {
 	font-variant: small-caps;
 }
 .function {
-	font-weight: 100;
+	font-weight: 300;
 	color: hsla(0, 0%, 100%, 0.74);
 }
 .names {
 	color: hsla(0, 0%, 100%, 0.94);
-	font-weight: 300;
+	font-weight: 400;
+}
+.names a {
+	color: inherit;
+	text-decoration: inherit; 
 }
 .modal-content img {
 	margin-bottom: 15px;
@@ -460,17 +461,6 @@ color: #FCCB44;
 	opacity:0;  /* make things invisible upon start */
 
 }
-.close {
-	
-}
-
-
-
-
-
-
-
-
 .container {
   display: flex;
   align-content: center;
