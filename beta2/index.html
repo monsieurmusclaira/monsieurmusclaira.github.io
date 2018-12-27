@@ -96,38 +96,82 @@
 	<!-- End of  movie list - supreme-container  -->
 	<!-- Start of modals -->
 	<!-- Start of Contact Modal -->
-	<div class="modal fade mt-5 pt-5 " id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModal" aria-hidden="true">
-		<div class="modal-dialog modal mt-5 pt-5 mx-auto" role="document">
-			<div class="modal-content border-0">
-				<div class="border-0 text-center">
-					<h2 class="modal-title">Get in touch!</h2>					
-				</div>
-				<div class="modal-body">
-					<div class="row mb-2">
-						<div class="function col-12 text-center">
-							email
-						</div>
-						<div class="names col-12 text-center">
-							hello@victormaes.com
-						</div>
-					</div>
-					<div class="row">
-						<div class="function col-12 text-center">
-							telephone
-						</div>
-						<div class="names col-12 text-center">
-							+32 471 27 99 33
-						</div>
+	<div id="contactModal" class="modal fade m-0 p-0 container-fluid" tabindex="-1" role="dialog" aria-labelledby="contactModal" aria-hidden="true">
+		<div class="modal-dialog modal-lg p-0 m-0 mx-auto" role="document">
+			<div class="modal-content container-fluid border-0 m-0 p-0">
+				<div class="row justify-content-end text-right m-0 p-0">
+					<div class="col text-right fade-in two col-lg-6 mt-3 mb-5 p-0">
+						<button type="button" class="btn btn-clear mr-5 mr-sm-0" data-dismiss="modal" aria-label="Close">
+							close
+						</button>
 					</div>
 				</div>
-				<div class="modal-footer border-0">
-					<button type="button" class="btn btn-clear" data-dismiss="modal" aria-label="Close">
-						close
+				<!-- Start of movie header -->
+				<div class="row modal-header justify-content-center justify-content-md-end fade-in border-0 m-0 p-0">
+					<div class="col col-lg-6 m-0 p-0">
+						<h1 class="modal-title m-0 ml-5 ml-sm-0 p-0 text-left display-4">Come say hi!</h1>
+					</div>
+				</div>
+				<!-- End of movie header -->
+				<!-- Start of movie summary -->
+				<div class="row justify-content-center justify-content-md-end text-center text-md-left fade-in m-0 p-0 ">
+					<div class="summary col col-lg-6 mx-0 mt-0 mb-3 p-0">
+						<p class="font-weight-light mx-5 mx-sm-0 p-0">
+							Here is room for a bio.
+						</p>
+					</div>
+				</div>
+				<!-- End of movie summary -->
+				<!-- Start of movie credits -->
+				<div class="row justify-content-end fade-in one mx-0 mb-4 p-0">		
+					<!-- Start of large movie credits -->				
+					<div class="credits col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 p-0 font-weight-light">
+						<div class="row">
+							<div class="function col-6  text-right text-nowrap">
+								email
+							</div>
+							<div class="names col-6 text-left text-nowrap">
+									hello@victormaes.com	
+							</div>
+							<div class="function col-6  text-right text-nowrap">
+								telephone
+							</div>
+							<div class="names col-6 text-left text-nowrap">
+									+32 471 27 99 33
+							</div>
+						</div>
+					</div>
+					<!-- End of large movie credits -->
+				</div>
+				<!-- End of movie credits -->
+				<!-- Start of gallery -->
+				<div class="row justify-content-between fade-in  p-0">
+					<!-- Start of image gallery container -->
+					<div class="fade-in three col-12 col-lg-6 gallery mx-auto m-0 p-0">
+						<!-- Start of image gallery header -->
+						<div class="row mt-1 mt-md-0 mb-md-3 mb-lg-0 mb-xl-2">
+							<h3 class="col text-center">
+								Instagram
+							</h3>
+						</div>
+						<!-- End of image gallery header -->
+						<!-- Start of image gallery -->
+								<!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/5d825f4a586a5de6a1c0bc39716f1e47.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+
+						<!-- End of image gallery -->
+					</div>
+					<!-- End of image gallery container -->
+				</div>
+				<!-- End of movie gallery -->
+				<div class="row col m-0 p-0 py-md-3 d-lg-none">
+					<button type="button" class="btn btn-clear fade-in four text-center col-lg-6 mt-3 mb-5 p-0" data-dismiss="modal" aria-label="Close">
+							close
 					</button>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- End of Les Homards Immortels Wrapper -->
 	<!-- End of Contact Modal -->
 	<!-- Start of Les Homards Immortels Modal -->
 	<div id="leshomardsimmortelsModal" class="modal fade m-0 p-0 container-fluid" tabindex="-1" role="dialog" aria-labelledby="leshomardsimmortelsModal" aria-hidden="true">
@@ -165,7 +209,7 @@
 								director
 							</div>
 							<div class="names col-6 text-left text-nowrap">
-								<a href="https://www.imdb.com/name/nm3623048/">
+								<a href="https://www.imdb.com/name/nm3623048/" target="_blank">
 									kate voet
 								</a>	
 							</div>
@@ -173,7 +217,9 @@
 								writer
 							</div>
 							<div class="names col-6 text-left text-nowrap">
-								kate voet
+								<a href="https://www.imdb.com/name/nm3623048/" target="_blank">
+									kate voet
+								</a>
 							</div>
 						</div>
 						<div class="row">
@@ -181,13 +227,17 @@
 								producer
 							</div>
 							<div class="names col-6 text-left text-nowrap">
-								kate voet
+								<a href="https://www.imdb.com/name/nm3623048/" target="_blank">
+									kate voet
+								</a>
 							</div>
-							<div class="function col-6 text-right text-nowrap">
+							<div class="function col-6 text-right text-nowrap" >
 								cinematographer
 							</div>
 							<div class="names col-6 text-left text-nowrap">
-								victor maes
+								<a href="https://www.victormaes.com/" target="_blank">
+									victor maes
+								</a>
 							</div>
 						</div>
 						<div class="row">
@@ -195,7 +245,9 @@
 								editor
 							</div>
 							<div class="names col-6 text-left text-nowrap">
-								jerome bartholomeus
+								<a href="http://jerome.bartholomeus.eu/" target="_blank">
+									jérôme bartholomeus
+								</a>
 							</div>
 							<div class="function col-6 text-right text-nowrap">
 								sound design
@@ -209,7 +261,9 @@
 								gaffer
 							</div>
 							<div class="names col-6 text-left text-nowrap">
-								timo vergauwen
+								<a href="https://timovergauwen.com/" target="_blank">
+									timo vergauwen
+								</a>
 							</div>
 							<div class="function col-6 text-right text-nowrap">
 								assistant camera
