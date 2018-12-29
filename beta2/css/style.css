@@ -1,283 +1,397 @@
 html {
-	height: 100vh; /* set viewport constraint */
-	min-height: 100% !important;  /* enforce height */
+  height: 100vh; /* set viewport constraint */
+  min-height: 100% !important; /* enforce height */
 }
 html,
 body {
-	font-size: 14px !important;
-	background-color: black;
-	margin: 0;
-		}
-::-webkit-scrollbar { 
-    display: none; 
+  font-size: 14px !important;
+  background-color: black;
+  margin: 0;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 h1 {
-	font-size: 1.602em;
+  font-size: 1.602em;
 }
 h2 {
-	font-size: 1.824em;
-	color: #FCCB44;
+  font-size: 1.824em;
+  color: #fccb44;
 }
 h3 {
-	font-size: 1.266em;
+  font-size: 1.266em;
 }
 h4 {
-	font-size: 1.125em;
+  font-size: 1.125em;
 }
 h5 {
-	font-size: 0.889em;
+  font-size: 0.889em;
 }
 h6 {
-	font-size: 0.79em;
+  font-size: 0.79em;
 }
 .display-1 {
-	font-size: 3.906em;
+  font-size: 3.906em;
 }
 .display-2 {
-	font-size: 3.125em;
+  font-size: 3.125em;
 }
 .display-3 {
-	font-size: 2.5em;
+  font-size: 2.5em;
 }
 .display-4 {
-	font-size: 2em;
+  font-size: 2em;
 }
 @media (min-width: 48em) {
-	h1 {
-	  font-size: 2.441em;
-	}
-	h2 {
-		font-size: 1.953em;
-	}
-	h3 {
-		font-size: 1.563em;
-	}
-	h4 {
-		font-size: 1.25em;
-	}
-	.display-1 {
-		font-size: 6em;
-	}
-	.display-2 {
-		font-size: 5.5em;
-	}
-	.display-3 {
-		font-size: 4.5em;
-	}
-	.display-4 {
-		font-size: 3.5em;
-	}
+  h1 {
+    font-size: 2.441em;
+  }
+  h2 {
+    font-size: 1.953em;
+  }
+  h3 {
+    font-size: 1.563em;
+  }
+  h4 {
+    font-size: 1.25em;
+  }
+  .display-1 {
+    font-size: 6em;
+  }
+  .display-2 {
+    font-size: 5.5em;
+  }
+  .display-3 {
+    font-size: 4.5em;
+  }
+  .display-4 {
+    font-size: 3.5em;
+  }
 }
 /* Large devices (desktops, 62em and up) */
 @media (min-width: 62em) {
-	html,
-	body {
-		font-size: 16px !important;
-	}
+  html,
+  body {
+    font-size: 16px !important;
+  }
 }
 
 /* Extra large devices (large desktops, 75em and up) */
 @media (min-width: 75em) {
-	html,
-	body {
-		font-size: 18px !important;
-	}
+  html,
+  body {
+    font-size: 18px !important;
+  }
 }
 /*  Pen Specific Styles */
 .jumbotron {
-	font-size: 16px;
-	@media (min-width: 62em) {
-		font-size: 20px;
-	}
-	h1 {
-		border-bottom: 4px solid #0275d8;
-	}
-	p.lead {
-		border-radius: 4px;
-	}
+  font-size: 16px;
+  @media (min-width: 62em) {
+    font-size: 20px;
+  }
+  h1 {
+    border-bottom: 4px solid #0275d8;
+  }
+  p.lead {
+    border-radius: 4px;
+  }
 }
 /* Start of fade css*/
 /* make keyframes that tell the start state and the end state of our object */
- 
-@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
- 
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .fade-in {
-	opacity:0;  /* make things invisible upon start */
-	-webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-	-moz-animation:fadeIn ease-in 1;
-	animation:fadeIn ease-in 1;
-	
-	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
-	-moz-animation-fill-mode:forwards;
-	animation-fill-mode:forwards;
-	
-	-webkit-animation-duration:1s;
-	-moz-animation-duration:1s;
-	animation-duration:1s;
+  opacity: 0; /* make things invisible upon start */
+  -webkit-animation: fadeIn ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode: forwards; /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  animation-duration: 1s;
 }
 
 .fade-in.one {
-	-webkit-animation-delay: 0.7s;
-	-moz-animation-delay: 0.7s;
-	animation-delay: 0.7s;
+  -webkit-animation-delay: 0.7s;
+  -moz-animation-delay: 0.7s;
+  animation-delay: 0.7s;
 }
- 
+
 .fade-in.two {
-	-webkit-animation-delay: 1.2s;
-	-moz-animation-delay:1.2s;
-	animation-delay: 1.2s;
+  -webkit-animation-delay: 1.2s;
+  -moz-animation-delay: 1.2s;
+  animation-delay: 1.2s;
 }
- 
+
 .fade-in.three {
-	-webkit-animation-delay: 1.4s;
-	-moz-animation-delay: 1.4s;
-	animation-delay: 1.4s;
+  -webkit-animation-delay: 1.4s;
+  -moz-animation-delay: 1.4s;
+  animation-delay: 1.4s;
 }
 
 .fade-in.four {
-	-webkit-animation-delay: 2s;
-	-moz-animation-delay: 2s;
-	animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  animation-delay: 2s;
 }
-	
+
 .fade-in.five {
-	-webkit-animation-delay: 2.5s;
-	-moz-animation-delay:2.5s;
-	animation-delay: 2.5s;
-}
-	
-.fade-in.six{
-	-webkit-animation-delay: 3s;
-	-moz-animation-delay: 3s;
-	animation-delay: 3s;
+  -webkit-animation-delay: 2.5s;
+  -moz-animation-delay: 2.5s;
+  animation-delay: 2.5s;
 }
 
-.fade-in.seven{
-	-webkit-animation-delay: 3.5s;
-	-moz-animation-delay: 3.5s;
-	animation-delay: 3.5s;
+.fade-in.six {
+  -webkit-animation-delay: 3s;
+  -moz-animation-delay: 3s;
+  animation-delay: 3s;
 }
 
-.fade-in.eight{
-	-webkit-animation-delay: 4s;
-	-moz-animation-delay: 4s;
-	animation-delay: 4s;
+.fade-in.seven {
+  -webkit-animation-delay: 3.5s;
+  -moz-animation-delay: 3.5s;
+  animation-delay: 3.5s;
+}
+
+.fade-in.eight {
+  -webkit-animation-delay: 4s;
+  -moz-animation-delay: 4s;
+  animation-delay: 4s;
+}
+
+.fade-in.nine {
+-webkit-animation-delay: 4.5s;
+-moz-animation-delay: 4.5s;
+animation-delay: 4.5s;
+}
+
+.fade-in.ten {
+-webkit-animation-delay: 5s;
+-moz-animation-delay: 5s;
+animation-delay: 5s;
+}
+
+.fade-in.eleven {
+-webkit-animation-delay: 5.5s;
+-moz-animation-delay: 5.5s;
+animation-delay: 5.5s;
+}
+
+.fade-in.twelve {
+-webkit-animation-delay: 6s;
+-moz-animation-delay: 6s;
+animation-delay: 6s;
 }
 
 @keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Firefox */
 @-moz-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Safari and Chrome */
 @-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Internet Explorer */
 @-ms-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}​
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+​
 
 /* Opera */
 @-o-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}​
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+​
 
 /* Start of laurel fade css*/
-@-webkit-keyframes fadeInLaurel { from { opacity:0; } to { opacity:0.8; } }
-@-moz-keyframes fadeInLaurel { from { opacity:0; } to { opacity:0.8; } }
-@keyframes fadeInLaurel { from { opacity:0; } to { opacity:0.8; } }
+@-webkit-keyframes fadeInLaurel {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+@-moz-keyframes fadeInLaurel {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+@keyframes fadeInLaurel {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
 
 .laurel {
-	-webkit-animation:fadeInLaurel ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-	-moz-animation:fadeInLaurel ease-in 1;
-	animation:fadeInLaurel ease-in 1;
+  -webkit-animation: fadeInLaurel ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation: fadeInLaurel ease-in 1;
+  animation: fadeInLaurel ease-in 1;
 
-	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
-	-moz-animation-fill-mode:forwards;
-	animation-fill-mode:forwards;
+  -webkit-animation-fill-mode: forwards; /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 
-	-webkit-animation-duration:1s;
-	-moz-animation-duration:1s;
-	animation-duration:1s;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  animation-duration: 1s;
 }
 .laurel.one {
-	-webkit-animation-delay: 0.7s;
-	-moz-animation-delay: 0.7s;
-	animation-delay: 0.7s;
+  -webkit-animation-delay: 0.7s;
+  -moz-animation-delay: 0.7s;
+  animation-delay: 0.7s;
 }
-	
+
 .laurel.two {
-	-webkit-animation-delay: 1.2s;
-	-moz-animation-delay:1.2s;
-	animation-delay: 1.2s;
+  -webkit-animation-delay: 1.2s;
+  -moz-animation-delay: 1.2s;
+  animation-delay: 1.2s;
 }
-	
+
 .laurel.three {
-	-webkit-animation-delay: 1.4s;
-	-moz-animation-delay: 1.4s;
-	animation-delay: 1.4s;
+  -webkit-animation-delay: 1.4s;
+  -moz-animation-delay: 1.4s;
+  animation-delay: 1.4s;
 }
 
 .laurel.four {
-	-webkit-animation-delay: 2s;
-	-moz-animation-delay: 2s;
-	animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  animation-delay: 2s;
 }
-	
+
 .laurel.five {
-	-webkit-animation-delay: 2.5s;
-	-moz-animation-delay:2.5s;
-	animation-delay: 2.5s;
-}
-	
-.laurel.six{
-	-webkit-animation-delay: 3s;
-	-moz-animation-delay: 3s;
-	animation-delay: 3s;
+  -webkit-animation-delay: 2.5s;
+  -moz-animation-delay: 2.5s;
+  animation-delay: 2.5s;
 }
 
-.laurel.seven{
-	-webkit-animation-delay: 3.5s;
-	-moz-animation-delay: 3.5s;
-	animation-delay: 3.5s;
+.laurel.six {
+  -webkit-animation-delay: 3s;
+  -moz-animation-delay: 3s;
+  animation-delay: 3s;
 }
 
-.laurel.eight{
-	-webkit-animation-delay: 4s;
-	-moz-animation-delay: 4s;
-	animation-delay: 4s;
+.laurel.seven {
+  -webkit-animation-delay: 3.5s;
+  -moz-animation-delay: 3.5s;
+  animation-delay: 3.5s;
 }
+
+.laurel.eight {
+  -webkit-animation-delay: 4s;
+  -moz-animation-delay: 4s;
+  animation-delay: 4s;
+}
+
+
+.laurel.nine{
+	-webkit-animation-delay: 4.5s;
+	-moz-animation-delay: 4.5s;
+	animation-delay: 4.5s;
+  }
+  
+  .laurel.ten {
+	-webkit-animation-delay: 5s;
+	-moz-animation-delay: 5s;
+	animation-delay: 5s;
+  }
+  
+  .laurel.eleven {
+	-webkit-animation-delay: 5.5s;
+	-moz-animation-delay: 5.5s;
+	animation-delay: 5.5s;
+  }
+  
+  .laurel.twelve {
+	-webkit-animation-delay: 6s;
+	-moz-animation-delay: 6s;
+	animation-delay: 6s;
+  }
+
 
 /* End of fade css*/
 
 /* Start of Hover button css*/
-.hvr-grow  a {
-	color: #ccc;
-	text-decoration: none;
-	margin-left: 5px;
-	margin-right: 5px;
-	-o-transition: color .2s ease-out, background 1s ease-in;
-	-ms-transition: color .2s ease-out, background 1s ease-in;
-	-moz-transition: color .2s ease-out, background 1s ease-in;
-	-webkit-transition: color .2s ease-out, background 1s ease-in;
-	/* ...and now override with proper CSS property */
-	transition: color .2s ease-out, background 1s ease-in;
+.hvr-grow a {
+  color: #ccc;
+  text-decoration: none;
+  margin-left: 5px;
+  margin-right: 5px;
+  -o-transition: color 0.2s ease-out, background 1s ease-in;
+  -ms-transition: color 0.2s ease-out, background 1s ease-in;
+  -moz-transition: color 0.2s ease-out, background 1s ease-in;
+  -webkit-transition: color 0.2s ease-out, background 1s ease-in;
+  /* ...and now override with proper CSS property */
+  transition: color 0.2s ease-out, background 1s ease-in;
 }
-.hvr-grow  a:hover {
-	color: #8393A7;
+.hvr-grow a:hover {
+  color: #8393a7;
 }
 .hvr-grow {
   -webkit-transform: perspective(1px) translateZ(0);
@@ -288,178 +402,182 @@ h6 {
   -webkit-transition-property: transform;
   transition-property: transform;
 }
-.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
   -webkit-transform: scale(1.02);
   transform: scale(1.02);
 }
 
 /* Shrink */
 .hvr-shrink {
-	display: inline-block;
-	vertical-align: middle;
-	-webkit-transform: perspective(1px) translateZ(0);
-	transform: perspective(1px) translateZ(0);
-	box-shadow: 0 0 1px transparent;
-	-webkit-transition-duration: 0.3s;
-	transition-duration: 0.3s;
-	-webkit-transition-property: transform;
-	transition-property: transform;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
 }
-.hvr-shrink:hover, .hvr-shrink:focus, .hvr-shrink:active {
+.hvr-shrink:hover,
+.hvr-shrink:focus,
+.hvr-shrink:active {
   -webkit-transform: scale(0.9);
   transform: scale(0.9);
 }
 /* End of Hover button css*/
 /* Start of Float css */
-  .float-info {
-	color: rgba(240, 240, 240, 0.5);
-	line-height: 1.1em;
-	font-variant: small-caps;
-	font-family: 'Heebo', Helvetica, Arial, sans-serif;
-	font-weight: 500;
+.float-info {
+  color: rgba(240, 240, 240, 0.5);
+  line-height: 1.1em;
+  font-variant: small-caps;
+  font-family: "Heebo", Helvetica, Arial, sans-serif;
+  font-weight: 500;
 }
 /* Start of Button css */
 .btn-clear {
-	background-color: rgba(0, 0, 0, 0);
-	color: #FCCB44; 
-	font-variant: small-caps;
-	box-shadow: 0;
-	border: 0;
-	padding: 0;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fccb44;
+  font-variant: small-caps;
+  box-shadow: 0;
+  border: 0;
+  padding: 0;
 }
 .btn-clear:hover {
-	color: hsla(0, 0%, 100%, 0.70);
-	font-variant: small-caps;
-	border: 0;
-	box-shadow: 0;
-	border: 0;
-	padding: 0;
+  color: hsla(0, 0%, 100%, 0.7);
+  font-variant: small-caps;
+  border: 0;
+  box-shadow: 0;
+  border: 0;
+  padding: 0;
 }
-.btn:active,.btn:focus {
-	outline: none !important;
-	box-shadow: none;
+.btn:active,
+.btn:focus {
+  outline: none !important;
+  box-shadow: none;
 }
 .btn-close {
-	font-size: 1.8em;
-	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
-	font-weight: 300;
+  font-size: 1.8em;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-weight: 300;
 }
-.btn:focus,.btn:active {
-	outline: none !important;
-	box-shadow: none;
- }
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
 /* End of button css */
 /* Start of Header Parallax Element Style*/
 
-/* End of Header Parallax Element Style*/	
+/* End of Header Parallax Element Style*/
 /* Start of section css */
 /* Start of S1 css */
 
 /* Start of video css */
 .video-container {
-	max-width: 1400px;
-} 
-
-
+  max-width: 1400px;
+}
 
 /* End of video css */
 /* End of S1 css */
 
-
 /* Start of movieinfo css */
 .movieinfo h2 {
-	font-family: 'Heebo', Helvetica, Arial, sans-serif;
-	font-weight: 100;
+  font-family: "Heebo", Helvetica, Arial, sans-serif;
+  font-weight: 100;
 }
 .movieinfo h4 {
-	color: white;
-	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
-	font-weight: 300;
+  color: white;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-weight: 300;
 }
 .movieinfo button {
-	font-family: 'Heebo', Helvetica, Arial, sans-serif;
-	font-weight: 300 ; 
-	font-size: 1.2em;
+  font-family: "Heebo", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1.2em;
 }
 /* End of movieinfo css */
 /* Start of modal css */
+
 body.modal-open .section {
-	-webkit-filter: blur(6px);
-	-moz-filter: blur(6px);
-	-o-filter: blur(6px);
-	-ms-filter: blur(6px);
-	filter: blur(6px);	
+  -webkit-filter: blur(6px);
+  -moz-filter: blur(6px);
+  -o-filter: blur(6px);
+  -ms-filter: blur(6px);
+  filter: blur(6px);
 }
 body.modal-open .float-info {
-	-webkit-filter: blur(6px);
-	-moz-filter: blur(6px);
-	-o-filter: blur(6px);
-	-ms-filter: blur(6px);
-	filter: blur(6px);	
+  -webkit-filter: blur(6px);
+  -moz-filter: blur(6px);
+  -o-filter: blur(6px);
+  -ms-filter: blur(6px);
+  filter: blur(6px);
 }
 .modal-title {
-	color: #FCCB44;
-	line-height: 1em;
-	font-family: 'Heebo', Helvetica, Arial, sans-serif;
-	font-weight: 100;
+  color: #fccb44;
+  line-height: 1em;
+  font-family: "Heebo", Helvetica, Arial, sans-serif;
+  font-weight: 100;
 }
 
-.modal-content {
-	margin-right: 20px;
-	padding-right: 20px;
+.modal {
+  background-color: rgba(0, 0, 0, 0);
+  width 100%;
+  margin: auto;
+}
+.modal-dialog {
 	background-color: rgba(0, 0, 0, 0);
-
+	max-width: 1400px !important;
+	margin: auto;	
 }
-.modal-content h2 {
-	color: #FCCB44;
-	font-family: 'Heebo', Helvetica, Arial, sans-serif;
+.modal-dialog h2 {
+	color: #fccb44;
+	font-family: "Heebo", Helvetica, Arial, sans-serif;
 	font-weight: 100;
-}
-.modal-content h3 {
-	color: #FCCB44;
-	font-family: 'Heebo', Helvetica, Arial, sans-serif;
+  }
+  .modal-dialog h3 {
+	color: #fccb44;
+	font-family: "Heebo", Helvetica, Arial, sans-serif;
 	font-weight: 300;
-}
-.summary {
+  }
+  .modal-dialog .summary {
 	color: hsla(0, 0%, 100%, 0.94);
 	text-align: justify;
 	font-size: 1.1em;
-	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+	font-family: "Montserrat", Helvetica, Arial, sans-serif;
 	font-weight: 100;
+  }
+.modal-dialog .credits {
+  line-height: 1.3em;
+  font-family: "Heebo", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.05em;
+  font-size: 1em;
+  font-variant: small-caps;
 }
-
-.credits {
-	line-height: 1.3em;
-	font-family: 'Heebo', Helvetica, Arial, sans-serif;
-	letter-spacing: 0.05em;
-	font-size: 1em;
-	font-variant: small-caps;
+.modal-dialog .function {
+  font-weight: 300;
+  color: hsla(0, 0%, 100%, 0.74);
 }
-.function {
-	font-weight: 300;
-	color: hsla(0, 0%, 100%, 0.74);
-}
-.names {
-	color: hsla(0, 0%, 100%, 0.94);
-	font-weight: 400;
+.modal-dialog .names {
+  color: hsla(0, 0%, 100%, 0.94);
+  font-weight: 400;
 }
 .names a {
-	color: inherit;
-	text-decoration: inherit; 
-}
-.modal-content img {
-	margin-bottom: 15px;
+  color: inherit;
+  text-decoration: inherit;
 }
 .modal-footer button {
-color: #FCCB44;
+  color: #fccb44;
 }
 /* End of modal css */
 /* Start of laurel css */
 .laurel {
-	width: 5vw;
-	max-width: 200px;
-	opacity:0;  /* make things invisible upon start */
-
+	min-width: 12em;
+width: 100%;
+  max-width: 15em;
+  opacity: 0; /* make things invisible upon start */
 }
 .container {
   display: flex;
@@ -475,49 +593,49 @@ color: #FCCB44;
 }
 
 #scroll-btn a {
-	padding-top: 10em;
+  padding-top: 10em;
+}
+#scroll-btn a span {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: scroll-btn 1.5s infinite;
+  animation: scroll-btn 1.5s infinite;
+  box-sizing: border-box;
+}
+@-webkit-keyframes scroll-btn {
+  0% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+    opacity: 0;
   }
-  #scroll-btn a span {
-	position: absolute;
-	width: 24px;
-	height: 24px;
-	margin-left: -12px;
-	border-left: 1px solid #fff;
-	border-left: 1px solid #fff;
-	border-bottom: 1px solid #fff;
-	-webkit-transform: rotate(-45deg);
-	transform: rotate(-45deg);
-	-webkit-animation: scroll-btn 1.5s infinite;
-	animation: scroll-btn 1.5s infinite;
-	box-sizing: border-box;
+  50% {
+    opacity: 1;
   }
-  @-webkit-keyframes scroll-btn {
-	0% {
-	  -webkit-transform: rotate(-45deg) translate(0, 0);
-	  opacity: 0;
-	}
-	50% {
-	  opacity: 1;
-	}
-	100% {
-	  -webkit-transform: rotate(-45deg) translate(-20px, 20px);
-	  opacity: 0;
-	}
+  100% {
+    -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0;
   }
-  @keyframes scroll-btn {
-	0% {
-	  transform: rotate(-45deg) translate(0, 0);
-	  opacity: 0;
-	}
-	50% {
-	  opacity: 1;
-	}
-	100% {
-	  transform: rotate(-45deg) translate(-20px, 20px);
-	  opacity: 0;
-	}
+}
+@keyframes scroll-btn {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+    opacity: 0;
   }
-  
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+}
+
 .movieinfo {
   display: flex;
   flex-direction: column;
@@ -535,33 +653,32 @@ color: #FCCB44;
   padding-bottom: 3em;
 }
 
-	/* Centered texts in each section
+/* Centered texts in each section
 	* --------------------------------------- */
-	.section{
-		text-align:center;
-	}
+.section {
+  text-align: center;
+}
 
-
-	/* Backgrounds will cover all the section
+/* Backgrounds will cover all the section
 	* --------------------------------------- */
-	#section1,
-	#section2,
-	#section3{
-		background-size: cover;
-	}
+#section1,
+#section2,
+#section3 {
+  background-size: cover;
+}
 
-	/* Defining each section background and styles
+/* Defining each section background and styles
 	* --------------------------------------- */
-	#section1{
-		background-color: black;
-	}
-	#section2{
-		background-image: url(../img/leshomards.jpg);
-		background-position: 35% center;
-		padding: 6% 0 0 0;
-	}
-	#section3{
-		background-image: url(../img/labellerosine.jpg);
-		background-position: 35% center;
-		padding: 6% 0 0 0;
-	}	
+#section1 {
+  background-color: black;
+}
+#section2 {
+  background-image: url(../img/leshomards.jpg);
+  background-position: 35% center;
+  padding: 6% 0 0 0;
+}
+#section3 {
+  background-image: url(../img/labellerosine.jpg);
+  background-position: 35% center;
+  padding: 6% 0 0 0;
+}
