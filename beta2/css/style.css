@@ -523,48 +523,50 @@ body.modal-open .float-info {
 }
 
 .modal {
-  background-color: rgba(0, 0, 0, 0);
-  width 100%;
-  margin: auto;
+  min-width: 100% !important;
+  width: 100%;
 }
 .modal-dialog {
+	min-width: 100% !important;
+	width: 100%;
+}
+.modal-content {
 	background-color: rgba(0, 0, 0, 0);
 	max-width: 1400px !important;
-	margin: auto;	
 }
-.modal-dialog h2 {
+.modal-content h2 {
 	color: #fccb44;
 	font-family: "Heebo", Helvetica, Arial, sans-serif;
 	font-weight: 100;
   }
-  .modal-dialog h3 {
+  .modal-content h3 {
 	color: #fccb44;
 	font-family: "Heebo", Helvetica, Arial, sans-serif;
 	font-weight: 300;
   }
-  .modal-dialog .summary {
+  .modal-content .summary {
 	color: hsla(0, 0%, 100%, 0.94);
 	text-align: justify;
 	font-size: 1.1em;
 	font-family: "Montserrat", Helvetica, Arial, sans-serif;
 	font-weight: 100;
   }
-.modal-dialog .credits {
+.modal-content .credits {
   line-height: 1.3em;
   font-family: "Heebo", Helvetica, Arial, sans-serif;
   letter-spacing: 0.05em;
   font-size: 1em;
   font-variant: small-caps;
 }
-.modal-dialog .function {
+.modal-content .function {
   font-weight: 300;
   color: hsla(0, 0%, 100%, 0.74);
 }
-.modal-dialog .names {
+.modal-content .names {
   color: hsla(0, 0%, 100%, 0.94);
   font-weight: 400;
 }
-.names a {
+.modal-content .names a {
   color: inherit;
   text-decoration: inherit;
 }
