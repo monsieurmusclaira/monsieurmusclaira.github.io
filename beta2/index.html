@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Victor Maes</title>
-    <meta charset="utf-8" />
+	<!-- Start of html head -->
+	<meta charset="utf-8" />
+	<meta
+	name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+    <title>Victor Maes - Cinematographer</title>
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      name="description"
+      content="The cinematography porfolio of Victor Maes"
     />
+    <meta name="keywords" content="HTML, CSS, XML, JavaScript" />
+    <meta name="author" content="Victor Maes" />
+    <!-- Load CDN css and fonts -->
     <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
       rel="stylesheet"
@@ -17,9 +25,11 @@
       href="https://fonts.googleapis.com/css?family=Heebo:100,300,400|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700"
       rel="stylesheet"
     />
+    <!-- Load local CSS -->
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/jquery.pagepiling.css" />
     <link rel="stylesheet" type="text/css" href="css/swipebox.css" />
+    <!--Load scripts and dependencies -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
@@ -38,6 +48,7 @@
     ></script>
     <script src="js/jquery.pagepiling.js"></script>
     <script src="js/jquery.swipebox.js"></script>
+    <!-- End of html head -->
   </head>
   <body>
     <!-- Start of sections wrapper supreme container -->
@@ -79,9 +90,9 @@
             click here to see my showreel
           </a>
         </div>
-        <div class="fade-in three mt-5">
+        <div class="fade-in text-center three mt-5">
           <div id="scroll-btn">
-            <a class="" href="#leshomardsimmortels"><span></span></a>
+            <a class="" href="#section2"><span></span></a>
           </div>
         </div>
       </div>
@@ -362,7 +373,7 @@
             <div class="col-12 col-lg-6 pr-lg-5 mb-sm-5 mb-md-5">
               <!-- Start of festival header -->
               <div
-                class="row fade-in four mt-1 mt-md-0 mb-md-3 mb-lg-0 mb-xl-2"
+                class="row fade-in five mt-1 mt-md-0 mb-md-3 mb-lg-0 mb-xl-2"
               >
                 <h3 class="col text-center">Festivals</h3>
               </div>
@@ -416,15 +427,17 @@
             </div>
             <!-- End of festivals container -->
             <!-- Start of image gallery container -->
-            <div class="fade-in three col-12 col-lg-6 gallery mx-auto m-0 p-0">
+            <div class="col-12 col-lg-6 gallery mx-auto m-0 p-0">
               <!-- Start of image gallery header -->
-              <div class="row mt-1 mt-md-0 mb-md-3 mb-lg-0 mb-xl-2">
+              <div
+                class="row fade-in three mt-1 mt-md-0 mb-md-3 mb-lg-0 mb-xl-2"
+              >
                 <h3 class="col text-center">Stills</h3>
               </div>
               <!-- End of image gallery header -->
               <!-- Start of image gallery -->
               <div class="row justify-content-between m-0 p-0">
-                <div class="col m-0 p-0">
+                <div class="col fade-in four m-0 p-0">
                   <a
                     href="http://swipebox.csag.co/images/image-1.jpg"
                     class="swipebox col-6 col-md-12 m-0 p-1 "
@@ -437,7 +450,7 @@
                     />
                   </a>
                 </div>
-                <div class="col m-0 p-0">
+                <div class="col fade-in five m-0 p-0">
                   <a
                     href="http://swipebox.csag.co/images/image-2.jpg"
                     class="swipebox col-6 col-md-12 m-0 p-1 "
@@ -451,7 +464,7 @@
                   </a>
                 </div>
               </div>
-              <div class="row justify-content-between m-0 p-0">
+              <div class="row fade-in six justify-content-between m-0 p-0">
                 <div class="col m-0 p-0">
                   <a
                     href="http://swipebox.csag.co/images/image-3.jpg"
@@ -465,7 +478,7 @@
                     />
                   </a>
                 </div>
-                <div class="col m-0 p-0">
+                <div class="col fade-in seven m-0 p-0">
                   <a
                     href="http://swipebox.csag.co/images/image-4.jpg"
                     class="swipebox col-6 col-md-12 m-0 p-1"
@@ -484,16 +497,18 @@
             <!-- End of image gallery container -->
           </div>
           <!-- End of movie gallery -->
-          <div class="row col m-0 p-0 py-md-3 d-lg-none">
+          <!-- Start of mobile close button -->
+          <div class="row col m-0 p-0 py-md-3 d-md-display">
             <button
               type="button"
-              class="btn btn-clear fade-in four text-center col-lg-6 mt-3 mb-5 p-0"
+              class="btn btn-clear fade-in four text-center col-lg-6  mb-5 px-0 py-5"
               data-dismiss="modal"
               aria-label="Close"
             >
               close
             </button>
           </div>
+          <!-- End of mobile close button -->
         </div>
       </div>
     </div>
@@ -761,8 +776,15 @@
         $("#pagepiling").pagepiling({
           scrollingSpeed: 700,
           verticalCentered: true,
-          navigation: false,
-          loopBottom: true
+		  loopBottom: true,
+		  menu: '#menu' ,
+	    		anchors: ['page1', 'page2', 'page3'],
+	    		navigation: {
+		            'textColor': '#f2f2f2',
+		            'bulletsColor': '#ccc',
+		            'position': 'right',
+					'tooltips': ['Showreel', 'Les Homards Immortels', 'La Belle Rosine', 'Page 4']
+				}
         });
       });
     </script>
