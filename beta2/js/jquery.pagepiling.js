@@ -97,7 +97,7 @@
         };
 
         /**
-        * Moves sectio up
+        * Moves section up
         */
         PP.moveSectionUp = function () {
             var prev = $('.pp-section.active').prev('.pp-section');
