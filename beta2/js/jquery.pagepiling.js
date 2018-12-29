@@ -856,7 +856,7 @@
         * Creates a vertical navigation bar.
         */
         function addVerticalNavigation(){
-            $('body').append('<div id="pp-nav"><ul></ul></div>');
+            $('body').append('<div id="pp-nav" class="d-none d-lg-block"><ul></ul></div>');
             var nav = $('#pp-nav');
 
             nav.css('color', options.navigation.textColor);

@@ -188,27 +188,27 @@ h6 {
 }
 
 .fade-in.nine {
--webkit-animation-delay: 4.5s;
--moz-animation-delay: 4.5s;
-animation-delay: 4.5s;
+  -webkit-animation-delay: 4.5s;
+  -moz-animation-delay: 4.5s;
+  animation-delay: 4.5s;
 }
 
 .fade-in.ten {
--webkit-animation-delay: 5s;
--moz-animation-delay: 5s;
-animation-delay: 5s;
+  -webkit-animation-delay: 5s;
+  -moz-animation-delay: 5s;
+  animation-delay: 5s;
 }
 
 .fade-in.eleven {
--webkit-animation-delay: 5.5s;
--moz-animation-delay: 5.5s;
-animation-delay: 5.5s;
+  -webkit-animation-delay: 5.5s;
+  -moz-animation-delay: 5.5s;
+  animation-delay: 5.5s;
 }
 
 .fade-in.twelve {
--webkit-animation-delay: 6s;
--moz-animation-delay: 6s;
-animation-delay: 6s;
+  -webkit-animation-delay: 6s;
+  -moz-animation-delay: 6s;
+  animation-delay: 6s;
 }
 
 @keyframes fadein {
@@ -260,8 +260,6 @@ animation-delay: 6s;
     opacity: 1;
   }
 }
-​
-
 /* Start of laurel fade css*/
 @-webkit-keyframes fadeInLaurel {
   from {
@@ -302,78 +300,76 @@ animation-delay: 6s;
   animation-duration: 1s;
 }
 .laurel.one {
-  -webkit-animation-delay: 0.7s;
-  -moz-animation-delay: 0.7s;
-  animation-delay: 0.7s;
-}
-
-.laurel.two {
-  -webkit-animation-delay: 1.2s;
-  -moz-animation-delay: 1.2s;
-  animation-delay: 1.2s;
-}
-
-.laurel.three {
   -webkit-animation-delay: 1.4s;
   -moz-animation-delay: 1.4s;
   animation-delay: 1.4s;
 }
 
+.laurel.two {
+  -webkit-animation-delay: 1.8s;
+  -moz-animation-delay: 1.8s;
+  animation-delay: 1.8s;
+}
+
+.laurel.three {
+  -webkit-animation-delay: 2.2s;
+  -moz-animation-delay: 2.2s;
+  animation-delay: 2.2s;
+}
+
 .laurel.four {
-  -webkit-animation-delay: 2s;
-  -moz-animation-delay: 2s;
-  animation-delay: 2s;
+  -webkit-animation-delay: 2.6s;
+  -moz-animation-delay: 2.6s;
+  animation-delay: 2.6s;
 }
 
 .laurel.five {
-  -webkit-animation-delay: 2.5s;
-  -moz-animation-delay: 2.5s;
-  animation-delay: 2.5s;
-}
-
-.laurel.six {
   -webkit-animation-delay: 3s;
   -moz-animation-delay: 3s;
   animation-delay: 3s;
 }
 
+.laurel.six {
+  -webkit-animation-delay: 3.4s;
+  -moz-animation-delay: 3.4s;
+  animation-delay: 3.4s;
+}
+
 .laurel.seven {
-  -webkit-animation-delay: 3.5s;
-  -moz-animation-delay: 3.5s;
-  animation-delay: 3.5s;
+  -webkit-animation-delay: 3.8s;
+  -moz-animation-delay: 3.8s;
+  animation-delay: 3.8s;
 }
 
 .laurel.eight {
-  -webkit-animation-delay: 4s;
-  -moz-animation-delay: 4s;
-  animation-delay: 4s;
+  -webkit-animation-delay: 4.2s;
+  -moz-animation-delay: 4.2s;
+  animation-delay: 4.2s;
 }
 
+.laurel.nine {
+  -webkit-animation-delay: 4.6s;
+  -moz-animation-delay: 4.6s;
+  animation-delay: 4.6s;
+}
 
-.laurel.nine{
-	-webkit-animation-delay: 4.5s;
-	-moz-animation-delay: 4.5s;
-	animation-delay: 4.5s;
-  }
-  
-  .laurel.ten {
-	-webkit-animation-delay: 5s;
-	-moz-animation-delay: 5s;
-	animation-delay: 5s;
-  }
-  
-  .laurel.eleven {
-	-webkit-animation-delay: 5.5s;
-	-moz-animation-delay: 5.5s;
-	animation-delay: 5.5s;
-  }
-  
-  .laurel.twelve {
-	-webkit-animation-delay: 6s;
-	-moz-animation-delay: 6s;
-	animation-delay: 6s;
-  }
+.laurel.ten {
+  -webkit-animation-delay: 5s;
+  -moz-animation-delay: 5s;
+  animation-delay: 5s;
+}
 
+.laurel.eleven {
+  -webkit-animation-delay: 5.4s;
+  -moz-animation-delay: 5.4s;
+  animation-delay: 5.4s;
+}
+
+.laurel.twelve {
+  -webkit-animation-delay: 5.8s;
+  -moz-animation-delay: 5.8s;
+  animation-delay: 5.8s;
+}
 
 /* End of fade css*/
 
@@ -477,7 +473,7 @@ animation-delay: 6s;
 
 /* Start of video css */
 .video-container {
-  max-width: 1400px;
+  max-width: 1000px;
 }
 
 /* End of video css */
@@ -527,30 +523,30 @@ body.modal-open .float-info {
   width: 100%;
 }
 .modal-dialog {
-	min-width: 100% !important;
-	width: 100%;
+  min-width: 100% !important;
+  width: 100%;
 }
 .modal-content {
-	background-color: rgba(0, 0, 0, 0);
-	max-width: 1400px !important;
+  background-color: rgba(0, 0, 0, 0);
+  max-width: 1400px !important;
 }
 .modal-content h2 {
-	color: #fccb44;
-	font-family: "Heebo", Helvetica, Arial, sans-serif;
-	font-weight: 100;
-  }
-  .modal-content h3 {
-	color: #fccb44;
-	font-family: "Heebo", Helvetica, Arial, sans-serif;
-	font-weight: 300;
-  }
-  .modal-content .summary {
-	color: hsla(0, 0%, 100%, 0.94);
-	text-align: justify;
-	font-size: 1.1em;
-	font-family: "Montserrat", Helvetica, Arial, sans-serif;
-	font-weight: 100;
-  }
+  color: #fccb44;
+  font-family: "Heebo", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+}
+.modal-content h3 {
+  color: #fccb44;
+  font-family: "Heebo", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+.modal-content .summary {
+  color: hsla(0, 0%, 100%, 0.94);
+  text-align: justify;
+  font-size: 1.1em;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+}
 .modal-content .credits {
   line-height: 1.3em;
   font-family: "Heebo", Helvetica, Arial, sans-serif;
@@ -576,8 +572,8 @@ body.modal-open .float-info {
 /* End of modal css */
 /* Start of laurel css */
 .laurel {
-	min-width: 12em;
-width: 100%;
+  min-width: 12em;
+  width: 100%;
   max-width: 15em;
   opacity: 0; /* make things invisible upon start */
 }
@@ -655,11 +651,6 @@ width: 100%;
   padding-bottom: 3em;
 }
 
-/* Centered texts in each section
-	* --------------------------------------- */
-.section {
-  text-align: center;
-}
 
 /* Backgrounds will cover all the section
 	* --------------------------------------- */
