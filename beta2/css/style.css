@@ -83,19 +83,6 @@ h6 {
     font-size: 18px !important;
   }
 }
-/*  Pen Specific Styles */
-.jumbotron {
-  font-size: 16px;
-  @media (min-width: 62em) {
-    font-size: 20px;
-  }
-  h1 {
-    border-bottom: 4px solid #0275d8;
-  }
-  p.lead {
-    border-radius: 4px;
-  }
-}
 /* Start of fade css*/
 /* make keyframes that tell the start state and the end state of our object */
 
@@ -437,7 +424,7 @@ h6 {
   background-color: rgba(0, 0, 0, 0);
   color: #fccb44;
   font-variant: small-caps;
-  box-shadow: 0;
+  box-shadow: none;
   border: 0;
   padding: 0;
 }
@@ -445,7 +432,7 @@ h6 {
   color: hsla(0, 0%, 100%, 0.7);
   font-variant: small-caps;
   border: 0;
-  box-shadow: 0;
+  box-shadow: none;
   border: 0;
   padding: 0;
 }
@@ -564,7 +551,7 @@ body.modal-open .float-info {
 }
 .modal-content .names a {
   color: inherit;
-  text-decoration: inherit;
+
 }
 .modal-footer button {
   color: #fccb44;
@@ -572,7 +559,7 @@ body.modal-open .float-info {
 /* End of modal css */
 /* Start of laurel css */
 .laurel {
-  min-width: 12em;
+  min-width: 10em;
   width: 100%;
   max-width: 15em;
   opacity: 0; /* make things invisible upon start */
@@ -650,7 +637,6 @@ body.modal-open .float-info {
   position: relative;
   padding-bottom: 3em;
 }
-
 
 /* Backgrounds will cover all the section
 	* --------------------------------------- */
