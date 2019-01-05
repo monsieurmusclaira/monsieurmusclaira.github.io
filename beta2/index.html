@@ -61,7 +61,7 @@
       <!-- Start of Section 1 -->
       <div class="section" id="section1">
         <div class="video-container container-fluid">
-          <a class="link1" href="https://vimeo.com/256040751" target="_blank">
+          <a class="swipebox" rel="vimeo" href="http://vimeo.com/256040751">
             <video
               autoplay
               loop
@@ -88,16 +88,16 @@
               />
               Your browser does not support the video
             </video>
-          </a>
+          </a>  
         </div>
         <div class="container-fluid d-lg-none fade-in three my-5 text-center">
-          <a class="link1 " href="https://vimeo.com/256040751" target="_blank">
+          <a class="swipebox-video" href="https://vimeo.com/256040751" target="_blank">
             click here to see my showreel
           </a>
         </div>
         <div class="fade-in text-center three mt-5">
           <div id="scroll-btn">
-            <a class="" href="#section2"><span></span></a>
+            <a class="p-5" href="#section2"><span></span></a>
           </div>
         </div>
       </div>
@@ -266,13 +266,13 @@
             <div class="row gallery mx-auto m-0 p-0">
               <!-- Start of image gallery header -->
               <div
-                class="row fade-in three mt-1 mt-md-0 mb-md-3 mb-lg-0 mb-xl-2"
+                class="row fade-in text-center three mt-1 mt-md-0 mb-md-3 mb-lg-0 mb-xl-2"
               >
                 <h3 class="col text-center">Instagram</h3>
               </div>
               <!-- End of image gallery header -->
               <!-- Start of image gallery -->
-              <div class="col-12 col-lg-6 justify-content-end m-0 p-0">
+              <div class="row justify-content-end m-0 p-0">
                 <div class="col-4 col-md-3 col-lg-4 col-xl-3 fade-in four m-0 p-0">
                   <a
                     href="https://instagram.fbru2-1.fna.fbcdn.net/vp/27b053e80968900b1deb000feff6bb91/5CCDF950/t51.2885-15/e35/12328065_1290142011014243_1783832821_n.jpg?_nc_ht=instagram.fbru2-1.fna.fbcdn.net"
@@ -950,11 +950,23 @@
         });
       });
     </script>
-    <script type="text/javascript">
-      (function($) {
-        $(".swipebox").swipebox();
-      })(jQuery);
-    </script>
+<script type="text/javascript">
+  ;( function( $ ) {
+  
+    $( '.swipebox' ).swipebox( {
+      initialIndexOnArray : 0, // which image index to init when a array is passed
+      hideCloseButtonOnMobile : false, // true will hide the close button on mobile devices
+      removeBarsOnMobile : true, // false will show top bar on mobile devices
+      hideBarsDelay : 3000, // delay before hiding bars on desktop
+      videoMaxWidth : 1140, // videos max width
+      beforeOpen: function() {}, // called before opening
+      afterOpen: null, // called after opening
+      afterClose: function() {}, // called after closing
+      loopAtEnd: true // true will return to the first image after the last image is reached
+    } );
+  
+  } )( jQuery );
+  </script>
     <!-- End of scripts -->
   </body>
 </html>
