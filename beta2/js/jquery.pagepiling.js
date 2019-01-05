@@ -113,7 +113,7 @@
         };
 
         /**
-        * Moves sectio down
+        * Moves section down
         */
         PP.moveSectionDown = function () {
             var next = $('.pp-section.active').next('.pp-section');
