@@ -111,31 +111,36 @@ h6 {
     padding: 6% 0 0 0;
   }
   #section3 {
-    background-image: url(../img/Screenshot_1.jpg);
+    background-image: url(../img/SpringtideIntense2.jpg);
     background-position: 32% center;
     padding: 6% 0 0 0;
   }
   #section4 {
-    background-image: url(../img/hogeblekker/stills/hogeblekkerCover.jpg);
-    background-position: center;
-    padding: 6% 0 0 0;
-  }
-  #section5 {
-    background-image: url(../img/anna/stills/anna.jpg);
+    background-image: url(../img/anna/stills/20181119_Anna_1.78.1.jpg);
     background-position: 55% center;
     padding: 6% 0 0 0;
   }
+  #section5 {
+    background-image: url(../img/hogeblekker/stills/hogeblekkerCover2.jpg);
+    background-position: center;
+    padding: 6% 0 0 0;
+  }
   #section6 {
+    background-image: url(../img/felix/stills/20181119_LeGaminQuiTraverse_1.82.3.jpg);
+    background-position: center;
+    padding: 6% 0 0 0;
+  }
+  #section7 {
     background-image: url(../img/worldwoodweb/stills/worldwoodwebcover.jpg);
     background-position: 42% center;
     padding: 6% 0 0 0;
   }
-  #section7 {
-    background-image: url(../img/felix/stills/20181119_LeGaminQuiTraverse_1.82.3.jpg);
-    background-position: 63% center;
+  #section8 {
+    background-image: url(../img/labellerosine/stills/20181121_LaBelleRosine_1.11.1.jpg);
+    background-position: 62% center;
     padding: 6% 0 0 0;
   }
-  #section8 {
+  #section9 {
     background-image: url(../img/disruption/stills/Untitled_1.215.1.jpg);
     background-position: 40% center;
     padding: 6% 0 0 0;
