@@ -96,54 +96,65 @@ h6 {
   #section7,
   #section8,
   #section9,
-  #section10 {
+  #section10,
+  #section11 {
     background-size: cover;
   }
   /* Defining each section background and styles
     * --------------------------------------- */
-  #section1 {
-    background-color: black;
-  }
-  #section2 {
-    background-image: url(../img/leshomardsimmortels/stills/leshomards.jpg);
-    background-position: 35% center;
-    padding: 6% 0 0 0;
-  }
-  #section3 {
-    background-image: url(../img/springtide/stills/20190317_Springtide_1.55.3.jpg);
-    background-position: 32% center;
-    padding: 6% 0 0 0;
-  }
-  #section4 {
-    background-image: url(../img/anna/stills/20181119_Anna_1.78.1.jpg);
-    background-position: 55% center;
-    padding: 6% 0 0 0;
-  }
-  #section5 {
-    background-image: url(../img/hogeblekker/stills/hogeblekkerCover2.jpg);
-    background-position: center;
-    padding: 6% 0 0 0;
-  }
-  #section6 {
-    background-image: url(../img/felix/stills/20190221_LeGaminQuiTraverse_1.2.1.jpg);
-    background-position: center;
-    padding: 6% 0 0 0;
-  }
-  #section7 {
-    background-image: url(../img/worldwoodweb/stills/worldwoodwebcover.jpg);
-    background-position: 42% center;
-    padding: 6% 0 0 0;
-  }
-  #section8 {
-    background-image: url(../img/labellerosine/stills/20190223_LaBelleRosine_1.9.1.jpg);
-    background-position: 62% center;
-    padding: 6% 0 0 0;
-  }
-  #section9 {
-    background-image: url(../img/disruption/stills/Untitled_1.215.1.jpg);
-    background-position: 40% center;
-    padding: 6% 0 0 0;
-  }
+    #section1 {
+      background-color: black;
+    }
+    #section2 {
+      background-image: url(../img/leshomardsimmortels/stills/leshomards.jpg);
+      background-position: 35% center;
+      padding: 6% 0 0 0;
+    }
+    #section3 {
+      background-image: url(../img/springtide/stills/20190317_Springtide_1.55.3.jpg);
+      background-position: 32% center;
+      padding: 6% 0 0 0;
+    }
+    #section4 {
+      background-image: url(../img/anna/stills/20181119_Anna_1.78.1.jpg);
+      background-position: 55% center;
+      padding: 6% 0 0 0;
+    }
+    #section5 {
+      background-image: url(../img/hogeblekker/stills/hogeblekkerCover2.jpg);
+      background-position: 53% center;
+      padding: 6% 0 0 0;
+    }
+    #section6 {
+      background-image: url(../img/felix/stills/20190221_LeGaminQuiTraverse_1.2.1.jpg);
+      background-position: center;
+      padding: 6% 0 0 0;
+    }
+    #section7 {
+      background-image: url(../img/worldwoodweb/stills/worldwoodwebcover.jpg);
+      background-position: 42% center;
+      padding: 6% 0 0 0;
+    }
+    #section8 {
+      background-image: url(../img/labellerosine/stills/20190223_LaBelleRosine_1.9.1.jpg);
+      background-position: 62% center;
+      padding: 6% 0 0 0;
+    }
+    #section9 {
+      background-image: url(../img/disruption/stills/Untitled_1.215.1.jpg);
+      background-position: 40% center;
+      padding: 6% 0 0 0;
+    }
+    #section10 {
+      background-image: url(../img/thetearsofthings/stills/TTOT_20191015_1.19.1.png);
+      background-position: 50% center;
+      padding: 6% 0 0 0;
+    }
+    #section11 {
+      background-image: url(../img/todayweescape/stills/TWE_20191015_1.190.2.png);
+      background-position: 30% center;
+      padding: 6% 0 0 0;
+    }
   /* End of backgrounds */
 
 /* Start of fade css*/
@@ -282,7 +293,7 @@ h6 {
 
 /* Start of button css*/
 .hvr-grow a {
-  color: #ccc;
+  color: #D3D0CB;
   text-decoration: none;
   margin-left: 5px;
   margin-right: 5px;
@@ -294,7 +305,7 @@ h6 {
   transition: color 0.2s ease-out, background 1s ease-in;
 }
 .hvr-grow a:hover {
-  color: #8393a7;
+  color: #6E8898;
 }
 .hvr-grow {
   -webkit-transform: perspective(1px) translateZ(0);
@@ -313,7 +324,7 @@ h6 {
 }
 .btn-clear {
   background-color: rgba(0, 0, 0, 0);
-  color: #fccb44;
+  color: #D3D0CB;
   font-variant: small-caps;
   box-shadow: none;
   border: 0;
@@ -327,6 +338,7 @@ h6 {
 }
 .btn-clear:hover {
   font-variant: small-caps;
+  color: #eeeeee;
   border: 0;
   box-shadow: none;
   border: 0;
@@ -447,7 +459,7 @@ h6 {
   font-weight: 100;
 }
 .movieinfo h4 {
-  color: white;
+  color: #6E8898;
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
