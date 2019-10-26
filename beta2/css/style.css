@@ -146,12 +146,12 @@ h6 {
       padding: 6% 0 0 0;
     }
     #section10 {
-      background-image: url(../img/thetearsofthings/stills/TTOT_20191015_1.19.1.png);
+      background-image: url(../img/thetearsofthings/stills/TTOT_20191015_1.19.1.jpg);
       background-position: 50% center;
       padding: 6% 0 0 0;
     }
     #section11 {
-      background-image: url(../img/todayweescape/stills/TWE_20191015_1.190.2.png);
+      background-image: url(../img/todayweescape/stills/TWE_20191015_1.190.2.jpg);
       background-position: 30% center;
       padding: 6% 0 0 0;
     }
@@ -417,6 +417,7 @@ h6 {
   font-variant: small-caps;
   font-family: "Heebo", Helvetica, Arial, sans-serif;
   font-weight: 500;
+  text-shadow: 0.5px 0.5px #383838;
 }
 .float-info p {
   color: #6E8898;
@@ -467,6 +468,7 @@ h6 {
   font-size: 26px;
   position: relative;
   padding-bottom: 3em;
+  text-shadow: 1px 1px #383838;
 }
 .movieinfo h2 {
   font-family: "Heebo", Helvetica, Arial, sans-serif;
