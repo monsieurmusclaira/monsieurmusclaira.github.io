@@ -413,7 +413,21 @@ h6 {
 /* End of button css */
 /* Start of Float css */
 .float-info {
-  color: rgba(240, 240, 240, 0.5);
+  line-height: 1.1em;
+  font-variant: small-caps;
+  font-family: "Heebo", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+}
+.float-info p {
+  color: #6E8898;
+  line-height: 1.1em;
+  font-variant: small-caps;
+  font-family: "Heebo", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+}
+
+.float-info button {
+  color: #e67e22;
   line-height: 1.1em;
   font-variant: small-caps;
   font-family: "Heebo", Helvetica, Arial, sans-serif;
