@@ -358,9 +358,10 @@ h6 {
   box-shadow: none;
 }
 .btn-close {
-  font-size: 1.8em;
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  line-height: 1.1em;
+  font-variant: small-caps;
+  font-family: "Heebo", Helvetica, Arial, sans-serif;
+  font-weight: 500;
 }
 .btn:focus,
 .btn:active {
