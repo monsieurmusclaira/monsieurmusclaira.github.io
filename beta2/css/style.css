@@ -360,7 +360,7 @@ h6 {
 .btn-close {
   line-height: 1.1em;
   font-variant: small-caps;
-  font-family: "Heebo", Helvetica, Arial, sans-serif;
+  font-family: "raleway", Helvetica, Arial, sans-serif;
   font-weight: 500;
 }
 .btn:focus,
@@ -416,24 +416,33 @@ h6 {
 .float-info {
   line-height: 1.1em;
   font-variant: small-caps;
-  font-family: "Heebo", Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  text-shadow: 0.5px 0.5px #383838;
+  font-family: "raleway", Helvetica, Arial, sans-serif;
+
 }
 .float-info p {
   color: #6E8898;
-  line-height: 1.1em;
+  line-height: 1.3em;
   font-variant: small-caps;
-  font-family: "Heebo", Helvetica, Arial, sans-serif;
-  font-weight: 500;
+  font-family: "raleway", Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.1rem;
 }
 
 .float-info button {
   color: #e67e22;
   line-height: 1.1em;
   font-variant: small-caps;
-  font-family: "Heebo", Helvetica, Arial, sans-serif;
+  font-family: "raleway", Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.1rem;
+}
+
+#showreellink {
+  color: #fccb44;
+  line-height: 1.1em;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
   font-weight: 500;
+  letter-spacing: 0.1rem;
 }
 
 /* Start of video css */
@@ -469,19 +478,19 @@ h6 {
   font-size: 26px;
   position: relative;
   padding-bottom: 3em;
-  text-shadow: 1px 1px #383838;
+  text-shadow: 2px 2px #383838;
 }
 .movieinfo h2 {
-  font-family: "Heebo", Helvetica, Arial, sans-serif;
-  font-weight: 100;
+  font-family: "raleway", Helvetica, Arial, sans-serif;
+  font-weight: 600;
 }
 .movieinfo h4 {
   color: #6E8898;
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-family: "raleway", Helvetica, Arial, sans-serif;
+  font-weight: 900;
 }
 .movieinfo button {
-  font-family: "Heebo", Helvetica, Arial, sans-serif;
+  font-family: "raleway", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 1.2em;
 }
@@ -506,8 +515,8 @@ body.modal-open .float-info {
 .modal-title {
   color: #fccb44;
   line-height: 1em;
-  font-family: "Heebo", Helvetica, Arial, sans-serif;
-  font-weight: 100;
+  font-family: "raleway", Helvetica, Arial, sans-serif;
+  font-weight: 500;
 }
 .modal {
   min-width: 100% !important;
@@ -523,12 +532,12 @@ body.modal-open .float-info {
 }
 .modal-content h2 {
   color: #fccb44;
-  font-family: "Heebo", Helvetica, Arial, sans-serif;
+  font-family: "raleway", Helvetica, Arial, sans-serif;
   font-weight: 100;
 }
 .modal-content h3 {
   color: #fccb44;
-  font-family: "Heebo", Helvetica, Arial, sans-serif;
+  font-family: "raleway", Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
 .modal-content .summary {
@@ -539,11 +548,11 @@ body.modal-open .float-info {
   font-weight: 100;
 }
 .modal-content .credits {
-  line-height: 1.3em;
+  line-height: 1.8em;
   font-family: "Heebo", Helvetica, Arial, sans-serif;
   letter-spacing: 0.05em;
-  font-size: 1em;
-  font-variant: small-caps;
+  font-size: 0.8em;
+  text-transform: uppercase;
 }
 .modal-content .function {
   font-weight: 300;
@@ -589,7 +598,6 @@ body.modal-open .float-info {
 @keyframes fadeInLaurel {
   from {
     opacity: 0;
-  }
   to {
     opacity: 0.8;
   }
