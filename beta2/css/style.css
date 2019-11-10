@@ -499,17 +499,17 @@ h6 {
   text-shadow: 2px 2px #383838;
 }
 .movieinfo h2 {
-  font-family: "raleway", Helvetica, Arial, sans-serif;
-  font-weight: 600;
+  font-family: "Heebo", Helvetica, Arial, sans-serif;
+  font-weight: 300;
 }
 .movieinfo h4 {
   color: #6E8898;
-  font-family: "raleway", Helvetica, Arial, sans-serif;
-  font-weight: 900;
+  font-family: "Heebo", Helvetica, Arial, sans-serif;
+  font-weight: 300;
 }
 .movieinfo button {
-  font-family: "raleway", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-family: "Heebo", Helvetica, Arial, sans-serif;
+  font-weight: 100;
   font-size: 1.2em;
 }
 
