@@ -378,7 +378,7 @@ h6 {
 .btn-close {
   line-height: 1.1em;
   font-variant: small-caps;
-  font-family: "raleway", Helvetica, Arial, sans-serif;
+  font-family: "Heebo", Helvetica, Arial, sans-serif;
   font-weight: 500;
 }
 .btn:focus,
@@ -434,14 +434,14 @@ h6 {
 .float-info {
   line-height: 1.1em;
   font-variant: small-caps;
-  font-family: "raleway", Helvetica, Arial, sans-serif;
+  font-family: "Heebo", Helvetica, Arial, sans-serif;
 }
 .float-info p {
   color: #6E8898;
   line-height: 1.3em;
   font-variant: small-caps;
-  font-family: "raleway", Helvetica, Arial, sans-serif;
-  font-weight: 900;
+  font-family: "Heebo", Helvetica, Arial, sans-serif;
+  font-weight: 800;
   letter-spacing: 0.1rem;
 }
 
@@ -449,15 +449,15 @@ h6 {
   color: #e67e22;
   line-height: 1.1em;
   font-variant: small-caps;
-  font-family: "raleway", Helvetica, Arial, sans-serif;
+  font-family: "Heebo", Helvetica, Arial, sans-serif;
   font-weight: 800;
   letter-spacing: 0.1rem;
 }
 
 #showreellink {
-  color: #fccb44;
+  color: #6E8898;
   line-height: 1.1em;
-  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-family: "Heebo", Helvetica, Arial, sans-serif;
   font-weight: 500;
   letter-spacing: 0.1rem;
 }
@@ -499,7 +499,7 @@ h6 {
 }
 .movieinfo h2 {
   font-family: "Heebo", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 100;
 }
 .movieinfo h4 {
   color: #6E8898;
@@ -531,8 +531,8 @@ body.modal-open .float-info {
 .modal-title {
   color: #fccb44;
   line-height: 1em;
-  font-family: "raleway", Helvetica, Arial, sans-serif;
-  font-weight: 500;
+  font-family: "Heebo", Helvetica, Arial, sans-serif;
+  font-weight: 100;
 }
 .modal {
   min-width: 100% !important;
@@ -548,12 +548,12 @@ body.modal-open .float-info {
 }
 .modal-content h2 {
   color: #fccb44;
-  font-family: "raleway", Helvetica, Arial, sans-serif;
+  font-family: "Heebo", Helvetica, Arial, sans-serif;
   font-weight: 100;
 }
 .modal-content h3 {
   color: #fccb44;
-  font-family: "raleway", Helvetica, Arial, sans-serif;
+  font-family: "Heebo", Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
 .modal-content .summary {
@@ -576,7 +576,7 @@ body.modal-open .float-info {
 }
 .modal-content .names {
   color: hsla(0, 0%, 100%, 0.94);
-  font-weight: 400;
+  font-weight: 500;
 }
 .modal-content .names a {
   color: inherit;
