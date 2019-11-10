@@ -15,14 +15,14 @@ h1 {
   font-size: 1.602em;
 }
 h2 {
-  font-size: 1.824em;
+  font-size: 1.8em;
   color: #fccb44;
 }
 h3 {
-  font-size: 1.266em;
+  font-size: 1.066em;
 }
 h4 {
-  font-size: 1.125em;
+  font-size: 1.2em;
 }
 h5 {
   font-size: 0.889em;
@@ -40,20 +40,20 @@ h6 {
   font-size: 2.5em;
 }
 .display-4 {
-  font-size: 2em;
+  font-size: 1.2em;
 }
 @media (min-width: 48em) {
   h1 {
     font-size: 2.441em;
   }
   h2 {
-    font-size: 1.753em;
+    font-size: 2.5em;
   }
   h3 {
     font-size: 1.563em;
   }
   h4 {
-    font-size: 1.15em;
+    font-size: 1.5em;
   }
   .display-1 {
     font-size: 6em;
@@ -65,7 +65,7 @@ h6 {
     font-size: 4.5em;
   }
   .display-4 {
-    font-size: 3.5em;
+    font-size: 1.3em;
   }
 }
 /* Large devices (desktops, 62em and up) */
@@ -508,8 +508,7 @@ h6 {
 }
 .movieinfo button {
   font-family: "Heebo", Helvetica, Arial, sans-serif;
-  font-weight: 100;
-  font-size: 1.2em;
+  font-weight: 300;
 }
 
 /* End of movieinfo css */
