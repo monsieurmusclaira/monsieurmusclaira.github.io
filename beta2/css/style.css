@@ -47,13 +47,13 @@ h6 {
     font-size: 2.441em;
   }
   h2 {
-    font-size: 1.953em;
+    font-size: 1.753em;
   }
   h3 {
     font-size: 1.563em;
   }
   h4 {
-    font-size: 1.25em;
+    font-size: 1.15em;
   }
   .display-1 {
     font-size: 6em;
@@ -496,7 +496,7 @@ h6 {
   font-size: 26px;
   position: relative;
   padding-bottom: 3em;
-  text-shadow: 2px 2px #383838;
+  text-shadow: 2px 2px #111111;
 }
 .movieinfo h2 {
   font-family: "Heebo", Helvetica, Arial, sans-serif;
