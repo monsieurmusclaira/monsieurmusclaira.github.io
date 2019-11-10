@@ -218,75 +218,93 @@ h6 {
 }
 
 .fade-in.one {
-  -webkit-animation-delay: 0.7s;
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+
+.fade-in.two {
+  -webkit-animation-delay: 0,7s;
   -moz-animation-delay: 0.7s;
   animation-delay: 0.7s;
 }
 
-.fade-in.two {
+.fade-in.three {
+  -webkit-animation-delay: 0.9s;
+  -moz-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+}
+
+.fade-in.four {
   -webkit-animation-delay: 1.2s;
   -moz-animation-delay: 1.2s;
   animation-delay: 1.2s;
 }
 
-.fade-in.three {
-  -webkit-animation-delay: 1.4s;
-  -moz-animation-delay: 1.4s;
-  animation-delay: 1.4s;
-}
-
-.fade-in.four {
-  -webkit-animation-delay: 2s;
-  -moz-animation-delay: 2s;
-  animation-delay: 2s;
-}
-
 .fade-in.five {
-  -webkit-animation-delay: 2.5s;
-  -moz-animation-delay: 2.5s;
-  animation-delay: 2.5s;
+  -webkit-animation-delay: 1.5s;
+  -moz-animation-delay: 1.5s;
+  animation-delay: 1.5s;
 }
 
 .fade-in.six {
+  -webkit-animation-delay: 1.8s;
+  -moz-animation-delay: 1.8s;
+  animation-delay: 1.8s;
+}
+
+.fade-in.seven {
+  -webkit-animation-delay: 2.1s;
+  -moz-animation-delay: 2.1s;
+  animation-delay: 2.1s;
+}
+
+.fade-in.eight {
+  -webkit-animation-delay: 2.4s;
+  -moz-animation-delay: 2.4s;
+  animation-delay: 2.4s;
+}
+
+.fade-in.nine {
+  -webkit-animation-delay: 2.7s;
+  -moz-animation-delay: 2.7s;
+  animation-delay: 2.7s;
+}
+
+.fade-in.ten {
   -webkit-animation-delay: 3s;
   -moz-animation-delay: 3s;
   animation-delay: 3s;
 }
 
-.fade-in.seven {
-  -webkit-animation-delay: 3.5s;
-  -moz-animation-delay: 3.5s;
-  animation-delay: 3.5s;
-}
-
-.fade-in.eight {
-  -webkit-animation-delay: 4s;
-  -moz-animation-delay: 4s;
-  animation-delay: 4s;
-}
-
-.fade-in.nine {
-  -webkit-animation-delay: 4.5s;
-  -moz-animation-delay: 4.5s;
-  animation-delay: 4.5s;
-}
-
-.fade-in.ten {
-  -webkit-animation-delay: 5s;
-  -moz-animation-delay: 5s;
-  animation-delay: 5s;
-}
-
 .fade-in.eleven {
-  -webkit-animation-delay: 5.5s;
-  -moz-animation-delay: 5.5s;
-  animation-delay: 5.5s;
+  -webkit-animation-delay: 3.3s;
+  -moz-animation-delay: 3.3s;
+  animation-delay: 3.3s;
 }
 
 .fade-in.twelve {
-  -webkit-animation-delay: 6s;
-  -moz-animation-delay: 6s;
-  animation-delay: 6s;
+  -webkit-animation-delay: 3.6s;
+  -moz-animation-delay: 3.6s;
+  animation-delay: 3.6s;
+}
+
+.fade-in.thirteen {
+  -webkit-animation-delay: 3.9s;
+  -moz-animation-delay: 3.9s;
+  animation-delay: 3.9s;
+}
+
+.fade-in.fourteen {
+  -webkit-animation-delay: 4.1s;
+  -moz-animation-delay: 4.1s;
+  animation-delay: 4.1s;
+}
+
+.fade-in.fifteen {
+  -webkit-animation-delay: 4.4s;
+  -moz-animation-delay: 4.4s;
+  animation-delay: 4.4s;
 }
 
 /* End of fade css*/
@@ -615,75 +633,4 @@ body.modal-open .float-info {
   -webkit-animation-duration: 1s;
   -moz-animation-duration: 1s;
   animation-duration: 1s;
-}
-.laurel.one {
-  -webkit-animation-delay: 1.4s;
-  -moz-animation-delay: 1.4s;
-  animation-delay: 1.4s;
-}
-
-.laurel.two {
-  -webkit-animation-delay: 1.8s;
-  -moz-animation-delay: 1.8s;
-  animation-delay: 1.8s;
-}
-
-.laurel.three {
-  -webkit-animation-delay: 2.2s;
-  -moz-animation-delay: 2.2s;
-  animation-delay: 2.2s;
-}
-
-.laurel.four {
-  -webkit-animation-delay: 2.6s;
-  -moz-animation-delay: 2.6s;
-  animation-delay: 2.6s;
-}
-
-.laurel.five {
-  -webkit-animation-delay: 3s;
-  -moz-animation-delay: 3s;
-  animation-delay: 3s;
-}
-
-.laurel.six {
-  -webkit-animation-delay: 3.4s;
-  -moz-animation-delay: 3.4s;
-  animation-delay: 3.4s;
-}
-
-.laurel.seven {
-  -webkit-animation-delay: 3.8s;
-  -moz-animation-delay: 3.8s;
-  animation-delay: 3.8s;
-}
-
-.laurel.eight {
-  -webkit-animation-delay: 4.2s;
-  -moz-animation-delay: 4.2s;
-  animation-delay: 4.2s;
-}
-
-.laurel.nine {
-  -webkit-animation-delay: 4.6s;
-  -moz-animation-delay: 4.6s;
-  animation-delay: 4.6s;
-}
-
-.laurel.ten {
-  -webkit-animation-delay: 5s;
-  -moz-animation-delay: 5s;
-  animation-delay: 5s;
-}
-
-.laurel.eleven {
-  -webkit-animation-delay: 5.4s;
-  -moz-animation-delay: 5.4s;
-  animation-delay: 5.4s;
-}
-
-.laurel.twelve {
-  -webkit-animation-delay: 5.8s;
-  -moz-animation-delay: 5.8s;
-  animation-delay: 5.8s;
 }
