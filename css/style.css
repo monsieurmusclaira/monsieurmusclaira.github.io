@@ -458,8 +458,8 @@ h6 {
 #showreellink {
   color: #6E8898;
   line-height: 1.1em;
-  font-family: "Heebo", Helvetica, Arial, sans-serif;
-  font-weight: 500;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   letter-spacing: 0.1rem;
 }
 
@@ -562,7 +562,7 @@ body.modal-open .float-info {
   text-align: justify;
   font-size: 1.1em;
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
-  font-weight: 100;
+  font-weight:400;
 }
 .modal-content .credits {
   line-height: 1.8em;
