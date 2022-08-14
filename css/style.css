@@ -97,7 +97,8 @@ h6 {
   #section8,
   #section9,
   #section10,
-  #section11 {
+  #section11,
+  #section12 {
     background-size: cover;
   }
   /* Defining each section background and styles
@@ -136,7 +137,7 @@ h6 {
       padding: 6% 0 0 0;
     }
     #section8 {
-      background-image: url(../img/labellerosine/stills/20190223_LaBelleRosine_1.9.1.jpg);
+      background-image: url(../img/labellerosine/stills/20190223_LaBelleRosine_1.45.1.jpg);
       background-position: 62% center;
       padding: 6% 0 0 0;
     }
@@ -154,6 +155,11 @@ h6 {
       background-image: url(../img/todayweescape/stills/TWE_20191216_1.190.1.jpg);
       background-position: 30% center;
       padding: 6% 0 0 0;
+    }
+    #section12 {
+      background-image: url(../img/burningclouds/stills/ASTTE__1.68.1.jpg);
+      background-position: center center;
+      padding: 0 0 0 0;
     }
   /* End of backgrounds */
 
