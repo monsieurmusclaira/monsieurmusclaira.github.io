@@ -1,0 +1,17 @@
+---
+// library imports
+import { Image } from "@astrojs/image/components";
+
+const { synopsis, title, heroImage } = Astro.props;
+---
+<div class="hero min-h-screen relative bg-[center_center] md:bg-[center_50_center]  " style={{backgroundImage: `url(${heroImage})`}}>
+    <div class="hero absolute bottom-0 py-5  bg-black/50 text-white grid">
+        <div class="max-w-lg w-auto place-self-center text-center mt-5 mx-10">
+            <h1 class="text-5xl p-3 font-bold ">{title}</h1>
+            <p class="text-xl py-3">{synopsis}</p>  
+            <div class="flex justify-center items-center py-3">
+                <img class="animate-bounce w-6 h-6" src="/svg/arrowdown.svg" />
+            </div>
+        </div>
+    </div>
+</div>
