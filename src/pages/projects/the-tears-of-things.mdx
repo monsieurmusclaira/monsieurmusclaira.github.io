@@ -4,13 +4,17 @@ title: 'The Tears of Things'
 synopsis: 'Ana attempts to untangle the painful memories of the night when her marriage began to crumble. Unable to speak, she starts writing. Her diary becomes a letter to her husband about their growing alienation, set in a deafening silence.'
 tags: ["astro", "blogging", "learning in public"]
 heroImage: '/img/thetearsofthings/stills/TTOT_20212101_1.1.49.webp'
-
 ---
 import { Image } from "@astrojs/image/components";
 
 <section class="hero">    
     <div class="hero-content flex-col">
-        <img src="/img/thetearsofthings/stills/TTOT_20212101_1.1.113.webp" alt="The Tears of Things cinematography still" />
+        <Image 
+            src={import('../public/img/thetearsofthings/stills/TTOT_20212101_1.1.113.webp')}
+            alt="test"
+            format="webp"
+            class="hero-image"
+        />
     </div>
 </section>
 
@@ -258,38 +262,143 @@ import { Image } from "@astrojs/image/components";
 
 <section class="hero">    
     <div class="hero-content flex-col">
-        <img src="/img/thetearsofthings/stills/TTOT_20212101_1.1.1.webp" alt="The Tears of Things cinematography still" class="p-5" />
-        <img src="/img/thetearsofthings/stills/TTOT_20212101_1.1.23.webp" alt="The Tears of Things cinematography still" class="p-5" />
+        <Image 
+            src={import('../public/img/thetearsofthings/stills/TTOT_20212101_1.1.1.webp')}
+            alt="The Tears of Things cinematography still"
+            format="webp"
+            class="hero-image p-5"
+        />
+        <Image 
+            src={import('../public/img/thetearsofthings/stills/TTOT_20212101_1.1.22.webp')}
+            alt="The Tears of Things cinematography still"
+            format="webp"
+            class="hero-image p-5"
+        />
     </div>
 </section>
 
 
 <section class="hero">    
     <div class="hero-content flex-col">
-        <img src="/img/thetearsofthings/stills/TTOT_20212101_1.1.74.webp" alt="The Tears of Things cinematography still"  class="p-5"/>
-
-        <img src="/img/thetearsofthings/stills/TTOT_20212101_1.1.49.webp" alt="The Tears of Things cinematography still" class="p-5"/>
-        <img src="/img/thetearsofthings/stills/TTOT_20212101_1.1.51.webp" alt="The Tears of Things cinematography still" class="p-5"/>
-        <img src="/img/thetearsofthings/stills/TTOT_20212101_1.1.53.webp" alt="The Tears of Things cinematography still" class="p-5"/>
-        <img src="/img/thetearsofthings/stills/TTOT_20212101_1.1.56.webp" alt="The Tears of Things cinematography still" class="p-5"/>
-
-        <img src="/img/thetearsofthings/stills/TTOT_20212101_1.1.82.webp" alt="The Tears of Things cinematography still" class="p-5"/>
-        <img src="/img/thetearsofthings/stills/TTOT_20212101_1.1.95.webp" alt="The Tears of Things cinematography still" class="p-5"/>
-        <img src="/img/thetearsofthings/stills/TTOT_20212101_1.1.112.webp" alt="The Tears of Things cinematography still" class="p-5"/>  
-     
-        <img src="/img/thetearsofthings/stills/TTOT_20212101_1.1.70.webp" alt="The Tears of Things cinematography still" class="p-5"/>
-        <img src="/img/thetearsofthings/stills/TTOT_20212101_1.1.73.webp" alt="The Tears of Things cinematography still" class="p-5"/>
-        <img src="/img/thetearsofthings/stills/TTOT_20212101_1.1.67.webp" alt="The Tears of Things cinematography still" class="p-5"/>
-        <img src="/img/thetearsofthings/stills/TTOT_20212101_1.1.66.webp" alt="The Tears of Things cinematography still" class="p-5"/>
-
-        <img src="/img/thetearsofthings/stills/TTOT_20212101_1.1.114.webp" alt="The Tears of Things cinematography still" class="p-5"/>
-        <img src="/img/thetearsofthings/stills/TTOT_20221008_1.19.1.webp" alt="The Tears of Things cinematography still" class="p-5"/>
-        <img src="/img/thetearsofthings/stills/TTOT_20212101_1.1.117.webp" alt="The Tears of Things cinematography still" class="p-5"/>
-        <img src="/img/thetearsofthings/stills/TTOT_20212101_1.1.122.webp" alt="The Tears of Things cinematography still" class="p-5"/>
-
-        <img src="/img/thetearsofthings/stills/TTOT_20212101_1.1.123.webp" alt="The Tears of Things cinematography still" class="p-5"/>
-        <img src="/img/thetearsofthings/stills/TTOT_20212101_1.1.124.webp" alt="The Tears of Things cinematography still" class="p-5"/>
-        <img src="/img/thetearsofthings/stills/TTOT_20212101_1.1.134.webp" alt="The Tears of Things cinematography still" class="p-5"/>
-        <img src="/img/thetearsofthings/stills/TTOT_20212101_1.1.127.webp" alt="The Tears of Things cinematography still" class="p-5"/>
+        <Image 
+            src={import('../public/img/thetearsofthings/stills/TTOT_20212101_1.1.74.webp')}
+            alt="The Tears of Things cinematography still"
+            format="webp"
+            class="hero-image p-5"
+        />
+        <Image 
+            src={import('../public/img/thetearsofthings/stills/TTOT_20212101_1.1.49.webp')}
+            alt="The Tears of Things cinematography still"
+            format="webp"
+            class="hero-image p-5"
+        />
+        <Image 
+            src={import('../public/img/thetearsofthings/stills/TTOT_20212101_1.1.51.webp')}
+            alt="The Tears of Things cinematography still"
+            format="webp"
+            class="hero-image p-5"
+        />
+        <Image 
+            src={import('../public/img/thetearsofthings/stills/TTOT_20212101_1.1.53.webp')}
+            alt="The Tears of Things cinematography still"
+            format="webp"
+            class="hero-image p-5"
+        />
+        <Image 
+            src={import('../public/img/thetearsofthings/stills/TTOT_20212101_1.1.56.webp')}
+            alt="The Tears of Things cinematography still"
+            format="webp"
+            class="hero-image p-5"
+        />
+        <Image 
+            src={import('../public/img/thetearsofthings/stills/TTOT_20212101_1.1.82.webp')}
+            alt="The Tears of Things cinematography still"
+            format="webp"
+            class="hero-image p-5"
+        />
+        <Image 
+            src={import('../public/img/thetearsofthings/stills/TTOT_20212101_1.1.95.webp')}
+            alt="The Tears of Things cinematography still"
+            format="webp"
+            class="hero-image p-5"
+        />
+        <Image 
+            src={import('../public/img/thetearsofthings/stills/TTOT_20212101_1.1.112.webp')}
+            alt="The Tears of Things cinematography still"
+            format="webp"
+            class="hero-image p-5"
+        />
+        <Image 
+            src={import('../public/img/thetearsofthings/stills/TTOT_20212101_1.1.70.webp')}
+            alt="The Tears of Things cinematography still"
+            format="webp"
+            class="hero-image p-5"
+        />
+        <Image 
+            src={import('../public/img/thetearsofthings/stills/TTOT_20212101_1.1.73.webp')}
+            alt="The Tears of Things cinematography still"
+            format="webp"
+            class="hero-image p-5"
+        />
+        <Image 
+            src={import('../public/img/thetearsofthings/stills/TTOT_20212101_1.1.67.webp')}
+            alt="The Tears of Things cinematography still"
+            format="webp"
+            class="hero-image p-5"
+        />
+        <Image 
+            src={import('../public/img/thetearsofthings/stills/TTOT_20212101_1.1.66.webp')}
+            alt="The Tears of Things cinematography still"
+            format="webp"
+            class="hero-image p-5"
+        />
+        <Image 
+            src={import('../public/img/thetearsofthings/stills/TTOT_20212101_1.1.114.webp')}
+            alt="The Tears of Things cinematography still"
+            format="webp"
+            class="hero-image p-5"
+        />
+        <Image 
+            src={import('../public/img/thetearsofthings/stills/TTOT_20221008_1.19.1.webp')}
+            alt="The Tears of Things cinematography still"
+            format="webp"
+            class="hero-image p-5"
+        />
+        <Image 
+            src={import('../public/img/thetearsofthings/stills/TTOT_20212101_1.1.117.webp')}
+            alt="The Tears of Things cinematography still"
+            format="webp"
+            class="hero-image p-5"
+        />
+        <Image 
+            src={import('../public/img/thetearsofthings/stills/TTOT_20212101_1.1.122.webp')}
+            alt="The Tears of Things cinematography still"
+            format="webp"
+            class="hero-image p-5"
+        />
+        <Image 
+            src={import('../public/img/thetearsofthings/stills/TTOT_20212101_1.1.123.webp')}
+            alt="The Tears of Things cinematography still"
+            format="webp"
+            class="hero-image p-5"
+        />
+        <Image 
+            src={import('../public/img/thetearsofthings/stills/TTOT_20212101_1.1.124.webp')}
+            alt="The Tears of Things cinematography still"
+            format="webp"
+            class="hero-image p-5"
+        />
+        <Image 
+            src={import('../public/img/thetearsofthings/stills/TTOT_20212101_1.1.134.webp')}
+            alt="The Tears of Things cinematography still"
+            format="webp"
+            class="hero-image p-5"
+        />
+        <Image 
+            src={import('../public/img/thetearsofthings/stills/TTOT_20212101_1.1.127.webp')}
+            alt="The Tears of Things cinematography still"
+            format="webp"
+            class="hero-image p-5"
+        />
     </div>
 </section>
