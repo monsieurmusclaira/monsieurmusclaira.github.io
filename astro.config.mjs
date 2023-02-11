@@ -14,7 +14,7 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), sitemap(), image(), mdx()],
+  integrations: [tailwind(), sitemap(), image({serviceEntryPoint: '@astrojs/image/sharp'}), mdx()],
   markdown: {
   },
 });
