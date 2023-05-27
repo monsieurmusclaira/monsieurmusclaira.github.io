@@ -3,7 +3,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import FilmCard from '../components/FilmCard.astro';
 import VideoCard from '../components/VideoCard.astro';
 import Header from '../components/Header.astro';
+import { Image, Picture } from "@astrojs/image/components";
+import hero from '/img/thetearsofthings/stills/TTOT_20212101_1.1.117.webp';
 ---
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M8VJNF4F37"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M8VJNF4F37');
+</script>
+
 
 <BaseLayout title="Victor Maes - Cinematographer" class="scroll-smooth" >
 	<Header />
