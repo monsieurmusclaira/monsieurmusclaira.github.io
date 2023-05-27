@@ -2,7 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
 const { image, title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
@@ -13,7 +13,7 @@ const { image, title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.prop
 <html lang="en" data-theme="lofi">
   <head>
     <BaseHead title={title} description={description} image={image} />
-    
+    <GoogleAnalytics />
   </head>
   <body class="bg-black">
     <div class="bg-black ">
