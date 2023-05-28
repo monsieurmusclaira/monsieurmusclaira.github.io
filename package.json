@@ -16,6 +16,7 @@
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^3.0.0",
     "astro": "^2.0.1",
+    "astro-google-analytics": "^1.0.3",
     "astro-m2dx": "^0.7.15",
     "daisyui": "^2.47.1",
     "sharp": "^0.31.3",
