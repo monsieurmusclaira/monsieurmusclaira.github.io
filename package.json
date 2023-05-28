@@ -15,6 +15,7 @@
     "@astrojs/mdx": "^0.15.0",
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^3.0.0",
+    "@astropub/icons": "^0.2.0",
     "astro": "^2.0.1",
     "astro-google-analytics": "^1.0.3",
     "astro-m2dx": "^0.7.15",
