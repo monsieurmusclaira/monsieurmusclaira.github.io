@@ -5,15 +5,17 @@
         <g transform="matrix(-1,1.22465e-16,-1.22465e-16,-1,36,35.9511)">
             <path d="M12.484,8.639L18,19.859L23.866,7.721L25.244,14.069L18,29.482L10.83,13.301L12.484,8.639Z" style="stroke:white;stroke-width:0.09px;"/>
         </g>
-        <g transform="matrix(-0.631874,7.73823e-17,-7.73823e-17,-0.631874,26.661,12.5737)">
+        <g transform="matrix(-0.631874,7.73823e-17,-7.73823e-17,-0.631874,26.661,10.6571)">
             <text x="1.295px" y="13.157px" style="font-family:'FuturaLT', 'Futura LT';font-size:38.726px;fill:white;">V</text>
         </g>
-        <g transform="matrix(-0.811891,9.94279e-17,-9.94279e-17,-0.811891,33.301,29.0433)">
+        <g transform="matrix(-0.811891,9.94279e-17,-9.94279e-17,-0.811891,33.301,30.6006)">
             <text x="6.007px" y="19.283px" style="font-family:'FuturaLT', 'Futura LT';font-size:30.14px;fill:white;">M</text>
         </g>
-        <path d="M12.483,22.652L11.964,23.835L11.785,22.65L12.483,22.652Z" style="fill:white;stroke:white;stroke-width:0.09px;"/>
-        <g transform="matrix(-1,0,0,1,35.9981,-3.55271e-15)">
-            <path d="M12.483,22.652L11.964,23.835L11.785,22.65L12.483,22.652Z" style="fill:white;stroke:white;stroke-width:0.09px;"/>
+        <g transform="matrix(2.02575,0,0,2.29345,-12.804,-31.2133)">
+            <path d="M12.483,22.652L11.964,23.835L11.785,22.65L12.483,22.652Z" style="fill:white;stroke:white;stroke-width:0.04px;"/>
+        </g>
+        <g transform="matrix(-3.28597,-9.22501e-32,1.2326e-31,3.74211,64.5328,-64.0255)">
+            <path d="M12.483,22.652L11.964,23.835L11.785,22.65L12.483,22.652Z" style="fill:white;stroke:white;stroke-width:0.02px;"/>
         </g>
     </g>
 </svg>
