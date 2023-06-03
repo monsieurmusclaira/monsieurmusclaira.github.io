@@ -1,50 +1,32 @@
-# Welcome to [Astro](https://astro.build)
+## Project Structure
+This is my production repository for my portfolio website.
+It uses Astro v2 and Tailwind.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/s/github/withastro/astro/tree/latest/examples/basics)
+The goal is to maintain a fast, responsive, modular website that can scale over time.
+I keep tinkering with the code as I find the time and don't mind deploying after small changes.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Dependencies:
+- Astro
+- Tailwind
+- DaisyUI 
+- Astro ImageTools + Sharp
+- Astrojs MDX
+- Astrojs Sitemap
+- Astro m2dx
+- Astropub Icons
+- Astro Google Analytics
+- Astro SPA
+- Sharp
 
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+## Roadmap
+- Find a better way to implement credits and festival listing
+- Optimize image loading further
+- Implement a better video component in MDX
+- Continue fine-tuning the overall look and feel
+- Implement Shared Element Transition API once support has rolled oud. This will allow for deprecating the SPA approach of the current website.
+- Further cleaning and streamlining the code. There are many remnants still in place from the previous deployment pre-Astro.
+- Streamline MDX formatting and remove the elaborate Picture elements
+- Implement a CMS
+- Introduce a blog section 
 
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                | Action                                             |
-| :--------------------- | :------------------------------------------------- |
-| `npm install`          | Installs dependencies                              |
-| `npm run dev`          | Starts local dev server at `localhost:3000`        |
-| `npm run build`        | Build your production site to `./dist/`            |
-| `npm run preview`      | Preview your build locally, before deploying       |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
-| `npm run astro --help` | Get help using the Astro CLI                       |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Feel free to reach out with questions or comments!

@@ -2,7 +2,7 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
-
+import { GoogleAnalytics } from 'astro-google-analytics';
 export interface Props {
 	title: string;
 	description: string;
@@ -36,3 +36,6 @@ const { title, description, image = '/social_img.png' } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- Google Analytics -->
+<GoogleAnalytics id="G-1P80SYF663" />

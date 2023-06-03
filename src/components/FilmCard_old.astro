@@ -1,0 +1,24 @@
+---
+const { title, img, desc, url, badge1, badge2, target = '_blank' } = Astro.props;
+---
+
+  <div class="relative set:text min-h-screen  bg-cover bg-[center_center] md:bg-[center_50_center]  "  style={{backgroundImage: `url(${img})`}}>
+    <div class="absolute w-screen p-10 bottom-0 bg-gradient-to-t from-neutral/70 to-transparent text-white">
+      <h1 class="text-3xl font-bold capitalize">
+        {title}        
+      </h1>
+      <h2 class="text-xl text-base-200 mt-1">{desc}</h2>
+      <div class="mt-2 flex flex-row">
+        <p>{badge1 && <div class="badge badge-outline mr-2 text-xs text-base-200 ">{badge1}</div>}</p>
+        <p>{badge2 && <div class="badge badge-outline text-xs text-base-200">{badge2}</div>}</p>
+      </div>
+      <div class="">
+        <button class="btn btn-xs sm:btn-sm  btn-secondary mt-3 ">
+          <a class="" href={url} target={target}>
+            learn more
+          </a>  
+        </button>  
+      </div>       
+    </div>
+  </div>
+

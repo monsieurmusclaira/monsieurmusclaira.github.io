@@ -1,22 +1,36 @@
 ---
-layout: "../../layouts/ProjectLayout.astro"
-title: 'World Wood Web'
-synopsis: '2713. The Internet has been taken over by a vast organic network forming the World Wood Web. This is the story about Gregorious Dubois who became a tree and discovered the World Wood Web on a cold December day. '
-tags: ["astro", "blogging", "learning in public"]
-heroImage: '/img/worldwoodweb/stills/worldwoodwebcover.webp'
-
+layout: "../../layouts/BaseLayout.astro"
 ---
-import { Image } from "@astrojs/image/components";
+import { Picture } from "astro-imagetools/components";
+import ProjectHero from '../../components/ProjectHero.astro';
+export const title = 'World Wood Web'
+export const synopsis = '2713. The Internet has been taken over by a vast organic network forming the World Wood Web. This is the story about Gregorious Dubois who became a tree and discovered the World Wood Web on a cold December day. '
+export const heroImage = '/img/worldwoodweb/stills/worldwoodwebcover.webp'
+
+<section>
+    <ProjectHero title={title} synopsis={synopsis} heroImage={heroImage} />
+</section>
 
 <section class="hero">    
     <div class="hero-content flex-col">
-        <img src="/img/worldwoodweb/stills/WorldWoodWeb_Jogging.webp" alt="World Wood Web cinematography still"/>
+        <Picture
+            src='/img/worldwoodweb/stills/WorldWoodWeb_Jogging.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="World Wood Web cinematography still"        
+        />
     </div>
 </section>
 
 <section class="hero" >
     <div class="hero-content">           
-        <table class="table-auto border-separate border-spacing-x-3 ">
+        <table class="table-auto border-separate border-spacing-x-3 text-base-200">
             <tbody>
                 <tr>
                     <td class="text-right font-light">Director</td>
@@ -37,8 +51,41 @@ import { Image } from "@astrojs/image/components";
 
 <section class="hero">    
     <div class="hero-content flex-col">
-        <img src="/img/worldwoodweb/stills/20181119_WorldWoodWeb_1.2.1.webp" alt="World Wood Web cinematography still"/>
-        <img src="/img/worldwoodweb/stills/20181119_WorldWoodWeb_1.1.1.webp" alt="World Wood Web cinematography still"/>
-        <img src="/img/worldwoodweb/stills/20181119_WorldWoodWeb_1.4.1.webp" alt="World Wood Web cinematography still"/>
+        <Picture
+            src='/img/worldwoodweb/stills/20181119_WorldWoodWeb_1.2.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="World Wood Web cinematography still"        
+        />
+        <Picture
+            src='/img/worldwoodweb/stills/20181119_WorldWoodWeb_1.1.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="World Wood Web cinematography still"        
+        />
+        <Picture
+            src='/img/worldwoodweb/stills/20181119_WorldWoodWeb_1.4.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="World Wood Web cinematography still"        
+        />
     </div>
 </section>

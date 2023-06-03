@@ -4,19 +4,22 @@ module.exports = {
 	theme: {
 		extend: {},
 	},
+	container: {
+		center: true,
+	  },
 	daisyui: {
 		themes: [
 		  {
 			mytheme: {   
-				"primary": "#fbbf24",   
-				"secondary": "#0369a1",   
-				"accent": "#fbbf24",
-				"neutral": "#e5e7eb",
-				"base-100": "#2A303C",
+				"primary": "#70AA74",   
+				"secondary": "#F1D74E",   
+				"accent": "#E08E35",
+				"neutral": "#11131d",
+				"base-100": "#eff0f6",
 				"info": "#3ABFF8",
 				"success": "#36D399",
-				"warning": "#FBBD23",
-				"error": "#F87272",
+				"warning": "#F1D74E",
+				"error": "#D64D42",
 			},
 		  },
 		],

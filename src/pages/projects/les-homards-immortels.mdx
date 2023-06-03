@@ -1,19 +1,32 @@
 ---
-layout: "../../layouts/ProjectLayout.astro"
-title: 'Les Homards Immortels'
-synopsis: 'Two minds meet again after a brief separation, rediscovering each other while uncovering their motivations to leave and return. A story about being alone in search of a connection.'
-tags: ["astro", "blogging", "learning in public"]
-heroImage: '/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_11_04_09.Still191.webp'
-
+layout: "../../layouts/BaseLayout.astro"
 ---
-import { Image } from "@astrojs/image/components";
+import { Picture } from "astro-imagetools/components";
+import ProjectHero from '../../components/ProjectHero.astro';
+export const title = 'Les Homards Immortels'
+export const synopsis = 'Two minds meet again after a brief separation, rediscovering each other while uncovering their motivations to leave and return. A story about being alone in search of a connection.'
+export const heroImage = '/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_11_04_09.Still191.webp'
+
+<section>
+    <ProjectHero title={title} synopsis={synopsis} heroImage={heroImage} />
+</section>
 
 <section class="hero">    
     <div class="hero-content flex-col">
-        <img src="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_00_40_17.Still094.webp" alt="Les Homards Immortels cinematography still"/>
+        <Picture
+            src='/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_00_40_17.Still094.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Les Homards Immortels cinematography still"        
+        />
     </div>
 </section>
-
 
 <div class="hero aspect-w-16 aspect-h-9">
     <iframe src="https://player.vimeo.com/video/206725218" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
@@ -21,7 +34,7 @@ import { Image } from "@astrojs/image/components";
 
 <section class="hero" >
     <div class="hero-content">           
-        <table class="table-auto border-separate border-spacing-x-3 ">
+        <table class="table-auto border-separate border-spacing-x-3 text-base-200">
             <tbody>
                 <tr>
                     <td class="text-right font-light">Director</td>
@@ -70,8 +83,30 @@ import { Image } from "@astrojs/image/components";
 
 <section class="hero">    
     <div class="hero-content flex-col">
-        <img src="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_00_50_17.Still097.webp" alt="Les Homards Immortels cinematography still"/>
-        <img src="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_01_25_21.Still102.webp" alt="Les Homards Immortels cinematography still"/>
+        <Picture
+            src='/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_00_50_17.Still097.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Les Homards Immortels cinematography still"        
+        />
+        <Picture
+            src='/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_01_25_21.Still102.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Les Homards Immortels cinematography still"        
+        />
     </div>
 </section>
 
@@ -94,28 +129,221 @@ import { Image } from "@astrojs/image/components";
 
 <section class="hero">    
     <div class="hero-content flex-col">
-        <img src="/img/leshomardsimmortels/stills/KateEditE26_AspectWrappe0.01_04_14_03.Still113.webp" alt="Les Homards Immortels cinematography still"/>     
-        <img src="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_05_55_23.Still093.webp" alt="Les Homards Immortels cinematography still"/>          
-        <img src="/img/leshomardsimmortels/stills/LesHomardsImmortels_KateVoet_Corestill.webp" alt="Les Homards Immortels cinematography still"/> 
-        <img src="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_05_21_23.Still129.webp" alt="Les Homards Immortels cinematography still"/>
-
-        <img src="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_06_27_13.Still138.webp" alt="Les Homards Immortels cinematography still"/>  
-        <img src="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_06_30_22.Still141.webp" alt="Les Homards Immortels cinematography still"/> 
-        <img src="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_07_10_22.Still153.webp" alt="Les Homards Immortels cinematography still"/>
-        <img src="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_06_44_05.Still143.webp" alt="Les Homards Immortels cinematography still"/>
-        <img src="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_06_53_03.Still145.webp" alt="Les Homards Immortels cinematography still"/>
-        <img src="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_07_18_17.Still157.webp" alt="Les Homards Immortels cinematography still"/>
-
-        <img src="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_07_23_03.Still160.webp" alt="Les Homards Immortels cinematography still"/>
-        <img src="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_07_37_14.Still165.webp" alt="Les Homards Immortels cinematography still"/>
-        <img src="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_07_49_20.Still169.webp" alt="Les Homards Immortels cinematography still"/>
-
-        <img src="/img/leshomardsimmortels/stills/LesHomardsImmortels_KateVoet_Still15.webp" alt="Les Homards Immortels cinematography still"/>
-        <img src="/img/leshomardsimmortels/stills/KateEditE26Aspect Wrapper.01_03_33_00.Still109.webp" alt="Les Homards Immortels cinematography still"/>
-
-        <img src="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_09_27_16.Still184.webp" alt="Les Homards Immortels cinematography still"/>
-        <img src=" /img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_09_33_05.Still185.webp" alt="Les Homards Immortels cinematography still"/>
-
-        <img src="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_11_04_09.Still191.webp" alt="Les Homards Immortels cinematography still"/>
+        <Picture
+            src='/img/leshomardsimmortels/stills/KateEditE26_AspectWrappe0.01_04_14_03.Still113.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Les Homards Immortels cinematography still"        
+        />
+        <Picture
+            src='/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_05_55_23.Still093.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Les Homards Immortels cinematography still"        
+        />
+        <Picture
+            src='/img/leshomardsimmortels/stills/LesHomardsImmortels_KateVoet_Corestill.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Les Homards Immortels cinematography still"        
+        />
+        <Picture
+            src='/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_05_21_23.Still129.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Les Homards Immortels cinematography still"        
+        />
+        <Picture
+            src='/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_06_27_13.Still138.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Les Homards Immortels cinematography still"        
+        />
+        <Picture
+            src='/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_06_30_22.Still141.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Les Homards Immortels cinematography still"        
+        />
+        <Picture
+            src='/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_07_10_22.Still153.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Les Homards Immortels cinematography still"        
+        />
+        <Picture
+            src='/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_06_44_05.Still143.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Les Homards Immortels cinematography still"        
+        />
+        <Picture
+            src='/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_06_53_03.Still145.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Les Homards Immortels cinematography still"        
+        />
+        <Picture
+            src='/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_07_18_17.Still157.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Les Homards Immortels cinematography still"        
+        />
+        <Picture
+            src='/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_07_23_03.Still160.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Les Homards Immortels cinematography still"        
+        />
+        <Picture
+            src='/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_07_37_14.Still165.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Les Homards Immortels cinematography still"        
+        />
+        <Picture
+            src='/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_07_49_20.Still169.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Les Homards Immortels cinematography still"        
+        />
+        <Picture
+            src='/img/leshomardsimmortels/stills/LesHomardsImmortels_KateVoet_Still15.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Les Homards Immortels cinematography still"        
+        />
+        <Picture
+            src='/img/leshomardsimmortels/stills/KateEditE26AspectWrapper.01_03_33_00.Still109.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Les Homards Immortels cinematography still"        
+        />
+        <Picture
+            src='/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_09_27_16.Still184.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Les Homards Immortels cinematography still"        
+        />
+        <Picture
+            src='/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_09_33_05.Still185.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Les Homards Immortels cinematography still"        
+        />
+        <Picture
+            src='/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_11_04_09.Still191.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Les Homards Immortels cinematography still"        
+        />
     </div>
 </section>

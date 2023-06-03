@@ -1,0 +1,106 @@
+---
+layout: "../../layouts/BaseLayout.astro"
+---
+import { Picture } from "astro-imagetools/components";
+import ProjectHero from '../../components/ProjectHero.astro';
+export const meta = {
+    title: 'The Time of a Moment',
+    synopsis: 'We experience a day through the eyes of Ida, a 72-year-old widow living with dementia. After the death of her husband Louis, her condition has rapidly worsened. She lives alone in their small flat on the 20th floor of a high-rise in a big city. This place holds many of their memories - some already forgotten, others soon to be lost. The Time of a Moment is a magical story about transformation, loneliness and loss, but above all about love.',
+    heroImage: '/img/thetimeofamoment/stills/snowglobe_low_colores_paper.jpg',
+};
+
+<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} />
+
+<section class="hero">    
+    <div class="hero-content my-5">
+        <Picture
+        src='/img/thetimeofamoment/stills/fishbowl_1.jpg'
+        sizes={(breakpoints) => {
+            const maxWidth = breakpoints[breakpoints.length - 1];
+            return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+        }}
+        breakpoints={[600, 1000, 1200]}
+        loading="lazy"   
+        format={["avif", "webp"]}
+        alt="The Time of a Moment artwork"        
+        />
+    </div>
+</section>
+
+<section class="hero " >
+    <div class="hero-content">           
+        <table class="table-auto border-separate border-spacing-x-3 text-base-200 ">
+            <tbody>
+                <tr>
+                    <td class="text-right font-light">Directors</td>
+                    <td class="text-left font-bold">Kate Voet</td>
+                </tr>
+                <tr>
+                    <td class="text-right font-light"></td>
+                    <td class="text-left font-bold">Victor Maes</td>
+                </tr>
+                <tr>
+                    <td class="text-right font-light">Producers</td>
+                    <td class="text-left font-bold">Cassette for Timescapes</td>
+                </tr>
+                <tr>
+                    <td class="text-right font-light"></td>
+                    <td class="text-left font-bold">An Oost</td>
+                </tr>
+                <tr>
+                    <td class="text-right font-light"></td>
+                    <td class="text-left font-bold">Emmy Oost</td>
+                </tr>
+                <tr>
+                    <td class="text-right font-light">Artwork</td>
+                    <td class="text-left font-bold">Tal Kantor</td>
+                </tr>
+                <tr>
+                    <td class="text-right font-light">Creative Technologist</td>
+                    <td class="text-left font-bold">Wim Wouters at Poppins & Wayne</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>  
+</section>
+
+<section class="hero" >
+    <div class="hero-content ">           
+        <table class="table-auto border-separate border-spacing-x-3 text-base-200">
+            <tbody>
+                <tr>
+                    <td class="text-right font-bold">Selections</td>                    
+                    <td class="text-left font-light">New Images XR Development Market 2023</td>
+                </tr>
+                <tr>
+                    <td class="text-right font-bold "></td>
+                    <td class="text-left font-light">Stereopsia Booster program 2022</td>
+                </tr>
+                <tr>
+                    <td class="text-right font-bold "></td>
+                    <td class="text-left font-light">VR Days Immersive Funding Market 2021</td>
+                </tr>
+                <tr>
+                    <td class="text-right font-bold "></td>
+                    <td class="text-left font-light">Torino Short Film Market VR Series 2020</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>  
+</section>
+
+<section class="hero">    
+    <div class="hero-content my-5">
+        <Picture
+        src='/img/thetimeofamoment/stills/LivingRoom_END_color_2.jpg'
+        sizes={(breakpoints) => {
+            const maxWidth = breakpoints[breakpoints.length - 1];
+            return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+        }}
+        breakpoints={[600, 1000, 1200]}  
+        loading="lazy" 
+        format={["avif", "webp"]}
+        alt="The Time of a Moment artwork"               
+        />
+    </div>
+</section>

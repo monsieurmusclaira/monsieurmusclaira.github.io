@@ -1,16 +1,30 @@
 ---
-layout: "../../layouts/ProjectLayout.astro"
-title: 'Hoge Blekker'
-synopsis: 'A philosophical tale about the highest sand dune of Belgium. Shot on 16mm, this film is an ode to the relation between men and grain. '
-tags: ["astro", "blogging", "learning in public"]
-heroImage: '/img/hogeblekker/stills/hogeblekkerCover2.webp'
-
+layout: "../../layouts/BaseLayout.astro"
 ---
-import { Image } from "@astrojs/image/components";
+import { Picture } from "astro-imagetools/components";
+import ProjectHero from '../../components/ProjectHero.astro';
+export const title = 'Hoge Blekker'
+export const synopsis = 'A philosophical tale about the highest sand dune of Belgium. Shot on 16mm, this film is an ode to the relation between men and grain. '
+export const heroImage = '/img/hogeblekker/stills/hogeblekkerCover2.webp'
+
+<section>
+    <ProjectHero title={title} synopsis={synopsis} heroImage={heroImage} />
+</section>
 
 <section class="hero">    
     <div class="hero-content flex-col">
-        <img src="/img/hogeblekker/stills/20181119_HogeBlekker_2.3.1.webp" alt="Hoge Blekker cinematography still"/>
+        <Picture
+            src='/img/hogeblekker/stills/20181119_HogeBlekker_2.3.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Hoge Blekker cinematography still"        
+        />
     </div>
 </section>
 
@@ -37,12 +51,89 @@ import { Image } from "@astrojs/image/components";
 
 <section class="hero">    
     <div class="hero-content flex-col">
-        <img src="/img/hogeblekker/stills/20181119_HogeBlekker_2.10.1.webp" alt="Hoge Blekker cinematography still"/>
-        <img src="/img/hogeblekker/stills/20181119_HogeBlekker_2.11.1.webp" alt="Hoge Blekker cinematography still"/>
-        <img src="/img/hogeblekker/stills/20181119_HogeBlekker_2.12.1.webp" alt="Hoge Blekker cinematography still"/>
-        <img src="/img/hogeblekker/stills/20181119_HogeBlekker_2.5.1.webp" alt="Hoge Blekker cinematography still"/>
-        <img src="/img/hogeblekker/stills/20181119_HogeBlekker_2.7.1.webp" alt="Hoge Blekker cinematography still"/>
-        <img src="/img/hogeblekker/stills/20181119_HogeBlekker_2.8.1.webp" alt="Hoge Blekker cinematography still"/>
-        <img src="/img/hogeblekker/stills/20181119_HogeBlekker_2.1.1.webp" alt="Hoge Blekker cinematography still"/>
+        <Picture
+            src='/img/hogeblekker/stills/20181119_HogeBlekker_2.10.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Hoge Blekker cinematography still"        
+        />
+        <Picture
+            src='/img/hogeblekker/stills/20181119_HogeBlekker_2.11.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Hoge Blekker cinematography still"        
+        />
+        <Picture
+            src='/img/hogeblekker/stills/20181119_HogeBlekker_2.12.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Hoge Blekker cinematography still"        
+        />
+        <Picture
+            src='/img/hogeblekker/stills/20181119_HogeBlekker_2.5.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Hoge Blekker cinematography still"        
+        />
+        <Picture
+            src='/img/hogeblekker/stills/20181119_HogeBlekker_2.7.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Hoge Blekker cinematography still"        
+        />
+        <Picture
+            src='/img/hogeblekker/stills/20181119_HogeBlekker_2.8.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Hoge Blekker cinematography still"        
+        />
+        <Picture
+            src='/img/hogeblekker/stills/20181119_HogeBlekker_2.1.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Hoge Blekker cinematography still"        
+        />
     </div>
 </section>
