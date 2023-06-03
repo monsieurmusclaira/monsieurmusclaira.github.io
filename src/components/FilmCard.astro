@@ -12,17 +12,12 @@ const { title, img, desc, url, badge1, badge2, target = '_blank' } = Astro.props
             return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
         }}
         breakpoints={[1200, 1600, 1920]}  
-        quality="90"
+        quality="80"
         alt="The Time of a Moment artwork"
         objectFit="cover"
         layout="fill"
         format={["avif", "webp"]}
         loading="lazy"
-        attributes={{
-            link: {
-              fetchpriority: "high"
-            }
-          }}
         />
     </div>
 
@@ -38,7 +33,7 @@ const { title, img, desc, url, badge1, badge2, target = '_blank' } = Astro.props
       </filter>        
     </svg>
 
-    <div class="absolute w-screen p-10 bottom-0 z-20 bg-gradient-to-t from-neutral/70 to-transparent">
+    <div class="absolute w-screen p-7 sm:p-10 bottom-0 z-20 bg-gradient-to-t from-neutral/70 to-transparent">
       <h1 class="text-4xl text-warning font-bold capitalize">
         {title}        
       </h1>
