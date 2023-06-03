@@ -1,15 +1,21 @@
-.time-line-container>div:last-child .education__time>.education__line {
-    display: none;
-}
-/* For Webkit-based browsers (Chrome, Safari and Opera) */
-.scrollbar-hide::-webkit-scrollbar {
-    display: none;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
+
+h1, h2 {
+    
+    font-family:  "EB Garamond", serif;  
 }
 
-/* For IE, Edge and Firefox */
-.scrollbar-hide {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+h3, table {
+    font-family: "Montserrat", sans-serif; 
+}
+
+p {
+    font-family: "Montserrat", sans-serif; 
+}
+
+.btn  {
+    font-family: "Montserrat", sans-serif;   
 }
 
 th, td {
@@ -20,6 +26,38 @@ th, td {
     font-weight: 200;
   }
 
-tr td:first-child {
-    font-weight: 600;
- }
+
+/* animation class and keyframes */
+.overflow-hidden {
+overflow: hidden;
+}
+
+.drop-in {
+animation: drop-in 1s ease 200ms backwards;
+}
+
+.drop-in-2 {
+animation: drop-in 1200ms ease 500ms backwards;
+}
+
+.drop-in-3 {
+    animation: drop-in 1200ms ease 600ms backwards;
+    }
+
+@keyframes drop-in {
+from {
+    opacity: 0;
+    transform: translateY(100px);
+}
+to {
+    opacity: 1;
+    transform: translate(0px);
+}
+}
+
+.grain {
+    filter: url(#noiseFilter);
+    background: black;
+    mix-blend-mode: overlay;
+    opacity: 40%;
+}

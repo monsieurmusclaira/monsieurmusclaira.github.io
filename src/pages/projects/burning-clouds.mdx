@@ -1,283 +1,305 @@
 ---
-layout: "../../layouts/ProjectLayout.astro"
-title: 'Burning Clouds'
-synopsis: 'On a long winter night, a passing meteorite connects a wandering young woman, a burned-out factory worker, and an unemployed young man. A portrait of the night and the people in it.'
-tags: ["astro", "blogging", "learning in public"]
-heroImage: '/img/burningclouds/stills/ASTTE__1.57.2.webp'
-
+layout: "../../layouts/BaseLayout.astro"
 ---
-import { Image } from "@astrojs/image/components";
+import { Picture } from "astro-imagetools/components";
+import ProjectHero from '../../components/ProjectHero.astro';
+export const title = 'Burning Clouds'
+export const synopsis = 'On a long winter night, a passing meteorite connects a wandering young woman, a burned-out factory worker, and an unemployed young man. A portrait of the night and the people in it.'
+export const heroImage = '/img/burningclouds/stills/ASTTE__1.57.2.webp'
+
+<section>
+    <ProjectHero title={title} synopsis={synopsis} heroImage={heroImage} />
+</section>
 
 <div class="hero">    
     <div class="hero-content flex-col">
-        <img src="/img/burningclouds/stills/ASTTE__1.68.1.webp" alt="Burning Clouds cinematography still"/>
+        <Picture
+            src='/img/burningclouds/stills/ASTTE__1.68.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Burning Clouds cinematography still"        
+        />
     </div>
 </div>
 
-<div class="hero" >
-    <div class="hero-content grid grid-cols-1 lg:grid-cols-6 items-start">           
-        <table class="table-auto border-separate border-spacing-x-3 col-start-1 lg:col-start-1 col-span-1 lg:col-span-2">
+<section class="hero" >
+    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200">   
+        <p class="text-right font-light">Director</p>
+        <p class="text-left font-bold">Kate Voet</p>
+        <p class="text-right font-light">Cast</p>
+        <p class="text-left font-bold">Lydia Injova</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Jakub Kotynski</p>
+        <p class="text-right font-light">Producer</p>
+        <p class="text-left font-bold">Songs in the Dark</p>
+        <p class="text-right font-light">Co-producer</p>
+        <p class="text-left font-bold">Eyeworks</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Peter Bouckaert</p>
+        <p class="text-right font-light">Assistant Director</p>
+        <p class="text-left font-bold">Jelle Maseman</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Niko Himschoot</p>
+        <p class="text-right font-light">Cinematographer</p>
+        <p class="text-left font-bold">Victor Maes</p>
+        <p class="text-right font-light">First Assistant Camera</p>
+        <p class="text-left font-bold">Jan-Willem Rouwhorst</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Michiel Lateur</p>
+        <p class="text-right font-light">Second Assistant Camera</p>
+        <p class="text-left font-bold">Aileen Vandenbroele</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Anthony Veiten</p>
+        <p class="text-right font-light">Gaffer</p>
+        <p class="text-left font-bold">Dieter Roelens</p>
+        <p class="text-right font-light">Electrician</p>
+        <p class="text-left font-bold">Fenna Maas</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Aaron Veys</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Eva Somers</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Gillis Kornelis</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold ">Dennis Kussener</p>
+        <p class="text-right font-light">Key Grip</p>
+        <p class="text-left font-bold">Jonas Glassee</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Stijn Deprez</p>
+        <p class="text-right font-light">Steadicam</p>
+        <p class="text-left font-bold">Loic Dillen</p>
+        <p class="text-right font-light">Art Director</p>
+        <p class="text-left font-bold">Maud Gyssels</p>
+        <p class="text-right font-light">Set Dresser</p>
+        <p class="text-left font-bold">Robin Hendrix</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Dries Vanoirbeek</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Sophie May</p>
+        <p class="text-right font-light">Make-up</p>
+        <p class="text-left font-bold">Lena Dobbels</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Marlies van Rompay</p>
+        <p class="text-right font-light">Costume Design</p>
+        <p class="text-left font-bold">Heide Winne</p>
+        <p class="text-right font-light">Costumer</p>
+        <p class="text-left font-bold">Fauve Ryckebusch</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Catherine Bourda</p>
+        <p class="text-right font-light">Script</p>
+        <p class="text-left font-bold">Oscar Schutz</p>
+        <p class="text-right font-light">Editing</p>
+        <p class="text-left font-bold">Ewin Ryckaert</p>
+        <p class="text-right font-light">Sound Recording</p>
+        <p class="text-left font-bold">Yanna Soentjens</p>
+        <p class="text-right font-light">Boom Operator</p>
+        <p class="text-left font-bold">Vincent Somers</p>
+        <p class="text-right font-light">Sound Design</p>
+        <p class="text-left font-bold">Tijn Hazen</p>
+        <p class="text-right font-light">Sound Effect Editor</p>
+        <p class="text-left font-bold">Taco Drijfhout</p> 
+        <p class="text-right font-light">Dialogue Editor</p>
+        <p class="text-left font-bold">Max van den Oever</p>
+        <p class="text-right font-light">ADR</p>
+        <p class="text-left font-bold">Fred de Geus</p>
+        <p class="text-right font-light">Foley</p>
+        <p class="text-left font-bold">Elias Vervecken</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold ">Stephane Werner</p>
+        <p class="text-right font-light">Music</p>
+        <p class="text-left font-bold">Senjan Jansen</p>
+        <p class="text-right font-light">VFX</p>
+        <p class="text-left font-bold">Elke Dhaese</p>
+        <p class="text-right font-light">Title Design</p>
+        <p class="text-left font-bold">Titles</p>
+        <p class="text-right font-light">Location</p>
+        <p class="text-left font-bold">Luna Marie Bogaert</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Djurre van Dijck</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Neil De Cock</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Annabelle van Campenhout</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Wout de Coster</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Wim Geerts</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Geert Maes</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Lennert Lefevre</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Ann Nooyens</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Jente Pijpers</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Nina van Belle</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Lucas Gortemaker</p> 
+    </div>  
+</section>
+
+<div class="hero">    
+    <div class="hero-content flex-col">
+        <Picture
+            src='/img/burningclouds/stills/ASTTE__1.5.2.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Burning Clouds cinematography still"        
+        />
+    </div>
+</div>
+
+<section class="hero" >
+    <div class="hero-content ">           
+        <table class="table-auto border-separate border-spacing-x-3 text-base-200">
             <tbody>
                 <tr>
-                    <td class="text-right font-light">Director</td>
-                    <td class="text-left font-bold">Kate Voet</td>
+                    <td class="text-right font-bold">Festivals</td>
+                    <td class="text-left font-light">International Short Film Festival Leuven (BE)</td>
                 </tr>
                 <tr>
-                    <td class="text-right font-light">Cast</td>
-                    <td class="text-left font-bold">Lydia Injova</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Jakub Kotynski</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Producer</td>
-                    <td class="text-left font-bold">Songs in the Dark</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Co-producer</td>
-                    <td class="text-left font-bold">Eyeworks</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Peter Bouckaert</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Assistant Director</td>
-                    <td class="text-left font-bold">Jelle Maseman</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Niko Himschoot</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Cinematographer</td>
-                    <td class="text-left font-bold">Victor Maes</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">First Assistant Camera</td>
-                    <td class="text-left font-bold">Jan-Willem Rouwhorst</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Michiel Lateur</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Second Assistant Camera</td>
-                    <td class="text-left font-bold">Aileen Vandenbroele</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Anthony Veiten</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Gaffer</td>
-                    <td class="text-left font-bold">Dieter Roelens</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Electrician</td>
-                    <td class="text-left font-bold">Fenna Maas</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Aaron Veys</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Eva Somers</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Gillis Kornelis</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold ">Dennis Kussener</td>
+                    <td class="text-right font-bold "></td>
+                    <td class="text-left font-light">FEST New Directors New Films Festival (PT)</td>
                 </tr>
             </tbody>
         </table>
-        <table class="table-auto border-separate border-spacing-x-3 col-start-1 lg:col-start-3 col-span-1 lg:col-span-2">
-            <tbody>
-                <tr>
-                    <td class="text-right font-light">Key Grip</td>
-                    <td class="text-left font-bold">Jonas Glassee</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Stijn Deprez</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Steadicam</td>
-                    <td class="text-left font-bold">Loic Dillen</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Art Director</td>
-                    <td class="text-left font-bold">Maud Gyssels</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Set Dresser</td>
-                    <td class="text-left font-bold">Robin Hendrix</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Dries Vanoirbeek</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Sophie May</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Make-up</td>
-                    <td class="text-left font-bold">Lena Dobbels</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Marlies van Rompay</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Costume Design</td>
-                    <td class="text-left font-bold">Heide Winne</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Costumer</td>
-                    <td class="text-left font-bold">Fauve Ryckebusch</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Catherine Bourda</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Script</td>
-                    <td class="text-left font-bold">Oscar Schutz</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Editing</td>
-                    <td class="text-left font-bold">Ewin Ryckaert</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Sound Recording</td>
-                    <td class="text-left font-bold">Yanna Soentjens</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Boom Operator</td>
-                    <td class="text-left font-bold">Vincent Somers</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Sound Design</td>
-                    <td class="text-left font-bold">Tijn Hazen</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Sound Effect Editor</td>
-                    <td class="text-left font-bold">Taco Drijfhout</td>
-                </tr>
-            </tbody>
-        </table>    
-        <table class="table-auto border-separate border-spacing-x-3 col-start-1 lg:col-start-5 col-span-1 lg:col-span-2">
-            <tbody>
-
-                <tr>
-                    <td class="text-right font-light">Dialogue Editor</td>
-                    <td class="text-left font-bold">Max van den Oever</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">ADR</td>
-                    <td class="text-left font-bold">Fred de Geus</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Foley</td>
-                    <td class="text-left font-bold">Elias Vervecken</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold ">Stephane Werner</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Music</td>
-                    <td class="text-left font-bold">Senjan Jansen</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">VFX</td>
-                    <td class="text-left font-bold">Elke Dhaese</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Title Design</td>
-                    <td class="text-left font-bold">Titles</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Location</td>
-                    <td class="text-left font-bold">Luna Marie Bogaert</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Djurre van Dijck</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Neil De Cock</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Annabelle van Campenhout</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Wout de Coster</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Wim Geerts</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Geert Maes</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Lennert Lefevre</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Ann Nooyens</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Jente Pijpers</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Nina van Belle</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Lucas Gortemaker</td>
-                </tr>
-            </tbody>
-        </table>  
     </div>  
-</div>
+</section>
 
-<div class="hero">    
+<section class="hero">    
     <div class="hero-content flex-col">
-        <img src="/img/burningclouds/stills/ASTTE__1.5.2.webp"/>
-        <img src="/img/burningclouds/stills/ASTTE__1.38.2.webp"/>
+        <Picture
+            src='/img/burningclouds/stills/ASTTE__1.38.2.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Burning Clouds cinematography still"        
+        />
+        <Picture
+            src='/img/burningclouds/stills/ASTTE__1.116.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Burning Clouds cinematography still"        
+        />
+        <Picture
+            src='/img/burningclouds/stills/ASTTE__1.32.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Burning Clouds cinematography still"        
+        />
+        <Picture
+            src='/img/burningclouds/stills/ASTTE__2.2.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Burning Clouds cinematography still"        
+        />
+        <Picture
+            src='/img/burningclouds/stills/ASTTE__1.42.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Burning Clouds cinematography still"        
+        />
+        <Picture
+            src='/img/burningclouds/stills/ASTTE__1.47.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Burning Clouds cinematography still"        
+        />
+        <Picture
+            src='/img/burningclouds/stills/ASTTE__1.58.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Burning Clouds cinematography still"        
+        />
+        <Picture
+            src='/img/burningclouds/stills/ASTTE__1.40.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Burning Clouds cinematography still"        
+        />
+        <Picture
+            src='/img/burningclouds/stills/ASTTE__1.98.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Burning Clouds cinematography still"        
+        />
+        <Picture
+            src='/img/burningclouds/stills/ASTTE__1.101.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Burning Clouds cinematography still"        
+        />
     </div>
-</div>
-<div class="hero ">
-    <div class="hero-content flex flex-wrap">
-        <img src="/img/burningclouds/laurels/White.png" class="w-72" />
-    </div>
-</div>
-
-<div class="hero">    
-    <div class="hero-content flex-col">
-        <img src="/img/burningclouds/stills/ASTTE__1.116.1.webp" alt="Burning Clouds cinematography still"/>
-        <img src="/img/burningclouds/stills/ASTTE__1.32.1.webp" alt="Burning Clouds cinematography still"/>
-        <img src="/img/burningclouds/stills/ASTTE__2.2.1.webp" alt="Burning Clouds cinematography still"/>
-        <img src="/img/burningclouds/stills/ASTTE__1.42.1.webp" alt="Burning Clouds cinematography still"/>
-        <img src="/img/burningclouds/stills/ASTTE__1.47.1.webp" alt="Burning Clouds cinematography still"/>
-        <img src="/img/burningclouds/stills/ASTTE__1.58.1.webp" alt="Burning Clouds cinematography still"/>
-        <img src="/img/burningclouds/stills/ASTTE__1.40.1.webp" alt="Burning Clouds cinematography still"/>
-        <img src="/img/burningclouds/stills/ASTTE__1.98.1.webp" alt="Burning Clouds cinematography still"/>
-        <img src="/img/burningclouds/stills/ASTTE__1.101.1.webp" alt="Burning Clouds cinematography still"/>
-    </div>
-</div>
+</section>
