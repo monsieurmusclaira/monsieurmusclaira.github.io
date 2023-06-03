@@ -2,14 +2,21 @@ import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
+import m2dx from 'astro-m2dx';
 import { astroImageTools } from "astro-imagetools";
-import netlify from "@astrojs/netlify/functions";
+
+/** @type {import('astro-m2dx').Options} */
+const m2dxOptions = {
+  // activate any required feature here
+};
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://monsieurmusclaira.github.io',
   integrations: [tailwind(), sitemap(), astroImageTools, mdx()],
-  markdown: {},
-  output: "server",
-  adapter: netlify()
+  markdown: {
+    remarkPlugins: [[m2dx, m2dxOptions]],
+    //               ^^^^
+    extendDefaultPlugins: true,
+  },
 });
