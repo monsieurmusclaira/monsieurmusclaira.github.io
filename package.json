@@ -1,5 +1,6 @@
 {
-  "name": "VictorMaesPortfolio",
+  "name": "victor-maes-portfolio",
+  "description": "This is the codebase for my portfolio",
   "type": "module",
   "version": "2.1.0",
   "private": true,
