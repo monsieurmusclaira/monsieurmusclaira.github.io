@@ -5,10 +5,12 @@ import mdx from "@astrojs/mdx";
 import m2dx from 'astro-m2dx';
 import { astroImageTools } from "astro-imagetools";
 
+
 /** @type {import('astro-m2dx').Options} */
 const m2dxOptions = {
   // activate any required feature here
 };
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,6 +19,6 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [[m2dx, m2dxOptions]],
     //               ^^^^
-    extendDefaultPlugins: true,
-  },
+    extendDefaultPlugins: true
+  }
 });
