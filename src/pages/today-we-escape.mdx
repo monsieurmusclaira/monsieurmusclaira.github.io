@@ -1,11 +1,11 @@
 ---
-layout: "../../layouts/BaseLayout.astro"
+layout: "../layouts/BaseLayout.astro"
 ---
 import { Picture } from "astro-imagetools/components";
-import ProjectHero from '../../components/ProjectHero.astro';
-export const title = 'Springtide'
+import ProjectHero from '../components/ProjectHero.astro';
+export const title = 'Today We Escape'
 export const synopsis = 'What does it mean to feel at home, and how can we carry those feelings of comfort with us in an ever-changing environment as we seek out new landscapes? Springtide is a coming-of-age portrait of a girl balancing on a thin line between adolescence and adulthood as she embarks on a spiritual journey. '
-export const heroImage = '/img/springtide/stills/Untitled_1.30.1.webp'
+export const heroImage = '/img/todayweescape/stills/1.25.1_1.25.1.webp'
 
 <section>
     <ProjectHero title={title} synopsis={synopsis} heroImage={heroImage} />
@@ -14,7 +14,7 @@ export const heroImage = '/img/springtide/stills/Untitled_1.30.1.webp'
 <section class="hero">    
     <div class="hero-content flex-col">
         <Picture
-            src='/img/springtide/stills/20190317_Springtide_1.26.2.webp'
+            src='/img/todayweescape/stills/1.115.1_1.115.1.webp'
             sizes={(breakpoints) => {
                 const maxWidth = breakpoints[breakpoints.length - 1];
                 return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
@@ -23,22 +23,33 @@ export const heroImage = '/img/springtide/stills/Untitled_1.30.1.webp'
             loading="lazy"   
             format={["avif", "webp"]}
             quality="90"
-            alt="Springtide cinematography still"        
+            alt="Today We Escape cinematography still"        
         />
     </div>
 </section>
-
 <section class="hero" >
     <div class="hero-content ">           
-        <table class="table-auto border-separate border-spacing-x-3 text-base-200">
+        <table class="table-auto border-separate border-spacing-x-3 text-base-200 ">
             <tbody>
                 <tr>
                     <td class="text-right font-bold">Director</td>
-                    <td class="text-left font-light">Elke Hertogs</td>
+                    <td class="text-left font-light">Floris van Severen</td>
                 </tr>
                 <tr>
                     <td class="text-right font-bold">Cast</td>
-                    <td class="text-left font-light">Shauni Goetz</td>
+                    <td class="text-left font-light">Evarist Grauwe</td>
+                </tr>
+                <tr>
+                    <td class="text-right font-bold"></td>
+                    <td class="text-left font-light">Jaco Lagrange</td>
+                </tr>
+                <tr>
+                    <td class="text-right font-bold"></td>
+                    <td class="text-left font-light">Janicq Goethals</td>
+                </tr>
+                <tr>
+                    <td class="text-right font-bold"></td>
+                    <td class="text-left font-light">Joris Bultynck</td>
                 </tr>
                 <tr>
                     <td class="text-right font-bold">Cinematographer</td>
@@ -46,11 +57,43 @@ export const heroImage = '/img/springtide/stills/Untitled_1.30.1.webp'
                 </tr>
                 <tr>
                     <td class="text-right font-bold">Assistant Director</td>
-                    <td class="text-left font-light">Christian van de Pol</td>
+                    <td class="text-left font-light">Barbara Loots</td>
                 </tr>
                 <tr>
-                    <td class="text-right font-bold ">Editor</td>
-                    <td class="text-left font-light">Joris Vertenten</td>
+                    <td class="text-right font-bold"></td>
+                    <td class="text-left font-light">Josse de Maesschalk</td>
+                </tr>
+                <tr>
+                    <td class="text-right font-bold"></td>
+                    <td class="text-left font-light">Annabelle van Campenhout</td>
+                </tr>
+                <tr>
+                    <td class="text-right font-bold ">1st Assistant Camera</td>
+                    <td class="text-left font-light">Lino de Koninck</td>
+                </tr>
+                <tr>
+                    <td class="text-right font-bold "></td>
+                    <td class="text-left font-light">Giel Dhaenens</td>
+                </tr>
+                <tr>
+                    <td class="text-right font-bold "></td>
+                    <td class="text-left font-light">Nathan Verhaeghe</td>
+                </tr>
+                <tr>
+                    <td class="text-right font-bold ">2nd Assistant Camera</td>
+                    <td class="text-left font-light">Frederik Stuur</td>
+                </tr>
+                <tr>
+                    <td class="text-right font-bold ">Gaffer</td>
+                    <td class="text-left font-light">Sam Baguet</td>
+                </tr>
+                <tr>
+                    <td class="text-right font-bold "></td>
+                    <td class="text-left font-light">Lino de Koninck</td>
+                </tr>
+                <tr>
+                    <td class="text-right font-bold ">Electrician</td>
+                    <td class="text-left font-light">Jonas Hollevoet</td>
                 </tr>
             </tbody>
         </table>
@@ -59,7 +102,7 @@ export const heroImage = '/img/springtide/stills/Untitled_1.30.1.webp'
 <section class="hero">    
     <div class="hero-content flex-col">
         <Picture
-            src='/img/springtide/stills/20190317_Springtide_1.27.1.webp'
+            src='/img/todayweescape/stills/1.116.1_1.116.1.webp'
             sizes={(breakpoints) => {
                 const maxWidth = breakpoints[breakpoints.length - 1];
                 return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
@@ -68,10 +111,10 @@ export const heroImage = '/img/springtide/stills/Untitled_1.30.1.webp'
             loading="lazy"   
             format={["avif", "webp"]}
             quality="90"
-            alt="Springtide cinematography still"        
+            alt="Today We Escape cinematography still"        
         />
         <Picture
-            src='/img/springtide/stills/20190317_Springtide_1.69.1.webp'
+            src='/img/todayweescape/stills/1.161.1_1.161.1.webp'
             sizes={(breakpoints) => {
                 const maxWidth = breakpoints[breakpoints.length - 1];
                 return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
@@ -80,10 +123,10 @@ export const heroImage = '/img/springtide/stills/Untitled_1.30.1.webp'
             loading="lazy"   
             format={["avif", "webp"]}
             quality="90"
-            alt="Springtide cinematography still"        
+            alt="Today We Escape cinematography still"        
         />
         <Picture
-            src='/img/springtide/stills/20190317_Springtide_1.70.1.webp'
+            src='/img/todayweescape/stills/1.193.1_1.193.1.webp'
             sizes={(breakpoints) => {
                 const maxWidth = breakpoints[breakpoints.length - 1];
                 return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
@@ -92,10 +135,10 @@ export const heroImage = '/img/springtide/stills/Untitled_1.30.1.webp'
             loading="lazy"   
             format={["avif", "webp"]}
             quality="90"
-            alt="Springtide cinematography still"        
+            alt="Today We Escape cinematography still"        
         />
         <Picture
-            src='/img/springtide/stills/20190317_Springtide_1.59.1.webp'
+            src='/img/todayweescape/stills/1.88.1_1.88.1.webp'
             sizes={(breakpoints) => {
                 const maxWidth = breakpoints[breakpoints.length - 1];
                 return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
@@ -104,10 +147,10 @@ export const heroImage = '/img/springtide/stills/Untitled_1.30.1.webp'
             loading="lazy"   
             format={["avif", "webp"]}
             quality="90"
-            alt="Springtide cinematography still"        
+            alt="Today We Escape cinematography still"        
         />
         <Picture
-            src='/img/springtide/stills/20190317_Springtide_1.75.1.webp'
+            src='/img/todayweescape/stills/1.104.1_1.104.1.webp'
             sizes={(breakpoints) => {
                 const maxWidth = breakpoints[breakpoints.length - 1];
                 return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
@@ -116,10 +159,10 @@ export const heroImage = '/img/springtide/stills/Untitled_1.30.1.webp'
             loading="lazy"   
             format={["avif", "webp"]}
             quality="90"
-            alt="Springtide cinematography still"        
+            alt="Today We Escape cinematography still"        
         />
         <Picture
-            src='/img/springtide/stills/20190317_Springtide_1.55.3.webp'
+            src='/img/todayweescape/stills/1.111.7_1.111.7.webp'
             sizes={(breakpoints) => {
                 const maxWidth = breakpoints[breakpoints.length - 1];
                 return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
@@ -128,10 +171,10 @@ export const heroImage = '/img/springtide/stills/Untitled_1.30.1.webp'
             loading="lazy"   
             format={["avif", "webp"]}
             quality="90"
-            alt="Springtide cinematography still"        
+            alt="Today We Escape cinematography still"        
         />
         <Picture
-            src='/img/springtide/stills/20190317_Springtide_1.34.1.webp'
+            src='/img/todayweescape/stills/1.136.1_1.136.1.webp'
             sizes={(breakpoints) => {
                 const maxWidth = breakpoints[breakpoints.length - 1];
                 return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
@@ -140,10 +183,10 @@ export const heroImage = '/img/springtide/stills/Untitled_1.30.1.webp'
             loading="lazy"   
             format={["avif", "webp"]}
             quality="90"
-            alt="Springtide cinematography still"        
+            alt="Today We Escape cinematography still"        
         />
         <Picture
-            src='/img/springtide/stills/20190317_Springtide_1.63.1.webp'
+            src='/img/todayweescape/stills/1.34.1_1.34.1.webp'
             sizes={(breakpoints) => {
                 const maxWidth = breakpoints[breakpoints.length - 1];
                 return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
@@ -152,10 +195,10 @@ export const heroImage = '/img/springtide/stills/Untitled_1.30.1.webp'
             loading="lazy"   
             format={["avif", "webp"]}
             quality="90"
-            alt="Springtide cinematography still"        
+            alt="Today We Escape cinematography still"        
         />
         <Picture
-            src='/img/springtide/stills/20190317_Springtide_1.67.1.webp'
+            src='/img/todayweescape/stills/1.47.1_1.47.1.webp'
             sizes={(breakpoints) => {
                 const maxWidth = breakpoints[breakpoints.length - 1];
                 return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
@@ -164,10 +207,10 @@ export const heroImage = '/img/springtide/stills/Untitled_1.30.1.webp'
             loading="lazy"   
             format={["avif", "webp"]}
             quality="90"
-            alt="Springtide cinematography still"        
+            alt="Today We Escape cinematography still"        
         />
         <Picture
-            src='/img/springtide/stills/20190317_Springtide_1.64.1.webp'
+            src='/img/todayweescape/stills/1.83.1_1.83.1.webp'
             sizes={(breakpoints) => {
                 const maxWidth = breakpoints[breakpoints.length - 1];
                 return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
@@ -176,10 +219,10 @@ export const heroImage = '/img/springtide/stills/Untitled_1.30.1.webp'
             loading="lazy"   
             format={["avif", "webp"]}
             quality="90"
-            alt="Springtide cinematography still"        
+            alt="Today We Escape cinematography still"        
         />
         <Picture
-            src='/img/springtide/stills/Untitled_1.30.1.webp'
+            src='/img/todayweescape/stills/1.133.2_1.133.2.webp'
             sizes={(breakpoints) => {
                 const maxWidth = breakpoints[breakpoints.length - 1];
                 return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
@@ -188,7 +231,7 @@ export const heroImage = '/img/springtide/stills/Untitled_1.30.1.webp'
             loading="lazy"   
             format={["avif", "webp"]}
             quality="90"
-            alt="Springtide cinematography still"        
+            alt="Today We Escape cinematography still"        
         />
     </div>
 </section>
