@@ -1,64 +1,317 @@
 ---
-layout: "../../layouts/ProjectLayout.astro"
+layout: "../../layouts/BaseLayout.astro"
 title: 'Anna'
-synopsis: 'One night, Anna is confronted with an attack by an unknown man, which both brings her closer to her fears as well as her confidence to fight them. '
+synopsis: ' '
 tags: ["astro", "blogging", "learning in public"]
-heroImage: '/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.328.1.webp'
-
+heroImage: '/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.328.1.jpg'
 ---
-import { Image } from "@astrojs/image/components";
+import { Picture } from "astro-imagetools/components";
+import ProjectHero from '../../components/ProjectHero.astro';
+export const title = 'Joop De Vlinderman'
+export const synopsis = 'When Joop, a warden at a local zoo, discovers a half-eaten butterfly in his butterfly enclosure he sets upon a quest to find the culprit.'
+
+export const heroImage = '/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.347.1.jpg'
+
+<section>
+    <ProjectHero title={title} synopsis={synopsis} heroImage={heroImage} />
+</section>
 
 <section class="hero">    
     <div class="hero-content flex-col">
-        <img src="/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.323.1.webp" />
+        <img src="" />
+    </div>
+</section>
+
+<section class="hero">    
+    <div class="hero-content ">
+        <Picture
+            src='/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.323.1.jpg'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="The Time of a Moment artwork"        
+        />
     </div>
 </section>
 
 <section class="hero" >
-    <div class="hero-content">           
-        <table class="table-auto border-separate border-spacing-x-3 ">
-            <tbody>
-                <tr>
-                    <td class="text-right font-light">Director</td>
-                    <td class="text-left font-bold">Robin Hendrix</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Cast</td>
-                    <td class="text-left font-bold">Shauni Goetz</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Cinematographer</td>
-                    <td class="text-left font-bold">Victor Maes</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Assistant Director</td>
-                    <td class="text-left font-bold">Toon Minnen</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Sound</td>
-                    <td class="text-left font-bold">Oscarius Schutze</td>
-                </tr>
-
-            </tbody>
-        </table>
+    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200">   
+        <p class="text-right font-light">Director</p>
+        <p class="font-bold">Jeroen Zeegers</p>
+        <p class="text-right font-light">Cast</p>
+        <p class="text-left font-bold">Wietse Tanghe</p>
+        <p class="text-left font-light"></p>
+        <p class="font-bold">Manou Kersting</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Ivan Pecnik</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Lore Uyttendaele</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Yentl Gijbels</p>
+        <p class="text-right font-light">Production</p>
+        <p class="text-left font-bold">Michaela Borcher</p>
+        <p class="text-right font-light">1st Assitant Director</p>
+        <p class="text-left font-bold">Matthias Tuinstra</p>
+        <p class="text-right font-light">Cinematography</p>
+        <p class="text-left font-bold">Victor Maes</p>
+        <p class="text-right font-light">Gaffer</p>
+        <p class="text-left font-bold">Dieter Roelens</p>
+        <p class="text-right font-light">Spark</p>
+        <p class="text-left font-bold">Wouter van Achte</p>
+        <p class="text-right font-light">Grip</p>
+        <p class="text-left font-bold">John Hokke</p>
+        <p class="text-right font-light">1st Assistant Camera</p>
+        <p class="text-left font-bold">Jan-Willem Rouwhorst</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Michiel Lateur</p>
+        <p class="text-right font-light">2nd Assistant Camera</p>
+        <p class="text-left font-bold">Fenna Maas</p>
+        <p class="text-right font-light">Art Director</p>
+        <p class="text-left font-bold">Daphne Gort</p>
+        <p class="text-right font-light">Set Dressers</p>
+        <p class="text-left font-bold">Mandy Louwet</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Bob van den Berg</p>
+        <p class="text-right font-light"></p>
+        <p class="text-left font-bold">Helle Huisman</p>
+        <p class="text-right font-light">Make-up</p>
+        <p class="text-left font-bold">Robin Verhecken</p>
+        <p class="text-right font-light">Boom Operator</p>
+        <p class="text-left font-bold">Pieter Desmet</p>
+        <p class="text-right font-light">Runner</p>
+        <p class="text-left font-bold">Falcke Penso</p>
+        <p class="text-right font-light">Script Supervisor</p>
+        <p class="text-left font-bold">Daan Janssens</p>                      
     </div>  
 </section>
 
 <section class="hero">    
     <div class="hero-content flex-col">
-        <img src="/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.319.1.webp"/>
-        <img src="/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.325.1.webp"/>
-        <img src="/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.256.1.webp"/>
-        <img src="/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.343.1.webp"/>
-        <img src="/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.345.1.webp"/>
-        <img src="/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.346.1.webp"/>
-        <img src="/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.182.1.webp"/>
-        <img src="/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.256.1.webp"/>
-        <img src="/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.256.1.webp"/>
-        <img src="/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.256.1.webp"/>
-        <img src="/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.256.1.webp"/>
-        <img src="/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.256.1.webp"/>
-        <img src="/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.256.1.webp"/>
-        <img src="/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.256.1.webp"/>
+        <Picture
+            src='/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.319.1.jpg'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy" 
+            format={["avif", "webp"]}   
+            alt="The Time of a Moment artwork"    
+        />
+        <Picture
+            src='/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.328.1.jpg'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"
+            format={["avif", "webp"]}   
+            alt="The Time of a Moment artwork"        
+        />
+        <Picture
+            src='/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.325.1.jpg'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"
+            format={["avif", "webp"]}   
+            alt="The Time of a Moment artwork"        
+        />
+        <Picture
+            src='/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.256.1.jpg'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"
+            format={["avif", "webp"]}   
+            alt="The Time of a Moment artwork"        
+        />
+        <Picture
+            src='/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.343.1.jpg'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"
+            format={["avif", "webp"]}   
+            alt="The Time of a Moment artwork"        
+        />
+        <Picture
+            src='/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.286.1.jpg'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"
+            format={["avif", "webp"]}   
+            alt="The Time of a Moment artwork"        
+        />
+        <Picture
+            src='/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.113.1.jpg'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"
+            format={["avif", "webp"]}   
+            alt="The Time of a Moment artwork"        
+        />
+        <Picture
+            src='/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.133.1.jpg'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"
+            format={["avif", "webp"]}   
+            alt="The Time of a Moment artwork"        
+        />
+        <Picture
+            src='/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.345.1.jpg'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"
+            format={["avif", "webp"]}   
+            alt="The Time of a Moment artwork"        
+        />
+        <Picture
+            src='/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.285.1.jpg'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"
+            format={["avif", "webp"]}   
+            alt="The Time of a Moment artwork"        
+        />
+        <Picture
+            src='/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.335.1.jpg'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"
+            format={["avif", "webp"]}   
+            alt="The Time of a Moment artwork"        
+        />
+        <Picture
+            src='/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.245.4.jpg'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"
+            format={["avif", "webp"]}   
+            alt="The Time of a Moment artwork"        
+        />
+        <Picture
+            src='/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.168.1.jpg'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"
+            format={["avif", "webp"]}   
+            alt="The Time of a Moment artwork"        
+        />
+        <Picture
+            src='/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.166.1.jpg'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"
+            format={["avif", "webp"]}   
+            alt="The Time of a Moment artwork"        
+        />
+        <Picture
+            src='/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.182.1.jpg'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"
+            format={["avif", "webp"]}   
+            alt="The Time of a Moment artwork"        
+        />
+        <Picture
+            src='/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.355.1.jpg'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"
+            format={["avif", "webp"]}   
+            alt="The Time of a Moment artwork"        
+        />
+        <Picture
+            src='/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.346.1.jpg'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"
+            format={["avif", "webp"]}   
+            alt="The Time of a Moment artwork"        
+        />
+        <Picture
+            src='/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.303.1.jpg'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"
+            format={["avif", "webp"]}   
+            alt="The Time of a Moment artwork"        
+        />
+        <Picture
+            src='/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.359.1.jpg'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"
+            format={["avif", "webp"]}   
+            alt="The Time of a Moment artwork"        
+        />
+        <Picture
+            src='/img/joopdevlinderman/stills/20220321_Vlinderman_Showlut_1.347.1.jpg'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"
+            format={["avif", "webp"]}   
+            alt="The Time of a Moment artwork"        
+        />
     </div>
 </section>
+

@@ -1,17 +1,52 @@
 ---
 // library imports
-import { Image } from "@astrojs/image/components";
-
+import { Picture } from "astro-imagetools/components";
+import ArrowDownIcon from '@astropub/icons/ArrowDown'
 const { synopsis, title, heroImage } = Astro.props;
 ---
-<div class="hero min-h-screen relative bg-[center_center] md:bg-[center_50_center]  " style={{backgroundImage: `url(${heroImage})`}}>
-    <div class="hero absolute bottom-0 py-5  bg-black/50 text-white grid">
-        <div class="max-w-lg w-auto place-self-center text-center mt-5 mx-10">
-            <h1 class="text-5xl p-3 font-bold ">{title}</h1>
-            <p class="text-xl py-3">{synopsis}</p>  
-            <div class="flex justify-center items-center py-3">
-                <img class="animate-bounce w-6 h-6" src="/svg/arrowdown.svg" alt="arrow down" />
+<div class="h-screen w-screen relative">
+    <div class="z-0 h-screen w-screen absolute top-0">
+        <Picture
+        src={heroImage}
+        sizes={(breakpoints) => {
+            const maxWidth = breakpoints[breakpoints.length - 1];
+            return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+        }}
+        breakpoints={[1600, 1920]}  
+        alt="The Time of a Moment artwork"
+        objectFit="cover"
+        layout="fill"
+        format={["avif", "webp"]}
+        quality="90"
+        loading="eager"
+        attributes={{
+            link: {
+              fetchpriority: "high"
+            }
+          }}
+        />
+    </div>
+
+    <svg class="grain absolute top-0 z-10 w-full h-full">
+        <filter id='noiseFilter'>
+          <feTurbulence 
+            type='fractalNoise' 
+            baseFrequency='0.6' 
+            stitchTiles='stitch'/>
+           <feColorMatrix in="colorNoise" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0" />
+              <feComposite operator="in" in2="SourceGraphic" result="monoNoise"/>
+              <feBlend in="SourceGraphic" in2="monoNoise" mode="screen" />
+        </filter>        
+    </svg>
+
+    <div class="z-20 w-full bottom-0 pt-20 pb-5 absolute bg-gradient-to-t from-neutral to-transparent text-white overflow-hidden ">   
+        <div class="prose text-center pt-20 px-10 mx-auto">
+            <h1 class="drop-in text-secondary drop-shadow">{title}</h1>
+            <p class="drop-in-2 text-base-100 drop-shadow">{synopsis}</p>  
+            <div class="drop-in-3 flex justify-center items-center py-3">
+                <ArrowDownIcon size="20" class="animate-bounce fill-secondary" alt="arrow down" /> 
             </div>
         </div>
     </div>
 </div>
+

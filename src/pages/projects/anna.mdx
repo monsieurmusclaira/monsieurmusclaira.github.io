@@ -1,55 +1,121 @@
 ---
-layout: "../../layouts/ProjectLayout.astro"
-title: 'Anna'
-synopsis: 'One night, Anna is confronted with an attack by an unknown man, which both brings her closer to her fears as well as her confidence to fight them. '
-tags: ["astro", "blogging", "learning in public"]
-heroImage: '/img/anna/stills/20181119_Anna_1.74.1.webp'
+layout: "../../layouts/BaseLayout.astro"
 ---
-import { Image } from "@astrojs/image/components";
+import { Picture } from "astro-imagetools/components";
+import ProjectHero from '../../components/ProjectHero.astro';
+export const meta = {
+    title: 'Anna',
+    synopsis: 'One night, Anna is confronted with an attack by an unknown man, which both brings her closer to her fears as well as her confidence to fight them.',
+    heroImage: '/img/anna/stills/20181119_Anna_1.74.1.webp',
+};
+
+<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} />
 
 <section class="hero">    
-    <div class="hero-content flex-col">
-        <img src="/img/anna/stills/20181119_Anna_1.76.1.webp" alt="Anna cinematography still"/>
+    <div class="hero-content">
+        <Picture
+            src='/img/anna/stills/20181119_Anna_1.76.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Anna cinematography still"        
+        />
     </div>
 </section>
 
 <section class="hero" >
-    <div class="hero-content">           
-        <table class="table-auto border-separate border-spacing-x-3 ">
-            <tbody>
-                <tr>
-                    <td class="text-right font-light">Director</td>
-                    <td class="text-left font-bold">Robin Hendrix</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Cast</td>
-                    <td class="text-left font-bold">Shauni Goetz</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Cinematographer</td>
-                    <td class="text-left font-bold">Victor Maes</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Assistant Director</td>
-                    <td class="text-left font-bold">Toon Minnen</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Sound</td>
-                    <td class="text-left font-bold">Oscarius Schutze</td>
-                </tr>
-
-            </tbody>
-        </table>
+    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200">            
+        <p class="text-right font-light">Director</p>
+        <p class="text-left font-bold">Robin Hendrix</p>
+        <p class="text-right font-light">Cast</p>
+        <p class="text-left font-bold">Shauni Goetz</p>
+        <p class="text-right font-light">Cinematographer</p>
+        <p class="text-left font-bold">Victor Maes</p>
+        <p class="text-right font-light">Assistant Director</p>
+        <p class="text-left font-bold">Toon Minnen</p>
+        <p class="text-right font-light">Sound</p>
+        <p class="text-left font-bold">Oscar Schutzr</p>
     </div>  
 </section>
 
 <section class="hero">    
     <div class="hero-content flex-col">
-        <img src="/img/anna/stills/20181119_Anna_1.77.1.webp" alt="Anna cinematography still" />
-        <img src="/img/anna/stills/20181119_Anna_1.69.1.webp" alt="Anna cinematography still"/>
-        <img src="/img/anna/stills/20181119_Anna_1.70.1.webp" alt="Anna cinematography still"/>
-        <img src="/img/anna/stills/20181119_Anna_1.71.2.webp" alt="Anna cinematography still"/>
-        <img src="/img/anna/stills/20181119_Anna_1.78.1.webp" alt="Anna cinematography still"/>
-        <img src="/img/anna/stills/20181119_Anna_1.74.1.webp" alt="Anna cinematography still"/>
+        <Picture
+            src='/img/anna/stills/20181119_Anna_1.77.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Anna cinematography still"        
+        />
+        <Picture
+            src='/img/anna/stills/20181119_Anna_1.69.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Anna cinematography still"        
+        />
+        <Picture
+            src='/img/anna/stills/20181119_Anna_1.70.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Anna cinematography still"        
+        />
+        <Picture
+            src='/img/anna/stills/20181119_Anna_1.71.2.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Anna cinematography still"        
+        />
+        <Picture
+            src='/img/anna/stills/20181119_Anna_1.78.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Anna cinematography still"        
+        />
+        <Picture
+            src='/img/anna/stills/20181119_Anna_1.74.1.webp'
+            sizes={(breakpoints) => {
+                const maxWidth = breakpoints[breakpoints.length - 1];
+                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }}
+            breakpoints={[600, 1000, 1200]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="90"
+            alt="Anna cinematography still"        
+        />
     </div>
 </section>
