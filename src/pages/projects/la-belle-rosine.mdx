@@ -1,20 +1,20 @@
 ---
-layout: "../layouts/BaseLayout.astro"
+layout: "../../layouts/BaseLayout.astro"
 ---
 import { Picture } from "astro-imagetools/components";
-import ProjectHero from '../components/ProjectHero.astro';
-export const title = 'Felix, le gamin qui traverse'
-export const synopsis = 'A fragment of the lives of Felix and Boris - two young men who meet again and unexpectedly share a moment of grief.'
-export const heroImage = '/img/felix/stills/20190221_LeGaminQuiTraverse_1.57.1.webp'
+import ProjectHero from '../../components/ProjectHero.astro';
+export const title = 'La Belle Rosine'
+export const synopsis = 'After giving a lecture, a visiting professor is seduced by the city’s women which leads to a set of difficult circumstances.'
+export const heroImage = '/img/labellerosine/stills/20190223_LaBelleRosine_1.107.1.webp'
 
 <section>
     <ProjectHero title={title} synopsis={synopsis} heroImage={heroImage} />
 </section>
 
 <section class="hero">    
-    <div class="hero-content flex-col">
+    <div class="hero-content">
         <Picture
-            src='/img/felix/stills/20190221_LeGaminQuiTraverse_1.91.2.webp'
+            src='/img/labellerosine/stills/20190223_LaBelleRosine_1.34.2.webp'
             sizes={(breakpoints) => {
                 const maxWidth = breakpoints[breakpoints.length - 1];
                 return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
@@ -23,34 +23,52 @@ export const heroImage = '/img/felix/stills/20190221_LeGaminQuiTraverse_1.57.1.w
             loading="lazy"   
             format={["avif", "webp"]}
             quality="90"
-            alt="Felix Le Gamin Qui Traverse cinematography still"        
+            alt="La Belle Rosine cinematography still"        
         />
     </div>
 </section>
 
 <section class="hero" >
-    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200">        
-        <p class="text-right font-light">Director</p>
-        <p class="text-left font-bold">Max Meyer</p>
-        <p class="text-right font-light">Cast</p>
-        <p class="text-left font-bold">Felix Meyer</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Yoan Zimmer</p>
-        <p class="text-right font-light">Cinematographer</p>
-        <p class="text-left font-bold">Victor Maes</p>
-        <p class="text-right font-light">1st Assistant Camera</p>
-        <p class="text-left font-bold">Jan-Willem Rouwhorst</p>
-        <p class="text-right font-light">Assistant Director</p>
-        <p class="text-left font-bold">Kate Voet</p>
-        <p class="text-right font-light">Sound</p>
-        <p class="text-left font-bold">Gillis van der Wee</p>
+    <div class="hero-content">           
+        <table class="table-auto border-separate border-spacing-x-3 text-base-200">
+            <tbody>
+                <tr>
+                    <td class="text-right font-light">Director</td>
+                    <td class="text-left font-bold">Gaetan Verdikt</td>
+                </tr>       
+                <tr>
+                    <td class="text-right font-light">Cast</td>
+                    <td class="text-left font-bold">Lucas Tavernier</td>
+                </tr>
+                <tr>
+                    <td class="text-right font-light"></td>
+                    <td class="text-left font-bold">Eleonor Peltier</td>
+                </tr>
+                <tr>
+                    <td class="text-right font-light"></td>
+                    <td class="text-left font-bold">Audrey Rose</td>
+                </tr>         
+                <tr>
+                    <td class="text-right font-light">Cinematographer</td>
+                    <td class="text-left font-bold">Victor Maes</td>
+                </tr>
+                <tr>
+                    <td class="text-right font-light">Assistant Camera</td>
+                    <td class="text-left font-bold">Floris van Severen</td>
+                </tr>
+                <tr>
+                    <td class="text-right font-light">Sound</td>
+                    <td class="text-left font-bold">Thibault Heymans</td>
+                </tr>
+            </tbody>
+        </table>
     </div>  
 </section>
 
 <section class="hero">    
     <div class="hero-content flex-col">
         <Picture
-            src='/img/felix/stills/20190221_LeGaminQuiTraverse_1.15.1.webp'
+            src='/img/labellerosine/stills/20190223_LaBelleRosine_1.33.1.webp'
             sizes={(breakpoints) => {
                 const maxWidth = breakpoints[breakpoints.length - 1];
                 return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
@@ -59,10 +77,10 @@ export const heroImage = '/img/felix/stills/20190221_LeGaminQuiTraverse_1.57.1.w
             loading="lazy"   
             format={["avif", "webp"]}
             quality="90"
-            alt="Felix Le Gamin Qui Traverse cinematography still"        
+            alt="La Belle Rosine cinematography still"        
         />
         <Picture
-            src='/img/felix/stills/20190221_LeGaminQuiTraverse_1.47.1.webp'
+            src='/img/labellerosine/stills/20190223_LaBelleRosine_1.109.1.webp'
             sizes={(breakpoints) => {
                 const maxWidth = breakpoints[breakpoints.length - 1];
                 return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
@@ -71,10 +89,10 @@ export const heroImage = '/img/felix/stills/20190221_LeGaminQuiTraverse_1.57.1.w
             loading="lazy"   
             format={["avif", "webp"]}
             quality="90"
-            alt="Felix Le Gamin Qui Traverse cinematography still"        
+            alt="La Belle Rosine cinematography still"        
         />
         <Picture
-            src='/img/felix/stills/20190221_LeGaminQuiTraverse_1.46.3.webp'
+            src='/img/labellerosine/stills/20190223_LaBelleRosine_1.115.1.webp'
             sizes={(breakpoints) => {
                 const maxWidth = breakpoints[breakpoints.length - 1];
                 return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
@@ -83,10 +101,10 @@ export const heroImage = '/img/felix/stills/20190221_LeGaminQuiTraverse_1.57.1.w
             loading="lazy"   
             format={["avif", "webp"]}
             quality="90"
-            alt="Felix Le Gamin Qui Traverse cinematography still"        
+            alt="La Belle Rosine cinematography still"        
         />
         <Picture
-            src='/img/felix/stills/20190221_LeGaminQuiTraverse_1.50.4.webp'
+            src='/img/labellerosine/stills/20190223_LaBelleRosine_1.107.1.webp'
             sizes={(breakpoints) => {
                 const maxWidth = breakpoints[breakpoints.length - 1];
                 return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
@@ -95,10 +113,10 @@ export const heroImage = '/img/felix/stills/20190221_LeGaminQuiTraverse_1.57.1.w
             loading="lazy"   
             format={["avif", "webp"]}
             quality="90"
-            alt="Felix Le Gamin Qui Traverse cinematography still"        
+            alt="La Belle Rosine cinematography still"        
         />
         <Picture
-            src='/img/felix/stills/20190221_LeGaminQuiTraverse_1.52.1.webp'
+            src='/img/labellerosine/stills/20190223_LaBelleRosine_1.45.1.webp'
             sizes={(breakpoints) => {
                 const maxWidth = breakpoints[breakpoints.length - 1];
                 return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
@@ -107,10 +125,10 @@ export const heroImage = '/img/felix/stills/20190221_LeGaminQuiTraverse_1.57.1.w
             loading="lazy"   
             format={["avif", "webp"]}
             quality="90"
-            alt="Felix Le Gamin Qui Traverse cinematography still"        
+            alt="La Belle Rosine cinematography still"        
         />
         <Picture
-            src='/img/felix/stills/20190221_LeGaminQuiTraverse_1.57.1.webp'
+            src='/img/labellerosine/stills/20190223_LaBelleRosine_1.93.2.webp'
             sizes={(breakpoints) => {
                 const maxWidth = breakpoints[breakpoints.length - 1];
                 return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
@@ -119,19 +137,7 @@ export const heroImage = '/img/felix/stills/20190221_LeGaminQuiTraverse_1.57.1.w
             loading="lazy"   
             format={["avif", "webp"]}
             quality="90"
-            alt="Felix Le Gamin Qui Traverse cinematography still"        
-        />
-        <Picture
-            src='/img/felix/stills/20190221_LeGaminQuiTraverse_1.5.4.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Felix Le Gamin Qui Traverse cinematography still"        
+            alt="La Belle Rosine cinematography still"  
         />
     </div>
 </section>
