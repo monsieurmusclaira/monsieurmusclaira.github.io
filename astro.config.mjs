@@ -6,6 +6,7 @@ import mdx from "@astrojs/mdx";
 import { astroImageTools } from "astro-imagetools";
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://monsieurmusclaira.github.io',
   integrations: [
     tailwind(), 
     sitemap(), 
