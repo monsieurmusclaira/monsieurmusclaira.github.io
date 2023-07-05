@@ -2,7 +2,7 @@
 // library imports
 import { Picture } from "astro-imagetools/components";
 import ArrowDownIcon from '@astropub/icons/ArrowDown'
-const { synopsis, title, heroImage } = Astro.props;
+const { synopsis, title, heroImage, alt } = Astro.props;
 ---
 <div class="h-screen w-screen relative">
     <div class="z-0 h-screen w-screen absolute top-0">
@@ -13,11 +13,12 @@ const { synopsis, title, heroImage } = Astro.props;
             return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
         }}
         breakpoints={[1600, 1920]}  
-        alt="The Time of a Moment artwork"
+        alt={alt}
         objectFit="cover"
         layout="fill"
         format={["avif", "webp"]}
-        quality="90"
+        quality="70"
+        preload="avif"
         loading="eager"
         attributes={{
             link: {

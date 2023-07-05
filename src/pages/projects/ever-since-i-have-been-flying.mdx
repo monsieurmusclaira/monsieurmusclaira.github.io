@@ -1,0 +1,53 @@
+---
+layout: "../../layouts/BaseLayout.astro"
+---
+import { Picture } from "astro-imagetools/components";
+import ProjectHero from '../../components/ProjectHero.astro';
+import CreditsItem from '../../components/CreditsItem.astro';
+import FestivalsItem from '../../components/FestivalsItem.astro';
+import ContentPicture from '../../components/ContentPicture.astro';
+export const meta = {
+    title: 'Ever Since, I Have Been Flying',
+    synopsis: 'A sixty-year-old Kurdish man, who grew up in a nomadic tribe in the mountains of south-eastern Turkey, recalls moments from his youth that shaped his life. He takes us back to his idyllic childhood with his mother, his first love found in a cotton field and lost in the woods, and the mistreatment suffered at the hands of the police, in a cold and dark place.',
+    heroImage: '/img/eversinceihavebeenflying/stills/EVER_SINCE_cover.png',
+    imageAlt: 'Ever Since I Have Been Flying cinematography still'
+};
+
+<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} />
+
+<ContentPicture image="/img/eversinceihavebeenflying/stills/AS_WOMEN_TOUCH__1.12.1.png" alt={meta.imageAlt} />
+
+<section class="hero" >
+    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200">            
+        <CreditsItem crewfunction="Director" crewname="Aylin Gökmen" />
+        <CreditsItem crewfunction="Featuring" crewname="Vakıf Çağın" />
+        <CreditsItem crewfunction="Production" crewname="À Vol d’Oiseau" />
+        <CreditsItem crewfunction="Producer" crewname="Aylin Gökmen" />
+        <CreditsItem crewfunction="" crewname="Séverine Tibi" />
+        <CreditsItem crewfunction="Writer" crewname="Aylin Gökmen" />       
+        <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
+        <CreditsItem crewfunction="Camera Assistant" crewname="Tomris C. Canbulat" />
+        <CreditsItem crewfunction="" crewname="Line de Kanel" />        
+        <CreditsItem crewfunction="Assistant Director" crewname="Ozan Takış " />
+        <CreditsItem crewfunction="Editing" crewname="Aylin Gökmen" />
+        <CreditsItem crewfunction="Color Grading" crewname="Tapia González" /> 
+        <CreditsItem crewfunction="Sound & SFX" crewname="Utku Gürler" />
+        <CreditsItem crewfunction="Sound Design & Mix" crewname="Philippe Ciompi" />
+        <CreditsItem crewfunction="Sound Mix Studio" crewname="Sound Disposition" />
+        <CreditsItem crewfunction="Additional Sound" crewname="Saeid Jahromi " />
+        <CreditsItem crewfunction="Artistic Consultant" crewname="Claude Barras" />
+        <CreditsItem crewfunction="Production Consultant" crewname="Clémence Pun " />    
+        <CreditsItem crewfunction="Editing Consultant" crewname="Eka Tsotsoria" />
+        <CreditsItem crewfunction="Special Consultant" crewname="Hüseyin Yavuz" />           
+        <CreditsItem crewfunction="Music" crewname="Yom" />
+        <CreditsItem crewfunction="Film Development & Scan" crewname="Cinegrell" />
+        <CreditsItem crewfunction="Distribution" crewname="Square Eyes" />
+    </div>  
+</section>
+<section class="hero" >
+    <div id="Festivals" class="hero-content grid grid-cols-2 gap-2 text-base-200">     
+        <FestivalsItem festivalname="Locarno International Film Festival (CH)" heading="Festivals" />
+    </div>  
+</section>
+
+<ContentPicture image="/img/eversinceihavebeenflying/stills/357557964_4239708652920819_2115549884538618730_n.jpg" alt={meta.imageAlt} />

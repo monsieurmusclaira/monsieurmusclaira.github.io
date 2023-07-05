@@ -3,137 +3,33 @@ layout: "../../layouts/BaseLayout.astro"
 ---
 import { Picture } from "astro-imagetools/components";
 import ProjectHero from '../../components/ProjectHero.astro';
-export const title = 'Hoge Blekker'
-export const synopsis = 'A philosophical tale about the highest sand dune of Belgium. Shot on 16mm, this film is an ode to the relation between men and grain. '
-export const heroImage = '/img/hogeblekker/stills/hogeblekkerCover2.webp'
+import CreditsItem from '../../components/CreditsItem.astro';
+import FestivalsItem from '../../components/FestivalsItem.astro';
+import ContentPicture from '../../components/ContentPicture.astro';
+export const meta = {
+    title: 'Hoge Blekker',
+    synopsis: 'A philosophical tale about the highest sand dune of Belgium. Shot on 16mm, this film is an ode to the relation between men and grain.',
+    heroImage: '/img/hogeblekker/stills/hogeblekkerCover2.webp',
+    imageAlt: 'Ever Since I Have Been Flying cinematography still'
+};
 
-<section>
-    <ProjectHero title={title} synopsis={synopsis} heroImage={heroImage} />
-</section>
+<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} />
 
-<section class="hero">    
-    <div class="hero-content flex-col">
-        <Picture
-            src='/img/hogeblekker/stills/20181119_HogeBlekker_2.3.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Hoge Blekker cinematography still"        
-        />
-    </div>
-</section>
+<ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.3.1.webp" alt={meta.imageAlt} />
 
 <section class="hero" >
-    <div class="hero-content">           
-        <table class="table-auto border-separate border-spacing-x-3 ">
-            <tbody>
-                <tr>
-                    <td class="text-right font-light">Director</td>
-                    <td class="text-left font-bold">Aylin Gokmen</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Cinematographer</td>
-                    <td class="text-left font-bold">Victor Maes</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Assistant Director</td>
-                    <td class="text-left font-bold">Quan Nguyen Hong</td>
-                </tr>
-            </tbody>
-        </table>
+    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200">            
+        <CreditsItem crewfunction="Director" crewname="Aylin Gökmen" />
+        <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
+        <CreditsItem crewfunction="Assistant Director" crewname="Quan Nguyen Hong" />
     </div>  
 </section>
 
-<section class="hero">    
-    <div class="hero-content flex-col">
-        <Picture
-            src='/img/hogeblekker/stills/20181119_HogeBlekker_2.10.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Hoge Blekker cinematography still"        
-        />
-        <Picture
-            src='/img/hogeblekker/stills/20181119_HogeBlekker_2.11.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Hoge Blekker cinematography still"        
-        />
-        <Picture
-            src='/img/hogeblekker/stills/20181119_HogeBlekker_2.12.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Hoge Blekker cinematography still"        
-        />
-        <Picture
-            src='/img/hogeblekker/stills/20181119_HogeBlekker_2.5.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Hoge Blekker cinematography still"        
-        />
-        <Picture
-            src='/img/hogeblekker/stills/20181119_HogeBlekker_2.7.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Hoge Blekker cinematography still"        
-        />
-        <Picture
-            src='/img/hogeblekker/stills/20181119_HogeBlekker_2.8.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Hoge Blekker cinematography still"        
-        />
-        <Picture
-            src='/img/hogeblekker/stills/20181119_HogeBlekker_2.1.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Hoge Blekker cinematography still"        
-        />
-    </div>
-</section>
+<ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.10.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.11.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.12.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.5.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.7.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.8.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.1.1.webp" alt={meta.imageAlt} />
+

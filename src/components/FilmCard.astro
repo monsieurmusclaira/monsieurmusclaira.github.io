@@ -1,23 +1,20 @@
 ---
 // library imports
 import { Picture } from "astro-imagetools/components";
-const { title, img, desc, url, badge1, badge2, target = '_blank' } = Astro.props;
+const { title, img, alt, imageposition, desc, url, badge1, badge2, target = '_blank' } = Astro.props;
 ---
 <div class="h-screen w-screen relative">
     <div class="z-0 h-screen w-screen absolute top-0">
         <Picture
         src={img}
-        sizes={(breakpoints) => {
-            const maxWidth = breakpoints[breakpoints.length - 1];
-            return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-        }}
-        breakpoints={[1200, 1600, 1920]}  
-        quality="80"
-        alt="The Time of a Moment artwork"
+        quality="70"
+        alt={title}
         objectFit="cover"
         layout="fill"
         format={["avif", "webp"]}
+        preload="avif"
         loading="lazy"
+        objectPosition={imageposition}
         />
     </div>
 
