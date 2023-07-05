@@ -3,30 +3,19 @@ layout: "../../layouts/BaseLayout.astro"
 ---
 import { Picture } from "astro-imagetools/components";
 import ProjectHero from '../../components/ProjectHero.astro';
-export const title = 'La Belle Rosine'
-export const synopsis = 'After giving a lecture, a visiting professor is seduced by the city’s women which leads to a set of difficult circumstances.'
-export const heroImage = '/img/labellerosine/stills/20190223_LaBelleRosine_1.107.1.webp'
+import CreditsItem from '../../components/CreditsItem.astro';
+import FestivalsItem from '../../components/FestivalsItem.astro';
+import ContentPicture from '../../components/ContentPicture.astro';
+export const meta = {
+    title: 'La Belle Rosine',
+    synopsis: 'After giving a lecture, a visiting professor is seduced by thewomen of the city which leads to a set of difficult circumstances.',
+    heroImage: '/img/labellerosine/stills/20190223_LaBelleRosine_1.107.1.webp',
+    imageAlt: 'Anna cinematography still'
+};
 
-<section>
-    <ProjectHero title={title} synopsis={synopsis} heroImage={heroImage} />
-</section>
+<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} />
 
-<section class="hero">    
-    <div class="hero-content">
-        <Picture
-            src='/img/labellerosine/stills/20190223_LaBelleRosine_1.34.2.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="La Belle Rosine cinematography still"        
-        />
-    </div>
-</section>
+<ContentPicture image="/img/labellerosine/stills/20190223_LaBelleRosine_1.34.2.webp" alt={meta.imageAlt} />
 
 <section class="hero" >
     <div class="hero-content">           
@@ -65,79 +54,10 @@ export const heroImage = '/img/labellerosine/stills/20190223_LaBelleRosine_1.107
     </div>  
 </section>
 
-<section class="hero">    
-    <div class="hero-content flex-col">
-        <Picture
-            src='/img/labellerosine/stills/20190223_LaBelleRosine_1.33.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="La Belle Rosine cinematography still"        
-        />
-        <Picture
-            src='/img/labellerosine/stills/20190223_LaBelleRosine_1.109.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="La Belle Rosine cinematography still"        
-        />
-        <Picture
-            src='/img/labellerosine/stills/20190223_LaBelleRosine_1.115.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="La Belle Rosine cinematography still"        
-        />
-        <Picture
-            src='/img/labellerosine/stills/20190223_LaBelleRosine_1.107.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="La Belle Rosine cinematography still"        
-        />
-        <Picture
-            src='/img/labellerosine/stills/20190223_LaBelleRosine_1.45.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="La Belle Rosine cinematography still"        
-        />
-        <Picture
-            src='/img/labellerosine/stills/20190223_LaBelleRosine_1.93.2.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="La Belle Rosine cinematography still"  
-        />
-    </div>
-</section>
+<ContentPicture image="/img/labellerosine/stills/20190223_LaBelleRosine_1.33.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/labellerosine/stills/20190223_LaBelleRosine_1.109.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/labellerosine/stills/20190223_LaBelleRosine_1.115.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/labellerosine/stills/20190223_LaBelleRosine_1.107.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/labellerosine/stills/20190223_LaBelleRosine_1.45.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/labellerosine/stills/20190223_LaBelleRosine_1.93.2.webp" alt={meta.imageAlt} />
+

@@ -3,20 +3,25 @@ layout: "../layouts/BaseLayout.astro"
 ---
 import { Picture } from "astro-imagetools/components";
 import ProjectHero from '../components/ProjectHero.astro';
-export const title = 'A few words about me'
-export const synopsis = ''
-export const heroImage = '/img/thetearsofthings/stills/TTOT_20221008_1.19.1.webp'
+import CreditsItem from '../components/CreditsItem.astro';
+import FestivalsItem from '../components/FestivalsItem.astro';
+import ContentPicture from '../components/ContentPicture.astro';
+export const meta = {
+    title: 'A few words about me',
+    synopsis: '',
+    heroImage: '/img/thetearsofthings/stills/TTOT_20221008_1.19.1.webp',
+    imageAlt: 'Cinematography still'
+};
 
 <center>
-<section>
-    <ProjectHero title={title} synopsis={synopsis} heroImage={heroImage} />
-</section>
+
+<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} />
 
 <article class="prose mt-5 text-base-100">
 
 Victor Maes graduated from LUCA School of Arts Brussels' film program in 2015, and took courses in advanced cinematography at the Global Cinematography Institute in Los Angeles.
 
-He’s been working as a camera assistant on feature films and commercials (Close, Girl, De Patrick, Nobody has to know) since 2016. As a cinematographer he works on various film projects, alternating between fiction and documentary as well as commercial ones. 
+He’s been working as a camera assistant on feature films and commercials (Close, Girl, Holly, De Patrick, Nobody has to know) since 2016. As a cinematographer he works on various film projects, alternating between fiction and documentary as well as commercial ones. 
 
 Furthermore, he's interested in exploring new technology, like VR and games, as well as revisiting analogue film. Originally he graduated as a director with a short animation film, and currently he's developing an animated, interactive VR experience: a magical-realist tale about an elderly woman with Alzheimer's disease, co-directed with Kate Voet and produced by Cassette for Timescapes.
 </article>
@@ -40,7 +45,6 @@ Furthermore, he's interested in exploring new technology, like VR and games, as 
     </table>
 </article>
 
-<section class="hero">    
-    <img src="/img/thetearsofthings/stills/TTOT_20212101_1.1.1.webp " class="p-5" />
-</section>
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.1.webp" alt={meta.imageAlt} />
+
 </center>

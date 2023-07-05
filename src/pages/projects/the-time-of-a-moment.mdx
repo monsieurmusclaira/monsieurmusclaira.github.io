@@ -3,29 +3,19 @@ layout: "../../layouts/BaseLayout.astro"
 ---
 import { Picture } from "astro-imagetools/components";
 import ProjectHero from '../../components/ProjectHero.astro';
+import CreditsItem from '../../components/CreditsItem.astro';
+import FestivalsItem from '../../components/FestivalsItem.astro';
+import ContentPicture from '../../components/ContentPicture.astro';
 export const meta = {
     title: 'The Time of a Moment',
     synopsis: 'We experience a day through the eyes of Ida, a 72-year-old widow living with dementia. After the death of her husband Louis, her condition has rapidly worsened. She lives alone in their small flat on the 20th floor of a high-rise in a big city. This place holds many of their memories - some already forgotten, others soon to be lost. The Time of a Moment is a magical story about transformation, loneliness and loss, but above all about love.',
     heroImage: '/img/thetimeofamoment/stills/snowglobe_low_colores_paper.jpg',
+    imageAlt: 'The Time of a Moment still'
 };
 
-<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} />
+<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} />
 
-<section class="hero">    
-    <div class="hero-content my-5">
-        <Picture
-        src='/img/thetimeofamoment/stills/fishbowl_1.jpg'
-        sizes={(breakpoints) => {
-            const maxWidth = breakpoints[breakpoints.length - 1];
-            return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-        }}
-        breakpoints={[600, 1000, 1200]}
-        loading="lazy"   
-        format={["avif", "webp"]}
-        alt="The Time of a Moment artwork"        
-        />
-    </div>
-</section>
+<ContentPicture image="/img/thetimeofamoment/stills/fishbowl_1.jpg" alt={meta.imageAlt} />
 
 <section class="hero " >
     <div class="hero-content">           
@@ -70,6 +60,10 @@ export const meta = {
             <tbody>
                 <tr>
                     <td class="text-right font-bold">Selections</td>                    
+                    <td class="text-left font-light">Venice Gap Financing Market 2023 </td>
+                </tr>
+                <tr>
+                    <td class="text-right font-bold"></td>                    
                     <td class="text-left font-light">New Images XR Development Market 2023</td>
                 </tr>
                 <tr>
@@ -89,18 +83,4 @@ export const meta = {
     </div>  
 </section>
 
-<section class="hero">    
-    <div class="hero-content my-5">
-        <Picture
-        src='/img/thetimeofamoment/stills/LivingRoom_END_color_2.jpg'
-        sizes={(breakpoints) => {
-            const maxWidth = breakpoints[breakpoints.length - 1];
-            return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-        }}
-        breakpoints={[600, 1000, 1200]}  
-        loading="lazy" 
-        format={["avif", "webp"]}
-        alt="The Time of a Moment artwork"               
-        />
-    </div>
-</section>
+<ContentPicture image="/img/thetimeofamoment/stills/LivingRoom_END_color_2.jpg" alt={meta.imageAlt} />

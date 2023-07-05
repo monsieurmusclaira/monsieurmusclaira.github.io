@@ -3,303 +3,70 @@ layout: "../../layouts/BaseLayout.astro"
 ---
 import { Picture } from "astro-imagetools/components";
 import ProjectHero from '../../components/ProjectHero.astro';
-export const title = 'Burning Clouds'
-export const synopsis = 'On a long winter night, a passing meteorite connects a wandering young woman, a burned-out factory worker, and an unemployed young man. A portrait of the night and the people in it.'
-export const heroImage = '/img/burningclouds/stills/ASTTE__1.57.2.webp'
+import CreditsItem from '../../components/CreditsItem.astro';
+import FestivalsItem from '../../components/FestivalsItem.astro';
+import ContentPicture from '../../components/ContentPicture.astro';
+export const meta = {
+    title: 'Burning Clouds',
+    synopsis: 'On a long winter night, a passing meteorite connects a wandering young woman, a burned-out factory worker, and an unemployed young man. A portrait of the night and the people in it.',
+    heroImage: '/img/burningclouds/stills/ASTTE__1.57.2.webp',
+    imageAlt: 'Burning Clouds cinematography still'
+};
 
-<section>
-    <ProjectHero title={title} synopsis={synopsis} heroImage={heroImage} />
-</section>
+<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} />
 
-<div class="hero">    
-    <div class="hero-content flex-col">
-        <Picture
-            src='/img/burningclouds/stills/ASTTE__1.68.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Burning Clouds cinematography still"        
-        />
-    </div>
-</div>
+<ContentPicture image="/img/burningclouds/stills/ASTTE__1.68.1.webp" alt={meta.imageAlt} />
 
 <section class="hero" >
-    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200">   
-        <p class="text-right font-light">Director</p>
-        <p class="text-left font-bold">Kate Voet</p>
-        <p class="text-right font-light">Cast</p>
-        <p class="text-left font-bold">Lydia Injova</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Jakub Kotynski</p>
-        <p class="text-right font-light">Producer</p>
-        <p class="text-left font-bold">Songs in the Dark</p>
-        <p class="text-right font-light">Co-producer</p>
-        <p class="text-left font-bold">Eyeworks</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Peter Bouckaert</p>
-        <p class="text-right font-light">Assistant Director</p>
-        <p class="text-left font-bold">Jelle Maseman</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Niko Himschoot</p>
-        <p class="text-right font-light">Cinematographer</p>
-        <p class="text-left font-bold">Victor Maes</p>
-        <p class="text-right font-light">First Assistant Camera</p>
-        <p class="text-left font-bold">Jan-Willem Rouwhorst</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Michiel Lateur</p>
-        <p class="text-right font-light">Second Assistant Camera</p>
-        <p class="text-left font-bold">Aileen Vandenbroele</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Anthony Veiten</p>
-        <p class="text-right font-light">Gaffer</p>
-        <p class="text-left font-bold">Dieter Roelens</p>
-        <p class="text-right font-light">Electrician</p>
-        <p class="text-left font-bold">Fenna Maas</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Aaron Veys</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Eva Somers</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Gillis Kornelis</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold ">Dennis Kussener</p>
-        <p class="text-right font-light">Key Grip</p>
-        <p class="text-left font-bold">Jonas Glassee</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Stijn Deprez</p>
-        <p class="text-right font-light">Steadicam</p>
-        <p class="text-left font-bold">Loic Dillen</p>
-        <p class="text-right font-light">Art Director</p>
-        <p class="text-left font-bold">Maud Gyssels</p>
-        <p class="text-right font-light">Set Dresser</p>
-        <p class="text-left font-bold">Robin Hendrix</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Dries Vanoirbeek</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Sophie May</p>
-        <p class="text-right font-light">Make-up</p>
-        <p class="text-left font-bold">Lena Dobbels</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Marlies van Rompay</p>
-        <p class="text-right font-light">Costume Design</p>
-        <p class="text-left font-bold">Heide Winne</p>
-        <p class="text-right font-light">Costumer</p>
-        <p class="text-left font-bold">Fauve Ryckebusch</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Catherine Bourda</p>
-        <p class="text-right font-light">Script</p>
-        <p class="text-left font-bold">Oscar Schutz</p>
-        <p class="text-right font-light">Editing</p>
-        <p class="text-left font-bold">Ewin Ryckaert</p>
-        <p class="text-right font-light">Sound Recording</p>
-        <p class="text-left font-bold">Yanna Soentjens</p>
-        <p class="text-right font-light">Boom Operator</p>
-        <p class="text-left font-bold">Vincent Somers</p>
-        <p class="text-right font-light">Sound Design</p>
-        <p class="text-left font-bold">Tijn Hazen</p>
-        <p class="text-right font-light">Sound Effect Editor</p>
-        <p class="text-left font-bold">Taco Drijfhout</p> 
-        <p class="text-right font-light">Dialogue Editor</p>
-        <p class="text-left font-bold">Max van den Oever</p>
-        <p class="text-right font-light">ADR</p>
-        <p class="text-left font-bold">Fred de Geus</p>
-        <p class="text-right font-light">Foley</p>
-        <p class="text-left font-bold">Elias Vervecken</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold ">Stephane Werner</p>
-        <p class="text-right font-light">Music</p>
-        <p class="text-left font-bold">Senjan Jansen</p>
-        <p class="text-right font-light">VFX</p>
-        <p class="text-left font-bold">Elke Dhaese</p>
-        <p class="text-right font-light">Title Design</p>
-        <p class="text-left font-bold">Titles</p>
-        <p class="text-right font-light">Location</p>
-        <p class="text-left font-bold">Luna Marie Bogaert</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Djurre van Dijck</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Neil De Cock</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Annabelle van Campenhout</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Wout de Coster</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Wim Geerts</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Geert Maes</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Lennert Lefevre</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Ann Nooyens</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Jente Pijpers</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Nina van Belle</p>
-        <p class="text-right font-light"></p>
-        <p class="text-left font-bold">Lucas Gortemaker</p> 
+    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200">            
+        <CreditsItem crewfunction="Director" crewname="Yentl de Baets" />
+        <CreditsItem crewfunction="Cast" crewname="Melody van Gompel" />
+        <CreditsItem crewfunction="" crewname="Karam Asoos" />
+        <CreditsItem crewfunction="" crewname="Youri Dirckx" />
+        <CreditsItem crewfunction="Assistant Director" crewname="Nicole Tegelaars" />
+        <CreditsItem crewfunction="" crewname="Frank van den Bogaart" />
+        <CreditsItem crewfunction="" crewname="Jules Mathôt" />
+        <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
+        <CreditsItem crewfunction="1st Assistant Camera" crewname="Jan Willem Rouwhorst" />
+        <CreditsItem crewfunction="" crewname="Michiel Lateur" />
+        <CreditsItem crewfunction="" crewname="Robbe Vandekeere" />
+        <CreditsItem crewfunction="2nd Assistant Camera" crewname="Rhomi Martens" />
+        <CreditsItem crewfunction="" crewname="Nelle Verweirder" />
+        <CreditsItem crewfunction="Gaffer" crewname="Wouter van Achte" />
+        <CreditsItem crewfunction="Spark" crewname="Fenna Maas" />
+        <CreditsItem crewfunction="VFX" crewname="Elke D'haese" />
+        <CreditsItem crewfunction="Sound Recording" crewname="Lucas Magotteaux" />
+        <CreditsItem crewfunction="" crewname="Warre van Ingelghem" />
+        <CreditsItem crewfunction="Sound Editing" crewname="Michel Coquette" />
+        <CreditsItem crewfunction="Sound Mix" crewname="Patrick Hubart" />
+        <CreditsItem crewfunction="Music" crewname="Gone Icon" />
+        <CreditsItem crewfunction="Art Director" crewname="Daphne Gort" />
+        <CreditsItem crewfunction="Art Dresser" crewname="Martijn van de Wiele" />
+        <CreditsItem crewfunction="Make-up" crewname="Marlies van Rompay" />
+        <CreditsItem crewfunction="" crewname="Inez Kockelberg" />
+        <CreditsItem crewfunction="Caretaker" crewname="Kurt de Baets" />
+        <CreditsItem crewfunction="Covid Police" crewname="Cato Catteeuw" />
+        <CreditsItem crewfunction="Camera equipment" crewname="Camalot Belgium" />
+        <CreditsItem crewfunction="Lighting equipment" crewname="Lites" />
     </div>  
 </section>
 
-<div class="hero">    
-    <div class="hero-content flex-col">
-        <Picture
-            src='/img/burningclouds/stills/ASTTE__1.5.2.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Burning Clouds cinematography still"        
-        />
-    </div>
-</div>
+<ContentPicture image="/img/burningclouds/stills/ASTTE__1.5.2.webp" alt={meta.imageAlt} />
 
 <section class="hero" >
-    <div class="hero-content ">           
-        <table class="table-auto border-separate border-spacing-x-3 text-base-200">
-            <tbody>
-                <tr>
-                    <td class="text-right font-bold">Festivals</td>
-                    <td class="text-left font-light">International Short Film Festival Leuven (BE)</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-bold "></td>
-                    <td class="text-left font-light">FEST New Directors New Films Festival (PT)</td>
-                </tr>
-            </tbody>
-        </table>
+    <div id="Festivals" class="hero-content grid grid-cols-2 gap-2 text-base-200">     
+        <FestivalsItem festivalname="International Short Film Festival Leuven (BE)" heading="Festivals" />
+        <FestivalsItem festivalname="FEST New Directors New Films Festival (PT)" heading="" />
     </div>  
 </section>
 
-<section class="hero">    
-    <div class="hero-content flex-col">
-        <Picture
-            src='/img/burningclouds/stills/ASTTE__1.38.2.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Burning Clouds cinematography still"        
-        />
-        <Picture
-            src='/img/burningclouds/stills/ASTTE__1.116.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Burning Clouds cinematography still"        
-        />
-        <Picture
-            src='/img/burningclouds/stills/ASTTE__1.32.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Burning Clouds cinematography still"        
-        />
-        <Picture
-            src='/img/burningclouds/stills/ASTTE__2.2.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Burning Clouds cinematography still"        
-        />
-        <Picture
-            src='/img/burningclouds/stills/ASTTE__1.42.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Burning Clouds cinematography still"        
-        />
-        <Picture
-            src='/img/burningclouds/stills/ASTTE__1.47.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Burning Clouds cinematography still"        
-        />
-        <Picture
-            src='/img/burningclouds/stills/ASTTE__1.58.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Burning Clouds cinematography still"        
-        />
-        <Picture
-            src='/img/burningclouds/stills/ASTTE__1.40.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Burning Clouds cinematography still"        
-        />
-        <Picture
-            src='/img/burningclouds/stills/ASTTE__1.98.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Burning Clouds cinematography still"        
-        />
-        <Picture
-            src='/img/burningclouds/stills/ASTTE__1.101.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Burning Clouds cinematography still"        
-        />
-    </div>
-</section>
+<ContentPicture image="/img/burningclouds/stills/ASTTE__1.38.2.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/burningclouds/stills/ASTTE__1.116.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/burningclouds/stills/ASTTE__1.32.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/burningclouds/stills/ASTTE__2.2.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/burningclouds/stills/ASTTE__1.42.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/burningclouds/stills/ASTTE__1.47.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/burningclouds/stills/ASTTE__1.58.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/burningclouds/stills/ASTTE__1.40.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/burningclouds/stills/ASTTE__1.98.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/burningclouds/stills/ASTTE__1.101.1.webp" alt={meta.imageAlt} />

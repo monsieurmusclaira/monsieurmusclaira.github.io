@@ -1,0 +1,17 @@
+---
+const { image, alt } = Astro.props;
+import { Picture } from "astro-imagetools/components";
+---
+<section class="hero">    
+    <div class="hero-content">
+        <Picture
+            src={image}
+            breakpoints={[200, 400, 800, 1400]}
+            loading="lazy"   
+            format={["avif", "webp"]}
+            quality="70"
+            preload="avif"
+            alt={alt}       
+        />
+    </div>
+</section>
