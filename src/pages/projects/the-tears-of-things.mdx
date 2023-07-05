@@ -3,28 +3,19 @@ layout: "../../layouts/BaseLayout.astro"
 ---
 import { Picture } from "astro-imagetools/components";
 import ProjectHero from '../../components/ProjectHero.astro';
-export const title = 'The Tears of Things'
-export const synopsis = 'Ana attempts to untangle the painful memories of the night when her marriage began to crumble. Unable to speak, she starts writing. Her diary becomes a letter to her husband about their growing alienation, set in a deafening silence.'
-export const heroImage = '/img/thetearsofthings/stills/TTOT_20212101_1.1.49.webp'
+import CreditsItem from '../../components/CreditsItem.astro';
+import FestivalsItem from '../../components/FestivalsItem.astro';
+import ContentPicture from '../../components/ContentPicture.astro';
+export const meta = {
+    title: 'The Tears of Things',
+    synopsis: 'Ana attempts to untangle the painful memories of the night when her marriage began to crumble. Unable to speak, she starts writing. Her diary becomes a letter to her husband about their growing alienation, set in a deafening silence.',
+    heroImage: '/img/thetearsofthings/stills/TTOT_20212101_1.1.49.webp',
+    imageAlt: 'The Tears of Things cinematography still'
+};
 
-<ProjectHero title={title} synopsis={synopsis} heroImage={heroImage} />
+<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} />
 
-<section class="hero">    
-    <div class="hero-content">
-        <Picture
-            src='/img/thetearsofthings/stills/TTOT_20212101_1.1.113.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="The The Tears of Things cinematography still" 
-        />
-    </div>
-</section>
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.113.webp" alt={meta.imageAlt} />
 
 <section class="hero " >
     <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200">         
@@ -143,34 +134,8 @@ export const heroImage = '/img/thetearsofthings/stills/TTOT_20212101_1.1.49.webp
     </div>  
 </section>
 
-<section class="hero">    
-    <div class="hero-content flex-col">
-        <Picture
-            src='/img/thetearsofthings/stills/TTOT_20212101_1.1.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="The The Tears of Things cinematography still" 
-        />
-        <Picture
-            src='/img/thetearsofthings/stills/TTOT_20212101_1.1.22.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="The The Tears of Things cinematography still" 
-        />
-    </div>
-</section>
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.22.webp" alt={meta.imageAlt} />
 
 <section class="hero" >
         <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200">                 
@@ -201,247 +166,23 @@ export const heroImage = '/img/thetearsofthings/stills/TTOT_20212101_1.1.49.webp
     </div>  
 </section>
 
-<section class="hero">    
-    <div class="hero-content flex-col">
-        <Picture
-            src='/img/thetearsofthings/stills/TTOT_20212101_1.1.74.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="The The Tears of Things cinematography still" 
-        />
-        <Picture
-            src='/img/thetearsofthings/stills/TTOT_20212101_1.1.49.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="The The Tears of Things cinematography still" 
-        />
-        <Picture
-            src='/img/thetearsofthings/stills/TTOT_20212101_1.1.51.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="The The Tears of Things cinematography still" 
-        />
-        <Picture
-            src='/img/thetearsofthings/stills/TTOT_20212101_1.1.53.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="The The Tears of Things cinematography still" 
-        />
-        <Picture
-            src='/img/thetearsofthings/stills/TTOT_20212101_1.1.56.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="The The Tears of Things cinematography still" 
-        />
-        <Picture
-            src='/img/thetearsofthings/stills/TTOT_20212101_1.1.82.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="The The Tears of Things cinematography still" 
-        />
-        <Picture
-            src='/img/thetearsofthings/stills/TTOT_20212101_1.1.95.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="The The Tears of Things cinematography still" 
-        />
-        <Picture
-            src='/img/thetearsofthings/stills/TTOT_20212101_1.1.112.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="The The Tears of Things cinematography still" 
-        /> 
-        <Picture
-            src='/img/thetearsofthings/stills/TTOT_20212101_1.1.70.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="The The Tears of Things cinematography still" 
-        /> 
-        <Picture
-            src='/img/thetearsofthings/stills/TTOT_20212101_1.1.73.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="The The Tears of Things cinematography still" 
-        /> 
-        <Picture
-            src='/img/thetearsofthings/stills/TTOT_20212101_1.1.67.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="The The Tears of Things cinematography still" 
-        /> 
-        <Picture 
-            src='/img/thetearsofthings/stills/TTOT_20212101_1.1.66.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="The The Tears of Things cinematography still" 
-        /> 
-        <Picture 
-            src='/img/thetearsofthings/stills/TTOT_20212101_1.1.114.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="The The Tears of Things cinematography still" 
-        /> 
-        <Picture 
-            src='/img/thetearsofthings/stills/TTOT_20221008_1.19.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="The The Tears of Things cinematography still" 
-        /> 
-        <Picture 
-            src='/img/thetearsofthings/stills/TTOT_20212101_1.1.117.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="The The Tears of Things cinematography still" 
-        /> 
-        <Picture 
-            src='/img/thetearsofthings/stills/TTOT_20212101_1.1.122.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="The The Tears of Things cinematography still" 
-        /> 
-        <Picture 
-            src='/img/thetearsofthings/stills/TTOT_20212101_1.1.123.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="The The Tears of Things cinematography still" 
-        /> 
-        <Picture 
-            src='/img/thetearsofthings/stills/TTOT_20212101_1.1.124.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="The The Tears of Things cinematography still" 
-        /> 
-        <Picture 
-            src='/img/thetearsofthings/stills/TTOT_20212101_1.1.134.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="The The Tears of Things cinematography still" 
-        /> 
-        <Picture 
-            src='/img/thetearsofthings/stills/TTOT_20212101_1.1.127.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="The The Tears of Things cinematography still" 
-        /> 
-    </div>
-</section>
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.74.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.49.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.51.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.53.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.56.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.82.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.95.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.112.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.70.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.73.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.67.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.66.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.114.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20221008_1.19.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.117.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.122.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.123.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.124.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.134.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.127.webp" alt={meta.imageAlt} />

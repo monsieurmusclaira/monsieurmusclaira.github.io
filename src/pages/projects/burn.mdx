@@ -1,0 +1,48 @@
+---
+layout: "../../layouts/BaseLayout.astro"
+---
+import { Picture } from "astro-imagetools/components";
+import ProjectHero from '../../components/ProjectHero.astro';
+import CreditsItem from '../../components/CreditsItem.astro';
+import FestivalsItem from '../../components/FestivalsItem.astro';
+import ContentPicture from '../../components/ContentPicture.astro';
+export const meta = {
+    title: 'Burn',
+    synopsis: 'During a streetcar ride by the sea, Robin looks back on her turbulent relationship with Ada. All that remains are the unspoken words and the shards she tries to put together. Why aren’t they sharp enough?',
+    heroImage: '/img/burn/stills/BURN_1.232.1.png',
+    imageAlt: 'Burn cinematography still'
+};
+
+<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} />
+<ContentPicture image="/img/burn/stills/BURN_1.97.3.png" alt={meta.imageAlt} />
+
+<section class="hero" >
+    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200">            
+        <CreditsItem crewfunction="Director" crewname="Cato Catteeuw" />
+        <CreditsItem crewfunction="Cast" crewname="Cato Catteeuw" />
+        <CreditsItem crewfunction="" crewname="Melody van Gompel" />
+        <CreditsItem crewfunction="Producer" crewname="Rosa Duvekot" />
+        <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
+        <CreditsItem crewfunction="1st Assitant Camera" crewname="Giel Dhaenens" />
+        <CreditsItem crewfunction="" crewname="Michiel Lateur" />
+        <CreditsItem crewfunction="1st Assitant Camera" crewname="Giel Dhaenens" />
+        <CreditsItem crewfunction="2nd Assistant Camera" crewname="Rhomi Martens" />
+        <CreditsItem crewfunction="Gaffer" crewname="Anouk Hasaers" />
+        <CreditsItem crewfunction="Grip" crewname="Stef van Peteghem" />
+        <CreditsItem crewfunction="Editor" crewname="Tine Verbist" />
+        <CreditsItem crewfunction="Art Direction" crewname="Lore Loyens" />
+        <CreditsItem crewfunction="" crewname="Jolke van Aerde" />
+        <CreditsItem crewfunction="" crewname="Pepijn Huysman" />
+        <CreditsItem crewfunction="Boom Engineer" crewname="Martijn Vandewiele" />
+        <CreditsItem crewfunction="Sound Engineer" crewname="Gedeon Depauw" />
+        <CreditsItem crewfunction="Costume Designer" crewname="Selin van Laethem" />
+        <CreditsItem crewfunction="Makeup Artist" crewname="Eef Smeyers" />
+        <CreditsItem crewfunction="Location Manager" crewname="Bao van Hove" />
+        <CreditsItem crewfunction="Script Supervisor" crewname="Lisa Coene" />
+        <CreditsItem crewfunction="Catering" crewname="Emma Degol" />
+        <CreditsItem crewfunction="" crewname="Katrien Orlans" />
+        <CreditsItem crewfunction="Camera Equipment" crewname="Camalot" />
+        <CreditsItem crewfunction="" crewname="Lucky Cam" />
+        <CreditsItem crewfunction="Lighting Equipment" crewname="Lites" />
+    </div>  
+</section>

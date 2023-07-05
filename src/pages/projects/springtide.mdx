@@ -3,30 +3,19 @@ layout: "../../layouts/BaseLayout.astro"
 ---
 import { Picture } from "astro-imagetools/components";
 import ProjectHero from '../../components/ProjectHero.astro';
-export const title = 'Springtide'
-export const synopsis = 'What does it mean to feel at home, and how can we carry those feelings of comfort with us in an ever-changing environment as we seek out new landscapes? Springtide is a coming-of-age portrait of a girl balancing on a thin line between adolescence and adulthood as she embarks on a spiritual journey. '
-export const heroImage = '/img/springtide/stills/Untitled_1.30.1.webp'
+import CreditsItem from '../../components/CreditsItem.astro';
+import FestivalsItem from '../../components/FestivalsItem.astro';
+import ContentPicture from '../../components/ContentPicture.astro';
+export const meta = {
+    title: 'Springtide',
+    synopsis: 'What does it mean to feel at home, and how can we carry those feelings of comfort with us in an ever-changing environment as we seek out new landscapes? Springtide is a coming-of-age portrait of a girl balancing on a thin line between adolescence and adulthood as she embarks on a spiritual journey. ',
+    heroImage: '/img/springtide/stills/Untitled_1.30.1.webp',
+    imageAlt: 'Springtide cinematography still'
+};
 
-<section>
-    <ProjectHero title={title} synopsis={synopsis} heroImage={heroImage} />
-</section>
+<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} />
 
-<section class="hero">    
-    <div class="hero-content flex-col">
-        <Picture
-            src='/img/springtide/stills/20190317_Springtide_1.26.2.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Springtide cinematography still"        
-        />
-    </div>
-</section>
+<ContentPicture image="/img/springtide/stills/20190317_Springtide_1.26.2.webp" alt={meta.imageAlt} />
 
 <section class="hero" >
     <div class="hero-content ">           
@@ -56,139 +45,15 @@ export const heroImage = '/img/springtide/stills/Untitled_1.30.1.webp'
         </table>
     </div>  
 </section>
-<section class="hero">    
-    <div class="hero-content flex-col">
-        <Picture
-            src='/img/springtide/stills/20190317_Springtide_1.27.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Springtide cinematography still"        
-        />
-        <Picture
-            src='/img/springtide/stills/20190317_Springtide_1.69.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Springtide cinematography still"        
-        />
-        <Picture
-            src='/img/springtide/stills/20190317_Springtide_1.70.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Springtide cinematography still"        
-        />
-        <Picture
-            src='/img/springtide/stills/20190317_Springtide_1.59.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Springtide cinematography still"        
-        />
-        <Picture
-            src='/img/springtide/stills/20190317_Springtide_1.75.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Springtide cinematography still"        
-        />
-        <Picture
-            src='/img/springtide/stills/20190317_Springtide_1.55.3.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Springtide cinematography still"        
-        />
-        <Picture
-            src='/img/springtide/stills/20190317_Springtide_1.34.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Springtide cinematography still"        
-        />
-        <Picture
-            src='/img/springtide/stills/20190317_Springtide_1.63.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Springtide cinematography still"        
-        />
-        <Picture
-            src='/img/springtide/stills/20190317_Springtide_1.67.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Springtide cinematography still"        
-        />
-        <Picture
-            src='/img/springtide/stills/20190317_Springtide_1.64.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Springtide cinematography still"        
-        />
-        <Picture
-            src='/img/springtide/stills/Untitled_1.30.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Springtide cinematography still"        
-        />
-    </div>
-</section>
+
+<ContentPicture image="/img/springtide/stills/20190317_Springtide_1.27.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/springtide/stills/20190317_Springtide_1.69.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/springtide/stills/20190317_Springtide_1.70.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/springtide/stills/20190317_Springtide_1.59.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/springtide/stills/20190317_Springtide_1.75.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/springtide/stills/20190317_Springtide_1.55.3.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/springtide/stills/20190317_Springtide_1.34.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/springtide/stills/20190317_Springtide_1.63.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/springtide/stills/20190317_Springtide_1.67.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/springtide/stills/20190317_Springtide_1.64.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/springtide/stills/Untitled_1.30.1.webp" alt={meta.imageAlt} />

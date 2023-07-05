@@ -1,0 +1,29 @@
+---
+layout: "../../layouts/BaseLayout.astro"
+---
+import { Picture } from "astro-imagetools/components";
+import ProjectHero from '../../components/ProjectHero.astro';
+import CreditsItem from '../../components/CreditsItem.astro';
+import FestivalsItem from '../../components/FestivalsItem.astro';
+import ContentPicture from '../../components/ContentPicture.astro';
+export const meta = {
+    title: 'Moonlight Woman',
+    synopsis: 'Entangled in her sexual struggle, a mysterious sound suddenly emerges that haunts Sarah through her days and her nights. One sleepless night, she decides to follow it.',
+    heroImage: '/img/moonlightwoman/stills/1.106.2_1.106.2.jpg',
+    imageAlt: 'Burn cinematography still'
+};
+
+<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} />
+<ContentPicture image="/img/moonlightwoman/stills/1.47.1_1.47.1.jpg" alt={meta.imageAlt} />
+
+<section class="hero" >
+    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200">            
+        <CreditsItem crewfunction="Director" crewname="Griet Elsen" />
+        <CreditsItem crewfunction="Cast" crewname="Yentl Gijbels" />
+        <CreditsItem crewfunction="" crewname="Ramon Mahieu" />
+        <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
+        <CreditsItem crewfunction="Assistant Director" crewname="Frank van den Bogaart" />
+    </div>  
+</section>
+
+<ContentPicture image="/img/moonlightwoman/stills/1.93.1_1.93.1.jpg" alt={meta.imageAlt} />

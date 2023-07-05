@@ -3,30 +3,20 @@ layout: "../../layouts/BaseLayout.astro"
 ---
 import { Picture } from "astro-imagetools/components";
 import ProjectHero from '../../components/ProjectHero.astro';
-export const title = 'Today We Escape'
-export const synopsis = 'What does it mean to feel at home, and how can we carry those feelings of comfort with us in an ever-changing environment as we seek out new landscapes? Springtide is a coming-of-age portrait of a girl balancing on a thin line between adolescence and adulthood as she embarks on a spiritual journey. '
-export const heroImage = '/img/todayweescape/stills/1.25.1_1.25.1.webp'
+import CreditsItem from '../../components/CreditsItem.astro';
+import FestivalsItem from '../../components/FestivalsItem.astro';
+import ContentPicture from '../../components/ContentPicture.astro';
+export const meta = {
+    title: 'Today We Escape',
+    synopsis: 'An intimate portrait of Olav, whose arrival in his friend Aaron his causes the family dynamics to shift and turn. ',
+    heroImage: '/img/todayweescape/stills/1.25.1_1.25.1.webp',
+    imageAlt: 'Today We Escape cinematography still'
+};
 
-<section>
-    <ProjectHero title={title} synopsis={synopsis} heroImage={heroImage} />
-</section>
+<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} />
 
-<section class="hero">    
-    <div class="hero-content flex-col">
-        <Picture
-            src='/img/todayweescape/stills/1.115.1_1.115.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Today We Escape cinematography still"        
-        />
-    </div>
-</section>
+<ContentPicture image="/img/todayweescape/stills/1.115.1_1.115.1.webp" alt={meta.imageAlt} />
+
 <section class="hero" >
     <div class="hero-content ">           
         <table class="table-auto border-separate border-spacing-x-3 text-base-200 ">
@@ -99,139 +89,15 @@ export const heroImage = '/img/todayweescape/stills/1.25.1_1.25.1.webp'
         </table>
     </div>  
 </section>
-<section class="hero">    
-    <div class="hero-content flex-col">
-        <Picture
-            src='/img/todayweescape/stills/1.116.1_1.116.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Today We Escape cinematography still"        
-        />
-        <Picture
-            src='/img/todayweescape/stills/1.161.1_1.161.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Today We Escape cinematography still"        
-        />
-        <Picture
-            src='/img/todayweescape/stills/1.193.1_1.193.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Today We Escape cinematography still"        
-        />
-        <Picture
-            src='/img/todayweescape/stills/1.88.1_1.88.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Today We Escape cinematography still"        
-        />
-        <Picture
-            src='/img/todayweescape/stills/1.104.1_1.104.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Today We Escape cinematography still"        
-        />
-        <Picture
-            src='/img/todayweescape/stills/1.111.7_1.111.7.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Today We Escape cinematography still"        
-        />
-        <Picture
-            src='/img/todayweescape/stills/1.136.1_1.136.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Today We Escape cinematography still"        
-        />
-        <Picture
-            src='/img/todayweescape/stills/1.34.1_1.34.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Today We Escape cinematography still"        
-        />
-        <Picture
-            src='/img/todayweescape/stills/1.47.1_1.47.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Today We Escape cinematography still"        
-        />
-        <Picture
-            src='/img/todayweescape/stills/1.83.1_1.83.1.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Today We Escape cinematography still"        
-        />
-        <Picture
-            src='/img/todayweescape/stills/1.133.2_1.133.2.webp'
-            sizes={(breakpoints) => {
-                const maxWidth = breakpoints[breakpoints.length - 1];
-                return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }}
-            breakpoints={[600, 1000, 1200]}
-            loading="lazy"   
-            format={["avif", "webp"]}
-            quality="90"
-            alt="Today We Escape cinematography still"        
-        />
-    </div>
-</section>
+
+<ContentPicture image="/img/todayweescape/stills/1.116.1_1.116.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/todayweescape/stills/1.161.1_1.161.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/todayweescape/stills/1.193.1_1.193.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/todayweescape/stills/1.88.1_1.88.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/todayweescape/stills/1.104.1_1.104.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/todayweescape/stills/1.111.7_1.111.7.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/todayweescape/stills/1.136.1_1.136.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/todayweescape/stills/1.34.1_1.34.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/todayweescape/stills/1.47.1_1.47.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/todayweescape/stills/1.83.1_1.83.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/todayweescape/stills/1.133.2_1.133.2.webp" alt={meta.imageAlt} />
