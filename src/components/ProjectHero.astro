@@ -2,7 +2,7 @@
 // library imports
 import { Picture } from "astro-imagetools/components";
 import ArrowDownIcon from '@astropub/icons/ArrowDown'
-const { synopsis, title, heroImage, alt } = Astro.props;
+const { synopsis, title, heroImage, imageposition, alt } = Astro.props;
 ---
 <div class="h-screen w-screen relative">
     <div class="z-0 h-screen w-screen absolute top-0">
@@ -20,6 +20,7 @@ const { synopsis, title, heroImage, alt } = Astro.props;
         quality="70"
         preload="avif"
         loading="eager"
+        objectPosition={imageposition}
         attributes={{
             link: {
               fetchpriority: "high"
