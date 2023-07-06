@@ -9,13 +9,14 @@ import ContentPicture from '../components/ContentPicture.astro';
 export const meta = {
     title: 'A few words about me',
     synopsis: '',
-    heroImage: '/img/thetearsofthings/stills/TTOT_20221008_1.19.1.webp',
+    heroImage: '/img/thetearsofthings/stills/TTOT_20221008_1.19.1.png',
+    imageposition: "50% 50%",
     imageAlt: 'Cinematography still'
 };
 
 <center>
 
-<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} />
+<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
 
 <article class="prose mt-5 text-base-100">
 
@@ -45,6 +46,6 @@ Furthermore, he's interested in exploring new technology, like VR and games, as 
     </table>
 </article>
 
-<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.1.webp" alt={meta.imageAlt} />
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.1.png" alt={meta.imageAlt} />
 
 </center>
