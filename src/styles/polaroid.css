@@ -1,0 +1,63 @@
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background: hsl(189, 16%, 75%);
+}
+
+figure {
+    position: relative;
+    background-color: #eaeaea;
+    padding: 19px 19px 45px 19px;
+    transition: all 0.35s; 
+    -webkit-box-shadow: 7px 7px 15px 2px rgba(0,0,0,0.53); 
+    box-shadow: 7px 7px 15px 2px rgba(0,0,0,0.23);
+}
+
+figure:hover {
+  filter: none;
+  transform: scale(2, 2) rotate(0deg) !important;
+  transition: all 0.35s; 
+  z-index:4;
+}
+
+figure img{
+    width: 100%;
+}
+figcaption{
+    font-family: "Nothing You Could Do","Caveat",cursive;
+    font-size: 25px;
+    text-align: center;
+    color: #2c2c2c;
+    margin-top: 22px;
+}
+figure:before,
+figure:after{
+    content: "";
+    position: absolute;
+    height: 50px;
+    width: 180px;
+    background-color: rgba(102,102,102,0);
+    transform: rotate(-40deg);
+}
+figure:before{
+    top: 3px;
+    left: -55px;
+    z-index: 2;
+}
+figure:after{
+    bottom: 3px;
+    right: -60px;
+}
+
+.scrapbook-note {
+  background-color: #feff9c;
+  width: 50%;
+  padding: 19px 19px 85px 19px;
+}
+
