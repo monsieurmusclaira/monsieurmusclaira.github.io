@@ -1,0 +1,62 @@
+---
+layout: "../layouts/PolaroidLayout.astro"
+---
+import { Picture } from "astro-imagetools/components";
+import ProjectHero from '../components/ProjectHero.astro';
+import Polaroid from '../components/Polaroid.astro';
+import ScrapbookNote from '../components/ScrapbookNote.astro';
+import ContentPicture from '../components/ContentPicture.astro';
+import '../styles/polaroid.css';
+export const meta = {
+    title: 'A journey in pictures',
+    synopsis: '',
+    heroImage: '/img/eversinceihavebeenflying/bts/IMG-20230813-WA0140.jpg',
+    imageposition: "50% 50%",
+    imageAlt: 'behind the scenes',
+};
+
+    
+
+<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
+<section class="hero py-10 mb-10" >
+    <div class="hero-content grid grid-flow-row grid-cols-2 lg:grid-cols-4 gap-5">
+        <ScrapbookNote caption="'Ever Since, I have Been Flying' by Aylin Gökmen, 2022 & 2023" rotation="transform: rotate(3deg);" />
+        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0116.jpg" caption="Tomris, Turkey, 2022" rotation="transform: rotate(-1deg);" alt={meta.imageAlt} />
+        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0096.jpg" caption="Lunch, Turkey" rotation="transform: rotate(-4deg);" alt={meta.imageAlt} />
+        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0122.jpg" caption="Aylin, Turkey"  rotation="transform: rotate(3deg);" alt={meta.imageAlt} />
+        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0064.jpg" caption="Cotton, Turkey" rotation="transform: rotate(-1deg);" alt={meta.imageAlt} />
+        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0062.jpg" caption="Cotton fields, Turkey" rotation="transform: rotate(3deg);" alt={meta.imageAlt} />      
+        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0112.jpg" caption="Moxexoom super 8 on an O'connor" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230807-WA0022.jpg" caption="At Locarno" rotation="transform: rotate(3deg);"  alt={meta.imageAlt} />
+        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230807-WA0023.jpg" caption="Me & Aylin, Locarno, 2023" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+        <Polaroid image="/img/eversinceihavebeenflying/bts/PXL_20230806_161815548.jpg" caption="In the Locarno Daily" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+    
+        <ScrapbookNote caption="Moonlight Woman by Griet Elsen, 2023" rotation="transform: rotate(-5deg);" />
+        <Polaroid image="/img/moonlightwoman/bts/PXL_20230404_093655380.jpg" caption="Breakfast without a knife." rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+        <Polaroid image="/img/moonlightwoman/bts/PXL_20230523_175955340~2-02.jpeg" caption="Griet & Frank" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+        <Polaroid image="/img/moonlightwoman/bts/IMG-5991~2-01.jpeg" caption="Late night swim." rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+        <Polaroid image="/img/moonlightwoman/bts/PXL_20230523_215636951-01.jpeg" caption="Jan-Willem, focus puller & Quinten, 2nd" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+        <Polaroid image="/img/moonlightwoman/bts/PXL_20230522_224116371.PORTRAIT~2-01.jpeg" caption="" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+        <Polaroid image="/img/moonlightwoman/bts/2f21245d-aaea-4b23-8a7d-707f1f1ec6f0.jpg" caption="" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+        <Polaroid image="/img/moonlightwoman/bts/e36e6723-faba-47ee-8ef2-2d3d2071e0af.jpg" caption="" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+        <Polaroid image="/img/moonlightwoman/bts/cd42d364-723d-41ff-a7bc-975d75f3f017.jpg" caption="" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+        <Polaroid image="/img/moonlightwoman/bts/MOONLIGHT_WOMAN_SET_brittwieringa_52.jpg" caption="Dieter, gaffer." rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+
+        <ScrapbookNote caption="Burning Clouds by Yentl De Baets, 2022" rotation="transform: rotate(-5deg);" />
+        <Polaroid image="/img/burningclouds/bts/_23_0667.jpg" caption="" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+        <Polaroid image="/img/burningclouds/bts/_24_0666.jpg" caption="Karam, Yentl, Lucas, Nicole" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+        <Polaroid image="/img/burningclouds/bts/_27_0663.jpg" caption="Karam" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+        <Polaroid image="/img/burningclouds/bts/_31_0659.jpg" caption="Jan-Willem & Rhomi" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+        <Polaroid image="/img/burningclouds/bts/_33_0657.jpg" caption="" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+        <Polaroid image="/img/burningclouds/bts/459f4759-1a57-4ba2-944a-4dd6f3282e72.jpg" caption="Melody" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+        <Polaroid image="/img/burningclouds/bts/IMG_0966.jpg" caption="Marlies, make-up" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+        <Polaroid image="/img/burningclouds/bts/IMG_1124.jpg" caption="Rhomi, 2nd AC" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+        <Polaroid image="/img/burningclouds/bts/IMG_1381.jpg" caption="" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+        <Polaroid image="/img/burningclouds/bts/IMG_1475.jpg" caption="Fenna, spark" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+        <Polaroid image="/img/burningclouds/bts/IMG_1778.jpg" caption="Nicole, 1st AD" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+        <Polaroid image="/img/burningclouds/bts/IMG_1910.jpg" caption="Daphne, art director" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+        <Polaroid image="/img/burningclouds/bts/IMG_1948.jpg" caption="Wouter, gaffer" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
+        
+    </div>
+</section>
+

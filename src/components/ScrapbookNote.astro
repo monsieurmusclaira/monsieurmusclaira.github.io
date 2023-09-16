@@ -1,0 +1,12 @@
+---
+const { image, alt, caption, rotation } = Astro.props;
+import { Picture } from "astro-imagetools/components";
+
+---
+<!--Google Font-->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+
+<figure class="scrapbook-note col-span-2  mx-auto" style={rotation}>        
+    <figcaption>{caption}</figcaption>
+</figure>
