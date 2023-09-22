@@ -1,4 +1,4 @@
-import { Image } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
 
 export const components = {
   img: Image,
