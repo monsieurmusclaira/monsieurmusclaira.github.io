@@ -1,8 +1,8 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
+import { ViewTransitions } from 'astro:transitions';
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { Spa } from "astro-spa";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 const { image, title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
 ---
@@ -14,9 +14,10 @@ const { image, title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.prop
   </head>
 
   <body class="bg-black ">
-      <Header />
-      <Spa />
-      <main id="" class="bg-neutral overflow-hidden">
+      <Header transition:animate="none" />
+      <ViewTransitions />
+      <main id="" class="bg-neutral overflow-hidden" >
+        
         <slot />
       </main>
       <Footer /> 
