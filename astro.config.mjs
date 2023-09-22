@@ -1,10 +1,9 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, sharpImageService } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import m2dx from 'astro-m2dx';
 import { astroImageTools } from "astro-imagetools";
-
 
 /** @type {import('astro-m2dx').Options} */
 const m2dxOptions = {
@@ -15,10 +14,14 @@ const m2dxOptions = {
 // https://astro.build/config
 export default defineConfig({
   site: 'https://monsieurmusclaira.github.io',
-  integrations: [tailwind(), sitemap(), astroImageTools, mdx()],
+  integrations: [tailwind(), sitemap(), mdx(), astroImageTools],
   markdown: {
     remarkPlugins: [[m2dx, m2dxOptions]],
     //               ^^^^
     extendDefaultPlugins: true
-  }
+  },
+  image: {
+    service: sharpImageService(),
+    domains: ["astro.build"],
+  },
 });
