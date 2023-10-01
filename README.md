@@ -8,6 +8,7 @@ I keep tinkering with the code as I find the time and don't mind deploying after
 Dependencies:
 - Astro
 - Tailwind
+- Tailwind Elements
 - DaisyUI 
 - Astro ImageTools + Sharp
 - Astrojs MDX
@@ -15,7 +16,6 @@ Dependencies:
 - Astro m2dx
 - Astropub Icons
 - Astro Google Analytics
-- Astro SPA
 - Sharp
 
 ## Roadmap
@@ -23,7 +23,6 @@ Dependencies:
 - Optimize image loading further
 - Implement a better video component in MDX
 - Continue fine-tuning the overall look and feel
-- Implement Shared Element Transition API once support has rolled oud. This will allow for deprecating the SPA approach of the current website.
 - Further cleaning and streamlining the code. There are many remnants still in place from the previous deployment pre-Astro.
 - Streamline MDX formatting and remove the elaborate Picture elements
 - Implement a CMS
