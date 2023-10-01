@@ -16,7 +16,11 @@ export const meta = {
 
 <ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
 
-<ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.3.1.jpg" alt={meta.imageAlt} />
+<section class="hero">
+    <div class="hero-content" data-te-lightbox-init>  
+        <ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.3.1.jpg" alt={meta.imageAlt} />
+    </div>
+</section>
 
 <section class="hero" >
     <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200">            
@@ -26,11 +30,17 @@ export const meta = {
     </div>  
 </section>
 
-<ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.10.1.jpg" alt={meta.imageAlt} />
-<ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.11.1.jpg" alt={meta.imageAlt} />
-<ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.12.1.jpg" alt={meta.imageAlt} />
-<ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.5.1.jpg" alt={meta.imageAlt} />
-<ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.7.1.jpg" alt={meta.imageAlt} />
-<ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.8.1.jpg" alt={meta.imageAlt} />
-<ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.1.1.jpg" alt={meta.imageAlt} />
+<section class="hero">
+    <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3" data-te-lightbox-init>            
+        <ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.10.1.jpg" alt={meta.imageAlt} />
+        <ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.11.1.jpg" alt={meta.imageAlt} />
+        <ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.12.1.jpg" alt={meta.imageAlt} />
+        <ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.5.1.jpg" alt={meta.imageAlt} />
+        <ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.7.1.jpg" alt={meta.imageAlt} />
+        <ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.8.1.jpg" alt={meta.imageAlt} />
+        <ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.1.1.jpg" alt={meta.imageAlt} />
+    </div>
+</section>
+
+
 

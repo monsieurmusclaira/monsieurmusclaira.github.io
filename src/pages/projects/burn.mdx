@@ -14,8 +14,14 @@ export const meta = {
     imageAlt: 'Burn cinematography still'
 };
 
+
 <ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
-<ContentPicture image="/img/burn/stills/BURN_1.97.3.png" alt={meta.imageAlt} />
+
+<section class="hero">
+    <div class="hero-content" data-te-lightbox-init>  
+        <ContentPicture image="/img/burn/stills/BURN_1.97.3.png" alt={meta.imageAlt} />
+    </div>
+</section>
 
 <section class="hero" >
     <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200">            
