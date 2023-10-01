@@ -37,5 +37,8 @@ const { title, description, image = '/social_img.png' } = Astro.props;
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
+<!-- Animate On Scroll -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 <!-- Google Analytics -->
 <GoogleAnalytics id="G-1P80SYF663" />

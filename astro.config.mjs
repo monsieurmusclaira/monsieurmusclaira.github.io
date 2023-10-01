@@ -6,6 +6,7 @@ import m2dx from 'astro-m2dx';
 import { astroImageTools } from "astro-imagetools";
 
 /** @type {import('astro-m2dx').Options} */
+import prefetch from "@astrojs/prefetch";
 const m2dxOptions = {
   // activate any required feature here
 };
@@ -14,7 +15,7 @@ const m2dxOptions = {
 // https://astro.build/config
 export default defineConfig({
   site: 'https://monsieurmusclaira.github.io',
-  integrations: [tailwind(), sitemap(), mdx(), astroImageTools],
+  integrations: [tailwind(), sitemap(), mdx(), astroImageTools, prefetch()],
   markdown: {
     remarkPlugins: [[m2dx, m2dxOptions]],
     //               ^^^^
@@ -22,6 +23,6 @@ export default defineConfig({
   },
   image: {
     service: sharpImageService(),
-    domains: ["astro.build"],
-  },
+    domains: ["astro.build"]
+  }
 });
