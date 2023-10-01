@@ -6,6 +6,7 @@ import ProjectHero from '../../components/ProjectHero.astro';
 import CreditsItem from '../../components/CreditsItem.astro';
 import FestivalsItem from '../../components/FestivalsItem.astro';
 import ContentPicture from '../../components/ContentPicture.astro';
+
 export const meta = {
     title: 'Ever Since, I Have Been Flying',
     synopsis: 'A sixty-year-old Kurdish man, who grew up in a nomadic tribe in the mountains of south-eastern Turkey, recalls moments from his youth that shaped his life. He takes us back to his idyllic childhood with his mother, his first love found in a cotton field and lost in the woods, and the mistreatment suffered at the hands of the police, in a cold and dark place.',
@@ -16,11 +17,15 @@ export const meta = {
 
 <ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
 
-<ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.234.7.png" alt={meta.imageAlt} />
+<section class="hero">
+    <div class="hero-content" data-te-lightbox-init>  
+        <ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.234.7.png" alt={meta.imageAlt} />
+    </div>
+</section>
 
-<section class="hero" >
-    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200">            
-        <CreditsItem crewfunction="Director" crewname="Aylin Gökmen" />
+<section class="hero" data-aos="fade" data-aos-offset="100" data-aos-duration="300" >
+    <div id="credits" class=" hero-content grid grid-cols-2 gap-2 text-base-200">            
+        <CreditsItem crewfunction="Director" crewname="Aylin Gökmen"  />
         <CreditsItem crewfunction="Featuring" crewname="Vakıf Çağın" />
         <CreditsItem crewfunction="Production" crewname="À Vol d’Oiseau" />
         <CreditsItem crewfunction="Producer" crewname="Aylin Gökmen" />
@@ -46,33 +51,32 @@ export const meta = {
         <CreditsItem crewfunction="Distribution" crewname="Square Eyes" />
     </div>  
 </section>
-<section class="hero" >
+
+<section class="hero" data-aos="fade" data-aos-offset="100" data-aos-duration="300">
     <div id="Festivals" class="hero-content grid grid-cols-2 gap-2 text-base-200">     
         <FestivalsItem festivalname="Locarno International Film Festival (CH)" heading="Festivals" />
         <FestivalsItem festivalname="Toronto International Film Festival (CA)" heading="" />
     </div>  
 </section>
 
-<ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.234.3.png" alt={meta.imageAlt} />
-<ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.234.24.png" alt={meta.imageAlt} />
-<ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_1.49.1.png" alt={meta.imageAlt} />
-<ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.4.png" alt={meta.imageAlt} />
-<ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.14.png" alt={meta.imageAlt} />
-
-<ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.234.17.png" alt={meta.imageAlt} />
-<ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.234.21.png" alt={meta.imageAlt} />
-
-<ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.12.png" alt={meta.imageAlt} />
-
-<ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.1.png" alt={meta.imageAlt} />
-<ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.16.png" alt={meta.imageAlt} />
-<ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.18.png" alt={meta.imageAlt} />
-
-<ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.234.15.png" alt={meta.imageAlt} />
-<ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.234.13.png" alt={meta.imageAlt} />
-<ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.234.9.png" alt={meta.imageAlt} />
-
-<ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_1.12.1.png" alt={meta.imageAlt} />
-<ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.234.28.png" alt={meta.imageAlt} />
-
-<ContentPicture image="/img/eversinceihavebeenflying/stills/357557964_4239708652920819_2115549884538618730_n.jpg" alt={meta.imageAlt} />
+<section class="hero">
+    <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3" data-te-lightbox-init>            
+        <ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.234.3.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.234.24.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_1.49.1.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.4.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.14.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.234.17.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.234.21.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.12.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.1.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.16.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.18.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.234.15.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.234.13.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.234.9.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_1.12.1.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.234.28.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/eversinceihavebeenflying/stills/357557964_4239708652920819_2115549884538618730_n.jpg" alt={meta.imageAlt} />
+    </div>
+</section>

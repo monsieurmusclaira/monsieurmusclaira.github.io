@@ -19,9 +19,21 @@ const { image, title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.prop
       <main id="" class="bg-neutral overflow-hidden" >
         
         <slot />
-      </main>
+      </main>      
       <Footer /> 
 
+      <!-- Animate On Scroll -->
+      <script is:inline src="https://unpkg.com/aos@next/dist/aos.js">&lt;</script>
+      <script is:inline>
+        AOS.init({
+          easing: 'ease',
+        });
+      </script>
+      <script
+        type="text/javascript"
+        src="../../node_modules/tw-elements/dist/js/tw-elements.umd.min.js">
+      </script>
   </body>
+  
 </html>
 

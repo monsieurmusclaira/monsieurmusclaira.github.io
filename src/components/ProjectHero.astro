@@ -4,21 +4,16 @@ import { Picture } from "astro-imagetools/components";
 import ArrowDownIcon from '@astropub/icons/ArrowDown'
 const { synopsis, title, heroImage, imageposition, alt } = Astro.props;
 ---
-<div class="h-screen w-screen relative">
+<div class="h-screen w-screen relative" data-aos="fade-down" data-aos-mirror="true" data-aos-offset="200" data-aos-duration="1000">
     <div class="z-0 h-screen w-screen absolute top-0">
         <Picture
         src={heroImage}
-        sizes={(breakpoints) => {
-            const maxWidth = breakpoints[breakpoints.length - 1];
-            return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-        }}
-        breakpoints={[1600, 1920]}  
+        sizes="(min-width: 800px) 800px, 1200px, 100vw"
         alt={alt}
         objectFit="cover"
         layout="fill"
         format={["avif", "webp"]}
         quality="70"
-        preload="avif"
         loading="eager"
         objectPosition={imageposition}
         attributes={{

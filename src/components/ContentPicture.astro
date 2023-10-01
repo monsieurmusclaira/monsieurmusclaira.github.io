@@ -2,16 +2,14 @@
 const { image, alt } = Astro.props;
 import { Picture } from "astro-imagetools/components";
 ---
-<section class="hero">    
-    <div class="hero-content">
+<section class="hero" data-aos="fade-up" data-aos-offset="200" data-aos-duration="500">    
         <Picture
             src={image}
-            breakpoints={[200, 400, 800, 1400]}
-            loading="lazy"   
+            sizes="(min-width: 600px) 600px, 1200px, 100vw"
+            loading="lazy"
             format={["avif", "webp"]}
-            quality="70"
-            preload="avif"
-            alt={alt}       
+            quality="80"
+            placeholder="blurred"
+            alt={alt}   
         />
-    </div>
 </section>
