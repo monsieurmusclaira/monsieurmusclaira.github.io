@@ -2,7 +2,7 @@
   "name": "victor-maes-portfolio",
   "description": "This is the codebase for my portfolio",
   "type": "module",
-  "version": "2.4.6",
+  "version": "2.4.7",
   "private": true,
   "scripts": {
     "dev": "astro dev",
