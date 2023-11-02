@@ -6,6 +6,7 @@ import ProjectHero from '../../components/ProjectHero.astro';
 import CreditsItem from '../../components/CreditsItem.astro';
 import FestivalsItem from '../../components/FestivalsItem.astro';
 import ContentPicture from '../../components/ContentPicture.astro';
+import ContentYoutube from '../../components/ContentYoutube.astro';
 
 export const meta = {
     title: 'Ever Since, I Have Been Flying',
@@ -17,11 +18,7 @@ export const meta = {
 
 <ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
 
-<section class="hero">
-    <div class="hero-content" data-te-lightbox-init>  
-        <ContentPicture image="/img/eversinceihavebeenflying/stills/EVER_SINCE_I_HAVE_BEEN_FLYING_1.234.7.png" alt={meta.imageAlt} />
-    </div>
-</section>
+<ContentYoutube YoutubeLink="https://youtu.be/U_bi7vFrMqY" />
 
 <section class="hero" data-aos="fade" data-aos-offset="100" data-aos-duration="300" >
     <div id="credits" class=" hero-content grid grid-cols-2 gap-2 text-base-200">            
@@ -56,6 +53,15 @@ export const meta = {
     <div id="Festivals" class="hero-content grid grid-cols-2 gap-2 text-base-200">     
         <FestivalsItem festivalname="Locarno International Film Festival (CH)" heading="Festivals" />
         <FestivalsItem festivalname="Toronto International Film Festival (CA)" heading="" />
+        <FestivalsItem festivalname="Camden Film Festival (US)" heading="" />
+        <FestivalsItem festivalname="Interfilm Berlin (DE)" heading="" />
+        <FestivalsItem festivalname="Denver Film Festival (US)" heading="" />
+        <FestivalsItem festivalname="Popoli Film Festival (IT)" heading="" />
+        <FestivalsItem festivalname="Chaktomuk Film Festival (KH)" heading="" />
+        <FestivalsItem festivalname="Diaspora Film Festival (CA)" heading="" />
+        <FestivalsItem festivalname="Montreal International Documentary Festival (CA)" heading="" />
+        <FestivalsItem festivalname="Bogota Short Film Festival (CO)" heading="" />
+        <FestivalsItem festivalname="Turkish Film Festival Berlin (CA)" heading="" />
     </div>  
 </section>
 
