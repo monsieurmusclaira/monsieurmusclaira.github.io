@@ -14,7 +14,7 @@ const m2dxOptions = {
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://monsieurmusclaira.github.io',
+  site: 'https://victormaes.com',
   integrations: [tailwind(), sitemap(), mdx(), astroImageTools, prefetch()],
   markdown: {
     remarkPlugins: [[m2dx, m2dxOptions]],
