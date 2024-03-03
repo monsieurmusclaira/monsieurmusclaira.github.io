@@ -24,5 +24,6 @@ export default defineConfig({
   image: {
     service: sharpImageService(),
     domains: ["astro.build"]
-  }
+  },
+  prefetch: true
 });
