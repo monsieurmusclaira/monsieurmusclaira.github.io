@@ -1,33 +1,30 @@
 ---
-layout: "../layouts/PolaroidLayout.astro"
+layout: "../layouts/BaseLayout.astro"
 ---
-import { Picture } from "astro-imagetools/components";
 import ProjectHero from '../components/ProjectHero.astro';
 import Polaroid from '../components/Polaroid.astro';
 import ScrapbookNote from '../components/ScrapbookNote.astro';
-import ContentPicture from '../components/ContentPicture.astro';
 import '../styles/polaroid.css';
 export const meta = {
     title: 'A journey in pictures',
     synopsis: '',
-    heroImage: '/img/eversinceihavebeenflying/bts/IMG-20230813-WA0140.jpg',
+    heroImage: '/img/eversinceihavebeenflying/bts/IMG-20230813-WA0062.jpg',
     imageposition: "50% 50%",
     imageAlt: 'behind the scenes',
 };
 
-    
-
 <ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
-<section class="hero py-10 mb-10" >
-    <div class="hero-content grid grid-flow-row grid-cols-2 lg:grid-cols-4 gap-5">
-        <ScrapbookNote caption="'Ever Since, I have Been Flying' by Aylin Gökmen, 2022 & 2023" rotation="transform: rotate(3deg);" />
-        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0116.jpg" caption="Tomris, Turkey, 2022" rotation="transform: rotate(-1deg);" alt={meta.imageAlt} />
-        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0096.jpg" caption="Lunch, Turkey" rotation="transform: rotate(-4deg);" alt={meta.imageAlt} />
-        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0122.jpg" caption="Aylin, Turkey"  rotation="transform: rotate(3deg);" alt={meta.imageAlt} />
+
+<section class="hero"w >
+    <div class="hero-content grid grid-flow-row grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5" >
+        <ScrapbookNote caption="'Ever Since, I have Been Flying' by Aylin Gökmen, 2022 & 2023" rotation="transform: rotate(1deg);" />
+        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0116.jpg" caption="Tomris, Turkey, 2022" rotation="transform: rotate(-1deg);" alt={meta.imageAlt}  />
+        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0096.jpg" caption="Lunch, Turkey" rotation="transform: rotate(-1deg);" alt={meta.imageAlt} />
+        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0122.jpg" caption="Aylin, Turkey"  rotation="transform: rotate(1deg);" alt={meta.imageAlt} />
         <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0064.jpg" caption="Cotton, Turkey" rotation="transform: rotate(-1deg);" alt={meta.imageAlt} />
-        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0062.jpg" caption="Cotton fields, Turkey" rotation="transform: rotate(3deg);" alt={meta.imageAlt} />      
+        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0062.jpg" caption="Cotton fields, Turkey" rotation="transform: rotate(1deg);" alt={meta.imageAlt} />      
         <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0112.jpg" caption="Moxexoom super 8 on an O'connor" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
-        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230807-WA0022.jpg" caption="At Locarno" rotation="transform: rotate(3deg);"  alt={meta.imageAlt} />
+        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230807-WA0022.jpg" caption="At Locarno" rotation="transform: rotate(1deg);"  alt={meta.imageAlt} />
         <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230807-WA0023.jpg" caption="Me & Aylin, Locarno, 2023" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
         <Polaroid image="/img/eversinceihavebeenflying/bts/PXL_20230806_161815548.jpg" caption="In the Locarno Daily" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
     
@@ -42,7 +39,7 @@ export const meta = {
         <Polaroid image="/img/moonlightwoman/bts/cd42d364-723d-41ff-a7bc-975d75f3f017.jpg" caption="" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
         <Polaroid image="/img/moonlightwoman/bts/MOONLIGHT_WOMAN_SET_brittwieringa_52.jpg" caption="Dieter, gaffer." rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
 
-        <ScrapbookNote caption="Burning Clouds by Yentl De Baets, 2022" rotation="transform: rotate(-5deg);" />
+        <ScrapbookNote caption="Burning Clouds by Yentl De Baets, 2022" rotation="transform: rotate(-1deg);" />
         <Polaroid image="/img/burningclouds/bts/_23_0667.jpg" caption="" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
         <Polaroid image="/img/burningclouds/bts/_24_0666.jpg" caption="Karam, Yentl, Lucas, Nicole" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />
         <Polaroid image="/img/burningclouds/bts/_27_0663.jpg" caption="Karam" rotation="transform: rotate(-1deg);"  alt={meta.imageAlt} />

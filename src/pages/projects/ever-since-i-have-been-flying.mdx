@@ -1,7 +1,6 @@
 ---
 layout: "../../layouts/BaseLayout.astro"
 ---
-import { Picture } from "astro-imagetools/components";
 import ProjectHero from '../../components/ProjectHero.astro';
 import CreditsItem from '../../components/CreditsItem.astro';
 import FestivalsItem from '../../components/FestivalsItem.astro';
@@ -50,6 +49,15 @@ export const meta = {
 </section>
 
 <section class="hero" data-aos="fade" data-aos-offset="100" data-aos-duration="300">
+    <div id="Awards" class="hero-content grid grid-cols-2 gap-2 text-base-200">     
+        <FestivalsItem festivalname="Popoli Film Festival (IT)" heading="Best Short Film" />
+        <FestivalsItem festivalname="Interfilm Berlin (DE)" heading="2nd place Confrontation Competition" />
+        <FestivalsItem festivalname="RIDM Film Festival (CA)" heading="Best International Short Film" />
+        <FestivalsItem festivalname="Festival En Ville (BE)" heading="Winner Compétition Échappées" />
+    </div>  
+</section>
+
+<section class="hero" data-aos="fade" data-aos-offset="100" data-aos-duration="300">
     <div id="Festivals" class="hero-content grid grid-cols-2 gap-2 text-base-200">     
         <FestivalsItem festivalname="Locarno International Film Festival (CH)" heading="Festivals" />
         <FestivalsItem festivalname="Toronto International Film Festival (CA)" heading="" />
@@ -60,8 +68,13 @@ export const meta = {
         <FestivalsItem festivalname="Chaktomuk Film Festival (KH)" heading="" />
         <FestivalsItem festivalname="Diaspora Film Festival (CA)" heading="" />
         <FestivalsItem festivalname="Montreal International Documentary Festival (CA)" heading="" />
-        <FestivalsItem festivalname="Bogoshorts Film Festival (CO)" heading="" />
+        <FestivalsItem festivalname="Bogoshorts Film Festival (CO)" heading="" />        
         <FestivalsItem festivalname="Turkish Film Festival Berlin (CA)" heading="" />
+        <FestivalsItem festivalname="RIDM Film Festival (CA)" heading="" />
+        <FestivalsItem festivalname="Nuit du Court métrage (CH)" heading="" />
+        <FestivalsItem festivalname="Festival En Ville (BE)" heading="" />
+        <FestivalsItem festivalname="Glasgow Short Film Festival (UK)" heading="" />
+        <FestivalsItem festivalname="Festival Regard (CA)" heading="" />
     </div>  
 </section>
 
