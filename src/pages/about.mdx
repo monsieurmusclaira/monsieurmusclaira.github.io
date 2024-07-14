@@ -9,7 +9,7 @@ import ContentPicture from '../components/ContentPicture.astro';
 export const meta = {
     title: 'A few words about me',
     synopsis: '',
-    heroImage: '/img/thetearsofthings/stills/TTOT_20221008_1.19.1.png',
+    heroImage: './src/assets/img/thetearsofthings/stills/TTOT_20221008_1.19.1.png',
     imageposition: "50% 50%",
     imageAlt: 'Cinematography still'
 };
@@ -48,7 +48,7 @@ Furthermore, he's interested in exploring new technology, like VR and games, as 
 
 <section class="hero">
     <div class="hero-content" data-te-lightbox-init>  
-        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.1.png" alt={meta.imageAlt} />
+        <ContentPicture image="./src/assets/img/thetearsofthings/stills/TTOT_20212101_1.1.1.png" alt={meta.imageAlt} />
     </div>
 </section>
 

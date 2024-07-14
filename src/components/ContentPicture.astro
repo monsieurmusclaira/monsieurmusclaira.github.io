@@ -3,13 +3,13 @@ const { image, alt } = Astro.props;
 import { Picture } from "astro-imagetools/components";
 ---
 <section class="hero" data-aos="fade-up">    
-        <Picture
-            src={image}
-            sizes="(min-width: 600px) 600px, 1200px, 100vw"
-            loading="lazy"
-            format={["avif", "webp"]}
-            quality="80"
-            placeholder="blurred"
-            alt={alt}   
-        />
+    <Picture
+        src={image}
+        sizes="(min-width: 600px) 600px, 1200px, 100vw"
+        loading="lazy"
+        format={["avif", "webp"]}
+        quality="80"
+        placeholder="blurred"
+        alt={alt}   
+    />
 </section>
