@@ -33,7 +33,7 @@
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.10",
-    "daisyui": "^3.7.4",
+    "daisyui": "^4.12.10",
     "sass": "^1.68.0"
   }
 }
