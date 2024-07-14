@@ -23,39 +23,15 @@ export const meta = {
 </section>
 
 <section class="hero" >
-    <div class="hero-content" data-aos="fade-up" data-aos-duration="600">           
-        <table class="table-auto border-separate border-spacing-x-3 text-base-200">
-            <tbody>
-                <tr>
-                    <td class="text-right font-light">Director</td>
-                    <td class="text-left font-bold">Gaetan Verdikt</td>
-                </tr>       
-                <tr>
-                    <td class="text-right font-light">Cast</td>
-                    <td class="text-left font-bold">Lucas Tavernier</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Eleonor Peltier</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Audrey Rose</td>
-                </tr>         
-                <tr>
-                    <td class="text-right font-light">Cinematographer</td>
-                    <td class="text-left font-bold">Victor Maes</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Assistant Camera</td>
-                    <td class="text-left font-bold">Floris van Severen</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Sound</td>
-                    <td class="text-left font-bold">Thibault Heymans</td>
-                </tr>
-            </tbody>
-        </table>
+    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200">            
+        <CreditsItem crewfunction="Director" crewname="Gaetan Verdikt" />
+        <CreditsItem crewfunction="Cast" crewname="Lucas Tavernier" />
+        <CreditsItem crewfunction="" crewname="Eleonor Peltier" />
+        <CreditsItem crewfunction="" crewname="Audrey Rose" />
+        <CreditsItem crewfunction="" crewname="Eleonor Peltier" />
+        <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
+        <CreditsItem crewfunction="Assitant Camera" crewname="Floris van Severen" />
+        <CreditsItem crewfunction="Sound" crewname="Thibault Heymans" />
     </div>  
 </section>
 

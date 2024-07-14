@@ -22,24 +22,11 @@ export const meta = {
     </div>
 </section>
 
-<section class="hero" data-aos="fade-up" data-aos-duration="600" >
-    <div class="hero-content">           
-        <table class="table-auto border-separate border-spacing-x-3 text-base-200">
-            <tbody>
-                <tr>
-                    <td class="text-right font-light">Director</td>
-                    <td class="text-left font-bold">Ida Gedbjerg</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Cinematographer</td>
-                    <td class="text-left font-bold">Victor Maes</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Assistant Director</td>
-                    <td class="text-left font-bold">Anton Omar</td>
-                </tr>
-            </tbody>
-        </table>
+<section class="hero" >
+    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">            
+        <CreditsItem crewfunction="Director" crewname="Ida Gedbjerg" />
+        <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
+        <CreditsItem crewfunction="Assistant Director" crewname="Anton Omar" />
     </div>  
 </section>
 
