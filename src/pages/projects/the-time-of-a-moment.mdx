@@ -22,79 +22,29 @@ export const meta = {
     </div>
 </section>
 
-<section class="hero " >
-    <div class="hero-content">           
-        <table class="table-auto border-separate border-spacing-x-3 text-base-200 ">
-            <tbody>
-                <tr>
-                    <td class="text-right font-light">Directors</td>
-                    <td class="text-left font-bold">Kate Voet</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Victor Maes</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Producers</td>
-                    <td class="text-left font-bold">Cassette for Timescapes</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">An Oost</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light"></td>
-                    <td class="text-left font-bold">Emmy Oost</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Artwork</td>
-                    <td class="text-left font-bold">Tal Kantor</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-light">Creative Technologist</td>
-                    <td class="text-left font-bold">Wim Wouters at Poppins & Wayne</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>  
-</section>
-
 <section class="hero" >
-    <div class="hero-content ">           
-        <table class="table-auto border-separate border-spacing-x-3 text-base-200">
-            <tbody>
-                <tr>
-                    <td class="text-right font-bold">Selections</td>                    
-                    <td class="text-left font-light">Venice Gap Financing Market 2023 </td>
-                </tr>
-                <tr>
-                    <td class="text-right font-bold"></td>                    
-                    <td class="text-left font-light">New Images XR Development Market 2023</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-bold "></td>
-                    <td class="text-left font-light">Stereopsia Booster program 2022</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-bold "></td>
-                    <td class="text-left font-light">VR Days Immersive Funding Market 2021</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-bold "></td>
-                    <td class="text-left font-light">Torino Short Film Market VR Series 2020</td>
-                </tr>
-            </tbody>
-        </table>
+    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">            
+        <CreditsItem crewfunction="Directors" crewname="Kate Voet" />
+        <CreditsItem crewfunction="" crewname="Victor Maes" />
+        <CreditsItem crewfunction="Producers" crewname="Cassette for Timescapes" />
+        <CreditsItem crewfunction="" crewname="An Oost" />
+        <CreditsItem crewfunction="" crewname="Emmy Oost" />
+        <CreditsItem crewfunction="Artwork" crewname="Tal Kantor" />
+        <CreditsItem crewfunction="Creative Technologist" crewname="Wim Wouters at Poppins & Wayne" />
     </div>  
 </section>
 
-<section class="hero">
-    <div class="hero-content" data-te-lightbox-init>  
-        <ContentPicture image="./src/assets/img/thetimeofamoment/stills/LivingRoom_END_color_2.jpg" alt={meta.imageAlt} />
-    </div>
+<section class="hero" data-aos="fade" data-aos-duration="300">
+    <div id="Funding" class="hero-content grid grid-cols-2 gap-2 text-base-200">     
+        <FestivalsItem festivalname="Venice Gap Financing Market 2023" heading="Selections" />
+        <FestivalsItem festivalname="New Images XR Development Market 2023" heading="" />
+        <FestivalsItem festivalname="Stereopsia Booster program 2022" heading="" />
+        <FestivalsItem festivalname="VR Days Immersive Funding Market 2021" heading="" />
+        <FestivalsItem festivalname="Torino Short Film Market VR Series 2020" heading="" />
+    </div>  
 </section>
 
-<section class="hero" data-aos="fade" data-aos-offset="100" data-aos-duration="300">
+<section class="hero" data-aos="fade" data-aos-duration="300">
     <div id="Funding" class="hero-content grid grid-cols-2 gap-2 text-base-200">     
         <FestivalsItem festivalname="Flanders Audiovisual Fund - VAF (BE)" heading="With the support of" />
         <FestivalsItem festivalname="Creative Europe MEDIA programme (EU)" heading="" />
@@ -104,3 +54,10 @@ export const meta = {
         <FestivalsItem festivalname="Pictanovo (FR)" heading="" />
     </div>  
 </section>
+
+<section class="hero">
+    <div class="hero-content" data-te-lightbox-init>  
+        <ContentPicture image="./src/assets/img/thetimeofamoment/stills/LivingRoom_END_color_2.jpg" alt={meta.imageAlt} />
+    </div>
+</section>
+
