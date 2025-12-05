@@ -1,0 +1,101 @@
+---
+layout: "../../layouts/BaseLayout.astro"
+---
+import { Picture } from "astro-imagetools/components";
+import ProjectHero from '../../components/ProjectHero.astro';
+import CreditsItem from '../../components/CreditsItem.astro';
+import FestivalsItem from '../../components/FestivalsItem.astro';
+import ContentPicture from '../../components/ContentPicture.astro';
+export const meta = {
+    title: 'A Long Goodbye',
+    synopsis: 'A Long Goodbye is an animated, interactive VR experience following Ida, a 72-year-old pianist with dementia. As her reality fades, players interact with objects and recordings in her empty apartment, causing her world and memories of her beloved husband, Daniel, to be vividly drawn to life. A Long Goodbye is a poetic exploration of love and the emotional toll of dementia on two people who shared a lifetime.',
+    heroImage: './src/assets/img/alonggoodbye/stills/20250709_ALG_Still2.webp',
+    imageposition: "50% 50%",
+    imageAlt: 'A Long Goodbye still'
+};
+
+<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
+
+<section class="hero">
+    <div class="hero-content" data-te-lightbox-init>  
+        <ContentPicture image="./src/assets/img/alonggoodbye/stills/20250709_ALG_Still1.webp" alt={meta.imageAlt} />
+    </div>
+</section>
+
+<section class="hero" >
+    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">            
+        <CreditsItem crewfunction="Directors" crewname="Kate Voet" />
+        <CreditsItem crewfunction="" crewname="Victor Maes" />
+        <CreditsItem crewfunction="Cast" crewname="Elizabeth Counsel" />
+        <CreditsItem crewfunction="" crewname="Richard Wells" />
+        <CreditsItem crewfunction="" crewname="Marlies Heuer" />
+        <CreditsItem crewfunction="" crewname="Derek de Lint" />
+        <CreditsItem crewfunction="Composer" crewname="Joep Beving" />
+        <CreditsItem crewfunction="Art Director" crewname="Daniel Balage" />
+        <CreditsItem crewfunction="CG Supervisor" crewname="Gael Chaize" />
+        <CreditsItem crewfunction="Lead Developer" crewname="Polygoat" />
+        <CreditsItem crewfunction="" crewname="Frederik Smolders" />
+        <CreditsItem crewfunction="Sound Designers" crewname="Game Audio Squad" />
+        <CreditsItem crewfunction="" crewname="Niels van der Leest" />
+        <CreditsItem crewfunction="" crewname="Lars Tesselaar" />
+        <CreditsItem crewfunction="Additional 2D Animation" crewname="Pieter Vanluffelen" />
+        <CreditsItem crewfunction="" crewname="Mathieu Jadin" />
+        <CreditsItem crewfunction="" crewname="Tom Lemmens" />
+        <CreditsItem crewfunction="Producers Belgium" crewname="Cassette for Timescapes" />
+        <CreditsItem crewfunction="" crewname="An Oost" />
+        <CreditsItem crewfunction="" crewname="Emmy Oost" />
+        <CreditsItem crewfunction="Producers Netherlands" crewname="Valk Productions" />
+        <CreditsItem crewfunction="" crewname="Richard Valk" />
+        <CreditsItem crewfunction="Producers Luxembourg" crewname="Tarantula" />
+        <CreditsItem crewfunction="" crewname="Donato Rotunno" />
+    </div>  
+</section>
+
+<section class="hero">
+    <div id="Awards" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">     
+        <FestivalsItem festivalname="La Biennale Di Venezia 82 - Venice Immersive Achievement Prize" heading="Awards" />
+        <FestivalsItem festivalname="Thessaloniki International Film Festival - Golden Alexander" heading="" />
+    </div>  
+</section>
+
+<section class="hero" >
+    <div id="Festivals" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">     
+        <FestivalsItem festivalname="La Biennale Di Venezia 82 - Venice Immersive Competition (IT)" heading="Festivals" />
+        <FestivalsItem festivalname="International Documentary Filmfestival Amsterdam (NL)" heading="" />
+        <FestivalsItem festivalname="Film Fest Gent (BE)" heading="" />
+        <FestivalsItem festivalname="Thessaloniki International Film Festival (GR)" heading="" />
+        <FestivalsItem festivalname="Breedbeeld (BE)" heading="" />
+        <FestivalsItem festivalname="Docfest Brugge (BE)" heading="" />
+        <FestivalsItem festivalname="Kortfilm Festival Leuven (BE)" heading="" />
+        <FestivalsItem festivalname="Clermont-Ferrand International SHort Film Festival (FR)" heading="" />
+    </div>  
+</section>
+
+<section class="hero" data-aos="fade" data-aos-duration="300">
+    <div id="Markets" class="hero-content grid grid-cols-2 gap-2 text-base-200">     
+        <FestivalsItem festivalname="Venice Gap Financing Market 2023" heading="Markets" />
+        <FestivalsItem festivalname="New Images XR Development Market 2023" heading="" />
+        <FestivalsItem festivalname="Stereopsia Booster program 2022" heading="" />
+        <FestivalsItem festivalname="VR Days Immersive Funding Market 2021" heading="" />
+        <FestivalsItem festivalname="Torino Short Film Market VR Series 2020" heading="" />
+    </div>  
+</section>
+
+<section class="hero" data-aos="fade" data-aos-duration="300">
+    <div id="Funding" class="hero-content grid grid-cols-2 gap-2 text-base-200">     
+        <FestivalsItem festivalname="Flanders Audiovisual Fund - VAF (BE)" heading="With the support of" />
+        <FestivalsItem festivalname="Creative Europe MEDIA programme (EU)" heading="" />
+        <FestivalsItem festivalname="The Netherlands Film Fund (NL)" heading="" />
+        <FestivalsItem festivalname="Film Fund Luxembourg (LUX)" heading="" />
+        <FestivalsItem festivalname="deAuteurs (BE)" heading="" />
+        <FestivalsItem festivalname="Pictanovo (FR)" heading="" />
+    </div>  
+</section>
+
+<section class="hero">
+    <div class="hero-content" data-te-lightbox-init>  
+        <ContentPicture image="./src/assets/img/alonggoodbye/stills/20250709_ALG_Still3.webp" alt={meta.imageAlt} />
+        <ContentPicture image="./src/assets/img/alonggoodbye/stills/20250709_ALG_Still2.webp" alt={meta.imageAlt} />
+    </div>
+</section>
+
