@@ -16,12 +16,6 @@ figure {
     
 }
 
-DEL_figure:hover {
-  filter: none;
-  transform: scale(2, 2) rotate(0deg) !important;
-  transition: all 0.35s; 
-  z-index:4;
-}
 
 figure img{
     width: 100%;

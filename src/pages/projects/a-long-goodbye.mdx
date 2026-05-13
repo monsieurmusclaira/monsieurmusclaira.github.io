@@ -1,7 +1,6 @@
 ---
 layout: "../../layouts/BaseLayout.astro"
 ---
-import { Picture } from "astro-imagetools/components";
 import ProjectHero from '../../components/ProjectHero.astro';
 import CreditsItem from '../../components/CreditsItem.astro';
 import FestivalsItem from '../../components/FestivalsItem.astro';
@@ -9,7 +8,7 @@ import ContentPicture from '../../components/ContentPicture.astro';
 export const meta = {
     title: 'A Long Goodbye',
     synopsis: 'A Long Goodbye is an animated, interactive VR experience following Ida, a 72-year-old pianist with dementia. As her reality fades, players interact with objects and recordings in her empty apartment, causing her world and memories of her beloved husband, Daniel, to be vividly drawn to life. A Long Goodbye is a poetic exploration of love and the emotional toll of dementia on two people who shared a lifetime.',
-    heroImage: './src/assets/img/alonggoodbye/stills/20250709_ALG_Still2.webp',
+    heroImage: '/img/alonggoodbye/stills/20250709_ALG_Still2.webp',
     imageposition: "50% 50%",
     imageAlt: 'A Long Goodbye still'
 };
@@ -18,7 +17,7 @@ export const meta = {
 
 <section class="hero">
     <div class="hero-content" data-te-lightbox-init>  
-        <ContentPicture image="./src/assets/img/alonggoodbye/stills/20250709_ALG_Still1.webp" alt={meta.imageAlt} />
+        <ContentPicture image="/img/alonggoodbye/stills/20250709_ALG_Still1.webp" alt={meta.imageAlt} />
     </div>
 </section>
 
@@ -94,8 +93,8 @@ export const meta = {
 
 <section class="hero">
     <div class="hero-content" data-te-lightbox-init>  
-        <ContentPicture image="./src/assets/img/alonggoodbye/stills/20250709_ALG_Still3.webp" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/alonggoodbye/stills/20250709_ALG_Still2.webp" alt={meta.imageAlt} />
+        <ContentPicture image="/img/alonggoodbye/stills/20250709_ALG_Still3.webp" alt={meta.imageAlt} />
+        <ContentPicture image="/img/alonggoodbye/stills/20250709_ALG_Still2.webp" alt={meta.imageAlt} />
     </div>
 </section>
 

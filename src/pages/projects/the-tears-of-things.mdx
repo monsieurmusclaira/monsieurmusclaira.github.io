@@ -1,7 +1,6 @@
 ---
 layout: "../../layouts/BaseLayout.astro"
 ---
-import { Picture } from "astro-imagetools/components";
 import ProjectHero from '../../components/ProjectHero.astro';
 import CreditsItem from '../../components/CreditsItem.astro';
 import FestivalsItem from '../../components/FestivalsItem.astro';
@@ -9,7 +8,7 @@ import ContentPicture from '../../components/ContentPicture.astro';
 export const meta = {
     title: 'The Tears of Things',
     synopsis: 'Ana attempts to untangle the painful memories of the night when her marriage began to crumble. Unable to speak, she starts writing. Her diary becomes a letter to her husband about their growing alienation, set in a deafening silence.',
-    heroImage: './src/assets/img/thetearsofthings/stills/TTOT_20212101_1.1.49.png',
+    heroImage: '/img/thetearsofthings/stills/TTOT_20212101_1.1.49.png',
     imageposition: "25% 50%",
     imageAlt: 'The Tears of Things cinematography still'
 };
@@ -18,7 +17,7 @@ export const meta = {
 
 <section class="hero">
     <div class="hero-content" data-te-lightbox-init>  
-<ContentPicture image="./src/assets/img/thetearsofthings/stills/TTOT_20212101_1.1.113.png" alt={meta.imageAlt} />
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.113.png" alt={meta.imageAlt} />
     </div>
 </section>
 
@@ -141,14 +140,14 @@ export const meta = {
 
 <section class="hero">
     <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3" data-te-lightbox-init>    
-        <ContentPicture image="./src/assets/img/thetearsofthings/stills/TTOT_20212101_1.1.1.png" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/thetearsofthings/stills/TTOT_20212101_1.1.22.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.1.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.22.png" alt={meta.imageAlt} />
     </div>
 </section>
 
 
 <section class="hero" >
-        <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">                 
+        <div id="awards" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">                 
         <p class="text-right font-bold">Awards</p>
         <p class="text-left font-light">International Short Film Festival Leuven (BE): Critic's Award 2021</p>
         <p class="text-right font-bold"></p>
@@ -180,26 +179,26 @@ export const meta = {
 
 <section class="hero">
     <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3" data-te-lightbox-init>    
-        <ContentPicture image="./src/assets/img/thetearsofthings/stills/TTOT_20212101_1.1.74.png" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/thetearsofthings/stills/TTOT_20212101_1.1.49.png" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/thetearsofthings/stills/TTOT_20212101_1.1.51.png" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/thetearsofthings/stills/TTOT_20212101_1.1.53.png" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/thetearsofthings/stills/TTOT_20212101_1.1.56.png" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/thetearsofthings/stills/TTOT_20212101_1.1.82.png" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/thetearsofthings/stills/TTOT_20212101_1.1.95.png" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/thetearsofthings/stills/TTOT_20212101_1.1.112.png" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/thetearsofthings/stills/TTOT_20212101_1.1.70.png" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/thetearsofthings/stills/TTOT_20212101_1.1.73.png" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/thetearsofthings/stills/TTOT_20212101_1.1.67.png" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/thetearsofthings/stills/TTOT_20212101_1.1.66.png" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/thetearsofthings/stills/TTOT_20212101_1.1.114.png" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/thetearsofthings/stills/TTOT_20221008_1.19.1.png" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/thetearsofthings/stills/TTOT_20212101_1.1.117.png" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/thetearsofthings/stills/TTOT_20212101_1.1.122.png" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/thetearsofthings/stills/TTOT_20212101_1.1.123.png" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/thetearsofthings/stills/TTOT_20212101_1.1.124.png" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/thetearsofthings/stills/TTOT_20212101_1.1.134.png" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/thetearsofthings/stills/TTOT_20212101_1.1.127.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.74.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.49.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.51.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.53.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.56.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.82.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.95.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.112.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.70.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.73.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.67.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.66.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.114.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20221008_1.19.1.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.117.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.122.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.123.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.124.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.134.png" alt={meta.imageAlt} />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.127.png" alt={meta.imageAlt} />
     </div>
 </section>
 
