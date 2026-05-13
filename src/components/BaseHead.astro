@@ -44,5 +44,22 @@ const { title, description, image } = Astro.props;
 <!-- Animate On Scroll -->
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+<!-- JSON-LD Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Victor Maes",
+  "jobTitle": "Cinematographer",
+  "description": "Victor Maes is a Cinematographer, Director of Photography and Director from Brussels Belgium",
+  "url": "https://victormaes.com",
+  "sameAs": [
+    "https://www.instagram.com/monsieur_musclaira/",
+    "https://www.imdb.com/name/nm4866929"
+  ],
+  "knowsAbout": ["Cinematography", "Film", "Virtual Reality", "Documentary"]
+}
+</script>
+
 <!-- Google Analytics -->
 <GoogleAnalytics id="G-1P80SYF663" />
