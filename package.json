@@ -2,7 +2,7 @@
   "name": "victor-maes-portfolio",
   "description": "This is the codebase for my portfolio",
   "type": "module",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -12,7 +12,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astro-community/astro-embed-youtube": "^0.4.3",
+    "@astro-community/astro-embed-youtube": "^0.5.10",
     "@astrojs/markdown-remark": "^7.1.1",
     "@astrojs/mdx": "^5.0.4",
     "@astrojs/sitemap": "^3.7.2",
