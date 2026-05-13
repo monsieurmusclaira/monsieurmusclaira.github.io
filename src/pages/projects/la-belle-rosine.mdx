@@ -1,7 +1,6 @@
 ---
 layout: "../../layouts/BaseLayout.astro"
 ---
-import { Picture } from "astro-imagetools/components";
 import ProjectHero from '../../components/ProjectHero.astro';
 import CreditsItem from '../../components/CreditsItem.astro';
 import FestivalsItem from '../../components/FestivalsItem.astro';
@@ -9,7 +8,7 @@ import ContentPicture from '../../components/ContentPicture.astro';
 export const meta = {
     title: 'La Belle Rosine',
     synopsis: 'After giving a lecture, a visiting professor is seduced by thewomen of the city which leads to a set of difficult circumstances.',
-    heroImage: './src/assets/img/labellerosine/stills/20190223_LaBelleRosine_1.107.1.jpg',
+    heroImage: '/img/labellerosine/stills/20190223_LaBelleRosine_1.107.1.jpg',
     imageposition: "40% 50%",
     imageAlt: 'Anna cinematography still'
 };
@@ -18,7 +17,7 @@ export const meta = {
 
 <section class="hero">
     <div class="hero-content" data-te-lightbox-init>  
-        <ContentPicture image="./src/assets/img/labellerosine/stills/20190223_LaBelleRosine_1.34.2.jpg" alt={meta.imageAlt} />
+        <ContentPicture image="/img/labellerosine/stills/20190223_LaBelleRosine_1.34.2.jpg" alt={meta.imageAlt} />
     </div>
 </section>
 
@@ -37,12 +36,12 @@ export const meta = {
 
 <section class="hero">
     <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3" data-te-lightbox-init>            
-        <ContentPicture image="./src/assets/img/labellerosine/stills/20190223_LaBelleRosine_1.33.1.jpg" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/labellerosine/stills/20190223_LaBelleRosine_1.109.1.jpg" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/labellerosine/stills/20190223_LaBelleRosine_1.115.1.jpg" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/labellerosine/stills/20190223_LaBelleRosine_1.107.1.jpg" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/labellerosine/stills/20190223_LaBelleRosine_1.45.1.jpg" alt={meta.imageAlt} />
-        <ContentPicture image="./src/assets/img/labellerosine/stills/20190223_LaBelleRosine_1.93.2.jpg" alt={meta.imageAlt} />
+        <ContentPicture image="/img/labellerosine/stills/20190223_LaBelleRosine_1.33.1.jpg" alt={meta.imageAlt} />
+        <ContentPicture image="/img/labellerosine/stills/20190223_LaBelleRosine_1.109.1.jpg" alt={meta.imageAlt} />
+        <ContentPicture image="/img/labellerosine/stills/20190223_LaBelleRosine_1.115.1.jpg" alt={meta.imageAlt} />
+        <ContentPicture image="/img/labellerosine/stills/20190223_LaBelleRosine_1.107.1.jpg" alt={meta.imageAlt} />
+        <ContentPicture image="/img/labellerosine/stills/20190223_LaBelleRosine_1.45.1.jpg" alt={meta.imageAlt} />
+        <ContentPicture image="/img/labellerosine/stills/20190223_LaBelleRosine_1.93.2.jpg" alt={meta.imageAlt} />
     </div>
 </section>
 

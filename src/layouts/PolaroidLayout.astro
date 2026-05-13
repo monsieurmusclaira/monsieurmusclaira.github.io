@@ -1,7 +1,7 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 const { image, title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
@@ -15,22 +15,19 @@ const { image, title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.prop
 
   <body class="">
       <Header transition:animate="none" />
-      <ViewTransitions />
+      <ClientRouter />
       <main id="" class="overflow-hidden">
         <slot />
       </main>
       <Footer /> 
 
+      <!-- Animate On Scroll -->
+      <script is:inline src="https://unpkg.com/aos@next/dist/aos.js">&lt;</script>
+      <script is:inline>
+        AOS.init({
+          easing: 'ease',
+        });
+      </script>
+
   </body>
-        <!-- Animate On Scroll -->
-        <script is:inline src="https://unpkg.com/aos@next/dist/aos.js">&lt;</script>
-        <script is:inline>
-          AOS.init({
-            easing: 'ease',
-          });
-        </script>
-        <script
-          type="text/javascript"
-          src="../../node_modules/tw-elements/dist/js/tw-elements.umd.min.js">
-        </script>
 </html>
