@@ -17,16 +17,16 @@ export const meta = {
 
 <ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
 
-<article class="prose mt-5 text-base-100" data-aos="fade-up" data-aos-duration="600">
+<article class="prose max-w-prose mx-auto px-5 py-10 text-base-100" data-aos="fade-up" data-aos-duration="600">
 
-Victor Maes graduated from LUCA School of Arts Brussels' film program in 2015, and took courses in advanced cinematography at the Global Cinematography Institute in Los Angeles.
+Victor Maes graduated from LUCA School of Arts Brussels’ film program in 2015, and took courses in advanced cinematography at the Global Cinematography Institute in Los Angeles.
 
 He’s been working as a camera assistant on feature films and commercials (Close, Girl, Holly, De Patrick, Nobody has to know) since 2016. As a cinematographer he works on various film projects, alternating between fiction and documentary as well as commercial ones. 
 
-Furthermore, he's interested in exploring new technology, like VR and games, as well as revisiting analogue film. Originally he graduated as a director with a short animation film, and currently he's developing an animated, interactive VR experience: a magical-realist tale about an elderly woman with Alzheimer's disease, co-directed with Kate Voet and produced by Cassette for Timescapes.
+Furthermore, he’s interested in exploring new technology, like VR and games, as well as revisiting analogue film. Originally he graduated as a director with a short animation film, and currently he’s developing an animated, interactive VR experience: a magical-realist tale about an elderly woman with Alzheimer’s disease, co-directed with Kate Voet and produced by Cassette for Timescapes.
 </article>
 
-<section class="hero" >
+<section class="hero py-10">
     <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">            
         <CreditsItem crewfunction="Email" crewname="hello@victormaes.com" />
         <CreditsItem crewfunction="Instagram" crewname="@monsieur_musclaira" />
@@ -34,8 +34,4 @@ Furthermore, he's interested in exploring new technology, like VR and games, as 
     </div>  
 </section>
 
-<section class="hero">
-    <div class="hero-content">  
-        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.1.png" alt={meta.imageAlt} />
-    </div>
-</section>
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.1.png" alt={meta.imageAlt} />
