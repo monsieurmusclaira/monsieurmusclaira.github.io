@@ -3,7 +3,9 @@ const { YoutubeLink } = Astro.props;
 import { YouTube } from '@astro-community/astro-embed-youtube';
 ---
 
-<section class="p-5 text-center" data-aos="fade-up" data-aos-duration="600">
-    <h3 class="text-secondary p-5">Trailer</h3>
-    <YouTube id={YoutubeLink} />
+<section class="p-5" data-aos="fade-up" data-aos-duration="600">
+    <h3 class="text-secondary p-5 text-center">Trailer</h3>
+    <div class="max-w-3xl mx-auto">
+        <YouTube id={YoutubeLink} />
+    </div>
 </section>
