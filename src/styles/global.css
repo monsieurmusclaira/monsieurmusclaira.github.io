@@ -6,7 +6,6 @@
 @tailwind utilities;
 
 h1, h2 {
-    
     font-family:  "EB Garamond", serif;  
 }
 
@@ -84,3 +83,13 @@ to {
   transition: all 0.6s ease;
 }
 
+/* Smooth link transitions */
+a {
+  transition: color 0.3s ease;
+}
+
+/* Selection */
+::selection {
+  background: #F1D74E;
+  color: #11131d;
+}
