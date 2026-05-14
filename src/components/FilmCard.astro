@@ -1,14 +1,17 @@
 ---
+import { Image } from 'astro:assets';
+import { resolveImage } from '../utils/images';
 const { title, img, alt, imageposition, desc, url, badge1, badge2, target = '_blank' } = Astro.props;
 ---
 <div class="h-screen w-screen relative" data-aos="fade" data-aos-duration="300">
   <div class="z-0 h-screen w-screen absolute top-0">
-      <img
-      src={img}
+      <Image
+      src={resolveImage(img)}
       alt={title}
       class="w-full h-full object-cover"
       style={`object-position: ${imageposition || '50% 50%'}`}
       loading="eager"
+      fetchpriority="high"
       />
   </div>
 

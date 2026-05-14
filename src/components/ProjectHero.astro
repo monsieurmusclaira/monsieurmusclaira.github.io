@@ -1,10 +1,12 @@
 ---
+import { Image } from 'astro:assets';
+import { resolveImage } from '../utils/images';
 const { synopsis, title, heroImage, imageposition, alt } = Astro.props;
 ---
 <div class="h-screen w-screen relative">
     <div class="z-0 h-screen w-screen absolute top-0">
-        <img
-        src={heroImage}
+        <Image
+        src={resolveImage(heroImage)}
         alt={alt}
         class="w-full h-full object-cover"
         style={`object-position: ${imageposition || '50% 50%'}`}

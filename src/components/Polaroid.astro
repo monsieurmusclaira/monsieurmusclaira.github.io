@@ -1,9 +1,11 @@
 ---
+import { Image } from 'astro:assets';
+import { resolveImage } from '../utils/images';
 const { image, alt, caption, rotation } = Astro.props;
 ---
-<figure class="" style={rotation}>        
-    <img
-    src={image}
+<figure class="" style={rotation}>
+    <Image
+    src={resolveImage(image)}
     loading="lazy"
     alt={alt}
     />
