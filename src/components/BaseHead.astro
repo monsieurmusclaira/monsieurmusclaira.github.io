@@ -211,8 +211,9 @@ if (schema) {
   </>
 )}
 
-<!-- Animate On Scroll -->
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<!-- Animate On Scroll (non-blocking) -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /></noscript>
 
 <!-- JSON-LD Schema -->
 <script type="application/ld+json" set:html={JSON.stringify(schemas)} />
