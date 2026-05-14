@@ -1,0 +1,15 @@
+---
+const { VimeoId, title = 'Trailer' } = Astro.props;
+---
+<div class="w-full max-w-4xl mx-auto px-5 py-5" data-aos="fade-up" data-aos-duration="600">
+    <h3 class="text-secondary p-5 text-center">{title}</h3>
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+        <iframe
+            src={`https://player.vimeo.com/video/${VimeoId}`}
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            title={title}
+        ></iframe>
+    </div>
+</div>

@@ -6,6 +6,7 @@ description: "A fiction film about two minds meeting again after separation, red
 import ProjectHero from '../../components/ProjectHero.astro';
 import ContentPicture from '../../components/ContentPicture.astro';
 import CreditsItem from '../../components/CreditsItem.astro';
+import ContentVimeo from '../../components/ContentVimeo.astro';
 export const meta = {
     title: 'Les Homards Immortels',
     synopsis: 'Two minds meet again after a brief separation, rediscovering each other while uncovering their motivations to leave and return. A story about being alone in search of a connection.',
@@ -22,9 +23,7 @@ export const meta = {
     </div>
 </section>
 
-<div class="hero aspect-w-16 aspect-h-9" data-aos="fade-up" data-aos-duration="600">
-    <iframe src="https://player.vimeo.com/video/206725218" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-</div>
+<ContentVimeo VimeoId="206725218" />
 
 <section class="hero" data-aos="fade-up" data-aos-duration="600" >
     <div class="hero-content" >           
