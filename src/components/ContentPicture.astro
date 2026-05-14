@@ -1,6 +1,9 @@
 ---
+import { Image } from 'astro:assets';
+import { resolveImage } from '../utils/images';
 const { image, alt } = Astro.props;
 const id = `lb-${Math.random().toString(36).slice(2, 8)}`;
+const resolved = resolveImage(image);
 ---
 <section class="hero" data-aos="fade-up">
   <button
@@ -8,8 +11,8 @@ const id = `lb-${Math.random().toString(36).slice(2, 8)}`;
     onclick={`document.getElementById('${id}').showModal()`}
     aria-label={`View full size: ${alt}`}
   >
-    <img
-      src={image}
+    <Image
+      src={resolved}
       loading="lazy"
       alt={alt}
       class="w-full h-auto block"
@@ -17,7 +20,7 @@ const id = `lb-${Math.random().toString(36).slice(2, 8)}`;
   </button>
 
   <dialog id={id} class="lightbox" onclick="this.close()">
-    <img src={image} alt={alt} />
+    <Image src={resolved} alt={alt} />
   </dialog>
 </section>
 
