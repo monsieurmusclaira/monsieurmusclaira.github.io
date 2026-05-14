@@ -18,14 +18,14 @@ const description = Astro.props.description || Astro.props.frontmatter?.descript
   <body class="bg-black ">
       <Header transition:animate="none" />
       <ClientRouter />
-      <main id="" class="bg-neutral overflow-hidden" >
+      <main class="bg-neutral overflow-hidden">
         
         <slot />
       </main>      
       <Footer /> 
 
       <!-- Animate On Scroll -->
-      <script is:inline src="https://unpkg.com/aos@next/dist/aos.js">&lt;</script>
+      <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
       <script is:inline>
         AOS.init({
           easing: 'ease',
