@@ -37,11 +37,9 @@ const { title, img, alt, imageposition, desc, url, badge1, badge2, target = '_bl
       <p>{badge2 && <div class="badge badge-outline text-xs text-base-100">{badge2}</div>}</p>
     </div>
     <div class="">
-      <button class="btn btn-md sm:btn-md btn-warning mt-3 ">
-        <a class="" href={url} target={target}>
-          learn more
-        </a>  
-      </button>  
+      <a class="btn btn-md sm:btn-md btn-warning mt-3" href={url} target={target} style="pointer-events: auto;">
+        learn more
+      </a>  
     </div>       
   </div>
 </div>
