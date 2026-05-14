@@ -5,6 +5,14 @@ import mdx from "@astrojs/mdx";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://victormaes.com',
-  integrations: [sitemap(), mdx()],
+  integrations: [
+    sitemap({
+      changefreq: 'monthly',
+      priority: 0.7,
+      lastmod: new Date(),
+      filter: (page) => !page.includes('/404'),
+    }),
+    mdx()
+  ],
   prefetch: true
 });

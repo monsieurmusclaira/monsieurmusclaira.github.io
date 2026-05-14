@@ -4,13 +4,15 @@ import { ClientRouter } from 'astro:transitions';
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
-const { image, title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
+const { image, canonical, schema, noindex } = Astro.props;
+const title = Astro.props.title || Astro.props.frontmatter?.title || Astro.props.content?.title || SITE_TITLE;
+const description = Astro.props.description || Astro.props.frontmatter?.description || Astro.props.content?.description || SITE_DESCRIPTION;
 ---
 <!DOCTYPE html>
 <html lang="en" data-theme="mytheme">
  
   <head>
-    <BaseHead title={title} description={description} image={image} />    
+    <BaseHead title={title} description={description} image={image} canonical={canonical} schema={schema} noindex={noindex} />    
   </head>
 
   <body class="bg-black ">
@@ -32,4 +34,3 @@ const { image, title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.prop
   </body>
   
 </html>
-
