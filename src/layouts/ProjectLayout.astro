@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Header from '../components/Header.astro';
 import ProjectHero from '../components/ProjectHero.astro';
 
 const {
@@ -13,8 +12,7 @@ const {
   },
 } = Astro.props;
 ---
-<BaseLayout title={title} description={description}  >
-  <Header />
+<BaseLayout title={title} description={description}>
   <ProjectHero title={title} synopsis={synopsis} heroImage={heroImage} />
   <main id="swup" class="wrapper transition-fade justify-center bg-gradient-to-r from-slate-900/30 via-blue-900/20 to-slate-900/30">  
      <slot  />

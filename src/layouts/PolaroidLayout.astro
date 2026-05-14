@@ -16,13 +16,13 @@ const { image, title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.prop
   <body class="">
       <Header transition:animate="none" />
       <ClientRouter />
-      <main id="" class="overflow-hidden">
+      <main class="overflow-hidden">
         <slot />
       </main>
       <Footer /> 
 
       <!-- Animate On Scroll -->
-      <script is:inline src="https://unpkg.com/aos@next/dist/aos.js">&lt;</script>
+      <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
       <script is:inline>
         AOS.init({
           easing: 'ease',
