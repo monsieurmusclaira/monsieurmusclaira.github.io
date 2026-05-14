@@ -1,11 +1,42 @@
 ---
 const { image, alt } = Astro.props;
+const id = `lb-${Math.random().toString(36).slice(2, 8)}`;
 ---
-<section class="hero" data-aos="fade-up">    
+<section class="hero" data-aos="fade-up">
+  <button
+    class="w-full bg-transparent border-0 p-0 cursor-zoom-in"
+    onclick={`document.getElementById('${id}').showModal()`}
+    aria-label={`View full size: ${alt}`}
+  >
     <img
-        src={image}
-        loading="lazy"
-        alt={alt}
-        class="w-full h-auto"
+      src={image}
+      loading="lazy"
+      alt={alt}
+      class="w-full h-auto block"
     />
+  </button>
+
+  <dialog id={id} class="lightbox" onclick="this.close()">
+    <img src={image} alt={alt} />
+  </dialog>
 </section>
+
+<style>
+  .lightbox {
+    background: transparent;
+    border: none;
+    padding: 0;
+    max-width: 90vw;
+    max-height: 90vh;
+  }
+  .lightbox::backdrop {
+    background: rgba(0, 0, 0, 0.92);
+    cursor: zoom-out;
+  }
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    display: block;
+  }
+</style>
