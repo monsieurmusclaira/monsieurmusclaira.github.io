@@ -24,13 +24,12 @@ const description = Astro.props.description || Astro.props.frontmatter?.descript
       </main>      
       <Footer /> 
 
-      <!-- Animate On Scroll -->
-      <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <!-- Animate On Scroll (non-blocking) -->
+      <script is:inline defer src="https://unpkg.com/aos@next/dist/aos.js"></script>
       <script is:inline>
         function initAOS() {
-          AOS.init({ easing: 'ease' });
+          if (typeof AOS !== 'undefined') AOS.init({ easing: 'ease' });
         }
-        initAOS();
         document.addEventListener('astro:page-load', initAOS);
       </script>
   </body>
