@@ -1,17 +1,68 @@
-<div class="navbar fixed top-0 z-50 bg-black/80">
+---
+const pathname = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === '/' ? pathname === '/' : pathname.startsWith(href);
+---
+
+<div class="navbar fixed top-0 z-50 bg-black/60 backdrop-blur-sm transition-transform duration-300" id="site-nav">
   <div class="navbar-start">
     <div class="dropdown">
       <button class="btn btn-ghost btn-circle" aria-label="Open menu">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="#F1D74E" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
       </button>
-      <ul class="menu menu-sm dropdown-content mt-3 p-2 shadow bg-black/80 rounded-box w-52 text-base-100">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/">About</a></li>
+      <ul class="menu menu-sm dropdown-content mt-3 p-2 shadow bg-black/80 backdrop-blur-sm rounded-box w-52 text-base-100">
+        <li>
+          <a href="/" class={isActive('/') ? 'text-secondary font-semibold' : ''}>Home</a>
+        </li>
+        <li>
+          <a href="/about/" class={isActive('/about') ? 'text-secondary font-semibold' : ''}>About</a>
+        </li>
       </ul>
     </div>
   </div>
   <div class="navbar-center">
+    <a href="/" class="font-['Montserrat'] text-sm font-light tracking-widest uppercase text-base-100 hover:text-secondary transition-colors duration-200">
+      Victor Maes
+    </a>
   </div>
   <div class="navbar-end">
   </div>
 </div>
+
+<script is:inline>
+  (function () {
+    var nav = document.getElementById('site-nav');
+    var lastY = 0;
+    var ticking = false;
+
+    function onScroll() {
+      if (!ticking) {
+        requestAnimationFrame(function () {
+          var y = window.scrollY;
+          if (y > lastY && y > 80) {
+            nav.style.transform = 'translateY(-100%)';
+          } else {
+            nav.style.transform = 'translateY(0)';
+          }
+          lastY = y;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    function attachScroll() {
+      var nav = document.getElementById('site-nav');
+      if (!nav) return;
+      lastY = window.scrollY;
+      window.removeEventListener('scroll', onScroll);
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
+
+    attachScroll();
+    document.addEventListener('astro:page-load', function () {
+      nav = document.getElementById('site-nav');
+      attachScroll();
+    });
+  })();
+</script>
