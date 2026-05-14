@@ -171,6 +171,9 @@ if (schema) {
 <link rel="alternate" hreflang="en" href={canonicalURL} />
 <link rel="alternate" hreflang="x-default" href={canonicalURL} />
 
+<!-- LCP preload: hero video poster on home page -->
+{pageType === 'home' && <link rel="preload" as="image" href="/video/seethrough.jpg" fetchpriority="high" />}
+
 <!-- Performance: Preconnect -->
 <link rel="preconnect" href="https://www.googletagmanager.com" />
 <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
