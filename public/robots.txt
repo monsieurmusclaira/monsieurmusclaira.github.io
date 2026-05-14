@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://victormaes.com/sitemap-index.xml
