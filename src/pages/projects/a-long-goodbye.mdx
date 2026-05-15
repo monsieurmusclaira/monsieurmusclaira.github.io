@@ -5,6 +5,7 @@ description: "An animated, interactive VR experience about dementia, love, and m
 ---
 import ProjectHero from '../../components/ProjectHero.astro';
 import CreditsItem from '../../components/CreditsItem.astro';
+import AwardItem from '../../components/AwardItem.astro';
 import FestivalsItem from '../../components/FestivalsItem.astro';
 import ContentPicture from '../../components/ContentPicture.astro';
 export const meta = {
@@ -53,39 +54,34 @@ export const meta = {
 </section>
 
 <section class="hero">
-    <div id="Awards" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">     
-        <FestivalsItem festivalname="La Biennale Di Venezia 82 - Venice Immersive Achievement Prize" heading="Awards" />
-        <FestivalsItem festivalname="SXSW - Agog Immersive Impact Award" heading="" />
-        <FestivalsItem festivalname="Clermont-Ferrand - Best XR Film" heading="" />
-        <FestivalsItem festivalname="Thessaloniki International Film Festival - Golden Alexander" heading="" />
-        <FestivalsItem festivalname="Belgian Game Awards - Best Applied Game" heading="" />
-        <FestivalsItem festivalname="United XR Awards - Best Art Direction" heading="" />
-        <FestivalsItem festivalname="Miami Film Gate - Best of Fest" heading="" />
-        <FestivalsItem festivalname="XR Must Awards - Best Non-Fiction World" heading="" />
-    </div>  
-</section>
-
-<section class="hero" >
-    <div id="Festivals" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">     
-        <FestivalsItem festivalname="Venice Immersive Competition (IT)" heading="Festivals" />
-        <FestivalsItem festivalname="SXSW (US) – North American Premiere" heading="" />
-        <FestivalsItem festivalname="Clermont-Ferrand International Short Film Festival (FR)" heading="" />
-        <FestivalsItem festivalname="Thessaloniki International Film Festival (GR) – Greek Premiere" heading="" />
-        <FestivalsItem festivalname="IDFA Doclab (NL) – Dutch Premiere" heading="" />
-        <FestivalsItem festivalname="NewImages (FR)" heading="" />
-        <FestivalsItem festivalname="Film Fest Gent (BE) – Belgian Premiere" heading="" />
-        <FestivalsItem festivalname="Fipadoc (FR) – French Premiere" heading="" />
-        <FestivalsItem festivalname="Beijing International Festival" heading="" />
-        <FestivalsItem festivalname="Busan International Short Film Festival" heading="" />
-        <FestivalsItem festivalname="Filmfestival Oostende (BE)" heading="" />
-        <FestivalsItem festivalname="Luxembourg City Film Festival (LUX)" heading="" />
-        <FestivalsItem festivalname="Kaboom (NL)" heading="" />
-        <FestivalsItem festivalname="Filmgate Interactive (US)" heading="" />
-        <FestivalsItem festivalname="Cinetech, Maryland Film Festival (US)" heading="" />
-        <FestivalsItem festivalname="Kortfilmfestival Leuven (BE)" heading="" />
-        <FestivalsItem festivalname="Docfest Brugge (BE)" heading="" />
-        <FestivalsItem festivalname="Breedbeeld Kortfilmfestival (BE)" heading="" />
-    </div>  
+    <div id="awards" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">
+        <AwardItem festival="La Biennale Di Venezia" award="Venice Immersive Achievement Prize" />
+        <AwardItem festival="SXSW" award="Agog Immersive Impact Award" />
+        <AwardItem festival="Clermont-Ferrand" award="Best XR Film" />
+        <AwardItem festival="Thessaloniki International Film Festival" award="Golden Alexander" />
+        <AwardItem festival="Belgian Game Awards" award="Best Applied Game" />
+        <AwardItem festival="United XR Awards" award="Best Art Direction" />
+        <AwardItem festival="Filmgate Miami" award="Best of Fest" />
+        <AwardItem festival="XR Must Awards" award="Best Non-Fiction World" />
+        <FestivalsItem heading="Festivals" festivalname="Venice Immersive Competition (IT)" />
+        <FestivalsItem heading="" festivalname="SXSW (US) — North American Premiere" />
+        <FestivalsItem heading="" festivalname="Clermont-Ferrand International Short Film Festival (FR)" />
+        <FestivalsItem heading="" festivalname="Thessaloniki International Film Festival (GR) — Greek Premiere" />
+        <FestivalsItem heading="" festivalname="IDFA Doclab (NL) — Dutch Premiere" />
+        <FestivalsItem heading="" festivalname="NewImages (FR)" />
+        <FestivalsItem heading="" festivalname="Film Fest Gent (BE) — Belgian Premiere" />
+        <FestivalsItem heading="" festivalname="Fipadoc (FR) — French Premiere" />
+        <FestivalsItem heading="" festivalname="Beijing International Festival" />
+        <FestivalsItem heading="" festivalname="Busan International Short Film Festival" />
+        <FestivalsItem heading="" festivalname="Filmfestival Oostende (BE)" />
+        <FestivalsItem heading="" festivalname="Luxembourg City Film Festival (LUX)" />
+        <FestivalsItem heading="" festivalname="Kaboom (NL)" />
+        <FestivalsItem heading="" festivalname="Filmgate Interactive (US)" />
+        <FestivalsItem heading="" festivalname="Cinetech, Maryland Film Festival (US)" />
+        <FestivalsItem heading="" festivalname="Kortfilmfestival Leuven (BE)" />
+        <FestivalsItem heading="" festivalname="Docfest Brugge (BE)" />
+        <FestivalsItem heading="" festivalname="Breedbeeld Kortfilmfestival (BE)" />
+    </div>
 </section>
 
 <section class="hero" data-aos="fade" data-aos-duration="300">

@@ -1,0 +1,10 @@
+---
+const { festival, award, year } = Astro.props;
+---
+<div class="col-span-2 border-t border-base-100/10 pt-3 mt-1 pb-2">
+  <p class="font-['Montserrat'] text-[10px] tracking-widest uppercase text-secondary/90 font-medium">
+    {award}
+    {year && <span class="text-base-100/30 ml-3 normal-case tracking-normal text-xs">{year}</span>}
+  </p>
+  <p class="font-['Montserrat'] text-sm text-base-100/50 font-light mt-1">{festival}</p>
+</div>

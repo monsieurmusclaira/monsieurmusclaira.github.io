@@ -15,7 +15,7 @@ const { synopsis, title, heroImage, imageposition, alt } = Astro.props;
         />
     </div>
 
-    <svg class="grain absolute top-0 z-2 w-full h-full">
+    <svg class="grain absolute top-0 z-2 w-full h-full" aria-hidden="true">
         <filter id='noiseFilter'>
           <feTurbulence 
             type='fractalNoise' 

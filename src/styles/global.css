@@ -83,6 +83,13 @@ to {
   transition: all 0.6s ease;
 }
 
+/* Credits, awards, specs sections */
+#credits, #awards, #specs {
+  max-width: 480px;
+  row-gap: 0.35rem;
+  column-gap: 0;
+}
+
 /* Smooth link transitions */
 a {
   transition: color 0.3s ease;

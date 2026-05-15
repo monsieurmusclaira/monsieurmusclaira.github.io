@@ -7,6 +7,7 @@ import ProjectHero from '../../components/ProjectHero.astro';
 import ContentPicture from '../../components/ContentPicture.astro';
 import CreditsItem from '../../components/CreditsItem.astro';
 import FestivalsItem from '../../components/FestivalsItem.astro';
+import SpecItem from '../../components/SpecItem.astro';
 export const meta = {
     title: 'Vlinderman',
     synopsis: 'When Joop, a warden at a local zoo, discovers a half-eaten butterfly in his butterfly enclosure he sets upon a quest to find the culprit.',
@@ -32,7 +33,7 @@ export const meta = {
         <CreditsItem crewfunction="" crewname="Lore Uyttendaele" />
         <CreditsItem crewfunction="" crewname="Yentl Gijbels" />
         <CreditsItem crewfunction="Production" crewname="Michaela Borcher" />
-        <CreditsItem crewfunction="1st Assitant Director" crewname="Matthias Tuinstra" />
+        <CreditsItem crewfunction="1st Assistant Director" crewname="Matthias Tuinstra" />
         <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
         <CreditsItem crewfunction="Gaffer" crewname="Dieter Roelens" />
         <CreditsItem crewfunction="Spark" crewname="Wouter van Achte" />
@@ -44,8 +45,8 @@ export const meta = {
         <CreditsItem crewfunction="Set Dressers" crewname="Mandy Louwet" />
         <CreditsItem crewfunction="" crewname="Bob van den Berg" />
         <CreditsItem crewfunction="" crewname="Helle Huisman" />
-        <CreditsItem crewfunction=">Make-up" crewname="Robin Verhecken" />
-        <CreditsItem crewfunction="Boom Operator" crewname="Pieter Desmet " />
+        <CreditsItem crewfunction="Make-up" crewname="Robin Verhecken" />
+        <CreditsItem crewfunction="Boom Operator" crewname="Pieter Desmet" />
         <CreditsItem crewfunction="Runner" crewname="Falcke Penso" />
         <CreditsItem crewfunction="Script Supervisor" crewname="Daan Janssens" />
     </div>  
@@ -101,11 +102,11 @@ export const meta = {
 </section>
 
 <section class="hero" data-aos="fade-up" data-aos-duration="600">
-    <div id="TechnicalSpecs" class="hero-content grid grid-cols-2 gap-2 text-base-200">     
-        <FestivalsItem festivalname="Digital" heading="Recording Format" />
-        <FestivalsItem festivalname="Alexa Mini LF" heading="Camera" />
-        <FestivalsItem festivalname="Canon Sumire" heading="Lenses" />
-        <FestivalsItem festivalname="Angenieux EZ Zoom" heading="" />
-        <FestivalsItem festivalname="Cinemascope - 2.39" heading="Aspect Ratio" />
-    </div>  
+    <div id="specs" class="hero-content grid grid-cols-2 gap-2 text-base-200">
+        <SpecItem label="Recording Format" value="Digital" />
+        <SpecItem label="Camera" value="Alexa Mini LF" />
+        <SpecItem label="Lenses" value="Canon Sumire" />
+        <SpecItem label="" value="Angenieux EZ Zoom" />
+        <SpecItem label="Aspect Ratio" value="Cinemascope — 2.39" />
+    </div>
 </section>

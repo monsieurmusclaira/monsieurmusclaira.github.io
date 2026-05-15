@@ -6,7 +6,9 @@ description: "A fiction film about Robin looking back on her turbulent relations
 import ProjectHero from '../../components/ProjectHero.astro';
 import ContentPicture from '../../components/ContentPicture.astro';
 import CreditsItem from '../../components/CreditsItem.astro';
+import AwardItem from '../../components/AwardItem.astro';
 import FestivalsItem from '../../components/FestivalsItem.astro';
+import SpecItem from '../../components/SpecItem.astro';
 import ContentYoutube from '../../components/ContentYoutube.astro';
 export const meta = {
     title: 'Burn',
@@ -27,9 +29,8 @@ export const meta = {
         <CreditsItem crewfunction="" crewname="Melody van Gompel" />
         <CreditsItem crewfunction="Producer" crewname="Rosa Duvekot" />
         <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
-        <CreditsItem crewfunction="1st Assitant Camera" crewname="Giel Dhaenens" />
+        <CreditsItem crewfunction="1st Assistant Camera" crewname="Giel Dhaenens" />
         <CreditsItem crewfunction="" crewname="Michiel Lateur" />
-        <CreditsItem crewfunction="1st Assitant Camera" crewname="Giel Dhaenens" />
         <CreditsItem crewfunction="2nd Assistant Camera" crewname="Rhomi Martens" />
         <CreditsItem crewfunction="Gaffer" crewname="Anouk Hasaers" />
         <CreditsItem crewfunction="Grip" crewname="Stef van Peteghem" />
@@ -51,16 +52,11 @@ export const meta = {
     </div>  
 </section>
 
-<section class="hero" data-aos="fade" data-aos-duration="300">
-    <div id="Festivals" class="hero-content grid grid-cols-2 gap-2 text-base-200">     
-        <FestivalsItem festivalname="Honourable mention" heading="KFL Wildcards 2023" />
-    </div>  
-</section>
-
-<section class="hero" data-aos="fade" data-aos-duration="300">
-    <div id="Festivals2" class="hero-content grid grid-cols-2 gap-2 text-base-200">     
-        <FestivalsItem festivalname="International Short Film Festival Leuven (BE)" heading="Festivals" />
-    </div>  
+<section class="hero" data-aos="fade-up" data-aos-duration="600">
+    <div id="awards" class="hero-content grid grid-cols-2 gap-2 text-base-200">
+        <AwardItem festival="KFL Wildcards" award="Honourable Mention" year="2023" />
+        <FestivalsItem heading="Festivals" festivalname="International Short Film Festival Leuven (BE)" />
+    </div>
 </section>
 
 <section class="hero">
@@ -99,11 +95,11 @@ export const meta = {
     </div>
 </section>
 
-<section class="hero" data-aos="fade" data-aos-duration="300">
-    <div id="TechnicalSpecs" class="hero-content grid grid-cols-2 gap-2 text-base-200">     
-        <FestivalsItem festivalname="Digital" heading="Recording Format" />
-        <FestivalsItem festivalname="Alexa Mini LF" heading="Camera" />
-        <FestivalsItem festivalname="Canon Sumire" heading="Lenses" />
-        <FestivalsItem festivalname="1.77" heading="Aspect Ratio" />
-    </div>  
+<section class="hero" data-aos="fade-up" data-aos-duration="600">
+    <div id="specs" class="hero-content grid grid-cols-2 gap-2 text-base-200">
+        <SpecItem label="Recording Format" value="Digital" />
+        <SpecItem label="Camera" value="Alexa Mini LF" />
+        <SpecItem label="Lenses" value="Canon Sumire" />
+        <SpecItem label="Aspect Ratio" value="1.77" />
+    </div>
 </section>

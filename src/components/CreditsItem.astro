@@ -1,5 +1,13 @@
 ---
 const { crewfunction, crewname } = Astro.props;
+const isNew = Boolean(crewfunction && crewfunction.trim());
 ---
-<p class="text-right font-light">{crewfunction}</p>
-<p class="text-left font-bold">{crewname}</p>
+{isNew && <hr class="col-span-2 border-t border-base-100/10 mt-3" />}
+<p class="text-right pr-6 self-center">
+  {isNew && (
+    <span class="font-['Montserrat'] text-[10px] tracking-widest uppercase text-base-100/40">
+      {crewfunction}
+    </span>
+  )}
+</p>
+<p class="font-['Montserrat'] text-sm font-light text-base-100/80 py-0.5">{crewname}</p>
