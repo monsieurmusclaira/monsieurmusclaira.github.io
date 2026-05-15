@@ -1,13 +1,13 @@
 ---
-const { festivalname, heading } = Astro.props;
-const isNew = Boolean(heading && heading.trim());
+const { label, value } = Astro.props;
+const isNew = Boolean(label && label.trim());
 ---
 {isNew && <hr class="col-span-2 border-t border-base-100/10 mt-3" />}
 <p class="text-right pr-6 self-center">
   {isNew && (
     <span class="font-['Montserrat'] text-[10px] tracking-widest uppercase text-base-100/40">
-      {heading}
+      {label}
     </span>
   )}
 </p>
-<p class="font-['Montserrat'] text-sm font-light text-base-100/80 py-0.5">{festivalname}</p>
+<p class="font-['Montserrat'] text-sm font-light text-base-100/80 py-0.5">{value}</p>

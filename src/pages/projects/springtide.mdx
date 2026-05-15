@@ -22,33 +22,14 @@ export const meta = {
     </div>
 </section>
 
-<section class="hero" data-aos="fade-up" data-aos-duration="600" >
-    <div class="hero-content ">           
-        <table class="table-auto border-separate border-spacing-x-3 text-base-200">
-            <tbody>
-                <tr>
-                    <td class="text-right font-bold">Director</td>
-                    <td class="text-left font-light">Elke Hertogs</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-bold">Cast</td>
-                    <td class="text-left font-light">Shauni Goetz</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-bold">Cinematographer</td>
-                    <td class="text-left font-light">Victor Maes</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-bold">Assistant Director</td>
-                    <td class="text-left font-light">Christian van de Pol</td>
-                </tr>
-                <tr>
-                    <td class="text-right font-bold ">Editor</td>
-                    <td class="text-left font-light">Joris Vertenten</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>  
+<section class="hero" data-aos="fade-up" data-aos-duration="600">
+    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200">
+        <CreditsItem crewfunction="Director" crewname="Elke Hertogs" />
+        <CreditsItem crewfunction="Cast" crewname="Shauni Goetz" />
+        <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
+        <CreditsItem crewfunction="Assistant Director" crewname="Christian van de Pol" />
+        <CreditsItem crewfunction="Editor" crewname="Joris Vertenten" />
+    </div>
 </section>
 
 <section class="hero">

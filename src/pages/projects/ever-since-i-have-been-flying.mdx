@@ -6,7 +6,9 @@ description: "A documentary following a sixty-year-old Kurdish man recalling his
 import ProjectHero from '../../components/ProjectHero.astro';
 import ContentPicture from '../../components/ContentPicture.astro';
 import CreditsItem from '../../components/CreditsItem.astro';
+import AwardItem from '../../components/AwardItem.astro';
 import FestivalsItem from '../../components/FestivalsItem.astro';
+import SpecItem from '../../components/SpecItem.astro';
 import ContentYoutube from '../../components/ContentYoutube.astro';
 export const meta = {
     title: 'Ever Since, I Have Been Flying',
@@ -31,15 +33,15 @@ export const meta = {
         <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
         <CreditsItem crewfunction="Camera Assistant" crewname="Tomris C. Canbulat" />
         <CreditsItem crewfunction="" crewname="Line de Kanel" />        
-        <CreditsItem crewfunction="Assistant Director" crewname="Ozan Takış " />
+        <CreditsItem crewfunction="Assistant Director" crewname="Ozan Takış" />
         <CreditsItem crewfunction="Editing" crewname="Aylin Gökmen" />
         <CreditsItem crewfunction="Color Grading" crewname="Tapia González" /> 
         <CreditsItem crewfunction="Sound & SFX" crewname="Utku Gürler" />
         <CreditsItem crewfunction="Sound Design & Mix" crewname="Philippe Ciompi" />
         <CreditsItem crewfunction="Sound Mix Studio" crewname="Sound Disposition" />
-        <CreditsItem crewfunction="Additional Sound" crewname="Saeid Jahromi " />
+        <CreditsItem crewfunction="Additional Sound" crewname="Saeid Jahromi" />
         <CreditsItem crewfunction="Artistic Consultant" crewname="Claude Barras" />
-        <CreditsItem crewfunction="Production Consultant" crewname="Clémence Pun " />    
+        <CreditsItem crewfunction="Production Consultant" crewname="Clémence Pun" />    
         <CreditsItem crewfunction="Editing Consultant" crewname="Eka Tsotsoria" />
         <CreditsItem crewfunction="Special Consultant" crewname="Hüseyin Yavuz" />           
         <CreditsItem crewfunction="Music" crewname="Yom" />
@@ -50,34 +52,30 @@ export const meta = {
 </section>
 
 <section class="hero">
-    <div id="Awards" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">     
-        <FestivalsItem festivalname="Popoli Film Festival (IT)" heading="Best Short Film" />
-        <FestivalsItem festivalname="Interfilm Berlin (DE)" heading="2nd place Confrontation Competition" />
-        <FestivalsItem festivalname="RIDM Film Festival (CA)" heading="Best International Short Film" />
-        <FestivalsItem festivalname="Festival En Ville (BE)" heading="Winner Compétition Échappées" />
-    </div>  
+    <div id="awards" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">
+        <AwardItem festival="Popoli Film Festival (IT)" award="Best Short Film" />
+        <AwardItem festival="Interfilm Berlin (DE)" award="2nd Place Confrontation Competition" />
+        <AwardItem festival="RIDM Film Festival (CA)" award="Best International Short Film" />
+        <AwardItem festival="Festival En Ville (BE)" award="Winner Compétition Échappées" />
+        <FestivalsItem heading="Festivals" festivalname="Locarno International Film Festival (CH)" />
+        <FestivalsItem heading="" festivalname="Toronto International Film Festival (CA)" />
+        <FestivalsItem heading="" festivalname="Camden Film Festival (US)" />
+        <FestivalsItem heading="" festivalname="Interfilm Berlin (DE)" />
+        <FestivalsItem heading="" festivalname="Denver Film Festival (US)" />
+        <FestivalsItem heading="" festivalname="Popoli Film Festival (IT)" />
+        <FestivalsItem heading="" festivalname="Chaktomuk Film Festival (KH)" />
+        <FestivalsItem heading="" festivalname="Diaspora Film Festival (CA)" />
+        <FestivalsItem heading="" festivalname="Montreal International Documentary Festival (CA)" />
+        <FestivalsItem heading="" festivalname="Bogoshorts Film Festival (CO)" />
+        <FestivalsItem heading="" festivalname="Turkish Film Festival Berlin (DE)" />
+        <FestivalsItem heading="" festivalname="RIDM Film Festival (CA)" />
+        <FestivalsItem heading="" festivalname="Nuit du Court métrage (CH)" />
+        <FestivalsItem heading="" festivalname="Festival En Ville (BE)" />
+        <FestivalsItem heading="" festivalname="Glasgow Short Film Festival (UK)" />
+        <FestivalsItem heading="" festivalname="Festival Regard (CA)" />
+    </div>
 </section>
 
-<section class="hero" >
-    <div id="Festivals" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">     
-        <FestivalsItem festivalname="Locarno International Film Festival (CH)" heading="Festivals" />
-        <FestivalsItem festivalname="Toronto International Film Festival (CA)" heading="" />
-        <FestivalsItem festivalname="Camden Film Festival (US)" heading="" />
-        <FestivalsItem festivalname="Interfilm Berlin (DE)" heading="" />
-        <FestivalsItem festivalname="Denver Film Festival (US)" heading="" />
-        <FestivalsItem festivalname="Popoli Film Festival (IT)" heading="" />
-        <FestivalsItem festivalname="Chaktomuk Film Festival (KH)" heading="" />
-        <FestivalsItem festivalname="Diaspora Film Festival (CA)" heading="" />
-        <FestivalsItem festivalname="Montreal International Documentary Festival (CA)" heading="" />
-        <FestivalsItem festivalname="Bogoshorts Film Festival (CO)" heading="" />        
-        <FestivalsItem festivalname="Turkish Film Festival Berlin (CA)" heading="" />
-        <FestivalsItem festivalname="RIDM Film Festival (CA)" heading="" />
-        <FestivalsItem festivalname="Nuit du Court métrage (CH)" heading="" />
-        <FestivalsItem festivalname="Festival En Ville (BE)" heading="" />
-        <FestivalsItem festivalname="Glasgow Short Film Festival (UK)" heading="" />
-        <FestivalsItem festivalname="Festival Regard (CA)" heading="" />
-    </div>  
-</section>
 
 <section class="hero">
     <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3">            
@@ -123,16 +121,16 @@ export const meta = {
     </div>
 </section>
 
-<section class="hero" >
-    <div id="TechnicalSpecs" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">     
-        <FestivalsItem festivalname="Kodak 16mm 500T" heading="Recording Format" />
-        <FestivalsItem festivalname="Kodak 16mm 250D" heading="" />
-        <FestivalsItem festivalname="Kodak 8mm 50D" heading="" />
-        <FestivalsItem festivalname="Arri 16SR3 HS" heading="Camera" />
-        <FestivalsItem festivalname="Agfa Movexoom 10" heading="" />
-        <FestivalsItem festivalname="Zeiss Distagon" heading="Lenses" />
-        <FestivalsItem festivalname="Zeiss HS Planar" heading="" />
-        <FestivalsItem festivalname="5:3 - 1.66" heading="Aspect Ratio" />
-        <FestivalsItem festivalname="4:3 - 1.44" heading="" />
-    </div>  
+<section class="hero">
+    <div id="specs" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">
+        <SpecItem label="Film Stock" value="Kodak 16mm 500T" />
+        <SpecItem label="" value="Kodak 16mm 250D" />
+        <SpecItem label="" value="Kodak 8mm 50D" />
+        <SpecItem label="Camera" value="Arri 16SR3 HS" />
+        <SpecItem label="" value="Agfa Movexoom 10" />
+        <SpecItem label="Lenses" value="Zeiss Distagon" />
+        <SpecItem label="" value="Zeiss HS Planar" />
+        <SpecItem label="Aspect Ratio" value="5:3 — 1.66" />
+        <SpecItem label="" value="4:3 — 1.44" />
+    </div>
 </section>

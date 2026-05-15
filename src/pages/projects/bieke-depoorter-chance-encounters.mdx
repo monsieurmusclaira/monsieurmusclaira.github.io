@@ -6,6 +6,7 @@ description: "A documentary on Magnum photographer Bieke Depoorter and the relat
 import ProjectHero from '../../components/ProjectHero.astro';
 import ContentPicture from '../../components/ContentPicture.astro';
 import CreditsItem from '../../components/CreditsItem.astro';
+import ContentVimeo from '../../components/ContentVimeo.astro';
 export const meta = {
     title: 'Bieke Depoorter - Chance Encounters',
     synopsis: "Key to Bieke Depoorter's approach to her work are the relationships the photographer establishes with her subjects. Accidental encounters are often the starting point for projects: some years-long. How these interactions naturally develop dictates the nature of Depoorter her work.",
@@ -22,9 +23,7 @@ export const meta = {
     </div>
 </section>
 
-<div class="hero aspect-w-16 aspect-h-9" data-aos="fade-up" data-aos-duration="600">
-    <iframe src="https://player.vimeo.com/video/493296509" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-</div>
+<ContentVimeo VimeoId="493296509" title="Bieke Depoorter: Chance Encounters" />
 
 <section class="hero" >
     <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">            
