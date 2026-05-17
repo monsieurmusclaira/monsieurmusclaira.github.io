@@ -1,0 +1,179 @@
+---
+---
+
+{/* Lightbox Overlay */}
+<div id="lightbox-overlay" class="fixed inset-0 z-[100] bg-charcoal/95 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center" aria-hidden="true">
+  
+  {/* Close button */}
+  <button id="lightbox-close" class="absolute top-6 right-6 text-white/60 hover:text-white transition-colors duration-300 z-10 p-2" aria-label="Close">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+
+  {/* Prev button */}
+  <button id="lightbox-prev" class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/40 hover:text-white transition-all duration-300 z-10 p-4 opacity-0 hover:opacity-100" aria-label="Previous image">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 md:h-12 md:w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+    </svg>
+  </button>
+
+  {/* Next button */}
+  <button id="lightbox-next" class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white/40 hover:text-white transition-all duration-300 z-10 p-4 opacity-0 hover:opacity-100" aria-label="Next image">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 md:h-12 md:w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+    </svg>
+  </button>
+
+  {/* Image container */}
+  <div class="relative max-w-[90vw] max-h-[85vh] flex items-center justify-center">
+    <img id="lightbox-image" src="" alt="" class="max-w-full max-h-[85vh] object-contain shadow-2xl" />
+  </div>
+
+  {/* Caption / Counter */}
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
+    <p id="lightbox-caption" class="text-caption text-white/60"></p>
+    <p id="lightbox-counter" class="text-caption text-white/40 mt-1"></p>
+  </div>
+</div>
+
+<script is:inline>
+  (function() {
+    const overlay = document.getElementById('lightbox-overlay');
+    const img = document.getElementById('lightbox-image');
+    const caption = document.getElementById('lightbox-caption');
+    const counter = document.getElementById('lightbox-counter');
+    const closeBtn = document.getElementById('lightbox-close');
+    const prevBtn = document.getElementById('lightbox-prev');
+    const nextBtn = document.getElementById('lightbox-next');
+    
+    let images = [];
+    let currentIndex = 0;
+    let isOpen = false;
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    // Refresh the images array and cursor styles (safe to call repeatedly)
+    function init() {
+      images = Array.from(document.querySelectorAll('img[data-lightbox]'));
+      images.forEach((image) => {
+        image.style.cursor = 'zoom-in';
+      });
+    }
+
+    // Single delegated click listener — never accumulates
+    document.addEventListener('click', (e) => {
+      const img = e.target.closest('img[data-lightbox]');
+      if (!img) return;
+      e.preventDefault();
+      const index = images.indexOf(img);
+      if (index !== -1) open(index);
+    });
+
+    function open(index) {
+      if (images.length === 0) return;
+      currentIndex = index;
+      isOpen = true;
+      updateImage();
+      overlay.classList.remove('opacity-0', 'pointer-events-none');
+      overlay.classList.add('opacity-100', 'pointer-events-auto');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      updateButtons();
+    }
+
+    function close() {
+      isOpen = false;
+      overlay.classList.remove('opacity-100', 'pointer-events-auto');
+      overlay.classList.add('opacity-0', 'pointer-events-none');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    function updateImage() {
+      const currentImg = images[currentIndex];
+      img.src = currentImg.src;
+      img.alt = currentImg.alt || '';
+      caption.textContent = currentImg.alt || '';
+      counter.textContent = `${currentIndex + 1} / ${images.length}`;
+    }
+
+    function prev() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateImage();
+        updateButtons();
+      }
+    }
+
+    function next() {
+      if (currentIndex < images.length - 1) {
+        currentIndex++;
+        updateImage();
+        updateButtons();
+      }
+    }
+
+    function updateButtons() {
+      prevBtn.style.opacity = currentIndex === 0 ? '0.2' : '';
+      prevBtn.style.pointerEvents = currentIndex === 0 ? 'none' : '';
+      nextBtn.style.opacity = currentIndex === images.length - 1 ? '0.2' : '';
+      nextBtn.style.pointerEvents = currentIndex === images.length - 1 ? 'none' : '';
+    }
+
+    // Event listeners
+    closeBtn.addEventListener('click', close);
+    prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
+    nextBtn.addEventListener('click', (e) => { e.stopPropagation(); next(); });
+    
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay || e.target.closest('.relative') === null) {
+        close();
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!isOpen) return;
+      switch(e.key) {
+        case 'Escape':
+          close();
+          break;
+        case 'ArrowLeft':
+          prev();
+          break;
+        case 'ArrowRight':
+          next();
+          break;
+      }
+    });
+
+    // Touch / swipe support
+    overlay.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    overlay.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+          next();
+        } else {
+          prev();
+        }
+      }
+    }
+
+    // Initialize on every page load (including Astro view transitions)
+    document.addEventListener('astro:page-load', init);
+    if (document.readyState !== 'loading') {
+      init();
+    }
+  })();
+</script>

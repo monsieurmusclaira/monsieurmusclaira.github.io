@@ -1,0 +1,72 @@
+---
+layout: "../layouts/BaseLayout.astro"
+---
+import ContentPicture from '../components/ContentPicture.astro';
+export const meta = {
+    title: 'About',
+    heroImage: '/img/thetearsofthings/stills/TTOT_20221008_1.19.1.png',
+    imageAlt: 'Film still'
+};
+
+{/* Hero Section */}
+<section class="relative h-[70vh] w-full overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <img
+      src={meta.heroImage}
+      alt={meta.imageAlt}
+      class="w-full h-full object-cover"
+      style="object-position: 50% 50%"
+      loading="eager"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60"></div>
+  </div>
+
+  <div class="relative z-10 h-full flex items-end pb-16 md:pb-24 px-8 md:px-16 lg:px-24">
+    <div class="max-w-4xl">
+      <p class="text-subtitle text-white/60 mb-4">About</p>
+      <h1 class="text-display text-white">Kate Voet</h1>
+    </div>
+  </div>
+</section>
+
+{/* Bio Section */}
+<section class="py-24 md:py-32 px-8 md:px-16 lg:px-24 bg-cream">
+  <div class="max-w-4xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
+      {/* Left Column */}
+      <div class="md:col-span-5">
+        <div class="sticky top-32">
+          <p class="text-caption text-warmgray mb-6">Director & Screenwriter</p>
+          <div class="w-16 h-px bg-slateblue mb-8"></div>
+          <p class="text-caption text-warmgray mb-2">Based in</p>
+          <p class="text-body text-charcoal">Brussels, Belgium</p>
+        </div>
+      </div>
+
+      {/* Right Column */}
+      <div class="md:col-span-7">
+        <p class="text-body text-lg leading-relaxed mb-8">Kate Voet is a Belgian film director and screenwriter from Brussels. She studied English literature and linguistics, theater studies, and film directing at the University of Amsterdam, LUCA School of Arts in Brussels, and The New School in New York City. With her film projects in development, she participated in several workshops and markets such as Torino Film Lab, the Venice Gap Financing Market, and IDFA Doclab Forum.</p>
+
+        <p class="text-body leading-relaxed mb-8">After her short films <em class="font-normal not-italic text-charcoal">Les Homards Immortels</em> and <em class="font-normal not-italic text-charcoal">The Tears of Things</em> toured festivals around the world, she wrote and directed <em class="font-normal not-italic text-charcoal">A Long Goodbye</em> together with Victor Maes — an interactive VR film which lets you step into the shoes of Ida, a 72-year-old pianist living with dementia.</p>
+
+        <p class="text-body leading-relaxed mb-8"><em class="font-normal not-italic text-charcoal">A Long Goodbye</em> had its world premiere in competition at the 82nd Venice Film Festival, where the film was awarded a prestigious lion (Venice Immersive Achievement Prize). The film went on to screen at Film Fest Gent, Thessaloniki Film Festival, IDFA, FIPADOC, Clermont-Ferrand, and SXSW, winning several more awards including Best XR Film at Clermont-Ferrand and the Agog Impact Award at SXSW. <em class="font-normal not-italic text-charcoal">A Long Goodbye</em> will continue to travel around the world in 2026.</p>
+
+        <p class="text-body leading-relaxed mb-12">She is now working on various projects in development, among which two fiction feature films.</p>
+
+        {/* Contact */}
+        <div class="pt-12 border-t border-warmborder">
+          <p class="text-caption text-warmgray mb-6">Get in touch</p>
+          <a href="mailto:hello@katevoet.com" class="text-body text-charcoal hover:text-slateblue transition-colors duration-300 link-underline">hello@katevoet.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* Selected Still */}
+<section class="py-16 md:py-24 px-8 md:px-16 lg:px-24 bg-cream">
+  <div class="max-w-6xl mx-auto">
+    <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.1.png" alt="The Tears of Things" />
+    <p class="text-caption text-warmgray mt-4 text-center">The Tears of Things — 2021</p>
+  </div>
+</section>

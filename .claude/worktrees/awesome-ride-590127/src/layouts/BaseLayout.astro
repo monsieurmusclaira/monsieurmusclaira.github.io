@@ -1,0 +1,36 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import { ClientRouter } from 'astro:transitions';
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Lightbox from "../components/Lightbox.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+const { image, title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en" data-theme="kate">
+
+  <head>
+    <BaseHead title={title} description={description} image={image} />
+  </head>
+
+  <body class="bg-cream antialiased">
+      <Header />
+      <ClientRouter />
+      <main>
+        <slot />
+      </main>
+      <Footer />
+      <Lightbox />
+
+      <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script is:inline>
+        AOS.init({
+          easing: 'ease-out-cubic',
+          duration: 800,
+          once: true,
+        });
+      </script>
+  </body>
+
+</html>

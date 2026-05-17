@@ -1,0 +1,108 @@
+---
+layout: "../../layouts/BaseLayout.astro"
+---
+import ProjectHero from '../../components/ProjectHero.astro';
+import CreditsItem from '../../components/CreditsItem.astro';
+import FestivalsItem from '../../components/FestivalsItem.astro';
+import ContentPicture from '../../components/ContentPicture.astro';
+import ContentYoutube from '../../components/ContentYoutube.astro';
+
+export const meta = {
+    title: 'Burn',
+    synopsis: 'During a streetcar ride by the sea, Robin looks back on her turbulent relationship with Ada. All that remains are the unspoken words and the shards she tries to put together. Why aren’t they sharp enough?',
+    heroImage: '/img/burn/stills/BURN_1.232.1.png',
+    imageposition: "50% 50%",
+    imageAlt: 'Burn cinematography still'
+};
+
+<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
+
+<ContentYoutube YoutubeLink="https://youtu.be/M60QLhGWE1g" />
+
+<section class="hero" >
+    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200">            
+        <CreditsItem crewfunction="Director" crewname="Cato Catteeuw" />
+        <CreditsItem crewfunction="Cast" crewname="Cato Catteeuw" />
+        <CreditsItem crewfunction="" crewname="Melody van Gompel" />
+        <CreditsItem crewfunction="Producer" crewname="Rosa Duvekot" />
+        <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
+        <CreditsItem crewfunction="1st Assistant Camera" crewname="Giel Dhaenens" />
+        <CreditsItem crewfunction="" crewname="Michiel Lateur" />
+        <CreditsItem crewfunction="1st Assistant Camera" crewname="Giel Dhaenens" />
+        <CreditsItem crewfunction="2nd Assistant Camera" crewname="Rhomi Martens" />
+        <CreditsItem crewfunction="Gaffer" crewname="Anouk Hasaers" />
+        <CreditsItem crewfunction="Grip" crewname="Stef van Peteghem" />
+        <CreditsItem crewfunction="Editor" crewname="Tine Verbist" />
+        <CreditsItem crewfunction="Art Direction" crewname="Lore Loyens" />
+        <CreditsItem crewfunction="" crewname="Jolke van Aerde" />
+        <CreditsItem crewfunction="" crewname="Pepijn Huysman" />
+        <CreditsItem crewfunction="Boom Engineer" crewname="Martijn Vandewiele" />
+        <CreditsItem crewfunction="Sound Engineer" crewname="Gedeon Depauw" />
+        <CreditsItem crewfunction="Costume Designer" crewname="Selin van Laethem" />
+        <CreditsItem crewfunction="Makeup Artist" crewname="Eef Smeyers" />
+        <CreditsItem crewfunction="Location Manager" crewname="Bao van Hove" />
+        <CreditsItem crewfunction="Script Supervisor" crewname="Lisa Coene" />
+        <CreditsItem crewfunction="Catering" crewname="Emma Degol" />
+        <CreditsItem crewfunction="" crewname="Katrien Orlans" />
+        <CreditsItem crewfunction="Camera Equipment" crewname="Camalot" />
+        <CreditsItem crewfunction="" crewname="Lucky Cam" />
+        <CreditsItem crewfunction="Lighting Equipment" crewname="Lites" />
+    </div>  
+</section>
+
+<section class="hero" data-aos="fade" data-aos-duration="300">
+    <div id="Festivals" class="hero-content grid grid-cols-2 gap-2 text-base-200">     
+        <FestivalsItem festivalname="Honourable mention" heading="KFL Wildcards 2023" />
+    </div>  
+</section>
+
+<section class="hero" data-aos="fade" data-aos-duration="300">
+    <div id="Festivals2" class="hero-content grid grid-cols-2 gap-2 text-base-200">     
+        <FestivalsItem festivalname="International Short Film Festival Leuven (BE)" heading="Festivals" />
+    </div>  
+</section>
+
+<section class="hero">
+    <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3" data-te-lightbox-init>            
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.1.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.4.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.5.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.11.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.12.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.14.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.16.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.17.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.22.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.27.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.80.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.30.png"  alt={meta.imageAlt} />                
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.32.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.36.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.38.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.44.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.50.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.59.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.60.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.61.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.63.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.65.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.66.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.68.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.71.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.74.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.75.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.76.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.77.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.79.png"  alt={meta.imageAlt} />
+        <ContentPicture image="/img/burn/stills/382747919_2291286297731117_7680154816693138086_n.jpg"  alt={meta.imageAlt} />
+    </div>
+</section>
+
+<section class="hero" data-aos="fade" data-aos-duration="300">
+    <div id="TechnicalSpecs" class="hero-content grid grid-cols-2 gap-2 text-base-200">     
+        <FestivalsItem festivalname="Digital" heading="Recording Format" />
+        <FestivalsItem festivalname="Alexa Mini LF" heading="Camera" />
+        <FestivalsItem festivalname="Canon Sumire" heading="Lenses" />
+        <FestivalsItem festivalname="1.77" heading="Aspect Ratio" />
+    </div>  
+</section>

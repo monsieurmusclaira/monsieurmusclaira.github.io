@@ -1,0 +1,57 @@
+---
+layout: "../../layouts/BaseLayout.astro"
+---
+import ProjectHero from '../../components/ProjectHero.astro';
+import CreditsItem from '../../components/CreditsItem.astro';
+import FestivalsItem from '../../components/FestivalsItem.astro';
+import ContentPicture from '../../components/ContentPicture.astro';
+export const meta = {
+    title: 'Moonlight Woman',
+    synopsis: 'Entangled in her sexual struggle, a mysterious sound suddenly emerges that haunts Sarah through her days and her nights. One sleepless night, she decides to follow it.',
+    heroImage: '/img/moonlightwoman/stills/1.106.2_1.106.2.jpg',
+    imageposition: "50% 50%",
+    imageAlt: 'Burn cinematography still'    
+};
+
+<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
+
+<section class="hero">
+    <div class="hero-content" data-te-lightbox-init>  
+        <ContentPicture image="/img/moonlightwoman/stills/1.11.1_1.11.1.jpg" alt={meta.imageAlt} />
+    </div>
+</section>
+
+<section class="hero" data-aos="fade-up" data-aos-duration="600">
+    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200">            
+        <CreditsItem crewfunction="Director" crewname="Griet Elsen" />
+        <CreditsItem crewfunction="Cast" crewname="Yentl Gijbels" />
+        <CreditsItem crewfunction="" crewname="Ramon Mahieu" />
+        <CreditsItem crewfunction="Assistant Director" crewname="Frank van den Bogaart" />
+        <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
+        <CreditsItem crewfunction="1st Assistant Camera" crewname="Giel Dhaenen" />
+        <CreditsItem crewfunction="" crewname="Jan-Willem Rouwhorst" />
+        <CreditsItem crewfunction="2nd Assistant Camera" crewname="Fenna Maas" />
+        <CreditsItem crewfunction="" crewname="Quinten Hazebroek" />
+        <CreditsItem crewfunction="Gaffer" crewname="Felix Ryckebusch" />
+        <CreditsItem crewfunction="" crewname="Dieter Roelens" />
+        <CreditsItem crewfunction="Best boy" crewname="Wouter van Achte" />
+        <CreditsItem crewfunction="" crewname="Korneel Moeyaert" />
+        <CreditsItem crewfunction="Electro" crewname="Lino De Koninck" />
+        <CreditsItem crewfunction="" crewname="Kasper Lerno" />
+        <CreditsItem crewfunction="Grip" crewname="Gilles Matthys" />
+        <CreditsItem crewfunction="" crewname="Matthijs van der Burgt" />
+    </div>  
+</section>
+
+<section class="hero">
+    <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3" data-te-lightbox-init>    
+        <ContentPicture image="/img/moonlightwoman/stills/1.93.1_1.93.1.jpg" alt={meta.imageAlt} />
+        <ContentPicture image="/img/moonlightwoman/stills/MOONLIGHTWOMAN_20230519_1.29.1.jpg" alt={meta.imageAlt} />
+        <ContentPicture image="/img/moonlightwoman/stills/MOONLIGHTWOMAN_20230519_1.203.1.jpg" alt={meta.imageAlt} />
+        <ContentPicture image="/img/moonlightwoman/stills/MOONLIGHTWOMAN_20230519_1.187.1.jpg" alt={meta.imageAlt} />
+        <ContentPicture image="/img/moonlightwoman/stills/1.40.1_1.40.1.jpg" alt={meta.imageAlt} />
+        <ContentPicture image="/img/moonlightwoman/stills/1.47.1_1.47.1.jpg" alt={meta.imageAlt} />
+        <ContentPicture image="/img/moonlightwoman/stills/1.83.1_1.83.1.jpg" alt={meta.imageAlt} />
+        <ContentPicture image="/img/moonlightwoman/stills/1.106.2_1.106.2.jpg" alt={meta.imageAlt} />
+    </div>
+</section>

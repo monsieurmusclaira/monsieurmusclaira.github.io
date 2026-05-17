@@ -1,0 +1,31 @@
+{
+  "name": "kate-voet-portfolio",
+  "description": "Portfolio website for Kate Voet, director & screenwriter",
+  "type": "module",
+  "version": "3.0.4",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astro-community/astro-embed-youtube": "^0.5.10",
+    "@astrojs/markdown-remark": "^7.1.1",
+    "@astrojs/mdx": "^5.0.4",
+    "@astrojs/sitemap": "^3.7.2",
+    "astro": "^6.3.1",
+    "astro-google-analytics": "^1.0.3",
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.14",
+    "tailwindcss": "^3.4.19"
+  },
+  "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/typography": "^0.5.10",
+    "daisyui": "^4.12.10",
+    "sass": "^1.68.0"
+  }
+}
