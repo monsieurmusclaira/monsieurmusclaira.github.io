@@ -28,7 +28,12 @@ const description = Astro.props.description || Astro.props.frontmatter?.descript
       <script is:inline defer src="https://unpkg.com/aos@next/dist/aos.js"></script>
       <script is:inline>
         function initAOS() {
-          if (typeof AOS !== 'undefined') AOS.init({ easing: 'ease' });
+          if (typeof AOS !== 'undefined') AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 80
+          });
         }
         document.addEventListener('astro:page-load', initAOS);
       </script>

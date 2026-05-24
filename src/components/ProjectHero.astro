@@ -2,9 +2,10 @@
 import { Image } from 'astro:assets';
 import { resolveImage } from '../utils/images';
 const { synopsis, title, heroImage, imageposition, alt } = Astro.props;
+const slug = Astro.url.pathname.split('/').filter(Boolean).pop();
 ---
 <div class="h-screen w-screen relative">
-    <div class="z-0 h-screen w-screen absolute top-0">
+    <div class="z-0 h-screen w-screen absolute top-0" transition:name={`hero-${slug}`}>
         <Image
         src={resolveImage(heroImage)}
         alt={alt}
