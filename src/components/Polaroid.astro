@@ -1,15 +1,16 @@
 ---
 import { Image } from 'astro:assets';
 import { resolveImage } from '../utils/images';
-const { image, alt, caption, rotation } = Astro.props;
+const { image, alt, caption } = Astro.props;
+const id = `bts-${Math.random().toString(36).slice(2, 8)}`;
+const resolved = resolveImage(image);
 ---
-<figure style={rotation}>
-    <Image
-    src={resolveImage(image)}
-    loading="lazy"
-    alt={alt}
-    widths={[480, 960]}
-    sizes="(min-width: 1280px) 33vw, (min-width: 1024px) 50vw, 100vw"
-    />
-    <figcaption>{caption}</figcaption>
+<figure class="polaroid">
+    <button class="polaroid-btn" onclick={`document.getElementById('${id}').showModal()`} aria-label={`View full size: ${alt}`}>
+        <Image src={resolved} alt={alt} loading="lazy" widths={[480, 960]} sizes="(min-width:1280px) 33vw, (min-width:1024px) 50vw, 100vw" />
+    </button>
+    {caption && <figcaption>{caption}</figcaption>}
+    <dialog id={id} class="lightbox" onclick="this.close()">
+        <Image src={resolved} alt={alt} widths={[1200]} sizes="90vw" loading="lazy" />
+    </dialog>
 </figure>

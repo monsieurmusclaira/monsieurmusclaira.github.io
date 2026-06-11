@@ -11,6 +11,7 @@ export interface Props {
 	title: string;
 	description: string;
 	image?: string;
+	imageAlt?: string;
 	canonical?: string;
 	schema?: object;
 	noindex?: boolean;
@@ -19,7 +20,11 @@ export interface Props {
 	year?: string;
 }
 
-const { title, description, image, canonical, schema, noindex, director, genre, year } = Astro.props;
+const { title, description, image, imageAlt, canonical, schema, noindex, director, genre, year } = Astro.props;
+
+// Social-card image alt: describe the actual photo when the page provides it,
+// otherwise fall back to the page title.
+const imageAltText = imageAlt || title;
 
 const canonicalURL = canonical ? new URL(canonical, SITE_URL) : new URL(Astro.url.pathname, SITE_URL);
 
@@ -131,6 +136,22 @@ if (pageType === 'home') {
       "@id": `${SITE_URL}/#website`
     }
   };
+} else if (pageType === 'bts') {
+  pageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "@id": canonicalURL.toString(),
+    "url": canonicalURL.toString(),
+    "name": title,
+    "description": description,
+    ...(ogImage ? { "image": ogImage } : {}),
+    "about": {
+      "@id": `${SITE_URL}/#person`
+    },
+    "isPartOf": {
+      "@id": `${SITE_URL}/#website`
+    }
+  };
 } else {
   pageSchema = {
     "@context": "https://schema.org",
@@ -220,7 +241,7 @@ if (schema) {
 {ogImage && (
   <>
     <meta property="og:image" content={ogImage} />
-    <meta property="og:image:alt" content={title} />
+    <meta property="og:image:alt" content={imageAltText} />
   </>
 )}
 
@@ -232,7 +253,7 @@ if (schema) {
 {ogImage && (
   <>
     <meta name="twitter:image" content={ogImage} />
-    <meta name="twitter:image:alt" content={title} />
+    <meta name="twitter:image:alt" content={imageAltText} />
   </>
 )}
 
