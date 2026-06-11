@@ -1,6 +1,7 @@
 ---
-const { image, alt, caption, rotation } = Astro.props;
+const { title, subtitle, variant } = Astro.props;
 ---
-<figure class="scrapbook-note col-span-2 mx-auto" style={rotation}>
-    <figcaption>{caption}</figcaption>
+<figure class={`scrapbook-note ${variant ? 'note-' + variant : ''}`} data-aos="fade-up" data-aos-duration="500">
+    <h2 class="note-title">{title}</h2>
+    {subtitle && <p class="note-sub">{subtitle}</p>}
 </figure>

@@ -8,6 +8,7 @@ const { canonical, schema, noindex } = Astro.props;
 // MDX pages set `image` in their YAML frontmatter (mirrors meta.heroImage) — used for social cards.
 // Project pages also set director/genre/year for Movie schema enrichment.
 const image = Astro.props.image || Astro.props.frontmatter?.image;
+const imageAlt = Astro.props.imageAlt || Astro.props.frontmatter?.imageAlt;
 const director = Astro.props.frontmatter?.director;
 const genre = Astro.props.frontmatter?.genre;
 const year = Astro.props.frontmatter?.year;
@@ -18,7 +19,7 @@ const description = Astro.props.description || Astro.props.frontmatter?.descript
 <html lang="en" data-theme="mytheme">
  
   <head>
-    <BaseHead title={title} description={description} image={image} canonical={canonical} schema={schema} noindex={noindex} director={director} genre={genre} year={year} />
+    <BaseHead title={title} description={description} image={image} imageAlt={imageAlt} canonical={canonical} schema={schema} noindex={noindex} director={director} genre={genre} year={year} />
     <ClientRouter />
   </head>
 

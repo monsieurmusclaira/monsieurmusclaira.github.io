@@ -3,6 +3,7 @@ layout: "../layouts/BaseLayout.astro"
 title: "Behind the Scenes | Victor Maes — Cinematographer"
 description: "Go behind the scenes on film sets with cinematographer Victor Maes. On-set photography from fiction and documentary productions in Belgium, Turkey, and beyond."
 image: "/img/eversinceihavebeenflying/bts/IMG-20230813-WA0062.jpg"
+imageAlt: "On set in the cotton fields of Turkey, behind the scenes with cinematographer Victor Maes."
 ---
 import ProjectHero from '../components/ProjectHero.astro';
 import Polaroid from '../components/Polaroid.astro';
@@ -10,7 +11,7 @@ import ScrapbookNote from '../components/ScrapbookNote.astro';
 import '../styles/polaroid.css';
 export const meta = {
     title: 'A journey in pictures',
-    synopsis: '',
+    synopsis: "On-set photography from Victor Maes's work as a cinematographer. Fiction, documentary, and XR productions shot across Belgium, Turkey, and beyond, seen from behind the camera, film by film.",
     heroImage: '/img/eversinceihavebeenflying/bts/IMG-20230813-WA0062.jpg',
     imageposition: "50% 50%",
     imageAlt: 'behind the scenes',
@@ -18,45 +19,93 @@ export const meta = {
 
 <ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
 
-<section class="hero">
-    <div class="hero-content grid grid-flow-row grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5" >
-        <ScrapbookNote caption="'Ever Since, I have Been Flying' by Aylin Gökmen, 2022 & 2023" rotation="transform: rotate(1deg);" />
-        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0116.jpg" caption="Tomris, Turkey, 2022" rotation="transform: rotate(-1deg);" alt="Tomris, Turkey, 2022 — behind the scenes"  />
-        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0096.jpg" caption="Lunch, Turkey" rotation="transform: rotate(-1deg);" alt="Lunch, Turkey — behind the scenes" />
-        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0122.jpg" caption="Aylin, Turkey"  rotation="transform: rotate(1deg);" alt="Aylin, Turkey — behind the scenes" />
-        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0064.jpg" caption="Cotton, Turkey" rotation="transform: rotate(-1deg);" alt="Cotton, Turkey — behind the scenes" />
-        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0062.jpg" caption="Cotton fields, Turkey" rotation="transform: rotate(1deg);" alt="Cotton fields, Turkey — behind the scenes" />      
-        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0112.jpg" caption="Movexoom super 8 on an O'connor" rotation="transform: rotate(-1deg);"  alt="Movexoom super 8 on an O'connor — behind the scenes" />
-        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230807-WA0022.jpg" caption="At Locarno" rotation="transform: rotate(1deg);"  alt="At Locarno — behind the scenes" />
-        <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230807-WA0023.jpg" caption="Me & Aylin, Locarno, 2023" rotation="transform: rotate(-1deg);"  alt="Me & Aylin, Locarno, 2023 — behind the scenes" />
-        <Polaroid image="/img/eversinceihavebeenflying/bts/PXL_20230806_161815548.jpg" caption="In the Locarno Daily" rotation="transform: rotate(-1deg);"  alt="In the Locarno Daily — behind the scenes" />
-    
-        <ScrapbookNote caption="Moonlight Woman by Griet Elsen, 2023" rotation="transform: rotate(-5deg);" />
-        <Polaroid image="/img/moonlightwoman/bts/PXL_20230404_093655380.jpg" caption="Breakfast without a knife." rotation="transform: rotate(-1deg);"  alt="Breakfast without a knife. — behind the scenes" />
-        <Polaroid image="/img/moonlightwoman/bts/PXL_20230523_175955340~2-02.jpeg" caption="Griet & Frank" rotation="transform: rotate(-1deg);"  alt="Griet & Frank — behind the scenes" />
-        <Polaroid image="/img/moonlightwoman/bts/IMG-5991-2-01.jpeg" caption="Late night swim." rotation="transform: rotate(-1deg);"  alt="Late night swim. — behind the scenes" />
-        <Polaroid image="/img/moonlightwoman/bts/PXL_20230523_215636951-01.jpeg" caption="Jan-Willem, focus puller & Quinten, 2nd" rotation="transform: rotate(-1deg);"  alt="Jan-Willem, focus puller & Quinten, 2nd — behind the scenes" />
-        <Polaroid image="/img/moonlightwoman/bts/PXL_20230522_224116371.PORTRAIT~2-01.jpeg" caption="" rotation="transform: rotate(-1deg);"  alt="Behind the scenes photo 14" />
-        <Polaroid image="/img/moonlightwoman/bts/2f21245d-aaea-4b23-8a7d-707f1f1ec6f0.jpg" caption="" rotation="transform: rotate(-1deg);"  alt="Behind the scenes photo 15" />
-        <Polaroid image="/img/moonlightwoman/bts/e36e6723-faba-47ee-8ef2-2d3d2071e0af.jpg" caption="" rotation="transform: rotate(-1deg);"  alt="Behind the scenes photo 16" />
-        <Polaroid image="/img/moonlightwoman/bts/cd42d364-723d-41ff-a7bc-975d75f3f017.jpg" caption="" rotation="transform: rotate(-1deg);"  alt="Behind the scenes photo 17" />
-        <Polaroid image="/img/moonlightwoman/bts/MOONLIGHT_WOMAN_SET_brittwieringa_52.jpg" caption="Dieter, gaffer." rotation="transform: rotate(-1deg);"  alt="Dieter, gaffer. — behind the scenes" />
+<div class="bts-board">
 
-        <ScrapbookNote caption="Burning Clouds by Yentl De Baets, 2022" rotation="transform: rotate(-1deg);" />
-        <Polaroid image="/img/burningclouds/bts/_23_0667.jpg" caption="" rotation="transform: rotate(-1deg);"  alt="Behind the scenes photo 19" />
-        <Polaroid image="/img/burningclouds/bts/_24_0666.jpg" caption="Karam, Yentl, Lucas, Nicole" rotation="transform: rotate(-1deg);"  alt="Karam, Yentl, Lucas, Nicole — behind the scenes" />
-        <Polaroid image="/img/burningclouds/bts/_27_0663.jpg" caption="Karam" rotation="transform: rotate(-1deg);"  alt="Karam — behind the scenes" />
-        <Polaroid image="/img/burningclouds/bts/_31_0659.jpg" caption="Jan-Willem & Rhomi" rotation="transform: rotate(-1deg);"  alt="Jan-Willem & Rhomi — behind the scenes" />
-        <Polaroid image="/img/burningclouds/bts/_33_0657.jpg" caption="" rotation="transform: rotate(-1deg);"  alt="Behind the scenes photo 23" />
-        <Polaroid image="/img/burningclouds/bts/459f4759-1a57-4ba2-944a-4dd6f3282e72.jpg" caption="Melody" rotation="transform: rotate(-1deg);"  alt="Melody — behind the scenes" />
-        <Polaroid image="/img/burningclouds/bts/IMG_0966.jpg" caption="Marlies, make-up" rotation="transform: rotate(-1deg);"  alt="Marlies, make-up — behind the scenes" />
-        <Polaroid image="/img/burningclouds/bts/IMG_1124.jpg" caption="Rhomi, 2nd AC" rotation="transform: rotate(-1deg);"  alt="Rhomi, 2nd AC — behind the scenes" />
-        <Polaroid image="/img/burningclouds/bts/IMG_1381.jpg" caption="" rotation="transform: rotate(-1deg);"  alt="Behind the scenes photo 27" />
-        <Polaroid image="/img/burningclouds/bts/IMG_1475.jpg" caption="Fenna, spark" rotation="transform: rotate(-1deg);"  alt="Fenna, spark — behind the scenes" />
-        <Polaroid image="/img/burningclouds/bts/IMG_1778.jpg" caption="Nicole, 1st AD" rotation="transform: rotate(-1deg);"  alt="Nicole, 1st AD — behind the scenes" />
-        <Polaroid image="/img/burningclouds/bts/IMG_1910.jpg" caption="Daphne, art director" rotation="transform: rotate(-1deg);"  alt="Daphne, art director — behind the scenes" />
-        <Polaroid image="/img/burningclouds/bts/IMG_1948.jpg" caption="Wouter, gaffer" rotation="transform: rotate(-1deg);"  alt="Wouter, gaffer — behind the scenes" />
-        
-    </div>
-</section>
+  <ScrapbookNote title="A Long Goodbye" subtitle="Victor Maes & Kate Voet · 2025" variant="green" />
+  <div class="bts-scatter">
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-01.jpg" alt="A Long Goodbye — behind the scenes (1)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-02.jpg" alt="A Long Goodbye — behind the scenes (2)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-03.jpg" alt="A Long Goodbye — behind the scenes (3)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-04.jpg" alt="A Long Goodbye — behind the scenes (4)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-05.jpg" alt="A Long Goodbye — behind the scenes (5)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-06.jpg" alt="A Long Goodbye — behind the scenes (6)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-07.jpg" alt="A Long Goodbye — behind the scenes (7)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-08.jpg" alt="A Long Goodbye — behind the scenes (8)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-09.jpg" alt="A Long Goodbye — behind the scenes (9)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-10.jpg" alt="A Long Goodbye — behind the scenes (10)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-11.jpg" alt="A Long Goodbye — behind the scenes (11)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-12.jpg" alt="A Long Goodbye — behind the scenes (12)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-13.jpg" alt="A Long Goodbye — behind the scenes (13)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-14.jpg" alt="A Long Goodbye — behind the scenes (14)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-15.jpg" alt="A Long Goodbye — behind the scenes (15)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-16.jpg" alt="A Long Goodbye — behind the scenes (16)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-17.jpg" alt="A Long Goodbye — behind the scenes (17)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-18.jpg" alt="A Long Goodbye — behind the scenes (18)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-19.jpg" alt="A Long Goodbye — behind the scenes (19)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-20.jpg" alt="A Long Goodbye — behind the scenes (20)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-21.jpg" alt="A Long Goodbye — behind the scenes (21)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-22.jpg" alt="A Long Goodbye — behind the scenes (22)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-23.jpg" alt="A Long Goodbye — behind the scenes (23)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-24.jpg" alt="A Long Goodbye — behind the scenes (24)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-25.jpg" alt="A Long Goodbye — behind the scenes (25)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-26.jpg" alt="A Long Goodbye — behind the scenes (26)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-27.webp" alt="A Long Goodbye — behind the scenes (27)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-28.jpg" alt="A Long Goodbye — behind the scenes (28)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-29.jpg" alt="A Long Goodbye — behind the scenes (29)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-30.jpg" alt="A Long Goodbye — behind the scenes (30)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-31.jpg" alt="A Long Goodbye — behind the scenes (31)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-32.jpg" alt="A Long Goodbye — behind the scenes (32)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-33.jpg" alt="A Long Goodbye — behind the scenes (33)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-34.jpg" alt="A Long Goodbye — behind the scenes (34)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-35.jpg" alt="A Long Goodbye — behind the scenes (35)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-36.jpg" alt="A Long Goodbye — behind the scenes (36)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-37.jpg" alt="A Long Goodbye — behind the scenes (37)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-38.jpg" alt="A Long Goodbye — behind the scenes (38)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-39.jpg" alt="A Long Goodbye — behind the scenes (39)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-40.jpg" alt="A Long Goodbye — behind the scenes (40)" />
+  </div>
 
+  <ScrapbookNote title="Ever Since, I Have Been Flying" subtitle="Aylin Gökmen · 2022 & 2023" />
+  <div class="bts-scatter">
+    <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0116.jpg" caption="Tomris, Turkey, 2022" alt="Tomris, Turkey, 2022 — behind the scenes" />
+    <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0096.jpg" caption="Lunch, Turkey" alt="Lunch, Turkey — behind the scenes" />
+    <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0122.jpg" caption="Aylin, Turkey" alt="Aylin, Turkey — behind the scenes" />
+    <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0064.jpg" caption="Cotton, Turkey" alt="Cotton, Turkey — behind the scenes" />
+    <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0062.jpg" caption="Cotton fields, Turkey" alt="Cotton fields, Turkey — behind the scenes" />
+    <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230813-WA0112.jpg" caption="Movexoom super 8 on an O'connor" alt="Movexoom super 8 on an O'connor — behind the scenes" />
+    <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230807-WA0022.jpg" caption="At Locarno" alt="At Locarno — behind the scenes" />
+    <Polaroid image="/img/eversinceihavebeenflying/bts/IMG-20230807-WA0023.jpg" caption="Me & Aylin, Locarno, 2023" alt="Me & Aylin, Locarno, 2023 — behind the scenes" />
+    <Polaroid image="/img/eversinceihavebeenflying/bts/PXL_20230806_161815548.jpg" caption="In the Locarno Daily" alt="In the Locarno Daily — behind the scenes" />
+  </div>
+
+  <ScrapbookNote title="Moonlight Woman" subtitle="Griet Elsen · 2023" variant="blue" />
+  <div class="bts-scatter">
+    <Polaroid image="/img/moonlightwoman/bts/PXL_20230404_093655380.jpg" caption="Breakfast without a knife." alt="Breakfast without a knife. — behind the scenes" />
+    <Polaroid image="/img/moonlightwoman/bts/PXL_20230523_175955340~2-02.jpeg" caption="Griet & Frank" alt="Griet & Frank — behind the scenes" />
+    <Polaroid image="/img/moonlightwoman/bts/IMG-5991-2-01.jpeg" caption="Late night swim." alt="Late night swim. — behind the scenes" />
+    <Polaroid image="/img/moonlightwoman/bts/PXL_20230523_215636951-01.jpeg" caption="Jan-Willem, focus puller & Quinten, 2nd" alt="Jan-Willem, focus puller & Quinten, 2nd — behind the scenes" />
+    <Polaroid image="/img/moonlightwoman/bts/PXL_20230522_224116371.PORTRAIT~2-01.jpeg" alt="Behind the scenes photo 14" />
+    <Polaroid image="/img/moonlightwoman/bts/2f21245d-aaea-4b23-8a7d-707f1f1ec6f0.jpg" alt="Behind the scenes photo 15" />
+    <Polaroid image="/img/moonlightwoman/bts/e36e6723-faba-47ee-8ef2-2d3d2071e0af.jpg" alt="Behind the scenes photo 16" />
+    <Polaroid image="/img/moonlightwoman/bts/cd42d364-723d-41ff-a7bc-975d75f3f017.jpg" alt="Behind the scenes photo 17" />
+    <Polaroid image="/img/moonlightwoman/bts/MOONLIGHT_WOMAN_SET_brittwieringa_52.jpg" caption="Dieter, gaffer." alt="Dieter, gaffer. — behind the scenes" />
+  </div>
+
+  <ScrapbookNote title="Burning Clouds" subtitle="Yentl De Baets · 2022" variant="pink" />
+  <div class="bts-scatter">
+    <Polaroid image="/img/burningclouds/bts/_23_0667.jpg" alt="Behind the scenes photo 19" />
+    <Polaroid image="/img/burningclouds/bts/_24_0666.jpg" caption="Karam, Yentl, Lucas, Nicole" alt="Karam, Yentl, Lucas, Nicole — behind the scenes" />
+    <Polaroid image="/img/burningclouds/bts/_27_0663.jpg" caption="Karam" alt="Karam — behind the scenes" />
+    <Polaroid image="/img/burningclouds/bts/_31_0659.jpg" caption="Jan-Willem & Rhomi" alt="Jan-Willem & Rhomi — behind the scenes" />
+    <Polaroid image="/img/burningclouds/bts/_33_0657.jpg" alt="Behind the scenes photo 23" />
+    <Polaroid image="/img/burningclouds/bts/459f4759-1a57-4ba2-944a-4dd6f3282e72.jpg" caption="Melody" alt="Melody — behind the scenes" />
+    <Polaroid image="/img/burningclouds/bts/IMG_0966.jpg" caption="Marlies, make-up" alt="Marlies, make-up — behind the scenes" />
+    <Polaroid image="/img/burningclouds/bts/IMG_1124.jpg" caption="Rhomi, 2nd AC" alt="Rhomi, 2nd AC — behind the scenes" />
+    <Polaroid image="/img/burningclouds/bts/IMG_1381.jpg" alt="Behind the scenes photo 27" />
+    <Polaroid image="/img/burningclouds/bts/IMG_1475.jpg" caption="Fenna, spark" alt="Fenna, spark — behind the scenes" />
+    <Polaroid image="/img/burningclouds/bts/IMG_1778.jpg" caption="Nicole, 1st AD" alt="Nicole, 1st AD — behind the scenes" />
+    <Polaroid image="/img/burningclouds/bts/IMG_1910.jpg" caption="Daphne, art director" alt="Daphne, art director — behind the scenes" />
+    <Polaroid image="/img/burningclouds/bts/IMG_1948.jpg" caption="Wouter, gaffer" alt="Wouter, gaffer — behind the scenes" />
+  </div>
+
+</div>

@@ -1,56 +1,171 @@
-@layer base {
-    *,
-    *:before,
-    *:after {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
+/* Behind the Scenes — a scrapbook board of polaroids with post-it chapter dividers.
+   Loaded only on /behind-the-scenes. */
+
+/* ---- the board surface the photos sit on ---- */
+.bts-board {
+  background:
+    radial-gradient(120% 80% at 50% 0%, #15161d 0%, #0d0e13 55%, #090a0e 100%);
+  padding: 30px clamp(16px, 5vw, 72px) 130px;
 }
 
-figure {
-    position: relative;
-    background-color: #eaeaea;
-    padding: 19px 19px 45px 19px;
-    transition: all 0.35s; 
-    -webkit-box-shadow: 7px 7px 15px 2px rgba(0,0,0,0.53); 
-    box-shadow: 7px 7px 15px 2px rgba(0,0,0,0.23);
-    
+/* ---- masonry scatter (one block per chapter) ---- */
+.bts-scatter {
+  column-count: 3;
+  column-gap: 30px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+@media (max-width: 1024px) { .bts-scatter { column-count: 2; max-width: 760px; } }
+@media (max-width: 560px)  { .bts-scatter { column-count: 1; max-width: 380px; } }
+
+/* ---- the polaroid ---- */
+.polaroid {
+  position: relative;
+  break-inside: avoid;
+  width: 100%;
+  margin: 0 auto 46px;
+  background: #f4f1ea;
+  padding: 13px 13px 14px;
+  box-shadow: 7px 10px 22px rgba(0, 0, 0, 0.5);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  will-change: transform;
+}
+.polaroid-btn {
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: zoom-in;
+  line-height: 0;
+}
+.polaroid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: saturate(0.97) contrast(1.02);
+}
+.polaroid figcaption {
+  font-family: "Caveat", "Nothing You Could Do", cursive;
+  font-size: 23px;
+  text-align: center;
+  color: #2b2b2b;
+  margin-top: 12px;
+  line-height: 1.05;
+}
+/* tape across the top */
+.polaroid::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 92px;
+  height: 26px;
+  top: -12px;
+  left: 50%;
+  background: rgba(214, 205, 178, 0.5);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transform: translateX(-50%) rotate(-3deg);
+}
+/* folded corner */
+.polaroid::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-width: 0 0 15px 15px;
+  border-style: solid;
+  border-color: transparent transparent rgba(0, 0, 0, 0.07) transparent;
+}
+/* per-photo rotation jitter (restarts each chapter) */
+.bts-scatter .polaroid:nth-child(6n + 1) { transform: rotate(-4deg); }
+.bts-scatter .polaroid:nth-child(6n + 2) { transform: rotate(2.5deg); }
+.bts-scatter .polaroid:nth-child(6n + 3) { transform: rotate(-1.5deg); }
+.bts-scatter .polaroid:nth-child(6n + 4) { transform: rotate(4deg); }
+.bts-scatter .polaroid:nth-child(6n + 5) { transform: rotate(-3deg); }
+.bts-scatter .polaroid:nth-child(6n + 6) { transform: rotate(1.5deg); }
+/* tape position jitter */
+.bts-scatter .polaroid:nth-child(3n + 1)::before { left: 26%; transform: rotate(7deg); }
+.bts-scatter .polaroid:nth-child(3n + 2)::before { left: 74%; transform: rotate(-8deg); }
+/* hover: pick the photo up */
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.04) !important;
+  box-shadow: 12px 18px 38px rgba(0, 0, 0, 0.6);
+  z-index: 5;
 }
 
-
-figure img{
-    width: 100%;
-}
-figcaption{
-    font-family: "Nothing You Could Do","Caveat",cursive;
-    font-size: 25px;
-    text-align: center;
-    color: #2c2c2c;
-    margin-top: 22px;   
-}
-figure:before,
-figure:after{
-    content: "";
-    position: absolute;
-    height: 50px;
-    width: 180px;
-    background-color: rgba(102,102,102,0);
-    transform: rotate(-40deg);
-}
-figure:before{
-    top: 3px;
-    left: -55px;
-    z-index: 2;
-}
-figure:after{
-    bottom: 3px;
-    right: -60px;
-}
-
+/* ---- post-it chapter divider ---- */
 .scrapbook-note {
-    background: linear-gradient(#F9EFAF, #F7E98D);
-    width: 30%;
-    padding: 19px 19px 85px 19px;
+  position: relative;
+  width: 270px;
+  aspect-ratio: 1 / 1;
+  margin: 76px auto 58px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(160deg, #fbf3b0, #f6e27a);
+  box-shadow: 6px 12px 26px rgba(0, 0, 0, 0.55);
+  text-align: center;
+  transform: rotate(-3.5deg);
+}
+.scrapbook-note.note-blue { background: linear-gradient(160deg, #cfe6f7, #a9d0ee); transform: rotate(2.5deg); }
+.scrapbook-note.note-pink { background: linear-gradient(160deg, #f7d9e4, #eeb6cb); transform: rotate(-2deg); }
+.scrapbook-note.note-green { background: linear-gradient(160deg, #d4ecd1, #aedcab); transform: rotate(2deg); }
+.scrapbook-note .note-title {
+  font-family: "Caveat", cursive;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.05;
+  color: #3a3320;
+}
+.scrapbook-note.note-blue .note-title { color: #1d3b52; }
+.scrapbook-note.note-pink .note-title { color: #5a2740; }
+.scrapbook-note.note-green .note-title { color: #1f4a2c; }
+.scrapbook-note .note-sub {
+  font-family: "Caveat", cursive;
+  font-size: 23px;
+  margin-top: 6px;
+  color: #6b6038;
+}
+.scrapbook-note.note-blue .note-sub { color: #3a607d; }
+.scrapbook-note.note-pink .note-sub { color: #8a4a66; }
+.scrapbook-note.note-green .note-sub { color: #3d6b48; }
+/* tape on the note */
+.scrapbook-note::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 32px;
+  left: 50%;
+  top: -15px;
+  background: rgba(247, 240, 210, 0.45);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  transform: translateX(-50%) rotate(-4deg);
+}
+.scrapbook-note.note-blue::before { background: rgba(200, 225, 245, 0.42); }
+.scrapbook-note.note-pink::before { background: rgba(245, 210, 225, 0.42); }
+.scrapbook-note.note-green::before { background: rgba(205, 235, 208, 0.42); }
+/* folded corner on the note */
+.scrapbook-note::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-width: 0 0 24px 24px;
+  border-style: solid;
+  border-color: transparent transparent rgba(0, 0, 0, 0.16) transparent;
 }
 
+/* ---- lightbox (Tailwind v4 resets dialog margin; restore centering) ---- */
+dialog.lightbox {
+  margin: auto;
+  background: transparent;
+  border: none;
+  padding: 0;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+dialog.lightbox::backdrop { background: rgba(0, 0, 0, 0.92); cursor: zoom-out; }
+dialog.lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; display: block; }
