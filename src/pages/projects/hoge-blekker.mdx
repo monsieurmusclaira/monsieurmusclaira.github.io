@@ -1,11 +1,17 @@
 ---
 layout: "../../layouts/BaseLayout.astro"
-title: "Hoge Blekker | Victor Maes — Cinematographer"
+title: "Hoge Blekker — 16mm Experimental Film | Victor Maes"
 description: "An experimental film shot on 16mm, a philosophical tale about the highest sand dune of Belgium and the relation between men and grain."
+image: "/img/hogeblekker/stills/hogeblekkerCover2.jpg"
+director: "Aylin Gökmen"
+genre: "Experimental"
 ---
 import ProjectHero from '../../components/ProjectHero.astro';
-import ContentPicture from '../../components/ContentPicture.astro';
+import ProjectIntro from '../../components/ProjectIntro.astro';
+import SectionLabel from '../../components/SectionLabel.astro';
 import CreditsItem from '../../components/CreditsItem.astro';
+import ContentPicture from '../../components/ContentPicture.astro';
+import NextProject from '../../components/NextProject.astro';
 export const meta = {
     title: 'Hoge Blekker',
     synopsis: 'A philosophical tale about the highest sand dune of Belgium. Shot on 16mm, this film is an ode to the relation between men and grain.',
@@ -14,33 +20,49 @@ export const meta = {
     imageAlt: 'Hoge Blekker cinematography still'
 };
 
-<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
+<ProjectHero title={meta.title} synopsis={meta.synopsis} credit="directed by Aylin Gökmen" heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
 
-<section class="hero">
-    <div class="hero-content">  
-        <ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.3.1.jpg" alt={meta.imageAlt} />
-    </div>
-</section>
+<ProjectIntro items={[
+    { label: 'Format', value: 'Experimental' },
+    { label: 'Role', value: 'Cinematographer' },
+    { label: 'Director', value: 'Aylin Gökmen' }
+]} />
 
-<section class="hero" >
-    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">            
-        <CreditsItem crewfunction="Director" crewname="Aylin Gökmen" />
-        <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
-        <CreditsItem crewfunction="Assistant Director" crewname="Quan Nguyen Hong" />
-    </div>  
-</section>
-
-<section class="hero">
-    <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3">            
-        <ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.10.1.jpg" alt={meta.imageAlt} />
-        <ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.11.1.jpg" alt={meta.imageAlt} />
-        <ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.12.1.jpg" alt={meta.imageAlt} />
-        <ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.5.1.jpg" alt={meta.imageAlt} />
-        <ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.7.1.jpg" alt={meta.imageAlt} />
-        <ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.8.1.jpg" alt={meta.imageAlt} />
-        <ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.1.1.jpg" alt={meta.imageAlt} />
+<section class="hero py-12">
+    <div class="hero-content flex-col max-w-3xl mx-auto px-6 text-center" data-aos="fade-up" data-aos-duration="600">
+        <p class="font-['EB_Garamond'] text-lg sm:text-xl text-base-100/85">Shot on 16mm, Hoge Blekker is a philosophical miniature about the highest sand dune of Belgium and the people drawn to it. Director Aylin Gökmen treats the dune as both location and metaphor: a mountain of loose grains that holds its shape only for a while, photographed on a medium that is itself made of grain. The texture of the stock and the texture of the sand become hard to tell apart, and that is the point: an image of permanence built entirely from particles. It is also the first of two collaborations between Gökmen and cinematographer Victor Maes, who reunited later for the 16mm documentary <a href="/projects/ever-since-i-have-been-flying/" class="text-warning hover:text-secondary">Ever Since, I Have Been Flying</a>.</p>
     </div>
 </section>
 
 
+<ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.3.1.jpg" alt="Hoge Blekker — film still 1" />
 
+<section class="hero pt-20 pb-4">
+    <div class="hero-content flex-col w-full">
+        <SectionLabel label="Credits" />
+        <div id="credits" class="grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">
+            <CreditsItem crewfunction="Director" crewname="Aylin Gökmen" />
+            <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
+            <CreditsItem crewfunction="Assistant Director" crewname="Quan Nguyen Hong" />
+        </div>
+    </div>
+</section>
+
+<section class="hero pt-20 pb-28">
+    <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3 max-w-6xl mx-auto px-4">
+        <ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.10.1.jpg" alt="Hoge Blekker — film still 2" />
+        <ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.11.1.jpg" alt="Hoge Blekker — film still 3" />
+        <ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.12.1.jpg" alt="Hoge Blekker — film still 4" />
+        <ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.5.1.jpg" alt="Hoge Blekker — film still 5" />
+        <ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.7.1.jpg" alt="Hoge Blekker — film still 6" />
+        <ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.8.1.jpg" alt="Hoge Blekker — film still 7" />
+        <ContentPicture image="/img/hogeblekker/stills/20181119_HogeBlekker_2.1.1.jpg" alt="Hoge Blekker — film still 8" />
+    </div>
+</section>
+
+<NextProject
+    title="World Wood Web"
+    url="/projects/world-wood-web/"
+    image="/img/worldwoodweb/stills/20181119_WorldWoodWeb_1.1.1_cr.png"
+    imageposition="45% 50%"
+/>

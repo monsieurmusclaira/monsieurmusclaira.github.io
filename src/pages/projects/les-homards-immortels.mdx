@@ -1,12 +1,20 @@
 ---
 layout: "../../layouts/BaseLayout.astro"
-title: "Les Homards Immortels | Victor Maes — Cinematographer"
+title: "Les Homards Immortels — Fiction Short | Victor Maes"
 description: "A fiction film about two minds meeting again after separation, rediscovering each other while uncovering their motivations."
+image: "/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_11_04_09.Still191.png"
+director: "Kate Voet"
+genre: "Fiction"
+year: "2017"
 ---
 import ProjectHero from '../../components/ProjectHero.astro';
+import ProjectIntro from '../../components/ProjectIntro.astro';
+import SectionLabel from '../../components/SectionLabel.astro';
 import ContentPicture from '../../components/ContentPicture.astro';
 import CreditsItem from '../../components/CreditsItem.astro';
 import ContentVimeo from '../../components/ContentVimeo.astro';
+import NextProject from '../../components/NextProject.astro';
+import { resolveImage } from '../../utils/images';
 export const meta = {
     title: 'Les Homards Immortels',
     synopsis: 'Two minds meet again after a brief separation, rediscovering each other while uncovering their motivations to leave and return. A story about being alone in search of a connection.',
@@ -15,78 +23,96 @@ export const meta = {
     imageAlt: 'Les Homards Immortels cinematography still'
 };
 
-<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
+<ProjectHero title={meta.title} synopsis={meta.synopsis} credit="directed by Kate Voet" heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
 
-<section class="hero">
-    <div class="hero-content">  
-        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_00_40_17.Still094.png" alt={meta.imageAlt} />
+<ProjectIntro items={[
+    { label: 'Format', value: 'Fiction' },
+    { label: 'Role', value: 'Cinematographer' },
+    { label: 'Director', value: 'Kate Voet' }
+]} />
+
+<section class="hero py-12">
+    <div class="hero-content flex-col max-w-3xl mx-auto px-6 text-center" data-aos="fade-up" data-aos-duration="600">
+        <p class="font-['EB_Garamond'] text-lg sm:text-xl text-base-100/85">Les Homards Immortels is a fiction short by director Kate Voet, starring Jan Bijvoet and Jill Verhaeghe as two minds who meet again after a brief separation and rediscover each other while uncovering their reasons to leave and to return. It is a film about being alone in the middle of a search for connection, and the cinematography keeps that solitude present even when the two characters share the frame: composed, patient images that hold the distance between people as carefully as the closeness. Photographed by Victor Maes; the short went on to a wide festival run, picked up in the laurels below.</p>
     </div>
 </section>
+
+
+<ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_00_40_17.Still094.png" alt="Les Homards Immortels — film still 1" />
 
 <ContentVimeo VimeoId="206725218" />
 
-<section class="hero" data-aos="fade-up" data-aos-duration="600">
-    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200">
-        <CreditsItem crewfunction="Director" crewname="Kate Voet" />
-        <CreditsItem crewfunction="Cast" crewname="Jan Bijvoet" />
-        <CreditsItem crewfunction="" crewname="Jill Verhaeghe" />
-        <CreditsItem crewfunction="Assistant Director" crewname="Elke Hertogs" />
-        <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
-        <CreditsItem crewfunction="1st Assistant Camera" crewname="Jan-Willem Rouwhorst" />
-        <CreditsItem crewfunction="Production Design" crewname="Pim Dinghs" />
-        <CreditsItem crewfunction="" crewname="Robin Hendrix" />
-        <CreditsItem crewfunction="Editing" crewname="Jerome Bartholomeus" />
-        <CreditsItem crewfunction="Sound Design & Composer" crewname="Senjan Jansen" />
+<section class="hero pt-20 pb-4">
+    <div class="hero-content flex-col w-full">
+        <SectionLabel label="Credits" />
+        <div id="credits" class="grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">
+            <CreditsItem crewfunction="Director" crewname="Kate Voet" />
+            <CreditsItem crewfunction="Cast" crewname="Jan Bijvoet" />
+            <CreditsItem crewfunction="" crewname="Jill Verhaeghe" />
+            <CreditsItem crewfunction="Assistant Director" crewname="Elke Hertogs" />
+            <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
+            <CreditsItem crewfunction="1st Assistant Camera" crewname="Jan-Willem Rouwhorst" />
+            <CreditsItem crewfunction="Production Design" crewname="Pim Dinghs" />
+            <CreditsItem crewfunction="" crewname="Robin Hendrix" />
+            <CreditsItem crewfunction="Editing" crewname="Jerome Bartholomeus" />
+            <CreditsItem crewfunction="Sound Design & Composer" crewname="Senjan Jansen" />
+        </div>
     </div>
 </section>
 
-<section class="hero">
-    <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3">            
-        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_00_50_17.Still097.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_01_25_21.Still102.png" alt={meta.imageAlt} />
+<section class="hero pt-20 pb-4">
+    <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3 max-w-6xl mx-auto px-4">
+        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_00_50_17.Still097.png" alt="Les Homards Immortels — film still 2" />
+        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_01_25_21.Still102.png" alt="Les Homards Immortels — film still 3" />
     </div>
 </section>
 
-
-
-
-<section class="hero" data-aos="fade-up" data-aos-duration="600">
-    <div class="hero-content flex flex-wrap place-content-around">
-        <img src="/img/leshomardsimmortels/laurels/leshomardsimmortels_laurel_oostende2017.svg" alt="Festival Laurel Oostende 2017" class="w-48" loading="lazy" />
-        <img src="/img/leshomardsimmortels/laurels/leshomardsimmortels_laurel_cineprive2017.svg" alt="Festival Laurel Cineprive 2017" class="w-48" loading="lazy" />
-        <img src="/img/leshomardsimmortels/laurels/leshomardsimmortels_laurel_blackcanvas2018.svg" alt="Festival Laurel Black Canvas 2018" class="w-48" loading="lazy" />
-        <img src="/img/leshomardsimmortels/laurels/leshomardsimmortels_laurel_festivalcinelaorquidea2018.svg" alt="Festival Laurel Cine La Orquidea 2018" class="w-48" loading="lazy" />
-        <img src="/img/leshomardsimmortels/laurels/leshomardsimmortels_laurel_brusselsindependant2018.svg" alt="Festival Brussels Independant 2018" class="w-48" loading="lazy" />
-        <img src="/img/leshomardsimmortels/laurels/leshomardsimmortels_laurel_escuelesdecine2018.svg" alt="Festival Laurel Escueles de Cine 2018"  class="w-48" loading="lazy" />
-        <img src="/img/leshomardsimmortels/laurels/leshomardsimmortels_laurel_hongkongarthouse2018.svg" alt="Festival Laurel Hong Kong Arthouse 2018" class="w-48" loading="lazy" />
-        <img src="/img/leshomardsimmortels/laurels/leshomardsimmortels_laurel_venicefilmweek2018.svg" alt="Festival Laurel Venice Film Week 2018" class="w-48" loading="lazy" />
-        <img src="/img/leshomardsimmortels/laurels/leshomardsimmortels_laurel_amsterdamindependant2018.svg" alt="Festival Laurel Amsterdam Independant 2018" class="w-48" loading="lazy" />
-        <img src="/img/leshomardsimmortels/laurels/leshomardsimmortels_laurel_uitkort.svg" alt="Festival Laurel Uitkort" class="w-48" loading="lazy" />
-        <img src="/img/leshomardsimmortels/laurels/leshomardsimmortels_laurel_wunderground2018.svg" alt="Festival Laurel Wunderground 2018" class="w-48" loading="lazy" />
-        <img src="/img/leshomardsimmortels/laurels/leshomardsimmortels_laurel_cuttogent2018.svg" alt="Festival Laurel Cut To Gent 2018" class="w-48" loading="lazy" />
+<section class="hero pt-20 pb-4" data-aos="fade-up" data-aos-duration="600">
+    <div class="hero-content flex-col w-full">
+        <SectionLabel label="Selections" />
+        <div class="flex flex-wrap place-content-around">
+            <img src={resolveImage('/img/leshomardsimmortels/laurels/leshomardsimmortels_laurel_oostende2017.svg').src} alt="Festival Laurel Oostende 2017" class="w-48" loading="lazy" />
+            <img src={resolveImage('/img/leshomardsimmortels/laurels/leshomardsimmortels_laurel_cineprive2017.svg').src} alt="Festival Laurel Cineprive 2017" class="w-48" loading="lazy" />
+            <img src={resolveImage('/img/leshomardsimmortels/laurels/leshomardsimmortels_laurel_blackcanvas2018.svg').src} alt="Festival Laurel Black Canvas 2018" class="w-48" loading="lazy" />
+            <img src={resolveImage('/img/leshomardsimmortels/laurels/leshomardsimmortels_laurel_festivalcinelaorquidea2018.svg').src} alt="Festival Laurel Cine La Orquidea 2018" class="w-48" loading="lazy" />
+            <img src={resolveImage('/img/leshomardsimmortels/laurels/leshomardsimmortels_laurel_brusselsindependant2018.svg').src} alt="Festival Brussels Independant 2018" class="w-48" loading="lazy" />
+            <img src={resolveImage('/img/leshomardsimmortels/laurels/leshomardsimmortels_laurel_escuelesdecine2018.svg').src} alt="Festival Laurel Escueles de Cine 2018" class="w-48" loading="lazy" />
+            <img src={resolveImage('/img/leshomardsimmortels/laurels/leshomardsimmortels_laurel_hongkongarthouse2018.svg').src} alt="Festival Laurel Hong Kong Arthouse 2018" class="w-48" loading="lazy" />
+            <img src={resolveImage('/img/leshomardsimmortels/laurels/leshomardsimmortels_laurel_venicefilmweek2018.svg').src} alt="Festival Laurel Venice Film Week 2018" class="w-48" loading="lazy" />
+            <img src={resolveImage('/img/leshomardsimmortels/laurels/leshomardsimmortels_laurel_amsterdamindependant2018.svg').src} alt="Festival Laurel Amsterdam Independant 2018" class="w-48" loading="lazy" />
+            <img src={resolveImage('/img/leshomardsimmortels/laurels/leshomardsimmortels_laurel_uitkort.svg').src} alt="Festival Laurel Uitkort" class="w-48" loading="lazy" />
+            <img src={resolveImage('/img/leshomardsimmortels/laurels/leshomardsimmortels_laurel_wunderground2018.svg').src} alt="Festival Laurel Wunderground 2018" class="w-48" loading="lazy" />
+            <img src={resolveImage('/img/leshomardsimmortels/laurels/leshomardsimmortels_laurel_cuttogent2018.svg').src} alt="Festival Laurel Cut To Gent 2018" class="w-48" loading="lazy" />
+        </div>
     </div>
 </section>
 
-<section class="hero">
-    <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3">            
-        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_04_14_03.Still113.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_05_55_23.Still093.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/leshomardsimmortels/stills/LesHomardsImmortels_KateVoet_Corestill.jpg" alt={meta.imageAlt} />
-        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_05_21_23.Still129.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_06_27_13.Still138.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_06_30_22.Still141.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_07_10_22.Still153.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_06_44_05.Still143.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_06_53_03.Still145.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_07_18_17.Still157.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_07_23_03.Still160.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_07_37_14.Still165.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_07_49_20.Still169.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/leshomardsimmortels/stills/LesHomardsImmortels_KateVoet_Still15.jpg" alt={meta.imageAlt} />
-        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_03_33_00.Still109.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_09_27_16.Still184.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_09_33_05.Still185.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_11_04_09.Still191.png" alt={meta.imageAlt} />
+<section class="hero pt-20 pb-28">
+    <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3 max-w-6xl mx-auto px-4">
+        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_04_14_03.Still113.png" alt="Les Homards Immortels — film still 4" />
+        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_05_55_23.Still093.png" alt="Les Homards Immortels — film still 5" />
+        <ContentPicture image="/img/leshomardsimmortels/stills/LesHomardsImmortels_KateVoet_Corestill.jpg" alt="Les Homards Immortels — film still 6" />
+        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_05_21_23.Still129.png" alt="Les Homards Immortels — film still 7" />
+        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_06_27_13.Still138.png" alt="Les Homards Immortels — film still 8" />
+        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_06_30_22.Still141.png" alt="Les Homards Immortels — film still 9" />
+        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_07_10_22.Still153.png" alt="Les Homards Immortels — film still 10" />
+        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_06_44_05.Still143.png" alt="Les Homards Immortels — film still 11" />
+        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_06_53_03.Still145.png" alt="Les Homards Immortels — film still 12" />
+        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_07_18_17.Still157.png" alt="Les Homards Immortels — film still 13" />
+        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_07_23_03.Still160.png" alt="Les Homards Immortels — film still 14" />
+        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_07_37_14.Still165.png" alt="Les Homards Immortels — film still 15" />
+        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_07_49_20.Still169.png" alt="Les Homards Immortels — film still 16" />
+        <ContentPicture image="/img/leshomardsimmortels/stills/LesHomardsImmortels_KateVoet_Still15.jpg" alt="Les Homards Immortels — film still 17" />
+        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_03_33_00.Still109.png" alt="Les Homards Immortels — film still 18" />
+        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_09_27_16.Still184.png" alt="Les Homards Immortels — film still 19" />
+        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_09_33_05.Still185.png" alt="Les Homards Immortels — film still 20" />
+        <ContentPicture image="/img/leshomardsimmortels/stills/KateEditE26_AspectWrapper.01_11_04_09.Still191.png" alt="Les Homards Immortels — film still 21" />
     </div>
 </section>
 
+<NextProject
+    title="Today We Escape"
+    url="/projects/today-we-escape/"
+    image="/img/todayweescape/stills/1.133.2_1.133.2.png"
+    imageposition="20% 50%"
+/>

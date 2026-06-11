@@ -1,13 +1,16 @@
 ---
 import { Image } from 'astro:assets';
 import { resolveImage } from '../utils/images';
-const { image, alt } = Astro.props;
+const { image, alt, contained = false } = Astro.props;
 const id = `lb-${Math.random().toString(36).slice(2, 8)}`;
 const resolved = resolveImage(image);
+const buttonClass = contained
+  ? 'w-full max-w-5xl mx-auto px-4 sm:px-6 bg-transparent border-0 p-0 cursor-zoom-in'
+  : 'w-full bg-transparent border-0 p-0 cursor-zoom-in';
 ---
 <section class="hero" data-aos="fade-up">
   <button
-    class="w-full bg-transparent border-0 p-0 cursor-zoom-in"
+    class={buttonClass}
     onclick={`document.getElementById('${id}').showModal()`}
     aria-label={`View full size: ${alt}`}
   >
@@ -16,16 +19,21 @@ const resolved = resolveImage(image);
       loading="lazy"
       alt={alt}
       class="w-full h-auto block"
+      widths={[768, 1440, 2560]}
+      sizes={contained ? '(min-width: 1024px) 1024px, 100vw' : '100vw'}
     />
   </button>
 
   <dialog id={id} class="lightbox" onclick="this.close()">
-    <Image src={resolved} alt={alt} />
+    <Image src={resolved} alt={alt} widths={[1440, 2560]} sizes="90vw" loading="lazy" />
   </dialog>
 </section>
 
 <style>
   .lightbox {
+    /* Tailwind v4 preflight resets margin:0 on every element incl. <dialog>,
+       which kills the default modal-dialog centering. Restore it. */
+    margin: auto;
     background: transparent;
     border: none;
     padding: 0;

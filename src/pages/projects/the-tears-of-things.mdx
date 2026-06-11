@@ -1,13 +1,21 @@
 ---
 layout: "../../layouts/BaseLayout.astro"
-title: "The Tears of Things | Victor Maes — Cinematographer"
+title: "The Tears of Things — Fiction Short | Cinematography by Victor Maes"
 description: "A fiction film about Ana untangling painful memories of the night her marriage began to crumble, written as a letter to her husband."
+image: "/img/thetearsofthings/stills/TTOT_20212101_1.1.49.png"
+director: "Kate Voet"
+genre: "Fiction"
+year: "2021"
 ---
 import ProjectHero from '../../components/ProjectHero.astro';
-import ContentPicture from '../../components/ContentPicture.astro';
+import ProjectIntro from '../../components/ProjectIntro.astro';
+import SectionLabel from '../../components/SectionLabel.astro';
 import CreditsItem from '../../components/CreditsItem.astro';
 import AwardItem from '../../components/AwardItem.astro';
-import FestivalsItem from '../../components/FestivalsItem.astro';
+import FeaturedAward from '../../components/FeaturedAward.astro';
+import FestivalList from '../../components/FestivalList.astro';
+import ContentPicture from '../../components/ContentPicture.astro';
+import NextProject from '../../components/NextProject.astro';
 export const meta = {
     title: 'The Tears of Things',
     synopsis: 'Ana attempts to untangle the painful memories of the night when her marriage began to crumble. Unable to speak, she starts writing. Her diary becomes a letter to her husband about their growing alienation, set in a deafening silence.',
@@ -16,125 +24,149 @@ export const meta = {
     imageAlt: 'The Tears of Things cinematography still'
 };
 
-<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
+<ProjectHero title={meta.title} synopsis={meta.synopsis} credit="directed by Kate Voet" heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
 
-<section class="hero">
-    <div class="hero-content">  
-<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.113.png" alt={meta.imageAlt} />
+<ProjectIntro items={[
+    { label: 'Format', value: 'Fiction' },
+    { label: 'Role', value: 'Cinematographer' },
+    { label: 'Director', value: 'Kate Voet' }
+]} />
+
+<FeaturedAward award="Critic's Award" festival="International Short Film Festival Leuven (BE)" year="2021" />
+
+<ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.113.png" alt="The Tears of Things — film still 1" />
+
+<section class="hero pt-20 pb-4">
+    <div class="hero-content flex-col w-full">
+        <SectionLabel label="Credits" />
+        <div class="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-16 px-6" data-aos="fade-up" data-aos-duration="600">
+            <div class="grid grid-cols-2 gap-x-0 gap-y-2 content-start text-base-200">
+                <CreditsItem crewfunction="Director" crewname="Kate Voet" />
+                <CreditsItem crewfunction="Cast" crewname="Lydia Injova" />
+                <CreditsItem crewfunction="" crewname="Jakub Kotynski" />
+                <CreditsItem crewfunction="Producer" crewname="Songs in the Dark" />
+                <CreditsItem crewfunction="Co-producer" crewname="Eyeworks" />
+                <CreditsItem crewfunction="" crewname="Peter Bouckaert" />
+                <CreditsItem crewfunction="Assistant Director" crewname="Jelle Maseman" />
+                <CreditsItem crewfunction="" crewname="Niko Himschoot" />
+                <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
+                <CreditsItem crewfunction="1st Assistant Camera" crewname="Jan-Willem Rouwhorst" />
+                <CreditsItem crewfunction="" crewname="Michiel Lateur" />
+                <CreditsItem crewfunction="2nd Assistant Camera" crewname="Aileen Vandenbroele" />
+                <CreditsItem crewfunction="" crewname="Anthony Veiten" />
+                <CreditsItem crewfunction="Gaffer" crewname="Dieter Roelens" />
+                <CreditsItem crewfunction="Electrician" crewname="Fenna Maas" />
+                <CreditsItem crewfunction="" crewname="Aaron Veys" />
+                <CreditsItem crewfunction="" crewname="Eva Somers" />
+                <CreditsItem crewfunction="" crewname="Gillis Kornelis" />
+                <CreditsItem crewfunction="" crewname="Dennis Kussener" />
+                <CreditsItem crewfunction="Key Grip" crewname="Jonas Glassee" />
+                <CreditsItem crewfunction="" crewname="Stijn Deprez" />
+                <CreditsItem crewfunction="Steadicam" crewname="Loic Dillen" />
+            </div>
+            <div class="grid grid-cols-2 gap-x-0 gap-y-2 content-start text-base-200">
+                <CreditsItem crewfunction="Art Director" crewname="Maud Gyssels" />
+                <CreditsItem crewfunction="Set Dresser" crewname="Robin Hendrix" />
+                <CreditsItem crewfunction="" crewname="Dries Vanoirbeek" />
+                <CreditsItem crewfunction="" crewname="Sophie May" />
+                <CreditsItem crewfunction="Make-up" crewname="Lena Dobbels" />
+                <CreditsItem crewfunction="" crewname="Marlies van Rompay" />
+                <CreditsItem crewfunction="Costume Design" crewname="Heide Winne" />
+                <CreditsItem crewfunction="Costumer" crewname="Fauve Ryckebusch" />
+                <CreditsItem crewfunction="" crewname="Catherine Bourda" />
+                <CreditsItem crewfunction="Script" crewname="Oscar Schutz" />
+                <CreditsItem crewfunction="Editing" crewname="Ewin Ryckaert" />
+                <CreditsItem crewfunction="Sound Recording" crewname="Yanna Soentjens" />
+                <CreditsItem crewfunction="Boom Operator" crewname="Vincent Somers" />
+                <CreditsItem crewfunction="Sound Design" crewname="Tijn Hazen" />
+                <CreditsItem crewfunction="Sound Effect Editor" crewname="Taco Drijfhout" />
+                <CreditsItem crewfunction="Dialogue Editor" crewname="Max van den Oever" />
+                <CreditsItem crewfunction="ADR" crewname="Fred de Geus" />
+                <CreditsItem crewfunction="Foley" crewname="Elias Vervecken" />
+                <CreditsItem crewfunction="" crewname="Stephane Werner" />
+                <CreditsItem crewfunction="Music" crewname="Senjan Jansen" />
+                <CreditsItem crewfunction="VFX" crewname="Elke Dhaese" />
+                <CreditsItem crewfunction="Title Design" crewname="Titles" />
+                <CreditsItem crewfunction="Location" crewname="Luna Marie Bogaert" />
+                <CreditsItem crewfunction="" crewname="Djurre van Dijck" />
+                <CreditsItem crewfunction="" crewname="Neil De Cock" />
+                <CreditsItem crewfunction="" crewname="Annabelle van Campenhout" />
+                <CreditsItem crewfunction="" crewname="Wout de Coster" />
+                <CreditsItem crewfunction="" crewname="Wim Geerts" />
+                <CreditsItem crewfunction="" crewname="Geert Maes" />
+                <CreditsItem crewfunction="" crewname="Lennert Lefevre" />
+                <CreditsItem crewfunction="" crewname="Ann Nooyens" />
+                <CreditsItem crewfunction="" crewname="Jente Pijpers" />
+                <CreditsItem crewfunction="" crewname="Nina van Belle" />
+                <CreditsItem crewfunction="" crewname="Lucas Gortemaker" />
+            </div>
+        </div>
     </div>
 </section>
 
-<section class="hero">
-    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">
-        <CreditsItem crewfunction="Director" crewname="Kate Voet" />
-        <CreditsItem crewfunction="Cast" crewname="Lydia Injova" />
-        <CreditsItem crewfunction="" crewname="Jakub Kotynski" />
-        <CreditsItem crewfunction="Producer" crewname="Songs in the Dark" />
-        <CreditsItem crewfunction="Co-producer" crewname="Eyeworks" />
-        <CreditsItem crewfunction="" crewname="Peter Bouckaert" />
-        <CreditsItem crewfunction="Assistant Director" crewname="Jelle Maseman" />
-        <CreditsItem crewfunction="" crewname="Niko Himschoot" />
-        <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
-        <CreditsItem crewfunction="1st Assistant Camera" crewname="Jan-Willem Rouwhorst" />
-        <CreditsItem crewfunction="" crewname="Michiel Lateur" />
-        <CreditsItem crewfunction="2nd Assistant Camera" crewname="Aileen Vandenbroele" />
-        <CreditsItem crewfunction="" crewname="Anthony Veiten" />
-        <CreditsItem crewfunction="Gaffer" crewname="Dieter Roelens" />
-        <CreditsItem crewfunction="Electrician" crewname="Fenna Maas" />
-        <CreditsItem crewfunction="" crewname="Aaron Veys" />
-        <CreditsItem crewfunction="" crewname="Eva Somers" />
-        <CreditsItem crewfunction="" crewname="Gillis Kornelis" />
-        <CreditsItem crewfunction="" crewname="Dennis Kussener" />
-        <CreditsItem crewfunction="Key Grip" crewname="Jonas Glassee" />
-        <CreditsItem crewfunction="" crewname="Stijn Deprez" />
-        <CreditsItem crewfunction="Steadicam" crewname="Loic Dillen" />
-        <CreditsItem crewfunction="Art Director" crewname="Maud Gyssels" />
-        <CreditsItem crewfunction="Set Dresser" crewname="Robin Hendrix" />
-        <CreditsItem crewfunction="" crewname="Dries Vanoirbeek" />
-        <CreditsItem crewfunction="" crewname="Sophie May" />
-        <CreditsItem crewfunction="Make-up" crewname="Lena Dobbels" />
-        <CreditsItem crewfunction="" crewname="Marlies van Rompay" />
-        <CreditsItem crewfunction="Costume Design" crewname="Heide Winne" />
-        <CreditsItem crewfunction="Costumer" crewname="Fauve Ryckebusch" />
-        <CreditsItem crewfunction="" crewname="Catherine Bourda" />
-        <CreditsItem crewfunction="Script" crewname="Oscar Schutz" />
-        <CreditsItem crewfunction="Editing" crewname="Ewin Ryckaert" />
-        <CreditsItem crewfunction="Sound Recording" crewname="Yanna Soentjens" />
-        <CreditsItem crewfunction="Boom Operator" crewname="Vincent Somers" />
-        <CreditsItem crewfunction="Sound Design" crewname="Tijn Hazen" />
-        <CreditsItem crewfunction="Sound Effect Editor" crewname="Taco Drijfhout" />
-        <CreditsItem crewfunction="Dialogue Editor" crewname="Max van den Oever" />
-        <CreditsItem crewfunction="ADR" crewname="Fred de Geus" />
-        <CreditsItem crewfunction="Foley" crewname="Elias Vervecken" />
-        <CreditsItem crewfunction="" crewname="Stephane Werner" />
-        <CreditsItem crewfunction="Music" crewname="Senjan Jansen" />
-        <CreditsItem crewfunction="VFX" crewname="Elke Dhaese" />
-        <CreditsItem crewfunction="Title Design" crewname="Titles" />
-        <CreditsItem crewfunction="Location" crewname="Luna Marie Bogaert" />
-        <CreditsItem crewfunction="" crewname="Djurre van Dijck" />
-        <CreditsItem crewfunction="" crewname="Neil De Cock" />
-        <CreditsItem crewfunction="" crewname="Annabelle van Campenhout" />
-        <CreditsItem crewfunction="" crewname="Wout de Coster" />
-        <CreditsItem crewfunction="" crewname="Wim Geerts" />
-        <CreditsItem crewfunction="" crewname="Geert Maes" />
-        <CreditsItem crewfunction="" crewname="Lennert Lefevre" />
-        <CreditsItem crewfunction="" crewname="Ann Nooyens" />
-        <CreditsItem crewfunction="" crewname="Jente Pijpers" />
-        <CreditsItem crewfunction="" crewname="Nina van Belle" />
-        <CreditsItem crewfunction="" crewname="Lucas Gortemaker" />
+<section class="hero pt-20 pb-4">
+    <div class="hero-content flex-col">
+        <SectionLabel label="Awards" />
+        <div id="awards" class="grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">
+            <AwardItem festival="CUT:TO Gent (BE)" award="Best Cinematography" year="2022" />
+            <AwardItem festival="Brussels Independent Film Festival (BE)" award="Best Narrative Short Film" year="2023" />
+        </div>
     </div>
 </section>
 
-<section class="hero">
-    <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3">    
-        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.1.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.22.png" alt={meta.imageAlt} />
+<section class="hero pt-20 pb-4">
+    <div class="hero-content flex-col w-full">
+        <SectionLabel label="Festivals" />
+        <FestivalList items={[
+            "Manaki Brothers Cinematography Film Festival 2023 (MK)",
+            "International Short Film Festival Leuven (BE)",
+            "BREEDBEELD Kortfilm festival (BE)",
+            "Zomer van Antwerpen: Cinema Urbana (BE)",
+            "Nederlands Film Festival (NL)",
+            "CUT:TO Gent (BE)",
+            "Brussels Independent Film Festival (BE)",
+            "Internationaal Kortfilmfestival Tegenstroom (NL)",
+            "In the Palace International Short Film Festival (BG)",
+            "Asolo Art Film Festival (IT)"
+        ]} />
     </div>
 </section>
 
-
-<section class="hero">
-    <div id="awards" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">
-        <AwardItem festival="International Short Film Festival Leuven (BE)" award="Critic's Award" year="2021" />
-        <AwardItem festival="CUT:TO Gent (BE)" award="Best Cinematography" year="2022" />
-        <AwardItem festival="Brussels Independent Film Festival (BE)" award="Best Narrative Short Film" year="2023" />
-        <FestivalsItem heading="Festivals" festivalname="Manaki Brothers Cinematography Film Festival 2023 (MK)" />
-        <FestivalsItem heading="" festivalname="International Short Film Festival Leuven (BE)" />
-        <FestivalsItem heading="" festivalname="BREEDBEELD Kortfilm festival (BE)" />
-        <FestivalsItem heading="" festivalname="Zomer van Antwerpen: Cinema Urbana (BE)" />
-        <FestivalsItem heading="" festivalname="Nederlands Film Festival (NL)" />
-        <FestivalsItem heading="" festivalname="CUT:TO Gent (BE)" />
-        <FestivalsItem heading="" festivalname="Brussels Independent Film Festival (BE)" />
-        <FestivalsItem heading="" festivalname="Internationaal Kortfilmfestival Tegenstroom (NL)" />
-        <FestivalsItem heading="" festivalname="In the Palace International Short Film Festival (BG)" />
-        <FestivalsItem heading="" festivalname="Asolo Art Film Festival (IT)" />
+<section class="hero pt-20 pb-4">
+    <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3 max-w-6xl mx-auto px-4">
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.1.png" alt="The Tears of Things — film still 2" />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.22.png" alt="The Tears of Things — film still 3" />
     </div>
 </section>
 
-<section class="hero">
-    <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3">    
-        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.74.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.49.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.51.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.53.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.56.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.82.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.95.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.112.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.70.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.73.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.67.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.66.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.114.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20221008_1.19.1.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.117.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.122.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.123.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.124.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.134.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.127.png" alt={meta.imageAlt} />
+<section class="hero pt-20 pb-28">
+    <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3 max-w-6xl mx-auto px-4">
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.74.png" alt="The Tears of Things — film still 4" />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.49.png" alt="The Tears of Things — film still 5" />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.51.png" alt="The Tears of Things — film still 6" />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.53.png" alt="The Tears of Things — film still 7" />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.56.png" alt="The Tears of Things — film still 8" />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.82.png" alt="The Tears of Things — film still 9" />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.95.png" alt="The Tears of Things — film still 10" />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.112.png" alt="The Tears of Things — film still 11" />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.70.png" alt="The Tears of Things — film still 12" />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.73.png" alt="The Tears of Things — film still 13" />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.67.png" alt="The Tears of Things — film still 14" />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.66.png" alt="The Tears of Things — film still 15" />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.114.png" alt="The Tears of Things — film still 16" />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20221008_1.19.1.png" alt="The Tears of Things — film still 17" />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.117.png" alt="The Tears of Things — film still 18" />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.122.png" alt="The Tears of Things — film still 19" />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.123.png" alt="The Tears of Things — film still 20" />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.124.png" alt="The Tears of Things — film still 21" />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.134.png" alt="The Tears of Things — film still 22" />
+        <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.127.png" alt="The Tears of Things — film still 23" />
     </div>
 </section>
 
-
-
+<NextProject
+    title="Bieke Depoorter: Chance Encounters"
+    url="/projects/bieke-depoorter-chance-encounters/"
+    image="/img/magnumbiekedepoorter/stills/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.jpg"
+    imageposition="20% 50%"
+/>

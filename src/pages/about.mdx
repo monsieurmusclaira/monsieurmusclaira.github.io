@@ -2,36 +2,59 @@
 layout: "../layouts/BaseLayout.astro"
 title: "About Victor Maes | Cinematographer & Director"
 description: "Learn about Victor Maes, an award-winning cinematographer and director based in Brussels, Belgium. Fiction, documentary, VR and experimental film portfolio. Available worldwide."
+image: "/img/thetearsofthings/stills/TTOT_20221008_1.19.1.png"
 ---
+import { Image } from 'astro:assets';
+import { resolveImage } from '../utils/images';
 import ProjectHero from '../components/ProjectHero.astro';
-import CreditsItem from '../components/CreditsItem.astro';
-import FestivalsItem from '../components/FestivalsItem.astro';
+import ProjectIntro from '../components/ProjectIntro.astro';
+import SectionLabel from '../components/SectionLabel.astro';
 import ContentPicture from '../components/ContentPicture.astro';
 export const meta = {
-    title: 'A few words about me',
+    title: 'Victor Maes',
     synopsis: '',
     heroImage: '/img/thetearsofthings/stills/TTOT_20221008_1.19.1.png',
     imageposition: "50% 50%",
-    imageAlt: 'Cinematography still'
+    imageAlt: 'Cinematography still by Victor Maes'
 };
 
-<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
+<ProjectHero title={meta.title} synopsis={meta.synopsis} credit="Cinematographer & Director · Brussels" heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
 
-<article class="prose max-w-prose mx-auto px-5 py-10 text-base-100" data-aos="fade-up" data-aos-duration="600">
+<ProjectIntro items={[
+    { label: 'Based in', value: 'Brussels, Belgium' },
+    { label: 'Roles', value: 'Cinematographer & Director' },
+    { label: 'Availability', value: 'Worldwide' }
+]} />
 
-Victor Maes graduated from LUCA School of Arts Brussels’ film program in 2015, and took courses in advanced cinematography at the Global Cinematography Institute in Los Angeles.
+<section class="hero py-16 sm:py-24 bg-neutral">
+    <div class="w-full max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-[300px_1fr] gap-10 md:gap-14 items-start" data-aos="fade-up" data-aos-duration="600">
+        <Image
+            src={resolveImage('/img/about/portrait_placeholder.png')}
+            alt="Portrait of Victor Maes"
+            class="w-full h-auto"
+            widths={[320, 640]}
+            sizes="(min-width: 768px) 300px, 100vw"
+            loading="lazy"
+        />
+        <div class="text-lg sm:text-xl text-base-100/90 space-y-6">
+            <p class="font-['EB_Garamond'] text-xl sm:text-2xl text-base-100">Victor Maes graduated from LUCA School of Arts Brussels’ film program in 2015, and took courses in advanced cinematography at the Global Cinematography Institute in Los Angeles.</p>
+            <p class="font-['EB_Garamond']">He’s been working as a camera assistant on feature films and commercials since 2016 (Cowards, Close, Girl, Holly, De Patrick, Nobody has to Know, The Wolf, the Fox and the Leopard). As a cinematographer he works on various film projects, alternating between fiction and documentary as well as commercial ones. ‘Ever since, I have been flying,’ the documentary by Swiss-Turkish filmmaker Aylin Gökmen which he shot, premiered at Locarno and Toronto in 2023.</p>
+            <p class="font-['EB_Garamond']">Furthermore, he’s interested in exploring new technology, like VR and games, as well as revisiting analogue film. Originally he graduated as a director with a short animation film, which led to ‘A Long Goodbye’, the animated, interactive VR experience about Ida, an elderly pianist living with dementia, which he co-wrote and co-directed with Kate Voet. ‘A Long Goodbye’ premiered at the 82nd Venice Film Festival where it was awarded with a lion for the Venice Immersive Achievement Prize. So far the project has continued to travel to Film Fest Gent, Thessaloniki Film Festival, IDFA, Clermont Ferrand, FIPADOC and SXSW among other festivals, winning several more awards.</p>
+            <p class="font-['EB_Garamond']">Victor is available worldwide as a cinematographer and director of photography for fiction, documentary, commercials and VR, and is based in Brussels, Belgium.</p>
+            <p class="font-['Montserrat'] text-sm font-light text-base-100/60 pt-2">Directeur de la photographie basé à Bruxelles, disponible pour la fiction, le documentaire et la publicité, en Belgique et à l'international. &middot; Director of photography gevestigd in Brussel, beschikbaar voor fictie, documentaire en commercials, in België en internationaal.</p>
+        </div>
+    </div>
+</section>
 
-He’s been working as a camera assistant on feature films and commercials since 2016 (Cowards, Close, Girl, Holly, De Patrick, Nobody has to Know, The Wolf, the Fox and the Leopard). As a cinematographer he works on various film projects, alternating between fiction and documentary as well as commercial ones. ‘Ever since, I have been flying,’ the documentary by Swiss-Turkish filmmaker Aylin Gökmen which he shot, premiered at Locarno and Toronto in 2023.
-
-Furthermore, he’s interested in exploring new technology, like VR and games, as well as revisiting analogue film. Originally he graduated as a director with a short animation film, which led to ‘A Long Goodbye’, the animated, interactive VR experience about Ida, an elderly pianist living with dementia, which he co-wrote and co-directed with Kate Voet. ‘A Long Goodbye’ premiered at the 82nd Venice Film Festival where it was awarded with a lion for the Venice Immersive Achievement Prize. So far the project has continued to travel to Film Fest Gent, Thessaloniki Film Festival, IDFA, Clermont Ferrand, FIPADOC and SXSW among other festivals, winning several more awards.
-</article>
-
-<section class="hero py-10">
-    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">            
-        <CreditsItem crewfunction="Email" crewname="hello@victormaes.com" />
-        <CreditsItem crewfunction="Instagram" crewname="@monsieur_musclaira" />
-        <CreditsItem crewfunction="IMDb" crewname="www.imdb.com/name/nm4866929" />
-    </div>  
+<section id="contact" class="hero pt-16 pb-28 bg-neutral scroll-mt-24">
+    <div class="hero-content flex-col w-full">
+        <SectionLabel label="Contact" />
+        <a href="mailto:hello@victormaes.com" class="font-['Montserrat'] text-xl sm:text-2xl font-light text-base-100 hover:text-secondary transition-colors duration-200">{'hello@victormaes.com'}</a>
+        <div class="flex items-center gap-8 mt-6 font-['Montserrat'] text-xs tracking-widest uppercase">
+            <a href="https://www.instagram.com/monsieur_musclaira/" target="_blank" rel="noopener noreferrer" class="text-base-100/70 hover:text-secondary transition-colors duration-200">Instagram</a>
+            <a href="https://www.imdb.com/name/nm4866929" target="_blank" rel="noopener noreferrer" class="text-base-100/70 hover:text-secondary transition-colors duration-200">IMDb</a>
+        </div>
+    </div>
 </section>
 
 <ContentPicture image="/img/thetearsofthings/stills/TTOT_20212101_1.1.1.png" alt={meta.imageAlt} />

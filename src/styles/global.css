@@ -1,33 +1,90 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
+/* Google Fonts load asynchronously via <link> tags in BaseHead.astro
+   (render-blocking @imports removed for first-paint speed). */
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-h1, h2 {
-    font-family:  "EB Garamond", serif;  
+@plugin "@tailwindcss/typography";
+@plugin "daisyui" {
+  themes: false;
+}
+@plugin "daisyui/theme" {
+  name: "mytheme";
+  default: true;
+  color-scheme: dark;
+  --color-primary: #70AA74;
+  --color-secondary: #F1D74E;
+  --color-accent: #E08E35;
+  --color-neutral: #11131d;
+  --color-base-100: #eff0f6;
+  --color-base-200: #e3e5ee;
+  --color-base-300: #d2d4e0;
+  --color-base-content: #11131d;
+  --color-info: #3ABFF8;
+  --color-success: #36D399;
+  --color-warning: #F1D74E;
+  --color-error: #D64D42;
+  --color-primary-content: #ffffff;
+  --color-secondary-content: #11131d;
+  --color-accent-content: #ffffff;
+  --color-neutral-content: #eff0f6;
+  --color-info-content: #11131d;
+  --color-success-content: #11131d;
+  --color-warning-content: #11131d;
+  --color-error-content: #ffffff;
 }
 
-h3, table {
-    font-family: "Montserrat", sans-serif; 
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
 }
 
-p {
-    font-family: "Montserrat", sans-serif; 
+/* Site is designed dark; tell the browser so it doesn't force-dark / recolor it */
+html {
+  color-scheme: dark;
 }
 
-.btn  {
-    font-family: "Montserrat", sans-serif;   
-}
+/* Element font defaults live in the base layer so Tailwind utilities
+   (e.g. font-['EB_Garamond']) can override them. Unlayered rules would
+   always win over layered utilities under Tailwind v4. */
+@layer base {
+  h1, h2 {
+    font-family: "EB Garamond", serif;
+  }
 
-th, td {
+  h3, table {
+    font-family: "Montserrat", sans-serif;
+  }
+
+  p {
+    font-family: "Montserrat", sans-serif;
+  }
+
+  th, td {
     padding-top: 0px;
     padding-bottom: 5px;
     padding-left: 5px;
     padding-right: 5px;
     font-weight: 200;
   }
+}
+
+@layer components {
+  .btn {
+    font-family: "Montserrat", sans-serif;
+  }
+}
 
 
 /* animation class and keyframes */
@@ -83,10 +140,10 @@ to {
   transition: all 0.6s ease;
 }
 
-/* Credits, awards, specs sections */
-#credits, #awards, #specs {
-  max-width: 480px;
-  row-gap: 0.35rem;
+/* Credits, awards, festivals, specs sections */
+#credits, #awards, #festivals, #specs, #markets, #funding {
+  max-width: 540px;
+  row-gap: 0.5rem;
   column-gap: 0;
 }
 
@@ -99,4 +156,15 @@ a {
 ::selection {
   background: #F1D74E;
   color: #11131d;
+}
+
+/* Reduced motion: AOS hides [data-aos] elements (opacity:0) and fades them in
+   on scroll. If the user prefers reduced motion the fade is suppressed, which
+   would leave content permanently invisible. Force everything visible. */
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
