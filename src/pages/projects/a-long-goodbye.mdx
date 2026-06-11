@@ -1,13 +1,21 @@
 ---
 layout: "../../layouts/BaseLayout.astro"
-title: "A Long Goodbye — VR Experience | Victor Maes"
+title: "A Long Goodbye — Venice-Awarded VR Experience | Victor Maes"
 description: "An animated, interactive VR experience about dementia, love, and memory. Winner of Venice Immersive Achievement Prize and SXSW Agog Immersive Impact Award."
+image: "/img/alonggoodbye/stills/20250709_ALG_Still2.webp"
+director: "Kate Voet & Victor Maes"
+genre: "Interactive VR Experience"
+year: "2025"
 ---
 import ProjectHero from '../../components/ProjectHero.astro';
+import ProjectIntro from '../../components/ProjectIntro.astro';
+import SectionLabel from '../../components/SectionLabel.astro';
 import CreditsItem from '../../components/CreditsItem.astro';
 import AwardItem from '../../components/AwardItem.astro';
-import FestivalsItem from '../../components/FestivalsItem.astro';
+import FeaturedAward from '../../components/FeaturedAward.astro';
+import FestivalList from '../../components/FestivalList.astro';
 import ContentPicture from '../../components/ContentPicture.astro';
+import NextProject from '../../components/NextProject.astro';
 export const meta = {
     title: 'A Long Goodbye',
     synopsis: 'A Long Goodbye is an animated, interactive VR experience following Ida, a 72-year-old pianist with dementia. As her reality fades, players interact with objects and recordings in her empty apartment, causing her world and memories of her beloved husband, Daniel, to be vividly drawn to life. A Long Goodbye is a poetic exploration of love and the emotional toll of dementia on two people who shared a lifetime.',
@@ -16,99 +24,146 @@ export const meta = {
     imageAlt: 'A Long Goodbye still'
 };
 
-<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
+<ProjectHero title={meta.title} synopsis={meta.synopsis} credit="directed by Kate Voet & Victor Maes" heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
 
-<section class="hero">
-    <div class="hero-content">  
-        <ContentPicture image="/img/alonggoodbye/stills/20250709_ALG_Still1.webp" alt={meta.imageAlt} />
+<ProjectIntro items={[
+    { label: 'Year', value: '2025' },
+    { label: 'Format', value: 'Interactive VR Experience' },
+    { label: 'Role', value: 'Director' },
+    { label: 'Director', value: 'Kate Voet & Victor Maes' }
+]} />
+
+<FeaturedAward award="Venice Immersive Achievement Prize" festival="La Biennale di Venezia" year="2025" />
+
+<ContentPicture image="/img/alonggoodbye/stills/20250709_ALG_Still1.webp" alt="A Long Goodbye — film still 1" />
+
+<section class="hero py-16">
+    <div class="hero-content flex-col max-w-3xl mx-auto px-6 text-center" data-aos="fade-up" data-aos-duration="600">
+        <SectionLabel label="About the Project" />
+        <div class="space-y-5">
+            <p class="font-['EB_Garamond'] text-lg sm:text-xl text-base-100/85">A Long Goodbye is an animated, interactive VR experience co-written and co-directed by Kate Voet and Victor Maes. Inside Ida's emptying apartment, players handle the objects and recordings of a long marriage, and each interaction draws her world and her memories of her husband Daniel vividly back to life. The experience features the voices of Elizabeth Counsel, Richard Wells, Marlies Heuer and Derek de Lint, with an original score by composer Joep Beving.</p>
+            <p class="font-['EB_Garamond'] text-lg sm:text-xl text-base-100/85">The project was produced by Cassette for Timescapes (Belgium) with Valk Productions (Netherlands) and Tarantula (Luxembourg), developed through the Venice Gap Financing Market, and supported by the Flanders Audiovisual Fund, the Creative Europe MEDIA programme, the Netherlands Film Fund and Film Fund Luxembourg, among others.</p>
+            <p class="font-['EB_Garamond'] text-lg sm:text-xl text-base-100/85">A Long Goodbye premiered in the Venice Immersive Competition at the 82nd Venice International Film Festival, where it received the Venice Immersive Achievement Prize. It went on to win the Agog Immersive Impact Award at SXSW, Best XR Film at Clermont-Ferrand, the Golden Alexander at Thessaloniki and the International XR Award at the Prix NUMIX, and continues to travel to festivals including IDFA DocLab, Film Fest Gent and Fipadoc.</p>
+        </div>
     </div>
 </section>
 
-<section class="hero" >
-    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">            
-        <CreditsItem crewfunction="Directors" crewname="Kate Voet" />
-        <CreditsItem crewfunction="" crewname="Victor Maes" />
-        <CreditsItem crewfunction="Cast" crewname="Elizabeth Counsel" />
-        <CreditsItem crewfunction="" crewname="Richard Wells" />
-        <CreditsItem crewfunction="" crewname="Marlies Heuer" />
-        <CreditsItem crewfunction="" crewname="Derek de Lint" />
-        <CreditsItem crewfunction="Composer" crewname="Joep Beving" />
-        <CreditsItem crewfunction="Art Director" crewname="Daniel Balage" />
-        <CreditsItem crewfunction="CG Supervisor" crewname="Gael Chaize" />
-        <CreditsItem crewfunction="Lead Developer" crewname="Polygoat" />
-        <CreditsItem crewfunction="" crewname="Frederik Smolders" />
-        <CreditsItem crewfunction="Sound Designers" crewname="Game Audio Squad" />
-        <CreditsItem crewfunction="" crewname="Niels van der Leest" />
-        <CreditsItem crewfunction="" crewname="Lars Tesselaar" />
-        <CreditsItem crewfunction="Additional 2D Animation" crewname="Pieter Vanluffelen" />
-        <CreditsItem crewfunction="" crewname="Mathieu Jadin" />
-        <CreditsItem crewfunction="" crewname="Tom Lemmens" />
-        <CreditsItem crewfunction="Producers Belgium" crewname="Cassette for Timescapes" />
-        <CreditsItem crewfunction="" crewname="An Oost" />
-        <CreditsItem crewfunction="" crewname="Emmy Oost" />
-        <CreditsItem crewfunction="Producers Netherlands" crewname="Valk Productions" />
-        <CreditsItem crewfunction="" crewname="Richard Valk" />
-        <CreditsItem crewfunction="Producers Luxembourg" crewname="Tarantula" />
-        <CreditsItem crewfunction="" crewname="Donato Rotunno" />
-    </div>  
-</section>
-
-<section class="hero">
-    <div id="awards" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">
-        <AwardItem festival="La Biennale Di Venezia" award="Venice Immersive Achievement Prize" />
-        <AwardItem festival="SXSW" award="Agog Immersive Impact Award" />
-        <AwardItem festival="Clermont-Ferrand" award="Best XR Film" />
-        <AwardItem festival="Thessaloniki International Film Festival" award="Golden Alexander" />
-        <AwardItem festival="Belgian Game Awards" award="Best Applied Game" />
-        <AwardItem festival="United XR Awards" award="Best Art Direction" />
-        <AwardItem festival="Filmgate Miami" award="Best of Fest" />
-        <AwardItem festival="XR Must Awards" award="Best Non-Fiction World" />
-        <FestivalsItem heading="Festivals" festivalname="Venice Immersive Competition (IT)" />
-        <FestivalsItem heading="" festivalname="SXSW (US) — North American Premiere" />
-        <FestivalsItem heading="" festivalname="Clermont-Ferrand International Short Film Festival (FR)" />
-        <FestivalsItem heading="" festivalname="Thessaloniki International Film Festival (GR) — Greek Premiere" />
-        <FestivalsItem heading="" festivalname="IDFA Doclab (NL) — Dutch Premiere" />
-        <FestivalsItem heading="" festivalname="NewImages (FR)" />
-        <FestivalsItem heading="" festivalname="Film Fest Gent (BE) — Belgian Premiere" />
-        <FestivalsItem heading="" festivalname="Fipadoc (FR) — French Premiere" />
-        <FestivalsItem heading="" festivalname="Beijing International Festival" />
-        <FestivalsItem heading="" festivalname="Busan International Short Film Festival" />
-        <FestivalsItem heading="" festivalname="Filmfestival Oostende (BE)" />
-        <FestivalsItem heading="" festivalname="Luxembourg City Film Festival (LUX)" />
-        <FestivalsItem heading="" festivalname="Kaboom (NL)" />
-        <FestivalsItem heading="" festivalname="Filmgate Interactive (US)" />
-        <FestivalsItem heading="" festivalname="Cinetech, Maryland Film Festival (US)" />
-        <FestivalsItem heading="" festivalname="Kortfilmfestival Leuven (BE)" />
-        <FestivalsItem heading="" festivalname="Docfest Brugge (BE)" />
-        <FestivalsItem heading="" festivalname="Breedbeeld Kortfilmfestival (BE)" />
+<section class="hero pt-20 pb-4">
+    <div class="hero-content flex-col w-full">
+        <SectionLabel label="Credits" />
+        <div class="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-16 px-6" data-aos="fade-up" data-aos-duration="600">
+            <div class="grid grid-cols-2 gap-x-0 gap-y-2 content-start text-base-200">
+                <CreditsItem crewfunction="Directors" crewname="Kate Voet" />
+                <CreditsItem crewfunction="" crewname="Victor Maes" />
+                <CreditsItem crewfunction="Cast" crewname="Elizabeth Counsel" />
+                <CreditsItem crewfunction="" crewname="Richard Wells" />
+                <CreditsItem crewfunction="" crewname="Marlies Heuer" />
+                <CreditsItem crewfunction="" crewname="Derek de Lint" />
+                <CreditsItem crewfunction="Composer" crewname="Joep Beving" />
+                <CreditsItem crewfunction="Art Director" crewname="Daniel Balage" />
+                <CreditsItem crewfunction="CG Supervisor" crewname="Gael Chaize" />
+                <CreditsItem crewfunction="Lead Developer" crewname="Polygoat" />
+                <CreditsItem crewfunction="" crewname="Frederik Smolders" />
+            </div>
+            <div class="grid grid-cols-2 gap-x-0 gap-y-2 content-start text-base-200">
+                <CreditsItem crewfunction="Sound Designers" crewname="Game Audio Squad" />
+                <CreditsItem crewfunction="" crewname="Niels van der Leest" />
+                <CreditsItem crewfunction="" crewname="Lars Tesselaar" />
+                <CreditsItem crewfunction="Additional 2D Animation" crewname="Pieter Vanluffelen" />
+                <CreditsItem crewfunction="" crewname="Mathieu Jadin" />
+                <CreditsItem crewfunction="" crewname="Tom Lemmens" />
+                <CreditsItem crewfunction="Producers Belgium" crewname="Cassette for Timescapes" />
+                <CreditsItem crewfunction="" crewname="An Oost" />
+                <CreditsItem crewfunction="" crewname="Emmy Oost" />
+                <CreditsItem crewfunction="Producers Netherlands" crewname="Valk Productions" />
+                <CreditsItem crewfunction="" crewname="Richard Valk" />
+                <CreditsItem crewfunction="Producers Luxembourg" crewname="Tarantula" />
+                <CreditsItem crewfunction="" crewname="Donato Rotunno" />
+            </div>
+        </div>
     </div>
 </section>
 
-<section class="hero" data-aos="fade" data-aos-duration="300">
-    <div id="markets" class="hero-content grid grid-cols-2 gap-2 text-base-200">     
-        <FestivalsItem festivalname="Venice Gap Financing Market 2023" heading="Markets" />
-        <FestivalsItem festivalname="New Images XR Development Market 2023" heading="" />
-        <FestivalsItem festivalname="Stereopsia Booster program 2022" heading="" />
-        <FestivalsItem festivalname="VR Days Immersive Funding Market 2021" heading="" />
-        <FestivalsItem festivalname="Torino Short Film Market VR Series 2020" heading="" />
-    </div>  
-</section>
-
-<section class="hero" data-aos="fade" data-aos-duration="300">
-    <div id="funding" class="hero-content grid grid-cols-2 gap-2 text-base-200">     
-        <FestivalsItem festivalname="Flanders Audiovisual Fund - VAF (BE)" heading="With the support of" />
-        <FestivalsItem festivalname="Creative Europe MEDIA programme (EU)" heading="" />
-        <FestivalsItem festivalname="The Netherlands Film Fund (NL)" heading="" />
-        <FestivalsItem festivalname="Film Fund Luxembourg (LUX)" heading="" />
-        <FestivalsItem festivalname="deAuteurs (BE)" heading="" />
-        <FestivalsItem festivalname="Pictanovo (FR)" heading="" />
-    </div>  
-</section>
-
-<section class="hero">
-    <div class="hero-content">  
-        <ContentPicture image="/img/alonggoodbye/stills/20250709_ALG_Still3.webp" alt={meta.imageAlt} />
-        <ContentPicture image="/img/alonggoodbye/stills/20250709_ALG_Still2.webp" alt={meta.imageAlt} />
+<section class="hero pt-20 pb-4">
+    <div class="hero-content flex-col">
+        <SectionLabel label="Awards" />
+        <div id="awards" class="grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">
+            <AwardItem festival="La Biennale di Venezia" award="Venice Immersive Achievement Prize" year="2025" />
+            <AwardItem festival="Prix NUMIX" award="International XR Award" year="2026" />
+            <AwardItem festival="SXSW" award="Agog Immersive Impact Award" year="2026" />
+            <AwardItem festival="Clermont-Ferrand" award="Best XR Film" year="2026" />
+            <AwardItem festival="Thessaloniki International Film Festival" award="Golden Alexander" year="2025" />
+            <AwardItem festival="Belgian Game Awards" award="Best Applied Game" year="2025" />
+            <AwardItem festival="United XR Awards" award="Best Art Direction" year="2025" />
+            <AwardItem festival="Filmgate Miami" award="Best of Fest" year="2026" />
+            <AwardItem festival="XR Must Awards" award="Best Non-Fiction World" year="2026" />
+        </div>
     </div>
 </section>
 
+<section class="hero pt-20 pb-4">
+    <div class="hero-content flex-col w-full">
+        <SectionLabel label="Festivals" />
+        <FestivalList items={[
+            "Venice Immersive Competition (IT)",
+            "SXSW (US) — North American Premiere",
+            "Clermont-Ferrand International Short Film Festival (FR)",
+            "Thessaloniki International Film Festival (GR) — Greek Premiere",
+            "IDFA Doclab (NL) — Dutch Premiere",
+            "NewImages (FR)",
+            "Film Fest Gent (BE) — Belgian Premiere",
+            "Fipadoc (FR) — French Premiere",
+            "Beijing International Festival",
+            "Busan International Short Film Festival",
+            "Filmfestival Oostende (BE)",
+            "Luxembourg City Film Festival (LUX)",
+            "Kaboom (NL)",
+            "Filmgate Interactive (US)",
+            "Cinetech, Maryland Film Festival (US)",
+            "Kortfilmfestival Leuven (BE)",
+            "Docfest Brugge (BE)",
+            "Breedbeeld Kortfilmfestival (BE)"
+        ]} />
+    </div>
+</section>
+
+<section class="hero pt-20 pb-4">
+    <div class="hero-content flex-col w-full">
+        <SectionLabel label="Markets" />
+        <FestivalList items={[
+            "Venice Gap Financing Market 2023",
+            "New Images XR Development Market 2023",
+            "Stereopsia Booster program 2022",
+            "VR Days Immersive Funding Market 2021",
+            "Torino Short Film Market VR Series 2020"
+        ]} />
+    </div>
+</section>
+
+<section class="hero pt-20 pb-4">
+    <div class="hero-content flex-col w-full">
+        <SectionLabel label="With the Support Of" />
+        <FestivalList items={[
+            "Flanders Audiovisual Fund - VAF (BE)",
+            "Creative Europe MEDIA programme (EU)",
+            "The Netherlands Film Fund (NL)",
+            "Film Fund Luxembourg (LUX)",
+            "deAuteurs (BE)",
+            "Pictanovo (FR)"
+        ]} />
+    </div>
+</section>
+
+<section class="hero pt-20 pb-28">
+    <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3 max-w-6xl mx-auto px-4">
+        <ContentPicture image="/img/alonggoodbye/stills/20250709_ALG_Still3.webp" alt="A Long Goodbye — film still 2" />
+        <ContentPicture image="/img/alonggoodbye/stills/20250709_ALG_Still2.webp" alt="A Long Goodbye — film still 3" />
+    </div>
+</section>
+
+<NextProject
+    title="Bearer of Bad News"
+    url="/projects/bearer-of-bad-news/"
+    image="/img/bearerofbadnews/stills/bearer-of-bad-news-24.png"
+    imageposition="50% 50%"
+/>

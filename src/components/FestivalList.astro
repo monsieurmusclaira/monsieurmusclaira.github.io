@@ -1,0 +1,14 @@
+---
+const { items = [] } = Astro.props;
+---
+<div
+  class="w-full max-w-3xl mx-auto px-6 columns-1 md:columns-2 gap-x-16"
+  data-aos="fade-up"
+  data-aos-duration="600"
+>
+  {items.map((name) => (
+    <p class="font-['Montserrat'] text-base font-light text-base-100/80 break-inside-avoid mb-2 text-center md:text-left">
+      {name}
+    </p>
+  ))}
+</div>

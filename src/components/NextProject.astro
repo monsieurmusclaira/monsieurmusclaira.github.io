@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets';
+import { resolveImage } from '../utils/images';
+const { title, url, image, imageposition } = Astro.props;
+const resolved = resolveImage(image);
+---
+<a
+  href={url}
+  class="block relative h-[60vh] w-full group overflow-hidden focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-[-6px] focus-visible:outline-warning"
+  data-aos="fade-up"
+  data-aos-duration="600"
+>
+  <Image
+    src={resolved}
+    alt={title}
+    class="w-full h-full object-cover transition-transform duration-1400 ease-out group-hover:scale-105"
+    style={`object-position: ${imageposition || '50% 50%'}`}
+    widths={[768, 1440, 2560]}
+    sizes="100vw"
+    loading="lazy"
+  />
+  <div class="absolute inset-0 bg-neutral/55 group-hover:bg-neutral/40 transition-colors duration-500"></div>
+  <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+    <span class="font-['Montserrat'] text-[10px] tracking-[0.25em] uppercase text-base-100/60 mb-3">
+      Next project
+    </span>
+    <span class="font-['EB_Garamond'] text-4xl sm:text-5xl text-warning drop-shadow-sm">
+      {title}
+    </span>
+    <span class="mt-5 font-['Montserrat'] text-xs tracking-widest uppercase text-base-100/70 group-hover:text-secondary transition-colors duration-300">
+      View <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+    </span>
+  </div>
+</a>

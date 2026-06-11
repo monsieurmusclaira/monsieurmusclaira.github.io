@@ -1,12 +1,18 @@
 ---
 layout: "../../layouts/BaseLayout.astro"
-title: "Burning Clouds | Victor Maes — Cinematographer"
+title: "Burning Clouds — Fiction Short | Cinematography by Victor Maes"
 description: "A winter night fiction film where a meteorite connects a wandering young woman, a burned-out factory worker, and an unemployed young man."
+image: "/img/burningclouds/stills/ASTTE__1.57.2.png"
+director: "Yentl De Baets"
+genre: "Fiction"
 ---
 import ProjectHero from '../../components/ProjectHero.astro';
-import ContentPicture from '../../components/ContentPicture.astro';
+import ProjectIntro from '../../components/ProjectIntro.astro';
+import SectionLabel from '../../components/SectionLabel.astro';
 import CreditsItem from '../../components/CreditsItem.astro';
-import FestivalsItem from '../../components/FestivalsItem.astro';
+import FestivalList from '../../components/FestivalList.astro';
+import ContentPicture from '../../components/ContentPicture.astro';
+import NextProject from '../../components/NextProject.astro';
 export const meta = {
     title: 'Burning Clouds',
     synopsis: 'On a long winter night, a passing meteorite connects a wandering young woman, a burned-out factory worker, and an unemployed young man. A portrait of the night and the people in it.',
@@ -15,80 +21,93 @@ export const meta = {
     imageAlt: 'Burning Clouds cinematography still'
 };
 
-<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
+<ProjectHero title={meta.title} synopsis={meta.synopsis} credit="directed by Yentl De Baets" heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
 
-<section class="hero">
-    <div class="hero-content">  
-        <ContentPicture image="/img/burningclouds/stills/ASTTE__1.68.1.png" alt={meta.imageAlt} />
+<ProjectIntro items={[
+    { label: 'Format', value: 'Fiction' },
+    { label: 'Role', value: 'Cinematographer' },
+    { label: 'Director', value: 'Yentl De Baets' }
+]} />
+
+<ContentPicture image="/img/burningclouds/stills/ASTTE__1.68.1.png" alt="Burning Clouds — film still 1" />
+
+<section class="hero pt-20 pb-4">
+    <div class="hero-content flex-col w-full">
+        <SectionLabel label="Credits" />
+        <div class="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-16 px-6" data-aos="fade-up" data-aos-duration="600">
+            <div class="grid grid-cols-2 gap-x-0 gap-y-2 content-start text-base-200">
+                <CreditsItem crewfunction="Director" crewname="Yentl De Baets" />
+                <CreditsItem crewfunction="Cast" crewname="Melody van Gompel" />
+                <CreditsItem crewfunction="" crewname="Karam Asoos" />
+                <CreditsItem crewfunction="" crewname="Youri Dirckx" />
+                <CreditsItem crewfunction="Assistant Director" crewname="Nicole Tegelaars" />
+                <CreditsItem crewfunction="" crewname="Frank van den Bogaart" />
+                <CreditsItem crewfunction="" crewname="Jules Mathôt" />
+                <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
+                <CreditsItem crewfunction="1st Assistant Camera" crewname="Jan-Willem Rouwhorst" />
+                <CreditsItem crewfunction="" crewname="Michiel Lateur" />
+                <CreditsItem crewfunction="" crewname="Robbe Vandekeere" />
+                <CreditsItem crewfunction="2nd Assistant Camera" crewname="Rhomi Martens" />
+                <CreditsItem crewfunction="" crewname="Nelle Verweirder" />
+                <CreditsItem crewfunction="Gaffer" crewname="Wouter van Achte" />
+            </div>
+            <div class="grid grid-cols-2 gap-x-0 gap-y-2 content-start text-base-200">
+                <CreditsItem crewfunction="Spark" crewname="Fenna Maas" />
+                <CreditsItem crewfunction="VFX" crewname="Elke D'haese" />
+                <CreditsItem crewfunction="Sound Recording" crewname="Lucas Magotteaux" />
+                <CreditsItem crewfunction="" crewname="Warre van Ingelghem" />
+                <CreditsItem crewfunction="Sound Editing" crewname="Michel Coquette" />
+                <CreditsItem crewfunction="Sound Mix" crewname="Patrick Hubart" />
+                <CreditsItem crewfunction="Music" crewname="Gone Icon" />
+                <CreditsItem crewfunction="Art Director" crewname="Daphne Gort" />
+                <CreditsItem crewfunction="Art Dresser" crewname="Martijn van de Wiele" />
+                <CreditsItem crewfunction="Make-up" crewname="Marlies van Rompay" />
+                <CreditsItem crewfunction="" crewname="Inez Kockelberg" />
+                <CreditsItem crewfunction="Caretaker" crewname="Kurt de Baets" />
+                <CreditsItem crewfunction="Covid Police" crewname="Cato Catteeuw" />
+                <CreditsItem crewfunction="Camera equipment" crewname="Camalot Belgium" />
+                <CreditsItem crewfunction="Lighting equipment" crewname="Lites" />
+            </div>
+        </div>
     </div>
 </section>
 
-<section class="hero" >
-    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">            
-        <CreditsItem crewfunction="Director" crewname="Yentl de Baets" />
-        <CreditsItem crewfunction="Cast" crewname="Melody van Gompel" />
-        <CreditsItem crewfunction="" crewname="Karam Asoos" />
-        <CreditsItem crewfunction="" crewname="Youri Dirckx" />
-        <CreditsItem crewfunction="Assistant Director" crewname="Nicole Tegelaars" />
-        <CreditsItem crewfunction="" crewname="Frank van den Bogaart" />
-        <CreditsItem crewfunction="" crewname="Jules Mathôt" />
-        <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
-        <CreditsItem crewfunction="1st Assistant Camera" crewname="Jan-Willem Rouwhorst" />
-        <CreditsItem crewfunction="" crewname="Michiel Lateur" />
-        <CreditsItem crewfunction="" crewname="Robbe Vandekeere" />
-        <CreditsItem crewfunction="2nd Assistant Camera" crewname="Rhomi Martens" />
-        <CreditsItem crewfunction="" crewname="Nelle Verweirder" />
-        <CreditsItem crewfunction="Gaffer" crewname="Wouter van Achte" />
-        <CreditsItem crewfunction="Spark" crewname="Fenna Maas" />
-        <CreditsItem crewfunction="VFX" crewname="Elke D'haese" />
-        <CreditsItem crewfunction="Sound Recording" crewname="Lucas Magotteaux" />
-        <CreditsItem crewfunction="" crewname="Warre van Ingelghem" />
-        <CreditsItem crewfunction="Sound Editing" crewname="Michel Coquette" />
-        <CreditsItem crewfunction="Sound Mix" crewname="Patrick Hubart" />
-        <CreditsItem crewfunction="Music" crewname="Gone Icon" />
-        <CreditsItem crewfunction="Art Director" crewname="Daphne Gort" />
-        <CreditsItem crewfunction="Art Dresser" crewname="Martijn van de Wiele" />
-        <CreditsItem crewfunction="Make-up" crewname="Marlies van Rompay" />
-        <CreditsItem crewfunction="" crewname="Inez Kockelberg" />
-        <CreditsItem crewfunction="Caretaker" crewname="Kurt de Baets" />
-        <CreditsItem crewfunction="Covid Police" crewname="Cato Catteeuw" />
-        <CreditsItem crewfunction="Camera equipment" crewname="Camalot Belgium" />
-        <CreditsItem crewfunction="Lighting equipment" crewname="Lites" />
-    </div>  
-</section>
+<ContentPicture image="/img/burningclouds/stills/ASTTE__1.5.2.png" alt="Burning Clouds — film still 2" />
 
-<section class="hero">
-    <div class="hero-content">  
-        <ContentPicture image="/img/burningclouds/stills/ASTTE__1.5.2.png" alt={meta.imageAlt} />
+<section class="hero pt-20 pb-4">
+    <div class="hero-content flex-col w-full">
+        <SectionLabel label="Festivals" />
+        <FestivalList items={[
+            "International Short Film Festival Leuven (BE)",
+            "FEST New Directors New Films Festival (PT)",
+            "BREEDBEELD Short Film Festival (BE)",
+            "Pune International Film Festival (IN)",
+            "SubTropical Independent Film Festival (TW)",
+            "SWIFF Impact Film Festival (US)",
+            "Rencontres Internationales Paris/Berlin (FR & DE)",
+            "Blow-up Film fest Chicago (US)"
+        ]} />
     </div>
 </section>
 
-<section class="hero" >
-    <div id="awards" class="hero-content grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">     
-        <FestivalsItem festivalname="International Short Film Festival Leuven (BE)" heading="Festivals" />
-        <FestivalsItem festivalname="FEST New Directors New Films Festival (PT)" heading="" />
-        <FestivalsItem festivalname="BREEDBEELD Short Film Festival (BE)" heading="" />
-        <FestivalsItem festivalname="Pune International Film Festival (IN)" heading="" />
-        <FestivalsItem festivalname="SubTropical Independent Film Festival (TW)" heading="" />
-        <FestivalsItem festivalname="SWIFF Impact Film Festival (US)" heading="" />
-        <FestivalsItem festivalname="Rencontres Internationales Paris/Berlin (FR & DE)" heading="" />
-        <FestivalsItem festivalname="Blow-up Film fest Chicago (US)" heading="" />
+<section class="hero pt-20 pb-28">
+    <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3 max-w-6xl mx-auto px-4">
+        <ContentPicture image="/img/burningclouds/stills/ASTTE__1.38.2.png" alt="Burning Clouds — film still 3" />
+        <ContentPicture image="/img/burningclouds/stills/ASTTE__1.116.1.png" alt="Burning Clouds — film still 4" />
+        <ContentPicture image="/img/burningclouds/stills/ASTTE__1.32.1.png" alt="Burning Clouds — film still 5" />
+        <ContentPicture image="/img/burningclouds/stills/ASTTE__2.2.1.png" alt="Burning Clouds — film still 6" />
+        <ContentPicture image="/img/burningclouds/stills/ASTTE__1.42.1.png" alt="Burning Clouds — film still 7" />
+        <ContentPicture image="/img/burningclouds/stills/ASTTE__1.47.1.png" alt="Burning Clouds — film still 8" />
+        <ContentPicture image="/img/burningclouds/stills/ASTTE__1.58.1.png" alt="Burning Clouds — film still 9" />
+        <ContentPicture image="/img/burningclouds/stills/ASTTE__1.40.1.png" alt="Burning Clouds — film still 10" />
+        <ContentPicture image="/img/burningclouds/stills/ASTTE__1.98.1.png" alt="Burning Clouds — film still 11" />
+        <ContentPicture image="/img/burningclouds/stills/ASTTE__1.101.1.png" alt="Burning Clouds — film still 12" />
     </div>
 </section>
 
-<section class="hero">
-    <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3">    
-        <ContentPicture image="/img/burningclouds/stills/ASTTE__1.38.2.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/burningclouds/stills/ASTTE__1.116.1.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/burningclouds/stills/ASTTE__1.32.1.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/burningclouds/stills/ASTTE__2.2.1.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/burningclouds/stills/ASTTE__1.42.1.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/burningclouds/stills/ASTTE__1.47.1.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/burningclouds/stills/ASTTE__1.58.1.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/burningclouds/stills/ASTTE__1.40.1.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/burningclouds/stills/ASTTE__1.98.1.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/burningclouds/stills/ASTTE__1.101.1.png" alt={meta.imageAlt} />
-    </div>
-</section>
-
-
+<NextProject
+    title="Hoge Blekker"
+    url="/projects/hoge-blekker/"
+    image="/img/hogeblekker/stills/hogeblekkerCover.jpg"
+    imageposition="45% 50%"
+/>

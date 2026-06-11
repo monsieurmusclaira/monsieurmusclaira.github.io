@@ -8,6 +8,8 @@ const { image, alt, caption, rotation } = Astro.props;
     src={resolveImage(image)}
     loading="lazy"
     alt={alt}
+    widths={[480, 960]}
+    sizes="(min-width: 1280px) 33vw, (min-width: 1024px) 50vw, 100vw"
     />
     <figcaption>{caption}</figcaption>
 </figure>

@@ -1,15 +1,23 @@
 ---
 layout: "../../layouts/BaseLayout.astro"
-title: "Burn | Victor Maes — Cinematographer"
+title: "Burn — Fiction Short Film | Cinematography by Victor Maes"
 description: "A fiction film about Robin looking back on her turbulent relationship with Ada during a streetcar ride by the sea."
+image: "/img/burn/stills/BURN_1.232.1.png"
+director: "Cato Catteeuw"
+genre: "Fiction"
+year: "2023"
 ---
 import ProjectHero from '../../components/ProjectHero.astro';
-import ContentPicture from '../../components/ContentPicture.astro';
+import ProjectIntro from '../../components/ProjectIntro.astro';
+import SectionLabel from '../../components/SectionLabel.astro';
 import CreditsItem from '../../components/CreditsItem.astro';
 import AwardItem from '../../components/AwardItem.astro';
-import FestivalsItem from '../../components/FestivalsItem.astro';
+import FeaturedAward from '../../components/FeaturedAward.astro';
+import FestivalList from '../../components/FestivalList.astro';
+import ContentPicture from '../../components/ContentPicture.astro';
 import SpecItem from '../../components/SpecItem.astro';
 import ContentYoutube from '../../components/ContentYoutube.astro';
+import NextProject from '../../components/NextProject.astro';
 export const meta = {
     title: 'Burn',
     synopsis: 'During a streetcar ride by the sea, Robin looks back on her turbulent relationship with Ada. All that remains are the unspoken words and the shards she tries to put together. Why aren’t they sharp enough?',
@@ -18,88 +26,115 @@ export const meta = {
     imageAlt: 'Burn cinematography still'
 };
 
-<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
+<ProjectHero title={meta.title} synopsis={meta.synopsis} credit="directed by Cato Catteeuw" heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
+
+<ProjectIntro items={[
+    { label: 'Format', value: 'Fiction' },
+    { label: 'Role', value: 'Cinematographer' },
+    { label: 'Director', value: 'Cato Catteeuw' }
+]} />
+
+<FeaturedAward award="Honourable Mention" festival="KFL Wildcards" year="2023" />
 
 <ContentYoutube YoutubeLink="https://youtu.be/M60QLhGWE1g" />
 
-<section class="hero" >
-    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200">            
-        <CreditsItem crewfunction="Director" crewname="Cato Catteeuw" />
-        <CreditsItem crewfunction="Cast" crewname="Cato Catteeuw" />
-        <CreditsItem crewfunction="" crewname="Melody van Gompel" />
-        <CreditsItem crewfunction="Producer" crewname="Rosa Duvekot" />
-        <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
-        <CreditsItem crewfunction="1st Assistant Camera" crewname="Giel Dhaenens" />
-        <CreditsItem crewfunction="" crewname="Michiel Lateur" />
-        <CreditsItem crewfunction="2nd Assistant Camera" crewname="Rhomi Martens" />
-        <CreditsItem crewfunction="Gaffer" crewname="Anouk Hasaers" />
-        <CreditsItem crewfunction="Grip" crewname="Stef van Peteghem" />
-        <CreditsItem crewfunction="Editor" crewname="Tine Verbist" />
-        <CreditsItem crewfunction="Art Direction" crewname="Lore Loyens" />
-        <CreditsItem crewfunction="" crewname="Jolke van Aerde" />
-        <CreditsItem crewfunction="" crewname="Pepijn Huysman" />
-        <CreditsItem crewfunction="Boom Engineer" crewname="Martijn Vandewiele" />
-        <CreditsItem crewfunction="Sound Engineer" crewname="Gedeon Depauw" />
-        <CreditsItem crewfunction="Costume Designer" crewname="Selin van Laethem" />
-        <CreditsItem crewfunction="Makeup Artist" crewname="Eef Smeyers" />
-        <CreditsItem crewfunction="Location Manager" crewname="Bao van Hove" />
-        <CreditsItem crewfunction="Script Supervisor" crewname="Lisa Coene" />
-        <CreditsItem crewfunction="Catering" crewname="Emma Degol" />
-        <CreditsItem crewfunction="" crewname="Katrien Orlans" />
-        <CreditsItem crewfunction="Camera Equipment" crewname="Camalot" />
-        <CreditsItem crewfunction="" crewname="Lucky Cam" />
-        <CreditsItem crewfunction="Lighting Equipment" crewname="Lites" />
-    </div>  
+<section class="hero pt-20 pb-4">
+    <div class="hero-content flex-col w-full">
+        <SectionLabel label="Credits" />
+        <div class="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-16 px-6" data-aos="fade-up" data-aos-duration="600">
+            <div class="grid grid-cols-2 gap-x-0 gap-y-2 content-start text-base-200">
+                <CreditsItem crewfunction="Director" crewname="Cato Catteeuw" />
+                <CreditsItem crewfunction="Cast" crewname="Cato Catteeuw" />
+                <CreditsItem crewfunction="" crewname="Melody van Gompel" />
+                <CreditsItem crewfunction="Producer" crewname="Rosa Duvekot" />
+                <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
+                <CreditsItem crewfunction="1st Assistant Camera" crewname="Giel Dhaenens" />
+                <CreditsItem crewfunction="" crewname="Michiel Lateur" />
+                <CreditsItem crewfunction="2nd Assistant Camera" crewname="Rhomi Martens" />
+                <CreditsItem crewfunction="Gaffer" crewname="Anouk Hasaers" />
+                <CreditsItem crewfunction="Grip" crewname="Stef van Peteghem" />
+                <CreditsItem crewfunction="Editor" crewname="Tine Verbist" />
+                <CreditsItem crewfunction="Art Direction" crewname="Lore Loyens" />
+            </div>
+            <div class="grid grid-cols-2 gap-x-0 gap-y-2 content-start text-base-200">
+                <CreditsItem crewfunction="" crewname="Jolke van Aerde" />
+                <CreditsItem crewfunction="" crewname="Pepijn Huysman" />
+                <CreditsItem crewfunction="Boom Engineer" crewname="Martijn Vandewiele" />
+                <CreditsItem crewfunction="Sound Engineer" crewname="Gedeon Depauw" />
+                <CreditsItem crewfunction="Costume Designer" crewname="Selin van Laethem" />
+                <CreditsItem crewfunction="Makeup Artist" crewname="Eef Smeyers" />
+                <CreditsItem crewfunction="Location Manager" crewname="Bao van Hove" />
+                <CreditsItem crewfunction="Script Supervisor" crewname="Lisa Coene" />
+                <CreditsItem crewfunction="Catering" crewname="Emma Degol" />
+                <CreditsItem crewfunction="" crewname="Katrien Orlans" />
+                <CreditsItem crewfunction="Camera Equipment" crewname="Camalot" />
+                <CreditsItem crewfunction="" crewname="Lucky Cam" />
+                <CreditsItem crewfunction="Lighting Equipment" crewname="Lites" />
+            </div>
+        </div>
+    </div>
 </section>
 
-<section class="hero" data-aos="fade-up" data-aos-duration="600">
-    <div id="awards" class="hero-content grid grid-cols-2 gap-2 text-base-200">
-        <AwardItem festival="KFL Wildcards" award="Honourable Mention" year="2023" />
-        <FestivalsItem heading="Festivals" festivalname="International Short Film Festival Leuven (BE)" />
+<section class="hero pt-20 pb-4">
+    <div class="hero-content flex-col w-full">
+        <SectionLabel label="Festivals" />
+        <FestivalList items={[
+            "International Short Film Festival Leuven (BE)"
+        ]} />
     </div>
 </section>
 
 <section class="hero">
-    <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3">            
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.1.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.4.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.5.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.11.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.12.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.14.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.16.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.17.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.22.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.27.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.80.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.30.png"  alt={meta.imageAlt} />                
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.32.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.36.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.38.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.44.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.50.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.59.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.60.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.61.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.63.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.65.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.66.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.68.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.71.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.74.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.75.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.76.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.77.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.79.png"  alt={meta.imageAlt} />
-        <ContentPicture image="/img/burn/stills/382747919_2291286297731117_7680154816693138086_n.jpg"  alt={meta.imageAlt} />
+    <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3 max-w-6xl mx-auto px-4">            
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.1.png"  alt="Burn — film still 1" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.4.png"  alt="Burn — film still 2" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.5.png"  alt="Burn — film still 3" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.11.png"  alt="Burn — film still 4" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.12.png"  alt="Burn — film still 5" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.14.png"  alt="Burn — film still 6" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.16.png"  alt="Burn — film still 7" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.17.png"  alt="Burn — film still 8" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.22.png"  alt="Burn — film still 9" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.27.png"  alt="Burn — film still 10" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.80.png"  alt="Burn — film still 11" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.30.png"  alt="Burn — film still 12" />                
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.32.png"  alt="Burn — film still 13" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.36.png"  alt="Burn — film still 14" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.38.png"  alt="Burn — film still 15" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.44.png"  alt="Burn — film still 16" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.50.png"  alt="Burn — film still 17" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.59.png"  alt="Burn — film still 18" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.60.png"  alt="Burn — film still 19" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.61.png"  alt="Burn — film still 20" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.63.png"  alt="Burn — film still 21" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.65.png"  alt="Burn — film still 22" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.66.png"  alt="Burn — film still 23" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.68.png"  alt="Burn — film still 24" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.71.png"  alt="Burn — film still 25" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.74.png"  alt="Burn — film still 26" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.75.png"  alt="Burn — film still 27" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.76.png"  alt="Burn — film still 28" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.77.png"  alt="Burn — film still 29" />
+        <ContentPicture image="/img/burn/stills/20231102_BURN_1.1.79.png"  alt="Burn — film still 30" />
+        <ContentPicture image="/img/burn/stills/382747919_2291286297731117_7680154816693138086_n.jpg"  alt="Burn — film still 31" />
     </div>
 </section>
 
-<section class="hero" data-aos="fade-up" data-aos-duration="600">
-    <div id="specs" class="hero-content grid grid-cols-2 gap-2 text-base-200">
-        <SpecItem label="Recording Format" value="Digital" />
-        <SpecItem label="Camera" value="Alexa Mini LF" />
-        <SpecItem label="Lenses" value="Canon Sumire" />
-        <SpecItem label="Aspect Ratio" value="1.77" />
+<section class="hero pt-20 pb-28">
+    <div class="hero-content flex-col w-full">
+        <SectionLabel label="Specs" />
+        <div id="specs" class="grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">
+            <SpecItem label="Recording Format" value="Digital" />
+            <SpecItem label="Camera" value="Alexa Mini LF" />
+            <SpecItem label="Lenses" value="Canon Sumire" />
+            <SpecItem label="Aspect Ratio" value="1.77" />
+        </div>
     </div>
 </section>
+
+<NextProject
+    title="Moonlight Woman"
+    url="/projects/moonlight-woman/"
+    image="/img/moonlightwoman/stills/1.106.2_1.106.2.jpg"
+    imageposition="50% 50%"
+/>

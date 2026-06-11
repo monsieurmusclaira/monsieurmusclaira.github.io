@@ -2,7 +2,9 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
+import { getImage } from 'astro:assets';
 import { GoogleAnalytics } from 'astro-google-analytics';
+import { resolveImage } from '../utils/images';
 import { SITE_TITLE, SITE_URL } from '../config';
 
 export interface Props {
@@ -12,12 +14,26 @@ export interface Props {
 	canonical?: string;
 	schema?: object;
 	noindex?: boolean;
+	director?: string;
+	genre?: string;
+	year?: string;
 }
 
-const { title, description, image, canonical, schema, noindex } = Astro.props;
+const { title, description, image, canonical, schema, noindex, director, genre, year } = Astro.props;
 
 const canonicalURL = canonical ? new URL(canonical, SITE_URL) : new URL(Astro.url.pathname, SITE_URL);
-const ogImage = image ? new URL(image, SITE_URL).toString() : null;
+
+// Social-card image: src/assets paths get optimized to a 1200px JPEG;
+// public paths (e.g. /video/seethrough.jpg) pass through as-is.
+let ogImage: string | null = null;
+if (image) {
+  try {
+    const optimized = await getImage({ src: resolveImage(image), format: 'jpeg', width: 1200 });
+    ogImage = new URL(optimized.src, SITE_URL).toString();
+  } catch {
+    ogImage = new URL(image, SITE_URL).toString();
+  }
+}
 
 const pageType = Astro.url.pathname.startsWith('/projects/') ? 'project' 
   : Astro.url.pathname === '/' || Astro.url.pathname === '' ? 'home'
@@ -55,14 +71,6 @@ const websiteSchema = {
   "url": SITE_URL,
   "publisher": {
     "@id": `${SITE_URL}/#person`
-  },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": `${SITE_URL}/?search={search_term_string}`
-    },
-    "query-input": "required name=search_term_string"
   }
 };
 
@@ -84,7 +92,7 @@ if (pageType === 'home') {
     }
   };
 } else if (pageType === 'project') {
-  const projectTitle = title.replace(' — ', ' ').split(' | ')[0];
+  const projectTitle = title.split(' — ')[0].split(' | ')[0];
   pageSchema = {
     "@context": "https://schema.org",
     "@type": "Movie",
@@ -93,6 +101,9 @@ if (pageType === 'home') {
     "name": projectTitle,
     "description": description,
     ...(ogImage ? { "image": ogImage } : {}),
+    ...(director ? { "director": director.split(' & ').map((name) => ({ "@type": "Person", "name": name })) } : {}),
+    ...(genre ? { "genre": genre } : {}),
+    ...(year ? { "datePublished": year } : {}),
     "cinematographer": {
       "@type": "Person",
       "name": "Victor Maes",
@@ -165,6 +176,7 @@ if (schema) {
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
 <meta name="theme-color" content="#000000" />
+<meta name="color-scheme" content="dark" />
 
 <!-- Canonical & Hreflang -->
 <link rel="canonical" href={canonicalURL} />
@@ -181,8 +193,14 @@ if (schema) {
 <link rel="dns-prefetch" href="https://unpkg.com" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" media="print" onload="this.media='all'" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" media="print" onload="this.media='all'" />
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" /></noscript>
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" />
+</noscript>
 
 <!-- Crawl directives -->
 {noindex && <meta name="robots" content="noindex, nofollow" />}
@@ -225,5 +243,5 @@ if (schema) {
 <!-- JSON-LD Schema -->
 <script type="application/ld+json" set:html={JSON.stringify(schemas)} />
 
-<!-- Google Analytics -->
-<GoogleAnalytics id="G-1P80SYF663" />
+<!-- Google Analytics (production builds only — never fires in dev) -->
+{import.meta.env.PROD && <GoogleAnalytics id="G-1P80SYF663" />}

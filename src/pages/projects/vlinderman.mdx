@@ -1,13 +1,19 @@
 ---
 layout: "../../layouts/BaseLayout.astro"
-title: "Vlinderman | Victor Maes — Cinematographer"
+title: "Vlinderman — Fiction Short Film | Cinematography by Victor Maes"
 description: "A fiction film about Joop, a zoo warden, who discovers a half-eaten butterfly and sets upon a quest to find the culprit."
+image: "/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.78.png"
+director: "Jeroen Zeegers"
+genre: "Fiction"
 ---
 import ProjectHero from '../../components/ProjectHero.astro';
+import ProjectIntro from '../../components/ProjectIntro.astro';
+import SectionLabel from '../../components/SectionLabel.astro';
 import ContentPicture from '../../components/ContentPicture.astro';
 import CreditsItem from '../../components/CreditsItem.astro';
-import FestivalsItem from '../../components/FestivalsItem.astro';
+import FestivalList from '../../components/FestivalList.astro';
 import SpecItem from '../../components/SpecItem.astro';
+import NextProject from '../../components/NextProject.astro';
 export const meta = {
     title: 'Vlinderman',
     synopsis: 'When Joop, a warden at a local zoo, discovers a half-eaten butterfly in his butterfly enclosure he sets upon a quest to find the culprit.',
@@ -16,97 +22,119 @@ export const meta = {
     imageAlt: 'Vlinderman cinematography still'
 };
 
-<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
+<ProjectHero title={meta.title} synopsis={meta.synopsis} credit="directed by Jeroen Zeegers" heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
 
-<section class="hero">
-    <div class="hero-content">  
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.3.png" alt={meta.imageAlt} />
+<ProjectIntro items={[
+    { label: 'Format', value: 'Fiction' },
+    { label: 'Role', value: 'Cinematographer' },
+    { label: 'Director', value: 'Jeroen Zeegers' }
+]} />
+
+<ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.3.png" alt="Vlinderman — film still 1" />
+
+<section class="hero pt-20 pb-4">
+    <div class="hero-content flex-col w-full">
+        <SectionLabel label="Credits" />
+        <div class="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-16 px-6" data-aos="fade-up" data-aos-duration="600">
+            <div class="grid grid-cols-2 gap-x-0 gap-y-2 content-start text-base-200">
+                <CreditsItem crewfunction="Director" crewname="Jeroen Zeegers" />
+                <CreditsItem crewfunction="Cast" crewname="Wietse Tanghe" />
+                <CreditsItem crewfunction="" crewname="Manou Kersting" />
+                <CreditsItem crewfunction="" crewname="Ivan Pecnik" />
+                <CreditsItem crewfunction="" crewname="Lore Uyttendaele" />
+                <CreditsItem crewfunction="" crewname="Yentl Gijbels" />
+                <CreditsItem crewfunction="Production" crewname="Michaela Borcher" />
+                <CreditsItem crewfunction="1st Assistant Director" crewname="Matthias Tuinstra" />
+                <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
+                <CreditsItem crewfunction="Gaffer" crewname="Dieter Roelens" />
+                <CreditsItem crewfunction="Spark" crewname="Wouter van Achte" />
+                <CreditsItem crewfunction="Grip" crewname="John Hokke" />
+                <CreditsItem crewfunction="1st Assistant Camera" crewname="Jan-Willem Rouwhorst" />
+                <CreditsItem crewfunction="" crewname="Michiel Lateur" />
+                <CreditsItem crewfunction="2nd Assistant Camera" crewname="Fenna Maas" />
+            </div>
+            <div class="grid grid-cols-2 gap-x-0 gap-y-2 content-start text-base-200">
+                <CreditsItem crewfunction="Art Director" crewname="Daphne Gort" />
+                <CreditsItem crewfunction="Set Dressers" crewname="Mandy Louwet" />
+                <CreditsItem crewfunction="" crewname="Bob van den Berg" />
+                <CreditsItem crewfunction="" crewname="Helle Huisman" />
+                <CreditsItem crewfunction="Make-up" crewname="Robin Verhecken" />
+                <CreditsItem crewfunction="Boom Operator" crewname="Pieter Desmet" />
+                <CreditsItem crewfunction="Runner" crewname="Falcke Penso" />
+                <CreditsItem crewfunction="Script Supervisor" crewname="Daan Janssens" />
+            </div>
+        </div>
     </div>
 </section>
 
-<section class="hero" data-aos="fade-up" data-aos-duration="600">
-    <div id="credits" class="hero-content grid grid-cols-2 gap-2 text-base-200">            
-        <CreditsItem crewfunction="Director" crewname="Jeroen Zeegers" />
-        <CreditsItem crewfunction="Cast" crewname="Wietse Tanghe" />
-        <CreditsItem crewfunction="" crewname="Manou Kersting" />
-        <CreditsItem crewfunction="" crewname="Ivan Pecnik" />
-        <CreditsItem crewfunction="" crewname="Lore Uyttendaele" />
-        <CreditsItem crewfunction="" crewname="Yentl Gijbels" />
-        <CreditsItem crewfunction="Production" crewname="Michaela Borcher" />
-        <CreditsItem crewfunction="1st Assistant Director" crewname="Matthias Tuinstra" />
-        <CreditsItem crewfunction="Cinematographer" crewname="Victor Maes" />
-        <CreditsItem crewfunction="Gaffer" crewname="Dieter Roelens" />
-        <CreditsItem crewfunction="Spark" crewname="Wouter van Achte" />
-        <CreditsItem crewfunction="Grip" crewname="John Hokke" />
-        <CreditsItem crewfunction="1st Assistant Camera" crewname="Jan-Willem Rouwhorst" />
-        <CreditsItem crewfunction="" crewname="Michiel Lateur" />
-        <CreditsItem crewfunction="2nd Assistant Camera" crewname="Fenna Maas" />
-        <CreditsItem crewfunction="Art Director" crewname="Daphne Gort" />
-        <CreditsItem crewfunction="Set Dressers" crewname="Mandy Louwet" />
-        <CreditsItem crewfunction="" crewname="Bob van den Berg" />
-        <CreditsItem crewfunction="" crewname="Helle Huisman" />
-        <CreditsItem crewfunction="Make-up" crewname="Robin Verhecken" />
-        <CreditsItem crewfunction="Boom Operator" crewname="Pieter Desmet" />
-        <CreditsItem crewfunction="Runner" crewname="Falcke Penso" />
-        <CreditsItem crewfunction="Script Supervisor" crewname="Daan Janssens" />
-    </div>  
-</section>
-
-<section class="hero" data-aos="fade-up" data-aos-duration="600">
-    <div id="awards" class="hero-content grid grid-cols-2 gap-2 text-base-200">     
-        <FestivalsItem festivalname="International Short Film Festival Leuven (BE)" heading="Festivals" />
-    </div>  
-</section>
-
-<section class="hero">
-    <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3">    
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.3.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.6.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.7.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.8.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.9.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.11.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.14.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.18.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.17.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.19.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.20.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.21.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.22.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.24.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.26.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.27.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.29.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.31.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.33.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.36.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.37.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.40.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.41.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.43.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.44.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.47.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.49.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.53.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.55.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.57.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.62.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.63.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.66.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.70.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.68.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.72.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.77.png" alt={meta.imageAlt} />
-        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.78.png" alt={meta.imageAlt} />
+<section class="hero pt-20 pb-4">
+    <div class="hero-content flex-col w-full">
+        <SectionLabel label="Festivals" />
+        <FestivalList items={[
+            "International Short Film Festival Leuven (BE)"
+        ]} />
     </div>
 </section>
 
-<section class="hero" data-aos="fade-up" data-aos-duration="600">
-    <div id="specs" class="hero-content grid grid-cols-2 gap-2 text-base-200">
-        <SpecItem label="Recording Format" value="Digital" />
-        <SpecItem label="Camera" value="Alexa Mini LF" />
-        <SpecItem label="Lenses" value="Canon Sumire" />
-        <SpecItem label="" value="Angenieux EZ Zoom" />
-        <SpecItem label="Aspect Ratio" value="Cinemascope — 2.39" />
+<section class="hero pt-20 pb-4">
+    <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3 max-w-6xl mx-auto px-4">
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.3.png" alt="Vlinderman — film still 2" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.6.png" alt="Vlinderman — film still 3" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.7.png" alt="Vlinderman — film still 4" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.8.png" alt="Vlinderman — film still 5" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.9.png" alt="Vlinderman — film still 6" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.11.png" alt="Vlinderman — film still 7" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.14.png" alt="Vlinderman — film still 8" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.18.png" alt="Vlinderman — film still 9" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.17.png" alt="Vlinderman — film still 10" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.19.png" alt="Vlinderman — film still 11" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.20.png" alt="Vlinderman — film still 12" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.21.png" alt="Vlinderman — film still 13" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.22.png" alt="Vlinderman — film still 14" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.24.png" alt="Vlinderman — film still 15" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.26.png" alt="Vlinderman — film still 16" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.27.png" alt="Vlinderman — film still 17" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.29.png" alt="Vlinderman — film still 18" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.31.png" alt="Vlinderman — film still 19" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.33.png" alt="Vlinderman — film still 20" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.36.png" alt="Vlinderman — film still 21" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.37.png" alt="Vlinderman — film still 22" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.40.png" alt="Vlinderman — film still 23" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.41.png" alt="Vlinderman — film still 24" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.43.png" alt="Vlinderman — film still 25" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.44.png" alt="Vlinderman — film still 26" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.47.png" alt="Vlinderman — film still 27" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.49.png" alt="Vlinderman — film still 28" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.53.png" alt="Vlinderman — film still 29" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.55.png" alt="Vlinderman — film still 30" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.57.png" alt="Vlinderman — film still 31" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.62.png" alt="Vlinderman — film still 32" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.63.png" alt="Vlinderman — film still 33" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.66.png" alt="Vlinderman — film still 34" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.70.png" alt="Vlinderman — film still 35" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.68.png" alt="Vlinderman — film still 36" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.72.png" alt="Vlinderman — film still 37" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.77.png" alt="Vlinderman — film still 38" />
+        <ContentPicture image="/img/joopdevlinderman/stills/20231102_Vlinderman_1.1.78.png" alt="Vlinderman — film still 39" />
     </div>
 </section>
+
+<section class="hero pt-20 pb-28">
+    <div class="hero-content flex-col w-full">
+        <SectionLabel label="Specs" />
+        <div id="specs" class="grid grid-cols-2 gap-2 text-base-200">
+            <SpecItem label="Recording Format" value="Digital" />
+            <SpecItem label="Camera" value="Alexa Mini LF" />
+            <SpecItem label="Lenses" value="Canon Sumire" />
+            <SpecItem label="" value="Angenieux EZ Zoom" />
+            <SpecItem label="Aspect Ratio" value="Cinemascope — 2.39" />
+        </div>
+    </div>
+</section>
+
+<NextProject
+    title="The Tears of Things"
+    url="/projects/the-tears-of-things/"
+    image="/img/thetearsofthings/stills/TTOT_20212101_1.1.67.png"
+    imageposition="30% 50%"
+/>

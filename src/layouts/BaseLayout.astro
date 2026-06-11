@@ -4,7 +4,13 @@ import { ClientRouter } from 'astro:transitions';
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
-const { image, canonical, schema, noindex } = Astro.props;
+const { canonical, schema, noindex } = Astro.props;
+// MDX pages set `image` in their YAML frontmatter (mirrors meta.heroImage) — used for social cards.
+// Project pages also set director/genre/year for Movie schema enrichment.
+const image = Astro.props.image || Astro.props.frontmatter?.image;
+const director = Astro.props.frontmatter?.director;
+const genre = Astro.props.frontmatter?.genre;
+const year = Astro.props.frontmatter?.year;
 const title = Astro.props.title || Astro.props.frontmatter?.title || Astro.props.content?.title || SITE_TITLE;
 const description = Astro.props.description || Astro.props.frontmatter?.description || Astro.props.content?.description || SITE_DESCRIPTION;
 ---
@@ -12,12 +18,21 @@ const description = Astro.props.description || Astro.props.frontmatter?.descript
 <html lang="en" data-theme="mytheme">
  
   <head>
-    <BaseHead title={title} description={description} image={image} canonical={canonical} schema={schema} noindex={noindex} />    
+    <BaseHead title={title} description={description} image={image} canonical={canonical} schema={schema} noindex={noindex} director={director} genre={genre} year={year} />
+    <ClientRouter />
   </head>
 
   <body class="bg-black ">
+      <!-- Single shared grain-noise filter (referenced by .grain via CSS). One def, not one per card. -->
+      <svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+        <filter id="noiseFilter">
+          <feTurbulence type="fractalNoise" baseFrequency="0.6" stitchTiles="stitch" />
+          <feColorMatrix in="colorNoise" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0" />
+          <feComposite operator="in" in2="SourceGraphic" result="monoNoise" />
+          <feBlend in="SourceGraphic" in2="monoNoise" mode="screen" />
+        </filter>
+      </svg>
       <Header transition:animate="none" />
-      <ClientRouter />
       <main class="bg-neutral overflow-hidden">
         
         <slot />
@@ -32,7 +47,10 @@ const description = Astro.props.description || Astro.props.frontmatter?.descript
             duration: 800,
             easing: 'ease-out-cubic',
             once: true,
-            offset: 80
+            offset: 80,
+            disable: function () {
+              return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            }
           });
         }
         document.addEventListener('astro:page-load', initAOS);
