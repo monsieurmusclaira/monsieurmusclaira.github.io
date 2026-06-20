@@ -16,7 +16,7 @@
     "@astrojs/markdown-remark": "^7.1.1",
     "@astrojs/mdx": "^5.0.4",
     "@astrojs/sitemap": "^3.7.2",
-    "astro": "^6.3.1",
+    "astro": "^6.4.8",
     "astro-google-analytics": "^1.0.3",
     "autoprefixer": "^10.5.0",
     "postcss": "^8.5.14",
