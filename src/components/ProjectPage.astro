@@ -14,15 +14,23 @@ import NextProject from "./NextProject.astro";
 import { resolveImage } from "../utils/images";
 
 const { data, next } = Astro.props;
+const videos = data.videos ?? [];
+const gallery = data.gallery ?? [];
+const credits = data.credits ?? [];
+const festivals = data.festivals ?? [];
+const awards = data.awards ?? [];
+const specs = data.specs ?? [];
+const lists = data.lists ?? [];
+const laurels = data.laurels ?? [];
 const introItems = [
   data.year && { label: "Year", value: data.year },
   { label: "Format", value: data.format },
   { label: "Role", value: data.role },
   { label: "Director", value: data.director },
 ].filter(Boolean);
-const creditsMid = Math.ceil(data.credits.length / 2);
-const creditsLeft = data.credits.slice(0, creditsMid);
-const creditsRight = data.credits.slice(creditsMid);
+const creditsMid = Math.ceil(credits.length / 2);
+const creditsLeft = credits.slice(0, creditsMid);
+const creditsRight = credits.slice(creditsMid);
 ---
 
 <ProjectHero
@@ -44,7 +52,7 @@ const creditsRight = data.credits.slice(creditsMid);
   />
 )}
 
-{data.videos.map((v) =>
+{videos.map((v) =>
   v.provider === "youtube" ? (
     <ContentYoutube YoutubeLink={v.id} />
   ) : (
@@ -54,15 +62,15 @@ const creditsRight = data.credits.slice(creditsMid);
 
 <slot />
 
-{data.gallery.length > 0 && (
+{gallery.length > 0 && (
   <section class="hero pt-10 pb-4">
     <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3 max-w-6xl mx-auto px-4">
-      {data.gallery.map((g) => <ContentPicture image={g.image} alt={g.alt} />)}
+      {gallery.map((g) => <ContentPicture image={g.image} alt={g.alt} />)}
     </div>
   </section>
 )}
 
-{data.credits.length > 0 && (
+{credits.length > 0 && (
   <section class="hero pt-20 pb-4">
     <div class="hero-content flex-col w-full">
       <SectionLabel label="Credits" />
@@ -78,16 +86,16 @@ const creditsRight = data.credits.slice(creditsMid);
   </section>
 )}
 
-{data.festivals.length > 0 && (
+{festivals.length > 0 && (
   <section class="hero pt-20 pb-4">
     <div class="hero-content flex-col w-full">
       <SectionLabel label="Festivals" />
-      <FestivalList items={data.festivals} />
+      <FestivalList items={festivals} />
     </div>
   </section>
 )}
 
-{(data.lists || []).map((l) => (
+{lists.map((l) => (
   <section class="hero pt-20 pb-4">
     <div class="hero-content flex-col w-full">
       <SectionLabel label={l.label} />
@@ -96,12 +104,12 @@ const creditsRight = data.credits.slice(creditsMid);
   </section>
 ))}
 
-{(data.laurels || []).length > 0 && (
+{laurels.length > 0 && (
   <section class="hero pt-20 pb-4">
     <div class="hero-content flex-col w-full">
       <SectionLabel label="Selections" />
       <div class="flex flex-wrap place-content-around">
-        {(data.laurels || []).map((l) => (
+        {laurels.map((l) => (
           <img src={resolveImage(l.image).src} alt={l.alt} class="w-48" loading="lazy" />
         ))}
       </div>
@@ -109,23 +117,23 @@ const creditsRight = data.credits.slice(creditsMid);
   </section>
 )}
 
-{data.awards.length > 0 && (
+{awards.length > 0 && (
   <section class="hero pt-20 pb-4">
     <div class="hero-content flex-col w-full">
       <SectionLabel label="Awards" />
       <div class="w-full max-w-4xl mx-auto grid grid-cols-2 gap-y-1 px-6" data-aos="fade-up" data-aos-duration="600">
-        {data.awards.map((a) => <AwardItem award={a.award} festival={a.festival} year={a.year} />)}
+        {awards.map((a) => <AwardItem award={a.award} festival={a.festival} year={a.year} />)}
       </div>
     </div>
   </section>
 )}
 
-{data.specs.length > 0 && (
+{specs.length > 0 && (
   <section class="hero pt-20 pb-28">
     <div class="hero-content flex-col w-full">
       <SectionLabel label="Specs" />
       <div id="specs" class="grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">
-        {data.specs.map((s) => <SpecItem label={s.label} value={s.value} />)}
+        {specs.map((s) => <SpecItem label={s.label} value={s.value} />)}
       </div>
     </div>
   </section>
