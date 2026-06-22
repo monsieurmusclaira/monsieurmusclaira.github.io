@@ -22,6 +22,7 @@ export const projectSchema = z.object({
     badge1: z.string(),
     badge2: z.string(),
     order: z.number(),
+    desc: z.string().optional(),
   }),
   featuredAward: z
     .object({ award: z.string(), festival: z.string(), year: z.string().optional() })
