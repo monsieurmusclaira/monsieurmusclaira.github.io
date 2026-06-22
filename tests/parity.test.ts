@@ -29,6 +29,9 @@ describe("migration parity", () => {
       expect((data.festivals || []).length).toBe(base.festivals);
       expect((data.specs || []).length).toBe(base.specs);
       expect(Boolean(data.featuredAward)).toBe(base.featuredAward);
+      const listsItems = (data.lists || []).reduce((n, l) => n + (l.items ? l.items.length : 0), 0);
+      expect(listsItems).toBe(base.listsItemsTotal);
+      expect((data.laurels || []).length).toBe(base.laurels);
     });
   }
 });

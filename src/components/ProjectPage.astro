@@ -11,6 +11,7 @@ import FestivalList from "./FestivalList.astro";
 import AwardItem from "./AwardItem.astro";
 import SpecItem from "./SpecItem.astro";
 import NextProject from "./NextProject.astro";
+import { resolveImage } from "../utils/images";
 
 const { data, next } = Astro.props;
 const introItems = [
@@ -82,6 +83,28 @@ const creditsRight = data.credits.slice(creditsMid);
     <div class="hero-content flex-col w-full">
       <SectionLabel label="Festivals" />
       <FestivalList items={data.festivals} />
+    </div>
+  </section>
+)}
+
+{(data.lists || []).map((l) => (
+  <section class="hero pt-20 pb-4">
+    <div class="hero-content flex-col w-full">
+      <SectionLabel label={l.label} />
+      <FestivalList items={l.items} />
+    </div>
+  </section>
+))}
+
+{(data.laurels || []).length > 0 && (
+  <section class="hero pt-20 pb-4">
+    <div class="hero-content flex-col w-full">
+      <SectionLabel label="Selections" />
+      <div class="flex flex-wrap place-content-around">
+        {(data.laurels || []).map((l) => (
+          <img src={resolveImage(l.image).src} alt={l.alt} class="w-48" loading="lazy" />
+        ))}
+      </div>
     </div>
   </section>
 )}
