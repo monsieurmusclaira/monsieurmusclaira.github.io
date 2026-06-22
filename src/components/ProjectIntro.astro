@@ -6,7 +6,7 @@ const padding = synopsis ? 'py-16 sm:py-24' : 'py-12 sm:py-16';
 <section class={`hero ${padding} bg-neutral`} data-aos="fade-up" data-aos-duration="600">
   <div class="hero-content flex-col max-w-3xl mx-auto px-6 text-center">
     {synopsis && (
-      <p class="font-['EB_Garamond'] text-xl sm:text-2xl text-base-100/90">
+      <p class="font-serif text-xl sm:text-2xl text-base-100/90">
         {synopsis}
       </p>
     )}
@@ -14,10 +14,10 @@ const padding = synopsis ? 'py-16 sm:py-24' : 'py-12 sm:py-16';
       <dl class={`flex flex-wrap justify-center gap-x-10 gap-y-6 ${synopsis ? 'mt-12' : ''}`}>
         {facts.map((f) => (
           <div class="text-center">
-            <dt class="font-['Montserrat'] text-[11px] tracking-widest uppercase text-base-100/40">
+            <dt class="font-sans text-[11px] tracking-widest uppercase text-base-100/40">
               {f.label}
             </dt>
-            <dd class="font-['Montserrat'] text-base font-light text-base-100/85 mt-1.5">
+            <dd class="font-sans text-base font-light text-base-100/85 mt-1.5">
               {f.value}
             </dd>
           </div>

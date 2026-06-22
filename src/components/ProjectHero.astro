@@ -23,10 +23,10 @@ const slug = Astro.url.pathname.split('/').filter(Boolean).pop();
     <div class="z-3 w-full bottom-0 pt-32 pb-5 absolute bg-linear-to-t from-neutral via-neutral/80 to-transparent text-white overflow-hidden ">
         <div class="prose text-center pt-20 px-10 mx-auto">
             <h1 class="drop-in text-secondary drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]" transition:animate="slide">{title}</h1>
-            {credit && <p class="drop-in-2 font-['EB_Garamond'] italic text-lg sm:text-xl text-base-100/85 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] -mt-2 mb-2">{credit}</p>}
+            {credit && <p class="drop-in-2 font-serif italic text-lg sm:text-xl text-base-100/85 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] -mt-2 mb-2">{credit}</p>}
             <p class="drop-in-2 text-base-100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">{synopsis}</p>
             <div class="drop-in-3 flex flex-col justify-center items-center gap-2 py-3">
-                <span class="font-['Montserrat'] text-[10px] tracking-[0.25em] uppercase text-warning drop-shadow-[0_2px_6px_rgba(0,0,0,0.95)]">Scroll</span>
+                <span class="font-sans text-[10px] tracking-[0.25em] uppercase text-warning drop-shadow-[0_2px_6px_rgba(0,0,0,0.95)]">Scroll</span>
                 <svg width="28" height="28" viewBox="0 0 15 15" class="animate-bounce text-warning drop-shadow-[0_2px_6px_rgba(0,0,0,0.95)]" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="M7.5 2C7.77614 2 8 2.22386 8 2.5L8 11.2929L11.1464 8.14645C11.3417 7.95118 11.6583 7.95118 11.8536 8.14645C12.0488 8.34171 12.0488 8.65829 11.8536 8.85355L7.85355 12.8536C7.65829 13.0488 7.34171 13.0488 7.14645 12.8536L3.14645 8.85355C2.95118 8.65829 2.95118 8.34171 3.14645 8.14645C3.34171 7.95118 3.65829 7.95118 3.85355 8.14645L7 11.2929L7 2.5C7 2.22386 7.22386 2 7.5 2Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"/>
                 </svg>

@@ -2,7 +2,7 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
-import { getImage } from 'astro:assets';
+import { getImage, Font } from 'astro:assets';
 import { GoogleAnalytics } from 'astro-google-analytics';
 import { resolveImage } from '../utils/images';
 import { SITE_TITLE, SITE_URL } from '../config';
@@ -212,16 +212,14 @@ if (schema) {
 <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 <link rel="preconnect" href="https://unpkg.com" crossorigin />
 <link rel="dns-prefetch" href="https://unpkg.com" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" media="print" onload="this.media='all'" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" media="print" onload="this.media='all'" />
-<noscript>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" />
-</noscript>
+
+<!-- Self-hosted fonts (Astro Fonts API). Served from our own domain, so no
+     render-blocking round-trips to Google. Preload the regular weight of the
+     two fonts used above the fold (body/UI Montserrat, headings EB Garamond);
+     Caveat is a decorative accent and loads on demand. -->
+<Font cssVariable="--font-montserrat" preload={[{ weight: 400, style: 'normal' }]} />
+<Font cssVariable="--font-eb-garamond" preload={[{ weight: 400, style: 'normal' }]} />
+<Font cssVariable="--font-caveat" />
 
 <!-- Crawl directives -->
 {noindex && <meta name="robots" content="noindex, nofollow" />}
