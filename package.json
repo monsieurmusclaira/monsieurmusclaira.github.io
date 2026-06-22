@@ -14,10 +14,10 @@
   "dependencies": {
     "@astro-community/astro-embed-youtube": "^0.5.10",
     "@astrojs/markdown-remark": "^7.2.0",
-    "@astrojs/mdx": "^6.0.2",
+    "@astrojs/mdx": "^7.0.0",
     "@astrojs/sitemap": "^3.7.3",
     "@tailwindcss/vite": "^4.3.0",
-    "astro": "^6.4.4",
+    "astro": "^7.0.0",
     "astro-google-analytics": "^1.0.3",
     "postcss": "^8.5.15",
     "tailwindcss": "^4.3.0"
