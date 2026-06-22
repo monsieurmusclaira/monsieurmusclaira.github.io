@@ -4,7 +4,9 @@ import { parse } from "yaml";
 const DIR = "src/content/projects";
 const films = readdirSync(DIR).filter((f) => f.endsWith(".mdx")).map((f) => {
   const text = readFileSync(`${DIR}/${f}`, "utf-8");
-  const data = parse(text.match(/^---\n([\s\S]*?)\n---/)[1]);
+  const fm = text.match(/^---\n([\s\S]*?)\n---/);
+  if (!fm) throw new Error(`No frontmatter in ${f}`);
+  const data = parse(fm[1]);
   return { slug: f.replace(/\.mdx$/, ""), order: data.card.order };
 });
 films.sort((a, b) => a.order - b.order);

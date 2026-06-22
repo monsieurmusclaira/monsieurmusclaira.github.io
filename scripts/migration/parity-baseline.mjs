@@ -56,6 +56,7 @@ for (const file of readdirSync(SRC).filter((f) => f.endsWith(".mdx"))) {
     featuredAward: count(text, "<FeaturedAward\\b") > 0,
     listsItemsTotal: listsItemsTotal(text),
     laurels: laurelCount(text),
+    videos: count(text, "<ContentYoutube\\b") + count(text, "<ContentVimeo\\b"),
   };
 }
 

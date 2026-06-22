@@ -9,6 +9,7 @@ const DIR = "src/content/projects";
 function loadData(slug: string) {
   const text = readFileSync(join(DIR, `${slug}.mdx`), "utf-8");
   const fm = text.match(/^---\n([\s\S]*?)\n---/);
+  if (!fm) throw new Error(`No frontmatter in ${slug}.mdx`);
   return parse(fm[1]);
 }
 
@@ -32,6 +33,7 @@ describe("migration parity", () => {
       const listsItems = (data.lists || []).reduce((n, l) => n + (l.items ? l.items.length : 0), 0);
       expect(listsItems).toBe(base.listsItemsTotal);
       expect((data.laurels || []).length).toBe(base.laurels);
+      expect((data.videos || []).length).toBe(base.videos);
     });
   }
 });
