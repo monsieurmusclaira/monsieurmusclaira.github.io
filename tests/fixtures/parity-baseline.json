@@ -9,7 +9,8 @@
     "specs": 0,
     "featuredAward": true,
     "listsItemsTotal": 11,
-    "laurels": 0
+    "laurels": 0,
+    "videos": 0
   },
   "anna": {
     "seoTitle": "Anna — Fiction Short Film | Cinematography by Victor Maes",
@@ -21,7 +22,8 @@
     "specs": 0,
     "featuredAward": false,
     "listsItemsTotal": 0,
-    "laurels": 0
+    "laurels": 0,
+    "videos": 0
   },
   "bearer-of-bad-news": {
     "seoTitle": "Bearer of Bad News — Fiction Short | Cinematography by Victor Maes",
@@ -33,7 +35,8 @@
     "specs": 0,
     "featuredAward": false,
     "listsItemsTotal": 0,
-    "laurels": 0
+    "laurels": 0,
+    "videos": 0
   },
   "bieke-depoorter-chance-encounters": {
     "seoTitle": "Bieke Depoorter: Chance Encounters — Documentary | Victor Maes",
@@ -45,7 +48,8 @@
     "specs": 0,
     "featuredAward": false,
     "listsItemsTotal": 0,
-    "laurels": 0
+    "laurels": 0,
+    "videos": 1
   },
   "burn": {
     "seoTitle": "Burn — Fiction Short Film | Cinematography by Victor Maes",
@@ -57,7 +61,8 @@
     "specs": 4,
     "featuredAward": true,
     "listsItemsTotal": 0,
-    "laurels": 0
+    "laurels": 0,
+    "videos": 1
   },
   "burning-clouds": {
     "seoTitle": "Burning Clouds — Fiction Short | Cinematography by Victor Maes",
@@ -69,7 +74,8 @@
     "specs": 0,
     "featuredAward": false,
     "listsItemsTotal": 0,
-    "laurels": 0
+    "laurels": 0,
+    "videos": 0
   },
   "ever-since-i-have-been-flying": {
     "seoTitle": "Ever Since, I Have Been Flying — 16mm Documentary | Victor Maes",
@@ -81,7 +87,8 @@
     "specs": 9,
     "featuredAward": true,
     "listsItemsTotal": 0,
-    "laurels": 0
+    "laurels": 0,
+    "videos": 1
   },
   "felix-le-gamin-qui-traverse": {
     "seoTitle": "Felix, le gamin qui traverse — Fiction Short | Victor Maes",
@@ -93,7 +100,8 @@
     "specs": 0,
     "featuredAward": false,
     "listsItemsTotal": 0,
-    "laurels": 0
+    "laurels": 0,
+    "videos": 0
   },
   "hoge-blekker": {
     "seoTitle": "Hoge Blekker — 16mm Experimental Film | Victor Maes",
@@ -105,7 +113,8 @@
     "specs": 0,
     "featuredAward": false,
     "listsItemsTotal": 0,
-    "laurels": 0
+    "laurels": 0,
+    "videos": 0
   },
   "la-belle-rosine": {
     "seoTitle": "La Belle Rosine — Fiction Short | Cinematography by Victor Maes",
@@ -117,7 +126,8 @@
     "specs": 0,
     "featuredAward": false,
     "listsItemsTotal": 0,
-    "laurels": 0
+    "laurels": 0,
+    "videos": 0
   },
   "les-homards-immortels": {
     "seoTitle": "Les Homards Immortels — Fiction Short | Victor Maes",
@@ -129,7 +139,8 @@
     "specs": 0,
     "featuredAward": false,
     "listsItemsTotal": 0,
-    "laurels": 12
+    "laurels": 12,
+    "videos": 1
   },
   "moonlight-woman": {
     "seoTitle": "Moonlight Woman — Fiction Short | Cinematography by Victor Maes",
@@ -141,7 +152,8 @@
     "specs": 0,
     "featuredAward": false,
     "listsItemsTotal": 0,
-    "laurels": 0
+    "laurels": 0,
+    "videos": 0
   },
   "springtide": {
     "seoTitle": "Springtide — Fiction Short | Cinematography by Victor Maes",
@@ -153,7 +165,8 @@
     "specs": 0,
     "featuredAward": false,
     "listsItemsTotal": 0,
-    "laurels": 0
+    "laurels": 0,
+    "videos": 0
   },
   "the-tears-of-things": {
     "seoTitle": "The Tears of Things — Fiction Short | Cinematography by Victor Maes",
@@ -165,7 +178,8 @@
     "specs": 0,
     "featuredAward": true,
     "listsItemsTotal": 0,
-    "laurels": 0
+    "laurels": 0,
+    "videos": 0
   },
   "today-we-escape": {
     "seoTitle": "Today We Escape — Fiction Short | Cinematography by Victor Maes",
@@ -177,7 +191,8 @@
     "specs": 0,
     "featuredAward": false,
     "listsItemsTotal": 0,
-    "laurels": 0
+    "laurels": 0,
+    "videos": 0
   },
   "vlinderman": {
     "seoTitle": "Vlinderman — Fiction Short Film | Cinematography by Victor Maes",
@@ -189,7 +204,8 @@
     "specs": 5,
     "featuredAward": false,
     "listsItemsTotal": 0,
-    "laurels": 0
+    "laurels": 0,
+    "videos": 0
   },
   "world-wood-web": {
     "seoTitle": "World Wood Web — Experimental Film | Victor Maes",
@@ -201,6 +217,7 @@
     "specs": 0,
     "featuredAward": false,
     "listsItemsTotal": 0,
-    "laurels": 0
+    "laurels": 0,
+    "videos": 0
   }
 }
