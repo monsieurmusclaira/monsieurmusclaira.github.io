@@ -109,6 +109,28 @@ The film file body holds only the optional "about the project" prose as normal
 Markdown. The template renders it in the About slot. Films with no prose (for
 example Burn) have an empty body.
 
+### 3.3 Fields added during implementation
+
+Three bespoke cases surfaced during migration and were added to the model so no
+content is lost:
+
+- `lists` (array of `{ label, items: string[] }`, default []): additional
+  labelled string-list sections beyond the standard Festivals block. Used by
+  A Long Goodbye for "Markets" and "With the Support Of". Rendered after the
+  festivals block, each as a section label plus a list.
+- `laurels` (array of `{ image, alt }`, default []): a strip of festival laurel
+  images. Used by Les Homards Immortels for its "Selections" section. Rendered
+  after the lists block under a "Selections" heading.
+- `card.desc` (optional string): the homepage card credit line. Defaults to
+  `by {director}` when absent. Set explicitly only when the card credit differs
+  from the director, as for Bieke Depoorter: Chance Encounters ("by Magnum
+  Photos", whose director is Joppe Rog).
+
+Implementation note: Astro's glob content loader returns `undefined` for
+frontmatter keys a film omits rather than materialising Zod `.default([])`
+values, so the template reads every array field through a `?? []` local and the
+homepage applies the `card.desc` fallback explicitly.
+
 ## 4. File layout and routing
 
 - Collection content moves to `src/content/projects/<slug>.mdx`, one file per
