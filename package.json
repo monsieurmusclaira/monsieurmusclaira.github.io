@@ -27,6 +27,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "daisyui": "^5.5.20",
     "sass": "^1.100.0",
-    "vitest": "^4.1.9"
+    "vitest": "^4.1.9",
+    "yaml": "^2.9.0"
   }
 }
