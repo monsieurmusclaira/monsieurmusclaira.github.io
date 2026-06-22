@@ -19,6 +19,9 @@ const introItems = [
   { label: "Role", value: data.role },
   { label: "Director", value: data.director },
 ].filter(Boolean);
+const creditsMid = Math.ceil(data.credits.length / 2);
+const creditsLeft = data.credits.slice(0, creditsMid);
+const creditsRight = data.credits.slice(creditsMid);
 ---
 
 <ProjectHero
@@ -64,7 +67,10 @@ const introItems = [
       <SectionLabel label="Credits" />
       <div class="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-16 px-6" data-aos="fade-up" data-aos-duration="600">
         <div class="grid grid-cols-2 gap-x-0 gap-y-2 content-start text-base-200">
-          {data.credits.map((c) => <CreditsItem crewfunction={c.function} crewname={c.name} />)}
+          {creditsLeft.map((c) => <CreditsItem crewfunction={c.function} crewname={c.name} />)}
+        </div>
+        <div class="grid grid-cols-2 gap-x-0 gap-y-2 content-start text-base-200">
+          {creditsRight.map((c) => <CreditsItem crewfunction={c.function} crewname={c.name} />)}
         </div>
       </div>
     </div>
