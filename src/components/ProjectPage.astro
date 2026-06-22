@@ -1,0 +1,105 @@
+---
+import ProjectHero from "./ProjectHero.astro";
+import ProjectIntro from "./ProjectIntro.astro";
+import SectionLabel from "./SectionLabel.astro";
+import FeaturedAward from "./FeaturedAward.astro";
+import ContentYoutube from "./ContentYoutube.astro";
+import ContentVimeo from "./ContentVimeo.astro";
+import ContentPicture from "./ContentPicture.astro";
+import CreditsItem from "./CreditsItem.astro";
+import FestivalList from "./FestivalList.astro";
+import AwardItem from "./AwardItem.astro";
+import SpecItem from "./SpecItem.astro";
+import NextProject from "./NextProject.astro";
+
+const { data, next } = Astro.props;
+const introItems = [
+  data.year && { label: "Year", value: data.year },
+  { label: "Format", value: data.format },
+  { label: "Role", value: data.role },
+  { label: "Director", value: data.director },
+].filter(Boolean);
+---
+
+<ProjectHero
+  title={data.title}
+  synopsis={data.synopsis}
+  credit={data.hero.credit}
+  heroImage={data.hero.image}
+  alt={data.hero.alt}
+  imageposition={data.hero.position}
+/>
+
+<ProjectIntro items={introItems} />
+
+{data.featuredAward && (
+  <FeaturedAward
+    award={data.featuredAward.award}
+    festival={data.featuredAward.festival}
+    year={data.featuredAward.year}
+  />
+)}
+
+{data.videos.map((v) =>
+  v.provider === "youtube" ? (
+    <ContentYoutube YoutubeLink={v.id} />
+  ) : (
+    <ContentVimeo VimeoId={v.id} title={v.title} />
+  ),
+)}
+
+<slot />
+
+{data.gallery.length > 0 && (
+  <section class="hero pt-10 pb-4">
+    <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3 max-w-6xl mx-auto px-4">
+      {data.gallery.map((g) => <ContentPicture image={g.image} alt={g.alt} />)}
+    </div>
+  </section>
+)}
+
+{data.credits.length > 0 && (
+  <section class="hero pt-20 pb-4">
+    <div class="hero-content flex-col w-full">
+      <SectionLabel label="Credits" />
+      <div class="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-16 px-6" data-aos="fade-up" data-aos-duration="600">
+        <div class="grid grid-cols-2 gap-x-0 gap-y-2 content-start text-base-200">
+          {data.credits.map((c) => <CreditsItem crewfunction={c.function} crewname={c.name} />)}
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+
+{data.festivals.length > 0 && (
+  <section class="hero pt-20 pb-4">
+    <div class="hero-content flex-col w-full">
+      <SectionLabel label="Festivals" />
+      <FestivalList items={data.festivals} />
+    </div>
+  </section>
+)}
+
+{data.awards.length > 0 && (
+  <section class="hero pt-20 pb-4">
+    <div class="hero-content flex-col w-full">
+      <SectionLabel label="Awards" />
+      <div class="w-full max-w-4xl mx-auto grid grid-cols-2 gap-y-1 px-6" data-aos="fade-up" data-aos-duration="600">
+        {data.awards.map((a) => <AwardItem award={a.award} festival={a.festival} year={a.year} />)}
+      </div>
+    </div>
+  </section>
+)}
+
+{data.specs.length > 0 && (
+  <section class="hero pt-20 pb-28">
+    <div class="hero-content flex-col w-full">
+      <SectionLabel label="Specs" />
+      <div id="specs" class="grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">
+        {data.specs.map((s) => <SpecItem label={s.label} value={s.value} />)}
+      </div>
+    </div>
+  </section>
+)}
+
+<NextProject title={next.title} url={next.url} image={next.image} imageposition={next.position} />

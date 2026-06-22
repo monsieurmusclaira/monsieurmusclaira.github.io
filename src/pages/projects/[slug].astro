@@ -1,0 +1,43 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectPage from "../../components/ProjectPage.astro";
+import { sortByOrder, nextSlug } from "../../lib/projects";
+
+export async function getStaticPaths() {
+  const all = await getCollection("projects");
+  const ordered = sortByOrder(all.map((e) => ({ slug: e.id, order: e.data.card.order })));
+  return all.map((entry) => {
+    const ns = nextSlug(entry.id, ordered);
+    const nextEntry = all.find((e) => e.id === ns);
+    return {
+      params: { slug: entry.id },
+      props: {
+        entry,
+        next: {
+          title: nextEntry.data.title,
+          url: `/projects/${nextEntry.id}/`,
+          image: nextEntry.data.card.image,
+          position: nextEntry.data.card.position,
+        },
+      },
+    };
+  });
+}
+
+const { entry, next } = Astro.props;
+const { Content } = await render(entry);
+const { seoTitle, description, hero } = entry.data;
+---
+
+<BaseLayout
+  title={seoTitle}
+  description={description}
+  image={hero.image}
+  imageAlt={hero.alt}
+  frontmatter={{ director: entry.data.director, genre: entry.data.genre, year: entry.data.year }}
+>
+  <ProjectPage data={entry.data} next={next}>
+    <Content />
+  </ProjectPage>
+</BaseLayout>
