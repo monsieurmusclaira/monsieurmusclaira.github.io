@@ -1,11 +1,23 @@
-/* Google Fonts load asynchronously via <link> tags in BaseHead.astro
-   (render-blocking @imports removed for first-paint speed). */
+/* Fonts are self-hosted via the Astro Fonts API (configured in astro.config.mjs
+   and emitted by <Font> in BaseHead.astro). The @font-face family names match
+   the names referenced below ("Montserrat", "EB Garamond", "Caveat"). */
 @import "tailwindcss";
 
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
   themes: false;
 }
+/* Map Tailwind's font utilities onto the self-hosted font variables that the
+   Astro Fonts API defines on :root. `font-sans` → Montserrat, `font-serif` →
+   EB Garamond, `font-hand` → Caveat. Astro namespaces the real @font-face
+   family names (e.g. "Montserrat-<hash>"), so fonts must be referenced through
+   these variables, never by the bare family name. */
+@theme {
+  --font-sans: var(--font-montserrat), sans-serif;
+  --font-serif: var(--font-eb-garamond), serif;
+  --font-hand: var(--font-caveat), cursive;
+}
+
 @plugin "daisyui/theme" {
   name: "mytheme";
   default: true;
@@ -56,19 +68,19 @@ html {
 }
 
 /* Element font defaults live in the base layer so Tailwind utilities
-   (e.g. font-['EB_Garamond']) can override them. Unlayered rules would
+   (e.g. font-serif / font-sans) can override them. Unlayered rules would
    always win over layered utilities under Tailwind v4. */
 @layer base {
   h1, h2 {
-    font-family: "EB Garamond", serif;
+    font-family: var(--font-eb-garamond), serif;
   }
 
   h3, table {
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-montserrat), sans-serif;
   }
 
   p {
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-montserrat), sans-serif;
   }
 
   th, td {
@@ -82,7 +94,7 @@ html {
 
 @layer components {
   .btn {
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-montserrat), sans-serif;
   }
 }
 
