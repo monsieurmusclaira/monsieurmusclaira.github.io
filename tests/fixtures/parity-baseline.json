@@ -7,7 +7,9 @@
     "awards": 9,
     "festivals": 18,
     "specs": 0,
-    "featuredAward": true
+    "featuredAward": true,
+    "listsItemsTotal": 11,
+    "laurels": 0
   },
   "anna": {
     "seoTitle": "Anna — Fiction Short Film | Cinematography by Victor Maes",
@@ -17,7 +19,9 @@
     "awards": 0,
     "festivals": 0,
     "specs": 0,
-    "featuredAward": false
+    "featuredAward": false,
+    "listsItemsTotal": 0,
+    "laurels": 0
   },
   "bearer-of-bad-news": {
     "seoTitle": "Bearer of Bad News — Fiction Short | Cinematography by Victor Maes",
@@ -27,7 +31,9 @@
     "awards": 0,
     "festivals": 0,
     "specs": 0,
-    "featuredAward": false
+    "featuredAward": false,
+    "listsItemsTotal": 0,
+    "laurels": 0
   },
   "bieke-depoorter-chance-encounters": {
     "seoTitle": "Bieke Depoorter: Chance Encounters — Documentary | Victor Maes",
@@ -37,7 +43,9 @@
     "awards": 0,
     "festivals": 0,
     "specs": 0,
-    "featuredAward": false
+    "featuredAward": false,
+    "listsItemsTotal": 0,
+    "laurels": 0
   },
   "burn": {
     "seoTitle": "Burn — Fiction Short Film | Cinematography by Victor Maes",
@@ -47,7 +55,9 @@
     "awards": 0,
     "festivals": 1,
     "specs": 4,
-    "featuredAward": true
+    "featuredAward": true,
+    "listsItemsTotal": 0,
+    "laurels": 0
   },
   "burning-clouds": {
     "seoTitle": "Burning Clouds — Fiction Short | Cinematography by Victor Maes",
@@ -57,7 +67,9 @@
     "awards": 0,
     "festivals": 8,
     "specs": 0,
-    "featuredAward": false
+    "featuredAward": false,
+    "listsItemsTotal": 0,
+    "laurels": 0
   },
   "ever-since-i-have-been-flying": {
     "seoTitle": "Ever Since, I Have Been Flying — 16mm Documentary | Victor Maes",
@@ -67,7 +79,9 @@
     "awards": 3,
     "festivals": 16,
     "specs": 9,
-    "featuredAward": true
+    "featuredAward": true,
+    "listsItemsTotal": 0,
+    "laurels": 0
   },
   "felix-le-gamin-qui-traverse": {
     "seoTitle": "Felix, le gamin qui traverse — Fiction Short | Victor Maes",
@@ -77,7 +91,9 @@
     "awards": 0,
     "festivals": 0,
     "specs": 0,
-    "featuredAward": false
+    "featuredAward": false,
+    "listsItemsTotal": 0,
+    "laurels": 0
   },
   "hoge-blekker": {
     "seoTitle": "Hoge Blekker — 16mm Experimental Film | Victor Maes",
@@ -87,7 +103,9 @@
     "awards": 0,
     "festivals": 0,
     "specs": 0,
-    "featuredAward": false
+    "featuredAward": false,
+    "listsItemsTotal": 0,
+    "laurels": 0
   },
   "la-belle-rosine": {
     "seoTitle": "La Belle Rosine — Fiction Short | Cinematography by Victor Maes",
@@ -97,7 +115,9 @@
     "awards": 0,
     "festivals": 0,
     "specs": 0,
-    "featuredAward": false
+    "featuredAward": false,
+    "listsItemsTotal": 0,
+    "laurels": 0
   },
   "les-homards-immortels": {
     "seoTitle": "Les Homards Immortels — Fiction Short | Victor Maes",
@@ -107,7 +127,9 @@
     "awards": 0,
     "festivals": 0,
     "specs": 0,
-    "featuredAward": false
+    "featuredAward": false,
+    "listsItemsTotal": 0,
+    "laurels": 12
   },
   "moonlight-woman": {
     "seoTitle": "Moonlight Woman — Fiction Short | Cinematography by Victor Maes",
@@ -117,7 +139,9 @@
     "awards": 0,
     "festivals": 0,
     "specs": 0,
-    "featuredAward": false
+    "featuredAward": false,
+    "listsItemsTotal": 0,
+    "laurels": 0
   },
   "springtide": {
     "seoTitle": "Springtide — Fiction Short | Cinematography by Victor Maes",
@@ -127,7 +151,9 @@
     "awards": 0,
     "festivals": 0,
     "specs": 0,
-    "featuredAward": false
+    "featuredAward": false,
+    "listsItemsTotal": 0,
+    "laurels": 0
   },
   "the-tears-of-things": {
     "seoTitle": "The Tears of Things — Fiction Short | Cinematography by Victor Maes",
@@ -137,7 +163,9 @@
     "awards": 2,
     "festivals": 10,
     "specs": 0,
-    "featuredAward": true
+    "featuredAward": true,
+    "listsItemsTotal": 0,
+    "laurels": 0
   },
   "today-we-escape": {
     "seoTitle": "Today We Escape — Fiction Short | Cinematography by Victor Maes",
@@ -147,7 +175,9 @@
     "awards": 0,
     "festivals": 0,
     "specs": 0,
-    "featuredAward": false
+    "featuredAward": false,
+    "listsItemsTotal": 0,
+    "laurels": 0
   },
   "vlinderman": {
     "seoTitle": "Vlinderman — Fiction Short Film | Cinematography by Victor Maes",
@@ -157,7 +187,9 @@
     "awards": 0,
     "festivals": 1,
     "specs": 5,
-    "featuredAward": false
+    "featuredAward": false,
+    "listsItemsTotal": 0,
+    "laurels": 0
   },
   "world-wood-web": {
     "seoTitle": "World Wood Web — Experimental Film | Victor Maes",
@@ -167,6 +199,8 @@
     "awards": 0,
     "festivals": 0,
     "specs": 0,
-    "featuredAward": false
+    "featuredAward": false,
+    "listsItemsTotal": 0,
+    "laurels": 0
   }
 }

@@ -38,6 +38,8 @@ export const projectSchema = z.object({
   gallery: z.array(z.object({ image: z.string(), alt: z.string() })).default([]),
   credits: z.array(z.object({ function: z.string(), name: z.string() })).default([]),
   festivals: z.array(z.string()).default([]),
+  lists: z.array(z.object({ label: z.string(), items: z.array(z.string()) })).default([]),
+  laurels: z.array(z.object({ image: z.string(), alt: z.string() })).default([]),
   awards: z
     .array(z.object({ award: z.string(), festival: z.string(), year: z.string().optional() }))
     .default([]),

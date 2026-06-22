@@ -1,7 +1,7 @@
 import { readdirSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 
-const SRC = "src/pages/projects";
+const SRC = process.argv[2] || "src/pages/projects";
 const OUT = "tests/fixtures/parity-baseline.json";
 
 const count = (text, token) => (text.match(new RegExp(token, "g")) || []).length;
@@ -11,6 +11,22 @@ function festivalCount(text) {
   const m = text.match(/<FestivalList[^>]*items=\{\[([\s\S]*?)\]\}/);
   if (!m) return 0;
   return (m[1].match(/"(?:[^"\\]|\\.)*"/g) || []).length;
+}
+
+// Count items across all FestivalList blocks EXCEPT the first one.
+function listsItemsTotal(text) {
+  const allMatches = [...text.matchAll(/<FestivalList[^>]*items=\{\[([\s\S]*?)\]\}/g)];
+  if (allMatches.length <= 1) return 0;
+  let total = 0;
+  for (let i = 1; i < allMatches.length; i++) {
+    total += (allMatches[i][1].match(/"(?:[^"\\]|\\.)*"/g) || []).length;
+  }
+  return total;
+}
+
+// Count laurel images by occurrences of /laurels/ in the file.
+function laurelCount(text) {
+  return (text.match(/\/laurels\//g) || []).length;
 }
 
 function field(text, key) {
@@ -38,6 +54,8 @@ for (const file of readdirSync(SRC).filter((f) => f.endsWith(".mdx"))) {
     festivals: festivalCount(text),
     specs: count(text, "<SpecItem\\b"),
     featuredAward: count(text, "<FeaturedAward\\b") > 0,
+    listsItemsTotal: listsItemsTotal(text),
+    laurels: laurelCount(text),
   };
 }
 
