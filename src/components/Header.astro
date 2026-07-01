@@ -6,21 +6,32 @@ const linkClass = (href: string) =>
   `font-sans text-xs tracking-widest uppercase transition-colors duration-200 ${
     isActive(href) ? 'text-secondary' : 'text-base-100 hover:text-secondary'
   }`;
+const current = (href: string) => (isActive(href) ? 'page' : undefined);
 ---
 
 <div class="navbar fixed top-0 z-50 bg-black/60 backdrop-blur-xs transition-transform duration-300" id="site-nav">
   <div class="navbar-start">
-    <!-- Mobile: hamburger -->
+    <!-- Mobile: hamburger (real disclosure — aria-expanded/controls toggled by script) -->
     <div class="dropdown lg:hidden">
-      <button class="btn btn-ghost btn-circle" aria-label="Open menu">
+      <button
+        id="menu-toggle"
+        class="btn btn-ghost btn-circle"
+        aria-label="Open menu"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="#F1D74E" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
       </button>
-      <ul class="menu menu-sm dropdown-content mt-3 p-2 shadow-sm bg-black/80 backdrop-blur-xs rounded-box w-52 text-base-100">
+      <ul id="mobile-menu" class="menu menu-sm dropdown-content mt-3 p-2 shadow-sm bg-black/80 backdrop-blur-xs rounded-box w-52 text-base-100 hidden">
         <li>
-          <a href="/" class={isActive('/') ? 'text-secondary font-semibold' : ''}>Work</a>
+          <a href="/" aria-current={current('/')} class={isActive('/') ? 'text-secondary font-semibold' : ''}>Work</a>
         </li>
         <li>
-          <a href="/about/" class={isActive('/about') ? 'text-secondary font-semibold' : ''}>About</a>
+          <a href="/about/" aria-current={current('/about')} class={isActive('/about') ? 'text-secondary font-semibold' : ''}>About</a>
+        </li>
+        <li>
+          <a href="/behind-the-scenes/" aria-current={current('/behind-the-scenes')} class={isActive('/behind-the-scenes') ? 'text-secondary font-semibold' : ''}>Behind the Scenes</a>
         </li>
         <li>
           <a href="/about/#contact">Contact</a>
@@ -29,8 +40,9 @@ const linkClass = (href: string) =>
     </div>
     <!-- Desktop: inline links -->
     <div class="hidden lg:flex items-center gap-7 pl-3">
-      <a href="/" class={linkClass('/')}>Work</a>
-      <a href="/about/" class={linkClass('/about')}>About</a>
+      <a href="/" aria-current={current('/')} class={linkClass('/')}>Work</a>
+      <a href="/about/" aria-current={current('/about')} class={linkClass('/about')}>About</a>
+      <a href="/behind-the-scenes/" aria-current={current('/behind-the-scenes')} class={linkClass('/behind-the-scenes')}>Behind the Scenes</a>
       <a href="/about/#contact" class="font-sans text-xs tracking-widest uppercase transition-colors duration-200 text-base-100 hover:text-secondary">Contact</a>
     </div>
   </div>
@@ -80,17 +92,70 @@ const linkClass = (href: string) =>
     }
 
     function attachScroll() {
-      var nav = document.getElementById('site-nav');
+      nav = document.getElementById('site-nav');
       if (!nav) return;
       lastY = window.scrollY;
       window.removeEventListener('scroll', onScroll);
       window.addEventListener('scroll', onScroll, { passive: true });
     }
 
-    attachScroll();
-    document.addEventListener('astro:page-load', function () {
-      nav = document.getElementById('site-nav');
+    // Mobile menu disclosure. Document-level listeners are defined once at module
+    // scope and re-bound with remove-before-add so client-side navigation never
+    // stacks duplicates.
+    function closeMenu() {
+      var btn = document.getElementById('menu-toggle');
+      var menu = document.getElementById('mobile-menu');
+      if (!btn || !menu) return;
+      menu.classList.add('hidden');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+
+    function onDocClick(e) {
+      var btn = document.getElementById('menu-toggle');
+      var menu = document.getElementById('mobile-menu');
+      if (!btn || !menu) return;
+      if (!menu.contains(e.target) && !btn.contains(e.target)) closeMenu();
+    }
+
+    function onKeydown(e) {
+      if (e.key === 'Escape') closeMenu();
+    }
+
+    function onToggleClick(e) {
+      e.stopPropagation();
+      var btn = document.getElementById('menu-toggle');
+      var menu = document.getElementById('mobile-menu');
+      if (!btn || !menu) return;
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      if (open) {
+        menu.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        menu.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    function attachMenu() {
+      var btn = document.getElementById('menu-toggle');
+      var menu = document.getElementById('mobile-menu');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', onToggleClick);
+      menu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', closeMenu);
+      });
+      document.removeEventListener('click', onDocClick);
+      document.addEventListener('click', onDocClick);
+      document.removeEventListener('keydown', onKeydown);
+      document.addEventListener('keydown', onKeydown);
+    }
+
+    function setup() {
       attachScroll();
-    });
+      attachMenu();
+    }
+
+    setup();
+    document.addEventListener('astro:page-load', setup);
   })();
 </script>

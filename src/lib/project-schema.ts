@@ -9,6 +9,9 @@ export const projectSchema = z.object({
   format: z.string(),
   role: z.string(),
   year: z.string().optional(),
+  // Overrides the JSON-LD @type for the project (defaults to "Movie"). Use for
+  // pieces that are not films, e.g. "CreativeWork" for the interactive VR work.
+  schemaType: z.string().optional(),
   synopsis: z.string(),
   hero: z.object({
     image: z.string(),
