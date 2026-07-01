@@ -1,9 +1,10 @@
 <div class="hero relative min-h-screen min-w-screen bg-black">
-	<video class="relative z-0" autoplay loop muted playsinline preload="metadata" poster="video/seethrough.jpg" id="hero-video">
-		<!-- WebM/VP8 for Firefox4, Opera, and Chrome -->
-		<source type="video/webm" src="video/SeeThrough_VP9_VBR.webm" />
-		<!-- MP4 for Safari, IE9, iPhone, iPad, Android, and Windows Phone 7 -->
-		<source type="video/mp4" src="video/Seethrough_x265_CQ32.mp4" />
+	<video class="relative z-0" loop muted playsinline preload="none" poster="/video/seethrough.jpg" id="hero-video">
+		<!-- Sources are loaded by the script below only on larger screens with motion
+		     allowed, so phones and reduced-motion users get the poster instead of a
+		     multi-megabyte download. WebM first (Firefox/Chrome), MP4 fallback (Safari/iOS). -->
+		<source type="video/webm" data-src="/video/SeeThrough_VP9_VBR.webm" />
+		<source type="video/mp4" data-src="/video/Seethrough_x265_CQ32.mp4" />
 		Your browser does not support the video
 	</video>
 	<div class="drop-in-2 absolute bottom-32 left-0 right-0 text-center px-6 pointer-events-none z-10">
@@ -16,12 +17,23 @@
 </div>
 
 <script is:inline>
-  function restartHeroVideo() {
+  // Decide per visit whether to play the hero video. Phones (narrow screens) and
+  // visitors who asked for reduced motion keep the still poster and never download
+  // the video. On larger screens with motion allowed, load the sources and play.
+  function setupHeroVideo() {
     const video = document.getElementById('hero-video');
-    if (video) {
+    if (!video) return;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const smallScreen = window.matchMedia('(max-width: 767px)').matches;
+    if (reduceMotion || smallScreen) return;
+    if (!video.dataset.loaded) {
+      video.querySelectorAll('source[data-src]').forEach(function (s) {
+        s.src = s.getAttribute('data-src');
+      });
       video.load();
-      video.play().catch(() => {});
+      video.dataset.loaded = '1';
     }
+    video.play().catch(function () {});
   }
-  document.addEventListener('astro:page-load', restartHeroVideo);
+  document.addEventListener('astro:page-load', setupHeroVideo);
 </script>

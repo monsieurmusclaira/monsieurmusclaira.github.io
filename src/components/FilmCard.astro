@@ -12,7 +12,7 @@ const slug = url?.split('/').filter(Boolean).pop();
   <div class="z-0 h-screen w-screen absolute top-0 overflow-hidden" transition:name={`hero-${slug}`}>
     <Image
       src={resolveImage(img)}
-      alt={title}
+      alt={alt || `${title}, cinematography still by Victor Maes`}
       class="w-full h-full object-cover transition-transform duration-1400 ease-out group-hover:scale-105"
       style={`object-position: ${imageposition || '50% 50%'}`}
       widths={[768, 1440, 2560]}

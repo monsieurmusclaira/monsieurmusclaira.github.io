@@ -35,7 +35,17 @@ const { seoTitle, description, hero } = entry.data;
   description={description}
   image={hero.image}
   imageAlt={hero.alt}
-  frontmatter={{ director: entry.data.director, genre: entry.data.genre, year: entry.data.year }}
+  frontmatter={{
+    director: entry.data.director,
+    genre: entry.data.genre,
+    // Visible pages only show `year` when set; for structured data we fall back to
+    // the film's own recorded featured-award year as a datePublished proxy.
+    year: entry.data.year ?? entry.data.featuredAward?.year,
+    schemaType: entry.data.schemaType,
+    awards: entry.data.awards,
+    featuredAward: entry.data.featuredAward,
+    videos: entry.data.videos,
+  }}
 >
   <ProjectPage data={entry.data} next={next}>
     <Content />

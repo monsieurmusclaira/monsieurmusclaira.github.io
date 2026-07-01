@@ -12,6 +12,10 @@ const imageAlt = Astro.props.imageAlt || Astro.props.frontmatter?.imageAlt;
 const director = Astro.props.frontmatter?.director;
 const genre = Astro.props.frontmatter?.genre;
 const year = Astro.props.frontmatter?.year;
+const schemaType = Astro.props.frontmatter?.schemaType;
+const awards = Astro.props.frontmatter?.awards;
+const featuredAward = Astro.props.frontmatter?.featuredAward;
+const videos = Astro.props.frontmatter?.videos;
 const title = Astro.props.title || Astro.props.frontmatter?.title || Astro.props.content?.title || SITE_TITLE;
 const description = Astro.props.description || Astro.props.frontmatter?.description || Astro.props.content?.description || SITE_DESCRIPTION;
 ---
@@ -19,7 +23,7 @@ const description = Astro.props.description || Astro.props.frontmatter?.descript
 <html lang="en" data-theme="mytheme">
  
   <head>
-    <BaseHead title={title} description={description} image={image} imageAlt={imageAlt} canonical={canonical} schema={schema} noindex={noindex} director={director} genre={genre} year={year} />
+    <BaseHead title={title} description={description} image={image} imageAlt={imageAlt} canonical={canonical} schema={schema} noindex={noindex} director={director} genre={genre} year={year} schemaType={schemaType} awards={awards} featuredAward={featuredAward} videos={videos} />
     <ClientRouter />
   </head>
 
@@ -40,11 +44,13 @@ const description = Astro.props.description || Astro.props.frontmatter?.descript
       </main>      
       <Footer /> 
 
-      <!-- Animate On Scroll (non-blocking) -->
-      <script is:inline defer src="https://unpkg.com/aos@next/dist/aos.js"></script>
-      <script is:inline>
+      <!-- Animate On Scroll: self-hosted and bundled by Astro (no third-party CDN,
+           served from our own domain, version pinned in package.json). -->
+      <script>
+        import AOS from 'aos';
+        import 'aos/dist/aos.css';
         function initAOS() {
-          if (typeof AOS !== 'undefined') AOS.init({
+          AOS.init({
             duration: 800,
             easing: 'ease-out-cubic',
             once: true,

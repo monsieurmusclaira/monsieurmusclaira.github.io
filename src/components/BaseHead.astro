@@ -18,9 +18,13 @@ export interface Props {
 	director?: string;
 	genre?: string;
 	year?: string;
+	schemaType?: string;
+	awards?: { award: string; festival: string; year?: string }[];
+	featuredAward?: { award: string; festival: string; year?: string };
+	videos?: { provider: string; id: string; title?: string }[];
 }
 
-const { title, description, image, imageAlt, canonical, schema, noindex, director, genre, year } = Astro.props;
+const { title, description, image, imageAlt, canonical, schema, noindex, director, genre, year, schemaType, awards, featuredAward, videos } = Astro.props;
 
 // Social-card image alt: describe the actual photo when the page provides it,
 // otherwise fall back to the page title.
@@ -46,6 +50,9 @@ const pageType = Astro.url.pathname.startsWith('/projects/') ? 'project'
   : Astro.url.pathname.startsWith('/behind-the-scenes') ? 'bts'
   : 'page';
 
+// Open Graph object type: film pages are closer to video than a generic website.
+const ogType = pageType === 'project' ? 'video.other' : 'website';
+
 // Build JSON-LD schemas
 const personSchema = {
   "@context": "https://schema.org",
@@ -61,6 +68,7 @@ const personSchema = {
     "https://www.imdb.com/name/nm4866929"
   ],
   "knowsAbout": ["Cinematography", "Film", "Virtual Reality", "Documentary", "Director of Photography"],
+  "knowsLanguage": ["en", "fr", "nl"],
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Brussels",
@@ -98,9 +106,38 @@ if (pageType === 'home') {
   };
 } else if (pageType === 'project') {
   const projectTitle = title.split(' — ')[0].split(' | ')[0];
+  const projectType = schemaType || 'Movie';
+  const isMovie = projectType === 'Movie';
+
+  // Award strings from the film's own recorded featured award + awards list.
+  // The featured award is often repeated in the awards list, so dedupe.
+  const awardList = [...new Set(
+    [featuredAward, ...(awards ?? [])]
+      .filter(Boolean)
+      .map((a) => [a.award, a.festival, a.year].filter(Boolean).join(', '))
+  )];
+
+  // First video becomes a trailer VideoObject. The film's own optimized still
+  // (ogImage) serves as the thumbnail, so the entity is always valid.
+  const firstVideo = (videos ?? [])[0];
+  let trailer: object | null = null;
+  if (firstVideo && ogImage) {
+    const embedUrl = firstVideo.provider === 'youtube'
+      ? `https://www.youtube.com/embed/${firstVideo.id}`
+      : `https://player.vimeo.com/video/${firstVideo.id}`;
+    trailer = {
+      "@type": "VideoObject",
+      "name": `${projectTitle} — Trailer`,
+      "description": description,
+      "thumbnailUrl": ogImage,
+      "embedUrl": embedUrl,
+      ...(year ? { "uploadDate": year } : {})
+    };
+  }
+
   pageSchema = {
     "@context": "https://schema.org",
-    "@type": "Movie",
+    "@type": projectType,
     "@id": canonicalURL.toString(),
     "url": canonicalURL.toString(),
     "name": projectTitle,
@@ -109,11 +146,15 @@ if (pageType === 'home') {
     ...(director ? { "director": director.split(' & ').map((name) => ({ "@type": "Person", "name": name })) } : {}),
     ...(genre ? { "genre": genre } : {}),
     ...(year ? { "datePublished": year } : {}),
-    "cinematographer": {
-      "@type": "Person",
-      "name": "Victor Maes",
-      "url": SITE_URL
-    },
+    ...(awardList.length ? { "award": awardList } : {}),
+    ...(trailer ? { "trailer": trailer } : {}),
+    ...(isMovie ? {
+      "cinematographer": {
+        "@type": "Person",
+        "name": "Victor Maes",
+        "url": SITE_URL
+      }
+    } : {}),
     "creator": {
       "@id": `${SITE_URL}/#person`
     },
@@ -210,8 +251,6 @@ if (schema) {
 <!-- Performance: Preconnect -->
 <link rel="preconnect" href="https://www.googletagmanager.com" />
 <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-<link rel="preconnect" href="https://unpkg.com" crossorigin />
-<link rel="dns-prefetch" href="https://unpkg.com" />
 
 <!-- Self-hosted fonts (Astro Fonts API). Served from our own domain, so no
      render-blocking round-trips to Google. Preload the regular weight of the
@@ -230,7 +269,7 @@ if (schema) {
 <meta name="description" content={description} />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
+<meta property="og:type" content={ogType} />
 <meta property="og:locale" content="en_US" />
 <meta property="og:site_name" content={SITE_TITLE} />
 <meta property="og:url" content={canonicalURL} />
@@ -254,10 +293,6 @@ if (schema) {
     <meta name="twitter:image:alt" content={imageAltText} />
   </>
 )}
-
-<!-- Animate On Scroll (non-blocking) -->
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" media="print" onload="this.media='all'" />
-<noscript><link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /></noscript>
 
 <!-- JSON-LD Schema -->
 <script type="application/ld+json" set:html={JSON.stringify(schemas)} />
