@@ -6,7 +6,7 @@ import { getCollection } from "astro:content";
 import { sortByOrder } from "../lib/projects";
 
 const all = await getCollection("projects");
-const films = sortByOrder(all.map((e) => ({ slug: e.id, ...e.data.card, director: e.data.director, title: e.data.title })));
+const films = sortByOrder(all.map((e) => ({ slug: e.id, ...e.data.card, director: e.data.director, title: e.data.title, year: e.data.year, role: e.data.role })));
 ---
 
 <BaseLayout title="Victor Maes — Cinematographer & Director | Brussels" description="Award-winning cinematographer and director Victor Maes. Portfolio of fiction films, documentaries, VR experiences and experimental work. Based in Brussels, available worldwide." image="/video/seethrough.jpg">
@@ -25,4 +25,23 @@ const films = sortByOrder(all.map((e) => ({ slug: e.id, ...e.data.card, director
       loading={i === 0 ? "eager" : "lazy"}
     />
   ))}
+
+  <section class="bg-neutral py-24 px-6" data-aos="fade-up" data-aos-duration="600">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-sans text-sm tracking-[0.2em] uppercase text-base-100/60 text-center pb-10">Filmography</h2>
+      <ul class="divide-y divide-base-100/10">
+        {films.map((f) => (
+          <li>
+            <a href={`/projects/${f.slug}/`} class="group flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-4 py-4 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-warning">
+              <span class="text-xl text-warning group-hover:text-secondary transition-colors duration-300">{f.title}</span>
+              <span class="text-sm italic text-base-100/60">by {f.director}</span>
+              <span class="sm:ml-auto font-sans text-xs tracking-widest uppercase text-base-100/40 group-hover:text-base-100/70 transition-colors duration-300">
+                {[f.badge1, f.year].filter(Boolean).join(' · ')}
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
 </BaseLayout>
