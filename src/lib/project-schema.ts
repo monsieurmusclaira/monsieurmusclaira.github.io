@@ -28,7 +28,15 @@ export const projectSchema = z.object({
     desc: z.string().optional(),
   }),
   featuredAward: z
-    .object({ award: z.string(), festival: z.string(), year: z.string().optional() })
+    .object({
+      award: z.string(),
+      festival: z.string(),
+      year: z.string().optional(),
+      // Optional photo shown under the award banner (e.g. the ceremony).
+      image: z.string().optional(),
+      imageAlt: z.string().optional(),
+      caption: z.string().optional(),
+    })
     .optional(),
   videos: z
     .array(

@@ -1,5 +1,7 @@
 ---
-const { award, festival, year } = Astro.props;
+import { Image } from 'astro:assets';
+import { resolveImage } from '../utils/images';
+const { award, festival, year, image, imageAlt, caption } = Astro.props;
 ---
 <section class="hero py-16 sm:py-20" data-aos="fade-up" data-aos-duration="600">
   <div class="hero-content flex-col text-center px-6 max-w-3xl mx-auto">
@@ -12,5 +14,23 @@ const { award, festival, year } = Astro.props;
     <p class="font-sans text-sm tracking-[0.15em] uppercase text-base-100/50 mt-4">
       {festival}{year ? ` · ${year}` : ''}
     </p>
+    {image && (
+      <figure class="mt-10 w-full" data-aos="fade-up" data-aos-duration="600">
+        <Image
+          src={resolveImage(image)}
+          alt={imageAlt || `${award}, ${festival}`}
+          class="w-full h-auto block"
+          width={1200}
+          widths={[768, 1200]}
+          sizes="(min-width: 768px) 704px, 100vw"
+          loading="lazy"
+        />
+        {caption && (
+          <figcaption class="mt-4 font-sans text-xs tracking-widest uppercase text-base-100/50">
+            {caption}
+          </figcaption>
+        )}
+      </figure>
+    )}
   </div>
 </section>
