@@ -180,3 +180,9 @@ a {
     transition: none !important;
   }
 }
+
+/* Scroll lock while a lightbox dialog is open. Done in CSS so every close
+   path (backdrop click, close button, Escape) releases it automatically. */
+body:has(dialog.lightbox[open]) {
+  overflow: hidden;
+}

@@ -169,3 +169,18 @@ dialog.lightbox {
 }
 dialog.lightbox::backdrop { background: rgba(0, 0, 0, 0.92); cursor: zoom-out; }
 dialog.lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; display: block; }
+dialog.lightbox .lightbox-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 1;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
