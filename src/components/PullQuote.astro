@@ -1,0 +1,13 @@
+---
+const { quote, attribution } = Astro.props;
+---
+<figure class="w-full max-w-3xl mx-auto px-6 py-12 text-center" data-aos="fade-up" data-aos-duration="600">
+  <blockquote class="font-serif italic text-xl sm:text-2xl leading-relaxed text-base-100/90">
+    &ldquo;{quote}&rdquo;
+  </blockquote>
+  {attribution && (
+    <figcaption class="mt-6 font-sans text-xs tracking-widest uppercase text-base-100/50">
+      {attribution}
+    </figcaption>
+  )}
+</figure>
