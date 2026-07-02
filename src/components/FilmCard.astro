@@ -27,10 +27,11 @@ const slug = url?.split('/').filter(Boolean).pop();
   <div class="absolute w-screen p-7 sm:p-10 pt-24 sm:pt-32 bottom-0 z-20 bg-linear-to-t from-neutral/85 via-neutral/40 to-transparent transition-all duration-500 group-hover:from-neutral/95">
     <h2 class="text-4xl text-warning font-bold capitalize">{title}</h2>
     <p class="text-base text-base-100 italic mt-1">{desc}</p>
-    <div class="mt-3 flex flex-row gap-2">
-      {badge1 && <span class="badge border-base-100/40 bg-neutral/60 backdrop-blur-xs text-xs tracking-wider text-base-100">{badge1}</span>}
-      {badge2 && <span class="badge border-secondary/50 bg-neutral/60 backdrop-blur-xs text-xs tracking-wider text-secondary">{badge2}</span>}
-    </div>
+    {(badge1 || badge2) && (
+      <p class="mt-3 font-sans text-xs tracking-widest uppercase text-base-100/70">
+        {[badge1, badge2].filter(Boolean).join(' · ')}
+      </p>
+    )}
     <p class="mt-4 text-xs tracking-widest uppercase text-base-100/60 group-hover:text-secondary transition-colors duration-300 font-sans">
       View project <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
     </p>

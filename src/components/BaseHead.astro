@@ -4,7 +4,7 @@
 import '../styles/global.css';
 import { getImage, Font } from 'astro:assets';
 import { GoogleAnalytics } from 'astro-google-analytics';
-import { resolveImage } from '../utils/images';
+import { resolveImage, listBtsImages } from '../utils/images';
 import { SITE_TITLE, SITE_URL } from '../config';
 
 export interface Props {
@@ -182,6 +182,18 @@ if (pageType === 'home') {
     }
   };
 } else if (pageType === 'bts') {
+  // Representative subset of the polaroid photos (up to 5 per film) as
+  // ImageObject entries. width 1200 matches the lightbox variant, so no
+  // extra image files are generated for this.
+  const btsMedia: object[] = [];
+  for (const img of listBtsImages(5)) {
+    try {
+      const opt = await getImage({ src: img, width: 1200 });
+      btsMedia.push({ "@type": "ImageObject", "contentUrl": new URL(opt.src, SITE_URL).toString() });
+    } catch {
+      // skip images the pipeline cannot process
+    }
+  }
   pageSchema = {
     "@context": "https://schema.org",
     "@type": "ImageGallery",
@@ -190,6 +202,7 @@ if (pageType === 'home') {
     "name": title,
     "description": description,
     ...(ogImage ? { "image": ogImage } : {}),
+    ...(btsMedia.length ? { "associatedMedia": btsMedia } : {}),
     "about": {
       "@id": `${SITE_URL}/#person`
     },
