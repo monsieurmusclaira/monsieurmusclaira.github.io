@@ -2,15 +2,18 @@
 import { Image } from 'astro:assets';
 import { resolveImage } from '../utils/images';
 const { image, alt, caption } = Astro.props;
-const id = `bts-${Math.random().toString(36).slice(2, 8)}`;
+// Stable id derived from the image filename, so builds are deterministic.
+const slug = image.split('/').pop().replace(/\.[^.]+$/, '').toLowerCase().replace(/[^a-z0-9]+/g, '-');
+const id = `bts-${slug}`;
 const resolved = resolveImage(image);
 ---
 <figure class="polaroid">
     <button class="polaroid-btn" onclick={`document.getElementById('${id}').showModal()`} aria-label={`View full size: ${alt}`}>
-        <Image src={resolved} alt={alt} loading="lazy" widths={[480, 960]} sizes="(min-width:1280px) 33vw, (min-width:1024px) 50vw, 100vw" />
+        <Image src={resolved} alt={alt} loading="lazy" width={960} widths={[480, 960]} sizes="(min-width:1280px) 33vw, (min-width:1024px) 50vw, 100vw" />
     </button>
     {caption && <figcaption>{caption}</figcaption>}
     <dialog id={id} class="lightbox" onclick="this.close()">
-        <Image src={resolved} alt={alt} widths={[1200]} sizes="90vw" loading="lazy" />
+        <button class="lightbox-close" aria-label="Close">&#215;</button>
+        <Image src={resolved} alt={alt} width={1200} widths={[1200]} sizes="90vw" loading="lazy" />
     </dialog>
 </figure>

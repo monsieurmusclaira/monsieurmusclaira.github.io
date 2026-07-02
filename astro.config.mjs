@@ -37,7 +37,8 @@ export default defineConfig({
     sitemap({
       changefreq: 'monthly',
       priority: 0.7,
-      lastmod: new Date(),
+      // No lastmod: stamping every URL with the build time tells crawlers
+      // nothing and drowns out the signal.
       filter: (page) => !page.includes('/404'),
     }),
     mdx()

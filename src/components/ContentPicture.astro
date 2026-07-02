@@ -2,7 +2,9 @@
 import { Image } from 'astro:assets';
 import { resolveImage } from '../utils/images';
 const { image, alt, contained = false } = Astro.props;
-const id = `lb-${Math.random().toString(36).slice(2, 8)}`;
+// Stable id derived from the image filename, so builds are deterministic.
+const slug = image.split('/').pop().replace(/\.[^.]+$/, '').toLowerCase().replace(/[^a-z0-9]+/g, '-');
+const id = `lb-${slug}`;
 const resolved = resolveImage(image);
 const buttonClass = contained
   ? 'w-full max-w-5xl mx-auto px-4 sm:px-6 bg-transparent border-0 p-0 cursor-zoom-in'
@@ -19,13 +21,15 @@ const buttonClass = contained
       loading="lazy"
       alt={alt}
       class="w-full h-auto block"
+      width={2560}
       widths={[768, 1440, 2560]}
       sizes={contained ? '(min-width: 1024px) 1024px, 100vw' : '100vw'}
     />
   </button>
 
   <dialog id={id} class="lightbox" onclick="this.close()">
-    <Image src={resolved} alt={alt} widths={[1440, 2560]} sizes="90vw" loading="lazy" />
+    <button class="lightbox-close" aria-label="Close">&#215;</button>
+    <Image src={resolved} alt={alt} width={2560} widths={[1440, 2560]} sizes="90vw" loading="lazy" />
   </dialog>
 </section>
 
@@ -49,5 +53,20 @@ const buttonClass = contained
     max-height: 90vh;
     object-fit: contain;
     display: block;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 1;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 9999px;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
   }
 </style>
