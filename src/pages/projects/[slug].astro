@@ -2,7 +2,7 @@
 import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ProjectPage from "../../components/ProjectPage.astro";
-import { sortByOrder, nextSlug } from "../../lib/projects";
+import { sortByOrder, nextSlug, prevSlug } from "../../lib/projects";
 
 export async function getStaticPaths() {
   const all = await getCollection("projects");
@@ -10,6 +10,8 @@ export async function getStaticPaths() {
   return all.map((entry) => {
     const ns = nextSlug(entry.id, ordered);
     const nextEntry = all.find((e) => e.id === ns);
+    const ps = prevSlug(entry.id, ordered);
+    const prevEntry = all.find((e) => e.id === ps);
     return {
       params: { slug: entry.id },
       props: {
@@ -20,12 +22,16 @@ export async function getStaticPaths() {
           image: nextEntry.data.card.image,
           position: nextEntry.data.card.position,
         },
+        prev: {
+          title: prevEntry.data.title,
+          url: `/projects/${prevEntry.id}/`,
+        },
       },
     };
   });
 }
 
-const { entry, next } = Astro.props;
+const { entry, next, prev } = Astro.props;
 const { Content } = await render(entry);
 const { seoTitle, description, hero } = entry.data;
 ---
@@ -47,7 +53,7 @@ const { seoTitle, description, hero } = entry.data;
     videos: entry.data.videos,
   }}
 >
-  <ProjectPage data={entry.data} next={next}>
+  <ProjectPage data={entry.data} next={next} prev={prev}>
     <Content />
   </ProjectPage>
 </BaseLayout>

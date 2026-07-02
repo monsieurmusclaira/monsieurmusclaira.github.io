@@ -21,3 +21,13 @@ export function nextSlug(
   const next = ordered[(index + 1) % ordered.length];
   return next.slug;
 }
+
+export function prevSlug(
+  slug: string,
+  ordered: { slug: string; order: number }[],
+): string {
+  const index = ordered.findIndex((p) => p.slug === slug);
+  if (index === -1) throw new Error(`Unknown project slug: ${slug}`);
+  const prev = ordered[(index - 1 + ordered.length) % ordered.length];
+  return prev.slug;
+}

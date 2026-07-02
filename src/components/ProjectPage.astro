@@ -13,7 +13,7 @@ import SpecItem from "./SpecItem.astro";
 import NextProject from "./NextProject.astro";
 import { resolveImage } from "../utils/images";
 
-const { data, next } = Astro.props;
+const { data, next, prev } = Astro.props;
 const videos = data.videos ?? [];
 const gallery = data.gallery ?? [];
 const credits = data.credits ?? [];
@@ -147,4 +147,11 @@ const creditsRight = credits.slice(creditsMid);
   </section>
 )}
 
+{prev && (
+  <a href={prev.url} class="block bg-neutral py-6 text-center group focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-warning" data-aos="fade-up" data-aos-duration="600">
+    <span class="font-sans text-xs tracking-widest uppercase text-base-100/50 group-hover:text-secondary transition-colors duration-300">
+      <span class="inline-block transition-transform duration-300 group-hover:-translate-x-1">&larr;</span> Previous project &middot; <span class="text-base-100/80">{prev.title}</span>
+    </span>
+  </a>
+)}
 <NextProject title={next.title} url={next.url} image={next.image} imageposition={next.position} />
