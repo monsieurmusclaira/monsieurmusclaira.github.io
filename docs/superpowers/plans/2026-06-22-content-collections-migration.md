@@ -624,12 +624,12 @@ role: "Cinematographer"
 year: "2023"
 synopsis: "During a streetcar ride by the sea, Robin looks back on her turbulent relationship with Ada. All that remains are the unspoken words and the shards she tries to put together. Why aren’t they sharp enough?"
 hero:
-  image: "/img/burn/stills/BURN_1.232.1.png"
+  image: "/img/burn/stills/BURN_1.232.1.jpg"
   alt: "Burn cinematography still"
   position: "50% 50%"
   credit: "directed by Cato Catteeuw"
 card:
-  image: "/img/burn/stills/BURN_1.232.1.png"
+  image: "/img/burn/stills/BURN_1.232.1.jpg"
   position: "50% 50%"
   badge1: "FICTION"
   badge2: "IN DISTRIBUTION"
@@ -649,7 +649,7 @@ specs:
   - { label: "Lenses", value: "Canon Sumire" }
   - { label: "Aspect Ratio", value: "1.77" }
 gallery:
-  - { image: "/img/burn/stills/20231102_BURN_1.1.1.png", alt: "Burn — film still 1" }
+  - { image: "/img/burn/stills/20231102_BURN_1.1.1.jpg", alt: "Burn — film still 1" }
   # ... continue for all 31 ContentPicture entries in document order ...
 credits:
   - { function: "Director", name: "Cato Catteeuw" }
