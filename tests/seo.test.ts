@@ -77,11 +77,30 @@ describe("built-site SEO invariants", () => {
     }
   });
 
+  it("video embedUrls are well-formed", () => {
+    for (const s of projectSlugs) {
+      const page = html(`dist/projects/${s}/index.html`);
+      for (const m of page.matchAll(/"embedUrl":"([^"]*)"/g)) {
+        expect(m[1]).toMatch(
+          /^https:\/\/(www\.youtube\.com\/embed\/[A-Za-z0-9_-]+|player\.vimeo\.com\/video\/\d+)$/,
+        );
+      }
+    }
+  });
+
+  it("preloads exactly the two body fonts", () => {
+    // Montserrat and EB Garamond ship as single variable files, so filtering the
+    // preload on style alone yields one link each. Caveat is decorative and is
+    // deliberately not preloaded.
+    const links = html(home).match(/<link rel="preload"[^>]*as="font"[^>]*>/g) ?? [];
+    expect(links.length).toBe(2);
+  });
+
   it("hero video defers its download (preload none, sources gated behind data-src)", () => {
     const page = html(home);
     expect(page).toContain('preload="none"');
-    expect(page).toContain('data-src="/video/SeeThrough_VP9_VBR.webm"');
-    expect(page).toContain('poster="/video/seethrough.jpg"');
+    expect(page).toContain('data-src="/video/seethrough-loop.webm"');
+    expect(page).toContain('poster="/video/seethrough.webp"');
     // The heavy sources must NOT be eagerly wired via a plain src on the source tags.
     expect(page).not.toMatch(/<source[^>]*\ssrc="\/video\//);
   });

@@ -4,27 +4,27 @@ import { resolveImage } from '../utils/images';
 const { synopsis, title, heroImage, imageposition, alt, credit } = Astro.props;
 const slug = Astro.url.pathname.split('/').filter(Boolean).pop();
 ---
-<div class="h-screen w-screen relative">
-    <div class="z-0 h-screen w-screen absolute top-0" transition:name={`hero-${slug}`}>
+<div class="min-h-dvh w-full relative flex flex-col justify-end">
+    <div class="z-0 absolute inset-0" transition:name={`hero-${slug}`}>
         <Image
         src={resolveImage(heroImage)}
         alt={alt}
         class="w-full h-full object-cover"
         style={`object-position: ${imageposition || '50% 50%'}`}
-        widths={[768, 1440, 2560]}
+        widths={[768, 1080, 1440, 2560]}
         sizes="100vw"
         loading="eager"
         fetchpriority="high"
         />
     </div>
 
-    <svg class="grain absolute top-0 z-2 w-full h-full" aria-hidden="true"></svg>
+    <svg class="grain absolute inset-0 z-2 w-full h-full" aria-hidden="true"></svg>
 
-    <div class="z-3 w-full bottom-0 pt-32 pb-5 absolute bg-linear-to-t from-neutral via-neutral/80 to-transparent text-white overflow-hidden ">
-        <div class="prose text-center pt-20 px-10 mx-auto">
+    <div class="relative z-3 w-full pt-32 pb-5 bg-linear-to-t from-neutral via-neutral/80 to-transparent text-white">
+        <div class="prose text-center pt-10 sm:pt-20 px-10 mx-auto">
             <h1 class="drop-in text-secondary drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]" transition:animate="slide">{title}</h1>
             {credit && <p class="drop-in-2 font-serif italic text-lg sm:text-xl text-base-100/85 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] -mt-2 mb-2">{credit}</p>}
-            <p class="drop-in-2 text-base-100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">{synopsis}</p>
+            {synopsis && <p class="drop-in-2 text-base-100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">{synopsis}</p>}
             <div class="drop-in-3 flex flex-col justify-center items-center gap-2 py-3">
                 <span class="font-sans text-[10px] tracking-[0.25em] uppercase text-warning drop-shadow-[0_2px_6px_rgba(0,0,0,0.95)]">Scroll</span>
                 <svg width="28" height="28" viewBox="0 0 15 15" class="animate-bounce text-warning drop-shadow-[0_2px_6px_rgba(0,0,0,0.95)]" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">

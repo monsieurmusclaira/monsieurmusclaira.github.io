@@ -1,23 +1,30 @@
 ---
 const pathname = Astro.url.pathname;
-const isActive = (href: string) =>
-  href === '/' ? pathname === '/' : pathname.startsWith(href);
+// Exact match on the normalized path. `startsWith` would also light up a
+// future sibling route like /about-me under the /about link.
+const norm = (p: string) => p.split('#')[0].replace(/\/+$/, '') || '/';
+const isActive = (href: string) => norm(pathname) === norm(href);
 const linkClass = (href: string) =>
   `font-sans text-xs tracking-widest uppercase transition-colors duration-200 ${
     isActive(href) ? 'text-secondary' : 'text-base-100 hover:text-secondary'
   }`;
 const current = (href: string) => (isActive(href) ? 'page' : undefined);
+// daisyUI's .menu focus indicator computes to a 10% near-black tint on a
+// near-black surface, which is invisible. Give the mobile links an explicit
+// ring, inset so it stays inside the dropdown's rounded box.
+const menuFocus =
+  'focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-secondary';
 ---
 
-<div class="navbar fixed top-0 z-50 bg-black/60 backdrop-blur-xs transition-transform duration-300" id="site-nav">
+<header class="fixed top-0 z-50 w-full transition-transform duration-300" id="site-nav">
+<nav class="navbar bg-black/60 backdrop-blur-xs" aria-label="Main">
   <div class="navbar-start">
     <!-- Mobile: hamburger (real disclosure — aria-expanded/controls toggled by script) -->
-    <div class="dropdown lg:hidden">
+    <div class="dropdown lg:hidden" id="menu-dropdown">
       <button
         id="menu-toggle"
         class="btn btn-ghost btn-circle"
         aria-label="Open menu"
-        aria-haspopup="true"
         aria-expanded="false"
         aria-controls="mobile-menu"
       >
@@ -25,16 +32,16 @@ const current = (href: string) => (isActive(href) ? 'page' : undefined);
       </button>
       <ul id="mobile-menu" class="menu menu-sm dropdown-content mt-3 p-2 shadow-sm bg-black/80 backdrop-blur-xs rounded-box w-52 text-base-100 hidden">
         <li>
-          <a href="/" aria-current={current('/')} class={isActive('/') ? 'text-secondary font-semibold' : ''}>Work</a>
+          <a href="/" aria-current={current('/')} class={`${isActive('/') ? 'text-secondary font-semibold' : ''} ${menuFocus}`}>Work</a>
         </li>
         <li>
-          <a href="/about/" aria-current={current('/about')} class={isActive('/about') ? 'text-secondary font-semibold' : ''}>About</a>
+          <a href="/about/" aria-current={current('/about')} class={`${isActive('/about') ? 'text-secondary font-semibold' : ''} ${menuFocus}`}>About</a>
         </li>
         <li>
-          <a href="/behind-the-scenes/" aria-current={current('/behind-the-scenes')} class={isActive('/behind-the-scenes') ? 'text-secondary font-semibold' : ''}>Behind the Scenes</a>
+          <a href="/behind-the-scenes/" aria-current={current('/behind-the-scenes')} class={`${isActive('/behind-the-scenes') ? 'text-secondary font-semibold' : ''} ${menuFocus}`}>Behind the Scenes</a>
         </li>
         <li>
-          <a href="/about/#contact">Contact</a>
+          <a href="/about/#contact" class={menuFocus}>Contact</a>
         </li>
       </ul>
     </div>
@@ -55,19 +62,20 @@ const current = (href: string) => (isActive(href) ? 'page' : undefined);
 
   <div class="navbar-end">
     <div class="flex items-center gap-4 pr-3">
-      <a href="https://www.instagram.com/monsieur_musclaira/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="inline-flex items-center h-5 text-base-100/80 hover:text-secondary transition-colors duration-200">
+      <a href="https://www.instagram.com/monsieur_musclaira/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)" class="inline-flex items-center h-5 text-base-100/80 hover:text-secondary transition-colors duration-200">
         <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
           <rect x="3" y="3" width="18" height="18" rx="5" />
           <circle cx="12" cy="12" r="4" />
           <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
         </svg>
       </a>
-      <a href="https://www.imdb.com/name/nm4866929" target="_blank" rel="noopener noreferrer" aria-label="IMDb" class="inline-flex items-center h-5 text-base-100/80 hover:text-secondary transition-colors duration-200">
+      <a href="https://www.imdb.com/name/nm4866929" target="_blank" rel="noopener noreferrer" aria-label="IMDb (opens in a new tab)" class="inline-flex items-center h-5 text-base-100/80 hover:text-secondary transition-colors duration-200">
         <span class="inline-flex items-center h-5 text-[11px] font-bold tracking-tight border border-current rounded-sm px-1.5 leading-none">IMDb</span>
       </a>
     </div>
   </div>
-</div>
+</nav>
+</header>
 
 <script is:inline>
   (function () {
@@ -94,6 +102,12 @@ const current = (href: string) => (isActive(href) ? 'page' : undefined);
     function attachScroll() {
       nav = document.getElementById('site-nav');
       if (!nav) return;
+      // Reduced motion: leave the bar pinned, never translate it out of view.
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        nav.style.transform = '';
+        window.removeEventListener('scroll', onScroll);
+        return;
+      }
       lastY = window.scrollY;
       window.removeEventListener('scroll', onScroll);
       window.addEventListener('scroll', onScroll, { passive: true });
@@ -102,13 +116,21 @@ const current = (href: string) => (isActive(href) ? 'page' : undefined);
     // Mobile menu disclosure. Document-level listeners are defined once at module
     // scope and re-bound with remove-before-add so client-side navigation never
     // stacks duplicates.
-    function closeMenu() {
+    // daisyUI hides .dropdown-content unless the .dropdown container has
+    // .dropdown-open or matches :focus-within. Safari does not focus a
+    // <button> on click, so :focus-within never matches there. Toggle
+    // .dropdown-open explicitly alongside .hidden.
+    function setMenu(open) {
       var btn = document.getElementById('menu-toggle');
       var menu = document.getElementById('mobile-menu');
-      if (!btn || !menu) return;
-      menu.classList.add('hidden');
-      btn.setAttribute('aria-expanded', 'false');
+      var wrap = document.getElementById('menu-dropdown');
+      if (!btn || !menu || !wrap) return;
+      menu.classList.toggle('hidden', !open);
+      wrap.classList.toggle('dropdown-open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     }
+
+    function closeMenu() { setMenu(false); }
 
     function onDocClick(e) {
       var btn = document.getElementById('menu-toggle');
@@ -124,16 +146,8 @@ const current = (href: string) => (isActive(href) ? 'page' : undefined);
     function onToggleClick(e) {
       e.stopPropagation();
       var btn = document.getElementById('menu-toggle');
-      var menu = document.getElementById('mobile-menu');
-      if (!btn || !menu) return;
-      var open = btn.getAttribute('aria-expanded') === 'true';
-      if (open) {
-        menu.classList.add('hidden');
-        btn.setAttribute('aria-expanded', 'false');
-      } else {
-        menu.classList.remove('hidden');
-        btn.setAttribute('aria-expanded', 'true');
-      }
+      if (!btn) return;
+      setMenu(btn.getAttribute('aria-expanded') !== 'true');
     }
 
     function attachMenu() {

@@ -5,17 +5,17 @@ const { title, img, alt, imageposition, desc, url, badge1, badge2, target = '_se
 const slug = url?.split('/').filter(Boolean).pop();
 ---
 <a href={url} target={target}
-  class="block h-screen w-screen relative group focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-[-6px] focus-visible:outline-warning"
+  class="block h-dvh w-full relative group focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-[-6px] focus-visible:outline-secondary"
   data-aos="fade-up" data-aos-duration="800"
   style="pointer-events: auto;">
 
-  <div class="z-0 h-screen w-screen absolute top-0 overflow-hidden" transition:name={`hero-${slug}`}>
+  <div class="z-0 h-dvh w-full absolute top-0 overflow-hidden" transition:name={`hero-${slug}`}>
     <Image
       src={resolveImage(img)}
       alt={alt || `${title}, cinematography still by Victor Maes`}
       class="w-full h-full object-cover transition-transform duration-1400 ease-out group-hover:scale-105"
       style={`object-position: ${imageposition || '50% 50%'}`}
-      widths={[768, 1440, 2560]}
+      widths={[768, 1080, 1440, 2560]}
       sizes="100vw"
       loading={loading}
       fetchpriority={loading === 'eager' ? 'high' : 'auto'}
@@ -24,7 +24,7 @@ const slug = url?.split('/').filter(Boolean).pop();
 
   <svg class="grain absolute top-0 z-10 w-full h-full" aria-hidden="true"></svg>
 
-  <div class="absolute w-screen p-7 sm:p-10 pt-24 sm:pt-32 bottom-0 z-20 bg-linear-to-t from-neutral/85 via-neutral/40 to-transparent transition-all duration-500 group-hover:from-neutral/95">
+  <div class="absolute w-full p-7 sm:p-10 pt-24 sm:pt-32 bottom-0 z-20 bg-linear-to-t from-neutral/85 via-neutral/40 to-transparent transition-all duration-500 group-hover:from-neutral/95">
     <h2 class="text-4xl text-warning font-bold capitalize">{title}</h2>
     <p class="text-base text-base-100 italic mt-1">{desc}</p>
     {(badge1 || badge2) && (

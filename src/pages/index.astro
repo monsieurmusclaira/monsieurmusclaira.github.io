@@ -12,7 +12,7 @@ const films = sortByOrder(all.map((e) => ({ slug: e.id, ...e.data.card, director
 <BaseLayout title="Victor Maes — Cinematographer & Director | Brussels" description="Award-winning cinematographer and director Victor Maes. Portfolio of fiction films, documentaries, VR experiences and experimental work. Based in Brussels, available worldwide." image="/video/seethrough.jpg">
   <h1 class="sr-only">Victor Maes — Cinematographer</h1>
   <VideoCard />
-  {films.map((f, i) => (
+  {films.map((f) => (
     <FilmCard
       title={f.title}
       img={f.image}
@@ -22,7 +22,6 @@ const films = sortByOrder(all.map((e) => ({ slug: e.id, ...e.data.card, director
       badge1={f.badge1}
       badge2={f.badge2}
       target="_self"
-      loading={i === 0 ? "eager" : "lazy"}
     />
   ))}
 
@@ -32,10 +31,10 @@ const films = sortByOrder(all.map((e) => ({ slug: e.id, ...e.data.card, director
       <ul class="divide-y divide-base-100/10">
         {films.map((f) => (
           <li>
-            <a href={`/projects/${f.slug}/`} class="group flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-4 py-4 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-warning">
+            <a href={`/projects/${f.slug}/`} class="group flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-4 py-4 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-secondary">
               <span class="text-xl text-warning group-hover:text-secondary transition-colors duration-300">{f.title}</span>
               <span class="text-sm italic text-base-100/60">by {f.director}</span>
-              <span class="sm:ml-auto font-sans text-xs tracking-widest uppercase text-base-100/40 group-hover:text-base-100/70 transition-colors duration-300">
+              <span class="sm:ml-auto font-sans text-xs tracking-widest uppercase text-base-100/60 group-hover:text-base-100/70 transition-colors duration-300">
                 {[f.badge1, f.year].filter(Boolean).join(' · ')}
               </span>
             </a>

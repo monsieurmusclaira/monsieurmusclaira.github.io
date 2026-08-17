@@ -8,7 +8,7 @@ import { join, extname } from 'node:path';
 
 const DIST = new URL('../dist/', import.meta.url).pathname;
 const ASTRO_DIR = join(DIST, '_astro');
-const PRUNABLE = new Set(['.png', '.jpg', '.jpeg', '.webp', '.PNG', '.JPG', '.JPEG', '.WEBP']);
+const PRUNABLE = new Set(['.png', '.jpg', '.jpeg', '.webp', '.svg', '.PNG', '.JPG', '.JPEG', '.WEBP', '.SVG']);
 
 async function* walk(dir) {
   for (const entry of await readdir(dir, { withFileTypes: true })) {
@@ -18,12 +18,28 @@ async function* walk(dir) {
   }
 }
 
-// Gather every reference-bearing text file in dist
+// Gather every reference-bearing text file in dist. HTML/CSS/JSON carry
+// percent-encoded URLs (a source file named "cover (1).jpg" ships as
+// "cover%20(1)…"), so decode each file before matching raw disk filenames.
+// decodeURIComponent throws on lone `%`, so fall back to the raw text.
+function decode(text) {
+  return text.replace(/(?:%[0-9A-Fa-f]{2})+/g, (seq) => {
+    try {
+      return decodeURIComponent(seq);
+    } catch {
+      return seq;
+    }
+  });
+}
+
 let haystack = '';
 for await (const path of walk(DIST)) {
   const ext = extname(path).toLowerCase();
   if (['.html', '.css', '.js', '.mjs', '.json', '.xml', '.txt'].includes(ext)) {
-    haystack += await readFile(path, 'utf-8');
+    const text = await readFile(path, 'utf-8');
+    haystack += text;
+    const decoded = decode(text);
+    if (decoded !== text) haystack += decoded;
   }
 }
 

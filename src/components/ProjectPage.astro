@@ -28,9 +28,30 @@ const introItems = [
   { label: "Role", value: data.role },
   { label: "Director", value: data.director },
 ].filter(Boolean);
-const creditsMid = Math.ceil(credits.length / 2);
-const creditsLeft = credits.slice(0, creditsMid);
-const creditsRight = credits.slice(creditsMid);
+// Credits are a flat list in which a non-empty `function` opens a department
+// and the entries after it (empty `function`) belong to it. CreditsItem only
+// renders a label for the opener, so cutting the flat list at its midpoint can
+// land inside a group and orphan names under no heading in column two.
+// Group first, then split on the group boundary closest to an even count.
+const creditGroups = [];
+for (const c of credits) {
+  if (c.function && c.function.trim()) creditGroups.push([c]);
+  else if (creditGroups.length) creditGroups[creditGroups.length - 1].push(c);
+  else creditGroups.push([c]);
+}
+let splitAt = creditGroups.length;
+let bestCost = Infinity;
+let running = 0;
+for (let i = 0; i < creditGroups.length - 1; i++) {
+  running += creditGroups[i].length;
+  const cost = Math.abs(running - (credits.length - running));
+  if (cost < bestCost) {
+    bestCost = cost;
+    splitAt = i + 1;
+  }
+}
+const creditsLeft = creditGroups.slice(0, splitAt).flat();
+const creditsRight = creditGroups.slice(splitAt).flat();
 ---
 
 <ProjectHero
@@ -120,9 +141,19 @@ const creditsRight = credits.slice(creditsMid);
     <div class="hero-content flex-col w-full">
       <SectionLabel label="Selections" />
       <div class="flex flex-wrap place-content-around">
-        {laurels.map((l) => (
-          <img src={resolveImage(l.image).src} alt={l.alt} class="w-48" loading="lazy" />
-        ))}
+        {laurels.map((l) => {
+          const laurel = resolveImage(l.image);
+          return (
+            <img
+              src={laurel.src}
+              width={laurel.width}
+              height={laurel.height}
+              alt={l.alt}
+              class="w-48"
+              loading="lazy"
+            />
+          );
+        })}
       </div>
     </div>
   </section>
@@ -151,7 +182,7 @@ const creditsRight = credits.slice(creditsMid);
 )}
 
 {prev && (
-  <a href={prev.url} class="block bg-neutral py-6 text-center group focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-warning" data-aos="fade-up" data-aos-duration="600">
+  <a href={prev.url} class="block bg-neutral py-6 text-center group focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-secondary" data-aos="fade-up" data-aos-duration="600">
     <span class="font-sans text-xs tracking-widest uppercase text-base-100/50 group-hover:text-secondary transition-colors duration-300">
       <span class="inline-block transition-transform duration-300 group-hover:-translate-x-1">&larr;</span> Previous project &middot; <span class="text-base-100/80">{prev.title}</span>
     </span>

@@ -33,20 +33,29 @@ export async function getStaticPaths() {
 
 const { entry, next, prev } = Astro.props;
 const { Content } = await render(entry);
-const { seoTitle, description, hero } = entry.data;
+const { description, hero } = entry.data;
+
+// Visible pages only show `year` when set; for structured data and the search
+// title we fall back to the film's own recorded featured-award year.
+const resolvedYear = entry.data.year ?? entry.data.featuredAward?.year;
+
+// Search-result title kept under ~60 chars: "{Film} ({Year}) | Victor Maes, DP".
+// Films without a year drop the parenthetical. The seoTitle frontmatter is
+// retained as documentation but no longer read: a parity test pins its values.
+const roleSuffix = entry.data.role === 'Cinematographer' ? 'Victor Maes, DP' : `Victor Maes, ${entry.data.role}`;
+const yearPart = resolvedYear ? ` (${resolvedYear})` : '';
+const headTitle = `${entry.data.title}${yearPart} | ${roleSuffix}`;
 ---
 
 <BaseLayout
-  title={seoTitle}
+  title={headTitle}
   description={description}
   image={hero.image}
   imageAlt={hero.alt}
   frontmatter={{
     director: entry.data.director,
     genre: entry.data.genre,
-    // Visible pages only show `year` when set; for structured data we fall back to
-    // the film's own recorded featured-award year as a datePublished proxy.
-    year: entry.data.year ?? entry.data.featuredAward?.year,
+    year: resolvedYear,
     schemaType: entry.data.schemaType,
     awards: entry.data.awards,
     featuredAward: entry.data.featuredAward,

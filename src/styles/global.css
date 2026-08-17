@@ -134,24 +134,6 @@ to {
     opacity: 40%;
 }
 
-.reveal {
-  opacity: 0;
-  transition: all 0.8s ease;
-}
-.reveal.visible {
-  opacity: 1;
-}
-
-.stagger-item {
-  opacity: 0;
-  transform: translateY(20px);
-}
-.stagger-item.visible {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.6s ease;
-}
-
 /* Credits, awards, festivals, specs sections */
 #credits, #awards, #festivals, #specs, #markets, #funding {
   max-width: 540px;
@@ -170,6 +152,23 @@ a {
   color: #11131d;
 }
 
+/* Baseline keyboard focus ring. Lives in the base layer so the explicit
+   focus-visible:* utilities on the film cards (which use a negative
+   outline-offset to sit inside the full-bleed image) still win. */
+@layer base {
+  :focus-visible {
+    outline: 2px solid #F1D74E;
+    outline-offset: 2px;
+  }
+}
+
+/* No JavaScript: AOS never runs, so its opacity:0 gate must not apply. The .js
+   class is added to <html> by an inline script in the head. */
+html:not(.js) [data-aos] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 /* Reduced motion: AOS hides [data-aos] elements (opacity:0) and fades them in
    on scroll. If the user prefers reduced motion the fade is suppressed, which
    would leave content permanently invisible. Force everything visible. */
@@ -178,6 +177,38 @@ a {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+  }
+  .drop-in, .drop-in-2, .drop-in-3 { animation: none !important; }
+  .animate-bounce { animation: none !important; }
+
+  /* Card and image hover zooms (FilmCard, NextProject). Targeted by
+     attribute-substring so the components need no extra class. Tailwind v4
+     compiles these utilities to the standalone `scale` / `translate`
+     properties, not to `transform`, and the CSS minifier folds a sibling
+     `scale: none` back into a transform shorthand that no longer resets them.
+     Zero out the variables the utilities read instead. */
+  [class*="group-hover:scale-105"] {
+    --tw-scale-x: 1 !important;
+    --tw-scale-y: 1 !important;
+    --tw-scale-z: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* Arrow nudges on "View project" / "Previous project". */
+  [class*="group-hover:translate-x-1"],
+  [class*="group-hover:-translate-x-1"] {
+    --tw-translate-x: 0 !important;
+    --tw-translate-y: 0 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* Header show/hide on scroll. The JS also bails out, but this neutralises
+     the easing in case a transform was written before the guard ran. */
+  #site-nav {
+    transition: none !important;
+    transform: none !important;
   }
 }
 

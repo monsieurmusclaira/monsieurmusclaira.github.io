@@ -1,10 +1,11 @@
-<div class="hero relative min-h-screen min-w-screen bg-black">
-	<video class="relative z-0" loop muted playsinline preload="none" poster="/video/seethrough.jpg" id="hero-video">
+<div class="hero relative min-h-dvh w-full bg-black">
+	<video class="relative z-0 w-full max-w-[900px] aspect-[9/4] object-contain" width="1800" height="800"
+		loop muted playsinline preload="none" poster="/video/seethrough.webp" id="hero-video">
 		<!-- Sources are loaded by the script below only on larger screens with motion
 		     allowed, so phones and reduced-motion users get the poster instead of a
 		     multi-megabyte download. WebM first (Firefox/Chrome), MP4 fallback (Safari/iOS). -->
-		<source type="video/webm" data-src="/video/SeeThrough_VP9_VBR.webm" />
-		<source type="video/mp4" data-src="/video/Seethrough_x265_CQ32.mp4" />
+		<source type="video/webm" data-src="/video/seethrough-loop.webm" />
+		<source type="video/mp4" data-src="/video/seethrough-loop.mp4" />
 		Your browser does not support the video
 	</video>
 	<div class="drop-in-2 absolute bottom-32 left-0 right-0 text-center px-6 pointer-events-none z-10">
@@ -14,6 +15,15 @@
 	<svg class="animate-bounce drop-in-3 text-secondary absolute bottom-16 z-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]" width="28" height="28" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 		<path d="M7.5 2C7.77614 2 8 2.22386 8 2.5L8 11.2929L11.1464 8.14645C11.3417 7.95118 11.6583 7.95118 11.8536 8.14645C12.0488 8.34171 12.0488 8.65829 11.8536 8.85355L7.85355 12.8536C7.65829 13.0488 7.34171 13.0488 7.14645 12.8536L3.14645 8.85355C2.95118 8.65829 2.95118 8.34171 3.14645 8.14645C3.34171 7.95118 3.65829 7.95118 3.85355 8.14645L7 11.2929L7 2.5C7 2.22386 7.22386 2 7.5 2Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"/>
 	</svg>
+	<button id="hero-video-toggle" type="button" hidden aria-label="Pause background video"
+		class="absolute bottom-16 right-6 z-10 w-10 h-10 rounded-full bg-black/50 text-base-100 hover:bg-black/70 transition-colors focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-secondary focus-visible:outline-offset-2">
+		<svg id="hero-icon-pause" width="16" height="16" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+			<path d="M4.5 2h2.2v11H4.5zM8.3 2h2.2v11H8.3z" fill="currentColor" fill-rule="evenodd"/>
+		</svg>
+		<svg id="hero-icon-play" hidden width="16" height="16" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+			<path d="M4.5 2.2l8.1 5.3-8.1 5.3z" fill="currentColor" fill-rule="evenodd"/>
+		</svg>
+	</button>
 </div>
 
 <script is:inline>
@@ -34,6 +44,32 @@
       video.dataset.loaded = '1';
     }
     video.play().catch(function () {});
+
+    // Play/pause control. Hidden unless the video is actually playing, and only
+    // reachable on screens >= 768px with motion allowed (the early returns above
+    // leave it hidden on phones and for reduced-motion users).
+    const toggle = document.getElementById('hero-video-toggle');
+    if (toggle && !toggle.dataset.hooked) {
+      toggle.dataset.hooked = '1';
+      const pauseIcon = document.getElementById('hero-icon-pause');
+      const playIcon = document.getElementById('hero-icon-play');
+      function setPlaying(paused) {
+        toggle.hidden = false;
+        toggle.setAttribute('aria-label', paused ? 'Play background video' : 'Pause background video');
+        if (pauseIcon) pauseIcon.hidden = paused;
+        if (playIcon) playIcon.hidden = !paused;
+      }
+      video.addEventListener('playing', function () { setPlaying(false); });
+      toggle.addEventListener('click', function () {
+        if (video.paused) {
+          video.play().catch(function () {});
+          setPlaying(false);
+        } else {
+          video.pause();
+          setPlaying(true);
+        }
+      });
+    }
   }
   document.addEventListener('astro:page-load', setupHeroVideo);
 </script>

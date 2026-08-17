@@ -2,8 +2,10 @@
 import { Image } from 'astro:assets';
 import { resolveImage } from '../utils/images';
 const { image, alt, contained = false } = Astro.props;
-// Stable id derived from the image filename, so builds are deterministic.
-const slug = image.split('/').pop().replace(/\.[^.]+$/, '').toLowerCase().replace(/[^a-z0-9]+/g, '-');
+// Stable id derived from the full image path, so two images that share a
+// basename across folders (common on the behind-the-scenes board) cannot
+// collide, and builds stay deterministic.
+const slug = image.replace(/\.[^.]+$/, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 const id = `lb-${slug}`;
 const resolved = resolveImage(image);
 const buttonClass = contained
@@ -22,13 +24,13 @@ const buttonClass = contained
       alt={alt}
       class="w-full h-auto block"
       width={2560}
-      widths={[768, 1440, 2560]}
+      widths={[768, 1080, 1440, 2560]}
       sizes={contained ? '(min-width: 1024px) 1024px, 100vw' : '100vw'}
     />
   </button>
 
-  <dialog id={id} class="lightbox" onclick="this.close()">
-    <button class="lightbox-close" aria-label="Close">&#215;</button>
+  <dialog id={id} class="lightbox" onclick="if (event.target === this) this.close()">
+    <button type="button" class="lightbox-close" aria-label="Close" onclick="this.closest('dialog').close()">&#215;</button>
     <Image src={resolved} alt={alt} width={2560} widths={[1440, 2560]} sizes="90vw" loading="lazy" />
   </dialog>
 </section>

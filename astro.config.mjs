@@ -44,6 +44,17 @@ export default defineConfig({
     mdx()
   ],
   prefetch: true,
+  image: {
+    // Sharp's per-format encoder options. No component passes an explicit
+    // `quality`, so this is the effective quality for every generated webp.
+    // JPEG is left at default: it only feeds the social-card og:image.
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+      config: {
+        webp: { quality: 68 },
+      },
+    },
+  },
   vite: {
     plugins: [tailwindcss()]
   }

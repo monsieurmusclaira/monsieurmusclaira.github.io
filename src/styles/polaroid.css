@@ -77,7 +77,10 @@
   border-style: solid;
   border-color: transparent transparent rgba(0, 0, 0, 0.07) transparent;
 }
-/* per-photo rotation jitter (restarts each chapter) */
+/* per-photo rotation jitter (restarts each chapter).
+   Cross-reference: the reduced-motion block at the end of this file restates
+   each of these angles on :hover, because base rotation and hover lift share
+   the transform property. */
 .bts-scatter .polaroid:nth-child(6n + 1) { transform: rotate(-4deg); }
 .bts-scatter .polaroid:nth-child(6n + 2) { transform: rotate(2.5deg); }
 .bts-scatter .polaroid:nth-child(6n + 3) { transform: rotate(-1.5deg); }
@@ -129,9 +132,9 @@
   margin-top: 6px;
   color: #6b6038;
 }
-.scrapbook-note.note-blue .note-sub { color: #3a607d; }
-.scrapbook-note.note-pink .note-sub { color: #8a4a66; }
-.scrapbook-note.note-green .note-sub { color: #3d6b48; }
+.scrapbook-note.note-blue .note-sub { color: #2e4d66; }
+.scrapbook-note.note-pink .note-sub { color: #6e3550; }
+.scrapbook-note.note-green .note-sub { color: #2c5236; }
 /* tape on the note */
 .scrapbook-note::before {
   content: "";
@@ -183,4 +186,18 @@ dialog.lightbox .lightbox-close {
   font-size: 1.5rem;
   line-height: 1;
   cursor: pointer;
+}
+
+/* Reduced motion: keep the photo's resting rotation on hover and drop the
+   lift/scale entirely. Each nth-child restates its own angle because the base
+   rotation and the hover transform share one property. The deepened shadow is
+   retained: it is the hover affordance, and it is not motion. */
+@media (prefers-reduced-motion: reduce) {
+  .polaroid { transition: none !important; will-change: auto; }
+  .bts-scatter .polaroid:nth-child(6n + 1):hover { transform: rotate(-4deg) !important; }
+  .bts-scatter .polaroid:nth-child(6n + 2):hover { transform: rotate(2.5deg) !important; }
+  .bts-scatter .polaroid:nth-child(6n + 3):hover { transform: rotate(-1.5deg) !important; }
+  .bts-scatter .polaroid:nth-child(6n + 4):hover { transform: rotate(4deg) !important; }
+  .bts-scatter .polaroid:nth-child(6n + 5):hover { transform: rotate(-3deg) !important; }
+  .bts-scatter .polaroid:nth-child(6n + 6):hover { transform: rotate(1.5deg) !important; }
 }

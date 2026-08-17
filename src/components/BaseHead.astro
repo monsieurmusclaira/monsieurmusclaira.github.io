@@ -3,6 +3,8 @@
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
 import { getImage, Font } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import { sortByOrder } from '../lib/projects';
 import { GoogleAnalytics } from 'astro-google-analytics';
 import { resolveImage, listBtsImages } from '../utils/images';
 import { SITE_TITLE, SITE_URL } from '../config';
@@ -32,6 +34,13 @@ const imageAltText = imageAlt || title;
 
 const canonicalURL = canonical ? new URL(canonical, SITE_URL) : new URL(Astro.url.pathname, SITE_URL);
 
+// Social-card images served straight from /public bypass the image pipeline, so
+// their intrinsic size is recorded here (measured with sips). Keeps og:image
+// width and height present on pages whose card is a public asset.
+const PUBLIC_IMAGE_DIMS: Record<string, { width: number; height: number }> = {
+  '/video/seethrough.jpg': { width: 1800, height: 800 },
+};
+
 // Social-card image: src/assets paths get optimized to a 1200px JPEG;
 // public paths (e.g. /video/seethrough.jpg) pass through as-is.
 let ogImage: string | null = null;
@@ -45,6 +54,11 @@ if (image) {
     ogImageHeight = optimized.attributes.height ?? null;
   } catch {
     ogImage = new URL(image, SITE_URL).toString();
+    const dims = PUBLIC_IMAGE_DIMS[image];
+    if (dims) {
+      ogImageWidth = dims.width;
+      ogImageHeight = dims.height;
+    }
   }
 }
 
@@ -91,27 +105,60 @@ const websiteSchema = {
   }
 };
 
+// Homepage filmography: the films in card.order, as an ItemList.
+let filmographySchema: object | null = null;
+if (pageType === 'home') {
+  const entries = await getCollection('projects');
+  const ordered = sortByOrder(
+    entries.map((e) => ({ slug: e.id, order: e.data.card.order, name: e.data.title })),
+  );
+  filmographySchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${SITE_URL}/#filmography`,
+    "name": "Filmography | Victor Maes",
+    "itemListOrder": "https://schema.org/ItemListOrderAscending",
+    "numberOfItems": ordered.length,
+    "mainEntityOfPage": { "@id": `${SITE_URL}/` },
+    "itemListElement": ordered.map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": p.name,
+      "url": `${SITE_URL}/projects/${p.slug}/`,
+    })),
+  };
+}
+
 let pageSchema: object | null = null;
 
 if (pageType === 'home') {
   pageSchema = {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
-    "@id": canonicalURL.toString(),
-    "url": canonicalURL.toString(),
+    "@id": `${SITE_URL}/`,
+    "url": `${SITE_URL}/`,
     "name": title,
     "description": description,
     "mainEntity": {
       "@id": `${SITE_URL}/#person`
+    },
+    "hasPart": {
+      "@id": `${SITE_URL}/#filmography`
     },
     "isPartOf": {
       "@id": `${SITE_URL}/#website`
     }
   };
 } else if (pageType === 'project') {
-  const projectTitle = title.split(' — ')[0].split(' | ')[0];
+  // Strip the head-title decoration back to the bare film name: the role suffix
+  // after ' | ', the old ' — ' template arm, and the year parenthetical.
+  const projectTitle = title.split(' | ')[0].split(' — ')[0].replace(/\s*\(\d{4}\)$/, '').trim();
   const projectType = schemaType || 'Movie';
   const isMovie = projectType === 'Movie';
+
+  // schema.org date properties expect ISO 8601. Frontmatter carries a bare year,
+  // so widen it to Jan 1 of that year; anything already ISO-shaped passes through.
+  const isoDate = year && /^\d{4}$/.test(year) ? `${year}-01-01` : year;
 
   // Award strings from the film's own recorded featured award + awards list.
   // The featured award is often repeated in the awards list, so dedupe.
@@ -123,19 +170,32 @@ if (pageType === 'home') {
 
   // First video becomes a trailer VideoObject. The film's own optimized still
   // (ogImage) serves as the thumbnail, so the entity is always valid.
+  // Video ids should be bare ids, but MDX has historically carried full watch
+  // URLs. Normalize so the embedUrl is always valid regardless of what the
+  // content file stores. Mirrors what astro-embed-youtube does for the player.
+  const videoId = (raw: string): string => {
+    if (/^[A-Za-z0-9_-]+$/.test(raw)) return raw;
+    const yt = raw.match(/(?:youtu\.be\/|[?&]v=|\/embed\/|\/shorts\/)([A-Za-z0-9_-]{6,})/);
+    if (yt) return yt[1];
+    const vimeo = raw.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+    if (vimeo) return vimeo[1];
+    return raw;
+  };
+
   const firstVideo = (videos ?? [])[0];
   let trailer: object | null = null;
   if (firstVideo && ogImage) {
+    const cleanId = videoId(String(firstVideo.id));
     const embedUrl = firstVideo.provider === 'youtube'
-      ? `https://www.youtube.com/embed/${firstVideo.id}`
-      : `https://player.vimeo.com/video/${firstVideo.id}`;
+      ? `https://www.youtube.com/embed/${cleanId}`
+      : `https://player.vimeo.com/video/${cleanId}`;
     trailer = {
       "@type": "VideoObject",
       "name": `${projectTitle} — Trailer`,
       "description": description,
       "thumbnailUrl": ogImage,
       "embedUrl": embedUrl,
-      ...(year ? { "uploadDate": year } : {})
+      ...(year ? { "uploadDate": isoDate } : {})
     };
   }
 
@@ -149,7 +209,7 @@ if (pageType === 'home') {
     ...(ogImage ? { "image": ogImage } : {}),
     ...(director ? { "director": director.split(' & ').map((name) => ({ "@type": "Person", "name": name })) } : {}),
     ...(genre ? { "genre": genre } : {}),
-    ...(year ? { "datePublished": year } : {}),
+    ...(year ? { "datePublished": isoDate } : {}),
     ...(awardList.length ? { "award": awardList } : {}),
     ...(trailer ? { "trailer": trailer } : {}),
     ...(isMovie ? {
@@ -224,7 +284,8 @@ if (pageType === 'home') {
   };
 }
 
-const breadcrumbSchema = {
+// The homepage is the breadcrumb root, so it gets no trail of its own.
+const breadcrumbSchema = pageType === 'home' ? null : {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
@@ -232,18 +293,18 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": SITE_URL
+      "item": `${SITE_URL}/`
     },
-    ...(pageType !== 'home' ? [{
+    {
       "@type": "ListItem",
       "position": 2,
-      "name": title.split(' | ')[0].split(' — ')[0],
+      "name": title.split(' | ')[0].split(' — ')[0].replace(/\s*\(\d{4}\)$/, '').trim(),
       "item": canonicalURL.toString()
-    }] : [])
+    }
   ]
 };
 
-const schemas = [personSchema, websiteSchema, pageSchema, breadcrumbSchema];
+const schemas = [personSchema, websiteSchema, pageSchema, breadcrumbSchema, filmographySchema].filter(Boolean);
 if (schema) {
   schemas.push(schema);
 }
@@ -263,7 +324,7 @@ if (schema) {
 <link rel="alternate" hreflang="x-default" href={canonicalURL} />
 
 <!-- LCP preload: hero video poster on home page -->
-{pageType === 'home' && <link rel="preload" as="image" href="/video/seethrough.jpg" fetchpriority="high" />}
+{pageType === 'home' && <link rel="preload" as="image" href="/video/seethrough.webp" type="image/webp" fetchpriority="high" />}
 
 <!-- Performance: Preconnect -->
 <link rel="preconnect" href="https://www.googletagmanager.com" />
@@ -273,8 +334,8 @@ if (schema) {
      render-blocking round-trips to Google. Preload the regular weight of the
      two fonts used above the fold (body/UI Montserrat, headings EB Garamond);
      Caveat is a decorative accent and loads on demand. -->
-<Font cssVariable="--font-montserrat" preload={[{ weight: 400, style: 'normal' }]} />
-<Font cssVariable="--font-eb-garamond" preload={[{ weight: 400, style: 'normal' }]} />
+<Font cssVariable="--font-montserrat" preload={[{ style: 'normal' }]} />
+<Font cssVariable="--font-eb-garamond" preload={[{ style: 'normal' }]} />
 <Font cssVariable="--font-caveat" />
 
 <!-- Crawl directives -->

@@ -23,11 +23,13 @@ const description = Astro.props.description || Astro.props.frontmatter?.descript
 <html lang="en" data-theme="mytheme">
  
   <head>
+    <script is:inline>document.documentElement.classList.add('js');</script>
     <BaseHead title={title} description={description} image={image} imageAlt={imageAlt} canonical={canonical} schema={schema} noindex={noindex} director={director} genre={genre} year={year} schemaType={schemaType} awards={awards} featuredAward={featuredAward} videos={videos} />
     <ClientRouter />
   </head>
 
   <body class="bg-black ">
+      <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-neutral focus:text-base-100 focus:px-4 focus:py-2 focus:outline-2 focus:outline-secondary">Skip to content</a>
       <!-- Single shared grain-noise filter (referenced by .grain via CSS). One def, not one per card. -->
       <svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
         <filter id="noiseFilter">
@@ -38,35 +40,46 @@ const description = Astro.props.description || Astro.props.frontmatter?.descript
         </filter>
       </svg>
       <Header transition:animate="none" />
-      <main class="bg-neutral overflow-hidden">
+      <main id="main" tabindex="-1" class="bg-neutral overflow-hidden">
         
         <slot />
       </main>      
       <Footer /> 
 
-      <!-- Animate On Scroll: self-hosted and bundled by Astro (no third-party CDN,
-           served from our own domain, version pinned in package.json). -->
+      <!-- Scroll reveal. Replaces the AOS package: the site only ever uses
+           fade-up with three durations and no delays, so a small
+           IntersectionObserver does the whole job. The [data-aos] attributes
+           are kept so the no-JS and reduced-motion guards in global.css
+           (and all call sites) continue to work untouched. -->
+      <style is:global>
+        html.js [data-aos="fade-up"] {
+          opacity: 0;
+          transform: translate3d(0, 100px, 0);
+          transition-property: opacity, transform;
+          transition-duration: 800ms;
+          transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+        html.js [data-aos="fade-up"][data-aos-duration="500"] { transition-duration: 500ms; }
+        html.js [data-aos="fade-up"][data-aos-duration="600"] { transition-duration: 600ms; }
+        html.js [data-aos="fade-up"][data-aos-duration="800"] { transition-duration: 800ms; }
+        html.js [data-aos="fade-up"].aos-animate { opacity: 1; transform: none; }
+      </style>
       <script>
-        import AOS from 'aos';
-        import 'aos/dist/aos.css';
-        // AOS.init() registers fresh scroll/resize listeners every time it runs,
-        // so init once and only rescan the DOM on later client-side navigations.
-        let aosStarted = false;
+        let observer: IntersectionObserver | undefined;
         document.addEventListener('astro:page-load', () => {
-          if (aosStarted) {
-            AOS.refreshHard();
-            return;
-          }
-          aosStarted = true;
-          AOS.init({
-            duration: 800,
-            easing: 'ease-out-cubic',
-            once: true,
-            offset: 80,
-            disable: function () {
-              return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+          observer ??= new IntersectionObserver((entries) => {
+            for (const entry of entries) {
+              // Reveal on entry, or if the element is already scrolled past
+              // (back-navigation with scroll restoration never intersects).
+              if (!entry.isIntersecting && entry.boundingClientRect.top >= 0) continue;
+              entry.target.classList.add('aos-animate');
+              observer!.unobserve(entry.target);
             }
-          });
+          }, { rootMargin: '0px 0px -80px 0px' });
+          for (const el of document.querySelectorAll('[data-aos]:not(.aos-animate)')) {
+            observer.observe(el);
+          }
         });
       </script>
   </body>

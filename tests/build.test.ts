@@ -26,4 +26,24 @@ describe("built site invariants", () => {
       for (const o of others) expect(slugs).toContain(o);
     });
   }
+
+  // The credits list is split across two columns. Only the first entry of a
+  // department carries a label, so a split landing inside a department would
+  // leave column two opening with names under no heading.
+  it("no credits column starts with an unlabelled name", () => {
+    const columnRe =
+      /<div class="grid grid-cols-2 gap-x-0 gap-y-2 content-start text-base-200">([\s\S]*?)<\/div>/g;
+    let checked = 0;
+    for (const s of slugs) {
+      const html = readFileSync(`dist/projects/${s}/index.html`, "utf-8");
+      for (const m of html.matchAll(columnRe)) {
+        const column = m[1].trim();
+        if (!column) continue;
+        checked++;
+        expect(column.startsWith('<p class="text-right')).toBe(true);
+        expect(column.slice(0, 200)).toContain("<span");
+      }
+    }
+    expect(checked).toBeGreaterThan(0);
+  });
 });
