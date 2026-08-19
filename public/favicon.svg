@@ -1,21 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
-    <g transform="matrix(-1,-1.22465e-16,1.22465e-16,-1,36,35.9511)">
-        <g transform="matrix(-1,1.22465e-16,-1.22465e-16,-1,36,35.9511)">
-            <path d="M12.484,8.639L18,19.859L23.866,7.721L25.244,14.069L18,29.482L10.83,13.301L12.484,8.639Z" style="stroke:white;stroke-width:0.09px;"/>
-        </g>
-        <g transform="matrix(-0.631874,7.73823e-17,-7.73823e-17,-0.631874,26.661,10.6571)">
-            <text x="1.295px" y="13.157px" style="font-family:'FuturaLT', 'Futura LT';font-size:38.726px;fill:white;">V</text>
-        </g>
-        <g transform="matrix(-0.811891,9.94279e-17,-9.94279e-17,-0.811891,33.301,30.6006)">
-            <text x="6.007px" y="19.283px" style="font-family:'FuturaLT', 'Futura LT';font-size:30.14px;fill:white;">M</text>
-        </g>
-        <g transform="matrix(2.02575,0,0,2.29345,-12.804,-31.2133)">
-            <path d="M12.483,22.652L11.964,23.835L11.785,22.65L12.483,22.652Z" style="fill:white;stroke:white;stroke-width:0.04px;"/>
-        </g>
-        <g transform="matrix(-3.28597,-9.22501e-32,1.2326e-31,3.74211,64.5328,-64.0255)">
-            <path d="M12.483,22.652L11.964,23.835L11.785,22.65L12.483,22.652Z" style="fill:white;stroke:white;stroke-width:0.02px;"/>
-        </g>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#11131d"/>
+  <path d="M10,20 V10 H20 M44,10 H54 V20 M54,44 V54 H44 M20,54 H10 V44" fill="none" stroke="#F1D74E" stroke-width="3.5"/>
+  <path d="M31.7 46.66Q31.12 46.66 30.83 45.99Q30.55 45.35 30.11 44.3Q29.67 43.24 29.36 42.35L21.11 22.8Q20.69 21.79 19.99 21.03Q19.29 20.26 18.06 19.94Q17.63 19.79 17.34 19.62Q17.05 19.44 17.05 19.04Q17.05 18.72 17.32 18.58Q17.58 18.44 17.92 18.44Q18.77 18.44 19.88 18.49Q21 18.53 22.13 18.57Q23.26 18.6 24.09 18.6Q24.93 18.6 26.15 18.55Q27.37 18.49 28.58 18.45Q29.79 18.42 30.62 18.42Q31 18.42 31.39 18.57Q31.78 18.73 31.78 19.02Q31.78 19.38 31.39 19.61Q31 19.84 30.56 19.93Q29.31 20.19 28.72 20.54Q28.14 20.89 28.14 21.6Q28.14 21.87 28.22 22.19Q28.31 22.51 28.36 22.77L33.79 37.99Q33.88 38.27 33.99 38.31Q34.1 38.35 34.22 37.95L39.12 25.05Q39.96 22.89 39.47 21.55Q38.97 20.21 37.11 19.94Q36.65 19.85 36.24 19.62Q35.83 19.39 35.83 19.02Q35.83 18.74 36.21 18.6Q36.6 18.46 37.05 18.46Q37.9 18.46 38.49 18.49Q39.08 18.53 39.66 18.55Q40.24 18.57 41.07 18.57Q42.29 18.57 43.39 18.45Q44.48 18.34 45.7 18.34Q46.17 18.34 46.56 18.48Q46.95 18.62 46.95 19.01Q46.95 19.41 46.6 19.56Q46.24 19.72 45.8 19.85Q44.49 20.19 43.66 21.14Q42.83 22.1 42.06 23.96L35.67 39.24Q35 40.8 34.47 41.99Q33.95 43.17 33.53 44.14Q33.1 45.1 32.68 45.99Q32.53 46.35 32.32 46.51Q32.11 46.66 31.7 46.66Z" fill="#F1D74E"/>
 </svg>
