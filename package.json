@@ -4,13 +4,18 @@
   "type": "module",
   "version": "4.21.0",
   "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && node scripts/prune-unused-assets.mjs",
+    "clean": "node scripts/clean-dist.mjs",
+    "build": "npm run clean && astro build && node scripts/prune-unused-assets.mjs",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "vitest run"
+    "test": "npm run build && npm run test:verify",
+    "test:verify": "vitest run"
   },
   "dependencies": {
     "@astro-community/astro-embed-youtube": "^0.5.10",

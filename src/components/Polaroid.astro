@@ -10,12 +10,12 @@ const id = `bts-${slug}`;
 const resolved = resolveImage(image);
 ---
 <figure class="polaroid">
-    <button class="polaroid-btn" onclick={`document.getElementById('${id}').showModal()`} aria-label={`View full size: ${alt}`}>
+    <button id={`${id}-trigger`} class="polaroid-btn" onclick={`(function(trigger){var dialog=document.getElementById('${id}'); if (!dialog.open) dialog.showModal(); document.getElementById('${id}-close').focus();})(this)`} aria-label={`View full size: ${alt}`}>
         <Image src={resolved} alt={alt} loading="lazy" width={960} widths={[480, 960]} sizes="(min-width:1280px) 33vw, (min-width:1024px) 50vw, 100vw" />
     </button>
     {caption && <figcaption>{caption}</figcaption>}
-    <dialog id={id} class="lightbox" onclick="if (event.target === this) this.close()">
-        <button type="button" class="lightbox-close" aria-label="Close" onclick="this.closest('dialog').close()">&#215;</button>
+    <dialog id={id} class="lightbox" aria-label={`Image: ${alt}`} oncancel="event.preventDefault(); this.close()" onkeydown="if (event.key === 'Escape') { event.preventDefault(); this.close(); }" onclose={`document.getElementById('${id}-trigger')?.focus()`} onclick="if (event.target === this) this.close()">
+        <button id={`${id}-close`} type="button" class="lightbox-close" aria-label="Close image" onclick="this.closest('dialog').close()">&#215;</button>
         <Image src={resolved} alt={alt} width={1200} widths={[1200]} sizes="90vw" loading="lazy" />
     </dialog>
 </figure>

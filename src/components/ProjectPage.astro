@@ -28,11 +28,9 @@ const introItems = [
   { label: "Role", value: data.role },
   { label: "Director", value: data.director },
 ].filter(Boolean);
-// Credits are a flat list in which a non-empty `function` opens a department
-// and the entries after it (empty `function`) belong to it. CreditsItem only
-// renders a label for the opener, so cutting the flat list at its midpoint can
-// land inside a group and orphan names under no heading in column two.
-// Group first, then split on the group boundary closest to an even count.
+// Credits are stored as a flat list in which a non-empty `function` opens a
+// department and subsequent empty functions belong to it. Keep each department
+// together, then split on the group boundary closest to an even name count.
 const creditGroups = [];
 for (const c of credits) {
   if (c.function && c.function.trim()) creditGroups.push([c]);
@@ -50,8 +48,14 @@ for (let i = 0; i < creditGroups.length - 1; i++) {
     splitAt = i + 1;
   }
 }
-const creditsLeft = creditGroups.slice(0, splitAt).flat();
-const creditsRight = creditGroups.slice(splitAt).flat();
+const creditGroupsLeft = creditGroups.slice(0, splitAt);
+const creditGroupsRight = creditGroups.slice(splitAt);
+const specGroups = [];
+for (const spec of specs) {
+  if (spec.label && spec.label.trim()) specGroups.push([spec]);
+  else if (specGroups.length) specGroups[specGroups.length - 1].push(spec);
+  else specGroups.push([spec]);
+}
 ---
 
 <ProjectHero
@@ -84,7 +88,9 @@ const creditsRight = creditGroups.slice(splitAt).flat();
   ),
 )}
 
-<slot />
+<div class="project-copy">
+  <slot />
+</div>
 
 {gallery.length > 0 && (
   <section class="hero pt-10 pb-4">
@@ -106,13 +112,23 @@ const creditsRight = creditGroups.slice(splitAt).flat();
   <section class="hero pt-20 pb-4">
     <div class="hero-content flex-col w-full">
       <SectionLabel label="Credits" />
-      <div class="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-16 px-6" data-aos="fade-up" data-aos-duration="600">
-        <div class="grid grid-cols-2 gap-x-0 gap-y-2 content-start text-base-200">
-          {creditsLeft.map((c) => <CreditsItem crewfunction={c.function} crewname={c.name} />)}
-        </div>
-        <div class="grid grid-cols-2 gap-x-0 gap-y-2 content-start text-base-200">
-          {creditsRight.map((c) => <CreditsItem crewfunction={c.function} crewname={c.name} />)}
-        </div>
+      <div class="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 px-6" data-aos="fade-up" data-aos-duration="600">
+        <dl data-credit-column class="space-y-6 content-start text-base-200">
+          {creditGroupsLeft.map((group) => (
+            <CreditsItem
+              crewfunction={group[0]?.function?.trim() || "Additional credits"}
+              crewnames={group.map((credit) => credit.name)}
+            />
+          ))}
+        </dl>
+        <dl data-credit-column class="space-y-6 content-start text-base-200">
+          {creditGroupsRight.map((group) => (
+            <CreditsItem
+              crewfunction={group[0]?.function?.trim() || "Additional credits"}
+              crewnames={group.map((credit) => credit.name)}
+            />
+          ))}
+        </dl>
       </div>
     </div>
   </section>
@@ -163,20 +179,25 @@ const creditsRight = creditGroups.slice(splitAt).flat();
   <section class="hero pt-20 pb-4">
     <div class="hero-content flex-col w-full">
       <SectionLabel label="Awards" />
-      <div class="w-full max-w-4xl mx-auto grid grid-cols-2 gap-y-1 px-6" data-aos="fade-up" data-aos-duration="600">
+      <ul class="w-full max-w-4xl mx-auto grid grid-cols-2 gap-y-1 px-6" data-aos="fade-up" data-aos-duration="600">
         {awards.map((a) => <AwardItem award={a.award} festival={a.festival} year={a.year} />)}
-      </div>
+      </ul>
     </div>
   </section>
 )}
 
 {specs.length > 0 && (
-  <section class="hero pt-20 pb-28">
+  <section class="hero pt-20 pb-20">
     <div class="hero-content flex-col w-full">
       <SectionLabel label="Specs" />
-      <div id="specs" class="grid grid-cols-2 gap-2 text-base-200" data-aos="fade-up" data-aos-duration="600">
-        {specs.map((s) => <SpecItem label={s.label} value={s.value} />)}
-      </div>
+      <dl id="specs" data-spec-list class="w-full max-w-2xl mx-auto space-y-5 px-6 text-base-200" data-aos="fade-up" data-aos-duration="600">
+        {specGroups.map((group) => (
+          <SpecItem
+            label={group[0]?.label?.trim() || "Additional specs"}
+            values={group.map((spec) => spec.value)}
+          />
+        ))}
+      </dl>
     </div>
   </section>
 )}
@@ -189,3 +210,25 @@ const creditsRight = creditGroups.slice(splitAt).flat();
   </a>
 )}
 <NextProject title={next.title} url={next.url} image={next.image} imageposition={next.position} />
+
+<style is:global>
+  .project-copy > p {
+    max-width: 48rem;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    color: rgb(239 240 246 / 0.85);
+    font-family: var(--font-eb-garamond), serif;
+    font-size: clamp(1.125rem, 1.5vw, 1.25rem);
+    line-height: 1.7;
+  }
+
+  .project-copy > p:first-child {
+    margin-top: 1.5rem;
+  }
+
+  .project-copy > p + p {
+    margin-top: 1.5rem;
+  }
+</style>

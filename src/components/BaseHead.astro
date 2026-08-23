@@ -78,7 +78,7 @@ const personSchema = {
   "@id": `${SITE_URL}/#person`,
   "name": "Victor Maes",
   "jobTitle": "Cinematographer",
-  "description": "Victor Maes is a Cinematographer, Director of Photography and Director from Brussels Belgium",
+  "description": "Victor Maes is a cinematographer, director of photography and director based in Belgium",
   "url": SITE_URL,
   "sameAs": [
     "https://www.instagram.com/monsieur_musclaira/",
@@ -89,9 +89,17 @@ const personSchema = {
   "knowsLanguage": ["en", "fr", "nl"],
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Brussels",
     "addressCountry": "BE"
   }
+};
+
+// Google requires ProfilePage.mainEntity to resolve directly to a Person or
+// Organization. Include the required type and name alongside the shared @id;
+// the full Person node above supplies the remaining details in the same graph.
+const personReference = {
+  "@id": `${SITE_URL}/#person`,
+  "@type": "Person",
+  "name": "Victor Maes"
 };
 
 const websiteSchema = {
@@ -119,7 +127,6 @@ if (pageType === 'home') {
     "name": "Filmography | Victor Maes",
     "itemListOrder": "https://schema.org/ItemListOrderAscending",
     "numberOfItems": ordered.length,
-    "mainEntityOfPage": { "@id": `${SITE_URL}/` },
     "itemListElement": ordered.map((p, i) => ({
       "@type": "ListItem",
       "position": i + 1,
@@ -134,17 +141,12 @@ let pageSchema: object | null = null;
 if (pageType === 'home') {
   pageSchema = {
     "@context": "https://schema.org",
-    "@type": "ProfilePage",
+    "@type": "WebPage",
     "@id": `${SITE_URL}/`,
     "url": `${SITE_URL}/`,
     "name": title,
     "description": description,
-    "mainEntity": {
-      "@id": `${SITE_URL}/#person`
-    },
-    "hasPart": {
-      "@id": `${SITE_URL}/#filmography`
-    },
+    "about": personReference,
     "isPartOf": {
       "@id": `${SITE_URL}/#website`
     }
@@ -229,14 +231,12 @@ if (pageType === 'home') {
 } else if (pageType === 'about') {
   pageSchema = {
     "@context": "https://schema.org",
-    "@type": "AboutPage",
+    "@type": "ProfilePage",
     "@id": canonicalURL.toString(),
     "url": canonicalURL.toString(),
     "name": title,
     "description": description,
-    "mainEntity": {
-      "@id": `${SITE_URL}/#person`
-    },
+    "mainEntity": personReference,
     "isPartOf": {
       "@id": `${SITE_URL}/#website`
     }

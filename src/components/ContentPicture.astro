@@ -9,13 +9,14 @@ const slug = image.replace(/\.[^.]+$/, '').toLowerCase().replace(/[^a-z0-9]+/g, 
 const id = `lb-${slug}`;
 const resolved = resolveImage(image);
 const buttonClass = contained
-  ? 'w-full max-w-5xl mx-auto px-4 sm:px-6 bg-transparent border-0 p-0 cursor-zoom-in'
-  : 'w-full bg-transparent border-0 p-0 cursor-zoom-in';
+  ? 'lightbox-trigger w-full max-w-5xl mx-auto px-4 sm:px-6 bg-transparent border-0 p-0 cursor-zoom-in'
+  : 'lightbox-trigger w-full bg-transparent border-0 p-0 cursor-zoom-in';
 ---
 <section class="hero" data-aos="fade-up">
   <button
+    id={`${id}-trigger`}
     class={buttonClass}
-    onclick={`document.getElementById('${id}').showModal()`}
+    onclick={`(function(trigger){var dialog=document.getElementById('${id}'); if (!dialog.open) dialog.showModal(); document.getElementById('${id}-close').focus();})(this)`}
     aria-label={`View full size: ${alt}`}
   >
     <Image
@@ -29,8 +30,8 @@ const buttonClass = contained
     />
   </button>
 
-  <dialog id={id} class="lightbox" onclick="if (event.target === this) this.close()">
-    <button type="button" class="lightbox-close" aria-label="Close" onclick="this.closest('dialog').close()">&#215;</button>
+  <dialog id={id} class="lightbox" aria-label={`Image: ${alt}`} oncancel="event.preventDefault(); this.close()" onkeydown="if (event.key === 'Escape') { event.preventDefault(); this.close(); }" onclose={`document.getElementById('${id}-trigger')?.focus()`} onclick="if (event.target === this) this.close()">
+    <button id={`${id}-close`} type="button" class="lightbox-close" aria-label="Close image" onclick="this.closest('dialog').close()">&#215;</button>
     <Image src={resolved} alt={alt} width={2560} widths={[1440, 2560]} sizes="90vw" loading="lazy" />
   </dialog>
 </section>
@@ -45,6 +46,14 @@ const buttonClass = contained
     padding: 0;
     max-width: 90vw;
     max-height: 90vh;
+  }
+  .lightbox-trigger:hover img,
+  .lightbox-trigger:active img {
+    filter: saturate(1.08) contrast(1.05);
+  }
+  .lightbox-trigger:focus-visible {
+    outline: 3px solid #f1d74e;
+    outline-offset: 4px;
   }
   .lightbox::backdrop {
     background: rgba(0, 0, 0, 0.92);
@@ -70,5 +79,15 @@ const buttonClass = contained
     font-size: 1.5rem;
     line-height: 1;
     cursor: pointer;
+    transition: background-color 150ms ease, color 150ms ease, outline-color 150ms ease;
+  }
+  .lightbox-close:hover,
+  .lightbox-close:active {
+    background: rgba(241, 215, 78, 0.9);
+    color: #111;
+  }
+  .lightbox-close:focus-visible {
+    outline: 3px solid #f1d74e;
+    outline-offset: 3px;
   }
 </style>

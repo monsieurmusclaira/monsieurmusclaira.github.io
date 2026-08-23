@@ -10,6 +10,13 @@ function html(path: string) {
   return readFileSync(path, "utf-8");
 }
 
+function projectSeoTitle(slug: string) {
+  const source = readFileSync(`src/content/projects/${slug}.mdx`, "utf-8");
+  const match = source.match(/^seoTitle:\s*["'](.+)["']$/m);
+  if (!match) throw new Error(`Missing seoTitle in ${slug}.mdx`);
+  return match[1];
+}
+
 // Pull every JSON-LD block out of a built page and flatten to a list of entities.
 function jsonLd(pageHtml: string): any[] {
   const blocks = [...pageHtml.matchAll(
@@ -29,7 +36,7 @@ describe("built-site SEO invariants", () => {
     if (!existsSync(home)) throw new Error("Run `npm run build` before the SEO tests.");
   });
 
-  it("ships no third-party unpkg reference (AOS is self-hosted)", () => {
+  it("ships no third-party unpkg references", () => {
     for (const s of projectSlugs) {
       expect(html(`dist/projects/${s}/index.html`)).not.toContain("unpkg");
     }
@@ -42,6 +49,33 @@ describe("built-site SEO invariants", () => {
     expect(person.knowsLanguage).toEqual(["en", "fr", "nl"]);
   });
 
+  it("uses ProfilePage only for the person-focused About page", () => {
+    const homeEntities = jsonLd(html(home));
+    const aboutEntities = jsonLd(html("dist/about/index.html"));
+    expect(homeEntities.some((e) => e["@type"] === "ProfilePage")).toBe(false);
+    expect(homeEntities.some((e) => e["@type"] === "WebPage")).toBe(true);
+
+    const profile = aboutEntities.find((e) => e["@type"] === "ProfilePage");
+    expect(profile).toBeDefined();
+    expect(profile.mainEntity).toMatchObject({
+      "@id": "https://victormaes.com/#person",
+      "@type": "Person",
+      name: "Victor Maes",
+    });
+  });
+
+  it("does not attach an ItemList to ProfilePage as an invalid CreativeWork", () => {
+    const homeEntities = jsonLd(html(home));
+    const list = homeEntities.find((e) => e["@type"] === "ItemList");
+    expect(list).toBeDefined();
+    expect(list).not.toHaveProperty("mainEntityOfPage");
+
+    const profile = jsonLd(html("dist/about/index.html")).find(
+      (e) => e["@type"] === "ProfilePage",
+    );
+    expect(profile).not.toHaveProperty("hasPart");
+  });
+
   it("home og:type is website, project og:type is video.other", () => {
     expect(html(home)).toContain('<meta property="og:type" content="website"');
     for (const s of projectSlugs) {
@@ -49,6 +83,31 @@ describe("built-site SEO invariants", () => {
         '<meta property="og:type" content="video.other"',
       );
     }
+  });
+
+  it("renders each curated project SEO title unchanged", () => {
+    for (const s of projectSlugs) {
+      expect(html(`dist/projects/${s}/index.html`)).toContain(
+        `<title>${projectSeoTitle(s)}</title>`,
+      );
+    }
+  });
+
+  it("shows four immersive highlights followed by a complete work index", () => {
+    const page = html(home);
+    const selected = page.slice(
+      page.indexOf('<section id="selected-work"'),
+      page.indexOf('<section id="all-work"'),
+    );
+    const allWork = page.slice(page.indexOf('<section id="all-work"'));
+    expect(selected.match(/href="\/projects\//g) ?? []).toHaveLength(4);
+    expect(allWork.match(/href="\/projects\//g) ?? []).toHaveLength(projectSlugs.length);
+  });
+
+  it("keeps mobile navigation links in the no-script HTML fallback", () => {
+    const menu = html(home).match(/<ul id="mobile-menu"[^>]*>/)?.[0];
+    expect(menu).toBeDefined();
+    expect(menu).not.toMatch(/\bhidden\b/);
   });
 
   it("the interactive VR piece renders as CreativeWork, others as Movie", () => {

@@ -30,7 +30,9 @@ const menuFocus =
       >
         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="#F1D74E" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
       </button>
-      <ul id="mobile-menu" class="menu menu-sm dropdown-content mt-3 p-2 shadow-sm bg-black/80 backdrop-blur-xs rounded-box w-52 text-base-100 hidden">
+      <!-- The links stay available if JavaScript fails. `attachMenu` adds the
+           hidden state once the disclosure behaviour has been initialised. -->
+      <ul id="mobile-menu" class="menu menu-sm dropdown-content mt-3 p-2 shadow-sm bg-black/80 backdrop-blur-xs rounded-box w-52 text-base-100">
         <li>
           <a href="/" aria-current={current('/')} class={`${isActive('/') ? 'text-secondary font-semibold' : ''} ${menuFocus}`}>Work</a>
         </li>
@@ -79,7 +81,15 @@ const menuFocus =
 
 <script is:inline>
   (function () {
+    // Astro can execute this inline script again after a client-side
+    // navigation. Tear down the previous controller first so listeners never
+    // accumulate and each new header has one owner.
+    var previous = window.__siteNavController;
+    if (previous && previous.destroy) previous.destroy();
+
     var nav = document.getElementById('site-nav');
+    var menuButton;
+    var menuElement;
     var lastY = 0;
     var ticking = false;
 
@@ -128,9 +138,18 @@ const menuFocus =
       menu.classList.toggle('hidden', !open);
       wrap.classList.toggle('dropdown-open', open);
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     }
 
-    function closeMenu() { setMenu(false); }
+    function closeMenu(restoreFocus) {
+      setMenu(false);
+      if (restoreFocus) {
+        var btn = document.getElementById('menu-toggle');
+        if (btn) btn.focus();
+      }
+    }
+
+    function onMenuLinkClick() { closeMenu(false); }
 
     function onDocClick(e) {
       var btn = document.getElementById('menu-toggle');
@@ -140,7 +159,15 @@ const menuFocus =
     }
 
     function onKeydown(e) {
-      if (e.key === 'Escape') closeMenu();
+      if (e.key === 'Escape' && document.getElementById('menu-toggle')?.getAttribute('aria-expanded') === 'true') {
+        e.preventDefault();
+        closeMenu(true);
+      }
+    }
+
+    function onFocusIn(e) {
+      nav = document.getElementById('site-nav');
+      if (nav && nav.contains(e.target)) nav.style.transform = 'translateY(0)';
     }
 
     function onToggleClick(e) {
@@ -154,14 +181,25 @@ const menuFocus =
       var btn = document.getElementById('menu-toggle');
       var menu = document.getElementById('mobile-menu');
       if (!btn || !menu) return;
+      menuButton = btn;
+      menuElement = menu;
+      var wrap = document.getElementById('menu-dropdown');
+      if (wrap) wrap.classList.add('js-menu');
+      // Hide only after JavaScript has attached. Without JS this menu remains
+      // a normal list of links (progressive enhancement).
+      setMenu(false);
+      btn.removeEventListener('click', onToggleClick);
       btn.addEventListener('click', onToggleClick);
       menu.querySelectorAll('a').forEach(function (a) {
-        a.addEventListener('click', closeMenu);
+        a.removeEventListener('click', onMenuLinkClick);
+        a.addEventListener('click', onMenuLinkClick);
       });
       document.removeEventListener('click', onDocClick);
       document.addEventListener('click', onDocClick);
       document.removeEventListener('keydown', onKeydown);
       document.addEventListener('keydown', onKeydown);
+      document.removeEventListener('focusin', onFocusIn);
+      document.addEventListener('focusin', onFocusIn);
     }
 
     function setup() {
@@ -169,7 +207,37 @@ const menuFocus =
       attachMenu();
     }
 
+    function destroy() {
+      window.removeEventListener('scroll', onScroll);
+      document.removeEventListener('click', onDocClick);
+      document.removeEventListener('keydown', onKeydown);
+      document.removeEventListener('focusin', onFocusIn);
+      document.removeEventListener('astro:page-load', setup);
+      if (menuButton) menuButton.removeEventListener('click', onToggleClick);
+      if (menuElement) {
+        menuElement.querySelectorAll('a').forEach(function (a) {
+          a.removeEventListener('click', onMenuLinkClick);
+        });
+      }
+    }
+
+    window.__siteNavController = { destroy: destroy };
     setup();
     document.addEventListener('astro:page-load', setup);
   })();
 </script>
+
+<style is:global>
+  /* Keep the mobile links usable when JavaScript is unavailable. Once the
+     disclosure controller attaches, `.js-menu` restores the dropdown UI. */
+  #menu-dropdown:not(.js-menu) #menu-toggle {
+    display: none;
+  }
+
+  #menu-dropdown:not(.js-menu) #mobile-menu {
+    position: static;
+    display: flex !important;
+    opacity: 1;
+    scale: 1;
+  }
+</style>

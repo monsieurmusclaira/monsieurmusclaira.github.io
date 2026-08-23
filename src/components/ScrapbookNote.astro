@@ -3,9 +3,7 @@ const { title, subtitle, variant, href } = Astro.props;
 ---
 <figure class={`scrapbook-note ${variant ? 'note-' + variant : ''}`} data-aos="fade-up" data-aos-duration="500">
     <h2 class="note-title">
-        {href
-            ? <a href={href} class="text-inherit no-underline hover:underline focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current">{title}</a>
-            : title}
+        {title}
     </h2>
     {subtitle && <p class="note-sub">{subtitle}</p>}
     {href && (

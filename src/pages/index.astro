@@ -7,12 +7,15 @@ import { sortByOrder } from "../lib/projects";
 
 const all = await getCollection("projects");
 const films = sortByOrder(all.map((e) => ({ slug: e.id, ...e.data.card, director: e.data.director, title: e.data.title, year: e.data.year, role: e.data.role })));
+const featuredFilms = films.slice(0, 4);
 ---
 
-<BaseLayout title="Victor Maes — Cinematographer & Director | Brussels" description="Award-winning cinematographer and director Victor Maes. Portfolio of fiction films, documentaries, VR experiences and experimental work. Based in Brussels, available worldwide." image="/video/seethrough.jpg">
+<BaseLayout title="Victor Maes — Cinematographer & Director | Belgium" description="Award-winning Belgium-based cinematographer and director creating fiction, documentaries, VR experiences and experimental films for audiences worldwide." image="/video/seethrough.jpg">
   <h1 class="sr-only">Victor Maes — Cinematographer</h1>
   <VideoCard />
-  {films.map((f) => (
+  <section id="selected-work" aria-labelledby="selected-work-heading">
+    <h2 id="selected-work-heading" class="sr-only">Selected work</h2>
+  {featuredFilms.map((f) => (
     <FilmCard
       title={f.title}
       img={f.image}
@@ -24,10 +27,12 @@ const films = sortByOrder(all.map((e) => ({ slug: e.id, ...e.data.card, director
       target="_self"
     />
   ))}
+  </section>
 
-  <section class="bg-neutral py-24 px-6" data-aos="fade-up" data-aos-duration="600">
+  <section id="all-work" class="bg-neutral py-24 px-6 scroll-mt-24" data-aos="fade-up" data-aos-duration="600">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-sans text-sm tracking-[0.2em] uppercase text-base-100/60 text-center pb-10">Filmography</h2>
+      <h2 class="font-sans text-sm tracking-[0.2em] uppercase text-base-100/60 text-center pb-3">All work</h2>
+      <p class="text-center text-base-100/60 font-serif text-lg pb-10">Fiction, documentary, VR and experimental films.</p>
       <ul class="divide-y divide-base-100/10">
         {films.map((f) => (
           <li>

@@ -10,7 +10,7 @@ Live at [victormaes.com](https://victormaes.com).
 - **Tailwind CSS 4** and **DaisyUI 5** for styling
 - **MDX** for authoring project pages as content
 - **Sharp** for build-time image optimization
-- **AOS** for scroll animations
+- **Native CSS and Astro view transitions** for scroll and page animations
 - **Self-hosted fonts** (Montserrat, EB Garamond, Caveat), downloaded at build time and served from the site's own domain
 - **Vitest** for the test suite
 - Deployed to **GitHub Pages** via **GitHub Actions**
@@ -35,14 +35,14 @@ public/          Static files served as-is (includes CNAME)
 
 ## Development
 
-Requires Node 20 or newer.
+Requires Node 22.12.0 or newer (Astro's current runtime requirement).
 
 ```bash
 npm install      # install dependencies
 npm run dev      # start the local dev server
 npm run build    # build to dist/ and prune unused assets
 npm run preview  # preview the production build locally
-npm run test     # run the Vitest suite
+npm run test     # clean-build the site, then run the complete Vitest suite
 ```
 
 ## Content

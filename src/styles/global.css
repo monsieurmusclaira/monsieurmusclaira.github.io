@@ -134,13 +134,6 @@ to {
     opacity: 40%;
 }
 
-/* Credits, awards, festivals, specs sections */
-#credits, #awards, #festivals, #specs, #markets, #funding {
-  max-width: 540px;
-  row-gap: 0.5rem;
-  column-gap: 0;
-}
-
 /* Smooth link transitions */
 a {
   transition: color 0.3s ease;

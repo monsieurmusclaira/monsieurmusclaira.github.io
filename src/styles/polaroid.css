@@ -40,6 +40,14 @@
   cursor: zoom-in;
   line-height: 0;
 }
+.polaroid-btn:hover img,
+.polaroid-btn:active img {
+  filter: saturate(1.08) contrast(1.05);
+}
+.polaroid-btn:focus-visible {
+  outline: 3px solid #f1d74e;
+  outline-offset: 4px;
+}
 .polaroid img {
   width: 100%;
   height: auto;
@@ -186,6 +194,16 @@ dialog.lightbox .lightbox-close {
   font-size: 1.5rem;
   line-height: 1;
   cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease, outline-color 150ms ease;
+}
+dialog.lightbox .lightbox-close:hover,
+dialog.lightbox .lightbox-close:active {
+  background: rgba(241, 215, 78, 0.9);
+  color: #111;
+}
+dialog.lightbox .lightbox-close:focus-visible {
+  outline: 3px solid #f1d74e;
+  outline-offset: 3px;
 }
 
 /* Reduced motion: keep the photo's resting rotation on hover and drop the

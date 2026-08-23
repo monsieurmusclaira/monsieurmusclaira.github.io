@@ -14,6 +14,12 @@ describe("built site invariants", () => {
     for (const s of slugs) expect(html).toContain(`/projects/${s}/`);
   });
 
+  it("project editorial copy is wrapped for readable dark-theme styling", () => {
+    const html = readFileSync("dist/projects/a-long-goodbye/index.html", "utf-8");
+    expect(html).toContain('<div class="project-copy">');
+    expect(html).toContain("co-written and co-directed by Kate Voet");
+  });
+
   for (const s of slugs) {
     it(`${s} page exists, is non-empty, and links a next film`, () => {
       const file = `dist/projects/${s}/index.html`;
@@ -27,12 +33,12 @@ describe("built site invariants", () => {
     });
   }
 
-  // The credits list is split across two columns. Only the first entry of a
-  // department carries a label, so a split landing inside a department would
-  // leave column two opening with names under no heading.
-  it("no credits column starts with an unlabelled name", () => {
+  // Each department is one semantic group: a visible term paired with a list
+  // of names. This prevents continuation names from slipping into the label
+  // column when CSS Grid auto-placement runs.
+  it("credits columns preserve labelled department groups", () => {
     const columnRe =
-      /<div class="grid grid-cols-2 gap-x-0 gap-y-2 content-start text-base-200">([\s\S]*?)<\/div>/g;
+      /<dl data-credit-column class="[^"]*">([\s\S]*?)<\/dl>/g;
     let checked = 0;
     for (const s of slugs) {
       const html = readFileSync(`dist/projects/${s}/index.html`, "utf-8");
@@ -40,8 +46,70 @@ describe("built site invariants", () => {
         const column = m[1].trim();
         if (!column) continue;
         checked++;
-        expect(column.startsWith('<p class="text-right')).toBe(true);
-        expect(column.slice(0, 200)).toContain("<span");
+        const groups = [...column.matchAll(
+          /<div data-credit-group class="[^"]*">([\s\S]*?)<\/div>/g,
+        )];
+        expect(groups.length).toBeGreaterThan(0);
+        for (const group of groups) {
+          expect(group[1].match(/<dt\b/g) ?? []).toHaveLength(1);
+          expect(group[1].match(/<dd\b/g) ?? []).toHaveLength(1);
+          expect(group[1].match(/<li\b/g)?.length ?? 0).toBeGreaterThan(0);
+          expect(group[1]).not.toMatch(/\bsr-only\b/);
+        }
+      }
+    }
+    expect(checked).toBeGreaterThan(0);
+  });
+
+  it("specs preserve labelled groups with consistently aligned values", () => {
+    let checked = 0;
+    for (const s of slugs) {
+      const html = readFileSync(`dist/projects/${s}/index.html`, "utf-8");
+      const list = html.match(
+        /<dl id="specs" data-spec-list class="[^"]*"[^>]*>([\s\S]*?)<\/dl>/,
+      );
+      if (!list) continue;
+      checked++;
+      const groups = [...list[1].matchAll(
+        /<div data-spec-group class="[^"]*">([\s\S]*?)<\/div>/g,
+      )];
+      expect(groups.length).toBeGreaterThan(0);
+      for (const group of groups) {
+        expect(group[1].match(/<dt\b/g) ?? []).toHaveLength(1);
+        expect(group[1].match(/<dd\b/g) ?? []).toHaveLength(1);
+        expect(group[1].match(/<li\b/g)?.length ?? 0).toBeGreaterThan(0);
+        expect(group[1]).not.toMatch(/\bsr-only\b/);
+      }
+    }
+    expect(checked).toBe(3);
+  });
+
+  it("YouTube trailers use a centered player-width frame", () => {
+    for (const slug of ["burn", "ever-since-i-have-been-flying"]) {
+      const html = readFileSync(`dist/projects/${slug}/index.html`, "utf-8");
+      expect(html).toContain(
+        'data-youtube-frame class="w-full max-w-[720px] mx-auto overflow-hidden"',
+      );
+    }
+  });
+
+  it("lightboxes expose names and an explicit Escape close path", () => {
+    const pages = [
+      "dist/behind-the-scenes/index.html",
+      ...slugs.map((s) => `dist/projects/${s}/index.html`),
+    ];
+    let checked = 0;
+    for (const file of pages) {
+      const html = readFileSync(file, "utf-8");
+      for (const match of html.matchAll(/<dialog\b[^>]*class="lightbox"[^>]*>/g)) {
+        checked++;
+        expect(match[0]).toMatch(/aria-label="[^"]+"/);
+        expect(match[0]).toContain(
+          'oncancel="event.preventDefault(); this.close()"',
+        );
+        expect(match[0]).toContain(
+          `onkeydown="if (event.key === 'Escape') { event.preventDefault(); this.close(); }"`,
+        );
       }
     }
     expect(checked).toBeGreaterThan(0);

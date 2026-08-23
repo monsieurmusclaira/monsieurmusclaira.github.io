@@ -26,7 +26,8 @@ describe("project frontmatter SEO invariants", () => {
     });
 
     it(`${slug} has a non-empty seoTitle and hero alt text`, () => {
-      expect(data.seoTitle.length).toBeGreaterThan(0);
+      expect(data.seoTitle.length).toBeGreaterThanOrEqual(45);
+      expect(data.seoTitle.length).toBeLessThanOrEqual(60);
       expect(data.hero.alt.length).toBeGreaterThan(0);
     });
 
@@ -38,5 +39,11 @@ describe("project frontmatter SEO invariants", () => {
 
   it("the interactive VR piece is typed as CreativeWork, not Movie", () => {
     expect(loadData("a-long-goodbye").schemaType).toBe("CreativeWork");
+  });
+
+  it("behind-the-scenes images do not use numbered or placeholder alt text", () => {
+    const source = readFileSync("src/pages/behind-the-scenes.mdx", "utf-8");
+    expect(source).not.toMatch(/Behind the scenes photo \d+/i);
+    expect(source).not.toMatch(/behind-the-scenes (set still|portrait-format still)/i);
   });
 });
