@@ -1,17 +1,29 @@
-/* Fonts are self-hosted via the Astro Fonts API (configured in astro.config.mjs
-   and emitted by <Font> in BaseHead.astro). The @font-face family names match
-   the names referenced below ("Montserrat", "EB Garamond", "Caveat"). */
+/* Fonts are bundled locally through Fontsource. Import only the Latin subsets
+   used by this English, French, and Dutch portfolio to keep the CSS payload
+   focused while preserving the site's established typography. */
+@import "@fontsource/montserrat/latin-300.css";
+@import "@fontsource/montserrat/latin-400.css";
+@import "@fontsource/montserrat/latin-500.css";
+@import "@fontsource/montserrat/latin-600.css";
+@import "@fontsource/eb-garamond/latin-400.css";
+@import "@fontsource/eb-garamond/latin-400-italic.css";
+@import "@fontsource/eb-garamond/latin-500.css";
+@import "@fontsource/eb-garamond/latin-600.css";
+@import "@fontsource/caveat/latin-400.css";
+
 @import "tailwindcss";
 
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
   themes: false;
 }
-/* Map Tailwind's font utilities onto the self-hosted font variables that the
-   Astro Fonts API defines on :root. `font-sans` → Montserrat, `font-serif` →
-   EB Garamond, `font-hand` → Caveat. Astro namespaces the real @font-face
-   family names (e.g. "Montserrat-<hash>"), so fonts must be referenced through
-   these variables, never by the bare family name. */
+/* Keep named font variables so the component styles remain readable. */
+:root {
+  --font-montserrat: "Montserrat";
+  --font-eb-garamond: "EB Garamond";
+  --font-caveat: "Caveat";
+}
+
 @theme {
   --font-sans: var(--font-montserrat), sans-serif;
   --font-serif: var(--font-eb-garamond), serif;

@@ -93,7 +93,8 @@ for (const spec of specs) {
 </div>
 
 {gallery.length > 0 && (
-  <section class="hero pt-10 pb-4">
+  <section class="hero pt-10 pb-4" aria-labelledby="project-stills-heading">
+    <h2 id="project-stills-heading" class="sr-only">Stills</h2>
     <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3 max-w-6xl mx-auto px-4">
       {gallery.map((g, i) =>
         gallery.length % 2 === 1 && i === gallery.length - 1 ? (
@@ -201,6 +202,14 @@ for (const spec of specs) {
     </div>
   </section>
 )}
+
+<section class="hero bg-neutral px-6 pt-16 pb-20" aria-labelledby="project-contact-heading">
+  <div class="hero-content flex-col max-w-2xl mx-auto text-center">
+    <h2 id="project-contact-heading" class="font-sans text-sm tracking-[0.2em] uppercase text-base-100/60 pb-5">Start a project</h2>
+    <p class="font-serif text-xl sm:text-2xl text-base-100/90">Interested in working together? Get in touch to discuss your next production.</p>
+    <a href="/about/#contact" class="mt-7 inline-flex items-center rounded-sm border border-secondary bg-secondary px-5 py-3 font-sans text-xs tracking-[0.16em] uppercase text-neutral transition-colors duration-200 hover:bg-transparent hover:text-secondary focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-secondary focus-visible:outline-offset-2">Discuss a project <span class="ml-2" aria-hidden="true">&rarr;</span></a>
+  </div>
+</section>
 
 {prev && (
   <a href={prev.url} class="block bg-neutral py-6 text-center group focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-secondary" data-aos="fade-up" data-aos-duration="600">

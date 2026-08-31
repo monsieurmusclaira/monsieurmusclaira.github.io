@@ -76,11 +76,14 @@ describe("built-site SEO invariants", () => {
     expect(profile).not.toHaveProperty("hasPart");
   });
 
-  it("home og:type is website, project og:type is video.other", () => {
+  it("uses video.other only for projects with embedded video", () => {
     expect(html(home)).toContain('<meta property="og:type" content="website"');
     for (const s of projectSlugs) {
-      expect(html(`dist/projects/${s}/index.html`)).toContain(
-        '<meta property="og:type" content="video.other"',
+      const source = readFileSync(`src/content/projects/${s}.mdx`, "utf-8");
+      const hasVideo = /^videos:\s*\n/m.test(source);
+      const project = html(`dist/projects/${s}/index.html`);
+      expect(project).toContain(
+        `<meta property="og:type" content="${hasVideo ? "video.other" : "website"}"`,
       );
     }
   });
@@ -93,14 +96,14 @@ describe("built-site SEO invariants", () => {
     }
   });
 
-  it("shows four immersive highlights followed by a complete work index", () => {
+  it("shows eight selected projects followed by a complete work index", () => {
     const page = html(home);
     const selected = page.slice(
       page.indexOf('<section id="selected-work"'),
       page.indexOf('<section id="all-work"'),
     );
     const allWork = page.slice(page.indexOf('<section id="all-work"'));
-    expect(selected.match(/href="\/projects\//g) ?? []).toHaveLength(4);
+    expect(selected.match(/href="\/projects\//g) ?? []).toHaveLength(8);
     expect(allWork.match(/href="\/projects\//g) ?? []).toHaveLength(projectSlugs.length);
   });
 
@@ -147,12 +150,10 @@ describe("built-site SEO invariants", () => {
     }
   });
 
-  it("preloads exactly the two body fonts", () => {
-    // Montserrat and EB Garamond ship as single variable files, so filtering the
-    // preload on style alone yields one link each. Caveat is decorative and is
-    // deliberately not preloaded.
+  it("preloads the two critical local body fonts", () => {
     const links = html(home).match(/<link rel="preload"[^>]*as="font"[^>]*>/g) ?? [];
     expect(links.length).toBe(2);
+    expect(html(home)).not.toContain("fonts.google.com");
   });
 
   it("hero video defers its download (preload none, sources gated behind data-src)", () => {

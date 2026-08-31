@@ -7,11 +7,10 @@ import { sortByOrder } from "../lib/projects";
 
 const all = await getCollection("projects");
 const films = sortByOrder(all.map((e) => ({ slug: e.id, ...e.data.card, director: e.data.director, title: e.data.title, year: e.data.year, role: e.data.role })));
-const featuredFilms = films.slice(0, 4);
+const featuredFilms = films.slice(0, 8);
 ---
 
 <BaseLayout title="Victor Maes — Cinematographer & Director | Belgium" description="Award-winning Belgium-based cinematographer and director creating fiction, documentaries, VR experiences and experimental films for audiences worldwide." image="/video/seethrough.jpg">
-  <h1 class="sr-only">Victor Maes — Cinematographer</h1>
   <VideoCard />
   <section id="selected-work" aria-labelledby="selected-work-heading">
     <h2 id="selected-work-heading" class="sr-only">Selected work</h2>
@@ -28,6 +27,10 @@ const featuredFilms = films.slice(0, 4);
     />
   ))}
   </section>
+
+  <div class="bg-neutral px-6 pb-20 text-center">
+    <a href="#all-work" class="inline-flex items-center rounded-sm border border-base-100/40 px-5 py-3 font-sans text-xs tracking-[0.16em] uppercase text-base-100/80 transition-colors duration-200 hover:border-secondary hover:text-secondary focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-secondary focus-visible:outline-offset-2">Browse all work <span class="ml-2" aria-hidden="true">&darr;</span></a>
+  </div>
 
   <section id="all-work" class="bg-neutral py-24 px-6 scroll-mt-24" data-aos="fade-up" data-aos-duration="600">
     <div class="max-w-4xl mx-auto">

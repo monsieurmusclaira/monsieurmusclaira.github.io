@@ -2,12 +2,14 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
-import { getImage, Font } from 'astro:assets';
+import { getImage } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import { sortByOrder } from '../lib/projects';
 import { GoogleAnalytics } from 'astro-google-analytics';
 import { resolveImage, listBtsImages } from '../utils/images';
 import { SITE_TITLE, SITE_URL } from '../config';
+import montserrat400 from '@fontsource/montserrat/files/montserrat-latin-400-normal.woff2?url';
+import ebGaramond400 from '@fontsource/eb-garamond/files/eb-garamond-latin-400-normal.woff2?url';
 
 export interface Props {
 	title: string;
@@ -68,8 +70,8 @@ const pageType = Astro.url.pathname.startsWith('/projects/') ? 'project'
   : Astro.url.pathname.startsWith('/behind-the-scenes') ? 'bts'
   : 'page';
 
-// Open Graph object type: film pages are closer to video than a generic website.
-const ogType = pageType === 'project' ? 'video.other' : 'website';
+// Use a video object type only when the project actually has an embedded video.
+const ogType = pageType === 'project' && (videos?.length ?? 0) > 0 ? 'video.other' : 'website';
 
 // Build JSON-LD schemas
 const personSchema = {
@@ -77,7 +79,7 @@ const personSchema = {
   "@type": "Person",
   "@id": `${SITE_URL}/#person`,
   "name": "Victor Maes",
-  "jobTitle": "Cinematographer",
+  "jobTitle": "Cinematographer, Director of Photography and Director",
   "description": "Victor Maes is a cinematographer, director of photography and director based in Belgium",
   "url": SITE_URL,
   "sameAs": [
@@ -158,9 +160,9 @@ if (pageType === 'home') {
   const projectType = schemaType || 'Movie';
   const isMovie = projectType === 'Movie';
 
-  // schema.org date properties expect ISO 8601. Frontmatter carries a bare year,
-  // so widen it to Jan 1 of that year; anything already ISO-shaped passes through.
-  const isoDate = year && /^\d{4}$/.test(year) ? `${year}-01-01` : year;
+  // Only emit dates when the source contains a complete date. A bare project
+  // year is useful editorially but should not become a fabricated January 1.
+  const exactDate = year && /^\d{4}-\d{2}-\d{2}$/.test(year) ? year : undefined;
 
   // Award strings from the film's own recorded featured award + awards list.
   // The featured award is often repeated in the awards list, so dedupe.
@@ -196,8 +198,7 @@ if (pageType === 'home') {
       "name": `${projectTitle} — Trailer`,
       "description": description,
       "thumbnailUrl": ogImage,
-      "embedUrl": embedUrl,
-      ...(year ? { "uploadDate": isoDate } : {})
+      "embedUrl": embedUrl
     };
   }
 
@@ -211,7 +212,7 @@ if (pageType === 'home') {
     ...(ogImage ? { "image": ogImage } : {}),
     ...(director ? { "director": director.split(' & ').map((name) => ({ "@type": "Person", "name": name })) } : {}),
     ...(genre ? { "genre": genre } : {}),
-    ...(year ? { "datePublished": isoDate } : {}),
+    ...(exactDate ? { "datePublished": exactDate } : {}),
     ...(awardList.length ? { "award": awardList } : {}),
     ...(trailer ? { "trailer": trailer } : {}),
     ...(isMovie ? {
@@ -328,17 +329,13 @@ if (schema) {
 <!-- LCP preload: hero video poster on home page -->
 {pageType === 'home' && <link rel="preload" as="image" href="/video/seethrough.webp" type="image/webp" fetchpriority="high" />}
 
+<!-- Critical local fonts: bundled through Fontsource, never fetched at build time. -->
+<link rel="preload" href={montserrat400} as="font" type="font/woff2" crossorigin />
+<link rel="preload" href={ebGaramond400} as="font" type="font/woff2" crossorigin />
+
 <!-- Performance: Preconnect -->
 <link rel="preconnect" href="https://www.googletagmanager.com" />
 <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-
-<!-- Self-hosted fonts (Astro Fonts API). Served from our own domain, so no
-     render-blocking round-trips to Google. Preload the regular weight of the
-     two fonts used above the fold (body/UI Montserrat, headings EB Garamond);
-     Caveat is a decorative accent and loads on demand. -->
-<Font cssVariable="--font-montserrat" preload={[{ style: 'normal' }]} />
-<Font cssVariable="--font-eb-garamond" preload={[{ style: 'normal' }]} />
-<Font cssVariable="--font-caveat" />
 
 <!-- Crawl directives -->
 {noindex && <meta name="robots" content="noindex, nofollow" />}
@@ -350,7 +347,7 @@ if (schema) {
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={ogType} />
-<meta property="og:locale" content="en_US" />
+<meta property="og:locale" content="en_BE" />
 <meta property="og:site_name" content={SITE_TITLE} />
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
