@@ -1,4 +1,6 @@
 ---
+import type { ProjectData } from '../lib/projects';
+type Props = ProjectData['awards'][number];
 const { festival, award, year } = Astro.props;
 ---
 <li class="col-span-2 border-t border-base-100/10 pt-3 mt-1 pb-2">

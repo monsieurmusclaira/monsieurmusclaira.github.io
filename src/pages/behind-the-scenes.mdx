@@ -11,54 +11,53 @@ import ScrapbookNote from '../components/ScrapbookNote.astro';
 import '../styles/polaroid.css';
 export const meta = {
     title: 'A journey in pictures',
-    synopsis: "On-set photography from Victor Maes's work as a cinematographer. Fiction, documentary, and XR productions shot across Belgium, Turkey, and beyond, seen from behind the camera, film by film.",
     heroImage: '/img/eversinceihavebeenflying/bts/IMG-20230813-WA0062.jpg',
     imageposition: "50% 50%",
-    imageAlt: 'behind the scenes',
+    imageAlt: 'Film crew working among cotton plants, with a camera operator in the foreground and two people further into the field',
 };
 
-<ProjectHero title={meta.title} synopsis={meta.synopsis} heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
+<ProjectHero title={meta.title} heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} scrollTarget="bts-board" />
 
-<div class="bts-board">
+<div id="bts-board" class="bts-board scroll-mt-24">
 
   <ScrapbookNote title="A Long Goodbye" href="/projects/a-long-goodbye/" subtitle="Victor Maes & Kate Voet · 2025" variant="green" />
   <div class="bts-scatter">
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-01.jpg" alt="A Long Goodbye — behind the scenes (1)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-02.jpg" alt="A Long Goodbye — behind the scenes (2)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-03.jpg" alt="A Long Goodbye — behind the scenes (3)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-04.jpg" alt="A Long Goodbye — behind the scenes (4)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-05.jpg" alt="A Long Goodbye — behind the scenes (5)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-06.jpg" alt="A Long Goodbye — behind the scenes (6)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-07.jpg" alt="A Long Goodbye — behind the scenes (7)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-08.jpg" alt="A Long Goodbye — behind the scenes (8)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-09.jpg" alt="A Long Goodbye — behind the scenes (9)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-10.jpg" alt="A Long Goodbye — behind the scenes (10)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-11.jpg" alt="A Long Goodbye — behind the scenes (11)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-12.jpg" alt="A Long Goodbye — behind the scenes (12)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-13.jpg" alt="A Long Goodbye — behind the scenes (13)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-14.jpg" alt="A Long Goodbye — behind the scenes (14)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-15.jpg" alt="A Long Goodbye — behind the scenes (15)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-16.jpg" alt="A Long Goodbye — behind the scenes (16)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-17.jpg" alt="A Long Goodbye — behind the scenes (17)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-18.jpg" alt="A Long Goodbye — behind the scenes (18)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-19.jpg" alt="A Long Goodbye — behind the scenes (19)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-20.jpg" alt="A Long Goodbye — behind the scenes (20)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-21.jpg" alt="A Long Goodbye — behind the scenes (21)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-22.jpg" alt="A Long Goodbye — behind the scenes (22)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-23.webp" alt="A Long Goodbye — behind the scenes (23)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-24.jpg" alt="A Long Goodbye — behind the scenes (24)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-25.jpg" alt="A Long Goodbye — behind the scenes (25)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-26.jpg" alt="A Long Goodbye — behind the scenes (26)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-27.jpg" alt="A Long Goodbye — behind the scenes (27)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-28.jpg" alt="A Long Goodbye — behind the scenes (28)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-29.jpg" alt="A Long Goodbye — behind the scenes (29)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-30.jpg" alt="A Long Goodbye — behind the scenes (30)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-31.jpg" alt="A Long Goodbye — behind the scenes (31)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-32.jpg" alt="A Long Goodbye — behind the scenes (32)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-33.jpg" alt="A Long Goodbye — behind the scenes (33)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-34.jpg" alt="A Long Goodbye — behind the scenes (34)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-35.jpg" alt="A Long Goodbye — behind the scenes (35)" />
-    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-36.jpg" alt="A Long Goodbye — behind the scenes (36)" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-01.jpg" alt="Audience watching a panel beneath a large projection screen at an immersive film festival" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-02.jpg" alt="Presenter beside an IDFA lectern and a projected image from A Long Goodbye" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-03.jpg" alt="Seated panel discussing A Long Goodbye on stage beneath a projected image at IDFA" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-04.jpg" alt="Participant wearing a VR headset and holding a controller in a train seat" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-05.jpg" alt="Woman using a VR headset and controllers in a dim exhibition room with red walls" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-06.jpg" alt="Audience facing presenters and a projection screen in a tall presentation room" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-07.jpg" alt="Woman holding a microphone beside a man wearing glasses during a presentation" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-08.jpg" alt="Participant kneeling on an office floor while testing a VR headset and controllers" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-09.jpg" alt="VR tester kneeling among computer workstations while colleagues work nearby" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-10.jpg" alt="Standing VR tester raising an arm beside an office window" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-11.jpg" alt="Two team members working at computers in a purple-lit room" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-12.jpg" alt="Seated performer reading from a music stand in a recording studio, with colleagues behind" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-13.jpg" alt="Performer wearing headphones and reading a script from a music stand in a recording studio" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-14.jpg" alt="Four team members posing together in a lobby against a colorful mural" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-15.jpg" alt="Two team members reviewing a 3D scene at a computer workstation" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-16.jpg" alt="Computer monitor displaying a teddy bear model in 3D editing software" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-17.jpg" alt="Narrow cobblestone street illuminated by lamps at night" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-18.jpg" alt="Two participants wearing festival badges beside a display covered with yellow notes" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-19.jpg" alt="Cypress trees lining a sunlit avenue toward an entrance" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-20.jpg" alt="Two people on a red carpet in front of a Venice festival backdrop" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-21.jpg" alt="Three visitors wearing festival badges at an XR display covered with yellow notes" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-22.jpg" alt="Exhibition table arranged with flowers, framed photographs, photo books, controllers, and papers" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-23.webp" alt="Two people holding an award on a red carpet with photographers behind them" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-24.jpg" alt="Seated woman speaking into a microphone beside a man during a panel discussion" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-25.jpg" alt="Two people holding an orange game-controller-shaped award under blue event lighting" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-26.jpg" alt="Two smiling people walking together along a red carpet" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-27.jpg" alt="Evening crowd beneath colorful neon theater signs" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-28.jpg" alt="Three people posing with an award on a red carpet in front of an SXSW backdrop" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-29.jpg" alt="Man holding a red award against a red-lit brick wall" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-30.jpg" alt="A Long Goodbye virtual stage viewed through a circular wooden opening" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-31.jpg" alt="A Long Goodbye virtual interior with curved wooden walls, circular windows, and floating dark fabric" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-32.jpg" alt="Stylized teal and white virtual character against a sunset sky in A Long Goodbye" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-33.jpg" alt="Yellow handwritten notes attached to a wooden window frame overlooking mountains in A Long Goodbye" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-34.jpg" alt="Virtual auditorium stage with a piano, presenters, and a screen introducing A Long Goodbye" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-35.jpg" alt="Black and white virtual character at a piano with sheet music and mountains visible outside" />
+    <Polaroid image="/img/alonggoodbye/bts/a-long-goodbye-bts-36.jpg" alt="Man holding a red trophy in front of a NUMIX awards backdrop" />
   </div>
 
   <ScrapbookNote title="Ever Since, I Have Been Flying" href="/projects/ever-since-i-have-been-flying/" subtitle="Aylin Gökmen · 2022 & 2023" />
@@ -106,20 +105,20 @@ export const meta = {
 
   <ScrapbookNote title="Bearer of Bad News" href="/projects/bearer-of-bad-news/" subtitle="Willkamayu Oomen · 2026" variant="green" />
   <div class="bts-scatter">
-    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-01.jpeg" alt="Bearer of Bad News, behind the scenes (1)" />
-    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-02.jpeg" alt="Bearer of Bad News, behind the scenes (2)" />
-    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-03.jpeg" alt="Bearer of Bad News, behind the scenes (3)" />
-    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-04.jpeg" alt="Bearer of Bad News, behind the scenes (4)" />
-    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-05.jpeg" alt="Bearer of Bad News, behind the scenes (5)" />
-    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-06.jpeg" alt="Bearer of Bad News, behind the scenes (6)" />
-    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-07.jpeg" alt="Bearer of Bad News, behind the scenes (7)" />
-    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-08.jpeg" alt="Bearer of Bad News, behind the scenes (8)" />
-    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-09.jpeg" alt="Bearer of Bad News, behind the scenes (9)" />
-    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-10.jpeg" alt="Bearer of Bad News, behind the scenes (10)" />
-    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-11.jpeg" alt="Bearer of Bad News, behind the scenes (11)" />
-    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-12.jpeg" alt="Bearer of Bad News, behind the scenes (12)" />
-    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-13.jpeg" alt="Bearer of Bad News, behind the scenes (13)" />
-    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-14.jpeg" alt="Bearer of Bad News, behind the scenes (14)" />
+    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-01.jpeg" alt="Two crew members digging around a performer buried up to the neck in soil beside a rubble pile" />
+    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-02.jpeg" alt="Camera rig positioned above a performer's head emerging from soil on the Bearer of Bad News set" />
+    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-03.jpeg" alt="Hooded performer seated in a deep hole in the ground beside an orange traffic cone" />
+    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-04.jpeg" alt="Two crew members standing beside a dug hole and a rubble pile on an outdoor set" />
+    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-05.jpeg" alt="Three people walking along a snow-covered path beside trees" />
+    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-06.jpeg" alt="Lone person standing in an open snow-covered field with trees in the distance" />
+    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-07.jpeg" alt="Crew assembling a metal frame above a hospital bed on the Bearer of Bad News set" />
+    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-08.jpeg" alt="Camera crew filming a seated performer beside a hospital bed" />
+    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-09.jpeg" alt="Portrait of a mustached performer with a white surgical bandage across the nose and cheeks" />
+    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-10.jpeg" alt="Three cast and crew members wearing sunglasses beside an open vehicle trunk outdoors" />
+    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-11.jpeg" alt="Person in a reflective vest beside a car at dusk, with a construction crane behind" />
+    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-12.jpeg" alt="Five crew members posing outdoors at night, several wearing reflective vests" />
+    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-13.jpeg" alt="Camera crew filming a seated performer in a hospital waiting area, viewed from a dark doorway" />
+    <Polaroid image="/img/bearerofbadnews/bts/bearer-of-bad-news-bts-14.jpeg" alt="Crew taking a food break in a hospital-room set with computers and filming equipment behind" />
   </div>
 
 </div>

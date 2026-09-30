@@ -2,16 +2,18 @@
 import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ProjectPage from "../../components/ProjectPage.astro";
-import { sortByOrder, nextSlug, prevSlug } from "../../lib/projects";
+import type { InferGetStaticPropsType } from "astro";
+import { sortByOrder, nextSlug, prevSlug, validateProjectOrder, requireProject } from "../../lib/projects";
 
 export async function getStaticPaths() {
   const all = await getCollection("projects");
   const ordered = sortByOrder(all.map((e) => ({ slug: e.id, order: e.data.card.order })));
+  validateProjectOrder(ordered);
   return all.map((entry) => {
     const ns = nextSlug(entry.id, ordered);
-    const nextEntry = all.find((e) => e.id === ns);
+    const nextEntry = requireProject(all, ns);
     const ps = prevSlug(entry.id, ordered);
-    const prevEntry = all.find((e) => e.id === ps);
+    const prevEntry = requireProject(all, ps);
     return {
       params: { slug: entry.id },
       props: {
@@ -31,6 +33,7 @@ export async function getStaticPaths() {
   });
 }
 
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 const { entry, next, prev } = Astro.props;
 const { Content } = await render(entry);
 const { description, hero } = entry.data;

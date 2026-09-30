@@ -3,6 +3,9 @@ import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { parse } from "yaml";
 import baseline from "./fixtures/parity-baseline.json";
+import { projectSchema } from "../src/lib/project-schema";
+
+const baselineBySlug: Record<string, (typeof baseline)[keyof typeof baseline]> = baseline;
 
 const DIR = "src/content/projects";
 
@@ -10,7 +13,7 @@ function loadData(slug: string) {
   const text = readFileSync(join(DIR, `${slug}.mdx`), "utf-8");
   const fm = text.match(/^---\n([\s\S]*?)\n---/);
   if (!fm) throw new Error(`No frontmatter in ${slug}.mdx`);
-  return parse(fm[1]);
+  return projectSchema.parse(parse(fm[1]));
 }
 
 const migrated = existsSync(DIR)
@@ -20,7 +23,8 @@ const migrated = existsSync(DIR)
 describe("migration parity", () => {
   for (const slug of migrated) {
     it(`${slug} preserves all content`, () => {
-      const base = baseline[slug];
+      const base = baselineBySlug[slug];
+      if (!base) throw new Error(`Missing parity baseline for ${slug}`);
       const data = loadData(slug);
       expect(data.seoTitle).toBe(base.seoTitle);
       expect(data.hero.image).toBe(base.heroImage);

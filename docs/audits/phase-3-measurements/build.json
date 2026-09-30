@@ -1,0 +1,25 @@
+{
+  "before": {
+    "coldBuildSeconds": 33.01474875,
+    "optimizedVariants": 1530,
+    "unpruned": {
+      "files": 2041,
+      "bytes": 498584276
+    },
+    "pruned": {
+      "files": 1600,
+      "bytes": 68972586
+    },
+    "prunedOriginals": 441
+  },
+  "after": {
+    "coldBuildSeconds": 29.088292708,
+    "optimizedVariants": 1861,
+    "pruned": {
+      "files": 1931,
+      "bytes": 64448806,
+      "pages": 21
+    },
+    "prunedOriginals": 0
+  }
+}

@@ -1,8 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 import { resolveImage } from '../utils/images';
+interface Props { title: string; url: string; image: string; imageposition?: string; }
 const { title, url, image, imageposition } = Astro.props;
-const resolved = resolveImage(image);
+const resolved = await resolveImage(image);
 ---
 <a
   href={url}

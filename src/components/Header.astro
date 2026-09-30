@@ -16,7 +16,7 @@ const menuFocus =
   'focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-secondary';
 ---
 
-<header class="fixed top-0 z-50 w-full transition-transform duration-300" id="site-nav">
+<header class="fixed top-0 z-50 w-full transition-transform duration-300 focus-within:transition-none" id="site-nav">
 <nav class="navbar bg-black/60 backdrop-blur-xs" aria-label="Main">
   <div class="navbar-start">
     <!-- Mobile: hamburger (real disclosure — aria-expanded/controls toggled by script) -->
@@ -48,7 +48,7 @@ const menuFocus =
       </ul>
     </div>
     <!-- Desktop: inline links -->
-    <div class="hidden lg:flex items-center gap-7 pl-3">
+    <div id="desktop-links" class="hidden lg:flex items-center gap-7 pl-3">
       <a href="/" aria-current={current('/')} class={linkClass('/')}>Work</a>
       <a href="/about/" aria-current={current('/about')} class={linkClass('/about')}>About</a>
       <a href="/behind-the-scenes/" aria-current={current('/behind-the-scenes')} class={linkClass('/behind-the-scenes')}>Behind the Scenes</a>
@@ -63,15 +63,15 @@ const menuFocus =
   </div>
 
   <div class="navbar-end">
-    <div class="flex items-center gap-4 pr-3">
-      <a href="https://www.instagram.com/monsieur_musclaira/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)" class="inline-flex items-center h-5 text-base-100/80 hover:text-secondary transition-colors duration-200">
+    <div class="flex items-center gap-1 pr-1 sm:pr-3">
+      <a href="https://www.instagram.com/monsieur_musclaira/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)" class="inline-flex items-center justify-center min-h-11 min-w-11 text-base-100/80 hover:text-secondary transition-colors duration-200">
         <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
           <rect x="3" y="3" width="18" height="18" rx="5" />
           <circle cx="12" cy="12" r="4" />
           <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
         </svg>
       </a>
-      <a href="https://www.imdb.com/name/nm4866929" target="_blank" rel="noopener noreferrer" aria-label="IMDb (opens in a new tab)" class="inline-flex items-center h-5 text-base-100/80 hover:text-secondary transition-colors duration-200">
+      <a href="https://www.imdb.com/name/nm4866929" target="_blank" rel="noopener noreferrer" aria-label="IMDb (opens in a new tab)" class="inline-flex items-center justify-center min-h-11 min-w-11 text-base-100/80 hover:text-secondary transition-colors duration-200">
         <span class="inline-flex items-center h-5 text-[11px] font-bold tracking-tight border border-current rounded-sm px-1.5 leading-none">IMDb</span>
       </a>
     </div>
@@ -90,16 +90,22 @@ const menuFocus =
     var nav = document.getElementById('site-nav');
     var menuButton;
     var menuElement;
+    var lastHeaderFocus;
     var lastY = 0;
     var ticking = false;
+    var scrollFrame;
+    var desktop = window.matchMedia('(min-width: 1024px)');
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
     function onScroll() {
       if (!ticking) {
-        requestAnimationFrame(function () {
+        scrollFrame = requestAnimationFrame(function () {
           var y = window.scrollY;
-          if (y > lastY && y > 80) {
+          var menuOpen = document.getElementById('menu-toggle')?.getAttribute('aria-expanded') === 'true';
+          var hasFocus = nav && nav.contains(document.activeElement);
+          if (nav && !menuOpen && !hasFocus && !reducedMotion.matches && y > lastY && y > 80) {
             nav.style.transform = 'translateY(-100%)';
-          } else {
+          } else if (nav) {
             nav.style.transform = 'translateY(0)';
           }
           lastY = y;
@@ -113,7 +119,7 @@ const menuFocus =
       nav = document.getElementById('site-nav');
       if (!nav) return;
       // Reduced motion: leave the bar pinned, never translate it out of view.
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if (reducedMotion.matches) {
         nav.style.transform = '';
         window.removeEventListener('scroll', onScroll);
         return;
@@ -139,6 +145,25 @@ const menuFocus =
       wrap.classList.toggle('dropdown-open', open);
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
       btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      if (open && nav) nav.style.transform = 'translateY(0)';
+    }
+
+    function onBreakpointChange() {
+      // Move focus out of the mobile disclosure before hiding it on desktop.
+      // Browsers can blur a newly hidden link before the media change event.
+      var focus = document.activeElement === document.body ? lastHeaderFocus : document.activeElement;
+      var wrap = document.getElementById('menu-dropdown');
+      var focusWasMobile = wrap && wrap.contains(focus);
+      var desktopLinks = document.getElementById('desktop-links');
+      var focusWasDesktop = desktopLinks && desktopLinks.contains(focus);
+      closeMenu(false);
+      if (nav && desktop.matches && focusWasMobile) {
+        var currentLink = nav.querySelector('#desktop-links a[aria-current="page"]') || nav.querySelector('.navbar-center a');
+        if (currentLink) currentLink.focus();
+      } else if (!desktop.matches && focusWasDesktop) {
+        document.getElementById('menu-toggle')?.focus();
+      }
+      if (nav) nav.style.transform = 'translateY(0)';
     }
 
     function closeMenu(restoreFocus) {
@@ -167,6 +192,7 @@ const menuFocus =
 
     function onFocusIn(e) {
       nav = document.getElementById('site-nav');
+      lastHeaderFocus = nav && nav.contains(e.target) ? e.target : undefined;
       if (nav && nav.contains(e.target)) nav.style.transform = 'translateY(0)';
     }
 
@@ -213,6 +239,9 @@ const menuFocus =
       document.removeEventListener('keydown', onKeydown);
       document.removeEventListener('focusin', onFocusIn);
       document.removeEventListener('astro:page-load', setup);
+      desktop.removeEventListener('change', onBreakpointChange);
+      reducedMotion.removeEventListener('change', attachScroll);
+      if (scrollFrame) cancelAnimationFrame(scrollFrame);
       if (menuButton) menuButton.removeEventListener('click', onToggleClick);
       if (menuElement) {
         menuElement.querySelectorAll('a').forEach(function (a) {
@@ -224,6 +253,8 @@ const menuFocus =
     window.__siteNavController = { destroy: destroy };
     setup();
     document.addEventListener('astro:page-load', setup);
+    desktop.addEventListener('change', onBreakpointChange);
+    reducedMotion.addEventListener('change', attachScroll);
   })();
 </script>
 

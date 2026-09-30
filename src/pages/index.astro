@@ -7,25 +7,34 @@ import { sortByOrder } from "../lib/projects";
 
 const all = await getCollection("projects");
 const films = sortByOrder(all.map((e) => ({ slug: e.id, ...e.data.card, director: e.data.director, title: e.data.title, year: e.data.year, role: e.data.role })));
-const featuredFilms = films.slice(0, 8);
+// Preserve the curated card sequence without interstitial chapter sections.
+const featuredOrder = [
+  "a-long-goodbye", "ever-since-i-have-been-flying", "bieke-depoorter-chance-encounters",
+  "bearer-of-bad-news", "burn", "moonlight-woman", "vlinderman", "the-tears-of-things",
+];
+const featuredRank = new Map(featuredOrder.map((slug, index) => [slug, index]));
+const featuredFilms = films.slice(0, 8).sort((a, b) =>
+  (featuredRank.get(a.slug) ?? featuredOrder.length) - (featuredRank.get(b.slug) ?? featuredOrder.length),
+);
 ---
 
 <BaseLayout title="Victor Maes — Cinematographer & Director | Belgium" description="Award-winning Belgium-based cinematographer and director creating fiction, documentaries, VR experiences and experimental films for audiences worldwide." image="/video/seethrough.jpg">
   <VideoCard />
-  <section id="selected-work" aria-labelledby="selected-work-heading">
-    <h2 id="selected-work-heading" class="sr-only">Selected work</h2>
-  {featuredFilms.map((f) => (
-    <FilmCard
-      title={f.title}
-      img={f.image}
-      imageposition={f.position}
-      desc={f.desc ?? `by ${f.director}`}
-      url={`/projects/${f.slug}/`}
-      badge1={f.badge1}
-      badge2={f.badge2}
-      target="_self"
-    />
-  ))}
+  <section id="selected-work" class="scroll-mt-24" aria-labelledby="selected-work-heading">
+    <h1 id="selected-work-heading" class="sr-only">Selected work</h1>
+    {featuredFilms.map((f) => (
+      <FilmCard
+        title={f.title}
+        role={f.role}
+        img={f.image}
+        imageposition={f.position}
+        desc={f.desc ?? `by ${f.director}`}
+        url={`/projects/${f.slug}/`}
+        badge1={f.badge1}
+        badge2={f.badge2}
+        target="_self"
+      />
+    ))}
   </section>
 
   <div class="bg-neutral px-6 pb-20 text-center">
@@ -34,13 +43,15 @@ const featuredFilms = films.slice(0, 8);
 
   <section id="all-work" class="bg-neutral py-24 px-6 scroll-mt-24" data-aos="fade-up" data-aos-duration="600">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-sans text-sm tracking-[0.2em] uppercase text-base-100/60 text-center pb-3">All work</h2>
-      <p class="text-center text-base-100/60 font-serif text-lg pb-10">Fiction, documentary, VR and experimental films.</p>
+      <p class="font-sans text-xs tracking-[0.2em] uppercase text-secondary text-center pb-4">The archive</p>
+      <h2 class="font-sans text-sm tracking-[0.2em] uppercase text-base-100/60 text-center pb-3">Complete filmography</h2>
+      <p class="text-center text-base-100/60 font-serif text-lg pb-10">A full record of fiction, documentary, VR and experimental work.</p>
       <ul class="divide-y divide-base-100/10">
         {films.map((f) => (
           <li>
             <a href={`/projects/${f.slug}/`} class="group flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-4 py-4 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-secondary">
               <span class="text-xl text-warning group-hover:text-secondary transition-colors duration-300">{f.title}</span>
+              <span class="font-sans text-xs tracking-[0.14em] uppercase text-secondary/80">{f.role}</span>
               <span class="text-sm italic text-base-100/60">by {f.director}</span>
               <span class="sm:ml-auto font-sans text-xs tracking-widest uppercase text-base-100/60 group-hover:text-base-100/70 transition-colors duration-300">
                 {[f.badge1, f.year].filter(Boolean).join(' · ')}

@@ -12,6 +12,14 @@ import AwardItem from "./AwardItem.astro";
 import SpecItem from "./SpecItem.astro";
 import NextProject from "./NextProject.astro";
 import { resolveImage } from "../utils/images";
+import type { ProjectData, NextProjectLink, ProjectLink, IntroFact } from "../lib/projects";
+import { gallerySizes } from '../lib/gallery-layout';
+
+interface Props {
+  data: ProjectData;
+  next: NextProjectLink;
+  prev: ProjectLink;
+}
 
 const { data, next, prev } = Astro.props;
 const videos = data.videos ?? [];
@@ -22,16 +30,16 @@ const awards = data.awards ?? [];
 const specs = data.specs ?? [];
 const lists = data.lists ?? [];
 const laurels = data.laurels ?? [];
-const introItems = [
-  data.year && { label: "Year", value: data.year },
+const introItems: IntroFact[] = [
+  ...(data.year ? [{ label: "Year", value: data.year }] : []),
   { label: "Format", value: data.format },
   { label: "Role", value: data.role },
   { label: "Director", value: data.director },
-].filter(Boolean);
+];
 // Credits are stored as a flat list in which a non-empty `function` opens a
 // department and subsequent empty functions belong to it. Keep each department
 // together, then split on the group boundary closest to an even name count.
-const creditGroups = [];
+const creditGroups: ProjectData["credits"][] = [];
 for (const c of credits) {
   if (c.function && c.function.trim()) creditGroups.push([c]);
   else if (creditGroups.length) creditGroups[creditGroups.length - 1].push(c);
@@ -50,7 +58,7 @@ for (let i = 0; i < creditGroups.length - 1; i++) {
 }
 const creditGroupsLeft = creditGroups.slice(0, splitAt);
 const creditGroupsRight = creditGroups.slice(splitAt);
-const specGroups = [];
+const specGroups: ProjectData["specs"][] = [];
 for (const spec of specs) {
   if (spec.label && spec.label.trim()) specGroups.push([spec]);
   else if (specGroups.length) specGroups[specGroups.length - 1].push(spec);
@@ -60,25 +68,14 @@ for (const spec of specs) {
 
 <ProjectHero
   title={data.title}
-  synopsis={data.synopsis}
   credit={data.hero.credit}
   heroImage={data.hero.image}
   alt={data.hero.alt}
   imageposition={data.hero.position}
+  scrollTarget="project-intro"
 />
 
-<ProjectIntro items={introItems} />
-
-{data.featuredAward && (
-  <FeaturedAward
-    award={data.featuredAward.award}
-    festival={data.featuredAward.festival}
-    year={data.featuredAward.year}
-    image={data.featuredAward.image}
-    imageAlt={data.featuredAward.imageAlt}
-    caption={data.featuredAward.caption}
-  />
-)}
+<ProjectIntro synopsis={data.synopsis} items={introItems} />
 
 {videos.map((v) =>
   v.provider === "youtube" ? (
@@ -93,20 +90,46 @@ for (const spec of specs) {
 </div>
 
 {gallery.length > 0 && (
-  <section class="hero pt-10 pb-4" aria-labelledby="project-stills-heading">
+  <section class="hero pt-12 pb-8" aria-labelledby="project-stills-heading">
     <h2 id="project-stills-heading" class="sr-only">Stills</h2>
-    <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-3 max-w-6xl mx-auto px-4">
-      {gallery.map((g, i) =>
-        gallery.length % 2 === 1 && i === gallery.length - 1 ? (
-          <div class="md:col-span-2 w-full max-w-3xl mx-auto">
-            <ContentPicture image={g.image} alt={g.alt} />
-          </div>
-        ) : (
-          <ContentPicture image={g.image} alt={g.alt} />
-        ),
-      )}
+    <div class="hero-content grid w-full grid-cols-1 md:grid-cols-2 gap-x-3 gap-y-10 max-w-6xl mx-auto px-4">
+      {gallery.map((g, i) => {
+        const isLastOdd = gallery.length % 2 === 1 && i === gallery.length - 1;
+        const layout = g.layout ?? (isLastOdd ? "wide" : "grid");
+        const isWide = layout === "wide" || layout === "full";
+        const isFull = layout === "full";
+        return (
+          <figure
+            class:list={[
+              "gallery-item w-full",
+              isWide && "md:col-span-2",
+              isWide && !isFull && "max-w-4xl mx-auto",
+              isFull && "md:-mx-4 md:w-[calc(100%+2rem)]",
+            ]}
+            data-gallery-layout={layout}
+          >
+            <ContentPicture image={g.image} alt={g.alt} caption={g.caption} sizes={gallerySizes[layout]} widths={layout === 'grid' ? [384, 576, 768, 1152] : [384, 768, 1152, 1920, 2560]} />
+            {g.caption && (
+              <figcaption class="px-2 pt-3 text-center font-sans text-[11px] tracking-widest uppercase text-base-100/50">
+                {g.caption}
+              </figcaption>
+            )}
+          </figure>
+        );
+      })}
     </div>
   </section>
+)}
+
+{data.featuredAward && (
+  <FeaturedAward
+    award={data.featuredAward.award}
+    festival={data.featuredAward.festival}
+    year={data.featuredAward.year}
+    image={data.featuredAward.image}
+    imageAlt={data.featuredAward.imageAlt}
+    caption={data.featuredAward.caption}
+  />
 )}
 
 {credits.length > 0 && (
@@ -158,8 +181,8 @@ for (const spec of specs) {
     <div class="hero-content flex-col w-full">
       <SectionLabel label="Selections" />
       <div class="flex flex-wrap place-content-around">
-        {laurels.map((l) => {
-          const laurel = resolveImage(l.image);
+        {laurels.map(async (l) => {
+          const laurel = await resolveImage(l.image);
           return (
             <img
               src={laurel.src}

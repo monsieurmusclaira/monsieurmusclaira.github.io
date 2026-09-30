@@ -8,6 +8,7 @@ import { sortByOrder } from '../lib/projects';
 import { GoogleAnalytics } from 'astro-google-analytics';
 import { resolveImage, listBtsImages } from '../utils/images';
 import { SITE_TITLE, SITE_URL } from '../config';
+import type { ProjectData } from '../lib/projects';
 import montserrat400 from '@fontsource/montserrat/files/montserrat-latin-400-normal.woff2?url';
 import ebGaramond400 from '@fontsource/eb-garamond/files/eb-garamond-latin-400-normal.woff2?url';
 
@@ -23,9 +24,9 @@ export interface Props {
 	genre?: string;
 	year?: string;
 	schemaType?: string;
-	awards?: { award: string; festival: string; year?: string }[];
-	featuredAward?: { award: string; festival: string; year?: string };
-	videos?: { provider: string; id: string; title?: string }[];
+	awards?: ProjectData['awards'];
+	featuredAward?: ProjectData['featuredAward'];
+	videos?: ProjectData['videos'];
 }
 
 const { title, description, image, imageAlt, canonical, schema, noindex, director, genre, year, schemaType, awards, featuredAward, videos } = Astro.props;
@@ -50,7 +51,7 @@ let ogImageWidth: number | null = null;
 let ogImageHeight: number | null = null;
 if (image) {
   try {
-    const optimized = await getImage({ src: resolveImage(image), format: 'jpeg', width: 1200 });
+    const optimized = await getImage({ src: await resolveImage(image), format: 'jpeg', width: 1200 });
     ogImage = new URL(optimized.src, SITE_URL).toString();
     ogImageWidth = optimized.attributes.width ?? null;
     ogImageHeight = optimized.attributes.height ?? null;
@@ -167,8 +168,7 @@ if (pageType === 'home') {
   // Award strings from the film's own recorded featured award + awards list.
   // The featured award is often repeated in the awards list, so dedupe.
   const awardList = [...new Set(
-    [featuredAward, ...(awards ?? [])]
-      .filter(Boolean)
+    [...(featuredAward ? [featuredAward] : []), ...(awards ?? [])]
       .map((a) => [a.award, a.festival, a.year].filter(Boolean).join(', '))
   )];
 
@@ -247,7 +247,7 @@ if (pageType === 'home') {
   // ImageObject entries. width 1200 matches the lightbox variant, so no
   // extra image files are generated for this.
   const btsMedia: object[] = [];
-  for (const img of listBtsImages(5)) {
+  for (const img of await listBtsImages(5)) {
     try {
       const opt = await getImage({ src: img, width: 1200 });
       btsMedia.push({ "@type": "ImageObject", "contentUrl": new URL(opt.src, SITE_URL).toString() });

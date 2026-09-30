@@ -3,6 +3,8 @@ dist/
 .output/
 # generated types
 .astro/
+playwright-report/
+test-results/
 
 # dependencies
 node_modules/

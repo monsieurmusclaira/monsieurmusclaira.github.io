@@ -2,7 +2,7 @@
   "name": "victor-maes-portfolio",
   "description": "This is the codebase for my portfolio",
   "type": "module",
-  "version": "4.21.0",
+  "version": "4.22.0",
   "private": true,
   "engines": {
     "node": ">=22.12.0"
@@ -14,26 +14,35 @@
     "build": "npm run clean && astro build && node scripts/prune-unused-assets.mjs",
     "preview": "astro preview",
     "astro": "astro",
+    "check": "astro check",
     "test": "npm run build && npm run test:verify",
-    "test:verify": "vitest run"
+    "test:verify": "vitest run",
+    "test:browser": "playwright test --project=chromium-desktop --project=chromium-mobile",
+    "test:browser:all": "playwright test"
   },
   "dependencies": {
     "@astro-community/astro-embed-youtube": "^0.5.10",
-    "@astrojs/markdown-remark": "^7.2.0",
-    "@astrojs/mdx": "^7.0.0",
-    "@astrojs/sitemap": "^3.7.3",
+    "@astrojs/markdown-remark": "^7.3.1",
+    "@astrojs/mdx": "^7.0.8",
+    "@astrojs/sitemap": "^3.7.4",
     "@fontsource/caveat": "^5.3.0",
     "@fontsource/eb-garamond": "^5.3.0",
     "@fontsource/montserrat": "^5.3.0",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.2.2",
+    "astro": "^7.3.5",
     "astro-google-analytics": "^1.0.3",
-    "tailwindcss": "^4.3.3"
+    "tailwindcss": "^4.3.3",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/typography": "^0.5.20",
-    "daisyui": "^5.7.17",
-    "vitest": "^4.1.10",
-    "yaml": "^2.9.0"
+    "@types/node": "^22.20.4",
+    "daisyui": "^5.7.46",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.11",
+    "yaml": "^2.9.1"
   }
 }

@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { parse } from "yaml";
+import { projectSchema } from "../src/lib/project-schema";
 
 const DIR = "src/content/projects";
 
@@ -9,7 +10,7 @@ function loadData(slug: string) {
   const text = readFileSync(join(DIR, `${slug}.mdx`), "utf-8");
   const fm = text.match(/^---\n([\s\S]*?)\n---/);
   if (!fm) throw new Error(`No frontmatter in ${slug}.mdx`);
-  return parse(fm[1]);
+  return projectSchema.parse(parse(fm[1]));
 }
 
 const slugs = readdirSync(DIR)
@@ -43,7 +44,7 @@ describe("project frontmatter SEO invariants", () => {
 
   it("behind-the-scenes images do not use numbered or placeholder alt text", () => {
     const source = readFileSync("src/pages/behind-the-scenes.mdx", "utf-8");
-    expect(source).not.toMatch(/Behind the scenes photo \d+/i);
+    expect(source).not.toMatch(/alt="[^"]*behind[\s\p{P}]*the[\s\p{P}]*scenes[\s\p{P}]*(?:photo[\s\p{P}]*)?\d+/iu);
     expect(source).not.toMatch(/behind-the-scenes (set still|portrait-format still)/i);
   });
 });

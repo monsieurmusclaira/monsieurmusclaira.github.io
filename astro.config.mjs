@@ -2,11 +2,13 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import tailwindcss from "@tailwindcss/vite";
+import portfolioImages from './scripts/image-manifest.mjs';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://victormaes.com',
   integrations: [
+    portfolioImages(),
     sitemap({
       changefreq: 'monthly',
       priority: 0.7,

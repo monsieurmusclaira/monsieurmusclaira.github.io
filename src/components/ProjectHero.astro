@@ -1,13 +1,21 @@
 ---
 import { Image } from 'astro:assets';
 import { resolveImage } from '../utils/images';
-const { synopsis, title, heroImage, imageposition, alt, credit } = Astro.props;
+interface Props {
+  title: string;
+  heroImage: string;
+  alt: string;
+  imageposition?: string;
+  credit?: string;
+  scrollTarget?: string;
+}
+const { title, heroImage, imageposition, alt, credit, scrollTarget = 'main' } = Astro.props;
 const slug = Astro.url.pathname.split('/').filter(Boolean).pop();
 ---
 <div class="min-h-dvh w-full relative flex flex-col justify-end">
     <div class="z-0 absolute inset-0" transition:name={`hero-${slug}`}>
         <Image
-        src={resolveImage(heroImage)}
+        src={await resolveImage(heroImage)}
         alt={alt}
         class="w-full h-full object-cover"
         style={`object-position: ${imageposition || '50% 50%'}`}
@@ -24,14 +32,14 @@ const slug = Astro.url.pathname.split('/').filter(Boolean).pop();
         <div class="prose text-center pt-10 sm:pt-20 px-10 mx-auto">
             <h1 class="drop-in text-secondary drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]" transition:animate="slide">{title}</h1>
             {credit && <p class="drop-in-2 font-serif italic text-lg sm:text-xl text-base-100/85 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] -mt-2 mb-2">{credit}</p>}
-            {synopsis && <p class="drop-in-2 text-base-100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">{synopsis}</p>}
             <div class="drop-in-3 flex flex-col justify-center items-center gap-2 py-3">
-                <span class="font-sans text-[10px] tracking-[0.25em] uppercase text-warning drop-shadow-[0_2px_6px_rgba(0,0,0,0.95)]">Scroll</span>
-                <svg width="28" height="28" viewBox="0 0 15 15" class="animate-bounce text-warning drop-shadow-[0_2px_6px_rgba(0,0,0,0.95)]" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <a href={`#${scrollTarget}`} class="group inline-flex flex-col items-center gap-2 rounded-sm px-3 py-2 text-warning transition-colors duration-200 hover:text-secondary focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-secondary focus-visible:outline-offset-2" aria-label="Scroll to continue">
+                <span class="font-sans text-[10px] tracking-[0.25em] uppercase drop-shadow-[0_2px_6px_rgba(0,0,0,0.95)]">Scroll</span>
+                <svg width="28" height="28" viewBox="0 0 15 15" class="scroll-cue drop-shadow-[0_2px_6px_rgba(0,0,0,0.95)]" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="M7.5 2C7.77614 2 8 2.22386 8 2.5L8 11.2929L11.1464 8.14645C11.3417 7.95118 11.6583 7.95118 11.8536 8.14645C12.0488 8.34171 12.0488 8.65829 11.8536 8.85355L7.85355 12.8536C7.65829 13.0488 7.34171 13.0488 7.14645 12.8536L3.14645 8.85355C2.95118 8.65829 2.95118 8.34171 3.14645 8.14645C3.34171 7.95118 3.65829 7.95118 3.85355 8.14645L7 11.2929L7 2.5C7 2.22386 7.22386 2 7.5 2Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"/>
                 </svg>
+                </a>
             </div>
         </div>
     </div>
 </div>
-

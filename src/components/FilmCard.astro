@@ -1,7 +1,20 @@
 ---
 import { Image } from 'astro:assets';
 import { resolveImage } from '../utils/images';
-const { title, img, alt, imageposition, desc, url, badge1, badge2, target = '_self', loading = 'lazy' } = Astro.props;
+interface Props {
+  title: string;
+  img: string;
+  url: string;
+  alt?: string;
+  imageposition?: string;
+  desc?: string;
+  role?: string;
+  badge1?: string;
+  badge2?: string;
+  target?: '_self' | '_blank';
+  loading?: 'eager' | 'lazy';
+}
+const { title, img, alt, imageposition, desc, role, url, badge1, badge2, target = '_self', loading = 'lazy' } = Astro.props;
 const slug = url?.split('/').filter(Boolean).pop();
 ---
 <a href={url} target={target}
@@ -11,8 +24,8 @@ const slug = url?.split('/').filter(Boolean).pop();
 
   <div class="z-0 h-dvh w-full absolute top-0 overflow-hidden" transition:name={`hero-${slug}`}>
     <Image
-      src={resolveImage(img)}
-      alt={alt ?? `${title}, cinematography still by Victor Maes`}
+      src={await resolveImage(img)}
+      alt={alt ?? ''}
       class="w-full h-full object-cover transition-transform duration-1400 ease-out group-hover:scale-105"
       style={`object-position: ${imageposition || '50% 50%'}`}
       widths={[768, 1080, 1440, 2560]}
@@ -25,6 +38,7 @@ const slug = url?.split('/').filter(Boolean).pop();
   <svg class="grain absolute top-0 z-10 w-full h-full" aria-hidden="true"></svg>
 
   <div class="absolute w-full p-7 sm:p-10 pt-24 sm:pt-32 bottom-0 z-20 bg-linear-to-t from-neutral/85 via-neutral/40 to-transparent transition-all duration-500 group-hover:from-neutral/95">
+    {role && <p class="font-sans text-xs tracking-[0.2em] uppercase text-secondary mb-2">{role}</p>}
     <h2 class="text-4xl text-warning">{title}</h2>
     <p class="text-base text-base-100 italic mt-1">{desc}</p>
     {(badge1 || badge2) && (

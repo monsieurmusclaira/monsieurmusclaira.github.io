@@ -1,59 +1,80 @@
 import { z } from "zod";
 
+const text = z.string().trim().min(1, "This field must not be blank.");
+const year = text.regex(/^[1-9]\d{3}$/, "Use a four-digit year.");
+
 export const projectSchema = z.object({
-  title: z.string(),
-  seoTitle: z.string(),
-  description: z.string(),
-  director: z.string(),
-  genre: z.string(),
-  format: z.string(),
-  role: z.string(),
-  year: z.string().optional(),
+  title: text,
+  seoTitle: text,
+  description: text,
+  director: text,
+  genre: text,
+  format: text,
+  role: text,
+  year: year.optional(),
   // Overrides the JSON-LD @type for the project (defaults to "Movie"). Use for
   // pieces that are not films, e.g. "CreativeWork" for the interactive VR work.
-  schemaType: z.string().optional(),
-  synopsis: z.string(),
+  schemaType: z.enum(["Movie", "CreativeWork"]).optional(),
+  synopsis: text,
   hero: z.object({
-    image: z.string(),
-    alt: z.string(),
-    position: z.string().default("50% 50%"),
-    credit: z.string(),
+    image: text,
+    alt: text,
+    position: text.default("50% 50%"),
+    credit: text,
   }),
   card: z.object({
-    image: z.string(),
-    position: z.string().default("50% 50%"),
-    badge1: z.string(),
+    image: text,
+    position: text.default("50% 50%"),
+    badge1: text,
     badge2: z.string(),
-    order: z.number(),
-    desc: z.string().optional(),
+    order: z.number().int().positive(),
+    desc: text.optional(),
   }),
   featuredAward: z
     .object({
-      award: z.string(),
-      festival: z.string(),
-      year: z.string().optional(),
+      award: text,
+      festival: text,
+      year: year.optional(),
       // Optional photo shown under the award banner (e.g. the ceremony).
-      image: z.string().optional(),
-      imageAlt: z.string().optional(),
-      caption: z.string().optional(),
+      image: text.optional(),
+      imageAlt: text.optional(),
+      caption: text.optional(),
+    })
+    .superRefine((award, context) => {
+      if (award.image && !award.imageAlt) {
+        context.addIssue({ code: "custom", path: ["imageAlt"], message: "An award image needs descriptive alternative text." });
+      }
+      if (!award.image && (award.imageAlt || award.caption)) {
+        context.addIssue({ code: "custom", path: ["image"], message: "Image text and captions need an award image." });
+      }
     })
     .optional(),
   videos: z
     .array(
+      z.discriminatedUnion("provider", [
+        z.object({ provider: z.literal("youtube"), id: text.regex(/^[A-Za-z0-9_-]{11}$/, "Use an eleven-character YouTube video ID."), title: text.optional() }),
+        z.object({ provider: z.literal("vimeo"), id: text.regex(/^[1-9]\d*$/, "Use a numeric Vimeo video ID."), title: text.optional() }),
+      ]),
+    )
+    .default([]),
+  gallery: z
+    .array(
       z.object({
-        provider: z.enum(["youtube", "vimeo"]),
-        id: z.string(),
-        title: z.string().optional(),
+        image: text,
+        alt: text,
+        // Optional editorial controls; existing image/alt-only galleries remain valid.
+        caption: text.optional(),
+        layout: z.enum(["grid", "wide", "full"]).optional(),
       }),
     )
     .default([]),
-  gallery: z.array(z.object({ image: z.string(), alt: z.string() })).default([]),
-  credits: z.array(z.object({ function: z.string(), name: z.string() })).default([]),
-  festivals: z.array(z.string()).default([]),
-  lists: z.array(z.object({ label: z.string(), items: z.array(z.string()) })).default([]),
-  laurels: z.array(z.object({ image: z.string(), alt: z.string() })).default([]),
+  // Blank labels intentionally continue a group; names and values must be present.
+  credits: z.array(z.object({ function: z.string(), name: text })).default([]),
+  festivals: z.array(text).default([]),
+  lists: z.array(z.object({ label: text, items: z.array(text) })).default([]),
+  laurels: z.array(z.object({ image: text, alt: text })).default([]),
   awards: z
-    .array(z.object({ award: z.string(), festival: z.string(), year: z.string().optional() }))
+    .array(z.object({ award: text, festival: text, year: year.optional() }))
     .default([]),
-  specs: z.array(z.object({ label: z.string(), value: z.string() })).default([]),
+  specs: z.array(z.object({ label: z.string(), value: text })).default([]),
 });

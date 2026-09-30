@@ -1,0 +1,38 @@
+---
+import { Image, getImage } from 'astro:assets';
+import { resolveImage } from '../utils/images';
+interface Props {
+  image: string;
+  alt: string;
+  caption?: string;
+  sizes: string;
+  widths: number[];
+  fullWidth?: number;
+  class?: string;
+}
+const { image, alt, caption, sizes, widths, fullWidth = 2560, class: triggerClass = 'lightbox-trigger w-full' } = Astro.props;
+Astro.locals.galleryImageCount = (Astro.locals.galleryImageCount ?? 0) + 1;
+const id = `gallery-trigger-${Astro.locals.galleryImageCount}`;
+const resolved = await resolveImage(image);
+const full = await getImage({ src: resolved, width: fullWidth });
+---
+<a
+  id={id}
+  class={`gallery-trigger ${triggerClass}`}
+  href={full.src}
+  data-astro-reload
+  data-astro-prefetch="false"
+  data-lightbox-id="gallery-lightbox"
+  data-lightbox-alt={alt}
+  data-lightbox-caption={caption}
+  data-lightbox-width={full.attributes.width}
+  data-lightbox-height={full.attributes.height}
+  aria-label={`View full size: ${alt}`}
+>
+  <Image src={resolved} alt={alt} loading="lazy" width={Math.max(...widths)} widths={widths} sizes={sizes} class="w-full h-auto block" />
+</a>
+<style>
+  .gallery-trigger { display: block; cursor: zoom-in; }
+  .gallery-trigger:hover img, .gallery-trigger:active img { filter: saturate(1.08) contrast(1.05); }
+  .gallery-trigger:focus-visible { outline: 3px solid #f1d74e; outline-offset: 4px; }
+</style>

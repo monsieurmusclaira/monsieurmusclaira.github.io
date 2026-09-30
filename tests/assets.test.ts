@@ -14,7 +14,7 @@ function walk(dir: string): string[] {
 // and the absolute meta/JSON-LD image URLs.
 function assetUrls(pageHtml: string): string[] {
   const urls = new Set<string>();
-  for (const m of pageHtml.matchAll(/(?:src|href)="([^"]+)"/g)) urls.add(m[1]);
+  for (const m of pageHtml.matchAll(/(?:src|href|poster|data-src)="([^"]+)"/g)) urls.add(m[1]);
   for (const m of pageHtml.matchAll(/srcset="([^"]+)"/g)) {
     for (const part of m[1].split(",")) urls.add(part.trim().split(/\s+/)[0]);
   }
@@ -50,6 +50,20 @@ describe("built-site asset integrity", () => {
         if (url.endsWith(".html")) continue;
         const onDisk = join("dist", url.slice(1));
         if (!existsSync(onDisk)) missing.push(`${page} -> ${url}`);
+      }
+    }
+    expect(missing).toEqual([]);
+  });
+
+  it('every local CSS font/image reference resolves after pruning', () => {
+    const missing: string[] = [];
+    for (const file of walk('dist').filter((file) => file.endsWith('.css'))) {
+      const css = readFileSync(file, 'utf8');
+      for (const match of css.matchAll(/url\(\s*["']?([^"')\s]+)["']?\s*\)/g)) {
+        const raw = decode(match[1]);
+        if (/^(?:https?:|data:|#)/.test(raw)) continue;
+        const path = raw.startsWith('/') ? join('dist', raw.slice(1)) : join(file.slice(0, file.lastIndexOf('/')), raw);
+        if (!existsSync(path.split(/[?#]/)[0])) missing.push(`${file} -> ${raw}`);
       }
     }
     expect(missing).toEqual([]);

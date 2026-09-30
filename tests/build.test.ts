@@ -93,7 +93,7 @@ describe("built site invariants", () => {
     }
   });
 
-  it("lightboxes expose names and an explicit Escape close path", () => {
+  it("lightboxes expose names and triggers reference existing dialogs", () => {
     const pages = [
       "dist/behind-the-scenes/index.html",
       ...slugs.map((s) => `dist/projects/${s}/index.html`),
@@ -101,15 +101,16 @@ describe("built site invariants", () => {
     let checked = 0;
     for (const file of pages) {
       const html = readFileSync(file, "utf-8");
+      expect([...html.matchAll(/<dialog\b/g)], file).toHaveLength(1);
       for (const match of html.matchAll(/<dialog\b[^>]*class="lightbox"[^>]*>/g)) {
         checked++;
         expect(match[0]).toMatch(/aria-label="[^"]+"/);
-        expect(match[0]).toContain(
-          'oncancel="event.preventDefault(); this.close()"',
-        );
-        expect(match[0]).toContain(
-          `onkeydown="if (event.key === 'Escape') { event.preventDefault(); this.close(); }"`,
-        );
+      }
+      const dialogIds = new Set([...html.matchAll(/<dialog\b[^>]*id="([^"]+)"/g)].map((match) => match[1]));
+      const triggerIds = [...html.matchAll(/<a\b[^>]*id="(gallery-trigger-[^"]+)"/g)].map((match) => match[1]);
+      expect(new Set(triggerIds).size, file).toBe(triggerIds.length);
+      for (const match of html.matchAll(/data-lightbox-id="([^"]+)"/g)) {
+        expect(dialogIds.has(match[1]), `${file}: missing dialog ${match[1]}`).toBe(true);
       }
     }
     expect(checked).toBeGreaterThan(0);

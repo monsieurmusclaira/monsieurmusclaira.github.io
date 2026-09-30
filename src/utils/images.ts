@@ -1,28 +1,31 @@
 import type { ImageMetadata } from 'astro';
 
-const images = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/img/**/*.{png,PNG,jpg,JPG,jpeg,JPEG,webp,WEBP,gif,GIF,svg,SVG}',
-  { eager: true }
-);
+import { images, btsGalleryPaths } from '../../.astro/image-manifest';
+const loaded = new Map<string, Promise<{ default: ImageMetadata }>>();
 
-export function resolveImage(path: string): ImageMetadata {
-  const key = `/src/assets${path}`;
-  const mod = images[key];
-  if (!mod) {
-    throw new Error(`Image not found: "${path}" (resolved to "${key}")`);
+export function importImage(path: string): Promise<{ default: ImageMetadata }> {
+  const loader = images[path];
+  if (!loader) throw new Error(`Image not found: "${path}". Use a literal source path or project frontmatter so it enters the image manifest.`);
+  let image = loaded.get(path);
+  if (!image) {
+    image = loader();
+    loaded.set(path, image);
   }
-  return mod.default;
+  return image;
 }
 
-/** All behind-the-scenes photos, up to `perFolder` from each film's bts folder. */
-export function listBtsImages(perFolder = 5): ImageMetadata[] {
-  const byFolder = new Map<string, ImageMetadata[]>();
-  for (const [key, mod] of Object.entries(images)) {
-    const match = key.match(/^\/src\/assets\/img\/([^/]+)\/bts\//);
-    if (!match) continue;
-    const list = byFolder.get(match[1]) ?? [];
-    list.push(mod.default);
-    byFolder.set(match[1], list);
-  }
-  return [...byFolder.values()].flatMap((list) => list.slice(0, perFolder));
+export async function resolveImage(path: string): Promise<ImageMetadata> {
+  return (await importImage(path)).default;
+}
+
+/** Representative photos from the visible board, in its editorial order. */
+export async function listBtsImages(perFolder = 5): Promise<ImageMetadata[]> {
+  const counts = new Map<string, number>();
+  const selected = btsGalleryPaths.filter((path) => {
+    const folder = path.split('/')[2];
+    const count = counts.get(folder) ?? 0;
+    counts.set(folder, count + 1);
+    return count < perFolder;
+  });
+  return Promise.all(selected.map(resolveImage));
 }

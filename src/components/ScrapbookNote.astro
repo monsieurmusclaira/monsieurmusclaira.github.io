@@ -1,4 +1,5 @@
 ---
+interface Props { title: string; subtitle?: string; variant?: string; href?: string; }
 const { title, subtitle, variant, href } = Astro.props;
 ---
 <figure class={`scrapbook-note ${variant ? 'note-' + variant : ''}`} data-aos="fade-up" data-aos-duration="500">

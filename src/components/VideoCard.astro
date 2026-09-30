@@ -8,32 +8,27 @@
 		<source type="video/mp4" data-src="/video/seethrough-loop.mp4" />
 		Your browser does not support the video
 		</video>
-	<svg class="animate-bounce drop-in-3 text-secondary absolute bottom-16 z-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]" width="28" height="28" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	<a href="#selected-work" aria-label="Scroll to selected work" class="drop-in-3 text-secondary absolute bottom-16 z-10 inline-flex min-h-11 min-w-11 items-center justify-center rounded-sm drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+	<svg class="scroll-cue" width="28" height="28" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 		<path d="M7.5 2C7.77614 2 8 2.22386 8 2.5L8 11.2929L11.1464 8.14645C11.3417 7.95118 11.6583 7.95118 11.8536 8.14645C12.0488 8.34171 12.0488 8.65829 11.8536 8.85355L7.85355 12.8536C7.65829 13.0488 7.34171 13.0488 7.14645 12.8536L3.14645 8.85355C2.95118 8.65829 2.95118 8.34171 3.14645 8.14645C3.34171 7.95118 3.65829 7.95118 3.85355 8.14645L7 11.2929L7 2.5C7 2.22386 7.22386 2 7.5 2Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"/>
 	</svg>
+	</a>
 </div>
 
-<script is:inline>
-  // Decide per visit whether to play the hero video. Phones (narrow screens) and
-  // visitors who asked for reduced motion keep the still poster and never download
-  // the video. On larger screens with motion allowed, load the sources and play.
-  function setupHeroVideo() {
-    const video = document.getElementById('hero-video');
-    if (!video) return;
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const smallScreen = window.matchMedia('(max-width: 767px)').matches;
-    if (reduceMotion || smallScreen) return;
-    if (!video.dataset.loaded) {
-      video.querySelectorAll('source[data-src]').forEach(function (s) {
-        s.src = s.getAttribute('data-src');
-      });
-      video.load();
-      video.dataset.loaded = '1';
-    }
-    video.play().catch(function () {});
+<script>
+  import { attachHeroVideo } from '../lib/hero-video';
+
+  // Bundled once by Astro; release the old video on client navigation.
+  let cleanup: (() => void) | undefined;
+  function setup() {
+    cleanup?.();
+    cleanup = undefined;
+    const video = document.querySelector<HTMLVideoElement>('#hero-video');
+    if (video) cleanup = attachHeroVideo(video);
   }
-  // Run immediately on the initial document and again after Astro view
-  // transitions, so the background video starts in either navigation mode.
-  setupHeroVideo();
-  document.addEventListener('astro:page-load', setupHeroVideo);
+  document.addEventListener('astro:page-load', setup);
+  document.addEventListener('astro:before-swap', () => {
+    cleanup?.();
+    cleanup = undefined;
+  });
 </script>

@@ -28,6 +28,8 @@
   --font-sans: var(--font-montserrat), sans-serif;
   --font-serif: var(--font-eb-garamond), serif;
   --font-hand: var(--font-caveat), cursive;
+  /* 7.3:1 on the neutral page surface; use for small supporting labels. */
+  --color-muted: #a1a3aa;
 }
 
 @plugin "daisyui/theme" {
@@ -128,6 +130,16 @@ animation: drop-in 1200ms ease 500ms backwards;
     animation: drop-in 1200ms ease 600ms backwards;
     }
 
+/* Brief directional cue, then a still arrow instead of endless motion. */
+.scroll-cue {
+  animation: scroll-cue 1s ease-in-out 3;
+}
+
+@keyframes scroll-cue {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
 @keyframes drop-in {
 from {
     opacity: 0;
@@ -184,7 +196,7 @@ html:not(.js) [data-aos] {
     transition: none !important;
   }
   .drop-in, .drop-in-2, .drop-in-3 { animation: none !important; }
-  .animate-bounce { animation: none !important; }
+  .animate-bounce, .scroll-cue { animation: none !important; }
 
   /* Card and image hover zooms (FilmCard, NextProject). Targeted by
      attribute-substring so the components need no extra class. Tailwind v4

@@ -1,0 +1,33 @@
+<dialog id="gallery-lightbox" class="lightbox" aria-label="Image gallery">
+  <div class="lightbox-controls">
+    <button type="button" data-gallery-previous aria-label="Previous image">&#8249;</button>
+    <p data-gallery-position aria-live="polite" aria-atomic="true"></p>
+    <button type="button" data-gallery-next aria-label="Next image">&#8250;</button>
+    <button type="button" class="lightbox-close" aria-label="Close image">&#215;</button>
+  </div>
+  <figure>
+    <img data-gallery-image alt="" decoding="async" />
+    <figcaption data-gallery-caption hidden></figcaption>
+  </figure>
+</dialog>
+<style is:global>
+  dialog.lightbox {
+    margin: auto;
+    width: min(1100px, calc(100vw - 24px));
+    max-width: calc(100vw - 24px);
+    max-height: 90dvh;
+    padding: 12px;
+    border: 1px solid #a1a3aa;
+    border-radius: 8px;
+    background: #11131d;
+    color: #eff0f6;
+  }
+  dialog.lightbox::backdrop { background: rgba(0, 0, 0, 0.92); cursor: zoom-out; }
+  .lightbox-controls { display: grid; grid-template-columns: 44px 1fr 44px 44px; align-items: center; gap: 8px; margin-bottom: 12px; }
+  .lightbox-controls button { width: 44px; height: 44px; border-radius: 4px; font-size: 28px; cursor: pointer; }
+  .lightbox-controls button:hover { background: #f1d74e; color: #11131d; }
+  .lightbox-controls button:disabled { opacity: 0.5; cursor: default; }
+  .lightbox-controls p { text-align: center; font-size: 14px; }
+  .lightbox [data-gallery-image] { display: block; margin: auto; width: auto; height: auto; max-width: 100%; max-height: calc(90dvh - 9rem); object-fit: contain; }
+  .lightbox figcaption { margin-top: 12px; text-align: center; font-size: 14px; line-height: 1.5; }
+</style>

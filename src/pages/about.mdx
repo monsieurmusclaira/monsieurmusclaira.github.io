@@ -5,20 +5,19 @@ description: "Belgium-based cinematographer and director working across fiction,
 image: "/img/about/IMG_2507-unblur.jpg"
 ---
 import { Image } from 'astro:assets';
-import { resolveImage } from '../utils/images';
+import { importImage } from '../utils/images';
 import ProjectHero from '../components/ProjectHero.astro';
 import ProjectIntro from '../components/ProjectIntro.astro';
 import SectionLabel from '../components/SectionLabel.astro';
 import ContentPicture from '../components/ContentPicture.astro';
 export const meta = {
     title: 'Victor Maes',
-    synopsis: '',
     heroImage: '/img/thetearsofthings/stills/TTOT_20221008_1.19.1.jpg',
     imageposition: "50% 50%",
     imageAlt: 'Cinematography still by Victor Maes'
 };
 
-<ProjectHero title={meta.title} synopsis={meta.synopsis} credit="Cinematographer & Director · Belgium" heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} />
+<ProjectHero title={meta.title} credit="Cinematographer & Director · Belgium" heroImage={meta.heroImage} alt={meta.imageAlt} imageposition={meta.imageposition} scrollTarget="project-intro" />
 
 <ProjectIntro items={[
     { label: 'Based in', value: 'Belgium' },
@@ -29,7 +28,7 @@ export const meta = {
 <section class="hero py-16 sm:py-24 bg-neutral">
     <div class="w-full max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-[300px_1fr] gap-10 md:gap-14 items-start" data-aos="fade-up" data-aos-duration="600">
         <Image
-            src={resolveImage('/img/about/IMG_2507-unblur.jpg')}
+            src={importImage('/img/about/IMG_2507-unblur.jpg')}
             alt="Portrait of Victor Maes, cinematographer and director based in Belgium"
             class="w-full h-auto"
             widths={[320, 640]}

@@ -1,12 +1,11 @@
 // Removes image files from dist/_astro that no built HTML/CSS/JS/XML references.
-// Astro's eager image glob (src/utils/images.ts) causes every original
-// PNG/JPG to be emitted alongside the optimized WebP variants the pages
-// actually use. Those originals add ~800MB to the deploy, which overruns
-// GitHub Pages' 1GB site limit. Run after `astro build`.
+// Vite emits imported originals alongside optimized variants, including lazy
+// imports. Keep pruning until the manifest no longer emits those unused files.
 import { readdir, readFile, unlink, stat } from 'node:fs/promises';
-import { join, extname } from 'node:path';
+import { join, extname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const DIST = new URL('../dist/', import.meta.url).pathname;
+const DIST = process.argv[2] ? resolve(process.argv[2]) : fileURLToPath(new URL('../dist/', import.meta.url));
 const ASTRO_DIR = join(DIST, '_astro');
 const PRUNABLE = new Set(['.png', '.jpg', '.jpeg', '.webp', '.svg', '.PNG', '.JPG', '.JPEG', '.WEBP', '.SVG']);
 

@@ -1,0 +1,101 @@
+[
+  {
+    "route": "/projects/bieke-depoorter-chance-encounters/",
+    "width": 1280,
+    "height": 720,
+    "deviceScaleFactor": 1,
+    "slotWidth": 554,
+    "candidateWidth": 576,
+    "imageRequests": 17,
+    "imageBytes": 139196,
+    "fontRequests": 7
+  },
+  {
+    "route": "/projects/ever-since-i-have-been-flying/",
+    "width": 1280,
+    "height": 720,
+    "deviceScaleFactor": 1,
+    "slotWidth": 554,
+    "candidateWidth": 576,
+    "imageRequests": 41,
+    "imageBytes": 661096,
+    "fontRequests": 7
+  },
+  {
+    "route": "/behind-the-scenes/",
+    "width": 1280,
+    "height": 720,
+    "deviceScaleFactor": 1,
+    "slotWidth": 354.85992431640625,
+    "candidateWidth": 384,
+    "imageRequests": 82,
+    "imageBytes": 1324494,
+    "fontRequests": 7
+  },
+  {
+    "route": "/projects/bieke-depoorter-chance-encounters/",
+    "width": 1280,
+    "height": 720,
+    "deviceScaleFactor": 2,
+    "slotWidth": 554,
+    "candidateWidth": 1152,
+    "imageRequests": 17,
+    "imageBytes": 333028,
+    "fontRequests": 7
+  },
+  {
+    "route": "/projects/ever-since-i-have-been-flying/",
+    "width": 1280,
+    "height": 720,
+    "deviceScaleFactor": 2,
+    "slotWidth": 554,
+    "candidateWidth": 1152,
+    "imageRequests": 41,
+    "imageBytes": 1600462,
+    "fontRequests": 7
+  },
+  {
+    "route": "/behind-the-scenes/",
+    "width": 1280,
+    "height": 720,
+    "deviceScaleFactor": 2,
+    "slotWidth": 354.85992431640625,
+    "candidateWidth": 768,
+    "imageRequests": 82,
+    "imageBytes": 3897420,
+    "fontRequests": 7
+  },
+  {
+    "route": "/projects/bieke-depoorter-chance-encounters/",
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 2,
+    "slotWidth": 358,
+    "candidateWidth": 768,
+    "imageRequests": 17,
+    "imageBytes": 154404,
+    "fontRequests": 7
+  },
+  {
+    "route": "/projects/ever-since-i-have-been-flying/",
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 2,
+    "slotWidth": 358,
+    "candidateWidth": 768,
+    "imageRequests": 41,
+    "imageBytes": 848862,
+    "fontRequests": 7
+  },
+  {
+    "route": "/behind-the-scenes/",
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 2,
+    "slotWidth": 341.2114562988281,
+    "candidateWidth": 768,
+    "imageRequests": 82,
+    "imageBytes": 3897420,
+    "fontRequests": 7
+  }
+]

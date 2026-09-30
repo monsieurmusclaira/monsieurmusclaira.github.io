@@ -1,0 +1,98 @@
+[
+  {
+    "route": "/",
+    "variant": "baseline",
+    "run": 1,
+    "contentLayers": 18,
+    "paintMilliseconds": 7.849,
+    "framesOver50ms": 0
+  },
+  {
+    "route": "/",
+    "variant": "baseline",
+    "run": 2,
+    "contentLayers": 18,
+    "paintMilliseconds": 12.374,
+    "framesOver50ms": 0
+  },
+  {
+    "route": "/",
+    "variant": "baseline",
+    "run": 3,
+    "contentLayers": 18,
+    "paintMilliseconds": 9.571,
+    "framesOver50ms": 0
+  },
+  {
+    "route": "/",
+    "variant": "override",
+    "run": 1,
+    "contentLayers": 11,
+    "paintMilliseconds": 10.258,
+    "framesOver50ms": 0
+  },
+  {
+    "route": "/",
+    "variant": "override",
+    "run": 2,
+    "contentLayers": 11,
+    "paintMilliseconds": 12.363,
+    "framesOver50ms": 0
+  },
+  {
+    "route": "/",
+    "variant": "override",
+    "run": 3,
+    "contentLayers": 11,
+    "paintMilliseconds": 11.422,
+    "framesOver50ms": 0
+  },
+  {
+    "route": "/behind-the-scenes/",
+    "variant": "baseline",
+    "run": 1,
+    "contentLayers": 41,
+    "paintMilliseconds": 19.369,
+    "framesOver50ms": 0
+  },
+  {
+    "route": "/behind-the-scenes/",
+    "variant": "baseline",
+    "run": 2,
+    "contentLayers": 41,
+    "paintMilliseconds": 21.386,
+    "framesOver50ms": 0
+  },
+  {
+    "route": "/behind-the-scenes/",
+    "variant": "baseline",
+    "run": 3,
+    "contentLayers": 41,
+    "paintMilliseconds": 18.011,
+    "framesOver50ms": 0
+  },
+  {
+    "route": "/behind-the-scenes/",
+    "variant": "override",
+    "run": 1,
+    "contentLayers": 4,
+    "paintMilliseconds": 11.548,
+    "framesOver50ms": 0
+  },
+  {
+    "route": "/behind-the-scenes/",
+    "variant": "override",
+    "run": 2,
+    "contentLayers": 4,
+    "paintMilliseconds": 12.772,
+    "framesOver50ms": 0
+  },
+  {
+    "route": "/behind-the-scenes/",
+    "variant": "override",
+    "run": 3,
+    "contentLayers": 4,
+    "paintMilliseconds": 12.82,
+    "framesOver50ms": 0
+  }
+]

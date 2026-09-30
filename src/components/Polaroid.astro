@@ -1,21 +1,10 @@
 ---
-import { Image } from 'astro:assets';
-import { resolveImage } from '../utils/images';
+import GalleryImage from './GalleryImage.astro';
+import { polaroidSizes } from '../lib/gallery-layout';
+interface Props { image: string; alt: string; caption?: string; }
 const { image, alt, caption } = Astro.props;
-// Stable id derived from the full image path, so two images that share a
-// basename across folders (common on the behind-the-scenes board) cannot
-// collide, and builds stay deterministic.
-const slug = image.replace(/\.[^.]+$/, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-const id = `bts-${slug}`;
-const resolved = resolveImage(image);
 ---
 <figure class="polaroid">
-    <button id={`${id}-trigger`} class="polaroid-btn" onclick={`(function(trigger){var dialog=document.getElementById('${id}'); if (!dialog.open) dialog.showModal(); document.getElementById('${id}-close').focus();})(this)`} aria-label={`View full size: ${alt}`}>
-        <Image src={resolved} alt={alt} loading="lazy" width={960} widths={[480, 960]} sizes="(min-width:1280px) 33vw, (min-width:1024px) 50vw, 100vw" />
-    </button>
-    {caption && <figcaption>{caption}</figcaption>}
-    <dialog id={id} class="lightbox" aria-label={`Image: ${alt}`} oncancel="event.preventDefault(); this.close()" onkeydown="if (event.key === 'Escape') { event.preventDefault(); this.close(); }" onclose={`document.getElementById('${id}-trigger')?.focus()`} onclick="if (event.target === this) this.close()">
-        <button id={`${id}-close`} type="button" class="lightbox-close" aria-label="Close image" onclick="this.closest('dialog').close()">&#215;</button>
-        <Image src={resolved} alt={alt} width={1200} widths={[1200]} sizes="90vw" loading="lazy" />
-    </dialog>
+  <GalleryImage image={image} alt={alt} caption={caption} sizes={polaroidSizes} widths={[384, 768, 960]} fullWidth={1200} class="polaroid-btn" />
+  {caption && <figcaption>{caption}</figcaption>}
 </figure>

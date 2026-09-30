@@ -3,7 +3,14 @@ import BaseHead from "../components/BaseHead.astro";
 import { ClientRouter } from 'astro:transitions';
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import GalleryDialog from '../components/GalleryDialog.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import type { ComponentProps } from "astro/types";
+type Metadata = ComponentProps<typeof BaseHead>;
+interface Props extends Partial<Metadata> {
+  frontmatter?: Partial<Metadata>;
+  content?: { title?: string; description?: string };
+}
 const { canonical, schema, noindex } = Astro.props;
 // MDX pages set `image` in their YAML frontmatter (mirrors meta.heroImage) — used for social cards.
 // Project pages also set director/genre/year for Movie schema enrichment.
@@ -44,7 +51,8 @@ const description = Astro.props.description || Astro.props.frontmatter?.descript
         
         <slot />
       </main>      
-      <Footer /> 
+      <Footer />
+      <GalleryDialog />
 
       <!-- Scroll reveal. Replaces the AOS package: the site only ever uses
            fade-up with three durations and no delays, so a small
@@ -65,6 +73,7 @@ const description = Astro.props.description || Astro.props.frontmatter?.descript
         html.js [data-aos="fade-up"].aos-animate { opacity: 1; transform: none; }
       </style>
       <script>
+        import '../lib/lightbox';
         let observer: IntersectionObserver | undefined;
         document.addEventListener('astro:page-load', () => {
           if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
