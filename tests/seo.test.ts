@@ -144,7 +144,7 @@ describe("built-site SEO invariants", () => {
       const page = html(`dist/projects/${s}/index.html`);
       for (const m of page.matchAll(/"embedUrl":"([^"]*)"/g)) {
         expect(m[1]).toMatch(
-          /^https:\/\/(www\.youtube\.com\/embed\/[A-Za-z0-9_-]+|player\.vimeo\.com\/video\/\d+)$/,
+          /^https:\/\/(www\.youtube-nocookie\.com\/embed\/[A-Za-z0-9_-]+|player\.vimeo\.com\/video\/\d+)$/,
         );
       }
     }

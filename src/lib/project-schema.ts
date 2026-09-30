@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { videoSchema } from "./videos";
 
 const text = z.string().trim().min(1, "This field must not be blank.");
 const year = text.regex(/^[1-9]\d{3}$/, "Use a four-digit year.");
@@ -49,14 +50,7 @@ export const projectSchema = z.object({
       }
     })
     .optional(),
-  videos: z
-    .array(
-      z.discriminatedUnion("provider", [
-        z.object({ provider: z.literal("youtube"), id: text.regex(/^[A-Za-z0-9_-]{11}$/, "Use an eleven-character YouTube video ID."), title: text.optional() }),
-        z.object({ provider: z.literal("vimeo"), id: text.regex(/^[1-9]\d*$/, "Use a numeric Vimeo video ID."), title: text.optional() }),
-      ]),
-    )
-    .default([]),
+  videos: z.array(videoSchema).default([]),
   gallery: z
     .array(
       z.object({

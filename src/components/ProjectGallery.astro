@@ -1,0 +1,32 @@
+---
+import ProjectGalleryItem from './ProjectGalleryItem.astro';
+import type { ProjectData } from '../lib/projects';
+interface Props { gallery: ProjectData['gallery']; }
+const { gallery } = Astro.props;
+const items: (ProjectData['gallery'][number] & { layout: 'grid' | 'wide' | 'full' })[] = gallery.map((item, index) => ({
+  ...item,
+  layout: item.layout ?? (gallery.length % 2 === 1 && index === gallery.length - 1 ? 'wide' : 'grid'),
+}));
+const opening = items.slice(0, 6);
+const remaining = items.slice(6);
+const gridClass = 'hero-content grid w-full grid-cols-1 md:grid-cols-2 gap-x-3 gap-y-10 max-w-6xl mx-auto px-4';
+---
+<section data-project-gallery class="pt-12 pb-8" aria-labelledby="project-stills-heading">
+  <h2 id="project-stills-heading" class="sr-only">Stills</h2>
+  <div class={gridClass} data-gallery-opening>{opening.map((item) => <ProjectGalleryItem item={item} />)}</div>
+  {remaining.length > 0 && (
+    <details data-gallery-expansion class="max-w-6xl mx-auto mt-8">
+      <summary class="gallery-expansion-control mx-4">
+        <span class="gallery-show">View all {gallery.length} stills</span>
+        <span class="gallery-hide">Show fewer stills</span>
+      </summary>
+      <div class={`${gridClass} mt-8`} data-gallery-remaining>{remaining.map((item) => <ProjectGalleryItem item={item} />)}</div>
+    </details>
+  )}
+</section>
+<style>
+  .gallery-expansion-control { width: fit-content; max-width: calc(100% - 32px); min-height: 44px; padding: 12px 20px; border: 1px solid #a1a3aa; border-radius: 2px; color: #eff0f6; cursor: pointer; font-family: var(--font-montserrat), sans-serif; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .gallery-expansion-control:hover { border-color: #f1d74e; color: #f1d74e; }
+  .gallery-hide, details[open] .gallery-show { display: none; }
+  details[open] .gallery-hide { display: inline; }
+</style>

@@ -3,6 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import { ClientRouter } from 'astro:transitions';
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import AnalyticsConsent from "../components/AnalyticsConsent.astro";
 import GalleryDialog from '../components/GalleryDialog.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import type { ComponentProps } from "astro/types";
@@ -18,7 +19,8 @@ const image = Astro.props.image || Astro.props.frontmatter?.image;
 const imageAlt = Astro.props.imageAlt || Astro.props.frontmatter?.imageAlt;
 const director = Astro.props.frontmatter?.director;
 const genre = Astro.props.frontmatter?.genre;
-const year = Astro.props.frontmatter?.year;
+const projectTitle = Astro.props.frontmatter?.projectTitle;
+const role = Astro.props.frontmatter?.role;
 const schemaType = Astro.props.frontmatter?.schemaType;
 const awards = Astro.props.frontmatter?.awards;
 const featuredAward = Astro.props.frontmatter?.featuredAward;
@@ -31,7 +33,7 @@ const description = Astro.props.description || Astro.props.frontmatter?.descript
  
   <head>
     <script is:inline>document.documentElement.classList.add('js');</script>
-    <BaseHead title={title} description={description} image={image} imageAlt={imageAlt} canonical={canonical} schema={schema} noindex={noindex} director={director} genre={genre} year={year} schemaType={schemaType} awards={awards} featuredAward={featuredAward} videos={videos} />
+    <BaseHead title={title} description={description} image={image} imageAlt={imageAlt} canonical={canonical} schema={schema} noindex={noindex} director={director} genre={genre} projectTitle={projectTitle} role={role} schemaType={schemaType} awards={awards} featuredAward={featuredAward} videos={videos} />
     <ClientRouter />
   </head>
 
@@ -52,6 +54,7 @@ const description = Astro.props.description || Astro.props.frontmatter?.descript
         <slot />
       </main>      
       <Footer />
+      <AnalyticsConsent />
       <GalleryDialog />
 
       <!-- Scroll reveal. Replaces the AOS package: the site only ever uses

@@ -38,10 +38,6 @@ const { entry, next, prev } = Astro.props;
 const { Content } = await render(entry);
 const { description, hero } = entry.data;
 
-// Visible pages only show `year` when set; structured data falls back to the
-// film's own recorded featured-award year.
-const resolvedYear = entry.data.year ?? entry.data.featuredAward?.year;
-
 // Each project owns a curated, descriptive title in frontmatter so search
 // results retain the film type and cinematography/direction intent.
 const headTitle = entry.data.seoTitle;
@@ -55,7 +51,8 @@ const headTitle = entry.data.seoTitle;
   frontmatter={{
     director: entry.data.director,
     genre: entry.data.genre,
-    year: resolvedYear,
+    projectTitle: entry.data.title,
+    role: entry.data.role,
     schemaType: entry.data.schemaType,
     awards: entry.data.awards,
     featuredAward: entry.data.featuredAward,

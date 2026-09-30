@@ -3,9 +3,8 @@ import ProjectHero from "./ProjectHero.astro";
 import ProjectIntro from "./ProjectIntro.astro";
 import SectionLabel from "./SectionLabel.astro";
 import FeaturedAward from "./FeaturedAward.astro";
-import ContentYoutube from "./ContentYoutube.astro";
-import ContentVimeo from "./ContentVimeo.astro";
-import ContentPicture from "./ContentPicture.astro";
+import VideoEmbed from "./VideoEmbed.astro";
+import ProjectGallery from "./ProjectGallery.astro";
 import CreditsItem from "./CreditsItem.astro";
 import FestivalList from "./FestivalList.astro";
 import AwardItem from "./AwardItem.astro";
@@ -13,7 +12,6 @@ import SpecItem from "./SpecItem.astro";
 import NextProject from "./NextProject.astro";
 import { resolveImage } from "../utils/images";
 import type { ProjectData, NextProjectLink, ProjectLink, IntroFact } from "../lib/projects";
-import { gallerySizes } from '../lib/gallery-layout';
 
 interface Props {
   data: ProjectData;
@@ -35,6 +33,7 @@ const introItems: IntroFact[] = [
   { label: "Format", value: data.format },
   { label: "Role", value: data.role },
   { label: "Director", value: data.director },
+  ...(data.card.badge2 ? [{ label: 'Status', value: data.card.badge2.toLowerCase() }] : []),
 ];
 // Credits are stored as a flat list in which a non-empty `function` opens a
 // department and subsequent empty functions belong to it. Keep each department
@@ -77,60 +76,15 @@ for (const spec of specs) {
 
 <ProjectIntro synopsis={data.synopsis} items={introItems} />
 
-{videos.map((v) =>
-  v.provider === "youtube" ? (
-    <ContentYoutube YoutubeLink={v.id} />
-  ) : (
-    <ContentVimeo VimeoId={v.id} title={v.title} />
-  ),
-)}
+{data.featuredAward && <FeaturedAward {...data.featuredAward} />}
+
+{videos.map((video) => <VideoEmbed video={video} projectTitle={data.title} poster={data.hero.image} />)}
 
 <div class="project-copy">
   <slot />
 </div>
 
-{gallery.length > 0 && (
-  <section class="hero pt-12 pb-8" aria-labelledby="project-stills-heading">
-    <h2 id="project-stills-heading" class="sr-only">Stills</h2>
-    <div class="hero-content grid w-full grid-cols-1 md:grid-cols-2 gap-x-3 gap-y-10 max-w-6xl mx-auto px-4">
-      {gallery.map((g, i) => {
-        const isLastOdd = gallery.length % 2 === 1 && i === gallery.length - 1;
-        const layout = g.layout ?? (isLastOdd ? "wide" : "grid");
-        const isWide = layout === "wide" || layout === "full";
-        const isFull = layout === "full";
-        return (
-          <figure
-            class:list={[
-              "gallery-item w-full",
-              isWide && "md:col-span-2",
-              isWide && !isFull && "max-w-4xl mx-auto",
-              isFull && "md:-mx-4 md:w-[calc(100%+2rem)]",
-            ]}
-            data-gallery-layout={layout}
-          >
-            <ContentPicture image={g.image} alt={g.alt} caption={g.caption} sizes={gallerySizes[layout]} widths={layout === 'grid' ? [384, 576, 768, 1152] : [384, 768, 1152, 1920, 2560]} />
-            {g.caption && (
-              <figcaption class="px-2 pt-3 text-center font-sans text-[11px] tracking-widest uppercase text-base-100/50">
-                {g.caption}
-              </figcaption>
-            )}
-          </figure>
-        );
-      })}
-    </div>
-  </section>
-)}
-
-{data.featuredAward && (
-  <FeaturedAward
-    award={data.featuredAward.award}
-    festival={data.featuredAward.festival}
-    year={data.featuredAward.year}
-    image={data.featuredAward.image}
-    imageAlt={data.featuredAward.imageAlt}
-    caption={data.featuredAward.caption}
-  />
-)}
+{gallery.length > 0 && <ProjectGallery gallery={gallery} />}
 
 {credits.length > 0 && (
   <section class="hero pt-20 pb-4">
@@ -233,6 +187,10 @@ for (const spec of specs) {
     <a href="/about/#contact" class="mt-7 inline-flex items-center rounded-sm border border-secondary bg-secondary px-5 py-3 font-sans text-xs tracking-[0.16em] uppercase text-neutral transition-colors duration-200 hover:bg-transparent hover:text-secondary focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-secondary focus-visible:outline-offset-2">Discuss a project <span class="ml-2" aria-hidden="true">&rarr;</span></a>
   </div>
 </section>
+
+<nav aria-label="Project navigation" class="bg-neutral px-6 py-5 text-center">
+  <a href="/#all-work" class="inline-flex min-h-11 items-center px-4 font-sans text-xs tracking-widest uppercase text-secondary">Back to all work</a>
+</nav>
 
 {prev && (
   <a href={prev.url} class="block bg-neutral py-6 text-center group focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-secondary" data-aos="fade-up" data-aos-duration="600">

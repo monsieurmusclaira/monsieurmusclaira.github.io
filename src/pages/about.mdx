@@ -10,8 +10,9 @@ import ProjectHero from '../components/ProjectHero.astro';
 import ProjectIntro from '../components/ProjectIntro.astro';
 import SectionLabel from '../components/SectionLabel.astro';
 import ContentPicture from '../components/ContentPicture.astro';
+import { CONTACT_EMAIL, SITE_NAME, SOCIAL_LINKS } from '../config';
 export const meta = {
-    title: 'Victor Maes',
+    title: SITE_NAME,
     heroImage: '/img/thetearsofthings/stills/TTOT_20221008_1.19.1.jpg',
     imageposition: "50% 50%",
     imageAlt: 'Cinematography still by Victor Maes'
@@ -36,11 +37,10 @@ export const meta = {
             loading="lazy"
         />
         <div class="text-lg sm:text-xl text-base-100/90 space-y-6">
-            <p class="font-serif text-xl sm:text-2xl text-base-100">Victor Maes is a Belgium-based cinematographer and director working across fiction, documentary, commercials and VR, available for productions worldwide.</p>
-            <p class="font-serif">He has worked as a camera assistant on feature films and commercials since 2016, including <em>Cowards</em>, <em>Close</em>, <em>Girl</em>, <em>Holly</em>, <em>De Patrick</em>, <em>Nobody Has to Know</em> and <em>The Wolf, the Fox and the Leopard</em>. As a cinematographer, he moves between fiction, documentary and commercial projects. The documentary <em>Ever Since I Have Been Flying</em>, directed by Swiss-Turkish filmmaker Aylin Gökmen, premiered at Locarno and Toronto in 2023.</p>
-            <p class="font-serif">He is also interested in new technologies such as VR and games, as well as the possibilities of analogue film. He began as a director with an animated short, which led to <em>A Long Goodbye</em>, an interactive VR experience about Ida, an elderly pianist living with dementia. Co-written and co-directed with Kate Voet, the project premiered at the 82nd Venice Film Festival and received the Venice Immersive Achievement Prize. It has since travelled to Film Fest Gent, Thessaloniki Film Festival, IDFA, Clermont-Ferrand, FIPADOC and SXSW, winning several additional awards.</p>
-            <p class="font-serif">Victor is available worldwide as a cinematographer and director of photography for fiction, documentary, commercials and VR, and is based in Belgium.</p>
-            <p class="font-sans text-sm font-light text-base-100/60 pt-2"><span lang="fr">Directeur de la photographie basé en Belgique, disponible pour la fiction, le documentaire et la publicité, en Belgique et à l'international.</span> &middot; <span lang="nl">Director of photography gevestigd in België, beschikbaar voor fictie, documentaire en commercials, in België en internationaal.</span></p>
+            <p class="font-serif text-xl sm:text-2xl text-base-100">I’m a Belgium-based cinematographer and director working across fiction, documentary, commercials and VR.</p>
+            <p class="font-serif">Since 2016, I’ve worked as a camera assistant on features and commercials, including <em>Cowards</em>, <em>Close</em>, <em>Girl</em>, <em>Holly</em>, <em>De Patrick</em>, <em>Nobody Has to Know</em> and <em>The Wolf, the Fox and the Leopard</em>.</p>
+            <p class="font-serif">My cinematography work includes Aylin Gökmen’s <a href="/projects/ever-since-i-have-been-flying/" class="underline underline-offset-4 text-secondary">Ever Since, I Have Been Flying</a>, Cato Catteeuw’s <a href="/projects/burn/" class="underline underline-offset-4 text-secondary">Burn</a>, and Kate Voet’s <a href="/projects/the-tears-of-things/" class="underline underline-offset-4 text-secondary">The Tears of Things</a>.</p>
+            <p class="font-serif">I also explore VR, games and analogue film. <a href="/projects/a-long-goodbye/" class="underline underline-offset-4 text-secondary">A Long Goodbye</a>, co-written and co-directed with Kate Voet, is an interactive VR experience about Ida, an elderly pianist living with dementia. It received the Venice Immersive Achievement Prize in 2025.</p>
         </div>
     </div>
 </section>
@@ -48,10 +48,10 @@ export const meta = {
 <section id="contact" class="hero pt-16 pb-28 bg-neutral scroll-mt-24">
     <div class="hero-content flex-col w-full">
         <SectionLabel label="Contact" />
-        <a href="mailto:hello@victormaes.com" class="font-sans text-xl sm:text-2xl font-light text-base-100 hover:text-secondary transition-colors duration-200">{'hello@victormaes.com'}</a>
+        <a href={`mailto:${CONTACT_EMAIL}`} class="inline-flex min-h-11 items-center break-all font-sans text-lg sm:text-2xl font-light text-base-100 hover:text-secondary transition-colors duration-200">{CONTACT_EMAIL}</a>
         <div class="flex items-center gap-8 mt-6 font-sans text-xs tracking-widest uppercase">
-            <a href="https://www.instagram.com/monsieur_musclaira/" target="_blank" rel="noopener noreferrer" class="text-base-100/70 hover:text-secondary transition-colors duration-200">Instagram<span class="sr-only"> (opens in a new tab)</span></a>
-            <a href="https://www.imdb.com/name/nm4866929" target="_blank" rel="noopener noreferrer" class="text-base-100/70 hover:text-secondary transition-colors duration-200">IMDb<span class="sr-only"> (opens in a new tab)</span></a>
+            <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" class="text-base-100/70 hover:text-secondary transition-colors duration-200">Instagram<span class="sr-only"> (opens in a new tab)</span></a>
+            <a href={SOCIAL_LINKS.imdb} target="_blank" rel="noopener noreferrer" class="text-base-100/70 hover:text-secondary transition-colors duration-200">IMDb<span class="sr-only"> (opens in a new tab)</span></a>
         </div>
     </div>
 </section>

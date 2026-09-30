@@ -5,19 +5,19 @@ import type { ProjectData } from '../lib/projects';
 type Props = NonNullable<ProjectData['featuredAward']>;
 const { award, festival, year, image, imageAlt, caption } = Astro.props;
 ---
-<section class="hero pt-16 pb-8 sm:pt-20 sm:pb-10" data-aos="fade-up" data-aos-duration="600">
+<section data-featured-recognition class="hero pt-2 pb-8" data-aos="fade-up" data-aos-duration="600">
   <div class="hero-content flex-col text-center px-6 max-w-3xl mx-auto">
     <span class="font-sans text-[11px] tracking-[0.25em] uppercase text-base-100/60 mb-4">
       Awarded
     </span>
-    <p class="font-serif text-3xl sm:text-4xl text-warning">
+    <p class="font-serif text-2xl sm:text-3xl text-warning">
       {award}
     </p>
-    <p class="font-sans text-sm tracking-[0.15em] uppercase text-base-100/50 mt-4">
+    <p class="font-sans text-sm tracking-[0.15em] uppercase text-muted mt-3">
       {festival}{year ? ` · ${year}` : ''}
     </p>
     {image && (
-      <figure class="mt-10 w-full" data-aos="fade-up" data-aos-duration="600">
+      <figure class="mt-5 w-full">
         <Image
           src={await resolveImage(image)}
           alt={imageAlt || `${award}, ${festival}`}

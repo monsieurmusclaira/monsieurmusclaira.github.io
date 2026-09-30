@@ -1,0 +1,48 @@
+---
+import { Image } from 'astro:assets';
+import { resolveImage } from '../utils/images';
+import { videoDetails, type Video } from '../lib/videos';
+interface Props { video: Video; projectTitle: string; poster: string; }
+const { video, projectTitle, poster } = Astro.props;
+const details = videoDetails(video, projectTitle);
+---
+<section class="w-full max-w-4xl mx-auto px-5 sm:px-6 py-12 sm:py-16" data-aos="fade-up" data-aos-duration="600">
+  <h2 class="font-serif text-3xl sm:text-4xl text-secondary text-center mb-8 sm:mb-10">{details.title}</h2>
+  <div data-youtube-frame={video.provider === 'youtube' ? true : undefined} class="w-full max-w-[720px] mx-auto overflow-hidden">
+    <div data-video-player data-embed-url={details.embedUrl} data-video-title={details.name} class="relative aspect-video min-h-[200px] bg-black">
+      <Image src={await resolveImage(poster)} alt="" widths={[360, 720, 1440]} sizes="(min-width: 768px) 720px, calc(100vw - 40px)" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+      <button hidden data-video-play type="button" aria-label={`Play ${details.name} on ${details.providerName}`} class="absolute inset-0 w-full h-full flex items-center justify-center bg-black/25 hover:bg-black/40 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-secondary">
+        <span class="flex h-16 w-16 items-center justify-center rounded-full border border-secondary bg-neutral/90 text-secondary" aria-hidden="true">▶</span>
+      </button>
+    </div>
+    <p class="mt-4 text-center font-sans text-xs text-base-100/70">
+      <a href={details.watchUrl} target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center underline underline-offset-4 hover:text-secondary">Watch {details.title.toLowerCase()} on {details.providerName}<span class="sr-only"> (opens in a new tab)</span></a>
+    </p>
+  </div>
+</section>
+<script>
+  function setupVideos() {
+    document.querySelectorAll<HTMLElement>('[data-video-player]').forEach((player) => {
+      const button = player.querySelector<HTMLButtonElement>('[data-video-play]');
+      if (!button || button.dataset.ready) return;
+      button.dataset.ready = 'true';
+      button.hidden = false;
+      button.addEventListener('click', () => {
+        const iframe = document.createElement('iframe');
+        const url = new URL(player.dataset.embedUrl!);
+        url.searchParams.set('autoplay', '1');
+        if (url.hostname === 'player.vimeo.com') url.searchParams.set('dnt', '1');
+        iframe.src = url.href;
+        iframe.title = player.dataset.videoTitle!;
+        iframe.className = 'absolute inset-0 w-full h-full border-0';
+        iframe.allow = 'autoplay; fullscreen; picture-in-picture; encrypted-media';
+        iframe.allowFullscreen = true;
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        iframe.tabIndex = 0;
+        player.replaceChildren(iframe);
+        iframe.focus();
+      }, { once: true });
+    });
+  }
+  document.addEventListener('astro:page-load', setupVideos);
+</script>

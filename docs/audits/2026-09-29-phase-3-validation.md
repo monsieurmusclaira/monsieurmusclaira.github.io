@@ -84,3 +84,5 @@ macOS began denying reads of some existing BTS JPEGs with `EPERM`, including `be
 To validate the implementation, a temporary checkout used the exact current code and an independent locked dependency install, with unchanged source images extracted read-only from Git. The final production artifact from that checkout supplies the existing preview on port 4321. Type checking and tests can use this verified artifact, but a fresh build in the original checkout still requires restoring macOS access to those source photos.
 
 No physical iPhone/Android run, field Web Vitals measurement, push, or deployment was performed.
+
+Update, 30 September 2026: the previously blocked JPEG is readable and the full Phase 4 production build succeeds in the original workspace. The existing preview now serves that build; the temporary-checkout workaround is no longer needed. See the [Phase 4 record](2026-09-30-phase-4-validation.md).

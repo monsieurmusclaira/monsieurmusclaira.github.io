@@ -1,4 +1,5 @@
 ---
+import { SITE_TITLE } from "../config";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import FilmCard from "../components/FilmCard.astro";
 import VideoCard from "../components/VideoCard.astro";
@@ -6,7 +7,9 @@ import { getCollection } from "astro:content";
 import { sortByOrder } from "../lib/projects";
 
 const all = await getCollection("projects");
-const films = sortByOrder(all.map((e) => ({ slug: e.id, ...e.data.card, director: e.data.director, title: e.data.title, year: e.data.year, role: e.data.role })));
+const films = sortByOrder(all.map((e) => ({ slug: e.id, ...e.data.card, director: e.data.director, title: e.data.title, year: e.data.year, role: e.data.role, format: e.data.format })));
+const formats = [...new Set(films.map((film) => film.format))].sort();
+const roles = [...new Set(films.map((film) => film.role))].sort();
 // Preserve the curated card sequence without interstitial chapter sections.
 const featuredOrder = [
   "a-long-goodbye", "ever-since-i-have-been-flying", "bieke-depoorter-chance-encounters",
@@ -18,17 +21,17 @@ const featuredFilms = films.slice(0, 8).sort((a, b) =>
 );
 ---
 
-<BaseLayout title="Victor Maes — Cinematographer & Director | Belgium" description="Award-winning Belgium-based cinematographer and director creating fiction, documentaries, VR experiences and experimental films for audiences worldwide." image="/video/seethrough.jpg">
+<BaseLayout title={`${SITE_TITLE} | Belgium`} description="Award-winning Belgium-based cinematographer and director creating fiction, documentaries, VR experiences and experimental films for audiences worldwide." image="/video/seethrough.jpg">
   <VideoCard />
   <section id="selected-work" class="scroll-mt-24" aria-labelledby="selected-work-heading">
-    <h1 id="selected-work-heading" class="sr-only">Selected work</h1>
+    <h2 id="selected-work-heading" class="sr-only">Selected work</h2>
     {featuredFilms.map((f) => (
       <FilmCard
         title={f.title}
         role={f.role}
         img={f.image}
         imageposition={f.position}
-        desc={f.desc ?? `by ${f.director}`}
+        desc={f.desc ?? `Directed by ${f.director}`}
         url={`/projects/${f.slug}/`}
         badge1={f.badge1}
         badge2={f.badge2}
@@ -41,20 +44,27 @@ const featuredFilms = films.slice(0, 8).sort((a, b) =>
     <a href="#all-work" class="inline-flex items-center rounded-sm border border-base-100/40 px-5 py-3 font-sans text-xs tracking-[0.16em] uppercase text-base-100/80 transition-colors duration-200 hover:border-secondary hover:text-secondary focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-secondary focus-visible:outline-offset-2">Browse all work <span class="ml-2" aria-hidden="true">&darr;</span></a>
   </div>
 
-  <section id="all-work" class="bg-neutral py-24 px-6 scroll-mt-24" data-aos="fade-up" data-aos-duration="600">
+  <section id="all-work" class="bg-neutral py-24 px-6 scroll-mt-24" aria-labelledby="all-work-heading" tabindex="-1" data-aos="fade-up" data-aos-duration="600">
     <div class="max-w-4xl mx-auto">
       <p class="font-sans text-xs tracking-[0.2em] uppercase text-secondary text-center pb-4">The archive</p>
-      <h2 class="font-sans text-sm tracking-[0.2em] uppercase text-base-100/60 text-center pb-3">Complete filmography</h2>
+      <h2 id="all-work-heading" class="font-sans text-sm tracking-[0.2em] uppercase text-muted text-center pb-3">Complete filmography</h2>
       <p class="text-center text-base-100/60 font-serif text-lg pb-10">A full record of fiction, documentary, VR and experimental work.</p>
-      <ul class="divide-y divide-base-100/10">
+      <form data-work-filters hidden class="work-filters mb-6" aria-label="Filter filmography">
+        <div class="work-filter-field"><label for="work-format">Format</label><select id="work-format" name="format" aria-controls="work-list"><option value="">All formats</option>{formats.map((format) => <option value={format}>{format}</option>)}</select></div>
+        <div class="work-filter-field"><label for="work-role">Role</label><select id="work-role" name="role" aria-controls="work-list"><option value="">All roles</option>{roles.map((role) => <option value={role}>{role}</option>)}</select></div>
+        <button type="reset" class="work-reset">Clear filters</button>
+      </form>
+      <p data-work-count class="mb-5 font-sans text-sm text-muted" aria-live="polite" aria-atomic="true">{films.length} projects</p>
+      <p data-work-empty hidden class="py-8 font-serif text-xl text-base-100">No projects match these filters. Clear the filters to see all work.</p>
+      <ul id="work-list" class="divide-y divide-base-100/10">
         {films.map((f) => (
-          <li>
+          <li data-work-item data-format={f.format} data-role={f.role}>
             <a href={`/projects/${f.slug}/`} class="group flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-4 py-4 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-secondary">
               <span class="text-xl text-warning group-hover:text-secondary transition-colors duration-300">{f.title}</span>
               <span class="font-sans text-xs tracking-[0.14em] uppercase text-secondary/80">{f.role}</span>
-              <span class="text-sm italic text-base-100/60">by {f.director}</span>
+              <span class="text-sm italic text-muted">{f.desc && <>{f.desc}<br /></>}Directed by {f.director}</span>
               <span class="sm:ml-auto font-sans text-xs tracking-widest uppercase text-base-100/60 group-hover:text-base-100/70 transition-colors duration-300">
-                {[f.badge1, f.year].filter(Boolean).join(' · ')}
+                {[f.badge1, f.year, f.badge2].filter(Boolean).join(' · ')}
               </span>
             </a>
           </li>
@@ -63,3 +73,14 @@ const featuredFilms = films.slice(0, 8).sort((a, b) =>
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  import '../lib/work-filters';
+</script>
+<style>
+  .work-filters:not([hidden]) { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; }
+  .work-filter-field { flex: 1 1 180px; min-width: 0; font-family: var(--font-montserrat), sans-serif; font-size: 12px; color: #eff0f6; }
+  .work-filters select { display: block; width: 100%; min-height: 44px; margin-top: 8px; padding: 8px 12px; border: 1px solid #a1a3aa; border-radius: 2px; background: #11131d; color: #eff0f6; font-size: 14px; }
+  .work-reset { min-height: 44px; padding: 10px 16px; border: 1px solid #a1a3aa; border-radius: 2px; color: #eff0f6; font-family: var(--font-montserrat), sans-serif; font-size: 12px; cursor: pointer; }
+  .work-reset:hover { border-color: #f1d74e; color: #f1d74e; }
+</style>

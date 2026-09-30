@@ -10,9 +10,11 @@ Preserve the existing dark cinematic identity, film imagery, serif/sans typograp
 
 No framework migration, CMS, blog, paid service, or full-text search is required for these outcomes. Changes are split into reviewable batches. Estimates are focused engineering effort for one developer, exclude waiting for editorial information, and are not calendar commitments.
 
-Execution status, 29 September 2026: **Phases 1–3 are complete locally**. See the [Phase 1 record](2026-09-29-phase-1-validation.md), [Phase 2 record](2026-09-29-phase-2-validation.md), and [Phase 3 record](2026-09-29-phase-3-validation.md), including the local photo-access limitation. Phases 4–5 remain planned.
+Execution status, 30 September 2026: **Phases 1–3, Phase 4's UI/UX implementation, and Phase 5's implementation are complete locally**. See the [Phase 1 record](2026-09-29-phase-1-validation.md), [Phase 2 record](2026-09-29-phase-2-validation.md), [Phase 3 record](2026-09-29-phase-3-validation.md), [Phase 4 record](2026-09-30-phase-4-validation.md), and [Phase 5 record](2026-09-30-phase-5-validation.md). Original-folder builds succeed. Phase 4's editorial confirmations remain pending. Phase 5 passes automated checks; GA4 history-setting confirmation, physical-device checks, caption follow-up, and live verification after owner publication remain release tasks.
 
 Design decisions from the subsequent review: remove the hero Pause/Play control, the introductory section below the hero, and all chapter separators. Keep a direct hero-to-project flow. These decisions supersede the related presentation proposals below and apply to later phases.
+
+Phase 4 review decisions: remove the added hero action buttons and contact buttons above the stills. Keep the award photograph visible without a toggle and label the synopsis “Synopsis.” Keep only Discuss a project in the closing contact section, and use the confirmed portfolio email. The website must not include the unrelated pseudonym or its associated email domain. These decisions supersede conflicting Phase 4 presentation proposals below.
 
 ## Delivery order
 
@@ -173,7 +175,7 @@ Acceptance: project role, strongest proof, and a contact option appear before lo
 
 Ask MrMochi for missing years and current production statuses, and verify credits/awards against supplied or authoritative records. Label Magnum Photos as producer instead of leaving ambiguous “by” text. Split professional biography into concise paragraphs with links to referenced portfolio projects; remove repeated availability wording. Confirm trailer dates/caption availability with the video owners.
 
-Acceptance: each supplied year/status has a known source; unknown values stay omitted; project card, intro, archive, and structured data agree. Existing session public-identity rules apply to any newly written public-facing copy; use MrMochi and avoid copying identifying local paths into shared content.
+Acceptance: each supplied year/status has a known source; unknown values stay omitted; project card, intro, archive, and structured data agree. Follow the latest website-specific identity and contact instructions for website copy, and avoid exposing identifying local paths.
 
 ## Phase 5 — Metadata, analytics, video behavior, and release checks
 
@@ -189,7 +191,7 @@ Acceptance: no unsupported properties in the validated graph; no fabricated date
 
 First inspect GA4 history-measurement settings. Choose one page-view mechanism and verify direct load → project → About/contact → back/forward. Avoid counting fragment-only jumps as new page views unless explicitly desired. Keep analytics disabled in development and automated test builds, including local production previews.
 
-MrMochi chooses whether to retain opt-in GA4, remove analytics, or use another approach; prepare the rest of the work while that decision is pending. If opt-in is selected, load analytics after the visitor's choice and expose an understandable way to change it. This is a product-behavior decision, not a claim that the audit established a legal violation.
+The selected policy, confirmed on 30 September 2026, is opt-in GA4. Load analytics after the visitor's choice and expose an understandable way to change it; account history-measurement settings still require confirmation. This is a product-behavior decision, not a claim that the audit established a legal violation.
 
 Use a Vimeo click-to-load facade with a local poster and accessible play button, plus a direct provider link when embedding fails. Add provider/ID/title contracts so schema and playback normalize IDs consistently. Verify video caption availability manually rather than assuming it from an iframe title.
 

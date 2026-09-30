@@ -1,0 +1,521 @@
+[
+  {
+    "route": "/",
+    "run": 1,
+    "lcpMilliseconds": 3828.6736499999997,
+    "cls": 0.0002207623525328583,
+    "tbtMilliseconds": 0,
+    "transferBytes": 532336,
+    "lighthouseVersion": "13.0.3",
+    "settings": {
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "screenEmulation": {
+        "mobile": true,
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 2,
+        "disabled": false
+      },
+      "blockedUrlPatterns": [
+        "*google*",
+        "*vimeo*",
+        "*youtube*",
+        "*ytimg*",
+        "*doubleclick*"
+      ]
+    },
+    "externalRequests": [
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-1P80SYF663",
+        "statusCode": -1,
+        "transferSize": 0
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "route": "/",
+    "run": 2,
+    "lcpMilliseconds": 3827.9601000000002,
+    "cls": 0.0002207623525328583,
+    "tbtMilliseconds": 0,
+    "transferBytes": 532336,
+    "lighthouseVersion": "13.0.3",
+    "settings": {
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "screenEmulation": {
+        "mobile": true,
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 2,
+        "disabled": false
+      },
+      "blockedUrlPatterns": [
+        "*google*",
+        "*vimeo*",
+        "*youtube*",
+        "*ytimg*",
+        "*doubleclick*"
+      ]
+    },
+    "externalRequests": [
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-1P80SYF663",
+        "statusCode": -1,
+        "transferSize": 0
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "route": "/",
+    "run": 3,
+    "lcpMilliseconds": 3828.6937500000004,
+    "cls": 0,
+    "tbtMilliseconds": 0,
+    "transferBytes": 532336,
+    "lighthouseVersion": "13.0.3",
+    "settings": {
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "screenEmulation": {
+        "mobile": true,
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 2,
+        "disabled": false
+      },
+      "blockedUrlPatterns": [
+        "*google*",
+        "*vimeo*",
+        "*youtube*",
+        "*ytimg*",
+        "*doubleclick*"
+      ]
+    },
+    "externalRequests": [
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-1P80SYF663",
+        "statusCode": -1,
+        "transferSize": 0
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "route": "/projects/ever-since-i-have-been-flying/",
+    "run": 1,
+    "lcpMilliseconds": 4505.2719,
+    "cls": 0.007994340100738977,
+    "tbtMilliseconds": 0,
+    "transferBytes": 628701,
+    "lighthouseVersion": "13.0.3",
+    "settings": {
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "screenEmulation": {
+        "mobile": true,
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 2,
+        "disabled": false
+      },
+      "blockedUrlPatterns": [
+        "*google*",
+        "*vimeo*",
+        "*youtube*",
+        "*ytimg*",
+        "*doubleclick*"
+      ]
+    },
+    "externalRequests": [
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-1P80SYF663",
+        "statusCode": -1,
+        "transferSize": 0
+      },
+      {
+        "url": "https://i.ytimg.com/vi/U_bi7vFrMqY/hqdefault.jpg",
+        "statusCode": -1,
+        "transferSize": 0
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "route": "/projects/ever-since-i-have-been-flying/",
+    "run": 2,
+    "lcpMilliseconds": 4503.3979500000005,
+    "cls": 0,
+    "tbtMilliseconds": 0,
+    "transferBytes": 628701,
+    "lighthouseVersion": "13.0.3",
+    "settings": {
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "screenEmulation": {
+        "mobile": true,
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 2,
+        "disabled": false
+      },
+      "blockedUrlPatterns": [
+        "*google*",
+        "*vimeo*",
+        "*youtube*",
+        "*ytimg*",
+        "*doubleclick*"
+      ]
+    },
+    "externalRequests": [
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-1P80SYF663",
+        "statusCode": -1,
+        "transferSize": 0
+      },
+      {
+        "url": "https://i.ytimg.com/vi/U_bi7vFrMqY/hqdefault.jpg",
+        "statusCode": -1,
+        "transferSize": 0
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "route": "/projects/ever-since-i-have-been-flying/",
+    "run": 3,
+    "lcpMilliseconds": 4430.19735,
+    "cls": 0,
+    "tbtMilliseconds": 0,
+    "transferBytes": 628701,
+    "lighthouseVersion": "13.0.3",
+    "settings": {
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "screenEmulation": {
+        "mobile": true,
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 2,
+        "disabled": false
+      },
+      "blockedUrlPatterns": [
+        "*google*",
+        "*vimeo*",
+        "*youtube*",
+        "*ytimg*",
+        "*doubleclick*"
+      ]
+    },
+    "externalRequests": [
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-1P80SYF663",
+        "statusCode": -1,
+        "transferSize": 0
+      },
+      {
+        "url": "https://i.ytimg.com/vi/U_bi7vFrMqY/hqdefault.jpg",
+        "statusCode": -1,
+        "transferSize": 0
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "route": "/behind-the-scenes/",
+    "run": 1,
+    "lcpMilliseconds": 5328.5052,
+    "cls": 0.02205961705571528,
+    "tbtMilliseconds": 0,
+    "transferBytes": 840764,
+    "lighthouseVersion": "13.0.3",
+    "settings": {
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "screenEmulation": {
+        "mobile": true,
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 2,
+        "disabled": false
+      },
+      "blockedUrlPatterns": [
+        "*google*",
+        "*vimeo*",
+        "*youtube*",
+        "*ytimg*",
+        "*doubleclick*"
+      ]
+    },
+    "externalRequests": [
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-1P80SYF663",
+        "statusCode": -1,
+        "transferSize": 0
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "route": "/behind-the-scenes/",
+    "run": 2,
+    "lcpMilliseconds": 5330.55165,
+    "cls": 0.02205961705571528,
+    "tbtMilliseconds": 0,
+    "transferBytes": 840764,
+    "lighthouseVersion": "13.0.3",
+    "settings": {
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "screenEmulation": {
+        "mobile": true,
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 2,
+        "disabled": false
+      },
+      "blockedUrlPatterns": [
+        "*google*",
+        "*vimeo*",
+        "*youtube*",
+        "*ytimg*",
+        "*doubleclick*"
+      ]
+    },
+    "externalRequests": [
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-1P80SYF663",
+        "statusCode": -1,
+        "transferSize": 0
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "route": "/behind-the-scenes/",
+    "run": 3,
+    "lcpMilliseconds": 5329.8132000000005,
+    "cls": 0.02205961705571528,
+    "tbtMilliseconds": 0,
+    "transferBytes": 840764,
+    "lighthouseVersion": "13.0.3",
+    "settings": {
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "screenEmulation": {
+        "mobile": true,
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 2,
+        "disabled": false
+      },
+      "blockedUrlPatterns": [
+        "*google*",
+        "*vimeo*",
+        "*youtube*",
+        "*ytimg*",
+        "*doubleclick*"
+      ]
+    },
+    "externalRequests": [
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-1P80SYF663",
+        "statusCode": -1,
+        "transferSize": 0
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "route": "/about/",
+    "run": 1,
+    "lcpMilliseconds": 3304.16205,
+    "cls": 0,
+    "tbtMilliseconds": 0,
+    "transferBytes": 406523,
+    "lighthouseVersion": "13.0.3",
+    "settings": {
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "screenEmulation": {
+        "mobile": true,
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 2,
+        "disabled": false
+      },
+      "blockedUrlPatterns": [
+        "*google*",
+        "*vimeo*",
+        "*youtube*",
+        "*ytimg*",
+        "*doubleclick*"
+      ]
+    },
+    "externalRequests": [
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-1P80SYF663",
+        "statusCode": -1,
+        "transferSize": 0
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "route": "/about/",
+    "run": 2,
+    "lcpMilliseconds": 3378.1913999999997,
+    "cls": 0,
+    "tbtMilliseconds": 0,
+    "transferBytes": 406523,
+    "lighthouseVersion": "13.0.3",
+    "settings": {
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "screenEmulation": {
+        "mobile": true,
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 2,
+        "disabled": false
+      },
+      "blockedUrlPatterns": [
+        "*google*",
+        "*vimeo*",
+        "*youtube*",
+        "*ytimg*",
+        "*doubleclick*"
+      ]
+    },
+    "externalRequests": [
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-1P80SYF663",
+        "statusCode": -1,
+        "transferSize": 0
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "route": "/about/",
+    "run": 3,
+    "lcpMilliseconds": 3377.0949,
+    "cls": 0,
+    "tbtMilliseconds": 0,
+    "transferBytes": 406523,
+    "lighthouseVersion": "13.0.3",
+    "settings": {
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "screenEmulation": {
+        "mobile": true,
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 2,
+        "disabled": false
+      },
+      "blockedUrlPatterns": [
+        "*google*",
+        "*vimeo*",
+        "*youtube*",
+        "*ytimg*",
+        "*doubleclick*"
+      ]
+    },
+    "externalRequests": [
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-1P80SYF663",
+        "statusCode": -1,
+        "transferSize": 0
+      }
+    ],
+    "warnings": []
+  }
+]

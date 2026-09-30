@@ -87,9 +87,7 @@ describe("built site invariants", () => {
   it("YouTube trailers use a centered player-width frame", () => {
     for (const slug of ["burn", "ever-since-i-have-been-flying"]) {
       const html = readFileSync(`dist/projects/${slug}/index.html`, "utf-8");
-      expect(html).toContain(
-        'data-youtube-frame class="w-full max-w-[720px] mx-auto overflow-hidden"',
-      );
+      expect(html).toMatch(/data-youtube-frame(?:="true")? class="w-full max-w-\[720px\] mx-auto overflow-hidden"/);
     }
   });
 

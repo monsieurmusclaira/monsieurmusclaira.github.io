@@ -1,4 +1,5 @@
 ---
+import { SITE_NAME, CONTACT_EMAIL, SOCIAL_LINKS } from "../config";
 const today = new Date();
 ---
 
@@ -14,15 +15,16 @@ const today = new Date();
 
     <div class="flex flex-col gap-3">
       <span class="text-base-100/50 text-[10px]">Contact</span>
-      <a href="mailto:hello@victormaes.com" class="hover:text-secondary transition-colors duration-200 normal-case">hello@victormaes.com</a>
-      <a href="https://www.instagram.com/monsieur_musclaira/" target="_blank" rel="noopener noreferrer" class="hover:text-secondary transition-colors duration-200">Instagram<span class="sr-only"> (opens in a new tab)</span></a>
-      <a href="https://www.imdb.com/name/nm4866929" target="_blank" rel="noopener noreferrer" class="hover:text-secondary transition-colors duration-200">IMDb<span class="sr-only"> (opens in a new tab)</span></a>
+      <a href={`mailto:${CONTACT_EMAIL}`} class="hover:text-secondary transition-colors duration-200 normal-case">{CONTACT_EMAIL}</a>
+      <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" class="hover:text-secondary transition-colors duration-200">Instagram<span class="sr-only"> (opens in a new tab)</span></a>
+      <a href={SOCIAL_LINKS.imdb} target="_blank" rel="noopener noreferrer" class="hover:text-secondary transition-colors duration-200">IMDb<span class="sr-only"> (opens in a new tab)</span></a>
     </div>
 
     <div class="flex flex-col gap-3 sm:items-end sm:text-right">
       <span class="text-base-100/50 text-[10px]">Based in</span>
       <span>Belgium</span>
-      <span class="text-base-100/50 normal-case">&copy; {today.getFullYear()} Victor Maes</span>
+      <button type="button" hidden data-analytics-settings class="min-h-11 text-left hover:text-secondary normal-case">Analytics settings</button>
+      <span class="text-base-100/50 normal-case">&copy; {today.getFullYear()} {SITE_NAME}</span>
     </div>
 
   </div>

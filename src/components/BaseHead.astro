@@ -5,9 +5,10 @@ import '../styles/global.css';
 import { getImage } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import { sortByOrder } from '../lib/projects';
-import { GoogleAnalytics } from 'astro-google-analytics';
+import { publicSocialImage } from '../lib/social-images';
+import { videoDetails } from '../lib/videos';
 import { resolveImage, listBtsImages } from '../utils/images';
-import { SITE_TITLE, SITE_URL } from '../config';
+import { SITE_TITLE, SITE_URL, SITE_NAME, SOCIAL_LINKS } from '../config';
 import type { ProjectData } from '../lib/projects';
 import montserrat400 from '@fontsource/montserrat/files/montserrat-latin-400-normal.woff2?url';
 import ebGaramond400 from '@fontsource/eb-garamond/files/eb-garamond-latin-400-normal.woff2?url';
@@ -22,14 +23,15 @@ export interface Props {
 	noindex?: boolean;
 	director?: string;
 	genre?: string;
-	year?: string;
+	projectTitle?: string;
+	role?: string;
 	schemaType?: string;
 	awards?: ProjectData['awards'];
 	featuredAward?: ProjectData['featuredAward'];
 	videos?: ProjectData['videos'];
 }
 
-const { title, description, image, imageAlt, canonical, schema, noindex, director, genre, year, schemaType, awards, featuredAward, videos } = Astro.props;
+const { title, description, image, imageAlt, canonical, schema, noindex, director, genre, projectTitle: suppliedProjectTitle, role, schemaType, awards, featuredAward, videos } = Astro.props;
 
 // Social-card image alt: describe the actual photo when the page provides it,
 // otherwise fall back to the page title.
@@ -37,31 +39,22 @@ const imageAltText = imageAlt || title;
 
 const canonicalURL = canonical ? new URL(canonical, SITE_URL) : new URL(Astro.url.pathname, SITE_URL);
 
-// Social-card images served straight from /public bypass the image pipeline, so
-// their intrinsic size is recorded here (measured with sips). Keeps og:image
-// width and height present on pages whose card is a public asset.
-const PUBLIC_IMAGE_DIMS: Record<string, { width: number; height: number }> = {
-  '/video/seethrough.jpg': { width: 1800, height: 800 },
-};
-
-// Social-card image: src/assets paths get optimized to a 1200px JPEG;
-// public paths (e.g. /video/seethrough.jpg) pass through as-is.
+// A public image is explicitly registered and checked on disk. Managed image
+// failures propagate through the build instead of silently publishing a bad URL.
 let ogImage: string | null = null;
 let ogImageWidth: number | null = null;
 let ogImageHeight: number | null = null;
 if (image) {
-  try {
+  const publicDimensions = publicSocialImage(image);
+  if (publicDimensions) {
+    ogImage = new URL(image, SITE_URL).href;
+    ogImageWidth = publicDimensions.width;
+    ogImageHeight = publicDimensions.height;
+  } else {
     const optimized = await getImage({ src: await resolveImage(image), format: 'jpeg', width: 1200 });
-    ogImage = new URL(optimized.src, SITE_URL).toString();
+    ogImage = new URL(optimized.src, SITE_URL).href;
     ogImageWidth = optimized.attributes.width ?? null;
     ogImageHeight = optimized.attributes.height ?? null;
-  } catch {
-    ogImage = new URL(image, SITE_URL).toString();
-    const dims = PUBLIC_IMAGE_DIMS[image];
-    if (dims) {
-      ogImageWidth = dims.width;
-      ogImageHeight = dims.height;
-    }
   }
 }
 
@@ -79,15 +72,11 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   "@id": `${SITE_URL}/#person`,
-  "name": "Victor Maes",
+  "name": SITE_NAME,
   "jobTitle": "Cinematographer, Director of Photography and Director",
-  "description": "Victor Maes is a cinematographer, director of photography and director based in Belgium",
+  "description": `${SITE_NAME} is a cinematographer, director of photography and director based in Belgium`,
   "url": SITE_URL,
-  "sameAs": [
-    "https://www.instagram.com/monsieur_musclaira/",
-    "https://www.linkedin.com/in/victor-maes/",
-    "https://www.imdb.com/name/nm4866929"
-  ],
+  "sameAs": Object.values(SOCIAL_LINKS),
   "knowsAbout": ["Cinematography", "Film", "Virtual Reality", "Documentary", "Director of Photography"],
   "knowsLanguage": ["en", "fr", "nl"],
   "address": {
@@ -102,7 +91,7 @@ const personSchema = {
 const personReference = {
   "@id": `${SITE_URL}/#person`,
   "@type": "Person",
-  "name": "Victor Maes"
+  "name": SITE_NAME
 };
 
 const websiteSchema = {
@@ -127,7 +116,7 @@ if (pageType === 'home') {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "@id": `${SITE_URL}/#filmography`,
-    "name": "Filmography | Victor Maes",
+    "name": `Filmography | ${SITE_NAME}`,
     "itemListOrder": "https://schema.org/ItemListOrderAscending",
     "numberOfItems": ordered.length,
     "itemListElement": ordered.map((p, i) => ({
@@ -155,15 +144,11 @@ if (pageType === 'home') {
     }
   };
 } else if (pageType === 'project') {
-  // Strip the head-title decoration back to the bare film name: the role suffix
-  // after ' | ', the old ' — ' template arm, and the year parenthetical.
-  const projectTitle = title.split(' | ')[0].split(' — ')[0].replace(/\s*\(\d{4}\)$/, '').trim();
+  const projectTitle = suppliedProjectTitle;
+  if (!projectTitle || !role) throw new Error('Project metadata needs its exact title and credited role.');
   const projectType = schemaType || 'Movie';
   const isMovie = projectType === 'Movie';
-
-  // Only emit dates when the source contains a complete date. A bare project
-  // year is useful editorially but should not become a fabricated January 1.
-  const exactDate = year && /^\d{4}-\d{2}-\d{2}$/.test(year) ? year : undefined;
+  const directors = director?.split(' & ').map((name) => ({ '@type': 'Person', name }));
 
   // Award strings from the film's own recorded featured award + awards list.
   // The featured award is often repeated in the awards list, so dedupe.
@@ -172,35 +157,17 @@ if (pageType === 'home') {
       .map((a) => [a.award, a.festival, a.year].filter(Boolean).join(', '))
   )];
 
-  // First video becomes a trailer VideoObject. The film's own optimized still
-  // (ogImage) serves as the thumbnail, so the entity is always valid.
-  // Video ids should be bare ids, but MDX has historically carried full watch
-  // URLs. Normalize so the embedUrl is always valid regardless of what the
-  // content file stores. Mirrors what astro-embed-youtube does for the player.
-  const videoId = (raw: string): string => {
-    if (/^[A-Za-z0-9_-]+$/.test(raw)) return raw;
-    const yt = raw.match(/(?:youtu\.be\/|[?&]v=|\/embed\/|\/shorts\/)([A-Za-z0-9_-]{6,})/);
-    if (yt) return yt[1];
-    const vimeo = raw.match(/vimeo\.com\/(?:video\/)?(\d+)/);
-    if (vimeo) return vimeo[1];
-    return raw;
-  };
-
-  const firstVideo = (videos ?? [])[0];
-  let trailer: object | null = null;
-  if (firstVideo && ogImage) {
-    const cleanId = videoId(String(firstVideo.id));
-    const embedUrl = firstVideo.provider === 'youtube'
-      ? `https://www.youtube.com/embed/${cleanId}`
-      : `https://player.vimeo.com/video/${cleanId}`;
-    trailer = {
-      "@type": "VideoObject",
-      "name": `${projectTitle} — Trailer`,
-      "description": description,
-      "thumbnailUrl": ogImage,
-      "embedUrl": embedUrl
+  const videoObjects = (videos ?? []).map((video) => {
+    const details = videoDetails(video, projectTitle);
+    return {
+      '@type': 'VideoObject',
+      name: details.name,
+      description: details.description ?? `${details.name}. ${description}`,
+      ...(ogImage ? { thumbnailUrl: ogImage } : {}),
+      embedUrl: details.embedUrl,
+      ...(details.uploadDate ? { uploadDate: details.uploadDate } : {}),
     };
-  }
+  });
 
   pageSchema = {
     "@context": "https://schema.org",
@@ -210,21 +177,13 @@ if (pageType === 'home') {
     "name": projectTitle,
     "description": description,
     ...(ogImage ? { "image": ogImage } : {}),
-    ...(director ? { "director": director.split(' & ').map((name) => ({ "@type": "Person", "name": name })) } : {}),
+    ...(directors ? (isMovie ? { director: directors } : { creator: directors }) : {}),
     ...(genre ? { "genre": genre } : {}),
-    ...(exactDate ? { "datePublished": exactDate } : {}),
+
     ...(awardList.length ? { "award": awardList } : {}),
-    ...(trailer ? { "trailer": trailer } : {}),
-    ...(isMovie ? {
-      "cinematographer": {
-        "@type": "Person",
-        "name": "Victor Maes",
-        "url": SITE_URL
-      }
-    } : {}),
-    "creator": {
-      "@id": `${SITE_URL}/#person`
-    },
+    ...(videoObjects.length ? (isMovie ? { trailer: videoObjects } : { video: videoObjects }) : {}),
+    "contributor": personReference,
+    "creditText": `${SITE_NAME}: ${role}`,
     "isPartOf": {
       "@id": `${SITE_URL}/#website`
     }
@@ -248,12 +207,8 @@ if (pageType === 'home') {
   // extra image files are generated for this.
   const btsMedia: object[] = [];
   for (const img of await listBtsImages(5)) {
-    try {
-      const opt = await getImage({ src: img, width: 1200 });
-      btsMedia.push({ "@type": "ImageObject", "contentUrl": new URL(opt.src, SITE_URL).toString() });
-    } catch {
-      // skip images the pipeline cannot process
-    }
+    const opt = await getImage({ src: img, width: 1200 });
+    btsMedia.push({ "@type": "ImageObject", "contentUrl": new URL(opt.src, SITE_URL).toString() });
   }
   pageSchema = {
     "@context": "https://schema.org",
@@ -333,10 +288,6 @@ if (schema) {
 <link rel="preload" href={montserrat400} as="font" type="font/woff2" crossorigin />
 <link rel="preload" href={ebGaramond400} as="font" type="font/woff2" crossorigin />
 
-<!-- Performance: Preconnect -->
-<link rel="preconnect" href="https://www.googletagmanager.com" />
-<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-
 <!-- Crawl directives -->
 {noindex && <meta name="robots" content="noindex, nofollow" />}
 
@@ -374,7 +325,8 @@ if (schema) {
 )}
 
 <!-- JSON-LD Schema -->
-<script type="application/ld+json" set:html={JSON.stringify(schemas)} />
+<script type="application/ld+json" set:html={JSON.stringify(schemas).replace(/</g, '\\u003c')} />
 
-<!-- Google Analytics (production builds only — never fires in dev) -->
-{import.meta.env.PROD && <GoogleAnalytics id="G-1P80SYF663" />}
+
+<!-- Retain a visitor-approved analytics loader across Astro navigation. -->
+<script is:inline type="text/plain" id="portfolio-ga4-placeholder" data-astro-transition-persist="portfolio-ga4"></script>

@@ -1,0 +1,13 @@
+---
+import ContentPicture from './ContentPicture.astro';
+import type { ProjectData } from '../lib/projects';
+import { gallerySizes } from '../lib/gallery-layout';
+interface Props { item: ProjectData['gallery'][number] & { layout: 'grid' | 'wide' | 'full' }; }
+const { item } = Astro.props;
+const isWide = item.layout !== 'grid';
+const isFull = item.layout === 'full';
+---
+<figure class:list={['gallery-item w-full', isWide && 'md:col-span-2', isWide && !isFull && 'max-w-4xl mx-auto', isFull && 'md:-mx-4 md:w-[calc(100%+2rem)]']} data-gallery-layout={item.layout}>
+  <ContentPicture image={item.image} alt={item.alt} caption={item.caption} sizes={gallerySizes[item.layout]} widths={item.layout === 'grid' ? [384, 576, 768, 1152] : [384, 768, 1152, 1920, 2560]} />
+  {item.caption && <figcaption class="px-2 pt-3 text-center font-sans text-xs tracking-widest uppercase text-muted">{item.caption}</figcaption>}
+</figure>

@@ -67,6 +67,10 @@ The Astro integration generates `.astro/image-manifest.ts` from literal `/img/..
 
 Gallery thumbnails use sizes matched to grid, wide, full, and Polaroid layouts. Each page shares one native dialog, with Previous/Next, arrow keys, a position counter, captions, and focus restoration. The full-size image loads when opened; with JavaScript disabled, the thumbnail links directly to that image. Asset pruning remains part of production builds, with checks covering thumbnails, full-size links, posters, metadata images, and CSS fonts.
 
+Project pages show the first six stills in their existing editorial order. Native `<details>` reveals the remaining photos, including without JavaScript; the shared dialog can navigate the complete sequence. Featured recognition and its photograph appear before trailers and galleries, with the photograph always visible. Project introductions use a Synopsis heading and contain no contact buttons. The closing section has one Discuss a project link; the About contact section uses `CONTACT_EMAIL` in `src/config.ts`.
+
+The homepage hero retains its scroll cue without extra action buttons. Filmography format/role filters appear when JavaScript initializes; the full list remains available without it. Filter combinations show a live count, an empty state, and a keyboard-accessible reset. Featured cards use a shorter height on phones while retaining the desktop presentation.
+
 For comparable measurements, run against a production preview with Chromium installed:
 
 ```bash
@@ -76,6 +80,42 @@ node scripts/measure-rendering.mjs /tmp/gallery-rendering.json
 
 Both scripts default to `http://127.0.0.1:4321`; set `PORTFOLIO_MEASURE_URL` for another local preview. Transfer measurements use fresh browser contexts, fixed viewport/DPR settings, and the same scroll sequence. Rendering measurements use a short scroll with 6× CPU throttling; compare overrides against a build containing the original effect. See the [Phase 3 validation record](docs/audits/2026-09-29-phase-3-validation.md) for the measured results and limitations.
 
+## Video metadata and players
+
+Project videos share a provider-specific ID/title contract (`src/lib/videos.ts`). Both providers use a local still and a keyboard-accessible play button; player iframes load only after activation. Direct YouTube/Vimeo links remain available, including without JavaScript or when a provider blocks embedding. YouTube uses its privacy-enhanced embed domain; Vimeo receives its DNT parameter. These settings do not claim that activated players make no third-party requests.
+
+Each video can record its own `description`, `uploadDate`, and `uploadDateSource`. Dates and verification sources are paired; use the provider's actual publication date, independently of film release/award years. Vimeo dates currently have day precision because no verified timezone was supplied. Captions must be checked on the actual video; a descriptive iframe title does not establish caption availability.
+
+Identity, email, canonical site URL, and social URLs live in `src/config.ts`, also used by Astro's site configuration. Social images explicitly distinguish registered public files from managed source images. Missing assets fail the build. Movie credits use `contributor` and `creditText`; the VR work uses `CreativeWork` with its recorded co-creators.
+
+For local property/type/domain validation, download the [official Schema.org JSON-LD vocabulary](https://schema.org/version/latest/schemaorg-current-https.jsonld) and run:
+
+```bash
+node scripts/verify-schema.mjs /tmp/schemaorg-current-https.jsonld
+```
+
+This checks vocabulary usage and inheritance; it does not establish Google search eligibility. Google’s Rich Results Test and live URL inspection remain separate checks.
+
+## Optional analytics
+
+GA4 loads only after an explicit visitor opt-in, only on the configured production hostname. Development, other hosts, and local production previews send no analytics. `PORTFOLIO_ANALYTICS_DISABLED=true` disables the loader in a production build as an additional guard. No consent defaults or Google preconnects contact Google before the choice. Visitors can decline, change their choice using **Analytics settings** in the footer, or withdraw consent. Withdrawal disables GA reporting, removes the site's GA cookies, and stops further page-view events. If local storage is unavailable, the choice lasts for the current visit.
+
+The site sends manual page views on Astro navigation, deduplicated by origin/path/query. Contact/gallery fragment changes do not count. The Google loader persists across transitions and is initialized once per document. Ads storage and personalization are denied.
+
+**Before publishing:** in GA4 → Admin → Data streams → Web stream → Enhanced measurement → Page views, disable **Page changes based on browser history events**. `send_page_view: false` disables the configuration page view but does not disable that account setting. The account setting has not been inspected from this workspace. Confirm it, then use GA4 DebugView/Realtime to verify direct → project → About/contact → back/forward. [Google’s page-view guidance](https://developers.google.com/analytics/devguides/collection/ga4/views).
+
+Browser consent tests proxy the canonical hostname to the local build and mock Google's script. No actual telemetry is sent. They verify the site's event queue and loader lifecycle, not delivery into a GA4 account.
+
+## Performance lab
+
+With Chromium installed, run the pinned temporary Lighthouse CLI against a local production preview:
+
+```bash
+npm exec --package=lighthouse@13.0.3 -- node scripts/measure-performance.mjs /tmp/performance.json
+```
+
+Use `PORTFOLIO_MEASURE_URL` to select the local preview. The script records three cold runs per route (home, Ever Since, I Have Been Flying’s 39-photo gallery, BTS, About) at 390×844 CSS pixels, DPR 2, fixed Lighthouse simulated mobile throttling, and blocked third-party providers. Compare medians from identical settings. These are lab LCP/CLS/TBT measurements; TBT is not field INP, and these results do not establish field p75 performance. The [Phase 5 validation record](docs/audits/2026-09-30-phase-5-validation.md) records measurements and release limitations.
+
 ## Deployment
 
 Pull requests to `master` run the read-only `verify.yml` workflow: clean install, type checking, production build, Vitest, and desktop/mobile Chromium checks. Weekly Dependabot proposals cover npm patch updates and require manual review.
@@ -84,6 +124,5 @@ Updates to `master` or a manual deployment run invoke the same verification work
 
 ## Roadmap
 
-- Implement a better video component in MDX
 - Implement a CMS
 - Introduce a blog section
