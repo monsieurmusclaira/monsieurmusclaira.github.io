@@ -191,11 +191,11 @@ Acceptance: no unsupported properties in the validated graph; no fabricated date
 
 First inspect GA4 history-measurement settings. Choose one page-view mechanism and verify direct load → project → About/contact → back/forward. Avoid counting fragment-only jumps as new page views unless explicitly desired. Keep analytics disabled in development and automated test builds, including local production previews.
 
-The selected policy, confirmed on 30 September 2026, is opt-in GA4. Load analytics after the visitor's choice and expose an understandable way to change it; account history-measurement settings still require confirmation. This is a product-behavior decision, not a claim that the audit established a legal violation.
+The current policy, updated on 3 October 2026, is automatic GA4 on the configured production hostname, superseding the earlier visitor opt-in decision. Development and local previews remain untracked; account history-measurement settings still require confirmation.
 
 Use a Vimeo click-to-load facade with a local poster and accessible play button, plus a direct provider link when embedding fails. Add provider/ID/title contracts so schema and playback normalize IDs consistently. Verify video caption availability manually rather than assuming it from an iframe title.
 
-Acceptance: exactly one page view per intended navigation; no analytics calls in test/dev; opt-in behavior matches the selected policy; both video providers play after activation and have usable fallback links.
+Acceptance: exactly one page view per intended navigation; no analytics calls in test/dev; automatic loading matches the selected policy; both video providers play after activation and have usable fallback links.
 
 ### 5.3 Final verification and handoff
 

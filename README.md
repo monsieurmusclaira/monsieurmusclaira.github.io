@@ -96,15 +96,15 @@ node scripts/verify-schema.mjs /tmp/schemaorg-current-https.jsonld
 
 This checks vocabulary usage and inheritance; it does not establish Google search eligibility. Google’s Rich Results Test and live URL inspection remain separate checks.
 
-## Optional analytics
+## Automatic analytics
 
-GA4 loads only after an explicit visitor opt-in, only on the configured production hostname. Development, other hosts, and local production previews send no analytics. `PORTFOLIO_ANALYTICS_DISABLED=true` disables the loader in a production build as an additional guard. No consent defaults or Google preconnects contact Google before the choice. Visitors can decline, change their choice using **Analytics settings** in the footer, or withdraw consent. Withdrawal disables GA reporting, removes the site's GA cookies, and stops further page-view events. If local storage is unavailable, the choice lasts for the current visit.
+GA4 loads automatically on the configured production hostname. No visitor opt-in or saved consent choice is required. Development, other hosts, and local production previews send no analytics. `PORTFOLIO_ANALYTICS_DISABLED=true` disables the loader in a production build as an additional guard.
 
 The site sends manual page views on Astro navigation, deduplicated by origin/path/query. Contact/gallery fragment changes do not count. The Google loader persists across transitions and is initialized once per document. Ads storage and personalization are denied.
 
 **Before publishing:** in GA4 → Admin → Data streams → Web stream → Enhanced measurement → Page views, disable **Page changes based on browser history events**. `send_page_view: false` disables the configuration page view but does not disable that account setting. The account setting has not been inspected from this workspace. Confirm it, then use GA4 DebugView/Realtime to verify direct → project → About/contact → back/forward. [Google’s page-view guidance](https://developers.google.com/analytics/devguides/collection/ga4/views).
 
-Browser consent tests proxy the canonical hostname to the local build and mock Google's script. No actual telemetry is sent. They verify the site's event queue and loader lifecycle, not delivery into a GA4 account.
+Browser analytics tests proxy the canonical hostname to the local build and mock Google's script. No actual telemetry is sent. They verify the site's event queue and loader lifecycle, not delivery into a GA4 account.
 
 ## Performance lab
 

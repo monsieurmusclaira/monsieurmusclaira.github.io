@@ -68,7 +68,7 @@ test('local production previews make no analytics calls even with a saved opt-in
 });
 
 // Proxy the canonical hostname to the local build and mock Google's script.
-// This exercises production consent behavior without sending any real telemetry.
+// This exercises production analytics behavior without sending any real telemetry.
 async function productionHost(page: import('@playwright/test').Page, baseURL: string) {
   await page.route('https://victormaes.com/**', async (route) => {
     const request = new URL(route.request().url());
@@ -81,14 +81,13 @@ async function pageViews(page: import('@playwright/test').Page) {
   return page.evaluate(() => (window as any).dataLayer?.filter((args: any) => args[0] === 'event' && args[1] === 'page_view').map((args: any) => args[2].page_location) ?? []);
 }
 
-test('consent gates GA4 and route changes count once across back and forward', async ({ page, baseURL }) => {
+test('GA4 loads automatically and route changes count once across back and forward', async ({ page, baseURL }) => {
   await productionHost(page, baseURL!);
   let tagRequests = 0;
   page.on('request', (request) => { if (request.url().startsWith('https://www.googletagmanager.com/')) tagRequests++; });
   await page.goto('https://victormaes.com/');
-  await expect(page.getByRole('heading', { name: 'Optional analytics' })).toBeVisible();
-  expect(tagRequests).toBe(0);
-  await page.getByRole('button', { name: 'Allow analytics', exact: true }).click();
+  await expect(page.locator('#analytics-consent')).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Analytics settings', exact: true })).toHaveCount(0);
   await expect.poll(() => pageViews(page)).toEqual(['https://victormaes.com/']);
   await expect(page.locator('#portfolio-ga4')).toHaveCount(1);
   await page.evaluate(() => document.dispatchEvent(new Event('astro:page-load')));
@@ -112,33 +111,24 @@ test('consent gates GA4 and route changes count once across back and forward', a
   expect(config[2]).toMatchObject({ send_page_view: false });
 });
 
-test('decline persists, can be changed, and withdrawal stops further page events', async ({ page, baseURL }) => {
-  await productionHost(page, baseURL!);
-  await page.goto('https://victormaes.com/about/');
-  await page.getByRole('button', { name: 'No thanks', exact: true }).click();
-  await page.reload();
-  await expect(page.locator('#analytics-consent')).toBeHidden();
-  await expect(page.locator('#portfolio-ga4')).toHaveCount(0);
-  const settings = page.getByRole('button', { name: 'Analytics settings', exact: true });
-  await settings.click();
-  await expect(page.locator('#analytics-consent')).toBeFocused();
-  const axe = await new AxeBuilder({ page }).include('#analytics-consent').analyze();
-  expect(axe.violations).toEqual([]);
-  await page.getByRole('button', { name: 'Allow analytics', exact: true }).click();
-  await expect(settings).toBeFocused();
-  await expect.poll(() => pageViews(page)).toEqual(['https://victormaes.com/about/']);
-  await page.evaluate(() => { document.cookie = '_ga=example; path=/'; document.cookie = '_ga_TEST=example; path=/'; });
-  await settings.click();
-  await page.getByRole('button', { name: 'No thanks', exact: true }).click();
-  expect(await page.evaluate(() => (window as any)['ga-disable-G-1P80SYF663'])).toBe(true);
-  expect(await page.evaluate(() => document.cookie)).not.toContain('_ga');
-  await navigate(page, () => page.locator('.navbar-center a').click());
-  expect(await pageViews(page)).toEqual([]);
-  await page.getByRole('button', { name: 'Analytics settings', exact: true }).click();
-  await page.getByRole('button', { name: 'Allow analytics', exact: true }).click();
-  await expect.poll(() => pageViews(page)).toEqual(['https://victormaes.com/']);
-  await expect(page.locator('#portfolio-ga4')).toHaveCount(1);
-});
+for (const storageUnavailable of [false, true]) {
+  test(`automatic analytics ignores old choices with storage ${storageUnavailable ? 'unavailable' : 'available'}`, async ({ page, baseURL }) => {
+    await productionHost(page, baseURL!);
+    await page.addInitScript((unavailable) => {
+      localStorage.setItem('portfolio-analytics-choice-v1', 'declined');
+      if (unavailable) {
+        Storage.prototype.getItem = () => { throw new Error('Storage unavailable'); };
+        Storage.prototype.setItem = () => { throw new Error('Storage unavailable'); };
+      }
+    }, storageUnavailable);
+    await page.goto('https://victormaes.com/about/');
+    await expect.poll(() => pageViews(page)).toEqual(['https://victormaes.com/about/']);
+    await expect(page.locator('#portfolio-ga4')).toHaveCount(1);
+    await page.reload();
+    await expect.poll(() => pageViews(page)).toEqual(['https://victormaes.com/about/']);
+    await expect(page.locator('#portfolio-ga4')).toHaveCount(1);
+  });
+}
 
 test('key pages stay usable at 200% zoom-equivalent size', async ({ page }) => {
   // A 1280px desktop at 200% browser zoom exposes a 640px CSS layout viewport.

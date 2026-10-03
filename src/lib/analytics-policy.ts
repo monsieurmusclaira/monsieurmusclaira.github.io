@@ -1,6 +1,3 @@
-export const CONSENT_KEY = 'portfolio-analytics-choice-v1';
-export type AnalyticsChoice = 'accepted' | 'declined';
-
 export function analyticsAllowed(production: boolean, hostname: string, siteUrl: string, disabled = false) {
   return production && !disabled && hostname === new URL(siteUrl).hostname;
 }

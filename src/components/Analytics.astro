@@ -1,0 +1,60 @@
+---
+import { ANALYTICS_ID, SITE_URL } from '../config';
+const production = import.meta.env.PROD && import.meta.env.PORTFOLIO_ANALYTICS_DISABLED !== 'true';
+---
+<div id="analytics-config" hidden data-analytics-id={ANALYTICS_ID} data-site-url={SITE_URL} data-production={String(production)}></div>
+<script>
+  import { analyticsAllowed, pageViewKey } from '../lib/analytics-policy';
+  declare global {
+    interface Window {
+      dataLayer?: IArguments[];
+      gtag?: (...args: unknown[]) => void;
+    }
+  }
+  let loaded = false;
+  let lastPage: string | undefined;
+  let previousPage: string | undefined;
+
+  function config() {
+    const element = document.getElementById('analytics-config');
+    return element && analyticsAllowed(element.dataset.production === 'true', location.hostname, element.dataset.siteUrl!) ? element : undefined;
+  }
+  function trackPage() {
+    if (!config() || !window.gtag) return;
+    const page = pageViewKey(location.href);
+    if (page === lastPage) return;
+    window.gtag('event', 'page_view', {
+      page_title: document.title,
+      page_location: page,
+      page_referrer: previousPage ?? document.referrer,
+    });
+    lastPage = page;
+    previousPage = page;
+  }
+  function enableAnalytics() {
+    const settings = config();
+    if (!settings) return;
+    const id = settings.dataset.analyticsId!;
+    if (!loaded) {
+      loaded = true;
+      window.dataLayer ??= [];
+      window.gtag = function () { window.dataLayer!.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('consent', 'default', { analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+      // Enhanced Measurement history page views must also be disabled in GA4.
+      window.gtag('config', id, { send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false });
+      const script = document.createElement('script');
+      script.id = 'portfolio-ga4';
+      script.setAttribute('data-astro-transition-persist', 'portfolio-ga4');
+      script.dataset.astroExec = ''; // Already executed by this loader, not by Astro's router.
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(id)}`;
+      const placeholder = document.getElementById('portfolio-ga4-placeholder');
+      if (placeholder) placeholder.replaceWith(script);
+      else document.head.append(script);
+    }
+    trackPage();
+  }
+  document.addEventListener('astro:page-load', enableAnalytics);
+  window.addEventListener('pageshow', enableAnalytics);
+</script>

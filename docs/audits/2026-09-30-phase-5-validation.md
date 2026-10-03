@@ -32,6 +32,8 @@ Both providers use a local poster and keyboard-operable activation button. No pr
 
 ## Analytics
 
+**Policy update — 3 October 2026:** automatic production tracking supersedes the visitor opt-in behavior described below. The consent checks in this historical report describe the implementation at the time of validation.
+
 The selected policy is **GA4 with visitor opt-in**. The script loads only after Allow analytics on the configured production hostname. Development, local production previews, and other hosts stay untracked. The footer exposes Analytics settings; withdrawal disables reporting, clears the site's GA cookies, and prevents further manual page-view events. Ads storage and personalization remain denied. Storage failure retains a visit-only choice.
 
 One manual page-view mechanism records origin/path/query changes after Astro page loads. Fragment-only contact/gallery changes are ignored. The loader persists across transitions without being re-executed. Tests cover direct load, project navigation, About/contact, back/forward, duplicate lifecycle events, saved decline, changed choice, withdrawal, re-opt-in, and local-preview guards. Production-host tests proxy the hostname to the local build and mock Google: **no actual telemetry is sent by these browser tests**.
