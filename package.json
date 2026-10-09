@@ -37,8 +37,8 @@
     "@axe-core/playwright": "^4.13.0",
     "@playwright/test": "^1.63.0",
     "@tailwindcss/typography": "^0.5.20",
-    "@types/node": "^22.20.4",
-    "daisyui": "^5.7.46",
+    "@types/node": "^22.20.5",
+    "daisyui": "^5.7.47",
     "typescript": "^6.0.3",
     "vitest": "^4.1.11",
     "yaml": "^2.9.1"
