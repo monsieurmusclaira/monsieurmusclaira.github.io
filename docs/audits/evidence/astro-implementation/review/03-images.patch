@@ -1,0 +1,168 @@
+--- a/src/pages/about.mdx
++++ b/src/pages/about.mdx
+@@ -4,7 +4,7 @@
+ description: "Belgium-based cinematographer and director working across fiction, documentary, commercials and VR, and available for productions worldwide."
+ image: "/img/about/IMG_2507-unblur.jpg"
+ ---
+-import { Image } from 'astro:assets';
++import { Picture } from 'astro:assets';
+ import { importImage } from '../utils/images';
+ import ProjectHero from '../components/ProjectHero.astro';
+ import ProjectIntro from '../components/ProjectIntro.astro';
+@@ -28,8 +28,11 @@
+ 
+ <section class="hero py-16 sm:py-24 bg-neutral">
+     <div class="w-full max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-[300px_1fr] gap-10 md:gap-14 items-start" data-aos="fade-up" data-aos-duration="600">
+-        <Image
++        <Picture
+             src={importImage('/img/about/IMG_2507-unblur.jpg')}
++            formats={['avif']}
++            fallbackFormat="webp"
++            pictureAttributes={{ class: 'block w-full' }}
+             alt="Portrait of Victor Maes, cinematographer and director based in Belgium"
+             class="w-full h-auto"
+             widths={[320, 640]}
+--- a/scripts/prune-unused-assets.mjs
++++ b/scripts/prune-unused-assets.mjs
+@@ -7,7 +7,7 @@
+ 
+ const DIST = process.argv[2] ? resolve(process.argv[2]) : fileURLToPath(new URL('../dist/', import.meta.url));
+ const ASTRO_DIR = join(DIST, '_astro');
+-const PRUNABLE = new Set(['.png', '.jpg', '.jpeg', '.webp', '.svg', '.PNG', '.JPG', '.JPEG', '.WEBP', '.SVG']);
++const PRUNABLE = new Set(['.png', '.jpg', '.jpeg', '.webp', '.avif', '.svg', '.PNG', '.JPG', '.JPEG', '.WEBP', '.AVIF', '.SVG']);
+ 
+ async function* walk(dir) {
+   for (const entry of await readdir(dir, { withFileTypes: true })) {
+--- /dev/null
++++ b/tests/asset-pruning.test.ts
+@@ -0,0 +1,21 @@
++import { it, expect } from 'vitest';
++import { mkdtempSync, mkdirSync, writeFileSync, existsSync, rmSync } from 'node:fs';
++import { tmpdir } from 'node:os';
++import { join, resolve } from 'node:path';
++import { execFileSync } from 'node:child_process';
++
++it('pruning retains Picture source candidates and removes unused AVIF variants', () => {
++  const root = mkdtempSync(join(tmpdir(), 'portfolio-picture-pruning-'));
++  try {
++    mkdirSync(join(root, '_astro'));
++    for (const name of ['portrait-320.avif', 'portrait-640.avif', 'portrait.webp', 'unused.avif']) {
++      writeFileSync(join(root, '_astro', name), 'image fixture');
++    }
++    writeFileSync(join(root, 'index.html'), '<picture><source type="image/avif" srcset="/_astro/portrait-320.avif 320w, /_astro/portrait-640.avif 640w"><img src="/_astro/portrait.webp" alt="Portrait"></picture>');
++    execFileSync(process.execPath, [resolve('scripts/prune-unused-assets.mjs'), root]);
++    expect(existsSync(join(root, '_astro/portrait-320.avif'))).toBe(true);
++    expect(existsSync(join(root, '_astro/portrait-640.avif'))).toBe(true);
++    expect(existsSync(join(root, '_astro/portrait.webp'))).toBe(true);
++    expect(existsSync(join(root, '_astro/unused.avif'))).toBe(false);
++  } finally { rmSync(root, { recursive: true, force: true }); }
++});
+--- /dev/null
++++ b/tests/browser/picture.spec.ts
+@@ -0,0 +1,26 @@
++import { test, expect } from './fixtures';
++
++for (const fallback of [false, true]) {
++  test(`portrait preserves geometry with ${fallback ? 'WebP fallback' : 'AVIF selection'}`, async ({ page }) => {
++    if (fallback) {
++      // Emulate an unsupported source type while exercising the actual fallback.
++      await page.route('**/about/', async (route) => {
++        const response = await route.fetch();
++        const body = (await response.text()).replace(/<source\b[^>]*type="image\/avif"[^>]*>/g, '');
++        await route.fulfill({ response, body });
++      });
++    }
++    await page.goto('/about/');
++    const image = page.getByAltText('Portrait of Victor Maes, cinematographer and director based in Belgium');
++    await image.scrollIntoViewIfNeeded();
++    const actual = await image.evaluate(async (el: HTMLImageElement) => {
++      await el.decode();
++      const rect = el.getBoundingClientRect();
++      return { src: el.currentSrc, ratio: rect.width / rect.height, sourceRatio: el.width / el.height, loading: el.loading };
++    });
++    expect(actual.src).toMatch(fallback ? /\.webp$/ : /\.avif$/);
++    expect(actual.ratio).toBeCloseTo(actual.sourceRatio, 2);
++    expect(actual.loading).toBe('lazy');
++    if (page.viewportSize()!.width >= 768) expect(await image.evaluate((el) => el.getBoundingClientRect().width)).toBe(300);
++  });
++}
+--- /dev/null
++++ b/scripts/compare-image-formats.mjs
+@@ -0,0 +1,38 @@
++// Bounded encoder experiment using the same Sharp implementation as Astro.
++// node scripts/compare-image-formats.mjs <output-directory>
++import sharp from 'sharp';
++import { mkdirSync, writeFileSync } from 'node:fs';
++import { join } from 'node:path';
++import { performance } from 'node:perf_hooks';
++
++const output = process.argv[2];
++if (!output) throw new Error('Provide an output directory.');
++mkdirSync(output, { recursive: true });
++const samples = {
++  dark: 'src/assets/img/burn/stills/20231102_BURN_1.1.30.jpg',
++  grain: 'src/assets/img/thetearsofthings/stills/TTOT_20221008_1.19.1.jpg',
++  daylight: 'src/assets/img/worldwoodweb/stills/worldwoodwebcover.jpg',
++  portrait: 'src/assets/img/about/IMG_2507-unblur.jpg',
++};
++const results = [];
++for (const [sample, source] of Object.entries(samples)) {
++  for (const width of sample === 'portrait' ? [320, 640, 1080, 2560] : [1080, 2560]) {
++    for (const format of ['webp', 'avif']) {
++      const times = [];
++      let buffer;
++      for (let run = 0; run < 3; run++) {
++        const start = performance.now();
++        buffer = await sharp(source).resize({ width, withoutEnlargement: true })[format]({ quality: format === 'webp' ? 68 : 50 }).toBuffer();
++        times.push(performance.now() - start);
++      }
++      const file = `${sample}-${width}.${format}`;
++      writeFileSync(join(output, file), buffer);
++      // Same crop from each decoded candidate for visual quality review.
++      const metadata = await sharp(buffer).metadata();
++      await sharp(buffer).extract({ left: Math.max(0, Math.floor(metadata.width / 2) - 256), top: Math.max(0, Math.floor(metadata.height / 2) - 180), width: Math.min(512, metadata.width), height: Math.min(360, metadata.height) }).png().toFile(join(output, `${sample}-${width}-${format}-crop.png`));
++      results.push({ sample, source, width, actualWidth: metadata.width, format, bytes: buffer.length, encodeMilliseconds: times, medianEncodeMilliseconds: [...times].sort((a,b) => a-b)[1] });
++    }
++  }
++}
++writeFileSync(join(output, 'encoders.json'), `${JSON.stringify({ sharp: sharp.versions, results }, null, 2)}\n`);
++console.log(results.map(({ sample, width, format, bytes, medianEncodeMilliseconds }) => ({ sample, width, format, bytes, milliseconds: Math.round(medianEncodeMilliseconds) })));
+--- /dev/null
++++ b/scripts/inspect-image-layout.mjs
+@@ -0,0 +1,36 @@
++import { chromium } from '@playwright/test';
++import { mkdirSync, writeFileSync } from 'node:fs';
++import { join } from 'node:path';
++
++const output = process.argv[2];
++const baseURL = process.argv[3] ?? 'http://127.0.0.1:4323';
++if (!output || !['localhost', '127.0.0.1'].includes(new URL(baseURL).hostname)) throw new Error('Provide an output directory and local preview.');
++mkdirSync(output, { recursive: true });
++const browser = await chromium.launch();
++const results = [];
++try {
++  for (const width of [390, 1280]) {
++    const page = await browser.newPage({ viewport: { width, height: 844 }, deviceScaleFactor: 2, reducedMotion: 'reduce' });
++    await page.route('**/*', (route) => new URL(route.request().url()).origin === new URL(baseURL).origin ? route.continue() : route.abort());
++    await page.goto(`${baseURL}/about/`);
++    await page.evaluate(() => document.fonts.ready);
++    const hero = page.locator('main img').first();
++    const portrait = page.getByAltText('Portrait of Victor Maes, cinematographer and director based in Belgium');
++    const inspect = (image) => image.evaluate(async (el) => {
++      await el.decode();
++      const start = performance.now();
++      const bitmap = await createImageBitmap(el);
++      const bitmapCreationMilliseconds = performance.now() - start;
++      bitmap.close();
++      return { src: el.currentSrc, srcset: el.srcset, sizes: el.sizes, loading: el.loading, layout: el.dataset.astroImage, rect: el.getBoundingClientRect().toJSON(), objectFit: getComputedStyle(el).objectFit, bitmapCreationMilliseconds, picture: el.parentElement.tagName === 'PICTURE' ? el.parentElement.outerHTML : null };
++    });
++    await page.screenshot({ path: join(output, `hero-${width}.png`) });
++    const heroData = await inspect(hero);
++    await portrait.scrollIntoViewIfNeeded();
++    const portraitData = await inspect(portrait);
++    await page.screenshot({ path: join(output, `portrait-${width}.png`) });
++    results.push({ width, hero: heroData, portrait: portraitData });
++    await page.close();
++  }
++} finally { await browser.close(); }
++writeFileSync(join(output, 'layout.json'), `${JSON.stringify(results, null, 2)}\n`);

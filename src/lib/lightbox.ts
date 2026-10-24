@@ -40,7 +40,12 @@ document.addEventListener("click", (event) => {
     event.preventDefault();
     origins.set(dialog, trigger);
     showImage(items.indexOf(trigger));
-    if (!dialog.open) dialog.showModal();
+    if (!dialog.open) {
+      // Give native dialog restoration the real opener, including in Safari
+      // where a pointer click does not necessarily focus an anchor.
+      trigger.focus({ preventScroll: true });
+      dialog.showModal();
+    }
     dialog.querySelector<HTMLElement>(".lightbox-close")?.focus();
     return;
   }
@@ -83,10 +88,16 @@ document.addEventListener("keydown", (event) => {
 
 document.addEventListener("close", (event) => {
   if (!(event.target instanceof HTMLDialogElement)) return;
+  // A queued close event must not clear an image that has already reopened.
+  if (event.target.open) return;
   const trigger = origins.get(event.target);
   origins.delete(event.target);
   event.target.querySelector<HTMLImageElement>('[data-gallery-image]')?.removeAttribute('src');
-  if (trigger?.isConnected) trigger.focus({ preventScroll: true });
+  // The browser normally restores the opener synchronously. `close` arrives
+  // later: preserve any focus the visitor has already moved elsewhere.
+  if (trigger?.isConnected && (document.activeElement === document.body || event.target.contains(document.activeElement))) {
+    trigger.focus({ preventScroll: true });
+  }
 }, true);
 
 document.addEventListener("astro:before-swap", () => {

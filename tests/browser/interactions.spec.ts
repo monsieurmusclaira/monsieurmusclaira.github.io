@@ -52,6 +52,74 @@ test("header stays visible while focused or its menu is open", async ({ page }) 
   await expect.poll(() => page.locator("header").evaluate((el) => el.getBoundingClientRect().top)).toBeGreaterThanOrEqual(0);
 });
 
+test('navigation reconnects with one disclosure controller', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/');
+  for (let repeat = 0; repeat < 3; repeat++) {
+    await page.evaluate(() => {
+      const navigation = document.querySelector('site-navigation')!;
+      const parent = navigation.parentElement!;
+      navigation.remove();
+      parent.append(navigation);
+    });
+    const toggle = page.locator('#menu-toggle');
+    await toggle.click();
+    await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+    await expect(page.locator('#mobile-menu')).toBeVisible();
+    await page.keyboard.press('Escape');
+    await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+    await expect(toggle).toBeFocused();
+    await toggle.click();
+    await navigate(page, () => page.locator('#mobile-menu a[href="/about/"]').click());
+    await expect(page.locator('#menu-toggle')).toHaveAttribute('aria-expanded', 'false');
+    await navigate(page, () => page.locator('header .navbar-center a').click());
+  }
+});
+
+test('a queued lightbox close preserves a subsequent focus choice', async ({ page }) => {
+  await page.goto('/projects/ever-since-i-have-been-flying/');
+  const summary = page.locator('[data-gallery-expansion] summary');
+  await summary.click();
+  await page.locator('[data-gallery-remaining] [data-lightbox-id]').last().click();
+  const preserved = await page.evaluate(async () => {
+    const dialog = document.querySelector<HTMLDialogElement>('dialog[open]')!;
+    const summary = document.querySelector<HTMLElement>('[data-gallery-expansion] summary')!;
+    const closed = new Promise<boolean>((resolve) => dialog.addEventListener('close', () => resolve(document.activeElement === summary), { once: true }));
+    dialog.close();
+    summary.focus();
+    return closed;
+  });
+  expect(preserved).toBe(true);
+  await page.keyboard.press('Enter');
+  await expect(page.locator('[data-gallery-remaining]')).toBeHidden();
+});
+
+test('mobile header keeps its geometry while enhancement scripts load', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  let release!: () => void;
+  const scripts = new Promise<void>((resolve) => { release = resolve; });
+  await page.route('**/_astro/*.js', async (route) => { await scripts; await route.continue(); });
+  try {
+    await page.goto('/', { waitUntil: 'commit' });
+    await page.locator('header .navbar-center a').waitFor();
+    await page.waitForFunction(() => Boolean(document.querySelector<HTMLLinkElement>('link[rel="stylesheet"]')?.sheet));
+    // Firefox's FontFaceSet.ready can wait for deferred modules themselves.
+    // Load just the header face while those modules are intentionally blocked.
+    await page.locator('header .navbar-center a').evaluate(async (el) => {
+      await document.fonts.load(getComputedStyle(el).font);
+    });
+    await expect(page.locator('#menu-toggle')).toBeVisible();
+    const before = await page.locator('header .navbar-center a').boundingBox();
+    release();
+    await page.waitForLoadState('load');
+    const after = await page.locator('header .navbar-center a').boundingBox();
+    expect(after!.x).toBeCloseTo(before!.x, 1);
+    expect(after!.y).toBeCloseTo(before!.y, 1);
+    await page.locator('#menu-toggle').click();
+    await expect(page.locator('#mobile-menu')).toBeVisible();
+  } finally { release(); }
+});
+
 for (const path of ["/projects/burn/", "/behind-the-scenes/"]) {
   test(`gallery traps focus, restores it and unlocks scrolling on ${path}`, async ({ page }) => {
     await page.goto(path);

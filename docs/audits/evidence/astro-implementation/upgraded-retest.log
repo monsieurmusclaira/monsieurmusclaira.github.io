@@ -1,0 +1,51 @@
+[WebServer] (node:60166) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:60187) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium-desktop] › tests/browser/discovery.spec.ts:44:1 › projects retain recognition and gallery navigation with one closing contact action (5.7s)
+
+
+  1) [chromium-desktop] › tests/browser/discovery.spec.ts:44:1 › projects retain recognition and gallery navigation with one closing contact action 
+
+    Error: expect(locator).toBeHidden() failed
+
+    Locator:  locator('[data-gallery-remaining]')
+    Expected: hidden
+    Received: visible
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeHidden" locator('[data-gallery-remaining]') with timeout 5000ms
+      - waiting for locator('[data-gallery-remaining]')
+        14 × locator resolved to <div data-gallery-remaining="" data-astro-cid-j4gwzyy4="" class="hero-content grid w-full grid-cols-1 md:grid-cols-2 gap-x-3 gap-y-10 max-w-6xl mx-auto px-4 mt-8">…</div>
+           - unexpected value "visible"
+
+
+      64 |   await summary.focus();
+      65 |   await page.keyboard.press('Enter');
+    > 66 |   await expect(remaining).toBeHidden();
+         |                           ^
+      67 |   await expect(summary).toBeFocused();
+      68 | });
+      69 |
+        at /Users/victormaes/Documents/GitHub-desktop/monsieurmusclaira.github.io/tests/browser/discovery.spec.ts:66:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/discovery-projects-retain--67330--one-closing-contact-action-chromium-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/discovery-projects-retain--67330--one-closing-contact-action-chromium-desktop/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/discovery-projects-retain--67330--one-closing-contact-action-chromium-desktop/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/discovery-projects-retain--67330--one-closing-contact-action-chromium-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium-desktop] › tests/browser/discovery.spec.ts:44:1 › projects retain recognition and gallery navigation with one closing contact action 

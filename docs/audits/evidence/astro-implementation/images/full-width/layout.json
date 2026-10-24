@@ -1,0 +1,86 @@
+[
+  {
+    "width": 390,
+    "hero": {
+      "src": "http://127.0.0.1:4323/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_UuwE4.webp",
+      "srcset": "/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_1cYAUu.webp 768w, /_astro/TTOT_20221008_1.19.1.Dm0ygTdM_UuwE4.webp 1080w, /_astro/TTOT_20221008_1.19.1.Dm0ygTdM_Z2mSQ3Y.webp 1440w, /_astro/TTOT_20221008_1.19.1.Dm0ygTdM_2a26m9.webp 2560w",
+      "sizes": "100vw",
+      "loading": "eager",
+      "layout": "full-width",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "objectFit": "cover",
+      "picture": null,
+      "bitmapCreationMilliseconds": 2.799999952316284
+    },
+    "portrait": {
+      "src": "http://127.0.0.1:4323/_astro/IMG_2507-unblur.CbZVxQ6Z_1mscC6.avif",
+      "srcset": "/_astro/IMG_2507-unblur.CbZVxQ6Z_ZVBbes.webp 320w, /_astro/IMG_2507-unblur.CbZVxQ6Z_Z1ci1TA.webp 640w",
+      "sizes": "(min-width: 768px) 300px, 100vw",
+      "loading": "lazy",
+      "rect": {
+        "x": 24,
+        "y": 278.5,
+        "width": 342,
+        "height": 286.953125,
+        "top": 278.5,
+        "right": 366,
+        "bottom": 565.453125,
+        "left": 24
+      },
+      "objectFit": "fill",
+      "picture": "<picture class=\"block w-full\"><source srcset=\"/_astro/IMG_2507-unblur.CbZVxQ6Z_1C93ie.avif 320w, /_astro/IMG_2507-unblur.CbZVxQ6Z_1mscC6.avif 640w\" type=\"image/avif\" sizes=\"(min-width: 768px) 300px, 100vw\"><img src=\"/_astro/IMG_2507-unblur.CbZVxQ6Z_ZG3LNj.webp\" srcset=\"/_astro/IMG_2507-unblur.CbZVxQ6Z_ZVBbes.webp 320w, /_astro/IMG_2507-unblur.CbZVxQ6Z_Z1ci1TA.webp 640w\" alt=\"Portrait of Victor Maes, cinematographer and director based in Belgium\" sizes=\"(min-width: 768px) 300px, 100vw\" loading=\"lazy\" decoding=\"async\" width=\"4121\" height=\"3456\" class=\"w-full h-auto\"></picture>",
+      "bitmapCreationMilliseconds": 1.0999999642372131
+    }
+  },
+  {
+    "width": 1280,
+    "hero": {
+      "src": "http://127.0.0.1:4323/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_2a26m9.webp",
+      "srcset": "/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_1cYAUu.webp 768w, /_astro/TTOT_20221008_1.19.1.Dm0ygTdM_UuwE4.webp 1080w, /_astro/TTOT_20221008_1.19.1.Dm0ygTdM_Z2mSQ3Y.webp 1440w, /_astro/TTOT_20221008_1.19.1.Dm0ygTdM_2a26m9.webp 2560w",
+      "sizes": "100vw",
+      "loading": "eager",
+      "layout": "full-width",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 844,
+        "top": 0,
+        "right": 1280,
+        "bottom": 844,
+        "left": 0
+      },
+      "objectFit": "cover",
+      "picture": null,
+      "bitmapCreationMilliseconds": 11.5
+    },
+    "portrait": {
+      "src": "http://127.0.0.1:4323/_astro/IMG_2507-unblur.CbZVxQ6Z_1mscC6.avif",
+      "srcset": "/_astro/IMG_2507-unblur.CbZVxQ6Z_ZVBbes.webp 320w, /_astro/IMG_2507-unblur.CbZVxQ6Z_Z1ci1TA.webp 640w",
+      "sizes": "(min-width: 768px) 300px, 100vw",
+      "loading": "lazy",
+      "rect": {
+        "x": 152,
+        "y": 296,
+        "width": 300,
+        "height": 251.71875,
+        "top": 296,
+        "right": 452,
+        "bottom": 547.71875,
+        "left": 152
+      },
+      "objectFit": "fill",
+      "picture": "<picture class=\"block w-full\"><source srcset=\"/_astro/IMG_2507-unblur.CbZVxQ6Z_1C93ie.avif 320w, /_astro/IMG_2507-unblur.CbZVxQ6Z_1mscC6.avif 640w\" type=\"image/avif\" sizes=\"(min-width: 768px) 300px, 100vw\"><img src=\"/_astro/IMG_2507-unblur.CbZVxQ6Z_ZG3LNj.webp\" srcset=\"/_astro/IMG_2507-unblur.CbZVxQ6Z_ZVBbes.webp 320w, /_astro/IMG_2507-unblur.CbZVxQ6Z_Z1ci1TA.webp 640w\" alt=\"Portrait of Victor Maes, cinematographer and director based in Belgium\" sizes=\"(min-width: 768px) 300px, 100vw\" loading=\"lazy\" decoding=\"async\" width=\"4121\" height=\"3456\" class=\"w-full h-auto\"></picture>",
+      "bitmapCreationMilliseconds": 2.600000023841858
+    }
+  }
+]

@@ -2,7 +2,7 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
-import { getImage } from 'astro:assets';
+import { Font, getImage } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import { sortByOrder } from '../lib/projects';
 import { publicSocialImage } from '../lib/social-images';
@@ -10,8 +10,6 @@ import { videoDetails } from '../lib/videos';
 import { resolveImage, listBtsImages } from '../utils/images';
 import { SITE_TITLE, SITE_URL, SITE_NAME, SOCIAL_LINKS } from '../config';
 import type { ProjectData } from '../lib/projects';
-import montserrat400 from '@fontsource/montserrat/files/montserrat-latin-400-normal.woff2?url';
-import ebGaramond400 from '@fontsource/eb-garamond/files/eb-garamond-latin-400-normal.woff2?url';
 
 export interface Props {
 	title: string;
@@ -284,9 +282,10 @@ if (schema) {
 <!-- LCP preload: hero video poster on home page -->
 {pageType === 'home' && <link rel="preload" as="image" href="/video/seethrough.webp" type="image/webp" fetchpriority="high" />}
 
-<!-- Critical local fonts: bundled through Fontsource, never fetched at build time. -->
-<link rel="preload" href={montserrat400} as="font" type="font/woff2" crossorigin />
-<link rel="preload" href={ebGaramond400} as="font" type="font/woff2" crossorigin />
+<!-- One variable sans file; preload only the normal serif used in each hero. -->
+<Font cssVariable="--font-montserrat" preload />
+<Font cssVariable="--font-eb-garamond" preload={[{ weight: 400, style: 'normal' }]} />
+<Font cssVariable="--font-caveat" />
 
 <!-- Crawl directives -->
 {noindex && <meta name="robots" content="noindex, nofollow" />}

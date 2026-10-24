@@ -1,0 +1,13 @@
+
+> victor-maes-portfolio@4.23.0 test:verify
+> vitest run
+
+
+ RUN  v5.0.5 /Users/victormaes/Documents/GitHub-desktop/monsieurmusclaira.github.io
+
+
+ Test Files  13 passed (13)
+      Tests  198 passed (198)
+   Start at  23:14:47
+   Duration  462ms (import 55%, tests 33%, transform 9%, worker 3%)
+

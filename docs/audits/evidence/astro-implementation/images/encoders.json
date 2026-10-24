@@ -1,0 +1,315 @@
+{
+  "sharp": {
+    "aom": "3.15.1",
+    "archive": "3.8.9",
+    "cairo": "1.18.6",
+    "cgif": "0.5.4",
+    "exif": "0.6.26",
+    "expat": "2.8.5",
+    "ffi": "3.8.0",
+    "fontconfig": "2.18.3",
+    "freetype": "2.14.3",
+    "fribidi": "1.0.17",
+    "glib": "2.90.0",
+    "harfbuzz": "14.5.0",
+    "heif": "1.23.5",
+    "highway": "1.4.0",
+    "imagequant": "2.4.1",
+    "lcms": "2.19.1",
+    "mozjpeg": "0826579",
+    "pango": "1.58.2",
+    "pixman": "0.46.4",
+    "png": "1.6.58",
+    "proxy-libintl": "0.5",
+    "rsvg": "2.63.2",
+    "tiff": "4.7.2",
+    "uhdr": "2.0.2",
+    "vips": "8.18.7",
+    "webp": "1.6.0",
+    "xml2": "2.15.4",
+    "zlib-ng": "2.3.3",
+    "sharp": "0.35.5"
+  },
+  "results": [
+    {
+      "sample": "dark",
+      "source": "src/assets/img/burn/stills/20231102_BURN_1.1.30.jpg",
+      "width": 1080,
+      "actualWidth": 1080,
+      "format": "webp",
+      "bytes": 9774,
+      "encodeMilliseconds": [
+        188.29325,
+        100.23245800000001,
+        98.32079200000004
+      ],
+      "medianEncodeMilliseconds": 100.23245800000001
+    },
+    {
+      "sample": "dark",
+      "source": "src/assets/img/burn/stills/20231102_BURN_1.1.30.jpg",
+      "width": 1080,
+      "actualWidth": 1080,
+      "format": "avif",
+      "bytes": 8874,
+      "encodeMilliseconds": [
+        288.607708,
+        269.6161249999999,
+        355.28537499999993
+      ],
+      "medianEncodeMilliseconds": 288.607708
+    },
+    {
+      "sample": "dark",
+      "source": "src/assets/img/burn/stills/20231102_BURN_1.1.30.jpg",
+      "width": 2560,
+      "actualWidth": 2560,
+      "format": "webp",
+      "bytes": 42812,
+      "encodeMilliseconds": [
+        223.03254100000004,
+        211.77329200000008,
+        202.10375
+      ],
+      "medianEncodeMilliseconds": 211.77329200000008
+    },
+    {
+      "sample": "dark",
+      "source": "src/assets/img/burn/stills/20231102_BURN_1.1.30.jpg",
+      "width": 2560,
+      "actualWidth": 2560,
+      "format": "avif",
+      "bytes": 54625,
+      "encodeMilliseconds": [
+        1342.2500840000002,
+        1160.7609580000003,
+        1292.2318330000007
+      ],
+      "medianEncodeMilliseconds": 1292.2318330000007
+    },
+    {
+      "sample": "grain",
+      "source": "src/assets/img/thetearsofthings/stills/TTOT_20221008_1.19.1.jpg",
+      "width": 1080,
+      "actualWidth": 1080,
+      "format": "webp",
+      "bytes": 18630,
+      "encodeMilliseconds": [
+        118.65679099999943,
+        113.9619160000002,
+        111.96762500000023
+      ],
+      "medianEncodeMilliseconds": 113.9619160000002
+    },
+    {
+      "sample": "grain",
+      "source": "src/assets/img/thetearsofthings/stills/TTOT_20221008_1.19.1.jpg",
+      "width": 1080,
+      "actualWidth": 1080,
+      "format": "avif",
+      "bytes": 23662,
+      "encodeMilliseconds": [
+        403.12416699999994,
+        529.5567080000001,
+        407.57316699999956
+      ],
+      "medianEncodeMilliseconds": 407.57316699999956
+    },
+    {
+      "sample": "grain",
+      "source": "src/assets/img/thetearsofthings/stills/TTOT_20221008_1.19.1.jpg",
+      "width": 2560,
+      "actualWidth": 2560,
+      "format": "webp",
+      "bytes": 103994,
+      "encodeMilliseconds": [
+        274.6785,
+        271.50716699999975,
+        297.88025000000016
+      ],
+      "medianEncodeMilliseconds": 274.6785
+    },
+    {
+      "sample": "grain",
+      "source": "src/assets/img/thetearsofthings/stills/TTOT_20221008_1.19.1.jpg",
+      "width": 2560,
+      "actualWidth": 2560,
+      "format": "avif",
+      "bytes": 122007,
+      "encodeMilliseconds": [
+        2189.071041000001,
+        2182.769875,
+        2094.0702920000003
+      ],
+      "medianEncodeMilliseconds": 2182.769875
+    },
+    {
+      "sample": "daylight",
+      "source": "src/assets/img/worldwoodweb/stills/worldwoodwebcover.jpg",
+      "width": 1080,
+      "actualWidth": 1080,
+      "format": "webp",
+      "bytes": 27016,
+      "encodeMilliseconds": [
+        124.19787499999984,
+        134.31162500000028,
+        115.8642920000002
+      ],
+      "medianEncodeMilliseconds": 124.19787499999984
+    },
+    {
+      "sample": "daylight",
+      "source": "src/assets/img/worldwoodweb/stills/worldwoodwebcover.jpg",
+      "width": 1080,
+      "actualWidth": 1080,
+      "format": "avif",
+      "bytes": 28052,
+      "encodeMilliseconds": [
+        514.2099159999998,
+        542.9208750000016,
+        496.10283400000117
+      ],
+      "medianEncodeMilliseconds": 514.2099159999998
+    },
+    {
+      "sample": "daylight",
+      "source": "src/assets/img/worldwoodweb/stills/worldwoodwebcover.jpg",
+      "width": 2560,
+      "actualWidth": 2560,
+      "format": "webp",
+      "bytes": 129382,
+      "encodeMilliseconds": [
+        459.7661249999983,
+        465.67816700000185,
+        529.2267090000023
+      ],
+      "medianEncodeMilliseconds": 465.67816700000185
+    },
+    {
+      "sample": "daylight",
+      "source": "src/assets/img/worldwoodweb/stills/worldwoodwebcover.jpg",
+      "width": 2560,
+      "actualWidth": 2560,
+      "format": "avif",
+      "bytes": 121625,
+      "encodeMilliseconds": [
+        2415.282415999998,
+        2189.1552090000005,
+        2181.6085840000014
+      ],
+      "medianEncodeMilliseconds": 2189.1552090000005
+    },
+    {
+      "sample": "portrait",
+      "source": "src/assets/img/about/IMG_2507-unblur.jpg",
+      "width": 320,
+      "actualWidth": 320,
+      "format": "webp",
+      "bytes": 3962,
+      "encodeMilliseconds": [
+        53.22370800000135,
+        48.83516700000109,
+        46.717625000001135
+      ],
+      "medianEncodeMilliseconds": 48.83516700000109
+    },
+    {
+      "sample": "portrait",
+      "source": "src/assets/img/about/IMG_2507-unblur.jpg",
+      "width": 320,
+      "actualWidth": 320,
+      "format": "avif",
+      "bytes": 3474,
+      "encodeMilliseconds": [
+        86.8369169999969,
+        87.97979100000157,
+        94.42645799999809
+      ],
+      "medianEncodeMilliseconds": 87.97979100000157
+    },
+    {
+      "sample": "portrait",
+      "source": "src/assets/img/about/IMG_2507-unblur.jpg",
+      "width": 640,
+      "actualWidth": 640,
+      "format": "webp",
+      "bytes": 10398,
+      "encodeMilliseconds": [
+        73.58712500000183,
+        77.81987500000105,
+        75.99895800000013
+      ],
+      "medianEncodeMilliseconds": 75.99895800000013
+    },
+    {
+      "sample": "portrait",
+      "source": "src/assets/img/about/IMG_2507-unblur.jpg",
+      "width": 640,
+      "actualWidth": 640,
+      "format": "avif",
+      "bytes": 8749,
+      "encodeMilliseconds": [
+        165.19945799999914,
+        176.14641699999993,
+        199.79962499999965
+      ],
+      "medianEncodeMilliseconds": 176.14641699999993
+    },
+    {
+      "sample": "portrait",
+      "source": "src/assets/img/about/IMG_2507-unblur.jpg",
+      "width": 1080,
+      "actualWidth": 1080,
+      "format": "webp",
+      "bytes": 26850,
+      "encodeMilliseconds": [
+        253.39724999999817,
+        160.28091700000004,
+        177.83908300000257
+      ],
+      "medianEncodeMilliseconds": 177.83908300000257
+    },
+    {
+      "sample": "portrait",
+      "source": "src/assets/img/about/IMG_2507-unblur.jpg",
+      "width": 1080,
+      "actualWidth": 1080,
+      "format": "avif",
+      "bytes": 20822,
+      "encodeMilliseconds": [
+        516.1287499999999,
+        488.9984169999989,
+        365.83858300000065
+      ],
+      "medianEncodeMilliseconds": 488.9984169999989
+    },
+    {
+      "sample": "portrait",
+      "source": "src/assets/img/about/IMG_2507-unblur.jpg",
+      "width": 2560,
+      "actualWidth": 2560,
+      "format": "webp",
+      "bytes": 377282,
+      "encodeMilliseconds": [
+        743.450582999998,
+        1003.7167919999993,
+        797.0949999999975
+      ],
+      "medianEncodeMilliseconds": 797.0949999999975
+    },
+    {
+      "sample": "portrait",
+      "source": "src/assets/img/about/IMG_2507-unblur.jpg",
+      "width": 2560,
+      "actualWidth": 2560,
+      "format": "avif",
+      "bytes": 225196,
+      "encodeMilliseconds": [
+        2873.721999999998,
+        2584.2787089999983,
+        2727.710500000001
+      ],
+      "medianEncodeMilliseconds": 2727.710500000001
+    }
+  ]
+}

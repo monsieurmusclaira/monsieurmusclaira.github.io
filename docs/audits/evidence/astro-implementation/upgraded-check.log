@@ -1,0 +1,14 @@
+
+> victor-maes-portfolio@4.23.0 check
+> astro check
+
+22:51:10 [portfolio-image-manifest] Including 389 referenced images.
+22:51:10 [content] Syncing content
+22:51:10 [content] Synced content
+22:51:10 [types] Generated 361ms
+22:51:10 [check] Getting diagnostics for Astro files in /Users/victormaes/Documents/GitHub-desktop/monsieurmusclaira.github.io...
+Result (75 files): 
+- 0 errors
+- 0 warnings
+- 0 hints
+

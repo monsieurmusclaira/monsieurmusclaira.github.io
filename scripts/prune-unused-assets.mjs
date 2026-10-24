@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 
 const DIST = process.argv[2] ? resolve(process.argv[2]) : fileURLToPath(new URL('../dist/', import.meta.url));
 const ASTRO_DIR = join(DIST, '_astro');
-const PRUNABLE = new Set(['.png', '.jpg', '.jpeg', '.webp', '.svg', '.PNG', '.JPG', '.JPEG', '.WEBP', '.SVG']);
+const PRUNABLE = new Set(['.png', '.jpg', '.jpeg', '.webp', '.avif', '.svg', '.PNG', '.JPG', '.JPEG', '.WEBP', '.AVIF', '.SVG']);
 
 async function* walk(dir) {
   for (const entry of await readdir(dir, { withFileTypes: true })) {

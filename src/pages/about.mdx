@@ -4,7 +4,7 @@ title: "About Victor Maes | Cinematographer & Director"
 description: "Belgium-based cinematographer and director working across fiction, documentary, commercials and VR, and available for productions worldwide."
 image: "/img/about/IMG_2507-unblur.jpg"
 ---
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import { importImage } from '../utils/images';
 import ProjectHero from '../components/ProjectHero.astro';
 import ProjectIntro from '../components/ProjectIntro.astro';
@@ -28,8 +28,11 @@ export const meta = {
 
 <section class="hero py-16 sm:py-24 bg-neutral">
     <div class="w-full max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-[300px_1fr] gap-10 md:gap-14 items-start" data-aos="fade-up" data-aos-duration="600">
-        <Image
+        <Picture
             src={importImage('/img/about/IMG_2507-unblur.jpg')}
+            formats={['avif']}
+            fallbackFormat="webp"
+            pictureAttributes={{ class: 'block w-full' }}
             alt="Portrait of Victor Maes, cinematographer and director based in Belgium"
             class="w-full h-auto"
             widths={[320, 640]}

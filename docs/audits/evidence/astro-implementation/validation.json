@@ -1,0 +1,53 @@
+{
+  "node": "22.23.4",
+  "cleanInstall": true,
+  "astroCheck": {
+    "errors": 0,
+    "warnings": 0,
+    "hints": 0,
+    "files": 85
+  },
+  "verification": {
+    "files": 13,
+    "tests": 198
+  },
+  "browserMatrix": {
+    "projects": [
+      "chromium-desktop",
+      "chromium-mobile",
+      "firefox-desktop",
+      "firefox-mobile",
+      "webkit-desktop",
+      "webkit-mobile"
+    ],
+    "passed": 288,
+    "includesUnsupportedTransitionFallback": true,
+    "includesDelayedScripts": true
+  },
+  "unsupportedTransitionFallback": {
+    "passed": 6
+  },
+  "metadata": {
+    "pages": 21,
+    "changes": []
+  },
+  "remainingAdvisories": {
+    "info": 0,
+    "low": 0,
+    "moderate": 2,
+    "high": 0,
+    "critical": 0,
+    "total": 2
+  },
+  "publication": "None; local uncommitted changes",
+  "measurements": {
+    "phases": [
+      "baseline",
+      "upgraded",
+      "fonts",
+      "final"
+    ],
+    "coldRunsPerPhase": 24,
+    "browser": "153.0.8010.12"
+  }
+}

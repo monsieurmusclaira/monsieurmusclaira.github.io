@@ -1,0 +1,55 @@
+[WebServer] (node:67747) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 36 tests using 3 workers
+
+(node:67896) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:67895) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:67897) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium-desktop] › tests/browser/discovery.spec.ts:4:1 › award photograph is visible without opening a toggle (460ms)
+  ✓   3 [chromium-desktop] › tests/browser/discovery.spec.ts:44:1 › projects retain recognition and gallery navigation with one closing contact action (766ms)
+  ✓   2 [chromium-desktop] › tests/browser/discovery.spec.ts:12:1 › filmography filters combine, reset, and survive navigation (1.2s)
+  ✓   5 [chromium-desktop] › tests/browser/discovery.spec.ts:89:1 › compact phone cards and biography links preserve project access (477ms)
+  ✓   4 [chromium-desktop] › tests/browser/discovery.spec.ts:70:1 › no JavaScript preserves the entire filmography and expandable photos (1.1s)
+  ✓   6 [chromium-desktop] › tests/browser/interactions.spec.ts:4:3 › hero cue scrolls to content on / (620ms)
+  ✓   7 [chromium-desktop] › tests/browser/interactions.spec.ts:4:3 › hero cue scrolls to content on /about/ (546ms)
+  ✓   8 [chromium-desktop] › tests/browser/interactions.spec.ts:4:3 › hero cue scrolls to content on /behind-the-scenes/ (408ms)
+  ✓  10 [chromium-desktop] › tests/browser/interactions.spec.ts:42:1 › header stays visible while focused or its menu is open (386ms)
+  ✓   9 [chromium-desktop] › tests/browser/interactions.spec.ts:13:1 › mobile menu closes with Escape, resets after navigation and follows breakpoints (605ms)
+  ✓  12 [chromium-desktop] › tests/browser/interactions.spec.ts:79:1 › a queued lightbox close preserves a subsequent focus choice (363ms)
+  ✓  11 [chromium-desktop] › tests/browser/interactions.spec.ts:55:1 › navigation reconnects with one disclosure controller (1.0s)
+  ✓  15 [chromium-desktop] › tests/browser/interactions.spec.ts:126:1 › project contact CTA reaches the visible contact section (345ms)
+  ✓  13 [chromium-desktop] › tests/browser/interactions.spec.ts:98:3 › gallery traps focus, restores it and unlocks scrolling on /projects/burn/ (958ms)
+  ✓  14 [chromium-desktop] › tests/browser/interactions.spec.ts:98:3 › gallery traps focus, restores it and unlocks scrolling on /behind-the-scenes/ (931ms)
+  ✓  17 [chromium-desktop] › tests/browser/picture.spec.ts:4:3 › portrait preserves geometry with AVIF selection (249ms)
+  ✓  18 [chromium-desktop] › tests/browser/picture.spec.ts:4:3 › portrait preserves geometry with WebP fallback (272ms)
+(node:68052) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:68053) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  16 [chromium-desktop] › tests/browser/interactions.spec.ts:134:1 › back and forward retain usable navigation and galleries (723ms)
+  ✓  19 [chromium-mobile] › tests/browser/discovery.spec.ts:4:1 › award photograph is visible without opening a toggle (241ms)
+(node:68058) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  21 [chromium-mobile] › tests/browser/discovery.spec.ts:70:1 › no JavaScript preserves the entire filmography and expandable photos (515ms)
+  ✓  22 [chromium-mobile] › tests/browser/discovery.spec.ts:44:1 › projects retain recognition and gallery navigation with one closing contact action (443ms)
+  ✓  20 [chromium-mobile] › tests/browser/discovery.spec.ts:12:1 › filmography filters combine, reset, and survive navigation (855ms)
+  ✓  23 [chromium-mobile] › tests/browser/discovery.spec.ts:89:1 › compact phone cards and biography links preserve project access (281ms)
+  ✓  24 [chromium-mobile] › tests/browser/interactions.spec.ts:4:3 › hero cue scrolls to content on / (267ms)
+  ✓  25 [chromium-mobile] › tests/browser/interactions.spec.ts:4:3 › hero cue scrolls to content on /about/ (245ms)
+  ✓  26 [chromium-mobile] › tests/browser/interactions.spec.ts:4:3 › hero cue scrolls to content on /behind-the-scenes/ (293ms)
+  ✓  28 [chromium-mobile] › tests/browser/interactions.spec.ts:42:1 › header stays visible while focused or its menu is open (306ms)
+  ✓  27 [chromium-mobile] › tests/browser/interactions.spec.ts:13:1 › mobile menu closes with Escape, resets after navigation and follows breakpoints (549ms)
+  ✓  30 [chromium-mobile] › tests/browser/interactions.spec.ts:79:1 › a queued lightbox close preserves a subsequent focus choice (308ms)
+  ✓  29 [chromium-mobile] › tests/browser/interactions.spec.ts:55:1 › navigation reconnects with one disclosure controller (906ms)
+  ✓  31 [chromium-mobile] › tests/browser/interactions.spec.ts:98:3 › gallery traps focus, restores it and unlocks scrolling on /projects/burn/ (701ms)
+  ✓  33 [chromium-mobile] › tests/browser/interactions.spec.ts:126:1 › project contact CTA reaches the visible contact section (265ms)
+  ✓  32 [chromium-mobile] › tests/browser/interactions.spec.ts:98:3 › gallery traps focus, restores it and unlocks scrolling on /behind-the-scenes/ (650ms)
+  ✓  35 [chromium-mobile] › tests/browser/picture.spec.ts:4:3 › portrait preserves geometry with AVIF selection (201ms)
+  ✓  36 [chromium-mobile] › tests/browser/picture.spec.ts:4:3 › portrait preserves geometry with WebP fallback (217ms)
+  ✓  34 [chromium-mobile] › tests/browser/interactions.spec.ts:134:1 › back and forward retain usable navigation and galleries (480ms)
+
+  36 passed (9.7s)

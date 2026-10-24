@@ -1,0 +1,51 @@
+[
+  {
+    "policy": "current",
+    "saveData": false,
+    "idleRequests": [],
+    "navHoverRequests": [
+      "/about/"
+    ],
+    "cardHoverRequests": [
+      "/projects/a-long-goodbye/"
+    ],
+    "prefetchHints": [
+      "http://127.0.0.1:4323/about/",
+      "http://127.0.0.1:4323/projects/a-long-goodbye/"
+    ]
+  },
+  {
+    "policy": "current",
+    "saveData": true,
+    "idleRequests": [],
+    "navHoverRequests": [],
+    "cardHoverRequests": [],
+    "prefetchHints": []
+  },
+  {
+    "policy": "project-opt-in",
+    "saveData": false,
+    "idleRequests": [],
+    "navHoverRequests": [],
+    "cardHoverRequests": [
+      "/projects/a-long-goodbye/"
+    ],
+    "prefetchHints": [
+      "http://127.0.0.1:4323/projects/a-long-goodbye/"
+    ]
+  },
+  {
+    "policy": "project-opt-in",
+    "saveData": true,
+    "idleRequests": [],
+    "navHoverRequests": [],
+    "cardHoverRequests": [],
+    "prefetchHints": []
+  },
+  {
+    "gallery": {
+      "optOut": "false",
+      "fetchedMedia": []
+    }
+  }
+]

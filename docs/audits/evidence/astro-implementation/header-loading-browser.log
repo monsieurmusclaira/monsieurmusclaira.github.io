@@ -1,0 +1,25 @@
+[WebServer] (node:74896) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 6 tests using 3 workers
+
+(node:74916) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:74917) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:74915) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 [chromium-desktop] › tests/browser/interactions.spec.ts:97:1 › mobile header keeps its geometry while enhancement scripts load (462ms)
+  ✓  3 [chromium-mobile] › tests/browser/interactions.spec.ts:97:1 › mobile header keeps its geometry while enhancement scripts load (542ms)
+(node:75038) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:75047) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  5 [webkit-desktop] › tests/browser/interactions.spec.ts:97:1 › mobile header keeps its geometry while enhancement scripts load (686ms)
+(node:75127) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [firefox-desktop] › tests/browser/interactions.spec.ts:97:1 › mobile header keeps its geometry while enhancement scripts load (1.6s)
+  ✓  6 [webkit-mobile] › tests/browser/interactions.spec.ts:97:1 › mobile header keeps its geometry while enhancement scripts load (605ms)
+  ✓  4 [firefox-mobile] › tests/browser/interactions.spec.ts:97:1 › mobile header keeps its geometry while enhancement scripts load (1.4s)
+
+  6 passed (4.4s)

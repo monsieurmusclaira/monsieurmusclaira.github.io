@@ -1,0 +1,203 @@
+--- a/astro.config.mjs
++++ b/astro.config.mjs
+@@ -1,5 +1,5 @@
+ import { SITE_URL } from './src/config.ts';
+-import { defineConfig } from "astro/config";
++import { defineConfig, fontProviders } from "astro/config";
+ import sitemap from "@astrojs/sitemap";
+ import mdx from "@astrojs/mdx";
+ import tailwindcss from "@tailwindcss/vite";
+@@ -8,6 +8,40 @@
+ // https://astro.build/config
+ export default defineConfig({
+   site: SITE_URL,
++  // Local, lockfile-pinned files: no provider network access during builds.
++  fonts: [
++    {
++      name: 'Montserrat',
++      cssVariable: '--font-montserrat',
++      provider: fontProviders.local(),
++      fallbacks: ['sans-serif'],
++      options: { variants: [{
++        // Preserve the original 300–600 range (including synthesized bold).
++        weight: '300 600', style: 'normal',
++        src: ['@fontsource-variable/montserrat/files/montserrat-latin-wght-normal.woff2'],
++      }] },
++    },
++    {
++      name: 'EB Garamond',
++      cssVariable: '--font-eb-garamond',
++      provider: fontProviders.local(),
++      fallbacks: ['serif'],
++      options: { variants: [
++        ...[400, 500, 600].map((weight) => ({
++          weight, style: 'normal',
++          src: [`@fontsource/eb-garamond/files/eb-garamond-latin-${weight}-normal.woff2`],
++        })),
++        { weight: 400, style: 'italic', src: ['@fontsource/eb-garamond/files/eb-garamond-latin-400-italic.woff2'] },
++      ] },
++    },
++    {
++      name: 'Caveat',
++      cssVariable: '--font-caveat',
++      provider: fontProviders.local(),
++      fallbacks: ['cursive'],
++      options: { variants: [{ weight: 400, style: 'normal', src: ['@fontsource/caveat/files/caveat-latin-400-normal.woff2'] }] },
++    },
++  ],
+   integrations: [
+     portfolioImages(),
+     sitemap({
+--- a/src/components/BaseHead.astro
++++ b/src/components/BaseHead.astro
+@@ -2,7 +2,7 @@
+ // Import the global.css file here so that it is included on
+ // all pages through the use of the <BaseHead /> component.
+ import '../styles/global.css';
+-import { getImage } from 'astro:assets';
++import { Font, getImage } from 'astro:assets';
+ import { getCollection } from 'astro:content';
+ import { sortByOrder } from '../lib/projects';
+ import { publicSocialImage } from '../lib/social-images';
+@@ -10,8 +10,6 @@
+ import { resolveImage, listBtsImages } from '../utils/images';
+ import { SITE_TITLE, SITE_URL, SITE_NAME, SOCIAL_LINKS } from '../config';
+ import type { ProjectData } from '../lib/projects';
+-import montserrat400 from '@fontsource/montserrat/files/montserrat-latin-400-normal.woff2?url';
+-import ebGaramond400 from '@fontsource/eb-garamond/files/eb-garamond-latin-400-normal.woff2?url';
+ 
+ export interface Props {
+ 	title: string;
+@@ -284,9 +282,10 @@
+ <!-- LCP preload: hero video poster on home page -->
+ {pageType === 'home' && <link rel="preload" as="image" href="/video/seethrough.webp" type="image/webp" fetchpriority="high" />}
+ 
+-<!-- Critical local fonts: bundled through Fontsource, never fetched at build time. -->
+-<link rel="preload" href={montserrat400} as="font" type="font/woff2" crossorigin />
+-<link rel="preload" href={ebGaramond400} as="font" type="font/woff2" crossorigin />
++<!-- One variable sans file; preload only the normal serif used in each hero. -->
++<Font cssVariable="--font-montserrat" preload />
++<Font cssVariable="--font-eb-garamond" preload={[{ weight: 400, style: 'normal' }]} />
++<Font cssVariable="--font-caveat" />
+ 
+ <!-- Crawl directives -->
+ {noindex && <meta name="robots" content="noindex, nofollow" />}
+--- a/src/styles/global.css
++++ b/src/styles/global.css
+@@ -1,29 +1,10 @@
+-/* Fonts are bundled locally through Fontsource. Import only the Latin subsets
+-   used by this English, French, and Dutch portfolio to keep the CSS payload
+-   focused while preserving the site's established typography. */
+-@import "@fontsource/montserrat/latin-300.css";
+-@import "@fontsource/montserrat/latin-400.css";
+-@import "@fontsource/montserrat/latin-500.css";
+-@import "@fontsource/montserrat/latin-600.css";
+-@import "@fontsource/eb-garamond/latin-400.css";
+-@import "@fontsource/eb-garamond/latin-400-italic.css";
+-@import "@fontsource/eb-garamond/latin-500.css";
+-@import "@fontsource/eb-garamond/latin-600.css";
+-@import "@fontsource/caveat/latin-400.css";
+-
++/* Font faces and the existing family variables come from Astro's local Fonts API. */
+ @import "tailwindcss";
+ 
+ @plugin "@tailwindcss/typography";
+ @plugin "daisyui" {
+   themes: false;
+ }
+-/* Keep named font variables so the component styles remain readable. */
+-:root {
+-  --font-montserrat: "Montserrat";
+-  --font-eb-garamond: "EB Garamond";
+-  --font-caveat: "Caveat";
+-}
+-
+ @theme {
+   --font-sans: var(--font-montserrat), sans-serif;
+   --font-serif: var(--font-eb-garamond), serif;
+--- /dev/null
++++ b/tests/browser/fonts.spec.ts
+@@ -0,0 +1,25 @@
++import { test, expect, navigate } from './fixtures';
++
++test('local fonts load once and retain their family contracts after navigation', async ({ page }) => {
++  const fonts: string[] = [];
++  page.on('request', (request) => { if (request.resourceType() === 'font') fonts.push(request.url()); });
++  await page.goto('/about/');
++  await page.evaluate(() => document.fonts.ready);
++  await expect(page.locator('link[rel="preload"][as="font"]')).toHaveCount(2);
++  const loaded = await page.evaluate(async () => {
++    const sans = getComputedStyle(document.documentElement).getPropertyValue('--font-montserrat').trim();
++    const serif = getComputedStyle(document.documentElement).getPropertyValue('--font-eb-garamond').trim();
++    const sample = 'Été, cinéma, François, België, Maës';
++    return {
++      sans: (await document.fonts.load(`400 16px ${sans}`, sample)).length,
++      serif: (await document.fonts.load(`italic 400 16px ${serif}`, sample)).length,
++    };
++  });
++  expect(loaded.sans).toBeGreaterThan(0);
++  expect(loaded.serif).toBeGreaterThan(0);
++  await navigate(page, () => page.locator('header .navbar-center a').click());
++  await page.evaluate(() => document.fonts.ready);
++  expect(fonts.length).toBeGreaterThan(0);
++  expect(fonts.every((url) => new URL(url).origin === new URL(page.url()).origin)).toBe(true);
++  expect(new Set(fonts).size).toBe(fonts.length);
++});
+--- a/package.json
++++ b/package.json
+@@ -23,9 +23,9 @@
+   "dependencies": {
+     "@astrojs/mdx": "^8.1.1",
+     "@astrojs/sitemap": "^3.7.4",
++    "@fontsource-variable/montserrat": "^5.3.0",
+     "@fontsource/caveat": "^5.3.0",
+     "@fontsource/eb-garamond": "^5.3.0",
+-    "@fontsource/montserrat": "^5.3.0",
+     "@tailwindcss/vite": "^4.3.3",
+     "astro": "^7.4.2",
+     "tailwindcss": "^4.3.3",
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -10,9 +10,9 @@
+       "dependencies": {
+         "@astrojs/mdx": "^8.1.1",
+         "@astrojs/sitemap": "^3.7.4",
++        "@fontsource-variable/montserrat": "^5.3.0",
+         "@fontsource/caveat": "^5.3.0",
+         "@fontsource/eb-garamond": "^5.3.0",
+-        "@fontsource/montserrat": "^5.3.0",
+         "@tailwindcss/vite": "^4.3.3",
+         "astro": "^7.4.2",
+         "tailwindcss": "^4.3.3",
+@@ -1252,6 +1252,15 @@
+         "node": ">=18"
+       }
+     },
++    "node_modules/@fontsource-variable/montserrat": {
++      "version": "5.3.0",
++      "resolved": "https://registry.npmjs.org/@fontsource-variable/montserrat/-/montserrat-5.3.0.tgz",
++      "integrity": "sha512-7PaZoxaxrWLAyrhO46v65An9LhUhfkTExWLhfbywYZCnZEgg/W1rEHnlNmZKjNZ3nJTVYyicqxlJt10z/26yTA==",
++      "license": "OFL-1.1",
++      "funding": {
++        "url": "https://github.com/sponsors/ayuhito"
++      }
++    },
+     "node_modules/@fontsource/caveat": {
+       "version": "5.3.0",
+       "resolved": "https://registry.npmjs.org/@fontsource/caveat/-/caveat-5.3.0.tgz",
+@@ -1265,15 +1274,6 @@
+       "version": "5.3.0",
+       "resolved": "https://registry.npmjs.org/@fontsource/eb-garamond/-/eb-garamond-5.3.0.tgz",
+       "integrity": "sha512-VplwHpB8FLuzl+4G5LDci1b3Z4SghiuXH8XEgaxjnOb5aue5mEt1njmDKeO6iyLeGa73LffU7PC7hzncLRx0ZA==",
+-      "license": "OFL-1.1",
+-      "funding": {
+-        "url": "https://github.com/sponsors/ayuhito"
+-      }
+-    },
+-    "node_modules/@fontsource/montserrat": {
+-      "version": "5.3.0",
+-      "resolved": "https://registry.npmjs.org/@fontsource/montserrat/-/montserrat-5.3.0.tgz",
+-      "integrity": "sha512-iQPDtZOnmM5ih4JBGaMSXisRap0ixb9bAUw2hDtY7EjVfaqiiNlKtVuJl9XclxUwtwMMHNcWXfQR6zI9x05+Tg==",
+       "license": "OFL-1.1",
+       "funding": {
+         "url": "https://github.com/sponsors/ayuhito"

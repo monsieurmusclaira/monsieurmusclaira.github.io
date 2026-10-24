@@ -1,0 +1,337 @@
+
+> victor-maes-portfolio@4.23.0 test:browser:all
+> playwright test
+
+[WebServer] (node:58660) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 246 tests using 3 workers
+
+(node:58805) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:58803) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:58804) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    1 [chromium-desktop] › tests/browser/discovery.spec.ts:4:1 › award photograph is visible without opening a toggle (972ms)
+  ✓    3 [chromium-desktop] › tests/browser/discovery.spec.ts:12:1 › filmography filters combine, reset, and survive navigation (1.3s)
+  ✓    4 [chromium-desktop] › tests/browser/discovery.spec.ts:70:1 › no JavaScript preserves the entire filmography and expandable photos (736ms)
+  ✓    5 [chromium-desktop] › tests/browser/discovery.spec.ts:89:1 › compact phone cards and biography links preserve project access (417ms)
+  ✓    6 [chromium-desktop] › tests/browser/gallery.spec.ts:5:3 › one lazy dialog with sequence, captions and keyboard controls on /projects/burn/ (1.1s)
+  ✓    7 [chromium-desktop] › tests/browser/gallery.spec.ts:5:3 › one lazy dialog with sequence, captions and keyboard controls on /behind-the-scenes/ (1.1s)
+  ✓    8 [chromium-desktop] › tests/browser/gallery.spec.ts:59:3 › grid image chooses a matching candidate at DPR 1 (365ms)
+  ✓    9 [chromium-desktop] › tests/browser/gallery.spec.ts:59:3 › grid image chooses a matching candidate at DPR 2 (629ms)
+  ✓   10 [chromium-desktop] › tests/browser/gallery.spec.ts:80:1 › full-size photo links work without JavaScript (520ms)
+  ✓   11 [chromium-desktop] › tests/browser/gallery.spec.ts:98:1 › gallery captions render markup as plain text (345ms)
+  ✓   13 [chromium-desktop] › tests/browser/interactions.spec.ts:4:3 › hero cue scrolls to content on /about/ (238ms)
+  ✓   12 [chromium-desktop] › tests/browser/interactions.spec.ts:4:3 › hero cue scrolls to content on / (389ms)
+  ✓   14 [chromium-desktop] › tests/browser/interactions.spec.ts:4:3 › hero cue scrolls to content on /behind-the-scenes/ (399ms)
+  ✓   15 [chromium-desktop] › tests/browser/interactions.spec.ts:13:1 › mobile menu closes with Escape, resets after navigation and follows breakpoints (597ms)
+  ✓   16 [chromium-desktop] › tests/browser/interactions.spec.ts:42:1 › header stays visible while focused or its menu is open (364ms)
+  ✓   17 [chromium-desktop] › tests/browser/interactions.spec.ts:56:3 › gallery traps focus, restores it and unlocks scrolling on /projects/burn/ (823ms)
+  ✓   18 [chromium-desktop] › tests/browser/interactions.spec.ts:56:3 › gallery traps focus, restores it and unlocks scrolling on /behind-the-scenes/ (856ms)
+  ✓   19 [chromium-desktop] › tests/browser/interactions.spec.ts:84:1 › project contact CTA reaches the visible contact section (355ms)
+  ✘    2 [chromium-desktop] › tests/browser/discovery.spec.ts:44:1 › projects retain recognition and gallery navigation with one closing contact action (6.0s)
+  ✓   20 [chromium-desktop] › tests/browser/interactions.spec.ts:92:1 › back and forward retain usable navigation and galleries (793ms)
+(node:59046) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   23 [chromium-desktop] › tests/browser/pages.spec.ts:49:1 › an unknown URL returns the custom 404 page with noindex (290ms)
+  ✓   22 [chromium-desktop] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on / (836ms)
+  ✓   24 [chromium-desktop] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /about/ (852ms)
+  ✓   25 [chromium-desktop] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /behind-the-scenes/ (1.4s)
+  ✓   26 [chromium-desktop] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /projects/burn/ (1.0s)
+  ✓   27 [chromium-desktop] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /projects/a-long-goodbye/ (888ms)
+  ✓   28 [chromium-desktop] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /projects/vlinderman/ (885ms)
+  ✓   29 [chromium-desktop] › tests/browser/pages.spec.ts:65:3 › pages fit a 320px viewport (685ms)
+  ✓   30 [chromium-desktop] › tests/browser/pages.spec.ts:65:3 › pages fit a 768px viewport (868ms)
+  ✓   31 [chromium-desktop] › tests/browser/pages.spec.ts:75:1 › reduced motion shows all content and keeps the hero poster without video downloads (791ms)
+  ✓   33 [chromium-desktop] › tests/browser/video-analytics.spec.ts:8:3 › YouTube loads only on keyboard activation and retains its fallback (720ms)
+  ✓   34 [chromium-desktop] › tests/browser/video-analytics.spec.ts:8:3 › Vimeo loads only on keyboard activation and retains its fallback (577ms)
+  ✓   35 [chromium-desktop] › tests/browser/video-analytics.spec.ts:30:1 › blocked players retain direct watch links for both providers (403ms)
+  ✓   36 [chromium-desktop] › tests/browser/video-analytics.spec.ts:46:1 › no JavaScript still provides working provider watch links (638ms)
+  ✓   37 [chromium-desktop] › tests/browser/video-analytics.spec.ts:59:1 › local production previews make no analytics calls even with a saved opt-in (463ms)
+  ✓   38 [chromium-desktop] › tests/browser/video-analytics.spec.ts:84:1 › GA4 loads automatically and route changes count once across back and forward (928ms)
+  ✓   39 [chromium-desktop] › tests/browser/video-analytics.spec.ts:115:3 › automatic analytics ignores old choices with storage available (386ms)
+  ✓   40 [chromium-desktop] › tests/browser/video-analytics.spec.ts:115:3 › automatic analytics ignores old choices with storage unavailable (408ms)
+  ✓   41 [chromium-desktop] › tests/browser/video-analytics.spec.ts:133:1 › key pages stay usable at 200% zoom-equivalent size (585ms)
+(node:59172) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   32 [chromium-desktop] › tests/browser/pages.spec.ts:88:1 › no JavaScript keeps content and mobile navigation available (6.1s)
+  ✓   42 [chromium-mobile] › tests/browser/discovery.spec.ts:4:1 › award photograph is visible without opening a toggle (233ms)
+(node:59177) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   43 [chromium-mobile] › tests/browser/discovery.spec.ts:44:1 › projects retain recognition and gallery navigation with one closing contact action (389ms)
+  ✓   45 [chromium-mobile] › tests/browser/discovery.spec.ts:70:1 › no JavaScript preserves the entire filmography and expandable photos (556ms)
+  ✓   46 [chromium-mobile] › tests/browser/discovery.spec.ts:89:1 › compact phone cards and biography links preserve project access (309ms)
+  ✓   44 [chromium-mobile] › tests/browser/discovery.spec.ts:12:1 › filmography filters combine, reset, and survive navigation (882ms)
+  ✓   47 [chromium-mobile] › tests/browser/gallery.spec.ts:5:3 › one lazy dialog with sequence, captions and keyboard controls on /projects/burn/ (953ms)
+  ✓   21 [chromium-desktop] › tests/browser/pages.spec.ts:8:1 › every route has one meaningful H1 and local links and assets resolve (13.4s)
+  ✓   48 [chromium-mobile] › tests/browser/gallery.spec.ts:5:3 › one lazy dialog with sequence, captions and keyboard controls on /behind-the-scenes/ (1.1s)
+  ✓   49 [chromium-mobile] › tests/browser/gallery.spec.ts:59:3 › grid image chooses a matching candidate at DPR 1 (325ms)
+(node:59221) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   50 [chromium-mobile] › tests/browser/gallery.spec.ts:80:1 › full-size photo links work without JavaScript (325ms)
+  ✓   51 [chromium-mobile] › tests/browser/gallery.spec.ts:98:1 › gallery captions render markup as plain text (307ms)
+  ✓   53 [chromium-mobile] › tests/browser/interactions.spec.ts:4:3 › hero cue scrolls to content on / (335ms)
+  ✓   54 [chromium-mobile] › tests/browser/interactions.spec.ts:4:3 › hero cue scrolls to content on /about/ (257ms)
+  ✓   55 [chromium-mobile] › tests/browser/interactions.spec.ts:4:3 › hero cue scrolls to content on /behind-the-scenes/ (348ms)
+  ✓   52 [chromium-mobile] › tests/browser/gallery.spec.ts:59:3 › grid image chooses a matching candidate at DPR 2 (664ms)
+  ✓   57 [chromium-mobile] › tests/browser/interactions.spec.ts:42:1 › header stays visible while focused or its menu is open (366ms)
+  ✓   56 [chromium-mobile] › tests/browser/interactions.spec.ts:13:1 › mobile menu closes with Escape, resets after navigation and follows breakpoints (684ms)
+  ✓   60 [chromium-mobile] › tests/browser/interactions.spec.ts:84:1 › project contact CTA reaches the visible contact section (363ms)
+  ✓   58 [chromium-mobile] › tests/browser/interactions.spec.ts:56:3 › gallery traps focus, restores it and unlocks scrolling on /projects/burn/ (825ms)
+  ✓   59 [chromium-mobile] › tests/browser/interactions.spec.ts:56:3 › gallery traps focus, restores it and unlocks scrolling on /behind-the-scenes/ (826ms)
+  ✓   63 [chromium-mobile] › tests/browser/pages.spec.ts:49:1 › an unknown URL returns the custom 404 page with noindex (168ms)
+  ✓   61 [chromium-mobile] › tests/browser/interactions.spec.ts:92:1 › back and forward retain usable navigation and galleries (593ms)
+  ✓   65 [chromium-mobile] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /about/ (600ms)
+  ✓   64 [chromium-mobile] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on / (688ms)
+  ✓   67 [chromium-mobile] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /projects/burn/ (801ms)
+  ✓   66 [chromium-mobile] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /behind-the-scenes/ (1.1s)
+  ✓   68 [chromium-mobile] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /projects/a-long-goodbye/ (731ms)
+  ✓   69 [chromium-mobile] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /projects/vlinderman/ (742ms)
+  ✓   70 [chromium-mobile] › tests/browser/pages.spec.ts:65:3 › pages fit a 320px viewport (645ms)
+  ✓   71 [chromium-mobile] › tests/browser/pages.spec.ts:65:3 › pages fit a 768px viewport (792ms)
+  ✓   72 [chromium-mobile] › tests/browser/pages.spec.ts:75:1 › reduced motion shows all content and keeps the hero poster without video downloads (575ms)
+  ✓   74 [chromium-mobile] › tests/browser/video-analytics.spec.ts:8:3 › YouTube loads only on keyboard activation and retains its fallback (661ms)
+  ✓   75 [chromium-mobile] › tests/browser/video-analytics.spec.ts:8:3 › Vimeo loads only on keyboard activation and retains its fallback (495ms)
+  ✓   76 [chromium-mobile] › tests/browser/video-analytics.spec.ts:30:1 › blocked players retain direct watch links for both providers (353ms)
+  ✓   77 [chromium-mobile] › tests/browser/video-analytics.spec.ts:46:1 › no JavaScript still provides working provider watch links (463ms)
+  ✓   78 [chromium-mobile] › tests/browser/video-analytics.spec.ts:59:1 › local production previews make no analytics calls even with a saved opt-in (306ms)
+  ✓   79 [chromium-mobile] › tests/browser/video-analytics.spec.ts:84:1 › GA4 loads automatically and route changes count once across back and forward (549ms)
+  ✓   80 [chromium-mobile] › tests/browser/video-analytics.spec.ts:115:3 › automatic analytics ignores old choices with storage available (274ms)
+  ✓   81 [chromium-mobile] › tests/browser/video-analytics.spec.ts:115:3 › automatic analytics ignores old choices with storage unavailable (279ms)
+  ✓   82 [chromium-mobile] › tests/browser/video-analytics.spec.ts:133:1 › key pages stay usable at 200% zoom-equivalent size (547ms)
+(node:59373) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   73 [chromium-mobile] › tests/browser/pages.spec.ts:88:1 › no JavaScript keeps content and mobile navigation available (5.9s)
+(node:59442) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   62 [chromium-mobile] › tests/browser/pages.spec.ts:8:1 › every route has one meaningful H1 and local links and assets resolve (10.7s)
+(node:59492) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   83 [firefox-desktop] › tests/browser/discovery.spec.ts:4:1 › award photograph is visible without opening a toggle (1.4s)
+  ✓   86 [firefox-desktop] › tests/browser/discovery.spec.ts:70:1 › no JavaScript preserves the entire filmography and expandable photos (1.1s)
+  ✓   84 [firefox-desktop] › tests/browser/discovery.spec.ts:12:1 › filmography filters combine, reset, and survive navigation (2.3s)
+  ✓   85 [firefox-desktop] › tests/browser/discovery.spec.ts:44:1 › projects retain recognition and gallery navigation with one closing contact action (1.8s)
+  ✓   87 [firefox-desktop] › tests/browser/discovery.spec.ts:89:1 › compact phone cards and biography links preserve project access (670ms)
+  ✓   90 [firefox-desktop] › tests/browser/gallery.spec.ts:59:3 › grid image chooses a matching candidate at DPR 1 (721ms)
+  ✓   88 [firefox-desktop] › tests/browser/gallery.spec.ts:5:3 › one lazy dialog with sequence, captions and keyboard controls on /projects/burn/ (1.7s)
+  ✓   91 [firefox-desktop] › tests/browser/gallery.spec.ts:59:3 › grid image chooses a matching candidate at DPR 2 (664ms)
+  ✓   89 [firefox-desktop] › tests/browser/gallery.spec.ts:5:3 › one lazy dialog with sequence, captions and keyboard controls on /behind-the-scenes/ (1.9s)
+  ✓   92 [firefox-desktop] › tests/browser/gallery.spec.ts:80:1 › full-size photo links work without JavaScript (643ms)
+  ✓   93 [firefox-desktop] › tests/browser/gallery.spec.ts:98:1 › gallery captions render markup as plain text (582ms)
+  ✓   94 [firefox-desktop] › tests/browser/interactions.spec.ts:4:3 › hero cue scrolls to content on / (654ms)
+  ✓   95 [firefox-desktop] › tests/browser/interactions.spec.ts:4:3 › hero cue scrolls to content on /about/ (437ms)
+  ✓   96 [firefox-desktop] › tests/browser/interactions.spec.ts:4:3 › hero cue scrolls to content on /behind-the-scenes/ (571ms)
+  ✓   98 [firefox-desktop] › tests/browser/interactions.spec.ts:42:1 › header stays visible while focused or its menu is open (754ms)
+  ✓   97 [firefox-desktop] › tests/browser/interactions.spec.ts:13:1 › mobile menu closes with Escape, resets after navigation and follows breakpoints (1.1s)
+  ✓   99 [firefox-desktop] › tests/browser/interactions.spec.ts:56:3 › gallery traps focus, restores it and unlocks scrolling on /projects/burn/ (1.3s)
+  ✓  101 [firefox-desktop] › tests/browser/interactions.spec.ts:84:1 › project contact CTA reaches the visible contact section (572ms)
+  ✓  100 [firefox-desktop] › tests/browser/interactions.spec.ts:56:3 › gallery traps focus, restores it and unlocks scrolling on /behind-the-scenes/ (1.5s)
+  ✓  102 [firefox-desktop] › tests/browser/interactions.spec.ts:92:1 › back and forward retain usable navigation and galleries (995ms)
+  ✓  104 [firefox-desktop] › tests/browser/pages.spec.ts:49:1 › an unknown URL returns the custom 404 page with noindex (283ms)
+  ✓  106 [firefox-desktop] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /about/ (1.1s)
+  ✓  105 [firefox-desktop] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on / (1.9s)
+  ✓  107 [firefox-desktop] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /behind-the-scenes/ (1.6s)
+  ✓  108 [firefox-desktop] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /projects/burn/ (1.3s)
+  ✓  110 [firefox-desktop] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /projects/vlinderman/ (1.0s)
+  ✓  109 [firefox-desktop] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /projects/a-long-goodbye/ (1.7s)
+  ✓  111 [firefox-desktop] › tests/browser/pages.spec.ts:65:3 › pages fit a 320px viewport (846ms)
+  ✓  112 [firefox-desktop] › tests/browser/pages.spec.ts:65:3 › pages fit a 768px viewport (896ms)
+  ✓  113 [firefox-desktop] › tests/browser/pages.spec.ts:75:1 › reduced motion shows all content and keeps the hero poster without video downloads (833ms)
+  ✓  114 [firefox-desktop] › tests/browser/pages.spec.ts:88:1 › no JavaScript keeps content and mobile navigation available (1.2s)
+  ✓  115 [firefox-desktop] › tests/browser/video-analytics.spec.ts:8:3 › YouTube loads only on keyboard activation and retains its fallback (867ms)
+  ✓  116 [firefox-desktop] › tests/browser/video-analytics.spec.ts:8:3 › Vimeo loads only on keyboard activation and retains its fallback (829ms)
+  ✓  117 [firefox-desktop] › tests/browser/video-analytics.spec.ts:30:1 › blocked players retain direct watch links for both providers (563ms)
+  ✓  119 [firefox-desktop] › tests/browser/video-analytics.spec.ts:59:1 › local production previews make no analytics calls even with a saved opt-in (565ms)
+  ✓  118 [firefox-desktop] › tests/browser/video-analytics.spec.ts:46:1 › no JavaScript still provides working provider watch links (660ms)
+  ✓  121 [firefox-desktop] › tests/browser/video-analytics.spec.ts:115:3 › automatic analytics ignores old choices with storage available (533ms)
+  ✓  120 [firefox-desktop] › tests/browser/video-analytics.spec.ts:84:1 › GA4 loads automatically and route changes count once across back and forward (937ms)
+  ✓  122 [firefox-desktop] › tests/browser/video-analytics.spec.ts:115:3 › automatic analytics ignores old choices with storage unavailable (521ms)
+(node:59670) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  123 [firefox-desktop] › tests/browser/video-analytics.spec.ts:133:1 › key pages stay usable at 200% zoom-equivalent size (918ms)
+(node:59674) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  124 [firefox-mobile] › tests/browser/discovery.spec.ts:4:1 › award photograph is visible without opening a toggle (1.1s)
+  ✓  103 [firefox-desktop] › tests/browser/pages.spec.ts:8:1 › every route has one meaningful H1 and local links and assets resolve (12.4s)
+(node:59695) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  126 [firefox-mobile] › tests/browser/discovery.spec.ts:44:1 › projects retain recognition and gallery navigation with one closing contact action (734ms)
+  ✓  128 [firefox-mobile] › tests/browser/discovery.spec.ts:89:1 › compact phone cards and biography links preserve project access (479ms)
+  ✓  125 [firefox-mobile] › tests/browser/discovery.spec.ts:12:1 › filmography filters combine, reset, and survive navigation (2.1s)
+  ✓  129 [firefox-mobile] › tests/browser/gallery.spec.ts:5:3 › one lazy dialog with sequence, captions and keyboard controls on /projects/burn/ (1.5s)
+  ✓  127 [firefox-mobile] › tests/browser/discovery.spec.ts:70:1 › no JavaScript preserves the entire filmography and expandable photos (1.5s)
+  ✓  130 [firefox-mobile] › tests/browser/gallery.spec.ts:5:3 › one lazy dialog with sequence, captions and keyboard controls on /behind-the-scenes/ (1.6s)
+  ✓  131 [firefox-mobile] › tests/browser/gallery.spec.ts:59:3 › grid image chooses a matching candidate at DPR 1 (562ms)
+  ✓  132 [firefox-mobile] › tests/browser/gallery.spec.ts:59:3 › grid image chooses a matching candidate at DPR 2 (640ms)
+  ✓  133 [firefox-mobile] › tests/browser/gallery.spec.ts:80:1 › full-size photo links work without JavaScript (464ms)
+  ✓  134 [firefox-mobile] › tests/browser/gallery.spec.ts:98:1 › gallery captions render markup as plain text (460ms)
+  ✓  135 [firefox-mobile] › tests/browser/interactions.spec.ts:4:3 › hero cue scrolls to content on / (484ms)
+  ✓  136 [firefox-mobile] › tests/browser/interactions.spec.ts:4:3 › hero cue scrolls to content on /about/ (389ms)
+  ✓  137 [firefox-mobile] › tests/browser/interactions.spec.ts:4:3 › hero cue scrolls to content on /behind-the-scenes/ (440ms)
+  ✓  139 [firefox-mobile] › tests/browser/interactions.spec.ts:42:1 › header stays visible while focused or its menu is open (455ms)
+  ✓  138 [firefox-mobile] › tests/browser/interactions.spec.ts:13:1 › mobile menu closes with Escape, resets after navigation and follows breakpoints (949ms)
+  ✓  142 [firefox-mobile] › tests/browser/interactions.spec.ts:84:1 › project contact CTA reaches the visible contact section (403ms)
+  ✓  140 [firefox-mobile] › tests/browser/interactions.spec.ts:56:3 › gallery traps focus, restores it and unlocks scrolling on /projects/burn/ (1.2s)
+  ✓  141 [firefox-mobile] › tests/browser/interactions.spec.ts:56:3 › gallery traps focus, restores it and unlocks scrolling on /behind-the-scenes/ (1.1s)
+  ✓  145 [firefox-mobile] › tests/browser/pages.spec.ts:49:1 › an unknown URL returns the custom 404 page with noindex (408ms)
+  ✓  143 [firefox-mobile] › tests/browser/interactions.spec.ts:92:1 › back and forward retain usable navigation and galleries (841ms)
+  ✓  147 [firefox-mobile] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /about/ (794ms)
+  ✓  146 [firefox-mobile] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on / (986ms)
+  ✓  149 [firefox-mobile] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /projects/burn/ (1.1s)
+  ✓  148 [firefox-mobile] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /behind-the-scenes/ (1.3s)
+  ✓  151 [firefox-mobile] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /projects/vlinderman/ (925ms)
+  ✓  150 [firefox-mobile] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /projects/a-long-goodbye/ (1.5s)
+  ✓  153 [firefox-mobile] › tests/browser/pages.spec.ts:65:3 › pages fit a 768px viewport (838ms)
+  ✓  152 [firefox-mobile] › tests/browser/pages.spec.ts:65:3 › pages fit a 320px viewport (1.4s)
+  ✓  154 [firefox-mobile] › tests/browser/pages.spec.ts:75:1 › reduced motion shows all content and keeps the hero poster without video downloads (765ms)
+  ✓  155 [firefox-mobile] › tests/browser/pages.spec.ts:88:1 › no JavaScript keeps content and mobile navigation available (1.2s)
+  ✓  156 [firefox-mobile] › tests/browser/video-analytics.spec.ts:8:3 › YouTube loads only on keyboard activation and retains its fallback (825ms)
+  ✓  157 [firefox-mobile] › tests/browser/video-analytics.spec.ts:8:3 › Vimeo loads only on keyboard activation and retains its fallback (801ms)
+  ✓  158 [firefox-mobile] › tests/browser/video-analytics.spec.ts:30:1 › blocked players retain direct watch links for both providers (558ms)
+  ✓  160 [firefox-mobile] › tests/browser/video-analytics.spec.ts:59:1 › local production previews make no analytics calls even with a saved opt-in (412ms)
+  ✓  159 [firefox-mobile] › tests/browser/video-analytics.spec.ts:46:1 › no JavaScript still provides working provider watch links (582ms)
+  ✓  162 [firefox-mobile] › tests/browser/video-analytics.spec.ts:115:3 › automatic analytics ignores old choices with storage available (456ms)
+  ✓  161 [firefox-mobile] › tests/browser/video-analytics.spec.ts:84:1 › GA4 loads automatically and route changes count once across back and forward (781ms)
+  ✓  163 [firefox-mobile] › tests/browser/video-analytics.spec.ts:115:3 › automatic analytics ignores old choices with storage unavailable (453ms)
+(node:59759) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  164 [firefox-mobile] › tests/browser/video-analytics.spec.ts:133:1 › key pages stay usable at 200% zoom-equivalent size (886ms)
+(node:59767) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  144 [firefox-mobile] › tests/browser/pages.spec.ts:8:1 › every route has one meaningful H1 and local links and assets resolve (10.6s)
+(node:59785) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  165 [webkit-desktop] › tests/browser/discovery.spec.ts:4:1 › award photograph is visible without opening a toggle (1.1s)
+  ✓  167 [webkit-desktop] › tests/browser/discovery.spec.ts:44:1 › projects retain recognition and gallery navigation with one closing contact action (1.2s)
+  ✓  169 [webkit-desktop] › tests/browser/discovery.spec.ts:89:1 › compact phone cards and biography links preserve project access (550ms)
+  ✓  166 [webkit-desktop] › tests/browser/discovery.spec.ts:12:1 › filmography filters combine, reset, and survive navigation (1.8s)
+  ✓  168 [webkit-desktop] › tests/browser/discovery.spec.ts:70:1 › no JavaScript preserves the entire filmography and expandable photos (842ms)
+  ✓  172 [webkit-desktop] › tests/browser/gallery.spec.ts:59:3 › grid image chooses a matching candidate at DPR 1 (501ms)
+  ✓  173 [webkit-desktop] › tests/browser/gallery.spec.ts:59:3 › grid image chooses a matching candidate at DPR 2 (565ms)
+  ✓  170 [webkit-desktop] › tests/browser/gallery.spec.ts:5:3 › one lazy dialog with sequence, captions and keyboard controls on /projects/burn/ (1.3s)
+  ✓  171 [webkit-desktop] › tests/browser/gallery.spec.ts:5:3 › one lazy dialog with sequence, captions and keyboard controls on /behind-the-scenes/ (1.4s)
+  ✓  174 [webkit-desktop] › tests/browser/gallery.spec.ts:80:1 › full-size photo links work without JavaScript (514ms)
+  ✓  175 [webkit-desktop] › tests/browser/gallery.spec.ts:98:1 › gallery captions render markup as plain text (484ms)
+  ✓  176 [webkit-desktop] › tests/browser/interactions.spec.ts:4:3 › hero cue scrolls to content on / (404ms)
+  ✓  177 [webkit-desktop] › tests/browser/interactions.spec.ts:4:3 › hero cue scrolls to content on /about/ (343ms)
+  ✓  178 [webkit-desktop] › tests/browser/interactions.spec.ts:4:3 › hero cue scrolls to content on /behind-the-scenes/ (475ms)
+  ✓  179 [webkit-desktop] › tests/browser/interactions.spec.ts:13:1 › mobile menu closes with Escape, resets after navigation and follows breakpoints (725ms)
+  ✓  180 [webkit-desktop] › tests/browser/interactions.spec.ts:42:1 › header stays visible while focused or its menu is open (444ms)
+  ✓  183 [webkit-desktop] › tests/browser/interactions.spec.ts:84:1 › project contact CTA reaches the visible contact section (449ms)
+  ✓  181 [webkit-desktop] › tests/browser/interactions.spec.ts:56:3 › gallery traps focus, restores it and unlocks scrolling on /projects/burn/ (1.0s)
+  ✓  182 [webkit-desktop] › tests/browser/interactions.spec.ts:56:3 › gallery traps focus, restores it and unlocks scrolling on /behind-the-scenes/ (1.0s)
+  ✓  184 [webkit-desktop] › tests/browser/interactions.spec.ts:92:1 › back and forward retain usable navigation and galleries (811ms)
+  ✓  186 [webkit-desktop] › tests/browser/pages.spec.ts:49:1 › an unknown URL returns the custom 404 page with noindex (273ms)
+  ✓  188 [webkit-desktop] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /about/ (764ms)
+  ✓  187 [webkit-desktop] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on / (842ms)
+  ✓  190 [webkit-desktop] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /projects/burn/ (904ms)
+  ✓  189 [webkit-desktop] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /behind-the-scenes/ (1.2s)
+  ✓  191 [webkit-desktop] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /projects/a-long-goodbye/ (907ms)
+  ✓  192 [webkit-desktop] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /projects/vlinderman/ (898ms)
+  ✓  193 [webkit-desktop] › tests/browser/pages.spec.ts:65:3 › pages fit a 320px viewport (830ms)
+  ✓  194 [webkit-desktop] › tests/browser/pages.spec.ts:65:3 › pages fit a 768px viewport (871ms)
+  ✓  195 [webkit-desktop] › tests/browser/pages.spec.ts:75:1 › reduced motion shows all content and keeps the hero poster without video downloads (766ms)
+  ✓  196 [webkit-desktop] › tests/browser/pages.spec.ts:88:1 › no JavaScript keeps content and mobile navigation available (1.2s)
+  ✓  197 [webkit-desktop] › tests/browser/video-analytics.spec.ts:8:3 › YouTube loads only on keyboard activation and retains its fallback (864ms)
+  ✓  199 [webkit-desktop] › tests/browser/video-analytics.spec.ts:30:1 › blocked players retain direct watch links for both providers (539ms)
+  ✓  198 [webkit-desktop] › tests/browser/video-analytics.spec.ts:8:3 › Vimeo loads only on keyboard activation and retains its fallback (801ms)
+  ✓  201 [webkit-desktop] › tests/browser/video-analytics.spec.ts:59:1 › local production previews make no analytics calls even with a saved opt-in (533ms)
+  ✓  200 [webkit-desktop] › tests/browser/video-analytics.spec.ts:46:1 › no JavaScript still provides working provider watch links (652ms)
+  ✓  203 [webkit-desktop] › tests/browser/video-analytics.spec.ts:115:3 › automatic analytics ignores old choices with storage available (582ms)
+  ✓  202 [webkit-desktop] › tests/browser/video-analytics.spec.ts:84:1 › GA4 loads automatically and route changes count once across back and forward (886ms)
+  ✓  204 [webkit-desktop] › tests/browser/video-analytics.spec.ts:115:3 › automatic analytics ignores old choices with storage unavailable (479ms)
+(node:59864) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  205 [webkit-desktop] › tests/browser/video-analytics.spec.ts:133:1 › key pages stay usable at 200% zoom-equivalent size (832ms)
+(node:59876) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  206 [webkit-mobile] › tests/browser/discovery.spec.ts:4:1 › award photograph is visible without opening a toggle (637ms)
+  ✓  208 [webkit-mobile] › tests/browser/discovery.spec.ts:44:1 › projects retain recognition and gallery navigation with one closing contact action (660ms)
+  ✓  207 [webkit-mobile] › tests/browser/discovery.spec.ts:12:1 › filmography filters combine, reset, and survive navigation (1.3s)
+  ✓  209 [webkit-mobile] › tests/browser/discovery.spec.ts:70:1 › no JavaScript preserves the entire filmography and expandable photos (782ms)
+  ✓  210 [webkit-mobile] › tests/browser/discovery.spec.ts:89:1 › compact phone cards and biography links preserve project access (469ms)
+  ✓  211 [webkit-mobile] › tests/browser/gallery.spec.ts:5:3 › one lazy dialog with sequence, captions and keyboard controls on /projects/burn/ (1.3s)
+  ✓  185 [webkit-desktop] › tests/browser/pages.spec.ts:8:1 › every route has one meaningful H1 and local links and assets resolve (12.3s)
+  ✓  212 [webkit-mobile] › tests/browser/gallery.spec.ts:5:3 › one lazy dialog with sequence, captions and keyboard controls on /behind-the-scenes/ (1.4s)
+  ✓  213 [webkit-mobile] › tests/browser/gallery.spec.ts:59:3 › grid image chooses a matching candidate at DPR 1 (527ms)
+(node:59912) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  214 [webkit-mobile] › tests/browser/gallery.spec.ts:80:1 › full-size photo links work without JavaScript (447ms)
+  ✓  215 [webkit-mobile] › tests/browser/gallery.spec.ts:98:1 › gallery captions render markup as plain text (445ms)
+  ✓  217 [webkit-mobile] › tests/browser/interactions.spec.ts:4:3 › hero cue scrolls to content on / (486ms)
+  ✓  218 [webkit-mobile] › tests/browser/interactions.spec.ts:4:3 › hero cue scrolls to content on /about/ (435ms)
+  ✓  216 [webkit-mobile] › tests/browser/gallery.spec.ts:59:3 › grid image chooses a matching candidate at DPR 2 (819ms)
+  ✓  219 [webkit-mobile] › tests/browser/interactions.spec.ts:4:3 › hero cue scrolls to content on /behind-the-scenes/ (442ms)
+  ✓  220 [webkit-mobile] › tests/browser/interactions.spec.ts:13:1 › mobile menu closes with Escape, resets after navigation and follows breakpoints (757ms)
+  ✓  221 [webkit-mobile] › tests/browser/interactions.spec.ts:42:1 › header stays visible while focused or its menu is open (473ms)
+  ✓  224 [webkit-mobile] › tests/browser/interactions.spec.ts:84:1 › project contact CTA reaches the visible contact section (455ms)
+  ✓  222 [webkit-mobile] › tests/browser/interactions.spec.ts:56:3 › gallery traps focus, restores it and unlocks scrolling on /projects/burn/ (1.0s)
+  ✓  223 [webkit-mobile] › tests/browser/interactions.spec.ts:56:3 › gallery traps focus, restores it and unlocks scrolling on /behind-the-scenes/ (1.1s)
+  ✓  227 [webkit-mobile] › tests/browser/pages.spec.ts:49:1 › an unknown URL returns the custom 404 page with noindex (280ms)
+  ✓  225 [webkit-mobile] › tests/browser/interactions.spec.ts:92:1 › back and forward retain usable navigation and galleries (846ms)
+  ✓  229 [webkit-mobile] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /about/ (764ms)
+  ✓  228 [webkit-mobile] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on / (888ms)
+  ✓  231 [webkit-mobile] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /projects/burn/ (906ms)
+  ✓  230 [webkit-mobile] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /behind-the-scenes/ (1.1s)
+  ✓  232 [webkit-mobile] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /projects/a-long-goodbye/ (879ms)
+  ✓  233 [webkit-mobile] › tests/browser/pages.spec.ts:57:3 › axe accessibility checks on /projects/vlinderman/ (885ms)
+  ✓  234 [webkit-mobile] › tests/browser/pages.spec.ts:65:3 › pages fit a 320px viewport (880ms)
+  ✓  235 [webkit-mobile] › tests/browser/pages.spec.ts:65:3 › pages fit a 768px viewport (991ms)
+  ✓  236 [webkit-mobile] › tests/browser/pages.spec.ts:75:1 › reduced motion shows all content and keeps the hero poster without video downloads (747ms)
+  ✓  237 [webkit-mobile] › tests/browser/pages.spec.ts:88:1 › no JavaScript keeps content and mobile navigation available (1.3s)
+  ✓  238 [webkit-mobile] › tests/browser/video-analytics.spec.ts:8:3 › YouTube loads only on keyboard activation and retains its fallback (901ms)
+  ✓  239 [webkit-mobile] › tests/browser/video-analytics.spec.ts:8:3 › Vimeo loads only on keyboard activation and retains its fallback (811ms)
+  ✓  240 [webkit-mobile] › tests/browser/video-analytics.spec.ts:30:1 › blocked players retain direct watch links for both providers (750ms)
+  ✓  242 [webkit-mobile] › tests/browser/video-analytics.spec.ts:59:1 › local production previews make no analytics calls even with a saved opt-in (634ms)
+  ✓  241 [webkit-mobile] › tests/browser/video-analytics.spec.ts:46:1 › no JavaScript still provides working provider watch links (807ms)
+  ✓  244 [webkit-mobile] › tests/browser/video-analytics.spec.ts:115:3 › automatic analytics ignores old choices with storage available (475ms)
+  ✓  243 [webkit-mobile] › tests/browser/video-analytics.spec.ts:84:1 › GA4 loads automatically and route changes count once across back and forward (877ms)
+  ✓  245 [webkit-mobile] › tests/browser/video-analytics.spec.ts:115:3 › automatic analytics ignores old choices with storage unavailable (457ms)
+  ✓  246 [webkit-mobile] › tests/browser/video-analytics.spec.ts:133:1 › key pages stay usable at 200% zoom-equivalent size (792ms)
+  ✓  226 [webkit-mobile] › tests/browser/pages.spec.ts:8:1 › every route has one meaningful H1 and local links and assets resolve (10.3s)
+
+
+  1) [chromium-desktop] › tests/browser/discovery.spec.ts:44:1 › projects retain recognition and gallery navigation with one closing contact action 
+
+    Error: expect(locator).toBeHidden() failed
+
+    Locator:  locator('[data-gallery-remaining]')
+    Expected: hidden
+    Received: visible
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeHidden" locator('[data-gallery-remaining]') with timeout 5000ms
+      - waiting for locator('[data-gallery-remaining]')
+        14 × locator resolved to <div data-gallery-remaining="" data-astro-cid-j4gwzyy4="" class="hero-content grid w-full grid-cols-1 md:grid-cols-2 gap-x-3 gap-y-10 max-w-6xl mx-auto px-4 mt-8">…</div>
+           - unexpected value "visible"
+
+
+      64 |   await summary.focus();
+      65 |   await page.keyboard.press('Enter');
+    > 66 |   await expect(remaining).toBeHidden();
+         |                           ^
+      67 |   await expect(summary).toBeFocused();
+      68 | });
+      69 |
+        at /Users/victormaes/Documents/GitHub-desktop/monsieurmusclaira.github.io/tests/browser/discovery.spec.ts:66:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/discovery-projects-retain--67330--one-closing-contact-action-chromium-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/discovery-projects-retain--67330--one-closing-contact-action-chromium-desktop/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/discovery-projects-retain--67330--one-closing-contact-action-chromium-desktop/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/discovery-projects-retain--67330--one-closing-contact-action-chromium-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium-desktop] › tests/browser/discovery.spec.ts:44:1 › projects retain recognition and gallery navigation with one closing contact action 
+  245 passed (1.8m)

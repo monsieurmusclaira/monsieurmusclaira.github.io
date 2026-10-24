@@ -1,6 +1,7 @@
 import { defineConfig } from "@playwright/test";
 
 const browsers = ["chromium", "firefox", "webkit"] as const;
+const port = Number(process.env.PORTFOLIO_TEST_PORT ?? 4322);
 
 export default defineConfig({
   testDir: "./tests/browser",
@@ -12,7 +13,7 @@ export default defineConfig({
   expect: { timeout: 5_000 },
   reporter: [["list"], ["html", { open: "never" }]],
   use: {
-    baseURL: "http://127.0.0.1:4322",
+    baseURL: `http://127.0.0.1:${port}`,
     reducedMotion: "reduce",
     trace: "retain-on-failure",
     screenshot: "only-on-failure",
@@ -23,8 +24,8 @@ export default defineConfig({
   ]),
   // Separate foreground server: does not stop or reuse the visitor's port 4321.
   webServer: {
-    command: "npm run preview -- --host 127.0.0.1 --port 4322 --ignore-lock",
-    url: "http://127.0.0.1:4322",
+    command: `npm run preview -- --host 127.0.0.1 --port ${port} --ignore-lock`,
+    url: `http://127.0.0.1:${port}`,
     reuseExistingServer: false,
     timeout: 30_000,
   },

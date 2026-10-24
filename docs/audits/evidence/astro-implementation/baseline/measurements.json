@@ -1,0 +1,5890 @@
+{
+  "node": "v22.23.1",
+  "browser": "153.0.8010.12",
+  "playwright": "1.63.0",
+  "astro": "7.3.5",
+  "conditions": "DPR 2; reduced motion; no CPU/network throttling; third parties blocked; fresh context each run; compression calculated from response bodies because preview serves uncompressed files",
+  "runs": [
+    {
+      "route": "/",
+      "width": 1280,
+      "run": 1,
+      "lcp": 60,
+      "cls": 0.00021196153428819446,
+      "longTasks": 0,
+      "images": [
+        {
+          "src": "/",
+          "width": 0,
+          "naturalWidth": 0,
+          "sizes": ""
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "weight": "300",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "italic"
+        }
+      ],
+      "resources": [
+        {
+          "url": "/",
+          "type": "document",
+          "bytes": 84997,
+          "gzipBytes": 13980,
+          "brotliBytes": 11276
+        },
+        {
+          "url": "/video/seethrough.webp",
+          "type": "image",
+          "bytes": 34934,
+          "gzipBytes": 33879,
+          "brotliBytes": 33775
+        },
+        {
+          "url": "/_astro/BaseLayout.BF9ZzKYC.css",
+          "type": "stylesheet",
+          "bytes": 152507,
+          "gzipBytes": 23216,
+          "brotliBytes": 19573
+        },
+        {
+          "url": "/_astro/montserrat-latin-400-normal.BLhwKU8k.woff2",
+          "type": "font",
+          "bytes": 18780,
+          "gzipBytes": 18808,
+          "brotliBytes": 18776
+        },
+        {
+          "url": "/_astro/page.BHA_3-Fj.js",
+          "type": "script",
+          "bytes": 47,
+          "gzipBytes": 67,
+          "brotliBytes": 51
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-normal.BCNrxLz_.woff2",
+          "type": "font",
+          "bytes": 23820,
+          "gzipBytes": 23848,
+          "brotliBytes": 23804
+        },
+        {
+          "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DOTn-Jq_.js",
+          "type": "script",
+          "bytes": 13887,
+          "gzipBytes": 4746,
+          "brotliBytes": 4255
+        },
+        {
+          "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_Z2r0fCY.webp",
+          "type": "image",
+          "bytes": 63552,
+          "gzipBytes": 62712,
+          "brotliBytes": 62568
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z2hsz6J.webp",
+          "type": "image",
+          "bytes": 177086,
+          "gzipBytes": 177159,
+          "brotliBytes": 177091
+        },
+        {
+          "url": "/_astro/montserrat-latin-300-normal.BgP24wlQ.woff2",
+          "type": "font",
+          "bytes": 18708,
+          "gzipBytes": 18736,
+          "brotliBytes": 18701
+        },
+        {
+          "url": "/_astro/montserrat-latin-600-normal.UVxSCcoG.woff2",
+          "type": "font",
+          "bytes": 18688,
+          "gzipBytes": 18716,
+          "brotliBytes": 18686
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-italic.DSEbMgZu.woff2",
+          "type": "font",
+          "bytes": 25388,
+          "gzipBytes": 25416,
+          "brotliBytes": 25389
+        },
+        {
+          "url": "/_astro/prefetch.DsrDZXx8.js",
+          "type": "script",
+          "bytes": 2506,
+          "gzipBytes": 1131,
+          "brotliBytes": 970
+        },
+        {
+          "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z24dRqR.webp",
+          "type": "image",
+          "bytes": 63424,
+          "gzipBytes": 63462,
+          "brotliBytes": 63428
+        },
+        {
+          "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_1629C2.webp",
+          "type": "image",
+          "bytes": 53524,
+          "gzipBytes": 53562,
+          "brotliBytes": 53528
+        },
+        {
+          "url": "/_astro/BURN_1.232.1.C3J4clTl_ZBku1v.webp",
+          "type": "image",
+          "bytes": 82394,
+          "gzipBytes": 82442,
+          "brotliBytes": 82399
+        }
+      ],
+      "hoverRequests": [],
+      "warmNavigationRequests": [
+        {
+          "url": "/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_1iKA2k.webp",
+          "type": "image",
+          "bytes": 103994,
+          "gzipBytes": 104047,
+          "brotliBytes": 103999
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-600-normal.DHwxsLHv.woff2",
+          "type": "font",
+          "bytes": 25348,
+          "gzipBytes": 25376,
+          "brotliBytes": 25331
+        },
+        {
+          "url": "/_astro/montserrat-latin-500-normal.DRFEGfly.woff2",
+          "type": "font",
+          "bytes": 18748,
+          "gzipBytes": 18776,
+          "brotliBytes": 18745
+        },
+        {
+          "url": "/_astro/IMG_2507-unblur.CbZVxQ6Z_Z1ci1TA.webp",
+          "type": "image",
+          "bytes": 10402,
+          "gzipBytes": 10425,
+          "brotliBytes": 10406
+        },
+        {
+          "url": "/_astro/TTOT_20212101_1.1.1.S0nV1h-i_1AxvdY.webp",
+          "type": "image",
+          "bytes": 71994,
+          "gzipBytes": 72037,
+          "brotliBytes": 71999
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "route": "/",
+      "width": 1280,
+      "run": 2,
+      "lcp": 44,
+      "cls": 0.00021196153428819446,
+      "longTasks": 0,
+      "images": [
+        {
+          "src": "/",
+          "width": 0,
+          "naturalWidth": 0,
+          "sizes": ""
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "weight": "300",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "italic"
+        }
+      ],
+      "resources": [
+        {
+          "url": "/",
+          "type": "document",
+          "bytes": 84997,
+          "gzipBytes": 13980,
+          "brotliBytes": 11276
+        },
+        {
+          "url": "/video/seethrough.webp",
+          "type": "image",
+          "bytes": 34934,
+          "gzipBytes": 33879,
+          "brotliBytes": 33775
+        },
+        {
+          "url": "/_astro/BaseLayout.BF9ZzKYC.css",
+          "type": "stylesheet",
+          "bytes": 152507,
+          "gzipBytes": 23216,
+          "brotliBytes": 19573
+        },
+        {
+          "url": "/_astro/page.BHA_3-Fj.js",
+          "type": "script",
+          "bytes": 47,
+          "gzipBytes": 67,
+          "brotliBytes": 51
+        },
+        {
+          "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DOTn-Jq_.js",
+          "type": "script",
+          "bytes": 13887,
+          "gzipBytes": 4746,
+          "brotliBytes": 4255
+        },
+        {
+          "url": "/_astro/montserrat-latin-400-normal.BLhwKU8k.woff2",
+          "type": "font",
+          "bytes": 18780,
+          "gzipBytes": 18808,
+          "brotliBytes": 18776
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-normal.BCNrxLz_.woff2",
+          "type": "font",
+          "bytes": 23820,
+          "gzipBytes": 23848,
+          "brotliBytes": 23804
+        },
+        {
+          "url": "/_astro/montserrat-latin-300-normal.BgP24wlQ.woff2",
+          "type": "font",
+          "bytes": 18708,
+          "gzipBytes": 18736,
+          "brotliBytes": 18701
+        },
+        {
+          "url": "/_astro/montserrat-latin-600-normal.UVxSCcoG.woff2",
+          "type": "font",
+          "bytes": 18688,
+          "gzipBytes": 18716,
+          "brotliBytes": 18686
+        },
+        {
+          "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_Z2r0fCY.webp",
+          "type": "image",
+          "bytes": 63552,
+          "gzipBytes": 62712,
+          "brotliBytes": 62568
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z2hsz6J.webp",
+          "type": "image",
+          "bytes": 177086,
+          "gzipBytes": 177159,
+          "brotliBytes": 177091
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-italic.DSEbMgZu.woff2",
+          "type": "font",
+          "bytes": 25388,
+          "gzipBytes": 25416,
+          "brotliBytes": 25389
+        },
+        {
+          "url": "/_astro/prefetch.DsrDZXx8.js",
+          "type": "script",
+          "bytes": 2506,
+          "gzipBytes": 1131,
+          "brotliBytes": 970
+        },
+        {
+          "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_1629C2.webp",
+          "type": "image",
+          "bytes": 53524,
+          "gzipBytes": 53562,
+          "brotliBytes": 53528
+        },
+        {
+          "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z24dRqR.webp",
+          "type": "image",
+          "bytes": 63424,
+          "gzipBytes": 63462,
+          "brotliBytes": 63428
+        },
+        {
+          "url": "/_astro/BURN_1.232.1.C3J4clTl_ZBku1v.webp",
+          "type": "image",
+          "bytes": 82394,
+          "gzipBytes": 82442,
+          "brotliBytes": 82399
+        }
+      ],
+      "hoverRequests": [],
+      "warmNavigationRequests": [
+        {
+          "url": "/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_1iKA2k.webp",
+          "type": "image",
+          "bytes": 103994,
+          "gzipBytes": 104047,
+          "brotliBytes": 103999
+        },
+        {
+          "url": "/_astro/montserrat-latin-500-normal.DRFEGfly.woff2",
+          "type": "font",
+          "bytes": 18748,
+          "gzipBytes": 18776,
+          "brotliBytes": 18745
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-600-normal.DHwxsLHv.woff2",
+          "type": "font",
+          "bytes": 25348,
+          "gzipBytes": 25376,
+          "brotliBytes": 25331
+        },
+        {
+          "url": "/_astro/IMG_2507-unblur.CbZVxQ6Z_Z1ci1TA.webp",
+          "type": "image",
+          "bytes": 10402,
+          "gzipBytes": 10425,
+          "brotliBytes": 10406
+        },
+        {
+          "url": "/_astro/TTOT_20212101_1.1.1.S0nV1h-i_1AxvdY.webp",
+          "type": "image",
+          "bytes": 71994,
+          "gzipBytes": 72037,
+          "brotliBytes": 71999
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "route": "/",
+      "width": 1280,
+      "run": 3,
+      "lcp": 44,
+      "cls": 0.00021196153428819446,
+      "longTasks": 0,
+      "images": [
+        {
+          "src": "/",
+          "width": 0,
+          "naturalWidth": 0,
+          "sizes": ""
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "weight": "300",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "italic"
+        }
+      ],
+      "resources": [
+        {
+          "url": "/",
+          "type": "document",
+          "bytes": 84997,
+          "gzipBytes": 13980,
+          "brotliBytes": 11276
+        },
+        {
+          "url": "/video/seethrough.webp",
+          "type": "image",
+          "bytes": 34934,
+          "gzipBytes": 33879,
+          "brotliBytes": 33775
+        },
+        {
+          "url": "/_astro/montserrat-latin-400-normal.BLhwKU8k.woff2",
+          "type": "font",
+          "bytes": 18780,
+          "gzipBytes": 18808,
+          "brotliBytes": 18776
+        },
+        {
+          "url": "/_astro/BaseLayout.BF9ZzKYC.css",
+          "type": "stylesheet",
+          "bytes": 152507,
+          "gzipBytes": 23216,
+          "brotliBytes": 19573
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-normal.BCNrxLz_.woff2",
+          "type": "font",
+          "bytes": 23820,
+          "gzipBytes": 23848,
+          "brotliBytes": 23804
+        },
+        {
+          "url": "/_astro/page.BHA_3-Fj.js",
+          "type": "script",
+          "bytes": 47,
+          "gzipBytes": 67,
+          "brotliBytes": 51
+        },
+        {
+          "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DOTn-Jq_.js",
+          "type": "script",
+          "bytes": 13887,
+          "gzipBytes": 4746,
+          "brotliBytes": 4255
+        },
+        {
+          "url": "/_astro/montserrat-latin-300-normal.BgP24wlQ.woff2",
+          "type": "font",
+          "bytes": 18708,
+          "gzipBytes": 18736,
+          "brotliBytes": 18701
+        },
+        {
+          "url": "/_astro/montserrat-latin-600-normal.UVxSCcoG.woff2",
+          "type": "font",
+          "bytes": 18688,
+          "gzipBytes": 18716,
+          "brotliBytes": 18686
+        },
+        {
+          "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_Z2r0fCY.webp",
+          "type": "image",
+          "bytes": 63552,
+          "gzipBytes": 62712,
+          "brotliBytes": 62568
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z2hsz6J.webp",
+          "type": "image",
+          "bytes": 177086,
+          "gzipBytes": 177159,
+          "brotliBytes": 177091
+        },
+        {
+          "url": "/_astro/prefetch.DsrDZXx8.js",
+          "type": "script",
+          "bytes": 2506,
+          "gzipBytes": 1131,
+          "brotliBytes": 970
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-italic.DSEbMgZu.woff2",
+          "type": "font",
+          "bytes": 25388,
+          "gzipBytes": 25416,
+          "brotliBytes": 25389
+        },
+        {
+          "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_1629C2.webp",
+          "type": "image",
+          "bytes": 53524,
+          "gzipBytes": 53562,
+          "brotliBytes": 53528
+        },
+        {
+          "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z24dRqR.webp",
+          "type": "image",
+          "bytes": 63424,
+          "gzipBytes": 63462,
+          "brotliBytes": 63428
+        },
+        {
+          "url": "/_astro/BURN_1.232.1.C3J4clTl_ZBku1v.webp",
+          "type": "image",
+          "bytes": 82394,
+          "gzipBytes": 82442,
+          "brotliBytes": 82399
+        }
+      ],
+      "hoverRequests": [],
+      "warmNavigationRequests": [
+        {
+          "url": "/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_1iKA2k.webp",
+          "type": "image",
+          "bytes": 103994,
+          "gzipBytes": 104047,
+          "brotliBytes": 103999
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-600-normal.DHwxsLHv.woff2",
+          "type": "font",
+          "bytes": 25348,
+          "gzipBytes": 25376,
+          "brotliBytes": 25331
+        },
+        {
+          "url": "/_astro/montserrat-latin-500-normal.DRFEGfly.woff2",
+          "type": "font",
+          "bytes": 18748,
+          "gzipBytes": 18776,
+          "brotliBytes": 18745
+        },
+        {
+          "url": "/_astro/IMG_2507-unblur.CbZVxQ6Z_Z1ci1TA.webp",
+          "type": "image",
+          "bytes": 10402,
+          "gzipBytes": 10425,
+          "brotliBytes": 10406
+        },
+        {
+          "url": "/_astro/TTOT_20212101_1.1.1.S0nV1h-i_1AxvdY.webp",
+          "type": "image",
+          "bytes": 71994,
+          "gzipBytes": 72037,
+          "brotliBytes": 71999
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "route": "/about/",
+      "width": 1280,
+      "run": 1,
+      "lcp": 44,
+      "cls": 0.00046941587660047747,
+      "longTasks": 0,
+      "images": [
+        {
+          "src": "/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_1iKA2k.webp",
+          "width": 1280,
+          "naturalWidth": 1280,
+          "sizes": "100vw"
+        },
+        {
+          "src": "/about/",
+          "width": 0,
+          "naturalWidth": 0,
+          "sizes": ""
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "weight": "300",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "500",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "italic"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "600",
+          "style": "normal"
+        }
+      ],
+      "resources": [
+        {
+          "url": "/about/",
+          "type": "document",
+          "bytes": 37232,
+          "gzipBytes": 9855,
+          "brotliBytes": 8454
+        },
+        {
+          "url": "/_astro/montserrat-latin-400-normal.BLhwKU8k.woff2",
+          "type": "font",
+          "bytes": 18780,
+          "gzipBytes": 18808,
+          "brotliBytes": 18776
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-normal.BCNrxLz_.woff2",
+          "type": "font",
+          "bytes": 23820,
+          "gzipBytes": 23848,
+          "brotliBytes": 23804
+        },
+        {
+          "url": "/_astro/BaseLayout.BF9ZzKYC.css",
+          "type": "stylesheet",
+          "bytes": 152507,
+          "gzipBytes": 23216,
+          "brotliBytes": 19573
+        },
+        {
+          "url": "/_astro/page.BHA_3-Fj.js",
+          "type": "script",
+          "bytes": 47,
+          "gzipBytes": 67,
+          "brotliBytes": 51
+        },
+        {
+          "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DOTn-Jq_.js",
+          "type": "script",
+          "bytes": 13887,
+          "gzipBytes": 4746,
+          "brotliBytes": 4255
+        },
+        {
+          "url": "/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_1iKA2k.webp",
+          "type": "image",
+          "bytes": 103994,
+          "gzipBytes": 104047,
+          "brotliBytes": 103999
+        },
+        {
+          "url": "/_astro/montserrat-latin-600-normal.UVxSCcoG.woff2",
+          "type": "font",
+          "bytes": 18688,
+          "gzipBytes": 18716,
+          "brotliBytes": 18686
+        },
+        {
+          "url": "/_astro/montserrat-latin-300-normal.BgP24wlQ.woff2",
+          "type": "font",
+          "bytes": 18708,
+          "gzipBytes": 18736,
+          "brotliBytes": 18701
+        },
+        {
+          "url": "/_astro/prefetch.DsrDZXx8.js",
+          "type": "script",
+          "bytes": 2506,
+          "gzipBytes": 1131,
+          "brotliBytes": 970
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-600-normal.DHwxsLHv.woff2",
+          "type": "font",
+          "bytes": 25348,
+          "gzipBytes": 25376,
+          "brotliBytes": 25331
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-italic.DSEbMgZu.woff2",
+          "type": "font",
+          "bytes": 25388,
+          "gzipBytes": 25416,
+          "brotliBytes": 25389
+        },
+        {
+          "url": "/_astro/montserrat-latin-500-normal.DRFEGfly.woff2",
+          "type": "font",
+          "bytes": 18748,
+          "gzipBytes": 18776,
+          "brotliBytes": 18745
+        },
+        {
+          "url": "/_astro/IMG_2507-unblur.CbZVxQ6Z_Z1ci1TA.webp",
+          "type": "image",
+          "bytes": 10402,
+          "gzipBytes": 10425,
+          "brotliBytes": 10406
+        },
+        {
+          "url": "/_astro/TTOT_20212101_1.1.1.S0nV1h-i_1AxvdY.webp",
+          "type": "image",
+          "bytes": 71994,
+          "gzipBytes": 72037,
+          "brotliBytes": 71999
+        }
+      ],
+      "hoverRequests": [],
+      "warmNavigationRequests": [
+        {
+          "url": "/video/seethrough.webp",
+          "type": "image",
+          "bytes": 34934,
+          "gzipBytes": 33879,
+          "brotliBytes": 33775
+        },
+        {
+          "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_Z2r0fCY.webp",
+          "type": "image",
+          "bytes": 63552,
+          "gzipBytes": 62712,
+          "brotliBytes": 62568
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z2hsz6J.webp",
+          "type": "image",
+          "bytes": 177086,
+          "gzipBytes": 177159,
+          "brotliBytes": 177091
+        },
+        {
+          "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_1629C2.webp",
+          "type": "image",
+          "bytes": 53524,
+          "gzipBytes": 53562,
+          "brotliBytes": 53528
+        },
+        {
+          "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z24dRqR.webp",
+          "type": "image",
+          "bytes": 63424,
+          "gzipBytes": 63462,
+          "brotliBytes": 63428
+        },
+        {
+          "url": "/_astro/BURN_1.232.1.C3J4clTl_ZBku1v.webp",
+          "type": "image",
+          "bytes": 82394,
+          "gzipBytes": 82442,
+          "brotliBytes": 82399
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "route": "/about/",
+      "width": 1280,
+      "run": 2,
+      "lcp": 44,
+      "cls": 0.00046941587660047747,
+      "longTasks": 0,
+      "images": [
+        {
+          "src": "/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_1iKA2k.webp",
+          "width": 1280,
+          "naturalWidth": 1280,
+          "sizes": "100vw"
+        },
+        {
+          "src": "/about/",
+          "width": 0,
+          "naturalWidth": 0,
+          "sizes": ""
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "weight": "300",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "500",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "italic"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "600",
+          "style": "normal"
+        }
+      ],
+      "resources": [
+        {
+          "url": "/about/",
+          "type": "document",
+          "bytes": 37232,
+          "gzipBytes": 9855,
+          "brotliBytes": 8454
+        },
+        {
+          "url": "/_astro/montserrat-latin-400-normal.BLhwKU8k.woff2",
+          "type": "font",
+          "bytes": 18780,
+          "gzipBytes": 18808,
+          "brotliBytes": 18776
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-normal.BCNrxLz_.woff2",
+          "type": "font",
+          "bytes": 23820,
+          "gzipBytes": 23848,
+          "brotliBytes": 23804
+        },
+        {
+          "url": "/_astro/BaseLayout.BF9ZzKYC.css",
+          "type": "stylesheet",
+          "bytes": 152507,
+          "gzipBytes": 23216,
+          "brotliBytes": 19573
+        },
+        {
+          "url": "/_astro/page.BHA_3-Fj.js",
+          "type": "script",
+          "bytes": 47,
+          "gzipBytes": 67,
+          "brotliBytes": 51
+        },
+        {
+          "url": "/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_1iKA2k.webp",
+          "type": "image",
+          "bytes": 103994,
+          "gzipBytes": 104047,
+          "brotliBytes": 103999
+        },
+        {
+          "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DOTn-Jq_.js",
+          "type": "script",
+          "bytes": 13887,
+          "gzipBytes": 4746,
+          "brotliBytes": 4255
+        },
+        {
+          "url": "/_astro/montserrat-latin-300-normal.BgP24wlQ.woff2",
+          "type": "font",
+          "bytes": 18708,
+          "gzipBytes": 18736,
+          "brotliBytes": 18701
+        },
+        {
+          "url": "/_astro/montserrat-latin-600-normal.UVxSCcoG.woff2",
+          "type": "font",
+          "bytes": 18688,
+          "gzipBytes": 18716,
+          "brotliBytes": 18686
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-600-normal.DHwxsLHv.woff2",
+          "type": "font",
+          "bytes": 25348,
+          "gzipBytes": 25376,
+          "brotliBytes": 25331
+        },
+        {
+          "url": "/_astro/prefetch.DsrDZXx8.js",
+          "type": "script",
+          "bytes": 2506,
+          "gzipBytes": 1131,
+          "brotliBytes": 970
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-italic.DSEbMgZu.woff2",
+          "type": "font",
+          "bytes": 25388,
+          "gzipBytes": 25416,
+          "brotliBytes": 25389
+        },
+        {
+          "url": "/_astro/montserrat-latin-500-normal.DRFEGfly.woff2",
+          "type": "font",
+          "bytes": 18748,
+          "gzipBytes": 18776,
+          "brotliBytes": 18745
+        },
+        {
+          "url": "/_astro/IMG_2507-unblur.CbZVxQ6Z_Z1ci1TA.webp",
+          "type": "image",
+          "bytes": 10402,
+          "gzipBytes": 10425,
+          "brotliBytes": 10406
+        },
+        {
+          "url": "/_astro/TTOT_20212101_1.1.1.S0nV1h-i_1AxvdY.webp",
+          "type": "image",
+          "bytes": 71994,
+          "gzipBytes": 72037,
+          "brotliBytes": 71999
+        }
+      ],
+      "hoverRequests": [],
+      "warmNavigationRequests": [
+        {
+          "url": "/video/seethrough.webp",
+          "type": "image",
+          "bytes": 34934,
+          "gzipBytes": 33879,
+          "brotliBytes": 33775
+        },
+        {
+          "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_Z2r0fCY.webp",
+          "type": "image",
+          "bytes": 63552,
+          "gzipBytes": 62712,
+          "brotliBytes": 62568
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z2hsz6J.webp",
+          "type": "image",
+          "bytes": 177086,
+          "gzipBytes": 177159,
+          "brotliBytes": 177091
+        },
+        {
+          "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_1629C2.webp",
+          "type": "image",
+          "bytes": 53524,
+          "gzipBytes": 53562,
+          "brotliBytes": 53528
+        },
+        {
+          "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z24dRqR.webp",
+          "type": "image",
+          "bytes": 63424,
+          "gzipBytes": 63462,
+          "brotliBytes": 63428
+        },
+        {
+          "url": "/_astro/BURN_1.232.1.C3J4clTl_ZBku1v.webp",
+          "type": "image",
+          "bytes": 82394,
+          "gzipBytes": 82442,
+          "brotliBytes": 82399
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "route": "/about/",
+      "width": 1280,
+      "run": 3,
+      "lcp": 44,
+      "cls": 0.00046941587660047747,
+      "longTasks": 0,
+      "images": [
+        {
+          "src": "/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_1iKA2k.webp",
+          "width": 1280,
+          "naturalWidth": 1280,
+          "sizes": "100vw"
+        },
+        {
+          "src": "/about/",
+          "width": 0,
+          "naturalWidth": 0,
+          "sizes": ""
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "weight": "300",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "500",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "italic"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "600",
+          "style": "normal"
+        }
+      ],
+      "resources": [
+        {
+          "url": "/about/",
+          "type": "document",
+          "bytes": 37232,
+          "gzipBytes": 9855,
+          "brotliBytes": 8454
+        },
+        {
+          "url": "/_astro/montserrat-latin-400-normal.BLhwKU8k.woff2",
+          "type": "font",
+          "bytes": 18780,
+          "gzipBytes": 18808,
+          "brotliBytes": 18776
+        },
+        {
+          "url": "/_astro/BaseLayout.BF9ZzKYC.css",
+          "type": "stylesheet",
+          "bytes": 152507,
+          "gzipBytes": 23216,
+          "brotliBytes": 19573
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-normal.BCNrxLz_.woff2",
+          "type": "font",
+          "bytes": 23820,
+          "gzipBytes": 23848,
+          "brotliBytes": 23804
+        },
+        {
+          "url": "/_astro/page.BHA_3-Fj.js",
+          "type": "script",
+          "bytes": 47,
+          "gzipBytes": 67,
+          "brotliBytes": 51
+        },
+        {
+          "url": "/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_1iKA2k.webp",
+          "type": "image",
+          "bytes": 103994,
+          "gzipBytes": 104047,
+          "brotliBytes": 103999
+        },
+        {
+          "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DOTn-Jq_.js",
+          "type": "script",
+          "bytes": 13887,
+          "gzipBytes": 4746,
+          "brotliBytes": 4255
+        },
+        {
+          "url": "/_astro/prefetch.DsrDZXx8.js",
+          "type": "script",
+          "bytes": 2506,
+          "gzipBytes": 1131,
+          "brotliBytes": 970
+        },
+        {
+          "url": "/_astro/montserrat-latin-300-normal.BgP24wlQ.woff2",
+          "type": "font",
+          "bytes": 18708,
+          "gzipBytes": 18736,
+          "brotliBytes": 18701
+        },
+        {
+          "url": "/_astro/montserrat-latin-600-normal.UVxSCcoG.woff2",
+          "type": "font",
+          "bytes": 18688,
+          "gzipBytes": 18716,
+          "brotliBytes": 18686
+        },
+        {
+          "url": "/_astro/montserrat-latin-500-normal.DRFEGfly.woff2",
+          "type": "font",
+          "bytes": 18748,
+          "gzipBytes": 18776,
+          "brotliBytes": 18745
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-italic.DSEbMgZu.woff2",
+          "type": "font",
+          "bytes": 25388,
+          "gzipBytes": 25416,
+          "brotliBytes": 25389
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-600-normal.DHwxsLHv.woff2",
+          "type": "font",
+          "bytes": 25348,
+          "gzipBytes": 25376,
+          "brotliBytes": 25331
+        },
+        {
+          "url": "/_astro/IMG_2507-unblur.CbZVxQ6Z_Z1ci1TA.webp",
+          "type": "image",
+          "bytes": 10402,
+          "gzipBytes": 10425,
+          "brotliBytes": 10406
+        },
+        {
+          "url": "/_astro/TTOT_20212101_1.1.1.S0nV1h-i_1AxvdY.webp",
+          "type": "image",
+          "bytes": 71994,
+          "gzipBytes": 72037,
+          "brotliBytes": 71999
+        }
+      ],
+      "hoverRequests": [],
+      "warmNavigationRequests": [
+        {
+          "url": "/video/seethrough.webp",
+          "type": "image",
+          "bytes": 34934,
+          "gzipBytes": 33879,
+          "brotliBytes": 33775
+        },
+        {
+          "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_Z2r0fCY.webp",
+          "type": "image",
+          "bytes": 63552,
+          "gzipBytes": 62712,
+          "brotliBytes": 62568
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z2hsz6J.webp",
+          "type": "image",
+          "bytes": 177086,
+          "gzipBytes": 177159,
+          "brotliBytes": 177091
+        },
+        {
+          "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_1629C2.webp",
+          "type": "image",
+          "bytes": 53524,
+          "gzipBytes": 53562,
+          "brotliBytes": 53528
+        },
+        {
+          "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z24dRqR.webp",
+          "type": "image",
+          "bytes": 63424,
+          "gzipBytes": 63462,
+          "brotliBytes": 63428
+        },
+        {
+          "url": "/_astro/BURN_1.232.1.C3J4clTl_ZBku1v.webp",
+          "type": "image",
+          "bytes": 82394,
+          "gzipBytes": 82442,
+          "brotliBytes": 82399
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "route": "/projects/ever-since-i-have-been-flying/",
+      "width": 1280,
+      "run": 1,
+      "lcp": 56,
+      "cls": 0.000723656972249349,
+      "longTasks": 0,
+      "images": [
+        {
+          "src": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z2hsz6J.webp",
+          "width": 1280,
+          "naturalWidth": 1280,
+          "sizes": "100vw"
+        },
+        {
+          "src": "/projects/ever-since-i-have-been-flying/",
+          "width": 0,
+          "naturalWidth": 0,
+          "sizes": ""
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "weight": "300",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "500",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "italic"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "600",
+          "style": "normal"
+        }
+      ],
+      "resources": [
+        {
+          "url": "/projects/ever-since-i-have-been-flying/",
+          "type": "document",
+          "bytes": 116858,
+          "gzipBytes": 18549,
+          "brotliBytes": 14995
+        },
+        {
+          "url": "/_astro/montserrat-latin-400-normal.BLhwKU8k.woff2",
+          "type": "font",
+          "bytes": 18780,
+          "gzipBytes": 18808,
+          "brotliBytes": 18776
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-normal.BCNrxLz_.woff2",
+          "type": "font",
+          "bytes": 23820,
+          "gzipBytes": 23848,
+          "brotliBytes": 23804
+        },
+        {
+          "url": "/_astro/BaseLayout.BF9ZzKYC.css",
+          "type": "stylesheet",
+          "bytes": 152507,
+          "gzipBytes": 23216,
+          "brotliBytes": 19573
+        },
+        {
+          "url": "/_astro/page.BHA_3-Fj.js",
+          "type": "script",
+          "bytes": 47,
+          "gzipBytes": 67,
+          "brotliBytes": 51
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z2hsz6J.webp",
+          "type": "image",
+          "bytes": 177086,
+          "gzipBytes": 177159,
+          "brotliBytes": 177091
+        },
+        {
+          "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DOTn-Jq_.js",
+          "type": "script",
+          "bytes": 13887,
+          "gzipBytes": 4746,
+          "brotliBytes": 4255
+        },
+        {
+          "url": "/_astro/montserrat-latin-300-normal.BgP24wlQ.woff2",
+          "type": "font",
+          "bytes": 18708,
+          "gzipBytes": 18736,
+          "brotliBytes": 18701
+        },
+        {
+          "url": "/_astro/montserrat-latin-600-normal.UVxSCcoG.woff2",
+          "type": "font",
+          "bytes": 18688,
+          "gzipBytes": 18716,
+          "brotliBytes": 18686
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-600-normal.DHwxsLHv.woff2",
+          "type": "font",
+          "bytes": 25348,
+          "gzipBytes": 25376,
+          "brotliBytes": 25331
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-italic.DSEbMgZu.woff2",
+          "type": "font",
+          "bytes": 25388,
+          "gzipBytes": 25416,
+          "brotliBytes": 25389
+        },
+        {
+          "url": "/_astro/montserrat-latin-500-normal.DRFEGfly.woff2",
+          "type": "font",
+          "bytes": 18748,
+          "gzipBytes": 18776,
+          "brotliBytes": 18745
+        },
+        {
+          "url": "/_astro/prefetch.DsrDZXx8.js",
+          "type": "script",
+          "bytes": 2506,
+          "gzipBytes": 1131,
+          "brotliBytes": 970
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_yK7Lc.webp",
+          "type": "image",
+          "bytes": 85902,
+          "gzipBytes": 85950,
+          "brotliBytes": 85907
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.1.iDJ5mvzg_2wLVra.webp",
+          "type": "image",
+          "bytes": 44036,
+          "gzipBytes": 44069,
+          "brotliBytes": 44040
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_1A8frt.webp",
+          "type": "image",
+          "bytes": 66088,
+          "gzipBytes": 66131,
+          "brotliBytes": 66093
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.4.ByTvOAXL_1AgBro.webp",
+          "type": "image",
+          "bytes": 14676,
+          "gzipBytes": 14558,
+          "brotliBytes": 14520
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.6.DDCmnZBd_1c0yM3.webp",
+          "type": "image",
+          "bytes": 31300,
+          "gzipBytes": 31273,
+          "brotliBytes": 31206
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.2.Gb8kenDo_Z1RELfO.webp",
+          "type": "image",
+          "bytes": 31090,
+          "gzipBytes": 31118,
+          "brotliBytes": 31094
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.7.DEOcFhve_24Rz0f.webp",
+          "type": "image",
+          "bytes": 32350,
+          "gzipBytes": 32312,
+          "brotliBytes": 32251
+        }
+      ],
+      "hoverRequests": [],
+      "warmNavigationRequests": [
+        {
+          "url": "/video/seethrough.webp",
+          "type": "image",
+          "bytes": 34934,
+          "gzipBytes": 33879,
+          "brotliBytes": 33775
+        },
+        {
+          "url": "/_astro/BURN_1.232.1.C3J4clTl_ZBku1v.webp",
+          "type": "image",
+          "bytes": 82394,
+          "gzipBytes": 82442,
+          "brotliBytes": 82399
+        },
+        {
+          "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_Z2r0fCY.webp",
+          "type": "image",
+          "bytes": 63552,
+          "gzipBytes": 62712,
+          "brotliBytes": 62568
+        },
+        {
+          "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_1629C2.webp",
+          "type": "image",
+          "bytes": 53524,
+          "gzipBytes": 53562,
+          "brotliBytes": 53528
+        },
+        {
+          "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z24dRqR.webp",
+          "type": "image",
+          "bytes": 63424,
+          "gzipBytes": 63462,
+          "brotliBytes": 63428
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "route": "/projects/ever-since-i-have-been-flying/",
+      "width": 1280,
+      "run": 2,
+      "lcp": 48,
+      "cls": 0.000723656972249349,
+      "longTasks": 0,
+      "images": [
+        {
+          "src": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z2hsz6J.webp",
+          "width": 1280,
+          "naturalWidth": 1280,
+          "sizes": "100vw"
+        },
+        {
+          "src": "/projects/ever-since-i-have-been-flying/",
+          "width": 0,
+          "naturalWidth": 0,
+          "sizes": ""
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "weight": "300",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "500",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "italic"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "600",
+          "style": "normal"
+        }
+      ],
+      "resources": [
+        {
+          "url": "/projects/ever-since-i-have-been-flying/",
+          "type": "document",
+          "bytes": 116858,
+          "gzipBytes": 18549,
+          "brotliBytes": 14995
+        },
+        {
+          "url": "/_astro/montserrat-latin-400-normal.BLhwKU8k.woff2",
+          "type": "font",
+          "bytes": 18780,
+          "gzipBytes": 18808,
+          "brotliBytes": 18776
+        },
+        {
+          "url": "/_astro/BaseLayout.BF9ZzKYC.css",
+          "type": "stylesheet",
+          "bytes": 152507,
+          "gzipBytes": 23216,
+          "brotliBytes": 19573
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-normal.BCNrxLz_.woff2",
+          "type": "font",
+          "bytes": 23820,
+          "gzipBytes": 23848,
+          "brotliBytes": 23804
+        },
+        {
+          "url": "/_astro/page.BHA_3-Fj.js",
+          "type": "script",
+          "bytes": 47,
+          "gzipBytes": 67,
+          "brotliBytes": 51
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z2hsz6J.webp",
+          "type": "image",
+          "bytes": 177086,
+          "gzipBytes": 177159,
+          "brotliBytes": 177091
+        },
+        {
+          "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DOTn-Jq_.js",
+          "type": "script",
+          "bytes": 13887,
+          "gzipBytes": 4746,
+          "brotliBytes": 4255
+        },
+        {
+          "url": "/_astro/montserrat-latin-600-normal.UVxSCcoG.woff2",
+          "type": "font",
+          "bytes": 18688,
+          "gzipBytes": 18716,
+          "brotliBytes": 18686
+        },
+        {
+          "url": "/_astro/montserrat-latin-300-normal.BgP24wlQ.woff2",
+          "type": "font",
+          "bytes": 18708,
+          "gzipBytes": 18736,
+          "brotliBytes": 18701
+        },
+        {
+          "url": "/_astro/prefetch.DsrDZXx8.js",
+          "type": "script",
+          "bytes": 2506,
+          "gzipBytes": 1131,
+          "brotliBytes": 970
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-600-normal.DHwxsLHv.woff2",
+          "type": "font",
+          "bytes": 25348,
+          "gzipBytes": 25376,
+          "brotliBytes": 25331
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-italic.DSEbMgZu.woff2",
+          "type": "font",
+          "bytes": 25388,
+          "gzipBytes": 25416,
+          "brotliBytes": 25389
+        },
+        {
+          "url": "/_astro/montserrat-latin-500-normal.DRFEGfly.woff2",
+          "type": "font",
+          "bytes": 18748,
+          "gzipBytes": 18776,
+          "brotliBytes": 18745
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_yK7Lc.webp",
+          "type": "image",
+          "bytes": 85902,
+          "gzipBytes": 85950,
+          "brotliBytes": 85907
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.1.iDJ5mvzg_2wLVra.webp",
+          "type": "image",
+          "bytes": 44036,
+          "gzipBytes": 44069,
+          "brotliBytes": 44040
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.2.Gb8kenDo_Z1RELfO.webp",
+          "type": "image",
+          "bytes": 31090,
+          "gzipBytes": 31118,
+          "brotliBytes": 31094
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_1A8frt.webp",
+          "type": "image",
+          "bytes": 66088,
+          "gzipBytes": 66131,
+          "brotliBytes": 66093
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.4.ByTvOAXL_1AgBro.webp",
+          "type": "image",
+          "bytes": 14676,
+          "gzipBytes": 14558,
+          "brotliBytes": 14520
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.6.DDCmnZBd_1c0yM3.webp",
+          "type": "image",
+          "bytes": 31300,
+          "gzipBytes": 31273,
+          "brotliBytes": 31206
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.7.DEOcFhve_24Rz0f.webp",
+          "type": "image",
+          "bytes": 32350,
+          "gzipBytes": 32312,
+          "brotliBytes": 32251
+        }
+      ],
+      "hoverRequests": [],
+      "warmNavigationRequests": [
+        {
+          "url": "/video/seethrough.webp",
+          "type": "image",
+          "bytes": 34934,
+          "gzipBytes": 33879,
+          "brotliBytes": 33775
+        },
+        {
+          "url": "/_astro/BURN_1.232.1.C3J4clTl_ZBku1v.webp",
+          "type": "image",
+          "bytes": 82394,
+          "gzipBytes": 82442,
+          "brotliBytes": 82399
+        },
+        {
+          "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_Z2r0fCY.webp",
+          "type": "image",
+          "bytes": 63552,
+          "gzipBytes": 62712,
+          "brotliBytes": 62568
+        },
+        {
+          "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_1629C2.webp",
+          "type": "image",
+          "bytes": 53524,
+          "gzipBytes": 53562,
+          "brotliBytes": 53528
+        },
+        {
+          "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z24dRqR.webp",
+          "type": "image",
+          "bytes": 63424,
+          "gzipBytes": 63462,
+          "brotliBytes": 63428
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "route": "/projects/ever-since-i-have-been-flying/",
+      "width": 1280,
+      "run": 3,
+      "lcp": 48,
+      "cls": 0.000723656972249349,
+      "longTasks": 0,
+      "images": [
+        {
+          "src": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z2hsz6J.webp",
+          "width": 1280,
+          "naturalWidth": 1280,
+          "sizes": "100vw"
+        },
+        {
+          "src": "/projects/ever-since-i-have-been-flying/",
+          "width": 0,
+          "naturalWidth": 0,
+          "sizes": ""
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "weight": "300",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "500",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "italic"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "600",
+          "style": "normal"
+        }
+      ],
+      "resources": [
+        {
+          "url": "/projects/ever-since-i-have-been-flying/",
+          "type": "document",
+          "bytes": 116858,
+          "gzipBytes": 18549,
+          "brotliBytes": 14995
+        },
+        {
+          "url": "/_astro/montserrat-latin-400-normal.BLhwKU8k.woff2",
+          "type": "font",
+          "bytes": 18780,
+          "gzipBytes": 18808,
+          "brotliBytes": 18776
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-normal.BCNrxLz_.woff2",
+          "type": "font",
+          "bytes": 23820,
+          "gzipBytes": 23848,
+          "brotliBytes": 23804
+        },
+        {
+          "url": "/_astro/BaseLayout.BF9ZzKYC.css",
+          "type": "stylesheet",
+          "bytes": 152507,
+          "gzipBytes": 23216,
+          "brotliBytes": 19573
+        },
+        {
+          "url": "/_astro/page.BHA_3-Fj.js",
+          "type": "script",
+          "bytes": 47,
+          "gzipBytes": 67,
+          "brotliBytes": 51
+        },
+        {
+          "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DOTn-Jq_.js",
+          "type": "script",
+          "bytes": 13887,
+          "gzipBytes": 4746,
+          "brotliBytes": 4255
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z2hsz6J.webp",
+          "type": "image",
+          "bytes": 177086,
+          "gzipBytes": 177159,
+          "brotliBytes": 177091
+        },
+        {
+          "url": "/_astro/montserrat-latin-300-normal.BgP24wlQ.woff2",
+          "type": "font",
+          "bytes": 18708,
+          "gzipBytes": 18736,
+          "brotliBytes": 18701
+        },
+        {
+          "url": "/_astro/montserrat-latin-600-normal.UVxSCcoG.woff2",
+          "type": "font",
+          "bytes": 18688,
+          "gzipBytes": 18716,
+          "brotliBytes": 18686
+        },
+        {
+          "url": "/_astro/montserrat-latin-500-normal.DRFEGfly.woff2",
+          "type": "font",
+          "bytes": 18748,
+          "gzipBytes": 18776,
+          "brotliBytes": 18745
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-600-normal.DHwxsLHv.woff2",
+          "type": "font",
+          "bytes": 25348,
+          "gzipBytes": 25376,
+          "brotliBytes": 25331
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-italic.DSEbMgZu.woff2",
+          "type": "font",
+          "bytes": 25388,
+          "gzipBytes": 25416,
+          "brotliBytes": 25389
+        },
+        {
+          "url": "/_astro/prefetch.DsrDZXx8.js",
+          "type": "script",
+          "bytes": 2506,
+          "gzipBytes": 1131,
+          "brotliBytes": 970
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_yK7Lc.webp",
+          "type": "image",
+          "bytes": 85902,
+          "gzipBytes": 85950,
+          "brotliBytes": 85907
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.1.iDJ5mvzg_2wLVra.webp",
+          "type": "image",
+          "bytes": 44036,
+          "gzipBytes": 44069,
+          "brotliBytes": 44040
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.2.Gb8kenDo_Z1RELfO.webp",
+          "type": "image",
+          "bytes": 31090,
+          "gzipBytes": 31118,
+          "brotliBytes": 31094
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_1A8frt.webp",
+          "type": "image",
+          "bytes": 66088,
+          "gzipBytes": 66131,
+          "brotliBytes": 66093
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.4.ByTvOAXL_1AgBro.webp",
+          "type": "image",
+          "bytes": 14676,
+          "gzipBytes": 14558,
+          "brotliBytes": 14520
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.6.DDCmnZBd_1c0yM3.webp",
+          "type": "image",
+          "bytes": 31300,
+          "gzipBytes": 31273,
+          "brotliBytes": 31206
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.7.DEOcFhve_24Rz0f.webp",
+          "type": "image",
+          "bytes": 32350,
+          "gzipBytes": 32312,
+          "brotliBytes": 32251
+        }
+      ],
+      "hoverRequests": [],
+      "warmNavigationRequests": [
+        {
+          "url": "/video/seethrough.webp",
+          "type": "image",
+          "bytes": 34934,
+          "gzipBytes": 33879,
+          "brotliBytes": 33775
+        },
+        {
+          "url": "/_astro/BURN_1.232.1.C3J4clTl_ZBku1v.webp",
+          "type": "image",
+          "bytes": 82394,
+          "gzipBytes": 82442,
+          "brotliBytes": 82399
+        },
+        {
+          "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_Z2r0fCY.webp",
+          "type": "image",
+          "bytes": 63552,
+          "gzipBytes": 62712,
+          "brotliBytes": 62568
+        },
+        {
+          "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_1629C2.webp",
+          "type": "image",
+          "bytes": 53524,
+          "gzipBytes": 53562,
+          "brotliBytes": 53528
+        },
+        {
+          "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z24dRqR.webp",
+          "type": "image",
+          "bytes": 63424,
+          "gzipBytes": 63462,
+          "brotliBytes": 63428
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "route": "/behind-the-scenes/",
+      "width": 1280,
+      "run": 1,
+      "lcp": 60,
+      "cls": 0.00019368065728081599,
+      "longTasks": 0,
+      "images": [
+        {
+          "src": "/_astro/IMG-20230813-WA0062.BQKcZ2Fo_1VHx0H.webp",
+          "width": 1280,
+          "naturalWidth": 1280,
+          "sizes": "100vw"
+        },
+        {
+          "src": "/behind-the-scenes/",
+          "width": 0,
+          "naturalWidth": 0,
+          "sizes": ""
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "weight": "300",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "500",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "Caveat",
+          "weight": "400",
+          "style": "normal"
+        }
+      ],
+      "resources": [
+        {
+          "url": "/behind-the-scenes/",
+          "type": "document",
+          "bytes": 130178,
+          "gzipBytes": 19411,
+          "brotliBytes": 15501
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-normal.BCNrxLz_.woff2",
+          "type": "font",
+          "bytes": 23820,
+          "gzipBytes": 23848,
+          "brotliBytes": 23804
+        },
+        {
+          "url": "/_astro/montserrat-latin-400-normal.BLhwKU8k.woff2",
+          "type": "font",
+          "bytes": 18780,
+          "gzipBytes": 18808,
+          "brotliBytes": 18776
+        },
+        {
+          "url": "/_astro/BaseLayout.BF9ZzKYC.css",
+          "type": "stylesheet",
+          "bytes": 152507,
+          "gzipBytes": 23216,
+          "brotliBytes": 19573
+        },
+        {
+          "url": "/_astro/IMG-20230813-WA0062.BQKcZ2Fo_1VHx0H.webp",
+          "type": "image",
+          "bytes": 109094,
+          "gzipBytes": 109147,
+          "brotliBytes": 109099
+        },
+        {
+          "url": "/_astro/behind-the-scenes.Di7c_0vr.css",
+          "type": "stylesheet",
+          "bytes": 4318,
+          "gzipBytes": 1306,
+          "brotliBytes": 1085
+        },
+        {
+          "url": "/_astro/page.BHA_3-Fj.js",
+          "type": "script",
+          "bytes": 47,
+          "gzipBytes": 67,
+          "brotliBytes": 51
+        },
+        {
+          "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DOTn-Jq_.js",
+          "type": "script",
+          "bytes": 13887,
+          "gzipBytes": 4746,
+          "brotliBytes": 4255
+        },
+        {
+          "url": "/_astro/montserrat-latin-300-normal.BgP24wlQ.woff2",
+          "type": "font",
+          "bytes": 18708,
+          "gzipBytes": 18736,
+          "brotliBytes": 18701
+        },
+        {
+          "url": "/_astro/montserrat-latin-600-normal.UVxSCcoG.woff2",
+          "type": "font",
+          "bytes": 18688,
+          "gzipBytes": 18716,
+          "brotliBytes": 18686
+        },
+        {
+          "url": "/_astro/montserrat-latin-500-normal.DRFEGfly.woff2",
+          "type": "font",
+          "bytes": 18748,
+          "gzipBytes": 18776,
+          "brotliBytes": 18745
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-600-normal.DHwxsLHv.woff2",
+          "type": "font",
+          "bytes": 25348,
+          "gzipBytes": 25376,
+          "brotliBytes": 25331
+        },
+        {
+          "url": "/_astro/caveat-latin-400-normal.D6LQsQ_v.woff2",
+          "type": "font",
+          "bytes": 48836,
+          "gzipBytes": 48869,
+          "brotliBytes": 48840
+        },
+        {
+          "url": "/_astro/prefetch.DsrDZXx8.js",
+          "type": "script",
+          "bytes": 2506,
+          "gzipBytes": 1131,
+          "brotliBytes": 970
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-01.Cq7icPcQ_28IMRF.webp",
+          "type": "image",
+          "bytes": 33128,
+          "gzipBytes": 33161,
+          "brotliBytes": 33132
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-02.DZ2ugzOC_Z8aHl9.webp",
+          "type": "image",
+          "bytes": 38734,
+          "gzipBytes": 38767,
+          "brotliBytes": 38738
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-03.uEmNnN3Z_Z1OqA0b.webp",
+          "type": "image",
+          "bytes": 23144,
+          "gzipBytes": 23172,
+          "brotliBytes": 23148
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-05.DpTZyc71_Z1KrBvs.webp",
+          "type": "image",
+          "bytes": 19496,
+          "gzipBytes": 19448,
+          "brotliBytes": 19411
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-06.B4pAjcHB_1MALC8.webp",
+          "type": "image",
+          "bytes": 70550,
+          "gzipBytes": 70593,
+          "brotliBytes": 70555
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-04.DtPesVkT_Z2fd9g5.webp",
+          "type": "image",
+          "bytes": 36682,
+          "gzipBytes": 36715,
+          "brotliBytes": 36686
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-07.CBliIRtl_Z1rcotU.webp",
+          "type": "image",
+          "bytes": 30970,
+          "gzipBytes": 30998,
+          "brotliBytes": 30974
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-12.DouaRnB8_1kJogx.webp",
+          "type": "image",
+          "bytes": 24538,
+          "gzipBytes": 24566,
+          "brotliBytes": 24542
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-14.CDNF78xR_Z166oLM.webp",
+          "type": "image",
+          "bytes": 37988,
+          "gzipBytes": 38021,
+          "brotliBytes": 37992
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-15.BudvJJMB_ZhTlnw.webp",
+          "type": "image",
+          "bytes": 31798,
+          "gzipBytes": 31826,
+          "brotliBytes": 31802
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-13.DUL7YBTE_Z1wiMFv.webp",
+          "type": "image",
+          "bytes": 59276,
+          "gzipBytes": 59314,
+          "brotliBytes": 59280
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-16.mQWfv5RS_1o5Hft.webp",
+          "type": "image",
+          "bytes": 34028,
+          "gzipBytes": 34061,
+          "brotliBytes": 34032
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-17.Bs3JUXLY_1wap6i.webp",
+          "type": "image",
+          "bytes": 37252,
+          "gzipBytes": 37285,
+          "brotliBytes": 37256
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-18.ObaJ72Gc_Z1OMaAp.webp",
+          "type": "image",
+          "bytes": 31736,
+          "gzipBytes": 31764,
+          "brotliBytes": 31740
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-24.Ch2JqPeQ_Z1aUewP.webp",
+          "type": "image",
+          "bytes": 16960,
+          "gzipBytes": 16988,
+          "brotliBytes": 16964
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-25.DWuOD89A_ZsCk1B.webp",
+          "type": "image",
+          "bytes": 29576,
+          "gzipBytes": 29604,
+          "brotliBytes": 29580
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-26.DnRMLBVh_ZnDjGa.webp",
+          "type": "image",
+          "bytes": 26258,
+          "gzipBytes": 26286,
+          "brotliBytes": 26262
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-27.5SVk2iC1_Z2uIuET.webp",
+          "type": "image",
+          "bytes": 50420,
+          "gzipBytes": 50458,
+          "brotliBytes": 50424
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-28.toCOck0V_28phhb.webp",
+          "type": "image",
+          "bytes": 119794,
+          "gzipBytes": 119852,
+          "brotliBytes": 119799
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-29.CAFRIFRr_dtrAz.webp",
+          "type": "image",
+          "bytes": 30912,
+          "gzipBytes": 30940,
+          "brotliBytes": 30916
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-30.DRSkyU-t_Z1221Gj.webp",
+          "type": "image",
+          "bytes": 31948,
+          "gzipBytes": 31976,
+          "brotliBytes": 31952
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-31.I_KqO5bZ_ZQVD2D.webp",
+          "type": "image",
+          "bytes": 34994,
+          "gzipBytes": 35027,
+          "brotliBytes": 34998
+        }
+      ],
+      "hoverRequests": [],
+      "warmNavigationRequests": [
+        {
+          "url": "/video/seethrough.webp",
+          "type": "image",
+          "bytes": 34934,
+          "gzipBytes": 33879,
+          "brotliBytes": 33775
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-italic.DSEbMgZu.woff2",
+          "type": "font",
+          "bytes": 25388,
+          "gzipBytes": 25416,
+          "brotliBytes": 25389
+        },
+        {
+          "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_Z2r0fCY.webp",
+          "type": "image",
+          "bytes": 63552,
+          "gzipBytes": 62712,
+          "brotliBytes": 62568
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z2hsz6J.webp",
+          "type": "image",
+          "bytes": 177086,
+          "gzipBytes": 177159,
+          "brotliBytes": 177091
+        },
+        {
+          "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_1629C2.webp",
+          "type": "image",
+          "bytes": 53524,
+          "gzipBytes": 53562,
+          "brotliBytes": 53528
+        },
+        {
+          "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z24dRqR.webp",
+          "type": "image",
+          "bytes": 63424,
+          "gzipBytes": 63462,
+          "brotliBytes": 63428
+        },
+        {
+          "url": "/_astro/BURN_1.232.1.C3J4clTl_ZBku1v.webp",
+          "type": "image",
+          "bytes": 82394,
+          "gzipBytes": 82442,
+          "brotliBytes": 82399
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "route": "/behind-the-scenes/",
+      "width": 1280,
+      "run": 2,
+      "lcp": 116,
+      "cls": 0.00019368065728081599,
+      "longTasks": 0,
+      "images": [
+        {
+          "src": "/_astro/IMG-20230813-WA0062.BQKcZ2Fo_1VHx0H.webp",
+          "width": 1280,
+          "naturalWidth": 1280,
+          "sizes": "100vw"
+        },
+        {
+          "src": "/behind-the-scenes/",
+          "width": 0,
+          "naturalWidth": 0,
+          "sizes": ""
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "weight": "300",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "500",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "Caveat",
+          "weight": "400",
+          "style": "normal"
+        }
+      ],
+      "resources": [
+        {
+          "url": "/behind-the-scenes/",
+          "type": "document",
+          "bytes": 130178,
+          "gzipBytes": 19411,
+          "brotliBytes": 15501
+        },
+        {
+          "url": "/_astro/montserrat-latin-400-normal.BLhwKU8k.woff2",
+          "type": "font",
+          "bytes": 18780,
+          "gzipBytes": 18808,
+          "brotliBytes": 18776
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-normal.BCNrxLz_.woff2",
+          "type": "font",
+          "bytes": 23820,
+          "gzipBytes": 23848,
+          "brotliBytes": 23804
+        },
+        {
+          "url": "/_astro/IMG-20230813-WA0062.BQKcZ2Fo_1VHx0H.webp",
+          "type": "image",
+          "bytes": 109094,
+          "gzipBytes": 109147,
+          "brotliBytes": 109099
+        },
+        {
+          "url": "/_astro/BaseLayout.BF9ZzKYC.css",
+          "type": "stylesheet",
+          "bytes": 152507,
+          "gzipBytes": 23216,
+          "brotliBytes": 19573
+        },
+        {
+          "url": "/_astro/behind-the-scenes.Di7c_0vr.css",
+          "type": "stylesheet",
+          "bytes": 4318,
+          "gzipBytes": 1306,
+          "brotliBytes": 1085
+        },
+        {
+          "url": "/_astro/page.BHA_3-Fj.js",
+          "type": "script",
+          "bytes": 47,
+          "gzipBytes": 67,
+          "brotliBytes": 51
+        },
+        {
+          "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DOTn-Jq_.js",
+          "type": "script",
+          "bytes": 13887,
+          "gzipBytes": 4746,
+          "brotliBytes": 4255
+        },
+        {
+          "url": "/_astro/montserrat-latin-300-normal.BgP24wlQ.woff2",
+          "type": "font",
+          "bytes": 18708,
+          "gzipBytes": 18736,
+          "brotliBytes": 18701
+        },
+        {
+          "url": "/_astro/montserrat-latin-600-normal.UVxSCcoG.woff2",
+          "type": "font",
+          "bytes": 18688,
+          "gzipBytes": 18716,
+          "brotliBytes": 18686
+        },
+        {
+          "url": "/_astro/montserrat-latin-500-normal.DRFEGfly.woff2",
+          "type": "font",
+          "bytes": 18748,
+          "gzipBytes": 18776,
+          "brotliBytes": 18745
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-600-normal.DHwxsLHv.woff2",
+          "type": "font",
+          "bytes": 25348,
+          "gzipBytes": 25376,
+          "brotliBytes": 25331
+        },
+        {
+          "url": "/_astro/caveat-latin-400-normal.D6LQsQ_v.woff2",
+          "type": "font",
+          "bytes": 48836,
+          "gzipBytes": 48869,
+          "brotliBytes": 48840
+        },
+        {
+          "url": "/_astro/prefetch.DsrDZXx8.js",
+          "type": "script",
+          "bytes": 2506,
+          "gzipBytes": 1131,
+          "brotliBytes": 970
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-01.Cq7icPcQ_28IMRF.webp",
+          "type": "image",
+          "bytes": 33128,
+          "gzipBytes": 33161,
+          "brotliBytes": 33132
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-02.DZ2ugzOC_Z8aHl9.webp",
+          "type": "image",
+          "bytes": 38734,
+          "gzipBytes": 38767,
+          "brotliBytes": 38738
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-03.uEmNnN3Z_Z1OqA0b.webp",
+          "type": "image",
+          "bytes": 23144,
+          "gzipBytes": 23172,
+          "brotliBytes": 23148
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-05.DpTZyc71_Z1KrBvs.webp",
+          "type": "image",
+          "bytes": 19496,
+          "gzipBytes": 19448,
+          "brotliBytes": 19411
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-04.DtPesVkT_Z2fd9g5.webp",
+          "type": "image",
+          "bytes": 36682,
+          "gzipBytes": 36715,
+          "brotliBytes": 36686
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-06.B4pAjcHB_1MALC8.webp",
+          "type": "image",
+          "bytes": 70550,
+          "gzipBytes": 70593,
+          "brotliBytes": 70555
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-07.CBliIRtl_Z1rcotU.webp",
+          "type": "image",
+          "bytes": 30970,
+          "gzipBytes": 30998,
+          "brotliBytes": 30974
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-12.DouaRnB8_1kJogx.webp",
+          "type": "image",
+          "bytes": 24538,
+          "gzipBytes": 24566,
+          "brotliBytes": 24542
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-13.DUL7YBTE_Z1wiMFv.webp",
+          "type": "image",
+          "bytes": 59276,
+          "gzipBytes": 59314,
+          "brotliBytes": 59280
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-14.CDNF78xR_Z166oLM.webp",
+          "type": "image",
+          "bytes": 37988,
+          "gzipBytes": 38021,
+          "brotliBytes": 37992
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-15.BudvJJMB_ZhTlnw.webp",
+          "type": "image",
+          "bytes": 31798,
+          "gzipBytes": 31826,
+          "brotliBytes": 31802
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-16.mQWfv5RS_1o5Hft.webp",
+          "type": "image",
+          "bytes": 34028,
+          "gzipBytes": 34061,
+          "brotliBytes": 34032
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-17.Bs3JUXLY_1wap6i.webp",
+          "type": "image",
+          "bytes": 37252,
+          "gzipBytes": 37285,
+          "brotliBytes": 37256
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-18.ObaJ72Gc_Z1OMaAp.webp",
+          "type": "image",
+          "bytes": 31736,
+          "gzipBytes": 31764,
+          "brotliBytes": 31740
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-24.Ch2JqPeQ_Z1aUewP.webp",
+          "type": "image",
+          "bytes": 16960,
+          "gzipBytes": 16988,
+          "brotliBytes": 16964
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-25.DWuOD89A_ZsCk1B.webp",
+          "type": "image",
+          "bytes": 29576,
+          "gzipBytes": 29604,
+          "brotliBytes": 29580
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-26.DnRMLBVh_ZnDjGa.webp",
+          "type": "image",
+          "bytes": 26258,
+          "gzipBytes": 26286,
+          "brotliBytes": 26262
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-27.5SVk2iC1_Z2uIuET.webp",
+          "type": "image",
+          "bytes": 50420,
+          "gzipBytes": 50458,
+          "brotliBytes": 50424
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-29.CAFRIFRr_dtrAz.webp",
+          "type": "image",
+          "bytes": 30912,
+          "gzipBytes": 30940,
+          "brotliBytes": 30916
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-28.toCOck0V_28phhb.webp",
+          "type": "image",
+          "bytes": 119794,
+          "gzipBytes": 119852,
+          "brotliBytes": 119799
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-30.DRSkyU-t_Z1221Gj.webp",
+          "type": "image",
+          "bytes": 31948,
+          "gzipBytes": 31976,
+          "brotliBytes": 31952
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-31.I_KqO5bZ_ZQVD2D.webp",
+          "type": "image",
+          "bytes": 34994,
+          "gzipBytes": 35027,
+          "brotliBytes": 34998
+        }
+      ],
+      "hoverRequests": [],
+      "warmNavigationRequests": [
+        {
+          "url": "/video/seethrough.webp",
+          "type": "image",
+          "bytes": 34934,
+          "gzipBytes": 33879,
+          "brotliBytes": 33775
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-italic.DSEbMgZu.woff2",
+          "type": "font",
+          "bytes": 25388,
+          "gzipBytes": 25416,
+          "brotliBytes": 25389
+        },
+        {
+          "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_Z2r0fCY.webp",
+          "type": "image",
+          "bytes": 63552,
+          "gzipBytes": 62712,
+          "brotliBytes": 62568
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z2hsz6J.webp",
+          "type": "image",
+          "bytes": 177086,
+          "gzipBytes": 177159,
+          "brotliBytes": 177091
+        },
+        {
+          "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_1629C2.webp",
+          "type": "image",
+          "bytes": 53524,
+          "gzipBytes": 53562,
+          "brotliBytes": 53528
+        },
+        {
+          "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z24dRqR.webp",
+          "type": "image",
+          "bytes": 63424,
+          "gzipBytes": 63462,
+          "brotliBytes": 63428
+        },
+        {
+          "url": "/_astro/BURN_1.232.1.C3J4clTl_ZBku1v.webp",
+          "type": "image",
+          "bytes": 82394,
+          "gzipBytes": 82442,
+          "brotliBytes": 82399
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "route": "/behind-the-scenes/",
+      "width": 1280,
+      "run": 3,
+      "lcp": 88,
+      "cls": 0.00019368065728081599,
+      "longTasks": 0,
+      "images": [
+        {
+          "src": "/_astro/IMG-20230813-WA0062.BQKcZ2Fo_1VHx0H.webp",
+          "width": 1280,
+          "naturalWidth": 1280,
+          "sizes": "100vw"
+        },
+        {
+          "src": "/behind-the-scenes/",
+          "width": 0,
+          "naturalWidth": 0,
+          "sizes": ""
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "weight": "300",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "500",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "Caveat",
+          "weight": "400",
+          "style": "normal"
+        }
+      ],
+      "resources": [
+        {
+          "url": "/behind-the-scenes/",
+          "type": "document",
+          "bytes": 130178,
+          "gzipBytes": 19411,
+          "brotliBytes": 15501
+        },
+        {
+          "url": "/_astro/montserrat-latin-400-normal.BLhwKU8k.woff2",
+          "type": "font",
+          "bytes": 18780,
+          "gzipBytes": 18808,
+          "brotliBytes": 18776
+        },
+        {
+          "url": "/_astro/BaseLayout.BF9ZzKYC.css",
+          "type": "stylesheet",
+          "bytes": 152507,
+          "gzipBytes": 23216,
+          "brotliBytes": 19573
+        },
+        {
+          "url": "/_astro/IMG-20230813-WA0062.BQKcZ2Fo_1VHx0H.webp",
+          "type": "image",
+          "bytes": 109094,
+          "gzipBytes": 109147,
+          "brotliBytes": 109099
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-normal.BCNrxLz_.woff2",
+          "type": "font",
+          "bytes": 23820,
+          "gzipBytes": 23848,
+          "brotliBytes": 23804
+        },
+        {
+          "url": "/_astro/behind-the-scenes.Di7c_0vr.css",
+          "type": "stylesheet",
+          "bytes": 4318,
+          "gzipBytes": 1306,
+          "brotliBytes": 1085
+        },
+        {
+          "url": "/_astro/page.BHA_3-Fj.js",
+          "type": "script",
+          "bytes": 47,
+          "gzipBytes": 67,
+          "brotliBytes": 51
+        },
+        {
+          "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DOTn-Jq_.js",
+          "type": "script",
+          "bytes": 13887,
+          "gzipBytes": 4746,
+          "brotliBytes": 4255
+        },
+        {
+          "url": "/_astro/montserrat-latin-300-normal.BgP24wlQ.woff2",
+          "type": "font",
+          "bytes": 18708,
+          "gzipBytes": 18736,
+          "brotliBytes": 18701
+        },
+        {
+          "url": "/_astro/montserrat-latin-600-normal.UVxSCcoG.woff2",
+          "type": "font",
+          "bytes": 18688,
+          "gzipBytes": 18716,
+          "brotliBytes": 18686
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-600-normal.DHwxsLHv.woff2",
+          "type": "font",
+          "bytes": 25348,
+          "gzipBytes": 25376,
+          "brotliBytes": 25331
+        },
+        {
+          "url": "/_astro/montserrat-latin-500-normal.DRFEGfly.woff2",
+          "type": "font",
+          "bytes": 18748,
+          "gzipBytes": 18776,
+          "brotliBytes": 18745
+        },
+        {
+          "url": "/_astro/caveat-latin-400-normal.D6LQsQ_v.woff2",
+          "type": "font",
+          "bytes": 48836,
+          "gzipBytes": 48869,
+          "brotliBytes": 48840
+        },
+        {
+          "url": "/_astro/prefetch.DsrDZXx8.js",
+          "type": "script",
+          "bytes": 2506,
+          "gzipBytes": 1131,
+          "brotliBytes": 970
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-02.DZ2ugzOC_Z8aHl9.webp",
+          "type": "image",
+          "bytes": 38734,
+          "gzipBytes": 38767,
+          "brotliBytes": 38738
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-03.uEmNnN3Z_Z1OqA0b.webp",
+          "type": "image",
+          "bytes": 23144,
+          "gzipBytes": 23172,
+          "brotliBytes": 23148
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-04.DtPesVkT_Z2fd9g5.webp",
+          "type": "image",
+          "bytes": 36682,
+          "gzipBytes": 36715,
+          "brotliBytes": 36686
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-05.DpTZyc71_Z1KrBvs.webp",
+          "type": "image",
+          "bytes": 19496,
+          "gzipBytes": 19448,
+          "brotliBytes": 19411
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-01.Cq7icPcQ_28IMRF.webp",
+          "type": "image",
+          "bytes": 33128,
+          "gzipBytes": 33161,
+          "brotliBytes": 33132
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-06.B4pAjcHB_1MALC8.webp",
+          "type": "image",
+          "bytes": 70550,
+          "gzipBytes": 70593,
+          "brotliBytes": 70555
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-07.CBliIRtl_Z1rcotU.webp",
+          "type": "image",
+          "bytes": 30970,
+          "gzipBytes": 30998,
+          "brotliBytes": 30974
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-12.DouaRnB8_1kJogx.webp",
+          "type": "image",
+          "bytes": 24538,
+          "gzipBytes": 24566,
+          "brotliBytes": 24542
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-13.DUL7YBTE_Z1wiMFv.webp",
+          "type": "image",
+          "bytes": 59276,
+          "gzipBytes": 59314,
+          "brotliBytes": 59280
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-14.CDNF78xR_Z166oLM.webp",
+          "type": "image",
+          "bytes": 37988,
+          "gzipBytes": 38021,
+          "brotliBytes": 37992
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-15.BudvJJMB_ZhTlnw.webp",
+          "type": "image",
+          "bytes": 31798,
+          "gzipBytes": 31826,
+          "brotliBytes": 31802
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-16.mQWfv5RS_1o5Hft.webp",
+          "type": "image",
+          "bytes": 34028,
+          "gzipBytes": 34061,
+          "brotliBytes": 34032
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-17.Bs3JUXLY_1wap6i.webp",
+          "type": "image",
+          "bytes": 37252,
+          "gzipBytes": 37285,
+          "brotliBytes": 37256
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-18.ObaJ72Gc_Z1OMaAp.webp",
+          "type": "image",
+          "bytes": 31736,
+          "gzipBytes": 31764,
+          "brotliBytes": 31740
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-24.Ch2JqPeQ_Z1aUewP.webp",
+          "type": "image",
+          "bytes": 16960,
+          "gzipBytes": 16988,
+          "brotliBytes": 16964
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-25.DWuOD89A_ZsCk1B.webp",
+          "type": "image",
+          "bytes": 29576,
+          "gzipBytes": 29604,
+          "brotliBytes": 29580
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-26.DnRMLBVh_ZnDjGa.webp",
+          "type": "image",
+          "bytes": 26258,
+          "gzipBytes": 26286,
+          "brotliBytes": 26262
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-27.5SVk2iC1_Z2uIuET.webp",
+          "type": "image",
+          "bytes": 50420,
+          "gzipBytes": 50458,
+          "brotliBytes": 50424
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-28.toCOck0V_28phhb.webp",
+          "type": "image",
+          "bytes": 119794,
+          "gzipBytes": 119852,
+          "brotliBytes": 119799
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-29.CAFRIFRr_dtrAz.webp",
+          "type": "image",
+          "bytes": 30912,
+          "gzipBytes": 30940,
+          "brotliBytes": 30916
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-30.DRSkyU-t_Z1221Gj.webp",
+          "type": "image",
+          "bytes": 31948,
+          "gzipBytes": 31976,
+          "brotliBytes": 31952
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-31.I_KqO5bZ_ZQVD2D.webp",
+          "type": "image",
+          "bytes": 34994,
+          "gzipBytes": 35027,
+          "brotliBytes": 34998
+        }
+      ],
+      "hoverRequests": [],
+      "warmNavigationRequests": [
+        {
+          "url": "/video/seethrough.webp",
+          "type": "image",
+          "bytes": 34934,
+          "gzipBytes": 33879,
+          "brotliBytes": 33775
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-italic.DSEbMgZu.woff2",
+          "type": "font",
+          "bytes": 25388,
+          "gzipBytes": 25416,
+          "brotliBytes": 25389
+        },
+        {
+          "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_Z2r0fCY.webp",
+          "type": "image",
+          "bytes": 63552,
+          "gzipBytes": 62712,
+          "brotliBytes": 62568
+        },
+        {
+          "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_1629C2.webp",
+          "type": "image",
+          "bytes": 53524,
+          "gzipBytes": 53562,
+          "brotliBytes": 53528
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z2hsz6J.webp",
+          "type": "image",
+          "bytes": 177086,
+          "gzipBytes": 177159,
+          "brotliBytes": 177091
+        },
+        {
+          "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z24dRqR.webp",
+          "type": "image",
+          "bytes": 63424,
+          "gzipBytes": 63462,
+          "brotliBytes": 63428
+        },
+        {
+          "url": "/_astro/BURN_1.232.1.C3J4clTl_ZBku1v.webp",
+          "type": "image",
+          "bytes": 82394,
+          "gzipBytes": 82442,
+          "brotliBytes": 82399
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "run": 1,
+      "lcp": 72,
+      "cls": 0.0002207623525328583,
+      "longTasks": 0,
+      "images": [
+        {
+          "src": "/",
+          "width": 0,
+          "naturalWidth": 0,
+          "sizes": ""
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "weight": "300",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "italic"
+        }
+      ],
+      "resources": [
+        {
+          "url": "/",
+          "type": "document",
+          "bytes": 84997,
+          "gzipBytes": 13980,
+          "brotliBytes": 11276
+        },
+        {
+          "url": "/video/seethrough.webp",
+          "type": "image",
+          "bytes": 34934,
+          "gzipBytes": 33879,
+          "brotliBytes": 33775
+        },
+        {
+          "url": "/_astro/montserrat-latin-400-normal.BLhwKU8k.woff2",
+          "type": "font",
+          "bytes": 18780,
+          "gzipBytes": 18808,
+          "brotliBytes": 18776
+        },
+        {
+          "url": "/_astro/BaseLayout.BF9ZzKYC.css",
+          "type": "stylesheet",
+          "bytes": 152507,
+          "gzipBytes": 23216,
+          "brotliBytes": 19573
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-normal.BCNrxLz_.woff2",
+          "type": "font",
+          "bytes": 23820,
+          "gzipBytes": 23848,
+          "brotliBytes": 23804
+        },
+        {
+          "url": "/_astro/page.BHA_3-Fj.js",
+          "type": "script",
+          "bytes": 47,
+          "gzipBytes": 67,
+          "brotliBytes": 51
+        },
+        {
+          "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DOTn-Jq_.js",
+          "type": "script",
+          "bytes": 13887,
+          "gzipBytes": 4746,
+          "brotliBytes": 4255
+        },
+        {
+          "url": "/_astro/montserrat-latin-300-normal.BgP24wlQ.woff2",
+          "type": "font",
+          "bytes": 18708,
+          "gzipBytes": 18736,
+          "brotliBytes": 18701
+        },
+        {
+          "url": "/_astro/montserrat-latin-600-normal.UVxSCcoG.woff2",
+          "type": "font",
+          "bytes": 18688,
+          "gzipBytes": 18716,
+          "brotliBytes": 18686
+        },
+        {
+          "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_ZJAJa5.webp",
+          "type": "image",
+          "bytes": 19514,
+          "gzipBytes": 19542,
+          "brotliBytes": 19469
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-italic.DSEbMgZu.woff2",
+          "type": "font",
+          "bytes": 25388,
+          "gzipBytes": 25416,
+          "brotliBytes": 25389
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z1I4Oid.webp",
+          "type": "image",
+          "bytes": 61048,
+          "gzipBytes": 61086,
+          "brotliBytes": 61052
+        },
+        {
+          "url": "/_astro/prefetch.DsrDZXx8.js",
+          "type": "script",
+          "bytes": 2506,
+          "gzipBytes": 1131,
+          "brotliBytes": 970
+        },
+        {
+          "url": "/_astro/bearer-of-bad-news-24.CStawPi1_2rhbm4.webp",
+          "type": "image",
+          "bytes": 13056,
+          "gzipBytes": 13079,
+          "brotliBytes": 13060
+        },
+        {
+          "url": "/_astro/BURN_1.232.1.C3J4clTl_20qvRQ.webp",
+          "type": "image",
+          "bytes": 20224,
+          "gzipBytes": 20252,
+          "brotliBytes": 20228
+        },
+        {
+          "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z1EcwUl.webp",
+          "type": "image",
+          "bytes": 20490,
+          "gzipBytes": 20518,
+          "brotliBytes": 20494
+        },
+        {
+          "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z24EF5O.webp",
+          "type": "image",
+          "bytes": 22762,
+          "gzipBytes": 22790,
+          "brotliBytes": 22766
+        }
+      ],
+      "hoverRequests": [],
+      "warmNavigationRequests": [
+        {
+          "url": "/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_Z2umPva.webp",
+          "type": "image",
+          "bytes": 18524,
+          "gzipBytes": 18552,
+          "brotliBytes": 18528
+        },
+        {
+          "url": "/_astro/IMG_2507-unblur.CbZVxQ6Z_Z1ci1TA.webp",
+          "type": "image",
+          "bytes": 10402,
+          "gzipBytes": 10425,
+          "brotliBytes": 10406
+        },
+        {
+          "url": "/_astro/TTOT_20212101_1.1.1.S0nV1h-i_12NOAj.webp",
+          "type": "image",
+          "bytes": 20476,
+          "gzipBytes": 20504,
+          "brotliBytes": 20480
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-600-normal.DHwxsLHv.woff2",
+          "type": "font",
+          "bytes": 25348,
+          "gzipBytes": 25376,
+          "brotliBytes": 25331
+        },
+        {
+          "url": "/_astro/montserrat-latin-500-normal.DRFEGfly.woff2",
+          "type": "font",
+          "bytes": 18748,
+          "gzipBytes": 18776,
+          "brotliBytes": 18745
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "run": 2,
+      "lcp": 64,
+      "cls": 0.0002207623525328583,
+      "longTasks": 0,
+      "images": [
+        {
+          "src": "/",
+          "width": 0,
+          "naturalWidth": 0,
+          "sizes": ""
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "weight": "300",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "italic"
+        }
+      ],
+      "resources": [
+        {
+          "url": "/",
+          "type": "document",
+          "bytes": 84997,
+          "gzipBytes": 13980,
+          "brotliBytes": 11276
+        },
+        {
+          "url": "/video/seethrough.webp",
+          "type": "image",
+          "bytes": 34934,
+          "gzipBytes": 33879,
+          "brotliBytes": 33775
+        },
+        {
+          "url": "/_astro/page.BHA_3-Fj.js",
+          "type": "script",
+          "bytes": 47,
+          "gzipBytes": 67,
+          "brotliBytes": 51
+        },
+        {
+          "url": "/_astro/BaseLayout.BF9ZzKYC.css",
+          "type": "stylesheet",
+          "bytes": 152507,
+          "gzipBytes": 23216,
+          "brotliBytes": 19573
+        },
+        {
+          "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DOTn-Jq_.js",
+          "type": "script",
+          "bytes": 13887,
+          "gzipBytes": 4746,
+          "brotliBytes": 4255
+        },
+        {
+          "url": "/_astro/montserrat-latin-400-normal.BLhwKU8k.woff2",
+          "type": "font",
+          "bytes": 18780,
+          "gzipBytes": 18808,
+          "brotliBytes": 18776
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-normal.BCNrxLz_.woff2",
+          "type": "font",
+          "bytes": 23820,
+          "gzipBytes": 23848,
+          "brotliBytes": 23804
+        },
+        {
+          "url": "/_astro/montserrat-latin-300-normal.BgP24wlQ.woff2",
+          "type": "font",
+          "bytes": 18708,
+          "gzipBytes": 18736,
+          "brotliBytes": 18701
+        },
+        {
+          "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_ZJAJa5.webp",
+          "type": "image",
+          "bytes": 19514,
+          "gzipBytes": 19542,
+          "brotliBytes": 19469
+        },
+        {
+          "url": "/_astro/montserrat-latin-600-normal.UVxSCcoG.woff2",
+          "type": "font",
+          "bytes": 18688,
+          "gzipBytes": 18716,
+          "brotliBytes": 18686
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z1I4Oid.webp",
+          "type": "image",
+          "bytes": 61048,
+          "gzipBytes": 61086,
+          "brotliBytes": 61052
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-italic.DSEbMgZu.woff2",
+          "type": "font",
+          "bytes": 25388,
+          "gzipBytes": 25416,
+          "brotliBytes": 25389
+        },
+        {
+          "url": "/_astro/prefetch.DsrDZXx8.js",
+          "type": "script",
+          "bytes": 2506,
+          "gzipBytes": 1131,
+          "brotliBytes": 970
+        },
+        {
+          "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z24EF5O.webp",
+          "type": "image",
+          "bytes": 22762,
+          "gzipBytes": 22790,
+          "brotliBytes": 22766
+        },
+        {
+          "url": "/_astro/BURN_1.232.1.C3J4clTl_20qvRQ.webp",
+          "type": "image",
+          "bytes": 20224,
+          "gzipBytes": 20252,
+          "brotliBytes": 20228
+        },
+        {
+          "url": "/_astro/bearer-of-bad-news-24.CStawPi1_2rhbm4.webp",
+          "type": "image",
+          "bytes": 13056,
+          "gzipBytes": 13079,
+          "brotliBytes": 13060
+        },
+        {
+          "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z1EcwUl.webp",
+          "type": "image",
+          "bytes": 20490,
+          "gzipBytes": 20518,
+          "brotliBytes": 20494
+        }
+      ],
+      "hoverRequests": [],
+      "warmNavigationRequests": [
+        {
+          "url": "/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_Z2umPva.webp",
+          "type": "image",
+          "bytes": 18524,
+          "gzipBytes": 18552,
+          "brotliBytes": 18528
+        },
+        {
+          "url": "/_astro/IMG_2507-unblur.CbZVxQ6Z_Z1ci1TA.webp",
+          "type": "image",
+          "bytes": 10402,
+          "gzipBytes": 10425,
+          "brotliBytes": 10406
+        },
+        {
+          "url": "/_astro/TTOT_20212101_1.1.1.S0nV1h-i_12NOAj.webp",
+          "type": "image",
+          "bytes": 20476,
+          "gzipBytes": 20504,
+          "brotliBytes": 20480
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-600-normal.DHwxsLHv.woff2",
+          "type": "font",
+          "bytes": 25348,
+          "gzipBytes": 25376,
+          "brotliBytes": 25331
+        },
+        {
+          "url": "/_astro/montserrat-latin-500-normal.DRFEGfly.woff2",
+          "type": "font",
+          "bytes": 18748,
+          "gzipBytes": 18776,
+          "brotliBytes": 18745
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "run": 3,
+      "lcp": 64,
+      "cls": 0.0002207623525328583,
+      "longTasks": 0,
+      "images": [
+        {
+          "src": "/",
+          "width": 0,
+          "naturalWidth": 0,
+          "sizes": ""
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "weight": "300",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "italic"
+        }
+      ],
+      "resources": [
+        {
+          "url": "/",
+          "type": "document",
+          "bytes": 84997,
+          "gzipBytes": 13980,
+          "brotliBytes": 11276
+        },
+        {
+          "url": "/video/seethrough.webp",
+          "type": "image",
+          "bytes": 34934,
+          "gzipBytes": 33879,
+          "brotliBytes": 33775
+        },
+        {
+          "url": "/_astro/montserrat-latin-400-normal.BLhwKU8k.woff2",
+          "type": "font",
+          "bytes": 18780,
+          "gzipBytes": 18808,
+          "brotliBytes": 18776
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-normal.BCNrxLz_.woff2",
+          "type": "font",
+          "bytes": 23820,
+          "gzipBytes": 23848,
+          "brotliBytes": 23804
+        },
+        {
+          "url": "/_astro/page.BHA_3-Fj.js",
+          "type": "script",
+          "bytes": 47,
+          "gzipBytes": 67,
+          "brotliBytes": 51
+        },
+        {
+          "url": "/_astro/BaseLayout.BF9ZzKYC.css",
+          "type": "stylesheet",
+          "bytes": 152507,
+          "gzipBytes": 23216,
+          "brotliBytes": 19573
+        },
+        {
+          "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DOTn-Jq_.js",
+          "type": "script",
+          "bytes": 13887,
+          "gzipBytes": 4746,
+          "brotliBytes": 4255
+        },
+        {
+          "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_ZJAJa5.webp",
+          "type": "image",
+          "bytes": 19514,
+          "gzipBytes": 19542,
+          "brotliBytes": 19469
+        },
+        {
+          "url": "/_astro/montserrat-latin-300-normal.BgP24wlQ.woff2",
+          "type": "font",
+          "bytes": 18708,
+          "gzipBytes": 18736,
+          "brotliBytes": 18701
+        },
+        {
+          "url": "/_astro/montserrat-latin-600-normal.UVxSCcoG.woff2",
+          "type": "font",
+          "bytes": 18688,
+          "gzipBytes": 18716,
+          "brotliBytes": 18686
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-italic.DSEbMgZu.woff2",
+          "type": "font",
+          "bytes": 25388,
+          "gzipBytes": 25416,
+          "brotliBytes": 25389
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z1I4Oid.webp",
+          "type": "image",
+          "bytes": 61048,
+          "gzipBytes": 61086,
+          "brotliBytes": 61052
+        },
+        {
+          "url": "/_astro/prefetch.DsrDZXx8.js",
+          "type": "script",
+          "bytes": 2506,
+          "gzipBytes": 1131,
+          "brotliBytes": 970
+        },
+        {
+          "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z24EF5O.webp",
+          "type": "image",
+          "bytes": 22762,
+          "gzipBytes": 22790,
+          "brotliBytes": 22766
+        },
+        {
+          "url": "/_astro/bearer-of-bad-news-24.CStawPi1_2rhbm4.webp",
+          "type": "image",
+          "bytes": 13056,
+          "gzipBytes": 13079,
+          "brotliBytes": 13060
+        },
+        {
+          "url": "/_astro/BURN_1.232.1.C3J4clTl_20qvRQ.webp",
+          "type": "image",
+          "bytes": 20224,
+          "gzipBytes": 20252,
+          "brotliBytes": 20228
+        },
+        {
+          "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z1EcwUl.webp",
+          "type": "image",
+          "bytes": 20490,
+          "gzipBytes": 20518,
+          "brotliBytes": 20494
+        }
+      ],
+      "hoverRequests": [],
+      "warmNavigationRequests": [
+        {
+          "url": "/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_Z2umPva.webp",
+          "type": "image",
+          "bytes": 18524,
+          "gzipBytes": 18552,
+          "brotliBytes": 18528
+        },
+        {
+          "url": "/_astro/TTOT_20212101_1.1.1.S0nV1h-i_12NOAj.webp",
+          "type": "image",
+          "bytes": 20476,
+          "gzipBytes": 20504,
+          "brotliBytes": 20480
+        },
+        {
+          "url": "/_astro/IMG_2507-unblur.CbZVxQ6Z_Z1ci1TA.webp",
+          "type": "image",
+          "bytes": 10402,
+          "gzipBytes": 10425,
+          "brotliBytes": 10406
+        },
+        {
+          "url": "/_astro/montserrat-latin-500-normal.DRFEGfly.woff2",
+          "type": "font",
+          "bytes": 18748,
+          "gzipBytes": 18776,
+          "brotliBytes": 18745
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-600-normal.DHwxsLHv.woff2",
+          "type": "font",
+          "bytes": 25348,
+          "gzipBytes": 25376,
+          "brotliBytes": 25331
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "route": "/about/",
+      "width": 390,
+      "run": 1,
+      "lcp": 76,
+      "cls": 0.0008786401631123084,
+      "longTasks": 0,
+      "images": [
+        {
+          "src": "/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_Z2umPva.webp",
+          "width": 390,
+          "naturalWidth": 390,
+          "sizes": "100vw"
+        },
+        {
+          "src": "/about/",
+          "width": 0,
+          "naturalWidth": 0,
+          "sizes": ""
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "weight": "300",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "500",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "italic"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "600",
+          "style": "normal"
+        }
+      ],
+      "resources": [
+        {
+          "url": "/about/",
+          "type": "document",
+          "bytes": 37232,
+          "gzipBytes": 9855,
+          "brotliBytes": 8454
+        },
+        {
+          "url": "/_astro/montserrat-latin-400-normal.BLhwKU8k.woff2",
+          "type": "font",
+          "bytes": 18780,
+          "gzipBytes": 18808,
+          "brotliBytes": 18776
+        },
+        {
+          "url": "/_astro/BaseLayout.BF9ZzKYC.css",
+          "type": "stylesheet",
+          "bytes": 152507,
+          "gzipBytes": 23216,
+          "brotliBytes": 19573
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-normal.BCNrxLz_.woff2",
+          "type": "font",
+          "bytes": 23820,
+          "gzipBytes": 23848,
+          "brotliBytes": 23804
+        },
+        {
+          "url": "/_astro/page.BHA_3-Fj.js",
+          "type": "script",
+          "bytes": 47,
+          "gzipBytes": 67,
+          "brotliBytes": 51
+        },
+        {
+          "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DOTn-Jq_.js",
+          "type": "script",
+          "bytes": 13887,
+          "gzipBytes": 4746,
+          "brotliBytes": 4255
+        },
+        {
+          "url": "/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_Z2umPva.webp",
+          "type": "image",
+          "bytes": 18524,
+          "gzipBytes": 18552,
+          "brotliBytes": 18528
+        },
+        {
+          "url": "/_astro/montserrat-latin-300-normal.BgP24wlQ.woff2",
+          "type": "font",
+          "bytes": 18708,
+          "gzipBytes": 18736,
+          "brotliBytes": 18701
+        },
+        {
+          "url": "/_astro/montserrat-latin-600-normal.UVxSCcoG.woff2",
+          "type": "font",
+          "bytes": 18688,
+          "gzipBytes": 18716,
+          "brotliBytes": 18686
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-600-normal.DHwxsLHv.woff2",
+          "type": "font",
+          "bytes": 25348,
+          "gzipBytes": 25376,
+          "brotliBytes": 25331
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-italic.DSEbMgZu.woff2",
+          "type": "font",
+          "bytes": 25388,
+          "gzipBytes": 25416,
+          "brotliBytes": 25389
+        },
+        {
+          "url": "/_astro/prefetch.DsrDZXx8.js",
+          "type": "script",
+          "bytes": 2506,
+          "gzipBytes": 1131,
+          "brotliBytes": 970
+        },
+        {
+          "url": "/_astro/montserrat-latin-500-normal.DRFEGfly.woff2",
+          "type": "font",
+          "bytes": 18748,
+          "gzipBytes": 18776,
+          "brotliBytes": 18745
+        },
+        {
+          "url": "/_astro/IMG_2507-unblur.CbZVxQ6Z_Z1ci1TA.webp",
+          "type": "image",
+          "bytes": 10402,
+          "gzipBytes": 10425,
+          "brotliBytes": 10406
+        },
+        {
+          "url": "/_astro/TTOT_20212101_1.1.1.S0nV1h-i_12NOAj.webp",
+          "type": "image",
+          "bytes": 20476,
+          "gzipBytes": 20504,
+          "brotliBytes": 20480
+        }
+      ],
+      "hoverRequests": [],
+      "warmNavigationRequests": [
+        {
+          "url": "/video/seethrough.webp",
+          "type": "image",
+          "bytes": 34934,
+          "gzipBytes": 33879,
+          "brotliBytes": 33775
+        },
+        {
+          "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_ZJAJa5.webp",
+          "type": "image",
+          "bytes": 19514,
+          "gzipBytes": 19542,
+          "brotliBytes": 19469
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z1I4Oid.webp",
+          "type": "image",
+          "bytes": 61048,
+          "gzipBytes": 61086,
+          "brotliBytes": 61052
+        },
+        {
+          "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z24EF5O.webp",
+          "type": "image",
+          "bytes": 22762,
+          "gzipBytes": 22790,
+          "brotliBytes": 22766
+        },
+        {
+          "url": "/_astro/bearer-of-bad-news-24.CStawPi1_2rhbm4.webp",
+          "type": "image",
+          "bytes": 13056,
+          "gzipBytes": 13079,
+          "brotliBytes": 13060
+        },
+        {
+          "url": "/_astro/BURN_1.232.1.C3J4clTl_20qvRQ.webp",
+          "type": "image",
+          "bytes": 20224,
+          "gzipBytes": 20252,
+          "brotliBytes": 20228
+        },
+        {
+          "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z1EcwUl.webp",
+          "type": "image",
+          "bytes": 20490,
+          "gzipBytes": 20518,
+          "brotliBytes": 20494
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "route": "/about/",
+      "width": 390,
+      "run": 2,
+      "lcp": 72,
+      "cls": 0.0008786401631123084,
+      "longTasks": 0,
+      "images": [
+        {
+          "src": "/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_Z2umPva.webp",
+          "width": 390,
+          "naturalWidth": 390,
+          "sizes": "100vw"
+        },
+        {
+          "src": "/about/",
+          "width": 0,
+          "naturalWidth": 0,
+          "sizes": ""
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "weight": "300",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "500",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "italic"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "600",
+          "style": "normal"
+        }
+      ],
+      "resources": [
+        {
+          "url": "/about/",
+          "type": "document",
+          "bytes": 37232,
+          "gzipBytes": 9855,
+          "brotliBytes": 8454
+        },
+        {
+          "url": "/_astro/montserrat-latin-400-normal.BLhwKU8k.woff2",
+          "type": "font",
+          "bytes": 18780,
+          "gzipBytes": 18808,
+          "brotliBytes": 18776
+        },
+        {
+          "url": "/_astro/BaseLayout.BF9ZzKYC.css",
+          "type": "stylesheet",
+          "bytes": 152507,
+          "gzipBytes": 23216,
+          "brotliBytes": 19573
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-normal.BCNrxLz_.woff2",
+          "type": "font",
+          "bytes": 23820,
+          "gzipBytes": 23848,
+          "brotliBytes": 23804
+        },
+        {
+          "url": "/_astro/page.BHA_3-Fj.js",
+          "type": "script",
+          "bytes": 47,
+          "gzipBytes": 67,
+          "brotliBytes": 51
+        },
+        {
+          "url": "/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_Z2umPva.webp",
+          "type": "image",
+          "bytes": 18524,
+          "gzipBytes": 18552,
+          "brotliBytes": 18528
+        },
+        {
+          "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DOTn-Jq_.js",
+          "type": "script",
+          "bytes": 13887,
+          "gzipBytes": 4746,
+          "brotliBytes": 4255
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-600-normal.DHwxsLHv.woff2",
+          "type": "font",
+          "bytes": 25348,
+          "gzipBytes": 25376,
+          "brotliBytes": 25331
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-italic.DSEbMgZu.woff2",
+          "type": "font",
+          "bytes": 25388,
+          "gzipBytes": 25416,
+          "brotliBytes": 25389
+        },
+        {
+          "url": "/_astro/montserrat-latin-300-normal.BgP24wlQ.woff2",
+          "type": "font",
+          "bytes": 18708,
+          "gzipBytes": 18736,
+          "brotliBytes": 18701
+        },
+        {
+          "url": "/_astro/montserrat-latin-600-normal.UVxSCcoG.woff2",
+          "type": "font",
+          "bytes": 18688,
+          "gzipBytes": 18716,
+          "brotliBytes": 18686
+        },
+        {
+          "url": "/_astro/montserrat-latin-500-normal.DRFEGfly.woff2",
+          "type": "font",
+          "bytes": 18748,
+          "gzipBytes": 18776,
+          "brotliBytes": 18745
+        },
+        {
+          "url": "/_astro/prefetch.DsrDZXx8.js",
+          "type": "script",
+          "bytes": 2506,
+          "gzipBytes": 1131,
+          "brotliBytes": 970
+        },
+        {
+          "url": "/_astro/IMG_2507-unblur.CbZVxQ6Z_Z1ci1TA.webp",
+          "type": "image",
+          "bytes": 10402,
+          "gzipBytes": 10425,
+          "brotliBytes": 10406
+        },
+        {
+          "url": "/_astro/TTOT_20212101_1.1.1.S0nV1h-i_12NOAj.webp",
+          "type": "image",
+          "bytes": 20476,
+          "gzipBytes": 20504,
+          "brotliBytes": 20480
+        }
+      ],
+      "hoverRequests": [],
+      "warmNavigationRequests": [
+        {
+          "url": "/video/seethrough.webp",
+          "type": "image",
+          "bytes": 34934,
+          "gzipBytes": 33879,
+          "brotliBytes": 33775
+        },
+        {
+          "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_ZJAJa5.webp",
+          "type": "image",
+          "bytes": 19514,
+          "gzipBytes": 19542,
+          "brotliBytes": 19469
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z1I4Oid.webp",
+          "type": "image",
+          "bytes": 61048,
+          "gzipBytes": 61086,
+          "brotliBytes": 61052
+        },
+        {
+          "url": "/_astro/bearer-of-bad-news-24.CStawPi1_2rhbm4.webp",
+          "type": "image",
+          "bytes": 13056,
+          "gzipBytes": 13079,
+          "brotliBytes": 13060
+        },
+        {
+          "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z24EF5O.webp",
+          "type": "image",
+          "bytes": 22762,
+          "gzipBytes": 22790,
+          "brotliBytes": 22766
+        },
+        {
+          "url": "/_astro/BURN_1.232.1.C3J4clTl_20qvRQ.webp",
+          "type": "image",
+          "bytes": 20224,
+          "gzipBytes": 20252,
+          "brotliBytes": 20228
+        },
+        {
+          "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z1EcwUl.webp",
+          "type": "image",
+          "bytes": 20490,
+          "gzipBytes": 20518,
+          "brotliBytes": 20494
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "route": "/about/",
+      "width": 390,
+      "run": 3,
+      "lcp": 72,
+      "cls": 0.0008786401631123084,
+      "longTasks": 0,
+      "images": [
+        {
+          "src": "/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_Z2umPva.webp",
+          "width": 390,
+          "naturalWidth": 390,
+          "sizes": "100vw"
+        },
+        {
+          "src": "/about/",
+          "width": 0,
+          "naturalWidth": 0,
+          "sizes": ""
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "weight": "300",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "500",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "italic"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "600",
+          "style": "normal"
+        }
+      ],
+      "resources": [
+        {
+          "url": "/about/",
+          "type": "document",
+          "bytes": 37232,
+          "gzipBytes": 9855,
+          "brotliBytes": 8454
+        },
+        {
+          "url": "/_astro/montserrat-latin-400-normal.BLhwKU8k.woff2",
+          "type": "font",
+          "bytes": 18780,
+          "gzipBytes": 18808,
+          "brotliBytes": 18776
+        },
+        {
+          "url": "/_astro/BaseLayout.BF9ZzKYC.css",
+          "type": "stylesheet",
+          "bytes": 152507,
+          "gzipBytes": 23216,
+          "brotliBytes": 19573
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-normal.BCNrxLz_.woff2",
+          "type": "font",
+          "bytes": 23820,
+          "gzipBytes": 23848,
+          "brotliBytes": 23804
+        },
+        {
+          "url": "/_astro/page.BHA_3-Fj.js",
+          "type": "script",
+          "bytes": 47,
+          "gzipBytes": 67,
+          "brotliBytes": 51
+        },
+        {
+          "url": "/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_Z2umPva.webp",
+          "type": "image",
+          "bytes": 18524,
+          "gzipBytes": 18552,
+          "brotliBytes": 18528
+        },
+        {
+          "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DOTn-Jq_.js",
+          "type": "script",
+          "bytes": 13887,
+          "gzipBytes": 4746,
+          "brotliBytes": 4255
+        },
+        {
+          "url": "/_astro/montserrat-latin-300-normal.BgP24wlQ.woff2",
+          "type": "font",
+          "bytes": 18708,
+          "gzipBytes": 18736,
+          "brotliBytes": 18701
+        },
+        {
+          "url": "/_astro/montserrat-latin-600-normal.UVxSCcoG.woff2",
+          "type": "font",
+          "bytes": 18688,
+          "gzipBytes": 18716,
+          "brotliBytes": 18686
+        },
+        {
+          "url": "/_astro/prefetch.DsrDZXx8.js",
+          "type": "script",
+          "bytes": 2506,
+          "gzipBytes": 1131,
+          "brotliBytes": 970
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-italic.DSEbMgZu.woff2",
+          "type": "font",
+          "bytes": 25388,
+          "gzipBytes": 25416,
+          "brotliBytes": 25389
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-600-normal.DHwxsLHv.woff2",
+          "type": "font",
+          "bytes": 25348,
+          "gzipBytes": 25376,
+          "brotliBytes": 25331
+        },
+        {
+          "url": "/_astro/montserrat-latin-500-normal.DRFEGfly.woff2",
+          "type": "font",
+          "bytes": 18748,
+          "gzipBytes": 18776,
+          "brotliBytes": 18745
+        },
+        {
+          "url": "/_astro/IMG_2507-unblur.CbZVxQ6Z_Z1ci1TA.webp",
+          "type": "image",
+          "bytes": 10402,
+          "gzipBytes": 10425,
+          "brotliBytes": 10406
+        },
+        {
+          "url": "/_astro/TTOT_20212101_1.1.1.S0nV1h-i_12NOAj.webp",
+          "type": "image",
+          "bytes": 20476,
+          "gzipBytes": 20504,
+          "brotliBytes": 20480
+        }
+      ],
+      "hoverRequests": [],
+      "warmNavigationRequests": [
+        {
+          "url": "/video/seethrough.webp",
+          "type": "image",
+          "bytes": 34934,
+          "gzipBytes": 33879,
+          "brotliBytes": 33775
+        },
+        {
+          "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_ZJAJa5.webp",
+          "type": "image",
+          "bytes": 19514,
+          "gzipBytes": 19542,
+          "brotliBytes": 19469
+        },
+        {
+          "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z24EF5O.webp",
+          "type": "image",
+          "bytes": 22762,
+          "gzipBytes": 22790,
+          "brotliBytes": 22766
+        },
+        {
+          "url": "/_astro/bearer-of-bad-news-24.CStawPi1_2rhbm4.webp",
+          "type": "image",
+          "bytes": 13056,
+          "gzipBytes": 13079,
+          "brotliBytes": 13060
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z1I4Oid.webp",
+          "type": "image",
+          "bytes": 61048,
+          "gzipBytes": 61086,
+          "brotliBytes": 61052
+        },
+        {
+          "url": "/_astro/BURN_1.232.1.C3J4clTl_20qvRQ.webp",
+          "type": "image",
+          "bytes": 20224,
+          "gzipBytes": 20252,
+          "brotliBytes": 20228
+        },
+        {
+          "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z1EcwUl.webp",
+          "type": "image",
+          "bytes": 20490,
+          "gzipBytes": 20518,
+          "brotliBytes": 20494
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "route": "/projects/ever-since-i-have-been-flying/",
+      "width": 390,
+      "run": 1,
+      "lcp": 60,
+      "cls": 0.0015583074020384504,
+      "longTasks": 0,
+      "images": [
+        {
+          "src": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z1I4Oid.webp",
+          "width": 390,
+          "naturalWidth": 390,
+          "sizes": "100vw"
+        },
+        {
+          "src": "/projects/ever-since-i-have-been-flying/",
+          "width": 0,
+          "naturalWidth": 0,
+          "sizes": ""
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "weight": "300",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "500",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "italic"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "600",
+          "style": "normal"
+        }
+      ],
+      "resources": [
+        {
+          "url": "/projects/ever-since-i-have-been-flying/",
+          "type": "document",
+          "bytes": 116858,
+          "gzipBytes": 18549,
+          "brotliBytes": 14995
+        },
+        {
+          "url": "/_astro/montserrat-latin-400-normal.BLhwKU8k.woff2",
+          "type": "font",
+          "bytes": 18780,
+          "gzipBytes": 18808,
+          "brotliBytes": 18776
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-normal.BCNrxLz_.woff2",
+          "type": "font",
+          "bytes": 23820,
+          "gzipBytes": 23848,
+          "brotliBytes": 23804
+        },
+        {
+          "url": "/_astro/BaseLayout.BF9ZzKYC.css",
+          "type": "stylesheet",
+          "bytes": 152507,
+          "gzipBytes": 23216,
+          "brotliBytes": 19573
+        },
+        {
+          "url": "/_astro/page.BHA_3-Fj.js",
+          "type": "script",
+          "bytes": 47,
+          "gzipBytes": 67,
+          "brotliBytes": 51
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z1I4Oid.webp",
+          "type": "image",
+          "bytes": 61048,
+          "gzipBytes": 61086,
+          "brotliBytes": 61052
+        },
+        {
+          "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DOTn-Jq_.js",
+          "type": "script",
+          "bytes": 13887,
+          "gzipBytes": 4746,
+          "brotliBytes": 4255
+        },
+        {
+          "url": "/_astro/montserrat-latin-300-normal.BgP24wlQ.woff2",
+          "type": "font",
+          "bytes": 18708,
+          "gzipBytes": 18736,
+          "brotliBytes": 18701
+        },
+        {
+          "url": "/_astro/montserrat-latin-600-normal.UVxSCcoG.woff2",
+          "type": "font",
+          "bytes": 18688,
+          "gzipBytes": 18716,
+          "brotliBytes": 18686
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-600-normal.DHwxsLHv.woff2",
+          "type": "font",
+          "bytes": 25348,
+          "gzipBytes": 25376,
+          "brotliBytes": 25331
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-italic.DSEbMgZu.woff2",
+          "type": "font",
+          "bytes": 25388,
+          "gzipBytes": 25416,
+          "brotliBytes": 25389
+        },
+        {
+          "url": "/_astro/montserrat-latin-500-normal.DRFEGfly.woff2",
+          "type": "font",
+          "bytes": 18748,
+          "gzipBytes": 18776,
+          "brotliBytes": 18745
+        },
+        {
+          "url": "/_astro/prefetch.DsrDZXx8.js",
+          "type": "script",
+          "bytes": 2506,
+          "gzipBytes": 1131,
+          "brotliBytes": 970
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_ZjGtsh.webp",
+          "type": "image",
+          "bytes": 36766,
+          "gzipBytes": 36799,
+          "brotliBytes": 36770
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.1.iDJ5mvzg_Z2sy2BD.webp",
+          "type": "image",
+          "bytes": 24320,
+          "gzipBytes": 24348,
+          "brotliBytes": 24324
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.2.Gb8kenDo_Z1CcTro.webp",
+          "type": "image",
+          "bytes": 16390,
+          "gzipBytes": 16415,
+          "brotliBytes": 16394
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.4.ByTvOAXL_Z1bm4Ue.webp",
+          "type": "image",
+          "bytes": 8998,
+          "gzipBytes": 8930,
+          "brotliBytes": 8906
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_rGyAC.webp",
+          "type": "image",
+          "bytes": 40392,
+          "gzipBytes": 40425,
+          "brotliBytes": 40396
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.6.DDCmnZBd_2eYozk.webp",
+          "type": "image",
+          "bytes": 17710,
+          "gzipBytes": 17738,
+          "brotliBytes": 17714
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.7.DEOcFhve_Z1upB3g.webp",
+          "type": "image",
+          "bytes": 18974,
+          "gzipBytes": 19002,
+          "brotliBytes": 18978
+        }
+      ],
+      "hoverRequests": [],
+      "warmNavigationRequests": [
+        {
+          "url": "/video/seethrough.webp",
+          "type": "image",
+          "bytes": 34934,
+          "gzipBytes": 33879,
+          "brotliBytes": 33775
+        },
+        {
+          "url": "/_astro/BURN_1.232.1.C3J4clTl_20qvRQ.webp",
+          "type": "image",
+          "bytes": 20224,
+          "gzipBytes": 20252,
+          "brotliBytes": 20228
+        },
+        {
+          "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_ZJAJa5.webp",
+          "type": "image",
+          "bytes": 19514,
+          "gzipBytes": 19542,
+          "brotliBytes": 19469
+        },
+        {
+          "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z24EF5O.webp",
+          "type": "image",
+          "bytes": 22762,
+          "gzipBytes": 22790,
+          "brotliBytes": 22766
+        },
+        {
+          "url": "/_astro/bearer-of-bad-news-24.CStawPi1_2rhbm4.webp",
+          "type": "image",
+          "bytes": 13056,
+          "gzipBytes": 13079,
+          "brotliBytes": 13060
+        },
+        {
+          "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z1EcwUl.webp",
+          "type": "image",
+          "bytes": 20490,
+          "gzipBytes": 20518,
+          "brotliBytes": 20494
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "route": "/projects/ever-since-i-have-been-flying/",
+      "width": 390,
+      "run": 2,
+      "lcp": 56,
+      "cls": 0.0015583074020384504,
+      "longTasks": 0,
+      "images": [
+        {
+          "src": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z1I4Oid.webp",
+          "width": 390,
+          "naturalWidth": 390,
+          "sizes": "100vw"
+        },
+        {
+          "src": "/projects/ever-since-i-have-been-flying/",
+          "width": 0,
+          "naturalWidth": 0,
+          "sizes": ""
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "weight": "300",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "500",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "italic"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "600",
+          "style": "normal"
+        }
+      ],
+      "resources": [
+        {
+          "url": "/projects/ever-since-i-have-been-flying/",
+          "type": "document",
+          "bytes": 116858,
+          "gzipBytes": 18549,
+          "brotliBytes": 14995
+        },
+        {
+          "url": "/_astro/montserrat-latin-400-normal.BLhwKU8k.woff2",
+          "type": "font",
+          "bytes": 18780,
+          "gzipBytes": 18808,
+          "brotliBytes": 18776
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-normal.BCNrxLz_.woff2",
+          "type": "font",
+          "bytes": 23820,
+          "gzipBytes": 23848,
+          "brotliBytes": 23804
+        },
+        {
+          "url": "/_astro/BaseLayout.BF9ZzKYC.css",
+          "type": "stylesheet",
+          "bytes": 152507,
+          "gzipBytes": 23216,
+          "brotliBytes": 19573
+        },
+        {
+          "url": "/_astro/page.BHA_3-Fj.js",
+          "type": "script",
+          "bytes": 47,
+          "gzipBytes": 67,
+          "brotliBytes": 51
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z1I4Oid.webp",
+          "type": "image",
+          "bytes": 61048,
+          "gzipBytes": 61086,
+          "brotliBytes": 61052
+        },
+        {
+          "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DOTn-Jq_.js",
+          "type": "script",
+          "bytes": 13887,
+          "gzipBytes": 4746,
+          "brotliBytes": 4255
+        },
+        {
+          "url": "/_astro/montserrat-latin-300-normal.BgP24wlQ.woff2",
+          "type": "font",
+          "bytes": 18708,
+          "gzipBytes": 18736,
+          "brotliBytes": 18701
+        },
+        {
+          "url": "/_astro/montserrat-latin-600-normal.UVxSCcoG.woff2",
+          "type": "font",
+          "bytes": 18688,
+          "gzipBytes": 18716,
+          "brotliBytes": 18686
+        },
+        {
+          "url": "/_astro/prefetch.DsrDZXx8.js",
+          "type": "script",
+          "bytes": 2506,
+          "gzipBytes": 1131,
+          "brotliBytes": 970
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-600-normal.DHwxsLHv.woff2",
+          "type": "font",
+          "bytes": 25348,
+          "gzipBytes": 25376,
+          "brotliBytes": 25331
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-italic.DSEbMgZu.woff2",
+          "type": "font",
+          "bytes": 25388,
+          "gzipBytes": 25416,
+          "brotliBytes": 25389
+        },
+        {
+          "url": "/_astro/montserrat-latin-500-normal.DRFEGfly.woff2",
+          "type": "font",
+          "bytes": 18748,
+          "gzipBytes": 18776,
+          "brotliBytes": 18745
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_ZjGtsh.webp",
+          "type": "image",
+          "bytes": 36766,
+          "gzipBytes": 36799,
+          "brotliBytes": 36770
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.1.iDJ5mvzg_Z2sy2BD.webp",
+          "type": "image",
+          "bytes": 24320,
+          "gzipBytes": 24348,
+          "brotliBytes": 24324
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.2.Gb8kenDo_Z1CcTro.webp",
+          "type": "image",
+          "bytes": 16390,
+          "gzipBytes": 16415,
+          "brotliBytes": 16394
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_rGyAC.webp",
+          "type": "image",
+          "bytes": 40392,
+          "gzipBytes": 40425,
+          "brotliBytes": 40396
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.4.ByTvOAXL_Z1bm4Ue.webp",
+          "type": "image",
+          "bytes": 8998,
+          "gzipBytes": 8930,
+          "brotliBytes": 8906
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.6.DDCmnZBd_2eYozk.webp",
+          "type": "image",
+          "bytes": 17710,
+          "gzipBytes": 17738,
+          "brotliBytes": 17714
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.7.DEOcFhve_Z1upB3g.webp",
+          "type": "image",
+          "bytes": 18974,
+          "gzipBytes": 19002,
+          "brotliBytes": 18978
+        }
+      ],
+      "hoverRequests": [],
+      "warmNavigationRequests": [
+        {
+          "url": "/video/seethrough.webp",
+          "type": "image",
+          "bytes": 34934,
+          "gzipBytes": 33879,
+          "brotliBytes": 33775
+        },
+        {
+          "url": "/_astro/BURN_1.232.1.C3J4clTl_20qvRQ.webp",
+          "type": "image",
+          "bytes": 20224,
+          "gzipBytes": 20252,
+          "brotliBytes": 20228
+        },
+        {
+          "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_ZJAJa5.webp",
+          "type": "image",
+          "bytes": 19514,
+          "gzipBytes": 19542,
+          "brotliBytes": 19469
+        },
+        {
+          "url": "/_astro/bearer-of-bad-news-24.CStawPi1_2rhbm4.webp",
+          "type": "image",
+          "bytes": 13056,
+          "gzipBytes": 13079,
+          "brotliBytes": 13060
+        },
+        {
+          "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z24EF5O.webp",
+          "type": "image",
+          "bytes": 22762,
+          "gzipBytes": 22790,
+          "brotliBytes": 22766
+        },
+        {
+          "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z1EcwUl.webp",
+          "type": "image",
+          "bytes": 20490,
+          "gzipBytes": 20518,
+          "brotliBytes": 20494
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "route": "/projects/ever-since-i-have-been-flying/",
+      "width": 390,
+      "run": 3,
+      "lcp": 56,
+      "cls": 0.0015583074020384504,
+      "longTasks": 0,
+      "images": [
+        {
+          "src": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z1I4Oid.webp",
+          "width": 390,
+          "naturalWidth": 390,
+          "sizes": "100vw"
+        },
+        {
+          "src": "/projects/ever-since-i-have-been-flying/",
+          "width": 0,
+          "naturalWidth": 0,
+          "sizes": ""
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "weight": "300",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "500",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "400",
+          "style": "italic"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "600",
+          "style": "normal"
+        }
+      ],
+      "resources": [
+        {
+          "url": "/projects/ever-since-i-have-been-flying/",
+          "type": "document",
+          "bytes": 116858,
+          "gzipBytes": 18549,
+          "brotliBytes": 14995
+        },
+        {
+          "url": "/_astro/montserrat-latin-400-normal.BLhwKU8k.woff2",
+          "type": "font",
+          "bytes": 18780,
+          "gzipBytes": 18808,
+          "brotliBytes": 18776
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-normal.BCNrxLz_.woff2",
+          "type": "font",
+          "bytes": 23820,
+          "gzipBytes": 23848,
+          "brotliBytes": 23804
+        },
+        {
+          "url": "/_astro/page.BHA_3-Fj.js",
+          "type": "script",
+          "bytes": 47,
+          "gzipBytes": 67,
+          "brotliBytes": 51
+        },
+        {
+          "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DOTn-Jq_.js",
+          "type": "script",
+          "bytes": 13887,
+          "gzipBytes": 4746,
+          "brotliBytes": 4255
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z1I4Oid.webp",
+          "type": "image",
+          "bytes": 61048,
+          "gzipBytes": 61086,
+          "brotliBytes": 61052
+        },
+        {
+          "url": "/_astro/BaseLayout.BF9ZzKYC.css",
+          "type": "stylesheet",
+          "bytes": 152507,
+          "gzipBytes": 23216,
+          "brotliBytes": 19573
+        },
+        {
+          "url": "/_astro/montserrat-latin-300-normal.BgP24wlQ.woff2",
+          "type": "font",
+          "bytes": 18708,
+          "gzipBytes": 18736,
+          "brotliBytes": 18701
+        },
+        {
+          "url": "/_astro/montserrat-latin-600-normal.UVxSCcoG.woff2",
+          "type": "font",
+          "bytes": 18688,
+          "gzipBytes": 18716,
+          "brotliBytes": 18686
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-600-normal.DHwxsLHv.woff2",
+          "type": "font",
+          "bytes": 25348,
+          "gzipBytes": 25376,
+          "brotliBytes": 25331
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-italic.DSEbMgZu.woff2",
+          "type": "font",
+          "bytes": 25388,
+          "gzipBytes": 25416,
+          "brotliBytes": 25389
+        },
+        {
+          "url": "/_astro/montserrat-latin-500-normal.DRFEGfly.woff2",
+          "type": "font",
+          "bytes": 18748,
+          "gzipBytes": 18776,
+          "brotliBytes": 18745
+        },
+        {
+          "url": "/_astro/prefetch.DsrDZXx8.js",
+          "type": "script",
+          "bytes": 2506,
+          "gzipBytes": 1131,
+          "brotliBytes": 970
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_ZjGtsh.webp",
+          "type": "image",
+          "bytes": 36766,
+          "gzipBytes": 36799,
+          "brotliBytes": 36770
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.2.Gb8kenDo_Z1CcTro.webp",
+          "type": "image",
+          "bytes": 16390,
+          "gzipBytes": 16415,
+          "brotliBytes": 16394
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_rGyAC.webp",
+          "type": "image",
+          "bytes": 40392,
+          "gzipBytes": 40425,
+          "brotliBytes": 40396
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.4.ByTvOAXL_Z1bm4Ue.webp",
+          "type": "image",
+          "bytes": 8998,
+          "gzipBytes": 8930,
+          "brotliBytes": 8906
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.6.DDCmnZBd_2eYozk.webp",
+          "type": "image",
+          "bytes": 17710,
+          "gzipBytes": 17738,
+          "brotliBytes": 17714
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.1.iDJ5mvzg_Z2sy2BD.webp",
+          "type": "image",
+          "bytes": 24320,
+          "gzipBytes": 24348,
+          "brotliBytes": 24324
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.7.DEOcFhve_Z1upB3g.webp",
+          "type": "image",
+          "bytes": 18974,
+          "gzipBytes": 19002,
+          "brotliBytes": 18978
+        }
+      ],
+      "hoverRequests": [],
+      "warmNavigationRequests": [
+        {
+          "url": "/video/seethrough.webp",
+          "type": "image",
+          "bytes": 34934,
+          "gzipBytes": 33879,
+          "brotliBytes": 33775
+        },
+        {
+          "url": "/_astro/BURN_1.232.1.C3J4clTl_20qvRQ.webp",
+          "type": "image",
+          "bytes": 20224,
+          "gzipBytes": 20252,
+          "brotliBytes": 20228
+        },
+        {
+          "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_ZJAJa5.webp",
+          "type": "image",
+          "bytes": 19514,
+          "gzipBytes": 19542,
+          "brotliBytes": 19469
+        },
+        {
+          "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z24EF5O.webp",
+          "type": "image",
+          "bytes": 22762,
+          "gzipBytes": 22790,
+          "brotliBytes": 22766
+        },
+        {
+          "url": "/_astro/bearer-of-bad-news-24.CStawPi1_2rhbm4.webp",
+          "type": "image",
+          "bytes": 13056,
+          "gzipBytes": 13079,
+          "brotliBytes": 13060
+        },
+        {
+          "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z1EcwUl.webp",
+          "type": "image",
+          "bytes": 20490,
+          "gzipBytes": 20518,
+          "brotliBytes": 20494
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "route": "/behind-the-scenes/",
+      "width": 390,
+      "run": 1,
+      "lcp": 68,
+      "cls": 0.03236100133925563,
+      "longTasks": 0,
+      "images": [
+        {
+          "src": "/_astro/IMG-20230813-WA0062.BQKcZ2Fo_1VHx0H.webp",
+          "width": 390,
+          "naturalWidth": 390,
+          "sizes": "100vw"
+        },
+        {
+          "src": "/behind-the-scenes/",
+          "width": 0,
+          "naturalWidth": 0,
+          "sizes": ""
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "weight": "300",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "500",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "Caveat",
+          "weight": "400",
+          "style": "normal"
+        }
+      ],
+      "resources": [
+        {
+          "url": "/behind-the-scenes/",
+          "type": "document",
+          "bytes": 130178,
+          "gzipBytes": 19411,
+          "brotliBytes": 15501
+        },
+        {
+          "url": "/_astro/montserrat-latin-400-normal.BLhwKU8k.woff2",
+          "type": "font",
+          "bytes": 18780,
+          "gzipBytes": 18808,
+          "brotliBytes": 18776
+        },
+        {
+          "url": "/_astro/BaseLayout.BF9ZzKYC.css",
+          "type": "stylesheet",
+          "bytes": 152507,
+          "gzipBytes": 23216,
+          "brotliBytes": 19573
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-normal.BCNrxLz_.woff2",
+          "type": "font",
+          "bytes": 23820,
+          "gzipBytes": 23848,
+          "brotliBytes": 23804
+        },
+        {
+          "url": "/_astro/behind-the-scenes.Di7c_0vr.css",
+          "type": "stylesheet",
+          "bytes": 4318,
+          "gzipBytes": 1306,
+          "brotliBytes": 1085
+        },
+        {
+          "url": "/_astro/IMG-20230813-WA0062.BQKcZ2Fo_1VHx0H.webp",
+          "type": "image",
+          "bytes": 109094,
+          "gzipBytes": 109147,
+          "brotliBytes": 109099
+        },
+        {
+          "url": "/_astro/page.BHA_3-Fj.js",
+          "type": "script",
+          "bytes": 47,
+          "gzipBytes": 67,
+          "brotliBytes": 51
+        },
+        {
+          "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DOTn-Jq_.js",
+          "type": "script",
+          "bytes": 13887,
+          "gzipBytes": 4746,
+          "brotliBytes": 4255
+        },
+        {
+          "url": "/_astro/montserrat-latin-300-normal.BgP24wlQ.woff2",
+          "type": "font",
+          "bytes": 18708,
+          "gzipBytes": 18736,
+          "brotliBytes": 18701
+        },
+        {
+          "url": "/_astro/montserrat-latin-600-normal.UVxSCcoG.woff2",
+          "type": "font",
+          "bytes": 18688,
+          "gzipBytes": 18716,
+          "brotliBytes": 18686
+        },
+        {
+          "url": "/_astro/montserrat-latin-500-normal.DRFEGfly.woff2",
+          "type": "font",
+          "bytes": 18748,
+          "gzipBytes": 18776,
+          "brotliBytes": 18745
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-600-normal.DHwxsLHv.woff2",
+          "type": "font",
+          "bytes": 25348,
+          "gzipBytes": 25376,
+          "brotliBytes": 25331
+        },
+        {
+          "url": "/_astro/prefetch.DsrDZXx8.js",
+          "type": "script",
+          "bytes": 2506,
+          "gzipBytes": 1131,
+          "brotliBytes": 970
+        },
+        {
+          "url": "/_astro/caveat-latin-400-normal.D6LQsQ_v.woff2",
+          "type": "font",
+          "bytes": 48836,
+          "gzipBytes": 48869,
+          "brotliBytes": 48840
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-01.Cq7icPcQ_28IMRF.webp",
+          "type": "image",
+          "bytes": 33128,
+          "gzipBytes": 33161,
+          "brotliBytes": 33132
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-02.DZ2ugzOC_Z8aHl9.webp",
+          "type": "image",
+          "bytes": 38734,
+          "gzipBytes": 38767,
+          "brotliBytes": 38738
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-03.uEmNnN3Z_Z1OqA0b.webp",
+          "type": "image",
+          "bytes": 23144,
+          "gzipBytes": 23172,
+          "brotliBytes": 23148
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-04.DtPesVkT_Z2fd9g5.webp",
+          "type": "image",
+          "bytes": 36682,
+          "gzipBytes": 36715,
+          "brotliBytes": 36686
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-05.DpTZyc71_Z1KrBvs.webp",
+          "type": "image",
+          "bytes": 19496,
+          "gzipBytes": 19448,
+          "brotliBytes": 19411
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-06.B4pAjcHB_1MALC8.webp",
+          "type": "image",
+          "bytes": 70550,
+          "gzipBytes": 70593,
+          "brotliBytes": 70555
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-07.CBliIRtl_Z1rcotU.webp",
+          "type": "image",
+          "bytes": 30970,
+          "gzipBytes": 30998,
+          "brotliBytes": 30974
+        }
+      ],
+      "hoverRequests": [],
+      "warmNavigationRequests": [
+        {
+          "url": "/video/seethrough.webp",
+          "type": "image",
+          "bytes": 34934,
+          "gzipBytes": 33879,
+          "brotliBytes": 33775
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-italic.DSEbMgZu.woff2",
+          "type": "font",
+          "bytes": 25388,
+          "gzipBytes": 25416,
+          "brotliBytes": 25389
+        },
+        {
+          "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_ZJAJa5.webp",
+          "type": "image",
+          "bytes": 19514,
+          "gzipBytes": 19542,
+          "brotliBytes": 19469
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z1I4Oid.webp",
+          "type": "image",
+          "bytes": 61048,
+          "gzipBytes": 61086,
+          "brotliBytes": 61052
+        },
+        {
+          "url": "/_astro/bearer-of-bad-news-24.CStawPi1_2rhbm4.webp",
+          "type": "image",
+          "bytes": 13056,
+          "gzipBytes": 13079,
+          "brotliBytes": 13060
+        },
+        {
+          "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z24EF5O.webp",
+          "type": "image",
+          "bytes": 22762,
+          "gzipBytes": 22790,
+          "brotliBytes": 22766
+        },
+        {
+          "url": "/_astro/BURN_1.232.1.C3J4clTl_20qvRQ.webp",
+          "type": "image",
+          "bytes": 20224,
+          "gzipBytes": 20252,
+          "brotliBytes": 20228
+        },
+        {
+          "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z1EcwUl.webp",
+          "type": "image",
+          "bytes": 20490,
+          "gzipBytes": 20518,
+          "brotliBytes": 20494
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "route": "/behind-the-scenes/",
+      "width": 390,
+      "run": 2,
+      "lcp": 48,
+      "cls": 0.03236100133925563,
+      "longTasks": 0,
+      "images": [
+        {
+          "src": "/_astro/IMG-20230813-WA0062.BQKcZ2Fo_1VHx0H.webp",
+          "width": 390,
+          "naturalWidth": 390,
+          "sizes": "100vw"
+        },
+        {
+          "src": "/behind-the-scenes/",
+          "width": 0,
+          "naturalWidth": 0,
+          "sizes": ""
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "weight": "300",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "500",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "Caveat",
+          "weight": "400",
+          "style": "normal"
+        }
+      ],
+      "resources": [
+        {
+          "url": "/behind-the-scenes/",
+          "type": "document",
+          "bytes": 130178,
+          "gzipBytes": 19411,
+          "brotliBytes": 15501
+        },
+        {
+          "url": "/_astro/montserrat-latin-400-normal.BLhwKU8k.woff2",
+          "type": "font",
+          "bytes": 18780,
+          "gzipBytes": 18808,
+          "brotliBytes": 18776
+        },
+        {
+          "url": "/_astro/IMG-20230813-WA0062.BQKcZ2Fo_1VHx0H.webp",
+          "type": "image",
+          "bytes": 109094,
+          "gzipBytes": 109147,
+          "brotliBytes": 109099
+        },
+        {
+          "url": "/_astro/BaseLayout.BF9ZzKYC.css",
+          "type": "stylesheet",
+          "bytes": 152507,
+          "gzipBytes": 23216,
+          "brotliBytes": 19573
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-normal.BCNrxLz_.woff2",
+          "type": "font",
+          "bytes": 23820,
+          "gzipBytes": 23848,
+          "brotliBytes": 23804
+        },
+        {
+          "url": "/_astro/behind-the-scenes.Di7c_0vr.css",
+          "type": "stylesheet",
+          "bytes": 4318,
+          "gzipBytes": 1306,
+          "brotliBytes": 1085
+        },
+        {
+          "url": "/_astro/page.BHA_3-Fj.js",
+          "type": "script",
+          "bytes": 47,
+          "gzipBytes": 67,
+          "brotliBytes": 51
+        },
+        {
+          "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DOTn-Jq_.js",
+          "type": "script",
+          "bytes": 13887,
+          "gzipBytes": 4746,
+          "brotliBytes": 4255
+        },
+        {
+          "url": "/_astro/montserrat-latin-300-normal.BgP24wlQ.woff2",
+          "type": "font",
+          "bytes": 18708,
+          "gzipBytes": 18736,
+          "brotliBytes": 18701
+        },
+        {
+          "url": "/_astro/montserrat-latin-600-normal.UVxSCcoG.woff2",
+          "type": "font",
+          "bytes": 18688,
+          "gzipBytes": 18716,
+          "brotliBytes": 18686
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-600-normal.DHwxsLHv.woff2",
+          "type": "font",
+          "bytes": 25348,
+          "gzipBytes": 25376,
+          "brotliBytes": 25331
+        },
+        {
+          "url": "/_astro/montserrat-latin-500-normal.DRFEGfly.woff2",
+          "type": "font",
+          "bytes": 18748,
+          "gzipBytes": 18776,
+          "brotliBytes": 18745
+        },
+        {
+          "url": "/_astro/prefetch.DsrDZXx8.js",
+          "type": "script",
+          "bytes": 2506,
+          "gzipBytes": 1131,
+          "brotliBytes": 970
+        },
+        {
+          "url": "/_astro/caveat-latin-400-normal.D6LQsQ_v.woff2",
+          "type": "font",
+          "bytes": 48836,
+          "gzipBytes": 48869,
+          "brotliBytes": 48840
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-01.Cq7icPcQ_28IMRF.webp",
+          "type": "image",
+          "bytes": 33128,
+          "gzipBytes": 33161,
+          "brotliBytes": 33132
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-02.DZ2ugzOC_Z8aHl9.webp",
+          "type": "image",
+          "bytes": 38734,
+          "gzipBytes": 38767,
+          "brotliBytes": 38738
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-03.uEmNnN3Z_Z1OqA0b.webp",
+          "type": "image",
+          "bytes": 23144,
+          "gzipBytes": 23172,
+          "brotliBytes": 23148
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-04.DtPesVkT_Z2fd9g5.webp",
+          "type": "image",
+          "bytes": 36682,
+          "gzipBytes": 36715,
+          "brotliBytes": 36686
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-05.DpTZyc71_Z1KrBvs.webp",
+          "type": "image",
+          "bytes": 19496,
+          "gzipBytes": 19448,
+          "brotliBytes": 19411
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-06.B4pAjcHB_1MALC8.webp",
+          "type": "image",
+          "bytes": 70550,
+          "gzipBytes": 70593,
+          "brotliBytes": 70555
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-07.CBliIRtl_Z1rcotU.webp",
+          "type": "image",
+          "bytes": 30970,
+          "gzipBytes": 30998,
+          "brotliBytes": 30974
+        }
+      ],
+      "hoverRequests": [],
+      "warmNavigationRequests": [
+        {
+          "url": "/video/seethrough.webp",
+          "type": "image",
+          "bytes": 34934,
+          "gzipBytes": 33879,
+          "brotliBytes": 33775
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-italic.DSEbMgZu.woff2",
+          "type": "font",
+          "bytes": 25388,
+          "gzipBytes": 25416,
+          "brotliBytes": 25389
+        },
+        {
+          "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_ZJAJa5.webp",
+          "type": "image",
+          "bytes": 19514,
+          "gzipBytes": 19542,
+          "brotliBytes": 19469
+        },
+        {
+          "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z24EF5O.webp",
+          "type": "image",
+          "bytes": 22762,
+          "gzipBytes": 22790,
+          "brotliBytes": 22766
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z1I4Oid.webp",
+          "type": "image",
+          "bytes": 61048,
+          "gzipBytes": 61086,
+          "brotliBytes": 61052
+        },
+        {
+          "url": "/_astro/bearer-of-bad-news-24.CStawPi1_2rhbm4.webp",
+          "type": "image",
+          "bytes": 13056,
+          "gzipBytes": 13079,
+          "brotliBytes": 13060
+        },
+        {
+          "url": "/_astro/BURN_1.232.1.C3J4clTl_20qvRQ.webp",
+          "type": "image",
+          "bytes": 20224,
+          "gzipBytes": 20252,
+          "brotliBytes": 20228
+        },
+        {
+          "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z1EcwUl.webp",
+          "type": "image",
+          "bytes": 20490,
+          "gzipBytes": 20518,
+          "brotliBytes": 20494
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "route": "/behind-the-scenes/",
+      "width": 390,
+      "run": 3,
+      "lcp": 72,
+      "cls": 0.03236100133925563,
+      "longTasks": 0,
+      "images": [
+        {
+          "src": "/_astro/IMG-20230813-WA0062.BQKcZ2Fo_1VHx0H.webp",
+          "width": 390,
+          "naturalWidth": 390,
+          "sizes": "100vw"
+        },
+        {
+          "src": "/behind-the-scenes/",
+          "width": 0,
+          "naturalWidth": 0,
+          "sizes": ""
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "weight": "300",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "400",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "500",
+          "style": "normal"
+        },
+        {
+          "family": "Montserrat",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "EB Garamond",
+          "weight": "600",
+          "style": "normal"
+        },
+        {
+          "family": "Caveat",
+          "weight": "400",
+          "style": "normal"
+        }
+      ],
+      "resources": [
+        {
+          "url": "/behind-the-scenes/",
+          "type": "document",
+          "bytes": 130178,
+          "gzipBytes": 19411,
+          "brotliBytes": 15501
+        },
+        {
+          "url": "/_astro/montserrat-latin-400-normal.BLhwKU8k.woff2",
+          "type": "font",
+          "bytes": 18780,
+          "gzipBytes": 18808,
+          "brotliBytes": 18776
+        },
+        {
+          "url": "/_astro/IMG-20230813-WA0062.BQKcZ2Fo_1VHx0H.webp",
+          "type": "image",
+          "bytes": 109094,
+          "gzipBytes": 109147,
+          "brotliBytes": 109099
+        },
+        {
+          "url": "/_astro/BaseLayout.BF9ZzKYC.css",
+          "type": "stylesheet",
+          "bytes": 152507,
+          "gzipBytes": 23216,
+          "brotliBytes": 19573
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-normal.BCNrxLz_.woff2",
+          "type": "font",
+          "bytes": 23820,
+          "gzipBytes": 23848,
+          "brotliBytes": 23804
+        },
+        {
+          "url": "/_astro/behind-the-scenes.Di7c_0vr.css",
+          "type": "stylesheet",
+          "bytes": 4318,
+          "gzipBytes": 1306,
+          "brotliBytes": 1085
+        },
+        {
+          "url": "/_astro/page.BHA_3-Fj.js",
+          "type": "script",
+          "bytes": 47,
+          "gzipBytes": 67,
+          "brotliBytes": 51
+        },
+        {
+          "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DOTn-Jq_.js",
+          "type": "script",
+          "bytes": 13887,
+          "gzipBytes": 4746,
+          "brotliBytes": 4255
+        },
+        {
+          "url": "/_astro/montserrat-latin-300-normal.BgP24wlQ.woff2",
+          "type": "font",
+          "bytes": 18708,
+          "gzipBytes": 18736,
+          "brotliBytes": 18701
+        },
+        {
+          "url": "/_astro/montserrat-latin-600-normal.UVxSCcoG.woff2",
+          "type": "font",
+          "bytes": 18688,
+          "gzipBytes": 18716,
+          "brotliBytes": 18686
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-600-normal.DHwxsLHv.woff2",
+          "type": "font",
+          "bytes": 25348,
+          "gzipBytes": 25376,
+          "brotliBytes": 25331
+        },
+        {
+          "url": "/_astro/montserrat-latin-500-normal.DRFEGfly.woff2",
+          "type": "font",
+          "bytes": 18748,
+          "gzipBytes": 18776,
+          "brotliBytes": 18745
+        },
+        {
+          "url": "/_astro/prefetch.DsrDZXx8.js",
+          "type": "script",
+          "bytes": 2506,
+          "gzipBytes": 1131,
+          "brotliBytes": 970
+        },
+        {
+          "url": "/_astro/caveat-latin-400-normal.D6LQsQ_v.woff2",
+          "type": "font",
+          "bytes": 48836,
+          "gzipBytes": 48869,
+          "brotliBytes": 48840
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-01.Cq7icPcQ_28IMRF.webp",
+          "type": "image",
+          "bytes": 33128,
+          "gzipBytes": 33161,
+          "brotliBytes": 33132
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-02.DZ2ugzOC_Z8aHl9.webp",
+          "type": "image",
+          "bytes": 38734,
+          "gzipBytes": 38767,
+          "brotliBytes": 38738
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-03.uEmNnN3Z_Z1OqA0b.webp",
+          "type": "image",
+          "bytes": 23144,
+          "gzipBytes": 23172,
+          "brotliBytes": 23148
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-04.DtPesVkT_Z2fd9g5.webp",
+          "type": "image",
+          "bytes": 36682,
+          "gzipBytes": 36715,
+          "brotliBytes": 36686
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-05.DpTZyc71_Z1KrBvs.webp",
+          "type": "image",
+          "bytes": 19496,
+          "gzipBytes": 19448,
+          "brotliBytes": 19411
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-06.B4pAjcHB_1MALC8.webp",
+          "type": "image",
+          "bytes": 70550,
+          "gzipBytes": 70593,
+          "brotliBytes": 70555
+        },
+        {
+          "url": "/_astro/a-long-goodbye-bts-07.CBliIRtl_Z1rcotU.webp",
+          "type": "image",
+          "bytes": 30970,
+          "gzipBytes": 30998,
+          "brotliBytes": 30974
+        }
+      ],
+      "hoverRequests": [],
+      "warmNavigationRequests": [
+        {
+          "url": "/video/seethrough.webp",
+          "type": "image",
+          "bytes": 34934,
+          "gzipBytes": 33879,
+          "brotliBytes": 33775
+        },
+        {
+          "url": "/_astro/eb-garamond-latin-400-italic.DSEbMgZu.woff2",
+          "type": "font",
+          "bytes": 25388,
+          "gzipBytes": 25416,
+          "brotliBytes": 25389
+        },
+        {
+          "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_ZJAJa5.webp",
+          "type": "image",
+          "bytes": 19514,
+          "gzipBytes": 19542,
+          "brotliBytes": 19469
+        },
+        {
+          "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_Z1I4Oid.webp",
+          "type": "image",
+          "bytes": 61048,
+          "gzipBytes": 61086,
+          "brotliBytes": 61052
+        },
+        {
+          "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z24EF5O.webp",
+          "type": "image",
+          "bytes": 22762,
+          "gzipBytes": 22790,
+          "brotliBytes": 22766
+        },
+        {
+          "url": "/_astro/bearer-of-bad-news-24.CStawPi1_2rhbm4.webp",
+          "type": "image",
+          "bytes": 13056,
+          "gzipBytes": 13079,
+          "brotliBytes": 13060
+        },
+        {
+          "url": "/_astro/BURN_1.232.1.C3J4clTl_20qvRQ.webp",
+          "type": "image",
+          "bytes": 20224,
+          "gzipBytes": 20252,
+          "brotliBytes": 20228
+        },
+        {
+          "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z1EcwUl.webp",
+          "type": "image",
+          "bytes": 20490,
+          "gzipBytes": 20518,
+          "brotliBytes": 20494
+        }
+      ],
+      "blocked": []
+    }
+  ],
+  "medians": [
+    {
+      "route": "/",
+      "width": 1280,
+      "lcpMilliseconds": 44,
+      "cls": 0.00021196153428819446,
+      "longTaskBlockingMilliseconds": 0
+    },
+    {
+      "route": "/about/",
+      "width": 1280,
+      "lcpMilliseconds": 44,
+      "cls": 0.00046941587660047747,
+      "longTaskBlockingMilliseconds": 0
+    },
+    {
+      "route": "/projects/ever-since-i-have-been-flying/",
+      "width": 1280,
+      "lcpMilliseconds": 48,
+      "cls": 0.000723656972249349,
+      "longTaskBlockingMilliseconds": 0
+    },
+    {
+      "route": "/behind-the-scenes/",
+      "width": 1280,
+      "lcpMilliseconds": 88,
+      "cls": 0.00019368065728081599,
+      "longTaskBlockingMilliseconds": 0
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "lcpMilliseconds": 64,
+      "cls": 0.0002207623525328583,
+      "longTaskBlockingMilliseconds": 0
+    },
+    {
+      "route": "/about/",
+      "width": 390,
+      "lcpMilliseconds": 72,
+      "cls": 0.0008786401631123084,
+      "longTaskBlockingMilliseconds": 0
+    },
+    {
+      "route": "/projects/ever-since-i-have-been-flying/",
+      "width": 390,
+      "lcpMilliseconds": 56,
+      "cls": 0.0015583074020384504,
+      "longTaskBlockingMilliseconds": 0
+    },
+    {
+      "route": "/behind-the-scenes/",
+      "width": 390,
+      "lcpMilliseconds": 68,
+      "cls": 0.03236100133925563,
+      "longTaskBlockingMilliseconds": 0
+    }
+  ]
+}

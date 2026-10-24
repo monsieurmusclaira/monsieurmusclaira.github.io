@@ -1,0 +1,12 @@
+{
+  "patches": [
+    "01-dependencies.patch",
+    "02-fonts.patch",
+    "03-images.patch",
+    "04-native-prototype.patch",
+    "05-lifecycle-and-prefetch.patch",
+    "06-measurement-tooling.patch"
+  ],
+  "checkedFiles": 26,
+  "contentMismatches": []
+}

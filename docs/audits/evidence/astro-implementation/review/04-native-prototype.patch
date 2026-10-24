@@ -1,0 +1,147 @@
+--- /dev/null
++++ b/scripts/prototype-native-navigation.mjs
+@@ -0,0 +1,41 @@
++// Builds an isolated native-navigation experiment; never edits production sources.
++// node scripts/prototype-native-navigation.mjs /tmp/portfolio-native-prototype
++import { cpSync, mkdirSync, readFileSync, writeFileSync, symlinkSync, existsSync, realpathSync } from 'node:fs';
++import { resolve, join } from 'node:path';
++import { execFileSync } from 'node:child_process';
++
++let root = resolve(process.argv[2] ?? '/tmp/portfolio-native-prototype');
++if (existsSync(root)) throw new Error('Choose a new prototype directory.');
++mkdirSync(root, { recursive: true });
++root = realpathSync(root);
++for (const path of ['src', 'scripts', 'public', 'package.json', 'tsconfig.json', 'astro.config.mjs']) {
++  cpSync(path, join(root, path), { recursive: true, filter: (source) => !/src\/assets(?:\/|$)/.test(source) });
++}
++symlinkSync(resolve('src/assets'), join(root, 'src/assets'), 'dir');
++symlinkSync(resolve('node_modules'), join(root, 'node_modules'), 'dir');
++const edit = (path, transform) => writeFileSync(join(root, path), transform(readFileSync(join(root, path), 'utf8')));
++edit('astro.config.mjs', (source) => source.replace('site: SITE_URL,', "site: SITE_URL, cacheDir: './.cache/',"));
++edit('src/layouts/BaseLayout.astro', (source) => source
++  .replace("import { ClientRouter } from 'astro:transitions';", '')
++  .replace('<ClientRouter />', '')
++  .replace('<Header transition:animate="none" />', '<Header />')
++  .replace("document.addEventListener('astro:page-load',", "document.addEventListener('DOMContentLoaded',")
++  .replace('<style is:global>', '<style is:global>\n@view-transition { navigation: auto; }\n@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }'));
++for (const path of ['src/components/FilmCard.astro', 'src/components/ProjectHero.astro']) {
++  edit(path, (source) => source.replace('transition:name={`hero-${slug}`}', 'style={`view-transition-name: hero-${slug}`}').replace('transition:animate="slide"', ''));
++}
++edit('src/components/Header.astro', (source) => source.replaceAll("'astro:page-load'", "'pageshow'").replaceAll("document.addEventListener('pageshow'", "window.addEventListener('pageshow'").replaceAll("document.removeEventListener('pageshow'", "window.removeEventListener('pageshow'"));
++for (const path of ['src/lib/lightbox.ts', 'src/lib/work-filters.ts', 'src/components/VideoEmbed.astro', 'src/components/VideoCard.astro']) {
++  edit(path, (source) => source
++    .replaceAll("'astro:page-load'", "'DOMContentLoaded'")
++    .replaceAll("'astro:before-swap'", "'pagehide'")
++    .replaceAll('"astro:before-swap"', '"pagehide"')
++    .replaceAll("document.addEventListener('pagehide'", "window.addEventListener('pagehide'")
++    .replaceAll('document.addEventListener("pagehide"', 'window.addEventListener("pagehide"')
++    + (path.endsWith('.ts') ? '\nwindow.addEventListener("pageshow", (event) => { if (event.persisted) setup(); });\n' : ''));
++}
++// Analytics already handles pageshow, with per-document deduplication.
++edit('src/components/Analytics.astro', (source) => source.replace("document.addEventListener('astro:page-load', enableAnalytics);", ''));
++console.log(`Building isolated native prototype in ${root}`);
++const astro = JSON.parse(readFileSync('node_modules/astro/package.json', 'utf8'));
++execFileSync(process.execPath, [resolve('node_modules/astro', astro.bin.astro), 'build', '--root', root], { stdio: 'inherit' });
+--- /dev/null
++++ b/scripts/compare-navigation.mjs
+@@ -0,0 +1,79 @@
++// Compare production routing with the isolated native prototype.
++import { chromium, firefox, webkit } from '@playwright/test';
++import { writeFileSync } from 'node:fs';
++
++const output = process.argv[2];
++if (!output) throw new Error('Provide an output JSON path.');
++const results = [];
++for (const [architecture, baseURL] of [['router', 'http://127.0.0.1:4323'], ['native', 'http://127.0.0.1:19432']]) {
++  for (const [engine, type] of Object.entries({ chromium, firefox, webkit })) {
++    const browser = await type.launch();
++    try {
++      for (const motion of ['reduce', 'no-preference']) {
++        const context = await browser.newContext({ viewport: { width: 1280, height: 720 }, reducedMotion: motion });
++        const requests = [];
++        await context.route('**/*', (route) => {
++          if (new URL(route.request().url()).origin === new URL(baseURL).origin) return route.continue();
++          return route.abort();
++        });
++        const page = await context.newPage();
++        await page.addInitScript(() => { Object.defineProperty(window, 'portfolioNavigationDocument', { value: Math.random() }); });
++        page.on('request', (request) => requests.push({ url: new URL(request.url()).pathname, type: request.resourceType() }));
++        await page.goto(`${baseURL}/`);
++        const initial = await page.evaluate(() => Reflect.get(window, 'portfolioNavigationDocument'));
++        const card = page.locator('a[href="/projects/burn/"]').first();
++        await card.scrollIntoViewIfNeeded();
++        const scroll = await page.evaluate(() => scrollY);
++        const start = Date.now();
++        await card.click();
++        await page.waitForURL('**/projects/burn/');
++        await page.getByRole('heading', { level: 1 }).waitFor();
++        await page.waitForTimeout(500);
++        const navigationMilliseconds = Date.now() - start;
++        const replacedDocument = initial !== await page.evaluate(() => Reflect.get(window, 'portfolioNavigationDocument'));
++        const trigger = page.getByRole('button', { name: /^View full size:/ }).first();
++        await trigger.click();
++        if (!await page.locator('dialog[open]').isVisible()) throw new Error(`${architecture}/${engine}: lightbox failed`);
++        await page.keyboard.press('Escape');
++        if (!await trigger.evaluate((el) => document.activeElement === el)) throw new Error('Lightbox focus was not restored.');
++        await page.goBack();
++        await page.waitForURL(baseURL + '/');
++        await page.waitForTimeout(500);
++        const backScroll = await page.evaluate(() => scrollY);
++        const heroSourcesAfterBack = await page.locator('#hero-video source[src]').count();
++        await page.setViewportSize({ width: 390, height: 844 });
++        await page.locator('#menu-toggle').click();
++        if (await page.locator('#menu-toggle').getAttribute('aria-expanded') !== 'true') throw new Error('Menu failed after back navigation.');
++        await page.keyboard.press('Escape');
++        results.push({ architecture, engine, browser: browser.version(), motion, navigationMilliseconds, replacedDocument, scroll, backScroll, heroSourcesAfterBack, requests });
++        writeFileSync(output, `${JSON.stringify(results, null, 2)}\n`);
++        await context.close();
++      }
++      // Proxy the canonical host and mock analytics; no real telemetry is sent.
++      const context = await browser.newContext({ reducedMotion: 'reduce' });
++      const page = await context.newPage();
++      await page.route('**/*', async (route) => {
++        const url = new URL(route.request().url());
++        if (url.hostname === 'victormaes.com') {
++          const response = await route.fetch({ url: `${baseURL}${url.pathname}${url.search}`, headers: { ...route.request().headers(), host: new URL(baseURL).host } });
++          return route.fulfill({ response });
++        }
++        if (url.hostname === 'www.googletagmanager.com') return route.fulfill({ contentType: 'text/javascript', body: '' });
++        return route.abort();
++      });
++      let analyticsLoads = 0;
++      page.on('request', (request) => { if (request.url().includes('googletagmanager.com')) analyticsLoads++; });
++      await page.goto('https://victormaes.com/');
++      if (!await page.locator('#desktop-links').count()) throw new Error(`${architecture}/${engine}: canonical proxy failed: ${await page.content()}`);
++      await page.waitForTimeout(100);
++      await page.locator('#desktop-links a[href="/about/"]').click();
++      await page.waitForURL('**/about/');
++      await page.waitForTimeout(300);
++      const viewsInCurrentDocument = await page.evaluate(() => window.dataLayer?.filter((args) => args[0] === 'event' && args[1] === 'page_view').length);
++      results.push({ architecture, engine, analyticsLoadsForTwoPages: analyticsLoads, viewsInCurrentDocument });
++      await context.close();
++    } finally { await browser.close(); }
++  }
++}
++writeFileSync(output, `${JSON.stringify(results, null, 2)}\n`);
++console.log(results.map(({ requests, ...result }) => result));
+--- /dev/null
++++ b/tests/browser/navigation-fallback.spec.ts
+@@ -0,0 +1,18 @@
++import { test, expect, navigate } from './fixtures';
++
++test('router fallback keeps navigation and galleries usable without the transition API', async ({ page }) => {
++  await page.emulateMedia({ reducedMotion: 'no-preference' });
++  await page.addInitScript(() => {
++    Object.defineProperty(document, 'startViewTransition', { value: undefined, configurable: true });
++  });
++  await page.goto('/');
++  await navigate(page, () => page.locator('a[href="/projects/burn/"]').first().click());
++  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Burn');
++  const trigger = page.getByRole('button', { name: /^View full size:/ }).first();
++  await trigger.click();
++  await expect(page.locator('dialog[open]')).toBeVisible();
++  await page.keyboard.press('Escape');
++  await expect(trigger).toBeFocused();
++  await navigate(page, () => page.goBack());
++  await expect(page.locator('[data-work-filters]')).toBeVisible();
++});

@@ -37,7 +37,7 @@ public/          Static files served as-is (includes CNAME)
 
 ## Development
 
-Development and CI use Node 22.23.3, pinned in `.nvmrc`. Astro requires at least Node 22.12.0.
+Development and CI use Node 22.23.4, pinned in `.nvmrc`. The installed Astro and MDX versions require at least Node 22.23.4.
 
 ```bash
 nvm use          # select the pinned runtime (when using nvm)
@@ -53,7 +53,7 @@ npx --no-install playwright install firefox webkit
 npm run test:browser:all                     # all three browser engines
 ```
 
-Browser checks require a current production build. They start their own foreground preview at `127.0.0.1:4322`, leaving a preview on port 4321 available. External requests are blocked during tests, including analytics and video providers. Failures retain screenshots and traces in `test-results/` and an HTML report in `playwright-report/`; both directories are ignored by Git. WebKit automation supplements physical-device testing.
+Browser checks require a current production build. They start their own foreground preview at `127.0.0.1:4322`, leaving a preview on port 4321 available; set `PORTFOLIO_TEST_PORT` to use another free port. External requests are blocked during tests, including analytics and video providers. Failures retain screenshots and traces in `test-results/` and an HTML report in `playwright-report/`; both directories are ignored by Git. WebKit automation supplements physical-device testing.
 
 ## Content
 

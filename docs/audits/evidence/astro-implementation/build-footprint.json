@@ -1,0 +1,41 @@
+{
+  "baseline": {
+    "files": 1939,
+    "bytes": 64535892,
+    "astroBytes": 61086968,
+    "formats": {
+      ".avif": 0,
+      ".webp": 1851,
+      ".jpeg": 19,
+      ".woff2": 9,
+      ".css": 2,
+      ".js": 3
+    }
+  },
+  "upgraded": {
+    "files": 1939,
+    "bytes": 64541515,
+    "astroBytes": 61092761,
+    "formats": {
+      ".avif": 0,
+      ".webp": 1851,
+      ".jpeg": 19,
+      ".woff2": 9,
+      ".css": 2,
+      ".js": 3
+    }
+  },
+  "final": {
+    "files": 1929,
+    "bytes": 64212655,
+    "astroBytes": 60803198,
+    "formats": {
+      ".avif": 2,
+      ".webp": 1851,
+      ".jpeg": 19,
+      ".woff2": 6,
+      ".css": 2,
+      ".js": 3
+    }
+  }
+}

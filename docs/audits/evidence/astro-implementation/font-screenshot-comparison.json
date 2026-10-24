@@ -1,0 +1,32 @@
+[
+  {
+    "file": "_-1280.png",
+    "channelsAbove10": 0.00007152416087962963,
+    "meanChannelDifference": 0.004628634982638889
+  },
+  {
+    "file": "_-390.png",
+    "channelsAbove10": 0.00012152144853566654,
+    "meanChannelDifference": 0.006731528739822579
+  },
+  {
+    "file": "_about_-1280.png",
+    "channelsAbove10": 0.000027488425925925926,
+    "meanChannelDifference": 0.0024121997974537036
+  },
+  {
+    "file": "_about_-390.png",
+    "channelsAbove10": 0.0000015190181066958319,
+    "meanChannelDifference": 0.0010093875318993803
+  },
+  {
+    "file": "_behind-the-scenes_-1280.png",
+    "channelsAbove10": 0.000020345052083333332,
+    "meanChannelDifference": 0.0015351924189814816
+  },
+  {
+    "file": "_projects_ever-since-i-have-been-flying_-1280.png",
+    "channelsAbove10": 0.00002712673611111111,
+    "meanChannelDifference": 0.0024007161458333335
+  }
+]

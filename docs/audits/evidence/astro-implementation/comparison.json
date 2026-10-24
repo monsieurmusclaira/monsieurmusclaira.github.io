@@ -1,0 +1,1418 @@
+{
+  "baseline": {
+    "browser": "153.0.8010.12",
+    "playwright": "1.63.0",
+    "node": "v22.23.1",
+    "astro": "7.3.5",
+    "medians": [
+      {
+        "route": "/",
+        "width": 1280,
+        "lcpMilliseconds": 44,
+        "cls": 0.00021196153428819446,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/about/",
+        "width": 1280,
+        "lcpMilliseconds": 44,
+        "cls": 0.00046941587660047747,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/projects/ever-since-i-have-been-flying/",
+        "width": 1280,
+        "lcpMilliseconds": 48,
+        "cls": 0.000723656972249349,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/behind-the-scenes/",
+        "width": 1280,
+        "lcpMilliseconds": 88,
+        "cls": 0.00019368065728081599,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/",
+        "width": 390,
+        "lcpMilliseconds": 64,
+        "cls": 0.0002207623525328583,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/about/",
+        "width": 390,
+        "lcpMilliseconds": 72,
+        "cls": 0.0008786401631123084,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/projects/ever-since-i-have-been-flying/",
+        "width": 390,
+        "lcpMilliseconds": 56,
+        "cls": 0.0015583074020384504,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/behind-the-scenes/",
+        "width": 390,
+        "lcpMilliseconds": 68,
+        "cls": 0.03236100133925563,
+        "longTaskBlockingMilliseconds": 0
+      }
+    ],
+    "delivery": [
+      {
+        "route": "/",
+        "width": 1280,
+        "resources": {
+          "document": {
+            "bytes": 84997,
+            "gzipBytes": 13980,
+            "brotliBytes": 11276,
+            "requests": 1
+          },
+          "image": {
+            "bytes": 474914,
+            "gzipBytes": 473216,
+            "brotliBytes": 472789,
+            "requests": 6
+          },
+          "stylesheet": {
+            "bytes": 152507,
+            "gzipBytes": 23216,
+            "brotliBytes": 19573,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 105384,
+            "gzipBytes": 105524,
+            "brotliBytes": 105356,
+            "requests": 5
+          },
+          "script": {
+            "bytes": 16440,
+            "gzipBytes": 5944,
+            "brotliBytes": 5276,
+            "requests": 3
+          }
+        }
+      },
+      {
+        "route": "/about/",
+        "width": 1280,
+        "resources": {
+          "document": {
+            "bytes": 37232,
+            "gzipBytes": 9855,
+            "brotliBytes": 8454,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 149480,
+            "gzipBytes": 149676,
+            "brotliBytes": 149432,
+            "requests": 7
+          },
+          "stylesheet": {
+            "bytes": 152507,
+            "gzipBytes": 23216,
+            "brotliBytes": 19573,
+            "requests": 1
+          },
+          "script": {
+            "bytes": 16440,
+            "gzipBytes": 5944,
+            "brotliBytes": 5276,
+            "requests": 3
+          },
+          "image": {
+            "bytes": 186390,
+            "gzipBytes": 186509,
+            "brotliBytes": 186404,
+            "requests": 3
+          }
+        }
+      },
+      {
+        "route": "/projects/ever-since-i-have-been-flying/",
+        "width": 1280,
+        "resources": {
+          "document": {
+            "bytes": 116858,
+            "gzipBytes": 18549,
+            "brotliBytes": 14995,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 149480,
+            "gzipBytes": 149676,
+            "brotliBytes": 149432,
+            "requests": 7
+          },
+          "stylesheet": {
+            "bytes": 152507,
+            "gzipBytes": 23216,
+            "brotliBytes": 19573,
+            "requests": 1
+          },
+          "script": {
+            "bytes": 16440,
+            "gzipBytes": 5944,
+            "brotliBytes": 5276,
+            "requests": 3
+          },
+          "image": {
+            "bytes": 482528,
+            "gzipBytes": 482570,
+            "brotliBytes": 482202,
+            "requests": 8
+          }
+        }
+      },
+      {
+        "route": "/behind-the-scenes/",
+        "width": 1280,
+        "resources": {
+          "document": {
+            "bytes": 130178,
+            "gzipBytes": 19411,
+            "brotliBytes": 15501,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 172928,
+            "gzipBytes": 173129,
+            "brotliBytes": 172883,
+            "requests": 7
+          },
+          "stylesheet": {
+            "bytes": 156825,
+            "gzipBytes": 24522,
+            "brotliBytes": 20658,
+            "requests": 2
+          },
+          "image": {
+            "bytes": 959276,
+            "gzipBytes": 959969,
+            "brotliBytes": 959282,
+            "requests": 23
+          },
+          "script": {
+            "bytes": 16440,
+            "gzipBytes": 5944,
+            "brotliBytes": 5276,
+            "requests": 3
+          }
+        }
+      },
+      {
+        "route": "/",
+        "width": 390,
+        "resources": {
+          "document": {
+            "bytes": 84997,
+            "gzipBytes": 13980,
+            "brotliBytes": 11276,
+            "requests": 1
+          },
+          "image": {
+            "bytes": 192028,
+            "gzipBytes": 191146,
+            "brotliBytes": 190844,
+            "requests": 7
+          },
+          "font": {
+            "bytes": 105384,
+            "gzipBytes": 105524,
+            "brotliBytes": 105356,
+            "requests": 5
+          },
+          "stylesheet": {
+            "bytes": 152507,
+            "gzipBytes": 23216,
+            "brotliBytes": 19573,
+            "requests": 1
+          },
+          "script": {
+            "bytes": 16440,
+            "gzipBytes": 5944,
+            "brotliBytes": 5276,
+            "requests": 3
+          }
+        }
+      },
+      {
+        "route": "/about/",
+        "width": 390,
+        "resources": {
+          "document": {
+            "bytes": 37232,
+            "gzipBytes": 9855,
+            "brotliBytes": 8454,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 149480,
+            "gzipBytes": 149676,
+            "brotliBytes": 149432,
+            "requests": 7
+          },
+          "stylesheet": {
+            "bytes": 152507,
+            "gzipBytes": 23216,
+            "brotliBytes": 19573,
+            "requests": 1
+          },
+          "script": {
+            "bytes": 16440,
+            "gzipBytes": 5944,
+            "brotliBytes": 5276,
+            "requests": 3
+          },
+          "image": {
+            "bytes": 49402,
+            "gzipBytes": 49481,
+            "brotliBytes": 49414,
+            "requests": 3
+          }
+        }
+      },
+      {
+        "route": "/projects/ever-since-i-have-been-flying/",
+        "width": 390,
+        "resources": {
+          "document": {
+            "bytes": 116858,
+            "gzipBytes": 18549,
+            "brotliBytes": 14995,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 149480,
+            "gzipBytes": 149676,
+            "brotliBytes": 149432,
+            "requests": 7
+          },
+          "stylesheet": {
+            "bytes": 152507,
+            "gzipBytes": 23216,
+            "brotliBytes": 19573,
+            "requests": 1
+          },
+          "script": {
+            "bytes": 16440,
+            "gzipBytes": 5944,
+            "brotliBytes": 5276,
+            "requests": 3
+          },
+          "image": {
+            "bytes": 224598,
+            "gzipBytes": 224743,
+            "brotliBytes": 224534,
+            "requests": 8
+          }
+        }
+      },
+      {
+        "route": "/behind-the-scenes/",
+        "width": 390,
+        "resources": {
+          "document": {
+            "bytes": 130178,
+            "gzipBytes": 19411,
+            "brotliBytes": 15501,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 172928,
+            "gzipBytes": 173129,
+            "brotliBytes": 172883,
+            "requests": 7
+          },
+          "stylesheet": {
+            "bytes": 156825,
+            "gzipBytes": 24522,
+            "brotliBytes": 20658,
+            "requests": 2
+          },
+          "image": {
+            "bytes": 361798,
+            "gzipBytes": 362001,
+            "brotliBytes": 361743,
+            "requests": 8
+          },
+          "script": {
+            "bytes": 16440,
+            "gzipBytes": 5944,
+            "brotliBytes": 5276,
+            "requests": 3
+          }
+        }
+      }
+    ]
+  },
+  "upgraded": {
+    "browser": "153.0.8010.12",
+    "playwright": "1.64.1",
+    "node": "v22.23.4",
+    "astro": "7.4.2",
+    "medians": [
+      {
+        "route": "/",
+        "width": 1280,
+        "lcpMilliseconds": 44,
+        "cls": 0.00021196153428819446,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/about/",
+        "width": 1280,
+        "lcpMilliseconds": 44,
+        "cls": 0.00046941587660047747,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/projects/ever-since-i-have-been-flying/",
+        "width": 1280,
+        "lcpMilliseconds": 52,
+        "cls": 0.000723656972249349,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/behind-the-scenes/",
+        "width": 1280,
+        "lcpMilliseconds": 64,
+        "cls": 0.00019368065728081599,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/",
+        "width": 390,
+        "lcpMilliseconds": 44,
+        "cls": 0.0002207623525328583,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/about/",
+        "width": 390,
+        "lcpMilliseconds": 48,
+        "cls": 0.0008786401631123084,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/projects/ever-since-i-have-been-flying/",
+        "width": 390,
+        "lcpMilliseconds": 60,
+        "cls": 0.0015583074020384504,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/behind-the-scenes/",
+        "width": 390,
+        "lcpMilliseconds": 60,
+        "cls": 0.03236100133925563,
+        "longTaskBlockingMilliseconds": 0
+      }
+    ],
+    "delivery": [
+      {
+        "route": "/",
+        "width": 1280,
+        "resources": {
+          "document": {
+            "bytes": 84987,
+            "gzipBytes": 13977,
+            "brotliBytes": 11310,
+            "requests": 1
+          },
+          "image": {
+            "bytes": 474914,
+            "gzipBytes": 473216,
+            "brotliBytes": 472789,
+            "requests": 6
+          },
+          "font": {
+            "bytes": 105384,
+            "gzipBytes": 105524,
+            "brotliBytes": 105356,
+            "requests": 5
+          },
+          "stylesheet": {
+            "bytes": 158289,
+            "gzipBytes": 23754,
+            "brotliBytes": 19949,
+            "requests": 1
+          },
+          "script": {
+            "bytes": 16451,
+            "gzipBytes": 5955,
+            "brotliBytes": 5285,
+            "requests": 3
+          }
+        }
+      },
+      {
+        "route": "/about/",
+        "width": 1280,
+        "resources": {
+          "document": {
+            "bytes": 37224,
+            "gzipBytes": 9850,
+            "brotliBytes": 8443,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 149480,
+            "gzipBytes": 149676,
+            "brotliBytes": 149432,
+            "requests": 7
+          },
+          "stylesheet": {
+            "bytes": 158289,
+            "gzipBytes": 23754,
+            "brotliBytes": 19949,
+            "requests": 1
+          },
+          "script": {
+            "bytes": 16451,
+            "gzipBytes": 5955,
+            "brotliBytes": 5285,
+            "requests": 3
+          },
+          "image": {
+            "bytes": 186390,
+            "gzipBytes": 186509,
+            "brotliBytes": 186404,
+            "requests": 3
+          }
+        }
+      },
+      {
+        "route": "/projects/ever-since-i-have-been-flying/",
+        "width": 1280,
+        "resources": {
+          "document": {
+            "bytes": 116850,
+            "gzipBytes": 18544,
+            "brotliBytes": 15026,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 149480,
+            "gzipBytes": 149676,
+            "brotliBytes": 149432,
+            "requests": 7
+          },
+          "stylesheet": {
+            "bytes": 158289,
+            "gzipBytes": 23754,
+            "brotliBytes": 19949,
+            "requests": 1
+          },
+          "script": {
+            "bytes": 16451,
+            "gzipBytes": 5955,
+            "brotliBytes": 5285,
+            "requests": 3
+          },
+          "image": {
+            "bytes": 482528,
+            "gzipBytes": 482570,
+            "brotliBytes": 482202,
+            "requests": 8
+          }
+        }
+      },
+      {
+        "route": "/behind-the-scenes/",
+        "width": 1280,
+        "resources": {
+          "document": {
+            "bytes": 130170,
+            "gzipBytes": 19406,
+            "brotliBytes": 15509,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 172928,
+            "gzipBytes": 173129,
+            "brotliBytes": 172883,
+            "requests": 7
+          },
+          "stylesheet": {
+            "bytes": 162607,
+            "gzipBytes": 25060,
+            "brotliBytes": 21034,
+            "requests": 2
+          },
+          "image": {
+            "bytes": 959276,
+            "gzipBytes": 959969,
+            "brotliBytes": 959282,
+            "requests": 23
+          },
+          "script": {
+            "bytes": 16451,
+            "gzipBytes": 5955,
+            "brotliBytes": 5285,
+            "requests": 3
+          }
+        }
+      },
+      {
+        "route": "/",
+        "width": 390,
+        "resources": {
+          "document": {
+            "bytes": 84987,
+            "gzipBytes": 13977,
+            "brotliBytes": 11310,
+            "requests": 1
+          },
+          "image": {
+            "bytes": 192028,
+            "gzipBytes": 191146,
+            "brotliBytes": 190844,
+            "requests": 7
+          },
+          "stylesheet": {
+            "bytes": 158289,
+            "gzipBytes": 23754,
+            "brotliBytes": 19949,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 105384,
+            "gzipBytes": 105524,
+            "brotliBytes": 105356,
+            "requests": 5
+          },
+          "script": {
+            "bytes": 16451,
+            "gzipBytes": 5955,
+            "brotliBytes": 5285,
+            "requests": 3
+          }
+        }
+      },
+      {
+        "route": "/about/",
+        "width": 390,
+        "resources": {
+          "document": {
+            "bytes": 37224,
+            "gzipBytes": 9850,
+            "brotliBytes": 8443,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 149480,
+            "gzipBytes": 149676,
+            "brotliBytes": 149432,
+            "requests": 7
+          },
+          "stylesheet": {
+            "bytes": 158289,
+            "gzipBytes": 23754,
+            "brotliBytes": 19949,
+            "requests": 1
+          },
+          "script": {
+            "bytes": 16451,
+            "gzipBytes": 5955,
+            "brotliBytes": 5285,
+            "requests": 3
+          },
+          "image": {
+            "bytes": 49402,
+            "gzipBytes": 49481,
+            "brotliBytes": 49414,
+            "requests": 3
+          }
+        }
+      },
+      {
+        "route": "/projects/ever-since-i-have-been-flying/",
+        "width": 390,
+        "resources": {
+          "document": {
+            "bytes": 116850,
+            "gzipBytes": 18544,
+            "brotliBytes": 15026,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 149480,
+            "gzipBytes": 149676,
+            "brotliBytes": 149432,
+            "requests": 7
+          },
+          "stylesheet": {
+            "bytes": 158289,
+            "gzipBytes": 23754,
+            "brotliBytes": 19949,
+            "requests": 1
+          },
+          "script": {
+            "bytes": 16451,
+            "gzipBytes": 5955,
+            "brotliBytes": 5285,
+            "requests": 3
+          },
+          "image": {
+            "bytes": 224598,
+            "gzipBytes": 224743,
+            "brotliBytes": 224534,
+            "requests": 8
+          }
+        }
+      },
+      {
+        "route": "/behind-the-scenes/",
+        "width": 390,
+        "resources": {
+          "document": {
+            "bytes": 130170,
+            "gzipBytes": 19406,
+            "brotliBytes": 15509,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 172928,
+            "gzipBytes": 173129,
+            "brotliBytes": 172883,
+            "requests": 7
+          },
+          "image": {
+            "bytes": 361798,
+            "gzipBytes": 362001,
+            "brotliBytes": 361743,
+            "requests": 8
+          },
+          "stylesheet": {
+            "bytes": 162607,
+            "gzipBytes": 25060,
+            "brotliBytes": 21034,
+            "requests": 2
+          },
+          "script": {
+            "bytes": 16451,
+            "gzipBytes": 5955,
+            "brotliBytes": 5285,
+            "requests": 3
+          }
+        }
+      }
+    ]
+  },
+  "fonts": {
+    "browser": "153.0.8010.12",
+    "playwright": "1.64.1",
+    "node": "v22.23.4",
+    "astro": "7.4.2",
+    "medians": [
+      {
+        "route": "/",
+        "width": 1280,
+        "lcpMilliseconds": 48,
+        "cls": 0,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/about/",
+        "width": 1280,
+        "lcpMilliseconds": 48,
+        "cls": 0.00016695997450086805,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/projects/ever-since-i-have-been-flying/",
+        "width": 1280,
+        "lcpMilliseconds": 52,
+        "cls": 0.00013227462768554686,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/behind-the-scenes/",
+        "width": 1280,
+        "lcpMilliseconds": 84,
+        "cls": 0.0002702509562174479,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/",
+        "width": 390,
+        "lcpMilliseconds": 44,
+        "cls": 0,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/about/",
+        "width": 390,
+        "lcpMilliseconds": 52,
+        "cls": 0.00023272788223246995,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/projects/ever-since-i-have-been-flying/",
+        "width": 390,
+        "lcpMilliseconds": 76,
+        "cls": 0,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/behind-the-scenes/",
+        "width": 390,
+        "lcpMilliseconds": 72,
+        "cls": 0.0005869849745712049,
+        "longTaskBlockingMilliseconds": 0
+      }
+    ],
+    "delivery": [
+      {
+        "route": "/",
+        "width": 1280,
+        "resources": {
+          "document": {
+            "bytes": 87563,
+            "gzipBytes": 14408,
+            "brotliBytes": 11678,
+            "requests": 1
+          },
+          "image": {
+            "bytes": 474914,
+            "gzipBytes": 473216,
+            "brotliBytes": 472789,
+            "requests": 6
+          },
+          "font": {
+            "bytes": 87164,
+            "gzipBytes": 87253,
+            "brotliBytes": 87153,
+            "requests": 3
+          },
+          "stylesheet": {
+            "bytes": 156126,
+            "gzipBytes": 23325,
+            "brotliBytes": 19591,
+            "requests": 1
+          },
+          "script": {
+            "bytes": 16451,
+            "gzipBytes": 5955,
+            "brotliBytes": 5285,
+            "requests": 3
+          }
+        }
+      },
+      {
+        "route": "/about/",
+        "width": 1280,
+        "resources": {
+          "document": {
+            "bytes": 39800,
+            "gzipBytes": 10291,
+            "brotliBytes": 8839,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 112512,
+            "gzipBytes": 112629,
+            "brotliBytes": 112484,
+            "requests": 4
+          },
+          "stylesheet": {
+            "bytes": 156126,
+            "gzipBytes": 23325,
+            "brotliBytes": 19591,
+            "requests": 1
+          },
+          "script": {
+            "bytes": 16451,
+            "gzipBytes": 5955,
+            "brotliBytes": 5285,
+            "requests": 3
+          },
+          "image": {
+            "bytes": 186390,
+            "gzipBytes": 186509,
+            "brotliBytes": 186404,
+            "requests": 3
+          }
+        }
+      },
+      {
+        "route": "/projects/ever-since-i-have-been-flying/",
+        "width": 1280,
+        "resources": {
+          "document": {
+            "bytes": 119534,
+            "gzipBytes": 18985,
+            "brotliBytes": 15397,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 112512,
+            "gzipBytes": 112629,
+            "brotliBytes": 112484,
+            "requests": 4
+          },
+          "stylesheet": {
+            "bytes": 156126,
+            "gzipBytes": 23325,
+            "brotliBytes": 19591,
+            "requests": 1
+          },
+          "script": {
+            "bytes": 16451,
+            "gzipBytes": 5955,
+            "brotliBytes": 5285,
+            "requests": 3
+          },
+          "image": {
+            "bytes": 482528,
+            "gzipBytes": 482570,
+            "brotliBytes": 482202,
+            "requests": 8
+          }
+        }
+      },
+      {
+        "route": "/behind-the-scenes/",
+        "width": 1280,
+        "resources": {
+          "document": {
+            "bytes": 132746,
+            "gzipBytes": 19842,
+            "brotliBytes": 15890,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 135960,
+            "gzipBytes": 136082,
+            "brotliBytes": 135935,
+            "requests": 4
+          },
+          "image": {
+            "bytes": 959276,
+            "gzipBytes": 959969,
+            "brotliBytes": 959282,
+            "requests": 23
+          },
+          "stylesheet": {
+            "bytes": 160444,
+            "gzipBytes": 24631,
+            "brotliBytes": 20676,
+            "requests": 2
+          },
+          "script": {
+            "bytes": 16451,
+            "gzipBytes": 5955,
+            "brotliBytes": 5285,
+            "requests": 3
+          }
+        }
+      },
+      {
+        "route": "/",
+        "width": 390,
+        "resources": {
+          "document": {
+            "bytes": 87563,
+            "gzipBytes": 14408,
+            "brotliBytes": 11678,
+            "requests": 1
+          },
+          "image": {
+            "bytes": 192028,
+            "gzipBytes": 191146,
+            "brotliBytes": 190844,
+            "requests": 7
+          },
+          "script": {
+            "bytes": 16451,
+            "gzipBytes": 5955,
+            "brotliBytes": 5285,
+            "requests": 3
+          },
+          "stylesheet": {
+            "bytes": 156126,
+            "gzipBytes": 23325,
+            "brotliBytes": 19591,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 87164,
+            "gzipBytes": 87253,
+            "brotliBytes": 87153,
+            "requests": 3
+          }
+        }
+      },
+      {
+        "route": "/about/",
+        "width": 390,
+        "resources": {
+          "document": {
+            "bytes": 39800,
+            "gzipBytes": 10291,
+            "brotliBytes": 8839,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 112512,
+            "gzipBytes": 112629,
+            "brotliBytes": 112484,
+            "requests": 4
+          },
+          "stylesheet": {
+            "bytes": 156126,
+            "gzipBytes": 23325,
+            "brotliBytes": 19591,
+            "requests": 1
+          },
+          "image": {
+            "bytes": 49402,
+            "gzipBytes": 49481,
+            "brotliBytes": 49414,
+            "requests": 3
+          },
+          "script": {
+            "bytes": 16451,
+            "gzipBytes": 5955,
+            "brotliBytes": 5285,
+            "requests": 3
+          }
+        }
+      },
+      {
+        "route": "/projects/ever-since-i-have-been-flying/",
+        "width": 390,
+        "resources": {
+          "document": {
+            "bytes": 119534,
+            "gzipBytes": 18985,
+            "brotliBytes": 15397,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 112512,
+            "gzipBytes": 112629,
+            "brotliBytes": 112484,
+            "requests": 4
+          },
+          "stylesheet": {
+            "bytes": 156126,
+            "gzipBytes": 23325,
+            "brotliBytes": 19591,
+            "requests": 1
+          },
+          "image": {
+            "bytes": 224598,
+            "gzipBytes": 224743,
+            "brotliBytes": 224534,
+            "requests": 8
+          },
+          "script": {
+            "bytes": 16451,
+            "gzipBytes": 5955,
+            "brotliBytes": 5285,
+            "requests": 3
+          }
+        }
+      },
+      {
+        "route": "/behind-the-scenes/",
+        "width": 390,
+        "resources": {
+          "document": {
+            "bytes": 132746,
+            "gzipBytes": 19842,
+            "brotliBytes": 15890,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 135960,
+            "gzipBytes": 136082,
+            "brotliBytes": 135935,
+            "requests": 4
+          },
+          "image": {
+            "bytes": 361798,
+            "gzipBytes": 362001,
+            "brotliBytes": 361743,
+            "requests": 8
+          },
+          "stylesheet": {
+            "bytes": 160444,
+            "gzipBytes": 24631,
+            "brotliBytes": 20676,
+            "requests": 2
+          },
+          "script": {
+            "bytes": 16451,
+            "gzipBytes": 5955,
+            "brotliBytes": 5285,
+            "requests": 3
+          }
+        }
+      }
+    ]
+  },
+  "final": {
+    "browser": "153.0.8010.12",
+    "playwright": "1.64.1",
+    "node": "v22.23.4",
+    "astro": "7.4.2",
+    "medians": [
+      {
+        "route": "/",
+        "width": 1280,
+        "lcpMilliseconds": 40,
+        "cls": 0,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/about/",
+        "width": 1280,
+        "lcpMilliseconds": 36,
+        "cls": 0.00016695997450086805,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/projects/ever-since-i-have-been-flying/",
+        "width": 1280,
+        "lcpMilliseconds": 44,
+        "cls": 0.00013227462768554686,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/behind-the-scenes/",
+        "width": 1280,
+        "lcpMilliseconds": 56,
+        "cls": 0.0002702509562174479,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/",
+        "width": 390,
+        "lcpMilliseconds": 36,
+        "cls": 0,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/about/",
+        "width": 390,
+        "lcpMilliseconds": 44,
+        "cls": 0.00023272788223246995,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/projects/ever-since-i-have-been-flying/",
+        "width": 390,
+        "lcpMilliseconds": 48,
+        "cls": 0,
+        "longTaskBlockingMilliseconds": 0
+      },
+      {
+        "route": "/behind-the-scenes/",
+        "width": 390,
+        "lcpMilliseconds": 44,
+        "cls": 0.0005869849745712049,
+        "longTaskBlockingMilliseconds": 0
+      }
+    ],
+    "delivery": [
+      {
+        "route": "/",
+        "width": 1280,
+        "resources": {
+          "image": {
+            "bytes": 474914,
+            "gzipBytes": 473216,
+            "brotliBytes": 472789,
+            "requests": 6
+          },
+          "font": {
+            "bytes": 87164,
+            "gzipBytes": 87253,
+            "brotliBytes": 87153,
+            "requests": 3
+          },
+          "document": {
+            "bytes": 83018,
+            "gzipBytes": 13404,
+            "brotliBytes": 10796,
+            "requests": 1
+          },
+          "stylesheet": {
+            "bytes": 156154,
+            "gzipBytes": 23325,
+            "brotliBytes": 19585,
+            "requests": 1
+          },
+          "script": {
+            "bytes": 16451,
+            "gzipBytes": 5955,
+            "brotliBytes": 5285,
+            "requests": 3
+          }
+        }
+      },
+      {
+        "route": "/about/",
+        "width": 1280,
+        "resources": {
+          "document": {
+            "bytes": 35471,
+            "gzipBytes": 9388,
+            "brotliBytes": 8041,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 112512,
+            "gzipBytes": 112629,
+            "brotliBytes": 112484,
+            "requests": 4
+          },
+          "stylesheet": {
+            "bytes": 156154,
+            "gzipBytes": 23325,
+            "brotliBytes": 19585,
+            "requests": 1
+          },
+          "image": {
+            "bytes": 184750,
+            "gzipBytes": 184846,
+            "brotliBytes": 184714,
+            "requests": 3
+          },
+          "script": {
+            "bytes": 16451,
+            "gzipBytes": 5955,
+            "brotliBytes": 5285,
+            "requests": 3
+          }
+        }
+      },
+      {
+        "route": "/projects/ever-since-i-have-been-flying/",
+        "width": 1280,
+        "resources": {
+          "document": {
+            "bytes": 114989,
+            "gzipBytes": 18058,
+            "brotliBytes": 14564,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 112512,
+            "gzipBytes": 112629,
+            "brotliBytes": 112484,
+            "requests": 4
+          },
+          "stylesheet": {
+            "bytes": 156154,
+            "gzipBytes": 23325,
+            "brotliBytes": 19585,
+            "requests": 1
+          },
+          "image": {
+            "bytes": 482528,
+            "gzipBytes": 482570,
+            "brotliBytes": 482202,
+            "requests": 8
+          },
+          "script": {
+            "bytes": 16451,
+            "gzipBytes": 5955,
+            "brotliBytes": 5285,
+            "requests": 3
+          }
+        }
+      },
+      {
+        "route": "/behind-the-scenes/",
+        "width": 1280,
+        "resources": {
+          "document": {
+            "bytes": 128201,
+            "gzipBytes": 18917,
+            "brotliBytes": 15019,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 135960,
+            "gzipBytes": 136082,
+            "brotliBytes": 135935,
+            "requests": 4
+          },
+          "stylesheet": {
+            "bytes": 160472,
+            "gzipBytes": 24631,
+            "brotliBytes": 20670,
+            "requests": 2
+          },
+          "image": {
+            "bytes": 959276,
+            "gzipBytes": 959969,
+            "brotliBytes": 959282,
+            "requests": 23
+          },
+          "script": {
+            "bytes": 16451,
+            "gzipBytes": 5955,
+            "brotliBytes": 5285,
+            "requests": 3
+          }
+        }
+      },
+      {
+        "route": "/",
+        "width": 390,
+        "resources": {
+          "document": {
+            "bytes": 83018,
+            "gzipBytes": 13404,
+            "brotliBytes": 10796,
+            "requests": 1
+          },
+          "image": {
+            "bytes": 192028,
+            "gzipBytes": 191146,
+            "brotliBytes": 190844,
+            "requests": 7
+          },
+          "font": {
+            "bytes": 87164,
+            "gzipBytes": 87253,
+            "brotliBytes": 87153,
+            "requests": 3
+          },
+          "stylesheet": {
+            "bytes": 156154,
+            "gzipBytes": 23325,
+            "brotliBytes": 19585,
+            "requests": 1
+          },
+          "script": {
+            "bytes": 16451,
+            "gzipBytes": 5955,
+            "brotliBytes": 5285,
+            "requests": 3
+          }
+        }
+      },
+      {
+        "route": "/about/",
+        "width": 390,
+        "resources": {
+          "document": {
+            "bytes": 35471,
+            "gzipBytes": 9388,
+            "brotliBytes": 8041,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 112512,
+            "gzipBytes": 112629,
+            "brotliBytes": 112484,
+            "requests": 4
+          },
+          "stylesheet": {
+            "bytes": 156154,
+            "gzipBytes": 23325,
+            "brotliBytes": 19585,
+            "requests": 1
+          },
+          "script": {
+            "bytes": 16451,
+            "gzipBytes": 5955,
+            "brotliBytes": 5285,
+            "requests": 3
+          },
+          "image": {
+            "bytes": 47762,
+            "gzipBytes": 47818,
+            "brotliBytes": 47724,
+            "requests": 3
+          }
+        }
+      },
+      {
+        "route": "/projects/ever-since-i-have-been-flying/",
+        "width": 390,
+        "resources": {
+          "document": {
+            "bytes": 114989,
+            "gzipBytes": 18058,
+            "brotliBytes": 14564,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 112512,
+            "gzipBytes": 112629,
+            "brotliBytes": 112484,
+            "requests": 4
+          },
+          "stylesheet": {
+            "bytes": 156154,
+            "gzipBytes": 23325,
+            "brotliBytes": 19585,
+            "requests": 1
+          },
+          "script": {
+            "bytes": 16451,
+            "gzipBytes": 5955,
+            "brotliBytes": 5285,
+            "requests": 3
+          },
+          "image": {
+            "bytes": 224598,
+            "gzipBytes": 224743,
+            "brotliBytes": 224534,
+            "requests": 8
+          }
+        }
+      },
+      {
+        "route": "/behind-the-scenes/",
+        "width": 390,
+        "resources": {
+          "document": {
+            "bytes": 128201,
+            "gzipBytes": 18917,
+            "brotliBytes": 15019,
+            "requests": 1
+          },
+          "font": {
+            "bytes": 135960,
+            "gzipBytes": 136082,
+            "brotliBytes": 135935,
+            "requests": 4
+          },
+          "image": {
+            "bytes": 361798,
+            "gzipBytes": 362001,
+            "brotliBytes": 361743,
+            "requests": 8
+          },
+          "stylesheet": {
+            "bytes": 160472,
+            "gzipBytes": 24631,
+            "brotliBytes": 20670,
+            "requests": 2
+          },
+          "script": {
+            "bytes": 16451,
+            "gzipBytes": 5955,
+            "brotliBytes": 5285,
+            "requests": 3
+          }
+        }
+      }
+    ]
+  }
+}

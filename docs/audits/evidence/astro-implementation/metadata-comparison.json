@@ -1,0 +1,26 @@
+{
+  "routes": [
+    "404.html",
+    "about/index.html",
+    "behind-the-scenes/index.html",
+    "index.html",
+    "projects/a-long-goodbye/index.html",
+    "projects/anna/index.html",
+    "projects/bearer-of-bad-news/index.html",
+    "projects/bieke-depoorter-chance-encounters/index.html",
+    "projects/burn/index.html",
+    "projects/burning-clouds/index.html",
+    "projects/ever-since-i-have-been-flying/index.html",
+    "projects/felix-le-gamin-qui-traverse/index.html",
+    "projects/hoge-blekker/index.html",
+    "projects/la-belle-rosine/index.html",
+    "projects/les-homards-immortels/index.html",
+    "projects/moonlight-woman/index.html",
+    "projects/springtide/index.html",
+    "projects/the-tears-of-things/index.html",
+    "projects/today-we-escape/index.html",
+    "projects/vlinderman/index.html",
+    "projects/world-wood-web/index.html"
+  ],
+  "changes": []
+}

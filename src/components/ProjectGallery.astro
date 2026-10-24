@@ -29,4 +29,7 @@ const gridClass = 'hero-content grid w-full grid-cols-1 md:grid-cols-2 gap-x-3 g
   .gallery-expansion-control:hover { border-color: #f1d74e; color: #f1d74e; }
   .gallery-hide, details[open] .gallery-show { display: none; }
   details[open] .gallery-hide { display: inline; }
+  /* Chromium can retain the expanded grid's layout after closing details.
+     Explicitly remove it so closed stills never keep boxes or focus targets. */
+  details:not([open]) > [data-gallery-remaining] { display: none; }
 </style>

@@ -1,0 +1,23 @@
+
+> victor-maes-portfolio@4.23.0 check
+> astro check
+
+22:49:42 [portfolio-image-manifest] Including 389 referenced images.
+22:49:42 [content] Syncing content
+22:49:42 [content] Astro config changed
+22:49:42 [content] Astro version changed
+22:49:42 [content] Clearing content store
+22:49:42 [content] Synced content
+22:49:42 [types] Generated 374ms
+22:49:42 [check] Getting diagnostics for Astro files in /Users/victormaes/Documents/GitHub-desktop/monsieurmusclaira.github.io...
+[96mscripts/measure-astro.mjs[0m:[93m57[0m:[93m40[0m - [93mwarning[0m[90m ts(2568): [0mProperty 'click' may not exist on type 'HTMLElement | SVGElement'. Did you mean 'onclick'?
+  Property 'click' does not exist on type 'SVGElement'.
+
+[7m57[0m         await link.evaluate((el) => el.click());
+[7m  [0m [93m                                       ~~~~~[0m
+
+Result (75 files): 
+- 0 errors
+- 0 warnings
+- 1 hint
+

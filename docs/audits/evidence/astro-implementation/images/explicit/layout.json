@@ -1,0 +1,84 @@
+[
+  {
+    "width": 390,
+    "hero": {
+      "src": "http://127.0.0.1:4323/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_Z2umPva.webp",
+      "srcset": "/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_Z1E1rzr.webp 768w, /_astro/TTOT_20221008_1.19.1.Dm0ygTdM_Z2umPva.webp 1080w, /_astro/TTOT_20221008_1.19.1.Dm0ygTdM_1Wr0G1.webp 1440w, /_astro/TTOT_20221008_1.19.1.Dm0ygTdM_1iKA2k.webp 2560w",
+      "sizes": "100vw",
+      "loading": "eager",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "objectFit": "cover",
+      "picture": null,
+      "bitmapCreationMilliseconds": 4.899999976158142
+    },
+    "portrait": {
+      "src": "http://127.0.0.1:4323/_astro/IMG_2507-unblur.CbZVxQ6Z_Z1ci1TA.webp",
+      "srcset": "/_astro/IMG_2507-unblur.CbZVxQ6Z_ZVBbes.webp 320w, /_astro/IMG_2507-unblur.CbZVxQ6Z_Z1ci1TA.webp 640w",
+      "sizes": "(min-width: 768px) 300px, 100vw",
+      "loading": "lazy",
+      "rect": {
+        "x": 24,
+        "y": 278.5,
+        "width": 342,
+        "height": 286.953125,
+        "top": 278.5,
+        "right": 366,
+        "bottom": 565.453125,
+        "left": 24
+      },
+      "objectFit": "fill",
+      "picture": null,
+      "bitmapCreationMilliseconds": 1.9000000357627869
+    }
+  },
+  {
+    "width": 1280,
+    "hero": {
+      "src": "http://127.0.0.1:4323/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_1iKA2k.webp",
+      "srcset": "/_astro/TTOT_20221008_1.19.1.Dm0ygTdM_Z1E1rzr.webp 768w, /_astro/TTOT_20221008_1.19.1.Dm0ygTdM_Z2umPva.webp 1080w, /_astro/TTOT_20221008_1.19.1.Dm0ygTdM_1Wr0G1.webp 1440w, /_astro/TTOT_20221008_1.19.1.Dm0ygTdM_1iKA2k.webp 2560w",
+      "sizes": "100vw",
+      "loading": "eager",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 844,
+        "top": 0,
+        "right": 1280,
+        "bottom": 844,
+        "left": 0
+      },
+      "objectFit": "cover",
+      "picture": null,
+      "bitmapCreationMilliseconds": 17.399999976158142
+    },
+    "portrait": {
+      "src": "http://127.0.0.1:4323/_astro/IMG_2507-unblur.CbZVxQ6Z_Z1ci1TA.webp",
+      "srcset": "/_astro/IMG_2507-unblur.CbZVxQ6Z_ZVBbes.webp 320w, /_astro/IMG_2507-unblur.CbZVxQ6Z_Z1ci1TA.webp 640w",
+      "sizes": "(min-width: 768px) 300px, 100vw",
+      "loading": "lazy",
+      "rect": {
+        "x": 152,
+        "y": 296,
+        "width": 300,
+        "height": 251.71875,
+        "top": 296,
+        "right": 452,
+        "bottom": 547.71875,
+        "left": 152
+      },
+      "objectFit": "fill",
+      "picture": null,
+      "bitmapCreationMilliseconds": 1.699999988079071
+    }
+  }
+]

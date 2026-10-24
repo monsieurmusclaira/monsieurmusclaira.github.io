@@ -1,29 +1,10 @@
-/* Fonts are bundled locally through Fontsource. Import only the Latin subsets
-   used by this English, French, and Dutch portfolio to keep the CSS payload
-   focused while preserving the site's established typography. */
-@import "@fontsource/montserrat/latin-300.css";
-@import "@fontsource/montserrat/latin-400.css";
-@import "@fontsource/montserrat/latin-500.css";
-@import "@fontsource/montserrat/latin-600.css";
-@import "@fontsource/eb-garamond/latin-400.css";
-@import "@fontsource/eb-garamond/latin-400-italic.css";
-@import "@fontsource/eb-garamond/latin-500.css";
-@import "@fontsource/eb-garamond/latin-600.css";
-@import "@fontsource/caveat/latin-400.css";
-
+/* Font faces and the existing family variables come from Astro's local Fonts API. */
 @import "tailwindcss";
 
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
   themes: false;
 }
-/* Keep named font variables so the component styles remain readable. */
-:root {
-  --font-montserrat: "Montserrat";
-  --font-eb-garamond: "EB Garamond";
-  --font-caveat: "Caveat";
-}
-
 @theme {
   --font-sans: var(--font-montserrat), sans-serif;
   --font-serif: var(--font-eb-garamond), serif;

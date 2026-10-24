@@ -1,0 +1,2262 @@
+[
+  {
+    "architecture": "router",
+    "engine": "chromium",
+    "browser": "156.0.8078.4",
+    "motion": "reduce",
+    "navigationMilliseconds": 602,
+    "replacedDocument": false,
+    "scroll": 3600,
+    "backScroll": 3600,
+    "heroSourcesAfterBack": 0,
+    "requests": [
+      {
+        "url": "/",
+        "type": "document"
+      },
+      {
+        "url": "/video/seethrough.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/81583c452d41c867.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/84c89d718774e901.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DDRd4psi.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/BaseLayout.Bxt_HBQ3.css",
+        "type": "stylesheet"
+      },
+      {
+        "url": "/_astro/page.CZpLv-iH.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/prefetch.Dr31lufI.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/fonts/5ec31e340a5b0d5c.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_1vRqKf.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_yK7Lc.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z1dFaBn.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z28RMth.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_ZWaSNa.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z14eipo.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20220321_Vlinderman_Showlut_1.337.1.DXfUbJu4_CYVIm.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/TTOT_20212101_1.1.67.K6pUnmNB_Ze2mg5.webp",
+        "type": "image"
+      },
+      {
+        "url": "/projects/burn/",
+        "type": "fetch"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_Z1X9jP8.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/510a380ac7be487f.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_OI0dP.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.4.CGrE88vI_GwLEy.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.5.IXsSYGvn_Z1viute.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.11.BRHQDZ_8_2vADCl.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.12.DBVMbtV7_Z202PFe.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.14.BksRyq_S_Z1U70SO.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_Z2rxYnL.webp",
+        "type": "image"
+      },
+      {
+        "url": "/",
+        "type": "fetch"
+      },
+      {
+        "url": "/projects/burn/",
+        "type": "other"
+      }
+    ]
+  },
+  {
+    "architecture": "router",
+    "engine": "chromium",
+    "browser": "156.0.8078.4",
+    "motion": "no-preference",
+    "navigationMilliseconds": 583,
+    "replacedDocument": false,
+    "scroll": 3700,
+    "backScroll": 3700,
+    "heroSourcesAfterBack": 0,
+    "requests": [
+      {
+        "url": "/",
+        "type": "document"
+      },
+      {
+        "url": "/video/seethrough.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/81583c452d41c867.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/84c89d718774e901.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DDRd4psi.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/BaseLayout.Bxt_HBQ3.css",
+        "type": "stylesheet"
+      },
+      {
+        "url": "/_astro/page.CZpLv-iH.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/prefetch.Dr31lufI.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/fonts/5ec31e340a5b0d5c.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_1vRqKf.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_yK7Lc.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z1dFaBn.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z28RMth.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_ZWaSNa.webp",
+        "type": "image"
+      },
+      {
+        "url": "/video/seethrough-loop.webm",
+        "type": "media"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z14eipo.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20220321_Vlinderman_Showlut_1.337.1.DXfUbJu4_CYVIm.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/TTOT_20212101_1.1.67.K6pUnmNB_Ze2mg5.webp",
+        "type": "image"
+      },
+      {
+        "url": "/projects/burn/",
+        "type": "fetch"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_Z1X9jP8.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/510a380ac7be487f.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_OI0dP.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.4.CGrE88vI_GwLEy.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.5.IXsSYGvn_Z1viute.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.11.BRHQDZ_8_2vADCl.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.12.DBVMbtV7_Z202PFe.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.14.BksRyq_S_Z1U70SO.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_Z2rxYnL.webp",
+        "type": "image"
+      },
+      {
+        "url": "/",
+        "type": "fetch"
+      },
+      {
+        "url": "/video/seethrough.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_1vRqKf.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_yK7Lc.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z1dFaBn.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z28RMth.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20220321_Vlinderman_Showlut_1.337.1.DXfUbJu4_CYVIm.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/TTOT_20212101_1.1.67.K6pUnmNB_Ze2mg5.webp",
+        "type": "image"
+      },
+      {
+        "url": "/projects/burn/",
+        "type": "other"
+      }
+    ]
+  },
+  {
+    "architecture": "router",
+    "engine": "chromium",
+    "analyticsLoadsForTwoPages": 1,
+    "viewsInCurrentDocument": 2
+  },
+  {
+    "architecture": "router",
+    "engine": "firefox",
+    "browser": "157.0",
+    "motion": "reduce",
+    "navigationMilliseconds": 625,
+    "replacedDocument": false,
+    "scroll": 3600,
+    "backScroll": 3600,
+    "heroSourcesAfterBack": 0,
+    "requests": [
+      {
+        "url": "/",
+        "type": "document"
+      },
+      {
+        "url": "/_astro/fonts/81583c452d41c867.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/84c89d718774e901.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DDRd4psi.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/BaseLayout.Bxt_HBQ3.css",
+        "type": "stylesheet"
+      },
+      {
+        "url": "/_astro/page.CZpLv-iH.js",
+        "type": "script"
+      },
+      {
+        "url": "/video/seethrough.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/prefetch.Dr31lufI.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/fonts/5ec31e340a5b0d5c.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_1vRqKf.webp",
+        "type": "image"
+      },
+      {
+        "url": "/apple-touch-icon.png",
+        "type": "image"
+      },
+      {
+        "url": "/favicon.svg",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z28RMth.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_ZWaSNa.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z14eipo.webp",
+        "type": "image"
+      },
+      {
+        "url": "/projects/burn/",
+        "type": "fetch"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_Z1X9jP8.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/510a380ac7be487f.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/apple-touch-icon.png",
+        "type": "image"
+      },
+      {
+        "url": "/favicon.svg",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_2j5Yt2.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_OI0dP.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.4.CGrE88vI_GwLEy.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.5.IXsSYGvn_Z1viute.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.11.BRHQDZ_8_2vADCl.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.12.DBVMbtV7_Z202PFe.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.14.BksRyq_S_Z1U70SO.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_Z2rxYnL.webp",
+        "type": "image"
+      },
+      {
+        "url": "/",
+        "type": "fetch"
+      },
+      {
+        "url": "/projects/burn/",
+        "type": "other"
+      },
+      {
+        "url": "/apple-touch-icon.png",
+        "type": "image"
+      },
+      {
+        "url": "/favicon.svg",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.11.BRHQDZ_8_2jDGOY.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.14.BksRyq_S_Z273WGb.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_1GKeau.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Zx6HvY.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_ZvOyA2.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_hlcPY.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.12.DBVMbtV7_Z2bYMsA.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_2ueEau.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_Cs8al.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.4.CGrE88vI_ZE0M9j.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z14s3IX.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.5.IXsSYGvn_2dl4vP.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20220321_Vlinderman_Showlut_1.337.1.DXfUbJu4_1908ny.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/TTOT_20212101_1.1.67.K6pUnmNB_29B22b.webp",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "architecture": "router",
+    "engine": "firefox",
+    "browser": "157.0",
+    "motion": "no-preference",
+    "navigationMilliseconds": 605,
+    "replacedDocument": false,
+    "scroll": 3700,
+    "backScroll": 3700,
+    "heroSourcesAfterBack": 0,
+    "requests": [
+      {
+        "url": "/",
+        "type": "document"
+      },
+      {
+        "url": "/_astro/fonts/81583c452d41c867.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/84c89d718774e901.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DDRd4psi.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/BaseLayout.Bxt_HBQ3.css",
+        "type": "stylesheet"
+      },
+      {
+        "url": "/_astro/page.CZpLv-iH.js",
+        "type": "script"
+      },
+      {
+        "url": "/video/seethrough.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/prefetch.Dr31lufI.js",
+        "type": "script"
+      },
+      {
+        "url": "/apple-touch-icon.png",
+        "type": "image"
+      },
+      {
+        "url": "/favicon.svg",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/5ec31e340a5b0d5c.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_1vRqKf.webp",
+        "type": "image"
+      },
+      {
+        "url": "/video/seethrough-loop.webm",
+        "type": "media"
+      },
+      {
+        "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z28RMth.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_ZWaSNa.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z14eipo.webp",
+        "type": "image"
+      },
+      {
+        "url": "/projects/burn/",
+        "type": "fetch"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_Z1X9jP8.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/510a380ac7be487f.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/apple-touch-icon.png",
+        "type": "image"
+      },
+      {
+        "url": "/favicon.svg",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_2j5Yt2.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_OI0dP.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.4.CGrE88vI_GwLEy.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.5.IXsSYGvn_Z1viute.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.11.BRHQDZ_8_2vADCl.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.12.DBVMbtV7_Z202PFe.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.14.BksRyq_S_Z1U70SO.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_Z2rxYnL.webp",
+        "type": "image"
+      },
+      {
+        "url": "/",
+        "type": "fetch"
+      },
+      {
+        "url": "/apple-touch-icon.png",
+        "type": "image"
+      },
+      {
+        "url": "/favicon.svg",
+        "type": "image"
+      },
+      {
+        "url": "/projects/burn/",
+        "type": "other"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_hlcPY.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z14s3IX.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.5.IXsSYGvn_2dl4vP.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_Cs8al.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_1GKeau.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_2ueEau.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.12.DBVMbtV7_Z2bYMsA.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_ZvOyA2.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.11.BRHQDZ_8_2jDGOY.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Zx6HvY.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.14.BksRyq_S_Z273WGb.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.4.CGrE88vI_ZE0M9j.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20220321_Vlinderman_Showlut_1.337.1.DXfUbJu4_1908ny.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/TTOT_20212101_1.1.67.K6pUnmNB_29B22b.webp",
+        "type": "image"
+      },
+      {
+        "url": "/projects/moonlight-woman/",
+        "type": "other"
+      }
+    ]
+  },
+  {
+    "architecture": "router",
+    "engine": "firefox",
+    "analyticsLoadsForTwoPages": 1,
+    "viewsInCurrentDocument": 2
+  },
+  {
+    "architecture": "router",
+    "engine": "webkit",
+    "browser": "27.2",
+    "motion": "reduce",
+    "navigationMilliseconds": 667,
+    "replacedDocument": false,
+    "scroll": 3600,
+    "backScroll": 3600,
+    "heroSourcesAfterBack": 0,
+    "requests": [
+      {
+        "url": "/",
+        "type": "document"
+      },
+      {
+        "url": "/video/seethrough.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/81583c452d41c867.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/84c89d718774e901.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DDRd4psi.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/BaseLayout.Bxt_HBQ3.css",
+        "type": "stylesheet"
+      },
+      {
+        "url": "/_astro/page.CZpLv-iH.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/prefetch.Dr31lufI.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/fonts/5ec31e340a5b0d5c.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_1vRqKf.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_yK7Lc.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z1dFaBn.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z28RMth.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_ZWaSNa.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z14eipo.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20220321_Vlinderman_Showlut_1.337.1.DXfUbJu4_CYVIm.webp",
+        "type": "image"
+      },
+      {
+        "url": "/projects/burn/",
+        "type": "fetch"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_Z1X9jP8.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/510a380ac7be487f.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_2j5Yt2.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_OI0dP.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.4.CGrE88vI_GwLEy.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.5.IXsSYGvn_Z1viute.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.11.BRHQDZ_8_2vADCl.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.12.DBVMbtV7_Z202PFe.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.14.BksRyq_S_Z1U70SO.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_Z2rxYnL.webp",
+        "type": "image"
+      },
+      {
+        "url": "/",
+        "type": "fetch"
+      },
+      {
+        "url": "/projects/burn/",
+        "type": "fetch"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.5.IXsSYGvn_2dl4vP.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.11.BRHQDZ_8_2jDGOY.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.14.BksRyq_S_Z273WGb.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_Cs8al.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.12.DBVMbtV7_Z2bYMsA.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_ZvOyA2.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.4.CGrE88vI_ZE0M9j.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/TTOT_20212101_1.1.67.K6pUnmNB_Ze2mg5.webp",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "architecture": "router",
+    "engine": "webkit",
+    "browser": "27.2",
+    "motion": "no-preference",
+    "navigationMilliseconds": 1435,
+    "replacedDocument": false,
+    "scroll": 3700,
+    "backScroll": 3600,
+    "heroSourcesAfterBack": 0,
+    "requests": [
+      {
+        "url": "/",
+        "type": "document"
+      },
+      {
+        "url": "/video/seethrough.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/81583c452d41c867.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/84c89d718774e901.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DDRd4psi.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/BaseLayout.Bxt_HBQ3.css",
+        "type": "stylesheet"
+      },
+      {
+        "url": "/_astro/page.CZpLv-iH.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/prefetch.Dr31lufI.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/fonts/5ec31e340a5b0d5c.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_1vRqKf.webp",
+        "type": "image"
+      },
+      {
+        "url": "/video/seethrough-loop.webm",
+        "type": "other"
+      },
+      {
+        "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z1dFaBn.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z28RMth.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_ZWaSNa.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z14eipo.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20220321_Vlinderman_Showlut_1.337.1.DXfUbJu4_CYVIm.webp",
+        "type": "image"
+      },
+      {
+        "url": "/projects/burn/",
+        "type": "fetch"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_Z1X9jP8.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/510a380ac7be487f.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_2j5Yt2.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_OI0dP.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.4.CGrE88vI_GwLEy.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.5.IXsSYGvn_Z1viute.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.11.BRHQDZ_8_2vADCl.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.12.DBVMbtV7_Z202PFe.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.14.BksRyq_S_Z1U70SO.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_Z2rxYnL.webp",
+        "type": "image"
+      },
+      {
+        "url": "/",
+        "type": "fetch"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.5.IXsSYGvn_2dl4vP.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.11.BRHQDZ_8_2jDGOY.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.14.BksRyq_S_Z273WGb.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_Cs8al.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.4.CGrE88vI_ZE0M9j.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.12.DBVMbtV7_Z2bYMsA.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_ZvOyA2.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/TTOT_20212101_1.1.67.K6pUnmNB_Ze2mg5.webp",
+        "type": "image"
+      },
+      {
+        "url": "/projects/burn/",
+        "type": "fetch"
+      }
+    ]
+  },
+  {
+    "architecture": "router",
+    "engine": "webkit",
+    "analyticsLoadsForTwoPages": 1,
+    "viewsInCurrentDocument": 2
+  },
+  {
+    "architecture": "native",
+    "engine": "chromium",
+    "browser": "156.0.8078.4",
+    "motion": "reduce",
+    "navigationMilliseconds": 584,
+    "replacedDocument": true,
+    "scroll": 3600,
+    "backScroll": 3600,
+    "heroSourcesAfterBack": 0,
+    "requests": [
+      {
+        "url": "/",
+        "type": "document"
+      },
+      {
+        "url": "/video/seethrough.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/81583c452d41c867.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/84c89d718774e901.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BaseLayout.BmLslWiD.css",
+        "type": "stylesheet"
+      },
+      {
+        "url": "/_astro/page.tougUCvb.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/fonts/5ec31e340a5b0d5c.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_1vRqKf.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_yK7Lc.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z1dFaBn.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z28RMth.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_ZWaSNa.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z14eipo.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20220321_Vlinderman_Showlut_1.337.1.DXfUbJu4_CYVIm.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/TTOT_20212101_1.1.67.K6pUnmNB_Ze2mg5.webp",
+        "type": "image"
+      },
+      {
+        "url": "/projects/burn/",
+        "type": "document"
+      },
+      {
+        "url": "/_astro/fonts/81583c452d41c867.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/84c89d718774e901.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BaseLayout.BmLslWiD.css",
+        "type": "stylesheet"
+      },
+      {
+        "url": "/_astro/page.tougUCvb.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_ZWaSNa.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/510a380ac7be487f.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/5ec31e340a5b0d5c.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_2j5Yt2.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_OI0dP.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.4.CGrE88vI_GwLEy.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.5.IXsSYGvn_Z1viute.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.11.BRHQDZ_8_2vADCl.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.12.DBVMbtV7_Z202PFe.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.14.BksRyq_S_Z1U70SO.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_Z2rxYnL.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z14eipo.webp",
+        "type": "image"
+      },
+      {
+        "url": "/",
+        "type": "document"
+      },
+      {
+        "url": "/video/seethrough.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/81583c452d41c867.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/84c89d718774e901.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BaseLayout.BmLslWiD.css",
+        "type": "stylesheet"
+      },
+      {
+        "url": "/_astro/page.tougUCvb.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/fonts/5ec31e340a5b0d5c.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_1vRqKf.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_yK7Lc.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z1dFaBn.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z28RMth.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_ZWaSNa.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z14eipo.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20220321_Vlinderman_Showlut_1.337.1.DXfUbJu4_CYVIm.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/TTOT_20212101_1.1.67.K6pUnmNB_Ze2mg5.webp",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "architecture": "native",
+    "engine": "chromium",
+    "browser": "156.0.8078.4",
+    "motion": "no-preference",
+    "navigationMilliseconds": 616,
+    "replacedDocument": true,
+    "scroll": 3700,
+    "backScroll": 3700,
+    "heroSourcesAfterBack": 0,
+    "requests": [
+      {
+        "url": "/",
+        "type": "document"
+      },
+      {
+        "url": "/video/seethrough.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/81583c452d41c867.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/84c89d718774e901.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BaseLayout.BmLslWiD.css",
+        "type": "stylesheet"
+      },
+      {
+        "url": "/_astro/page.tougUCvb.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/fonts/5ec31e340a5b0d5c.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_1vRqKf.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_yK7Lc.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z1dFaBn.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z28RMth.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_ZWaSNa.webp",
+        "type": "image"
+      },
+      {
+        "url": "/video/seethrough-loop.webm",
+        "type": "media"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z14eipo.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20220321_Vlinderman_Showlut_1.337.1.DXfUbJu4_CYVIm.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/TTOT_20212101_1.1.67.K6pUnmNB_Ze2mg5.webp",
+        "type": "image"
+      },
+      {
+        "url": "/projects/burn/",
+        "type": "document"
+      },
+      {
+        "url": "/_astro/fonts/81583c452d41c867.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/84c89d718774e901.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BaseLayout.BmLslWiD.css",
+        "type": "stylesheet"
+      },
+      {
+        "url": "/_astro/page.tougUCvb.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_ZWaSNa.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/510a380ac7be487f.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/5ec31e340a5b0d5c.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_OI0dP.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.4.CGrE88vI_GwLEy.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.5.IXsSYGvn_Z1viute.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.11.BRHQDZ_8_2vADCl.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.12.DBVMbtV7_Z202PFe.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.14.BksRyq_S_Z1U70SO.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_Z2rxYnL.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z14eipo.webp",
+        "type": "image"
+      },
+      {
+        "url": "/",
+        "type": "document"
+      },
+      {
+        "url": "/video/seethrough.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/81583c452d41c867.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/84c89d718774e901.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BaseLayout.BmLslWiD.css",
+        "type": "stylesheet"
+      },
+      {
+        "url": "/_astro/page.tougUCvb.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/fonts/5ec31e340a5b0d5c.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_1vRqKf.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_yK7Lc.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z1dFaBn.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z28RMth.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_ZWaSNa.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z14eipo.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20220321_Vlinderman_Showlut_1.337.1.DXfUbJu4_CYVIm.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/TTOT_20212101_1.1.67.K6pUnmNB_Ze2mg5.webp",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "architecture": "native",
+    "engine": "chromium",
+    "analyticsLoadsForTwoPages": 2,
+    "viewsInCurrentDocument": 1
+  },
+  {
+    "architecture": "native",
+    "engine": "firefox",
+    "browser": "157.0",
+    "motion": "reduce",
+    "navigationMilliseconds": 687,
+    "replacedDocument": true,
+    "scroll": 3600,
+    "backScroll": 3600,
+    "heroSourcesAfterBack": 0,
+    "requests": [
+      {
+        "url": "/",
+        "type": "document"
+      },
+      {
+        "url": "/_astro/fonts/81583c452d41c867.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/84c89d718774e901.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BaseLayout.BmLslWiD.css",
+        "type": "stylesheet"
+      },
+      {
+        "url": "/_astro/page.tougUCvb.js",
+        "type": "script"
+      },
+      {
+        "url": "/video/seethrough.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/5ec31e340a5b0d5c.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/apple-touch-icon.png",
+        "type": "image"
+      },
+      {
+        "url": "/favicon.svg",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_1vRqKf.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z28RMth.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_ZWaSNa.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z14eipo.webp",
+        "type": "image"
+      },
+      {
+        "url": "/projects/burn/",
+        "type": "document"
+      },
+      {
+        "url": "/_astro/fonts/81583c452d41c867.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/84c89d718774e901.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BaseLayout.BmLslWiD.css",
+        "type": "stylesheet"
+      },
+      {
+        "url": "/_astro/page.tougUCvb.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_ZWaSNa.webp",
+        "type": "image"
+      },
+      {
+        "url": "/apple-touch-icon.png",
+        "type": "image"
+      },
+      {
+        "url": "/favicon.svg",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/510a380ac7be487f.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/5ec31e340a5b0d5c.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_2j5Yt2.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_OI0dP.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.4.CGrE88vI_GwLEy.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.5.IXsSYGvn_Z1viute.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.11.BRHQDZ_8_2vADCl.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.12.DBVMbtV7_Z202PFe.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.14.BksRyq_S_Z1U70SO.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_Z2rxYnL.webp",
+        "type": "image"
+      },
+      {
+        "url": "/",
+        "type": "document"
+      },
+      {
+        "url": "/_astro/fonts/81583c452d41c867.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/84c89d718774e901.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BaseLayout.BmLslWiD.css",
+        "type": "stylesheet"
+      },
+      {
+        "url": "/_astro/page.tougUCvb.js",
+        "type": "script"
+      },
+      {
+        "url": "/video/seethrough.webp",
+        "type": "image"
+      },
+      {
+        "url": "/apple-touch-icon.png",
+        "type": "image"
+      },
+      {
+        "url": "/favicon.svg",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/5ec31e340a5b0d5c.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z28RMth.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_ZWaSNa.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z14eipo.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_1GKeau.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z14s3IX.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Zx6HvY.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20220321_Vlinderman_Showlut_1.337.1.DXfUbJu4_1908ny.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/TTOT_20212101_1.1.67.K6pUnmNB_29B22b.webp",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "architecture": "native",
+    "engine": "firefox",
+    "browser": "157.0",
+    "motion": "no-preference",
+    "navigationMilliseconds": 629,
+    "replacedDocument": true,
+    "scroll": 3700,
+    "backScroll": 3700,
+    "heroSourcesAfterBack": 0,
+    "requests": [
+      {
+        "url": "/",
+        "type": "document"
+      },
+      {
+        "url": "/_astro/fonts/81583c452d41c867.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/84c89d718774e901.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BaseLayout.BmLslWiD.css",
+        "type": "stylesheet"
+      },
+      {
+        "url": "/_astro/page.tougUCvb.js",
+        "type": "script"
+      },
+      {
+        "url": "/video/seethrough.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/5ec31e340a5b0d5c.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/apple-touch-icon.png",
+        "type": "image"
+      },
+      {
+        "url": "/favicon.svg",
+        "type": "image"
+      },
+      {
+        "url": "/video/seethrough-loop.mp4",
+        "type": "media"
+      },
+      {
+        "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_1vRqKf.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z28RMth.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_ZWaSNa.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z14eipo.webp",
+        "type": "image"
+      },
+      {
+        "url": "/projects/burn/",
+        "type": "document"
+      },
+      {
+        "url": "/_astro/fonts/81583c452d41c867.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/84c89d718774e901.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BaseLayout.BmLslWiD.css",
+        "type": "stylesheet"
+      },
+      {
+        "url": "/_astro/page.tougUCvb.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_ZWaSNa.webp",
+        "type": "image"
+      },
+      {
+        "url": "/apple-touch-icon.png",
+        "type": "image"
+      },
+      {
+        "url": "/favicon.svg",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/510a380ac7be487f.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/5ec31e340a5b0d5c.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_2j5Yt2.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_OI0dP.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.4.CGrE88vI_GwLEy.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.5.IXsSYGvn_Z1viute.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.11.BRHQDZ_8_2vADCl.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.12.DBVMbtV7_Z202PFe.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.14.BksRyq_S_Z1U70SO.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_Z2rxYnL.webp",
+        "type": "image"
+      },
+      {
+        "url": "/",
+        "type": "document"
+      },
+      {
+        "url": "/_astro/fonts/81583c452d41c867.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/84c89d718774e901.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BaseLayout.BmLslWiD.css",
+        "type": "stylesheet"
+      },
+      {
+        "url": "/_astro/page.tougUCvb.js",
+        "type": "script"
+      },
+      {
+        "url": "/video/seethrough.webp",
+        "type": "image"
+      },
+      {
+        "url": "/apple-touch-icon.png",
+        "type": "image"
+      },
+      {
+        "url": "/favicon.svg",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/5ec31e340a5b0d5c.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z28RMth.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_ZWaSNa.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z14eipo.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z14s3IX.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Zx6HvY.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_1GKeau.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20220321_Vlinderman_Showlut_1.337.1.DXfUbJu4_1908ny.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/TTOT_20212101_1.1.67.K6pUnmNB_29B22b.webp",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "architecture": "native",
+    "engine": "firefox",
+    "analyticsLoadsForTwoPages": 2,
+    "viewsInCurrentDocument": 1
+  },
+  {
+    "architecture": "native",
+    "engine": "webkit",
+    "browser": "27.2",
+    "motion": "reduce",
+    "navigationMilliseconds": 631,
+    "replacedDocument": true,
+    "scroll": 3600,
+    "backScroll": 3600,
+    "heroSourcesAfterBack": 0,
+    "requests": [
+      {
+        "url": "/",
+        "type": "document"
+      },
+      {
+        "url": "/video/seethrough.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/81583c452d41c867.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/84c89d718774e901.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BaseLayout.BmLslWiD.css",
+        "type": "stylesheet"
+      },
+      {
+        "url": "/_astro/page.tougUCvb.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/fonts/5ec31e340a5b0d5c.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_1vRqKf.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_yK7Lc.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z1dFaBn.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z28RMth.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_ZWaSNa.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z14eipo.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20220321_Vlinderman_Showlut_1.337.1.DXfUbJu4_CYVIm.webp",
+        "type": "image"
+      },
+      {
+        "url": "/projects/burn/",
+        "type": "document"
+      },
+      {
+        "url": "/_astro/fonts/81583c452d41c867.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/84c89d718774e901.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BaseLayout.BmLslWiD.css",
+        "type": "stylesheet"
+      },
+      {
+        "url": "/_astro/page.tougUCvb.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_ZWaSNa.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z14eipo.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/510a380ac7be487f.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/5ec31e340a5b0d5c.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_2j5Yt2.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_OI0dP.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.4.CGrE88vI_GwLEy.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.5.IXsSYGvn_Z1viute.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.11.BRHQDZ_8_2vADCl.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.12.DBVMbtV7_Z202PFe.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.14.BksRyq_S_Z1U70SO.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_Z2rxYnL.webp",
+        "type": "image"
+      },
+      {
+        "url": "/",
+        "type": "document"
+      },
+      {
+        "url": "/video/seethrough.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/81583c452d41c867.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/84c89d718774e901.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BaseLayout.BmLslWiD.css",
+        "type": "stylesheet"
+      },
+      {
+        "url": "/_astro/page.tougUCvb.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_1vRqKf.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_EVER_SINCE_I_HAVE_BEEN_FLYING_1.1.3.BZNvE4T6_yK7Lc.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z1dFaBn.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z28RMth.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_ZWaSNa.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z14eipo.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20220321_Vlinderman_Showlut_1.337.1.DXfUbJu4_CYVIm.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/5ec31e340a5b0d5c.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/TTOT_20212101_1.1.67.K6pUnmNB_Ze2mg5.webp",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "architecture": "native",
+    "engine": "webkit",
+    "browser": "27.2",
+    "motion": "no-preference",
+    "navigationMilliseconds": 1471,
+    "replacedDocument": true,
+    "scroll": 3700,
+    "backScroll": 3600,
+    "heroSourcesAfterBack": 2,
+    "requests": [
+      {
+        "url": "/",
+        "type": "document"
+      },
+      {
+        "url": "/video/seethrough.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/81583c452d41c867.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/84c89d718774e901.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BaseLayout.BmLslWiD.css",
+        "type": "stylesheet"
+      },
+      {
+        "url": "/_astro/page.tougUCvb.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/fonts/5ec31e340a5b0d5c.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_1vRqKf.webp",
+        "type": "image"
+      },
+      {
+        "url": "/video/seethrough-loop.webm",
+        "type": "other"
+      },
+      {
+        "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z1dFaBn.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z28RMth.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_ZWaSNa.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z14eipo.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20220321_Vlinderman_Showlut_1.337.1.DXfUbJu4_CYVIm.webp",
+        "type": "image"
+      },
+      {
+        "url": "/projects/burn/",
+        "type": "document"
+      },
+      {
+        "url": "/_astro/fonts/81583c452d41c867.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/84c89d718774e901.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BaseLayout.BmLslWiD.css",
+        "type": "stylesheet"
+      },
+      {
+        "url": "/_astro/page.tougUCvb.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_ZWaSNa.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z14eipo.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/510a380ac7be487f.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/5ec31e340a5b0d5c.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_2j5Yt2.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_OI0dP.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.4.CGrE88vI_GwLEy.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.5.IXsSYGvn_Z1viute.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.11.BRHQDZ_8_2vADCl.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.12.DBVMbtV7_Z202PFe.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.14.BksRyq_S_Z1U70SO.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20231102_BURN_1.1.1.CaTPlufI_Z2rxYnL.webp",
+        "type": "image"
+      },
+      {
+        "url": "/",
+        "type": "document"
+      },
+      {
+        "url": "/video/seethrough.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/81583c452d41c867.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/fonts/84c89d718774e901.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/_astro/BaseLayout.BmLslWiD.css",
+        "type": "stylesheet"
+      },
+      {
+        "url": "/_astro/page.tougUCvb.js",
+        "type": "script"
+      },
+      {
+        "url": "/_astro/20250709_ALG_Still2.BpF1sKq6_1vRqKf.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/14_PHOTOBOOKS_V6.00_31_09_22.Still035-2.K72aCuzl_Z1dFaBn.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/bearer-of-bad-news-24.CStawPi1_Z28RMth.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/BURN_1.232.1.C3J4clTl_ZWaSNa.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/1.106.2_1.106.2.B8ZhKt6P_Z14eipo.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/20220321_Vlinderman_Showlut_1.337.1.DXfUbJu4_CYVIm.webp",
+        "type": "image"
+      },
+      {
+        "url": "/_astro/fonts/5ec31e340a5b0d5c.woff2",
+        "type": "font"
+      },
+      {
+        "url": "/video/seethrough-loop.webm",
+        "type": "other"
+      },
+      {
+        "url": "/_astro/TTOT_20212101_1.1.67.K6pUnmNB_Ze2mg5.webp",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "architecture": "native",
+    "engine": "webkit",
+    "analyticsLoadsForTwoPages": 2,
+    "viewsInCurrentDocument": 1
+  }
+]
