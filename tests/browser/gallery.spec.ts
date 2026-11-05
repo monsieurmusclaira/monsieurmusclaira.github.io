@@ -105,3 +105,34 @@ test('gallery captions render markup as plain text', async ({ page }) => {
   await expect(output).toHaveText(caption);
   await expect(output.locator('strong')).toHaveCount(0);
 });
+
+test('lightbox moves between images with a horizontal touch swipe', async ({ page }) => {
+  await page.goto('/projects/burn/');
+  const triggers = page.locator('a[data-lightbox-id]');
+  const count = await triggers.count();
+  await triggers.first().scrollIntoViewIfNeeded();
+  await triggers.first().click();
+  const dialog = page.locator('dialog[open]');
+  const position = dialog.locator('[data-gallery-position]');
+  await expect(position).toHaveText(`1 of ${count}`);
+  const image = dialog.locator('[data-gallery-image]');
+  await expect(image).toHaveCSS('touch-action', 'pan-y');
+  const swipe = (dx: number, dy = 0) => image.evaluate((el, [dx, dy]) => {
+    const box = el.getBoundingClientRect();
+    const x = box.left + box.width / 2;
+    const y = box.top + box.height / 2;
+    const init = { pointerId: 7, pointerType: 'touch', isPrimary: true, bubbles: true };
+    el.dispatchEvent(new PointerEvent('pointerdown', { ...init, clientX: x, clientY: y }));
+    el.dispatchEvent(new PointerEvent('pointerup', { ...init, clientX: x + dx, clientY: y + dy }));
+  }, [dx, dy]);
+  await swipe(-120);
+  await expect(position).toHaveText(`2 of ${count}`);
+  await swipe(120);
+  await expect(position).toHaveText(`1 of ${count}`);
+  await swipe(20);
+  await swipe(-20);
+  await swipe(-120, 200); // mostly vertical: ignored
+  await expect(position).toHaveText(`1 of ${count}`);
+  await page.keyboard.press('Escape');
+  await expect(page.locator('dialog[open]')).toHaveCount(0);
+});

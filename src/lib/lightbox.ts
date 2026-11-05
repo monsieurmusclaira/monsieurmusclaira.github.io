@@ -59,6 +59,27 @@ document.addEventListener("click", (event) => {
   }
 });
 
+// Horizontal touch swipe (>= 48 px, mostly horizontal) mirrors the arrow keys.
+// The image has `touch-action: pan-y`, so vertical scrolling is unaffected.
+const SWIPE_DISTANCE = 48;
+let swipe: { id: number; x: number; y: number } | null = null;
+document.addEventListener('pointerdown', (event) => {
+  swipe = null;
+  if (!dialog?.open || !event.isPrimary || event.pointerType === 'mouse') return;
+  if (event.target instanceof Element && event.target.closest('[data-gallery-image]')) {
+    swipe = { id: event.pointerId, x: event.clientX, y: event.clientY };
+  }
+});
+document.addEventListener('pointerup', (event) => {
+  const start = swipe;
+  swipe = null;
+  if (!start || start.id !== event.pointerId || !dialog?.open) return;
+  const dx = event.clientX - start.x;
+  const dy = event.clientY - start.y;
+  if (Math.abs(dx) >= SWIPE_DISTANCE && Math.abs(dx) > Math.abs(dy) * 1.5) showImage(index + (dx < 0 ? 1 : -1));
+});
+document.addEventListener('pointercancel', () => { swipe = null; });
+
 // Native modal behavior can still let Tab move to browser chrome. Explicitly
 // wrap at the first/last control, including Firefox's reverse-Tab behavior.
 document.addEventListener("keydown", (event) => {
