@@ -6,11 +6,23 @@ updates:
       interval: weekly
     open-pull-requests-limit: 5
     ignore:
+      # Majors (TypeScript 7, @types/node 26, ...) are upgraded deliberately.
       - dependency-name: "*"
         update-types:
           - version-update:semver-major
-          - version-update:semver-minor
     groups:
+      astro:
+        patterns: ["astro", "@astrojs/*"]
+        update-types: [minor, patch]
+      dev-tooling:
+        dependency-type: development
+        update-types: [minor, patch]
       patch-updates:
         update-types: [patch]
+    # Proposals run verification and require manual review; no auto-merge.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 3
     # Proposals run verification and require manual review; no auto-merge.
