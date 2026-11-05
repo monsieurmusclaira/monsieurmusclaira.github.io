@@ -137,7 +137,11 @@ describe("typed analytics environment (astro:env)", () => {
     // Minimal env: Vitest leaks PROD/DEV/MODE variables that would change the build.
     const env: NodeJS.ProcessEnv = { PATH: process.env.PATH, HOME: process.env.HOME, NODE_ENV: "production" };
     if (value !== undefined) env.PORTFOLIO_ANALYTICS_DISABLED = value;
-    execFileSync("npx", ["astro", "build", "--outDir", outDir], { env, stdio: "pipe" });
+    try {
+      execFileSync("npx", ["astro", "build", "--outDir", outDir], { env, stdio: "pipe" });
+    } catch (error: any) {
+      throw new Error(`astro build failed: ${String(error.stderr ?? error.message).slice(-1500)}${String(error.stdout ?? "").slice(-1500)}`);
+    }
     const page = readFileSync(join(outDir, "index.html"), "utf-8");
     return page;
   }
@@ -152,6 +156,6 @@ describe("typed analytics environment (astro:env)", () => {
   }, 180_000);
 
   it("rejects a malformed PORTFOLIO_ANALYTICS_DISABLED value instead of silently ignoring it", async () => {
-    await expect(build("banana")).rejects.toThrow();
+    await expect(build("banana")).rejects.toThrow(/PORTFOLIO_ANALYTICS_DISABLED/);
   }, 180_000);
 });
