@@ -7,7 +7,7 @@ import { getCollection } from "astro:content";
 import { sortByOrder } from "../lib/projects";
 
 const all = await getCollection("projects");
-const films = sortByOrder(all.map((e) => ({ slug: e.id, ...e.data.card, director: e.data.director, title: e.data.title, year: e.data.year, role: e.data.role, format: e.data.format })));
+const films = sortByOrder(all.map((e) => ({ slug: e.id, ...e.data.card, director: e.data.director, title: e.data.title, alt: e.data.card.image === e.data.hero.image ? e.data.hero.alt : `Still from ${e.data.title}`, year: e.data.year, role: e.data.role, format: e.data.format })));
 const formats = [...new Set(films.map((film) => film.format))].sort();
 const roles = [...new Set(films.map((film) => film.role))].sort();
 // Preserve the curated card sequence without interstitial chapter sections.
@@ -30,6 +30,7 @@ const featuredFilms = films.slice(0, 8).sort((a, b) =>
         title={f.title}
         role={f.role}
         img={f.image}
+        alt={f.alt}
         imageposition={f.position}
         desc={f.desc ?? `Directed by ${f.director}`}
         url={`/projects/${f.slug}/`}

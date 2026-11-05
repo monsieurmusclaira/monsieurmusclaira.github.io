@@ -1,4 +1,4 @@
-import { readdirSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 import AxeBuilder from "@axe-core/playwright";
 import { test, expect } from "./fixtures";
 
@@ -99,4 +99,21 @@ test("no JavaScript keeps content and mobile navigation available", async ({ bro
     await page.locator('#mobile-menu a[href="/about/"]').click();
     await expect(page).toHaveURL(/\/about\/$/);
   } finally { await context.close(); }
+});
+
+test("film cards alt text describes every featured image", async ({ page }) => {
+  await page.goto("/");
+  const cards = await page.locator(".featured-film").evaluateAll((els) => els.map((el) => ({
+    slug: el.getAttribute("href")!.split("/").filter(Boolean).pop()!,
+    alt: el.querySelector("img")?.getAttribute("alt") ?? null,
+  })));
+  expect(cards.length).toBe(8);
+  for (const { slug, alt } of cards) {
+    expect(alt, slug).toBeTruthy();
+    const source = readFileSync(`src/content/projects/${slug}.mdx`, "utf8");
+    const heroImage = source.match(/^hero:\n\s+image: "(.+)"/m)![1];
+    const cardImage = source.match(/^card:\n\s+image: "(.+)"/m)![1];
+    const heroAlt = source.match(/^hero:[\s\S]*?\n\s+alt: "(.+)"/m)![1];
+    if (heroImage === cardImage) expect(alt, slug).toBe(heroAlt);
+  }
 });
