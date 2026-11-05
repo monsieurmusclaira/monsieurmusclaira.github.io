@@ -36,9 +36,12 @@ test("every route has one meaningful H1 and local links and assets resolve", asy
       if (url.origin === new URL(baseURL!).origin) assets.add(url.pathname);
     }
   }
-  for (const path of [...links, ...assets]) {
-    const response = await request.head(path);
-    expect(response.status(), `Missing local reference: ${path}`).toBe(200);
+  // ~1,900 unique references: check them in concurrent batches instead of one at a time.
+  const references = [...new Set([...links, ...assets])];
+  for (let start = 0; start < references.length; start += 50) {
+    const batch = references.slice(start, start + 50);
+    const statuses = await Promise.all(batch.map(async (path) => [path, (await request.head(path)).status()] as const));
+    for (const [path, status] of statuses) expect(status, `Missing local reference: ${path}`).toBe(200);
   }
   await page.goto("/");
   const reachable = await page.locator('a[href^="/projects/"]').evaluateAll((links) => [...new Set(links.map((link) => link.getAttribute("href")))].sort());
