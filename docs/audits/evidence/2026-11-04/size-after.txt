@@ -1,0 +1,11 @@
+-rw-r--r--@ 1 victormaes  staff  500806 Nov  5 16:00 dist/_astro/IMG-20230813-WA0116.GS4kwDVZ_2vhFs9.webp
+-rw-r--r--@ 1 victormaes  staff  482310 Nov  5 16:01 dist/_astro/1.93.1_1.93.1.DES3VzK0_21vM8E.webp
+-rw-r--r--@ 1 victormaes  staff  410484 Nov  5 16:00 dist/_astro/bearer-of-bad-news-bts-03.CRz5l6Ac_2ftvza.webp
+-rw-r--r--@ 1 victormaes  staff  361056 Nov  5 16:00 dist/_astro/20181119_Anna_1.74.1.BX2jwHos_Z2jIRcS.webp
+-rw-r--r--@ 1 victormaes  staff  342640 Nov  5 16:00 dist/_astro/IMG-20230813-WA0116.GS4kwDVZ_ndR9g.webp
+dist/_astro/BaseLayout.C0j6vYW2.css 87472 13357
+dist/_astro/behind-the-scenes.Di7c_0vr.css 4318 1340
+ 63M	dist
+ 60M	dist/_astro
+-rw-r--r--@ 2 victormaes  staff  397188 Nov  5 09:06 public/video/seethrough-loop.mp4
+-rw-r--r--@ 2 victormaes  staff  490610 Nov  5 09:06 public/video/seethrough-loop.webm

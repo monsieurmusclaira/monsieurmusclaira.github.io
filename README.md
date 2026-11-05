@@ -98,7 +98,7 @@ This checks vocabulary usage and inheritance; it does not establish Google searc
 
 ## Automatic analytics
 
-GA4 loads automatically on the configured production hostname. No visitor opt-in or saved consent choice is required. Development, other hosts, and local production previews send no analytics. `PORTFOLIO_ANALYTICS_DISABLED=true` disables the loader in a production build as an additional guard.
+GA4 loads automatically on the configured production hostname. No visitor opt-in or saved consent choice is required. Development, other hosts, and local production previews send no analytics. `PORTFOLIO_ANALYTICS_DISABLED=true` disables the loader in a production build as an additional guard; it is declared in `astro.config.mjs` (`astro:env`), so a malformed value fails the build.
 
 The site sends manual page views on Astro navigation, deduplicated by origin/path/query. Contact/gallery fragment changes do not count. The Google loader persists across transitions and is initialized once per document. Ads storage and personalization are denied.
 
