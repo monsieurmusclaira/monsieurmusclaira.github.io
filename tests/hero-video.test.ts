@@ -1,4 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
+import { statSync } from "node:fs";
 import { attachHeroVideo } from "../src/lib/hero-video";
 
 class MediaQuery extends EventTarget {
@@ -128,5 +129,12 @@ describe("hero animation playback policy", () => {
     h.visibility(false);
     expect(h.disconnect).toHaveBeenCalledTimes(1);
     expect(h.video.play).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe("hero loop file weight", () => {
+  it("keeps the looping hero video files lean", () => {
+    expect(statSync("public/video/seethrough-loop.webm").size).toBeLessThan(600_000);
+    expect(statSync("public/video/seethrough-loop.mp4").size).toBeLessThan(450_000);
   });
 });
