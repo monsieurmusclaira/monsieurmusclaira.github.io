@@ -4,6 +4,18 @@ import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import tailwindcss from "@tailwindcss/vite";
 import portfolioImages from './scripts/image-manifest.mjs';
+import { readdirSync, readFileSync } from 'node:fs';
+
+// slug -> `updated` frontmatter date (YYYY-MM-DD), read straight from the MDX.
+const projectUpdated = new Map(
+  readdirSync('./src/content/projects')
+    .filter((file) => file.endsWith('.mdx'))
+    .flatMap((file) => {
+      const date = readFileSync(`./src/content/projects/${file}`, 'utf8').match(/^updated:\s*["']?(\d{4}-\d{2}-\d{2})/m)?.[1];
+      return date ? [[file.replace(/\.mdx$/, ''), date]] : [];
+    }),
+);
+const newestUpdate = [...projectUpdated.values()].sort().at(-1);
 
 // https://astro.build/config
 export default defineConfig({
@@ -45,11 +57,16 @@ export default defineConfig({
   integrations: [
     portfolioImages(),
     sitemap({
-      changefreq: 'monthly',
-      priority: 0.7,
-      // No lastmod: stamping every URL with the build time tells crawlers
-      // nothing and drowns out the signal.
+      // No changefreq/priority (ignored by Google). lastmod comes only from a
+      // project's own `updated` date: stamping every URL with the build time
+      // tells crawlers nothing and drowns out the signal.
       filter: (page) => !page.includes('/404'),
+      serialize: (item) => {
+        const { pathname } = new URL(item.url);
+        const slug = pathname.match(/^\/projects\/([a-z0-9-]+)\/$/)?.[1];
+        const lastmod = slug ? projectUpdated.get(slug) : pathname === '/' ? newestUpdate : undefined;
+        return lastmod ? { ...item, lastmod } : item;
+      },
     }),
     mdx()
   ],

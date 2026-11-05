@@ -165,3 +165,40 @@ describe("built-site SEO invariants", () => {
     expect(page).not.toMatch(/<source[^>]*\ssrc="\/video\//);
   });
 });
+
+describe("sitemap", () => {
+  const sitemap = () => readFileSync("dist/sitemap-0.xml", "utf-8");
+  const entries = () => [...sitemap().matchAll(/<url>([\s\S]*?)<\/url>/g)].map((m) => ({
+    loc: m[1].match(/<loc>(.*?)<\/loc>/)![1],
+    lastmod: m[1].match(/<lastmod>(.*?)<\/lastmod>/)?.[1],
+  }));
+  const updatedOf = (slug: string) => readFileSync(`src/content/projects/${slug}.mdx`, "utf-8").match(/^updated:\s*["']?(\d{4}-\d{2}-\d{2})/m)?.[1];
+
+  it("omits changefreq and priority, which search engines ignore", () => {
+    expect(sitemap()).not.toMatch(/<changefreq>|<priority>/);
+  });
+
+  it("lists no 404 URL", () => {
+    expect(entries().filter((e) => e.loc.includes("/404"))).toEqual([]);
+  });
+
+  it("emits lastmod only from real project dates", () => {
+    const dates: string[] = [];
+    for (const { loc, lastmod } of entries()) {
+      const slug = loc.match(/\/projects\/([a-z0-9-]+)\/$/)?.[1];
+      if (slug) {
+        expect(updatedOf(slug), `${slug} needs an updated date`).toBeDefined();
+        expect(lastmod!.slice(0, 10), loc).toBe(updatedOf(slug));
+        dates.push(lastmod!.slice(0, 10));
+      } else if (loc === "https://victormaes.com/") {
+        expect(lastmod!.slice(0, 10)).toBe([...dates, ...projectSlugs.map((s) => updatedOf(s)!)].sort().at(-1));
+      } else {
+        expect(lastmod, `${loc} has no content date`).toBeUndefined();
+      }
+      if (lastmod) {
+        expect(lastmod).toMatch(/^\d{4}-\d{2}-\d{2}/);
+        expect(new Date(lastmod).getTime()).toBeLessThanOrEqual(Date.now());
+      }
+    }
+  });
+});

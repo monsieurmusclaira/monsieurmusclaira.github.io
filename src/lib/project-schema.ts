@@ -13,6 +13,8 @@ export const projectSchema = z.object({
   format: text,
   role: text,
   year: year.optional(),
+  // ISO date (YYYY-MM-DD) of the last real content change; feeds sitemap <lastmod>.
+  updated: z.iso.date().optional(),
   // Overrides the JSON-LD @type for the project (defaults to "Movie"). Use for
   // pieces that are not films, e.g. "CreativeWork" for the interactive VR work.
   schemaType: z.enum(["Movie", "CreativeWork"]).optional(),
