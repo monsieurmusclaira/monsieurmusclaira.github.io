@@ -202,3 +202,35 @@ describe("sitemap", () => {
     }
   });
 });
+
+describe("structured data and head hygiene", () => {
+  const pages = ["dist/index.html", "dist/projects/burn/index.html"];
+
+  it("names the WebSite plainly and keeps the descriptive title as alternateName", () => {
+    for (const page of pages) {
+      const site = jsonLd(html(page)).find((e) => e["@type"] === "WebSite");
+      expect(site.name).toBe("Victor Maes");
+      expect(site.alternateName).toBe("Victor Maes — Cinematographer & Director");
+    }
+  });
+
+  it("gives Person an absolute image and no email", () => {
+    for (const page of pages) {
+      const person = jsonLd(html(page)).find((e) => e["@type"] === "Person" && e.jobTitle);
+      expect(person.image).toMatch(/^https:\/\/victormaes\.com\/_astro\/IMG_2507-unblur\..*\.jpeg$/);
+      expect(existsSync(`dist${new URL(person.image).pathname}`)).toBe(true);
+      expect(person.email).toBeUndefined();
+    }
+  });
+
+  it("drops redundant head tags and uses a supported og:locale", () => {
+    for (const page of pages) {
+      const doc = html(page);
+      expect(doc).not.toMatch(/<meta name="title"/);
+      expect(doc).not.toMatch(/name="twitter:url"/);
+      expect(doc).not.toMatch(/hreflang=/);
+      expect(doc).toMatch(/<link rel="canonical"/);
+      expect(doc).toContain('<meta property="og:locale" content="en_GB"');
+    }
+  });
+});

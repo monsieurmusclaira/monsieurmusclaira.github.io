@@ -65,6 +65,10 @@ const pageType = Astro.url.pathname.startsWith('/projects/') ? 'project'
 // Use a video object type only when the project actually has an embedded video.
 const ogType = pageType === 'project' && (videos?.length ?? 0) > 0 ? 'video.other' : 'website';
 
+// The About portrait, as the same 1200px JPEG already used for its social card.
+const portrait = await getImage({ src: await resolveImage('/img/about/IMG_2507-unblur.jpg'), format: 'jpeg', width: 1200 });
+const portraitURL = new URL(portrait.src, SITE_URL).href;
+
 // Build JSON-LD schemas
 const personSchema = {
   "@context": "https://schema.org",
@@ -74,6 +78,7 @@ const personSchema = {
   "jobTitle": "Cinematographer, Director of Photography and Director",
   "description": `${SITE_NAME} is a cinematographer, director of photography and director based in Belgium`,
   "url": SITE_URL,
+  "image": portraitURL,
   "sameAs": Object.values(SOCIAL_LINKS),
   "knowsAbout": ["Cinematography", "Film", "Virtual Reality", "Documentary", "Director of Photography"],
   "knowsLanguage": ["en", "fr", "nl"],
@@ -96,7 +101,8 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": `${SITE_URL}/#website`,
-  "name": SITE_TITLE,
+  "name": SITE_NAME,
+  "alternateName": SITE_TITLE,
   "url": SITE_URL,
   "publisher": {
     "@id": `${SITE_URL}/#person`
@@ -274,10 +280,8 @@ if (schema) {
 <meta name="theme-color" content="#000000" />
 <meta name="color-scheme" content="dark" />
 
-<!-- Canonical & Hreflang -->
+<!-- Canonical (single-language site: no hreflang) -->
 <link rel="canonical" href={canonicalURL} />
-<link rel="alternate" hreflang="en" href={canonicalURL} />
-<link rel="alternate" hreflang="x-default" href={canonicalURL} />
 
 <!-- LCP preload: hero video poster on home page -->
 {pageType === 'home' && <link rel="preload" as="image" href="/video/seethrough.webp" type="image/webp" fetchpriority="high" />}
@@ -292,12 +296,11 @@ if (schema) {
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
-<meta name="title" content={title} />
 <meta name="description" content={description} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={ogType} />
-<meta property="og:locale" content="en_BE" />
+<meta property="og:locale" content="en_GB" />
 <meta property="og:site_name" content={SITE_TITLE} />
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
@@ -313,7 +316,6 @@ if (schema) {
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:url" content={canonicalURL} />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 {ogImage && (
