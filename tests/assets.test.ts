@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeAll } from "vitest";
-import { readFileSync, readdirSync, existsSync } from "node:fs";
+import { readFileSync, readdirSync, existsSync, statSync } from "node:fs";
 import { join } from "node:path";
 
 const home = "dist/index.html";
@@ -67,5 +67,14 @@ describe("built-site asset integrity", () => {
       }
     }
     expect(missing).toEqual([]);
+  });
+  it('ships no single image variant over 700 KB except the explicit allowlist', () => {
+    const ALLOWED_LARGE: string[] = []; // basenames explicitly allowed to exceed the ceiling
+    const CEILING = 716800;
+    const tooLarge = walk('dist/_astro')
+      .filter((file) => /\.(webp|avif|jpe?g|png)$/i.test(file))
+      .map((file) => ({ file, size: statSync(file).size }))
+      .filter(({ file, size }) => size > CEILING && !ALLOWED_LARGE.includes(file.split('/').pop()!));
+    expect(tooLarge, `image variants over ${CEILING} bytes (add to ALLOWED_LARGE only if intentional)`).toEqual([]);
   });
 });
