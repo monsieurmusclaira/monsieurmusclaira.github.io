@@ -1,6 +1,7 @@
 ---
+import { PORTFOLIO_ANALYTICS_DISABLED } from 'astro:env/client';
 import { ANALYTICS_ID, SITE_URL } from '../config';
-const production = import.meta.env.PROD && import.meta.env.PORTFOLIO_ANALYTICS_DISABLED !== 'true';
+const production = import.meta.env.PROD && !PORTFOLIO_ANALYTICS_DISABLED;
 ---
 <div id="analytics-config" hidden data-analytics-id={ANALYTICS_ID} data-site-url={SITE_URL} data-production={String(production)}></div>
 <script>

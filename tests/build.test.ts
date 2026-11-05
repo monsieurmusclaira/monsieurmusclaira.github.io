@@ -126,3 +126,32 @@ describe("built site invariants", () => {
     }
   });
 });
+
+describe("typed analytics environment (astro:env)", () => {
+  async function build(value: string | undefined) {
+    const { execFileSync } = await import("node:child_process");
+    const { mkdtempSync } = await import("node:fs");
+    const { tmpdir } = await import("node:os");
+    const { join } = await import("node:path");
+    const outDir = mkdtempSync(join(tmpdir(), "portfolio-env-"));
+    // Minimal env: Vitest leaks PROD/DEV/MODE variables that would change the build.
+    const env: NodeJS.ProcessEnv = { PATH: process.env.PATH, HOME: process.env.HOME, NODE_ENV: "production" };
+    if (value !== undefined) env.PORTFOLIO_ANALYTICS_DISABLED = value;
+    execFileSync("npx", ["astro", "build", "--outDir", outDir], { env, stdio: "pipe" });
+    const page = readFileSync(join(outDir, "index.html"), "utf-8");
+    return page;
+  }
+  const flag = (page: string) => page.match(/id="analytics-config"[^>]*data-production="(true|false)"/)?.[1];
+
+  it("a default build enables production analytics", async () => {
+    expect(flag(await build(undefined))).toBe("true");
+  }, 180_000);
+
+  it("PORTFOLIO_ANALYTICS_DISABLED=true disables it", async () => {
+    expect(flag(await build("true"))).toBe("false");
+  }, 180_000);
+
+  it("rejects a malformed PORTFOLIO_ANALYTICS_DISABLED value instead of silently ignoring it", async () => {
+    await expect(build("banana")).rejects.toThrow();
+  }, 180_000);
+});

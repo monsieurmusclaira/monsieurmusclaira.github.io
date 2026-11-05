@@ -1,5 +1,5 @@
 import { SITE_URL } from './src/config.ts';
-import { defineConfig, fontProviders } from "astro/config";
+import { defineConfig, envField, fontProviders } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import tailwindcss from "@tailwindcss/vite";
@@ -70,6 +70,12 @@ export default defineConfig({
     }),
     mdx()
   ],
+  env: {
+    schema: {
+      // Extra guard: true disables the GA4 loader even in a production build.
+      PORTFOLIO_ANALYTICS_DISABLED: envField.boolean({ context: 'client', access: 'public', default: false }),
+    },
+  },
   prefetch: true,
   image: {
     // Sharp's per-format encoder options. No component passes an explicit
