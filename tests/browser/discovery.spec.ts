@@ -98,3 +98,37 @@ test('compact phone cards and biography links preserve project access', async ({
   }
   await expect(page.locator('#contact a[href="mailto:hello@victormaes.com"]')).toBeVisible();
 });
+
+test('filmography filters mirror to the URL and restore from it', async ({ page }) => {
+  const visible = page.locator('[data-work-item]:not([hidden])');
+  await page.goto('/#all-work');
+  const form = page.getByRole('form', { name: 'Filter filmography' });
+  const historyLength = await page.evaluate(() => history.length);
+  await form.getByLabel('Format', { exact: true }).selectOption('Documentary');
+  await expect.poll(() => new URL(page.url()).searchParams.get('format')).toBe('Documentary');
+  expect(await page.evaluate(() => history.length)).toBe(historyLength);
+  expect(new URL(page.url()).hash).toBe('#all-work');
+  await form.getByLabel('Role', { exact: true }).selectOption('Director');
+  await expect.poll(() => new URL(page.url()).searchParams.get('role')).toBe('Director');
+
+  await page.goto('/?format=Documentary#all-work');
+  await expect(form.getByLabel('Format', { exact: true })).toHaveValue('Documentary');
+  await expect(visible).toHaveCount(2);
+  await expect(page.locator('[data-work-count]')).toHaveText('2 of 17 projects');
+
+  await page.goto('/?format=bogus&role=nobody#all-work');
+  await expect(visible).toHaveCount(17);
+  await expect(form.getByLabel('Format', { exact: true })).toHaveValue('');
+
+  await page.goto('/?format=Documentary#all-work');
+  await navigate(page, () => visible.first().getByRole('link').click());
+  await page.goBack();
+  await expect(form.getByLabel('Format', { exact: true })).toHaveValue('Documentary');
+  await expect(visible).toHaveCount(2);
+  expect(new URL(page.url()).searchParams.get('format')).toBe('Documentary');
+
+  await form.getByRole('button', { name: 'Clear filters' }).click();
+  await expect(visible).toHaveCount(17);
+  await expect.poll(() => new URL(page.url()).search).toBe('');
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://victormaes.com/');
+});
