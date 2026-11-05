@@ -113,4 +113,16 @@ describe("built site invariants", () => {
     }
     expect(checked).toBeGreaterThan(0);
   });
+
+  it("main stylesheet stays small and keeps the daisyUI components the site uses", async () => {
+    const { gzipSync } = await import("node:zlib");
+    const file = readdirSync("dist/_astro").find((f) => /^BaseLayout\..*\.css$/.test(f))!;
+    const css = readFileSync(`dist/_astro/${file}`);
+    const GZIP_CEILING = 15_500; // baseline 23,548 B gzip minus 8 KB (2026-11-04 audit)
+    expect(gzipSync(css).length).toBeLessThanOrEqual(GZIP_CEILING);
+    const text = css.toString("utf-8");
+    for (const selector of [".navbar", ".menu", ".dropdown-content", ".dropdown-open", ".btn-ghost", ".btn-circle", ".hero-content"]) {
+      expect(text, selector).toContain(selector);
+    }
+  });
 });

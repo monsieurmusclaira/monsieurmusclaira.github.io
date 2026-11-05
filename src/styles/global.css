@@ -4,6 +4,7 @@
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
   themes: false;
+  include: navbar, menu, dropdown, button, hero;
 }
 @theme {
   --font-sans: var(--font-montserrat), sans-serif;
