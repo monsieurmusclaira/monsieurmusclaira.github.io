@@ -129,7 +129,8 @@ describe("built site invariants", () => {
 
 describe("typed analytics environment (astro:env)", () => {
   async function build(value: string | undefined) {
-    const { execFileSync } = await import("node:child_process");
+    const { execFile } = await import("node:child_process");
+    const { promisify } = await import("node:util");
     const { mkdtempSync } = await import("node:fs");
     const { tmpdir } = await import("node:os");
     const { join } = await import("node:path");
@@ -138,7 +139,8 @@ describe("typed analytics environment (astro:env)", () => {
     const env: NodeJS.ProcessEnv = { PATH: process.env.PATH, HOME: process.env.HOME, NODE_ENV: "production" };
     if (value !== undefined) env.PORTFOLIO_ANALYTICS_DISABLED = value;
     try {
-      execFileSync("npx", ["astro", "build", "--outDir", outDir], { env, stdio: "pipe" });
+      // Async so Vitest's timeout can fire; generous buffer so a cold image cache's verbose log cannot ENOBUFS.
+      await promisify(execFile)("npx", ["astro", "build", "--outDir", outDir], { env, maxBuffer: 64 * 1024 * 1024 });
     } catch (error: any) {
       throw new Error(`astro build failed: ${String(error.stderr ?? error.message).slice(-1500)}${String(error.stdout ?? "").slice(-1500)}`);
     }
@@ -147,9 +149,11 @@ describe("typed analytics environment (astro:env)", () => {
   }
   const flag = (page: string) => page.match(/id="analytics-config"[^>]*data-production="(true|false)"/)?.[1];
 
-  it("a default build enables production analytics", async () => {
-    expect(flag(await build(undefined))).toBe("true");
-  }, 180_000);
+  it("a default build enables production analytics", () => {
+    // `npm test` builds with a default environment first; reusing dist avoids a third full build
+    // (a cold image cache made that build the slow, failure-prone one).
+    expect(flag(readFileSync(home, "utf-8"))).toBe("true");
+  });
 
   it("PORTFOLIO_ANALYTICS_DISABLED=true disables it", async () => {
     expect(flag(await build("true"))).toBe("false");
