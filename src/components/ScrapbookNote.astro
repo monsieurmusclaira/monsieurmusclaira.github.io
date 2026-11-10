@@ -8,7 +8,7 @@ const { title, subtitle, variant, href } = Astro.props;
     </h2>
     {subtitle && <p class="note-sub">{subtitle}</p>}
     {href && (
-        <a href={href} class="note-sub mt-2 inline-block text-inherit underline focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current">
+        <a href={href} class="note-sub mt-2 inline-flex min-h-11 items-center text-inherit underline focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current">
             View project &rarr;
         </a>
     )}

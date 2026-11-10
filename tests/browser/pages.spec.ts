@@ -1,6 +1,29 @@
 import { readdirSync, readFileSync } from "node:fs";
 import AxeBuilder from "@axe-core/playwright";
 
+test('controls meet the 44px minimum on phones', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  for (const path of ['/', '/about/', '/behind-the-scenes/', '/projects/burn/', '/missing/']) {
+    await page.goto(path);
+    await page.locator('#menu-toggle').click();
+    const offenders = await page.locator('a, button, select, summary').evaluateAll((controls) => controls.flatMap((control) => {
+      const bounds = control.getBoundingClientRect();
+      const paragraph = control.closest('p');
+      const inline = control.tagName === 'A' && paragraph && paragraph.textContent?.replace(control.textContent ?? '', '').trim();
+      if (!bounds.width || !bounds.height || getComputedStyle(control).visibility === 'hidden' || control.closest('.sr-only') || control.getAttribute('href') === '#main' || inline) return [];
+      return bounds.height < 44 ? [{ text: control.textContent?.trim() || control.getAttribute('aria-label'), height: bounds.height }] : [];
+    }));
+    expect(offenders, path).toEqual([]);
+  }
+});
+
+test('project pages mark Work as the current section', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 720 });
+  await page.goto('/projects/burn/');
+  await expect(page.locator('#desktop-links a[href="/"]')).toHaveAttribute('aria-current', 'true');
+  await expect(page.locator('#mobile-menu a[href="/"]')).toHaveAttribute('aria-current', 'true');
+});
+
 test('about page labels its facts and describes each image once', async ({ page }) => {
   await page.goto('/about/');
   await expect(page.getByRole('heading', { level: 2, name: 'At a glance', exact: true })).toBeVisible();

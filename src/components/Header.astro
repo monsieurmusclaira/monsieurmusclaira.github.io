@@ -1,20 +1,21 @@
 ---
 import { SITE_NAME, SOCIAL_LINKS } from "../config";
 const pathname = Astro.url.pathname;
+const inWork = pathname.startsWith('/projects/');
 // Exact match on the normalized path. `startsWith` would also light up a
 // future sibling route like /about-me under the /about link.
 const norm = (p: string) => p.split('#')[0].replace(/\/+$/, '') || '/';
-const isActive = (href: string) => norm(pathname) === norm(href);
+const isActive = (href: string) => norm(pathname) === norm(href) || (href === '/' && inWork);
 const linkClass = (href: string) =>
-  `font-sans text-xs tracking-widest uppercase transition-colors duration-200 ${
+  `inline-flex min-h-11 items-center font-sans text-xs tracking-widest uppercase transition-colors duration-200 ${
     isActive(href) ? 'text-secondary' : 'text-base-100 hover:text-secondary'
   }`;
-const current = (href: string) => (isActive(href) ? 'page' : undefined);
+const current = (href: string) => href === '/' && inWork ? 'true' : (isActive(href) ? 'page' : undefined);
 // daisyUI's .menu focus indicator computes to a 10% near-black tint on a
 // near-black surface, which is invisible. Give the mobile links an explicit
 // ring, inset so it stays inside the dropdown's rounded box.
 const menuFocus =
-  'focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-secondary';
+  'min-h-11 flex items-center focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-secondary';
 ---
 
 <header class="fixed top-0 z-50 w-full transition-transform duration-300 focus-within:transition-none" id="site-nav">
@@ -25,7 +26,7 @@ const menuFocus =
     <div class="dropdown lg:hidden" id="menu-dropdown">
       <button
         id="menu-toggle"
-        class="btn btn-ghost btn-circle"
+        class="btn btn-ghost btn-circle min-h-11 min-w-11"
         aria-label="Open menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
@@ -54,12 +55,12 @@ const menuFocus =
       <a href="/" aria-current={current('/')} class={linkClass('/')}>Work</a>
       <a href="/about/" aria-current={current('/about')} class={linkClass('/about')}>About</a>
       <a href="/behind-the-scenes/" aria-current={current('/behind-the-scenes')} class={linkClass('/behind-the-scenes')}>Behind the Scenes</a>
-      <a href="/about/#contact" class="font-sans text-xs tracking-widest uppercase transition-colors duration-200 text-base-100 hover:text-secondary">Contact</a>
+      <a href="/about/#contact" class="inline-flex min-h-11 items-center font-sans text-xs tracking-widest uppercase transition-colors duration-200 text-base-100 hover:text-secondary">Contact</a>
     </div>
   </div>
 
   <div class="navbar-center">
-    <a href="/" class="font-sans text-sm font-light tracking-widest uppercase text-base-100 hover:text-secondary transition-colors duration-200">
+    <a href="/" class="inline-flex min-h-11 items-center font-sans text-sm font-light tracking-widest uppercase text-base-100 hover:text-secondary transition-colors duration-200">
       {SITE_NAME}
     </a>
   </div>
