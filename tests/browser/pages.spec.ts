@@ -1,5 +1,13 @@
 import { readdirSync, readFileSync } from "node:fs";
 import AxeBuilder from "@axe-core/playwright";
+
+test('about page labels its facts and describes each image once', async ({ page }) => {
+  await page.goto('/about/');
+  await expect(page.getByRole('heading', { level: 2, name: 'At a glance', exact: true })).toBeVisible();
+  await expect(page.getByText('Project details', { exact: true })).toHaveCount(0);
+  const descriptions = await page.locator('main img[alt]:not([alt=""])').evaluateAll((images) => images.map((image) => image.getAttribute('alt')));
+  expect(new Set(descriptions).size).toBe(descriptions.length);
+});
 import { test, expect } from "./fixtures";
 
 const projects = readdirSync("src/content/projects").filter((file) => file.endsWith(".mdx")).map((file) => `/projects/${file.replace(/\.mdx$/, "")}/`);
