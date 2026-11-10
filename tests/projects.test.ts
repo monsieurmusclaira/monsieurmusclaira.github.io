@@ -1,4 +1,5 @@
 import { describe, it, expect } from "vitest";
+import { readFileSync } from "node:fs";
 import { sortByOrder, nextSlug, prevSlug, validateProjectOrder, requireProject } from "../src/lib/projects";
 
 const sample = [
@@ -6,6 +7,18 @@ const sample = [
   { slug: "a", order: 1 },
   { slug: "b", order: 2 },
 ];
+
+it('home cards, filmography and next links share one sequence', () => {
+  const home = readFileSync('dist/index.html', 'utf8');
+  const featured = [...home.matchAll(/<a\b[^>]*>/g)].filter(([tag]) => tag.includes('featured-film')).map(([tag]) => tag.match(/href="([^"]+)"/)![1]);
+  const filmography = [...home.match(/<ul id="work-list"[^>]*>([\s\S]*?)<\/ul>/)![1].matchAll(/<a\b[^>]*href="([^"]+)"/g)].map(([, href]) => href);
+  expect(featured).toEqual(filmography.slice(0, 8));
+  for (const [index, href] of featured.slice(0, -1).entries()) {
+    const html = readFileSync(`dist${href}index.html`, 'utf8');
+    const next = [...html.matchAll(/<a\b[^>]*>[\s\S]*?<\/a>/g)].find(([anchor]) => anchor.includes('Next project'))![0];
+    expect(next.match(/href="([^"]+)"/)![1], href).toBe(featured[index + 1]);
+  }
+});
 
 describe("sortByOrder", () => {
   it("sorts ascending by order without mutating input", () => {
