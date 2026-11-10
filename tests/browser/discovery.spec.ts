@@ -1,6 +1,22 @@
 import AxeBuilder from '@axe-core/playwright';
 import { test, expect, navigate } from './fixtures';
 
+test('unfiltered filmography keeps its count and hides the reset', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('[data-work-filters]')).toBeVisible();
+  const total = await page.locator('[data-work-item]').count();
+  const count = page.locator('[data-work-count]');
+  const reset = page.locator('.work-reset');
+  await expect(count).toHaveText(`${total} projects`);
+  await expect(reset).toBeHidden();
+  await page.locator('#work-format').selectOption('Fiction');
+  await expect(count).toHaveText(new RegExp(`^\\d+ of ${total} projects$`));
+  await expect(reset).toBeVisible();
+  await reset.click();
+  await expect(count).toHaveText(`${total} projects`);
+  await expect(reset).toBeHidden();
+});
+
 test('award photograph is visible without opening a toggle', async ({ page }) => {
   await page.goto('/projects/a-long-goodbye/');
   const photograph = page.locator('[data-featured-recognition] figure img');
@@ -27,7 +43,7 @@ test('filmography filters combine, reset, and survive navigation', async ({ page
   await reset.focus();
   await page.keyboard.press('Enter');
   await expect(visible).toHaveCount(17);
-  await expect(reset).toBeFocused();
+  await expect(form.getByLabel('Format', { exact: true })).toBeFocused();
   await expect(form.getByLabel('Format', { exact: true })).toHaveValue('');
   await expect(form.getByLabel('Role', { exact: true })).toHaveValue('');
   await expect(page.locator('[data-work-empty]')).toBeHidden();

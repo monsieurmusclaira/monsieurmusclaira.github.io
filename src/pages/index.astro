@@ -46,7 +46,7 @@ const featuredFilms = films.slice(0, FEATURED_COUNT);
       <form data-work-filters hidden class="work-filters mb-6" aria-label="Filter filmography">
         <div class="work-filter-field"><label for="work-format">Format</label><select id="work-format" name="format" aria-controls="work-list"><option value="">All formats</option>{formats.map((format) => <option value={format}>{format}</option>)}</select></div>
         <div class="work-filter-field"><label for="work-role">Role</label><select id="work-role" name="role" aria-controls="work-list"><option value="">All roles</option>{roles.map((role) => <option value={role}>{role}</option>)}</select></div>
-        <button type="reset" class="work-reset">Clear filters</button>
+        <button type="reset" class="work-reset" hidden>Clear filters</button>
       </form>
       <p data-work-count class="mb-5 font-sans text-sm text-muted" aria-live="polite" aria-atomic="true">{films.length} projects</p>
       <p data-work-empty hidden class="py-8 font-serif text-xl text-base-100">No projects match these filters. Clear the filters to see all work.</p>

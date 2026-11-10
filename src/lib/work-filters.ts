@@ -11,7 +11,14 @@ function apply(form: HTMLFormElement) {
   }
   const output = document.querySelector<HTMLElement>('[data-work-count]');
   const empty = document.querySelector<HTMLElement>('[data-work-empty]');
-  if (output) output.textContent = `${count} of ${items.length} projects`;
+  const active = Boolean(format || role);
+  const text = active ? `${count} of ${items.length} projects` : `${items.length} projects`;
+  if (output && output.textContent !== text) output.textContent = text;
+  const reset = form.querySelector<HTMLButtonElement>('.work-reset');
+  if (reset) {
+    if (!active && document.activeElement === reset) form.querySelector<HTMLSelectElement>('[name="format"]')?.focus();
+    reset.hidden = !active;
+  }
   if (empty) empty.hidden = count > 0;
 }
 
