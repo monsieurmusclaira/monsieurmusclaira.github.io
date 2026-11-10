@@ -288,7 +288,7 @@ if (schema) {
 
 <!-- One variable sans file; preload only the normal serif used in each hero. -->
 <Font cssVariable="--font-montserrat" preload />
-<Font cssVariable="--font-eb-garamond" preload={[{ weight: 400, style: 'normal' }]} />
+<Font cssVariable="--font-eb-garamond" preload={[pageType === 'home' ? { weight: 400, style: 'italic' } : { weight: 600, style: 'normal' }]} />
 <Font cssVariable="--font-caveat" />
 
 <!-- Crawl directives -->

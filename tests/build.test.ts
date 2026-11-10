@@ -118,7 +118,7 @@ describe("built site invariants", () => {
     const { gzipSync } = await import("node:zlib");
     const file = readdirSync("dist/_astro").find((f) => /^BaseLayout\..*\.css$/.test(f))!;
     const css = readFileSync(`dist/_astro/${file}`);
-    const GZIP_CEILING = 15_500; // baseline 23,548 B gzip minus 8 KB (2026-11-04 audit)
+    const GZIP_CEILING = 12_622;
     expect(gzipSync(css).length).toBeLessThanOrEqual(GZIP_CEILING);
     const text = css.toString("utf-8");
     for (const selector of [".navbar", ".menu", ".dropdown-content", ".dropdown-open", ".btn-ghost", ".btn-circle", ".hero-content"]) {
