@@ -54,7 +54,7 @@
   filter: saturate(0.97) contrast(1.02);
 }
 .polaroid figcaption {
-  font-family: var(--font-caveat), "Nothing You Could Do", cursive;
+  font-family: var(--font-caveat), cursive;
   font-size: 23px;
   text-align: center;
   color: #2b2b2b;

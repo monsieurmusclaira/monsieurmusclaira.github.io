@@ -9,7 +9,7 @@ const details = videoDetails(video, projectTitle);
 <section class="w-full max-w-4xl mx-auto px-5 sm:px-6 py-12 sm:py-16" data-aos="fade-up" data-aos-duration="600">
   <h2 class="font-serif text-3xl sm:text-4xl text-secondary text-center mb-8 sm:mb-10">{details.title}</h2>
   <div data-youtube-frame={video.provider === 'youtube' ? true : undefined} class="w-full max-w-[720px] mx-auto overflow-hidden">
-    <div data-video-player data-embed-url={details.embedUrl} data-video-title={details.name} class="relative aspect-video min-h-[200px] bg-black">
+    <div data-video-player data-embed-url={details.embedUrl} data-video-title={details.name} class="relative aspect-video bg-black">
       <Image src={await resolveImage(poster)} alt="" widths={[360, 720, 1440]} sizes="(min-width: 768px) 720px, calc(100vw - 40px)" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
       <button hidden data-video-play type="button" aria-label={`Play ${details.name} on ${details.providerName}`} class="absolute inset-0 w-full h-full flex items-center justify-center bg-black/25 hover:bg-black/40 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-secondary">
         <span class="flex h-16 w-16 items-center justify-center rounded-full border border-secondary bg-neutral/90 text-secondary" aria-hidden="true">▶</span>

@@ -1,5 +1,21 @@
 import { test, expect, navigate, primaryFamily } from "./fixtures";
 
+test.describe('link transitions', () => {
+  test.use({ reducedMotion: 'no-preference' });
+
+  test('links animate the properties their utilities name', async ({ page }) => {
+    await page.goto('/projects/burn/');
+    const cta = await page.locator('a[href="/about/#contact"].bg-secondary').evaluate((el) => ({ property: getComputedStyle(el).transitionProperty, duration: getComputedStyle(el).transitionDuration }));
+    expect(cta.property).toContain('background-color');
+    expect(cta.duration).toBe('0.2s');
+    expect(await page.locator('footer a').first().evaluate((el) => getComputedStyle(el).transitionDuration)).toBe('0.2s');
+    await page.goto('/about/');
+    const plain = await page.locator('main p a').first().evaluate((el) => ({ property: getComputedStyle(el).transitionProperty, duration: getComputedStyle(el).transitionDuration }));
+    expect(plain.property).toContain('color');
+    expect(plain.duration).toBe('0.3s');
+  });
+});
+
 for (const [path, target] of [["/", "selected-work"], ["/about/", "project-intro"], ["/behind-the-scenes/", "bts-board"]]) {
   test(`hero cue scrolls to content on ${path}`, async ({ page }) => {
     await page.goto(path);
