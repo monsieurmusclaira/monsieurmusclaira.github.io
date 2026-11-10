@@ -15,6 +15,10 @@ export const test = base.extend({
 
 export { expect };
 
+export function primaryFamily(list: string): string {
+  return list.split(',')[0].trim();
+}
+
 export async function navigate(page: Page, action: () => Promise<unknown>) {
   // History updates can precede the DOM swap. Wait for Astro's completion event.
   await Promise.all([

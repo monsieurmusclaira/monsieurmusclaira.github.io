@@ -1,4 +1,4 @@
-import { test, expect, navigate } from "./fixtures";
+import { test, expect, navigate, primaryFamily } from "./fixtures";
 
 for (const [path, target] of [["/", "selected-work"], ["/about/", "project-intro"], ["/behind-the-scenes/", "bts-board"]]) {
   test(`hero cue scrolls to content on ${path}`, async ({ page }) => {
@@ -105,9 +105,11 @@ test('mobile header keeps its geometry while enhancement scripts load', async ({
     await page.waitForFunction(() => Boolean(document.querySelector<HTMLLinkElement>('link[rel="stylesheet"]')?.sheet));
     // Firefox's FontFaceSet.ready can wait for deferred modules themselves.
     // Load just the header face while those modules are intentionally blocked.
-    await page.locator('header .navbar-center a').evaluate(async (el) => {
-      await document.fonts.load(getComputedStyle(el).font);
+    const style = await page.locator('header .navbar-center a').evaluate((el) => {
+      const style = getComputedStyle(el);
+      return { weight: style.fontWeight, size: style.fontSize, family: style.fontFamily };
     });
+    await page.evaluate(async (font) => { await document.fonts.load(font); }, `${style.weight} ${style.size} ${primaryFamily(style.family)}`);
     await expect(page.locator('#menu-toggle')).toBeVisible();
     const before = await page.locator('header .navbar-center a').boundingBox();
     release();
